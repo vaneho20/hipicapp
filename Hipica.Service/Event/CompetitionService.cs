@@ -6,7 +6,9 @@ using Hipica.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Hipica.Service.Event
 {
@@ -21,6 +23,9 @@ namespace Hipica.Service.Event
 
         [Autowired]
         private ISeminaryRepository SeminaryRepository { get; set; }
+
+        [Autowired]
+        private IScoreRepository ScoreRepository { get; set; }
 
         [Transaction(ReadOnly = true)]
         public Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest)

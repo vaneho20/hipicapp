@@ -1,8 +1,6 @@
-﻿using Hipica.Model.Event;
-using Hipica.Model.File;
+﻿using Hipica.Model.File;
 using Hipica.Model.Participant;
 using Hipica.Utils.Pager;
-using System.Collections.Generic;
 
 namespace Hipica.Service.Participant
 {
@@ -17,8 +15,6 @@ namespace Hipica.Service.Participant
         Judge Update(Judge judge);
 
         Judge Delete(Judge judge);
-
-        IList<Score> SimulateScore(Competition competition);
 
         FileInfo Upload(Judge judge, string name, string mimeType, byte[] bytes);
     }

@@ -1,9 +1,11 @@
 ﻿using Hipica.Filters;
 using Hipica.Model.Authentication;
 using Hipica.Model.Event;
+using Hipica.Model.Participant;
 using Hipica.Service.Event;
 using Hipica.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
+using System.Collections.Generic;
 
 namespace Hipica.Proxy.Event
 {
@@ -38,6 +40,12 @@ namespace Hipica.Proxy.Event
         public Competition Delete(Competition competition)
         {
             return this.CompetitionService.Delete(competition);
+        }
+
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        public IList<Score> SimulateScore(Competition competition)
+        {
+            return this.CompetitionService.SimulateScore(competition);
         }
     }
 }
