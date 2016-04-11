@@ -1,0 +1,18 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/Hipica/bin
+/Hipica/obj/Debug
+/Hipica.Model/bin/Debug
+/Hipica.Model/obj/Debug
+/Hipica.Repository/bin/Debug
+/Hipica.Repository/obj/Debug
+/Hipica.Service/bin/Debug
+/Hipica.Service/obj/Debug
+/Hipica.TestDataGenerator/bin/Debug
+/Hipica.TestDataGenerator/obj/Debug
+/Hipica.Utils/bin/Debug
+/Hipica.Utils/obj/Debug
+/Resources/bin/Debug
+/Resources/obj/Debug
