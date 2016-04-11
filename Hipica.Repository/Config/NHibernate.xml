@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <!-- Referenced by main application context configuration file -->
+  <description>
+    Data Access Objects.
+  </description>
+
+  <db:provider id="DbProvider" provider="MySql-6.1.3" connectionString="Server=localhost;Database=hipica;Uid=root;Pwd=root;" />
+
+  <!-- NHibernate SessionFactory configuration -->
+  <object id="NHibernateSessionFactory" type="Hipica.Repository.Fluent.FluentNHibernateLocalSessionFactoryObject, Hipica.Repository">
+    <property name="DbProvider" ref="DbProvider" />
+    <property name="FluentNhibernateMappingAssemblies">
+      <list>
+        <value>Hipica.Model</value>
+      </list>
+    </property>
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider" />
+        <entry key="dialect" value="NHibernate.Dialect.MySQL5Dialect" />
+        <entry key="show_sql" value="true" />
+        <entry key="format_sql" value="true" />
+        <entry key="connection.driver_class" value="NHibernate.Driver.MySqlDataDriver" />
+        <entry key="hbm2ddl.auto" value="update" />
+        <entry key="max_fetch_depth" value="3" />
+      </dictionary>
+    </property>
+
+    <!-- provides integation with Spring's declarative transaction management features -->
+    <property name="ExposeTransactionAwareSessionFactory" value="true" />
+  </object>
+
+  <!-- Transaction Management Strategy - local database transactions -->
+  <object id="transactionManager" type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate4">
+    <property name="DbProvider" ref="DbProvider" />
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+
+  <tx:attribute-driven />
+
+  <!-- Exception translation object post processor
+  <object type="Spring.Dao.Attributes.PersistenceExceptionTranslationPostProcessor, Spring.Data" /> -->
+</objects>

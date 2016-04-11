@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor">
+  <import resource="assembly://Hipica.Repository/Hipica.Repository/Config.NHibernate.xml" />
+  <import resource="assembly://Hipica.Repository/Hipica.Repository/Config.Repositories.xml" />
+</objects>

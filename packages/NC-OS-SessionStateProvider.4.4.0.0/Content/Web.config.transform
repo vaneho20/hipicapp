@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<system.web>
+		<compilation>
+			<assemblies>
+				<add assembly="Alachisoft.NCache.SessionStoreProvider, Version=4.4.0.0, Culture=neutral, PublicKeyToken=1448E8D1123E9096"/>
+			</assemblies>
+		</compilation>
+    <sessionState cookieless="false" regenerateExpiredSessionId="true" mode="Custom" customProvider="NCacheSessionProvider" timeout="60" >
+      <providers>
+        <add name="NCacheSessionProvider" type="Alachisoft.NCache.Web.SessionState.NSessionStoreProvider" sessionAppId="WebF1" cacheName="mycache" writeExceptionsToEventLog="false" asyncSession="false" enableLogs="false"/>
+      </providers>
+    </sessionState>
+		<machineKey validationKey="A01D6E0D1A5D2A22E0854CA612FE5C5EC4AECF24" decryptionKey="ACD8EBF87C4C8937" validation="SHA1"/>
+	</system.web>
+
+</configuration>
