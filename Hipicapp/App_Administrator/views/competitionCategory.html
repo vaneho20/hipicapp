@@ -1,0 +1,34 @@
+<div class="page-header">
+    <h2>
+        <!--ko text: currentEntity().name-->
+        <!--/ko-->
+        <small data-bind="text: i18n.t('app:COMPETITION_CATEGORY')"></small>
+    </h2>
+</div>
+<form role="form" data-bind="submit: save">
+    <fieldset>
+        <div class="form-group">
+            <label for="h-competition-category-name"
+                   data-bind="text: i18n.t('app:COMPETITION_NAME')"></label>
+            <input class="form-control" type="text" id="h-competition-category-name" autofocus
+                   data-bind="value: currentEntity().name,
+						attr: { max: validationUtils.MAX_LENGTH,
+							maxlength: validationUtils.MAX_LENGTH,
+							placeholder: i18n.t('app:COMPETITION_NAME'),
+							title: i18n.t('app:COMPETITION_NAME')}"
+                   required>
+        </div>
+        <button type="submit"
+                data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                class="btn btn-primary">
+            <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+        </button>
+        <a data-bind="attr: {
+						href: competitionCategoryBroker.getListUrl(),
+						title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+           class="btn">
+            <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+        </a>
+    </fieldset>
+</form>
+

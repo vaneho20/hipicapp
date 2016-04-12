@@ -1,0 +1,32 @@
+<div class="page-header">
+    <h2 class="inline">
+        <!--ko text: currentEntity().userName-->
+        <!--/ko -->
+        <small data-bind="text: i18n.t('app:EMAIL')"></small>
+    </h2>
+</div>
+<ul class="nav nav-tabs">
+    <li data-bind="css: {
+			active: nav() === navs.BASIC_DATA
+		}">
+        <a href="#"
+           data-bind="
+			attr: {
+				href: nav() !== navs.BASIC_DATA ? userBroker.getDetailUrlByUserId(currentEntity().id()) : 'javascript:void(0)',
+				title: i18n.t('app:BASIC_DATA')
+			},
+			text: i18n.t('app:BASIC_DATA')"></a>
+    </li>
+    <li data-bind="css: {
+			active: nav() === navs.CHANGE_PASSWORD,
+			disabled: !currentEntity().id()
+		}">
+        <a href="#"
+           data-bind="
+			attr: {
+				href: nav() !== navs.CHANGE_PASSWORD && currentEntity().id() ? userBroker.getChangePasswordUrlByUserId(currentEntity().id()) : 'javascript:void(0)',
+				title: i18n.t('app:CHANGE_PASSWORD')
+			},
+			text: i18n.t('app:CHANGE_PASSWORD')"></a>
+    </li>
+</ul>

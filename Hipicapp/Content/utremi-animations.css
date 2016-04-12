@@ -1,0 +1,38 @@
+﻿@-webkit-keyframes enterFromRight {
+    0% { right: -80%; }
+	100% { right: 0; }
+}
+
+@-moz-keyframes enterFromRight {
+    0% { right: -80%; }
+	100% { right: 0; }
+}
+
+@-o-keyframes enterFromRight {
+    0% { right: -80%; }
+	100% { right: 0; }
+}
+
+@keyframes enterFromRight {
+    0% { right: -80%; }
+	100% { right: 0; }
+}
+
+.enterFromRight {
+    -webkit-animation-name: enterFromRight;
+    -moz-animation-name: enterFromRight;
+    -o-animation-name: enterFromRight;
+    animation-name: enterFromRight;
+
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+
+.animated.enterFromRight {
+    -webkit-animation-duration: 0.25s;
+    -moz-animation-duration: 0.25s;
+    -o-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+}

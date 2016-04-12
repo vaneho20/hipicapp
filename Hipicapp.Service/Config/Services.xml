@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:context="http://www.springframework.net/context">
+
+  <import resource="assembly://Hipicapp.Repository/Hipicapp.Repository/Config.Module.xml" />
+
+  <context:component-scan base-assemblies="Hipicapp.Service">
+  </context:component-scan>
+</objects>
