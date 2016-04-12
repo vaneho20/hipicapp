@@ -16,3 +16,7 @@
 /Hipica.Utils/obj/Debug
 /Resources/bin/Debug
 /Resources/obj/Debug
+/Hipicapp/bin
+/Hipicapp.TestDataGenerator/obj/Debug
+/Hipicapp.Tests/obj/Debug
+/Hipicapp.Utils/obj/Debug
