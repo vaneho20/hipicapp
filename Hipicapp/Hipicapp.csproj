@@ -72,6 +72,14 @@
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.4\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.4\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
@@ -135,6 +143,14 @@
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorPDF2.2.0.0\lib\net40\RazorPDF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorPDF.Legacy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorPDF2.2.0.0\lib\net40\RazorPDF.Legacy.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Spring.Aop, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
