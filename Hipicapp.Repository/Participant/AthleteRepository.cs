@@ -1,4 +1,4 @@
-﻿using Hipicapp.Model.Athlete;
+﻿using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Abstract;
 using NHibernate.Linq;
 using Spring.Stereotype;

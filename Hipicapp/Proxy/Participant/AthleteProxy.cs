@@ -1,5 +1,4 @@
 ﻿using Hipicapp.Filters;
-using Hipicapp.Model.Athlete;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;

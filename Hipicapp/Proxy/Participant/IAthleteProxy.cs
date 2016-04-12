@@ -1,5 +1,4 @@
-﻿using Hipicapp.Model.Athlete;
-using Hipicapp.Model.File;
+﻿using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Utils.Pager;
 

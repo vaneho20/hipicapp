@@ -73,9 +73,9 @@
     <Compile Include="Account\Ticket.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Account\ValidUserAttribute.cs" />
-    <Compile Include="Athlete\Athlete.cs" />
-    <Compile Include="Athlete\AthleteFindFilter.cs" />
-    <Compile Include="Athlete\AthleteFindRequest.cs" />
+    <Compile Include="Participant\Athlete.cs" />
+    <Compile Include="Participant\AthleteFindFilter.cs" />
+    <Compile Include="Participant\AthleteFindRequest.cs" />
     <Compile Include="Authentication\Client.cs" />
     <Compile Include="Authentication\Enums.cs" />
     <Compile Include="Authentication\Principal.cs" />
@@ -103,6 +103,7 @@
     <Compile Include="Participant\Score.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Athlete\" />
     <Folder Include="Binomial\" />
   </ItemGroup>
   <ItemGroup>

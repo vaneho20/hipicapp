@@ -1,6 +1,5 @@
 ﻿using Hipicapp.Controllers.Abstract;
 using Hipicapp.Filters;
-using Hipicapp.Model.Athlete;
 using Hipicapp.Model.Exceptions;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
