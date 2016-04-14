@@ -62,6 +62,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.3.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -81,8 +85,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -386,7 +390,7 @@
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\sidebar.js" />
-    <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\athlete.html" />
     <Content Include="App\views\competitions.html" />
@@ -400,7 +404,7 @@
     <Content Include="App\views\pager.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\sidebar.html" />
-    <Content Include="App\views\welcome.html" />
+    <Content Include="App\views\home.html" />
     <EmbeddedResource Include="Config\Hipicapp.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -558,6 +562,7 @@
     <Content Include="Content\starterkit.css" />
     <Content Include="Content\utremi-animations.css" />
     <Content Include="Global.asax" />
+    <Content Include="hipicap-favicon.ico" />
     <Content Include="Scripts\Administrator\metisMenu.js" />
     <Content Include="Scripts\Administrator\sb-admin-2.js" />
     <Content Include="Scripts\almond-custom.js" />

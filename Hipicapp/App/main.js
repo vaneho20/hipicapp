@@ -83,7 +83,7 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
                 if (securityContext.isAuthenticated()) {
                     app.setRoot("viewmodels/shell", "entrance");
                 } else {
-                    app.setRoot("viewmodels/login", "entrance");
+                    app.setRoot("viewmodels/home", "entrance");
                 }
             });
         });

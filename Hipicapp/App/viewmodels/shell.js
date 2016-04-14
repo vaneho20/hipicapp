@@ -21,7 +21,7 @@
             },
             activate: function () {
                 router.map([
-                    { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: false, hash: '' },
+                    { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: false, hash: '' },
                     { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
                     { route: 'athlete', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: true, hash: '#athlete' },
                     { route: 'horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true, hash: '#horses' },
