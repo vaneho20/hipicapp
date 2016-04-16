@@ -5,7 +5,7 @@
             logout: function () {
                 return authenticationBroker.logout().done(securityContext.clear).done(
                 function () {
-                    app.setRoot('viewmodels/login', 'entrance');
+                    app.setRoot('viewmodels/home', 'entrance');
                     router.navigate("");
                 });
             },

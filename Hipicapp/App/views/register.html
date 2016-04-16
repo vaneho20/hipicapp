@@ -1,11 +1,11 @@
-<form role="form" data-bind="submit: signIn">
+<form role="form" class="form-horizontal" data-bind="submit: signIn">
     <fieldset>
         <legend>
             Datos de registro
         </legend>
         <div class="form-group">
             <label for="h-user-email" data-bind="text: i18n.t('app:EMAIL')"
-                   class="control-label"></label>
+                   class="sr-only"></label>
             <input class="form-control" id="h-user-email" type="email" autofocus
                    data-bind="value: currentEntity().user.userName,
 									attr: { max: validationUtils.MAX_LENGTH,
@@ -14,9 +14,8 @@
 										   title: i18n.t('app:EMAIL') }"
                    required>
         </div>
-
         <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
-               class="control-label"></label>
+               class="sr-only"></label>
         <div class="form-group input-group">
             <input class="form-control" type="password" id="h-user-new-password"
                    data-bind="compare: { value: currentEntity().user.newPassword, otherValue: currentEntity().user.confirmNewPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-confirm-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
@@ -37,7 +36,7 @@
         </div>
         <div class="form-group">
             <label for="h-user-confirm-new-password"
-                   data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="control-label">
+                   data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="sr-only">
             </label>
             <input class="form-control" type="password" id="h-user-confirm-new-password"
                    data-bind="compare: { value: currentEntity().user.confirmNewPassword, otherValue: currentEntity().user.newPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
@@ -54,7 +53,7 @@
             Datos del atleta
         </legend>
         <div class="form-group">
-            <label for="h-athlete-name"
+            <label for="h-athlete-name" class="sr-only"
                    data-bind="text: i18n.t('app:ATHLETE_NAME')"></label>
             <input class="form-control" type="text" id="h-athlete-name" autofocus
                    data-bind="value: currentEntity().name,
@@ -65,7 +64,7 @@
                    required>
         </div>
         <div class="form-group">
-            <label for="h-athlete-surnames"
+            <label for="h-athlete-surnames" class="sr-only"
                    data-bind="text: i18n.t('app:ATHLETE_SURNAMES')"></label>
             <input class="form-control" type="text" id="h-athlete-surnames" autofocus
                    data-bind="value: currentEntity().surnames,
@@ -76,7 +75,7 @@
                    required>
         </div>
         <div class="form-group">
-            <label for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+            <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
             <select id="h-athlete-gender"
                     data-bind="options: availableGenders,
 							optionsValue: function(item) { return item.value },
@@ -87,7 +86,7 @@
                     required="required" class="form-control" aria-required="true"></select>
         </div>
         <div class="form-group">
-            <label for="h-athlete-birthdate" data-bind="text: i18n.t('app:ATHLETE_BIRTHDATE')"></label>
+            <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:ATHLETE_BIRTHDATE')"></label>
             <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="text" class="form-control" id="h-athlete-birthdate"
@@ -97,7 +96,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="h-athlete-dni"
+            <label for="h-athlete-dni" class="sr-only"
                    data-bind="text: i18n.t('app:ATHLETE_DNI')"></label>
             <input class="form-control" type="text" id="h-athlete-dni" autofocus
                    data-bind="value: currentEntity().dni,
@@ -106,17 +105,6 @@
 							placeholder: i18n.t('app:ATHLETE_DNI'),
 							title: i18n.t('app:ATHLETE_DNI')}"
                    required>
-        </div>
-        <div class="form-group">
-            <label for="h-athlete-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
-            <select id="h-athlete-category"
-                    data-bind="options: availableCategories,
-							optionsValue: function(item) { return item.id },
-							optionsText: function(item) { return item.name },
-							optionsCaption : i18n.t('app:CATEGORY') + '...',
-							value: currentEntity().categoryId,
-							attr: { title: i18n.t('app:CATEGORY') }"
-                    required="required" class="form-control" aria-required="true"></select>
         </div>
         <button type="submit"
                 data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"

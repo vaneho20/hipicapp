@@ -20,39 +20,45 @@ namespace Hipicapp.Controllers.Event
         [Autowired]
         public ICompetitionCategoryProxy CompetitionCategoryProxy { get; set; }
 
-        [HttpGet]
+        [System.Web.Http.AcceptVerbs("GET")]
+        [System.Web.Http.HttpGet]
         public IList<CompetitionCategory> FindAll()
         {
             return this.CompetitionCategoryProxy.FindAll();
         }
 
-        [HttpPost]
-        [Route("api/competitionCategories/find")]
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("api/competitionCategories/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<CompetitionCategory> Find(CompetitionCategoryFindRequest request)
         {
             return this.CompetitionCategoryProxy.Paginated(request);
         }
 
-        [HttpGet]
+        [System.Web.Http.AcceptVerbs("GET")]
+        [System.Web.Http.HttpGet]
         public CompetitionCategory Get(long? id)
         {
             return this.CompetitionCategoryProxy.Get(id);
         }
 
-        [HttpPost]
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
         public CompetitionCategory Save([Valid] CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Save(competitionCategory);
         }
 
-        [HttpPut]
+        [System.Web.Http.AcceptVerbs("PUT")]
+        [System.Web.Http.HttpPut]
         public CompetitionCategory Update([Valid] CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Update(competitionCategory);
         }
 
-        [HttpDelete]
+        [System.Web.Http.AcceptVerbs("DELETE")]
+        [System.Web.Http.HttpDelete]
         public CompetitionCategory Delete(CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Delete(competitionCategory);

@@ -33,7 +33,13 @@ define([
         }
 
         function save() {
-            return competitionCategoryBroker.save(currentEntity()).done(refreshCurrentEntity);
+            var promise;
+            if (currentEntity().id) {
+                promise = competitionCategoryBroker.update(currentEntity());
+            } else {
+                promise = competitionCategoryBroker.save(currentEntity());
+            }
+            return promise.done(refreshCurrentEntity);
         }
 
         // module revelation

@@ -384,6 +384,7 @@
     <Content Include="App\viewmodels\competitions.js" />
     <Content Include="App\viewmodels\horses.js" />
     <Content Include="App\viewmodels\register.js" />
+    <Content Include="App\viewmodels\public.js" />
     <Content Include="App\viewmodels\updatepassword.js" />
     <Content Include="App\viewmodels\passwordreset.js" />
     <Content Include="App\viewmodels\signin.js" />
@@ -397,6 +398,7 @@
     <Content Include="App\views\horses.html" />
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\register.html" />
+    <Content Include="App\views\public.html" />
     <Content Include="App\views\updatepassword.html" />
     <Content Include="App\views\passwordreset.html" />
     <Content Include="App\views\signin.html" />
@@ -549,7 +551,6 @@
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\images\loading.gif" />
-    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\select2-spinner.gif" />
     <Content Include="Content\images\select2.png" />
     <Content Include="Content\images\select2x2.png" />

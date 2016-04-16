@@ -22,7 +22,7 @@ namespace Hipicapp.Filters
             HttpActionContext actionContext, CancellationToken cancellationToken)
         {
             Task task = null;
-            if (actionContext.Request.Method == HttpMethod.Post)
+            if (actionContext.Request.Method == HttpMethod.Post || actionContext.Request.Method == HttpMethod.Put)
             {
                 task = _defaultFormatterBinding.ExecuteBindingAsync(metadataProvider, actionContext, cancellationToken);
             }

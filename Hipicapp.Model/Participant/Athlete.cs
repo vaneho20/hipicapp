@@ -78,7 +78,7 @@ namespace Hipicapp.Model.Participant
             Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Surnames).Column("SURNAMES");
             Map(x => x.Gender).Column("GENDER").CustomType<GenericEnumMapper<Gender>>().Not.Nullable();
-            Map(x => x.BirthDate).Column("BIRTH_DATE");
+            Map(x => x.BirthDate).Column("BIRTH_DATE").CustomType("Date");
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();

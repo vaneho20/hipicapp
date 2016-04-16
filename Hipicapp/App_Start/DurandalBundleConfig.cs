@@ -22,11 +22,12 @@ namespace Hipicapp
                 .Include("~/Scripts/amplify-request-deferred-{version}.js")
                 .Include("~/Scripts/moment-with-locales.js")
                 .Include("~/Scripts/sjcl-{version}.js")
+                .Include("~/Scripts/holder.js")
             );
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/ie10mobile.css")
-                .Include("~/Content/bootstrap.min.css")
+                .Include("~/Content/bootstrap.css")
                 .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/starterkit.css")
@@ -57,7 +58,7 @@ namespace Hipicapp
 
             bundles.Add(new StyleBundle("~/Content/administrator-css")
                 .Include("~/Content/ie10mobile.css")
-                .Include("~/Content/bootstrap.min.css")
+                .Include("~/Content/bootstrap.css")
                 .Include("~/Content/bootstrap-datetimepicker-{version}.css")
                 .Include("~/Content/Administrator/metisMenu.css")
                 .Include("~/Content/Administrator/sb-admin-2.css")

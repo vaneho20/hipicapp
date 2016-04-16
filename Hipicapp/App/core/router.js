@@ -10,7 +10,19 @@ define([
         return location.reload();
     }
 
+    function navigateToLogin() {
+        return router.navigate("#login");
+    }
+
+    function navigateToRegister() {
+        return router.navigate("#register");
+    }
+
+
     router.reloadCurrentLocation = reloadCurrentLocation;
+
+    router.navigateToLogin = navigateToLogin;
+    router.navigateToRegister = navigateToRegister;
 
     return router;
 });

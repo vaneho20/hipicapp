@@ -15,7 +15,7 @@ define([
     amplify.request.define("competitionCategories/findAll", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY,
-                brokerUtils.requestMappings.FIND_ALL), brokerUtils.verb.POST, CACHE_NAME));
+                brokerUtils.requestMappings.FIND_ALL), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("competitionCategories/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
@@ -30,6 +30,10 @@ define([
     amplify.request.define("competitionCategories/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+
+    amplify.request.define("competitionCategories/update", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("competitionCategories/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
@@ -51,6 +55,10 @@ define([
 
     function save(entity) {
         return amplify.request("competitionCategories/save", entity).always(CACHE.evict);
+    }
+
+    function update(entity) {
+        return amplify.request("competitionCategories/update", entity).always(CACHE.evict);
     }
 
     function erase(entity) {
@@ -75,6 +83,7 @@ define([
     broker.findAll = findAll;
     broker.findBy = findBy;
     broker.save = save;
+    broker.update = update;
     broker.erase = erase;
     broker.findById = findById;
     broker.getListUrl = getListUrl;

@@ -3,11 +3,11 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
-    "domain/athlete/athleteImpl", "durandal/app", "viewmodels/shell", "viewmodels/alerts"
-],
-    function registerViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, athleteBroker, athleteImpl, app, shell,
-                                 alerts) {
+    "domain/athlete/athleteImpl", "domain/competitionCategory/competitionCategoryBroker", "durandal/app",
+    "viewmodels/shell", "viewmodels/alerts"
+], function registerViewModel(i18n, router, securityContext, stringUtils, urlUtils,
+                                 validationUtils, athleteBroker, athleteImpl, competitionCategoryBroker,
+                                 app, shell, alerts) {
         "use strict";
 
         // state definition
