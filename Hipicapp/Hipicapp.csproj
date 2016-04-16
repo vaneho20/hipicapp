@@ -606,12 +606,16 @@
     <Content Include="Scripts\h5bp-4.2.0.js" />
     <Content Include="App_Administrator\nls\dev\app.json" />
     <Content Include="App_Administrator\nls\es\app.json" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\i18next.min.js" />
-    <Content Include="Scripts\jquery-2.2.0.js" />
-    <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Scripts\jquery.carouFredSel-6.2.1.js" />
     <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
@@ -659,7 +663,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="weyland-config.js" />
-    <Content Include="Scripts\jquery-2.2.0.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -708,9 +711,6 @@
   <ItemGroup>
     <Content Include="App\nls\dev\app.json" />
     <Content Include="App\nls\es\app.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

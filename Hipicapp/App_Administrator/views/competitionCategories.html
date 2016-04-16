@@ -29,6 +29,8 @@
                                         </i>
                                     </a> <span data-bind="text: i18n.t('app:NAME')"></span>
                                 </th>
+                                <th><span data-bind="text: i18n.t('app:FROM')"></span></th>
+                                <th><span data-bind="text: i18n.t('app:TO')"></span></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -36,6 +38,8 @@
                             <tr>
                                 <td></td>
                                 <td data-bind="text: name"></td>
+                                <td data-bind="text: previous ? 'Anteriores' : initialYear"></td>
+                                <td data-bind="text: later ? 'Posterior' : finalYear"></td>
                                 <td>
                                     <a data-bind="attr: {
 						                href: $root.competitionCategoryBroker.getDetailUrlById(id),

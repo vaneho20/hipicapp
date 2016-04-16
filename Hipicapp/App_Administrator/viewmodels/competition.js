@@ -7,8 +7,8 @@ define([
     "viewmodels/shell", "viewmodels/alerts"
 ],
     function competitionViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, competitionBroker, competitionImpl, shell,
-                                 alerts) {
+                                 validationUtils, competitionBroker, competitionImpl, competitionCategoryBroker,
+                                 shell, alerts) {
         "use strict";
 
         // state definition

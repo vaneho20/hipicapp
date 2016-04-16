@@ -19,6 +19,17 @@
                    required>
         </div>
         <div class="form-group">
+            <label for="h-athlete-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
+            <select id="h-athlete-category"
+                    data-bind="options: availableCategories,
+							optionsValue: function(item) { return item.id },
+							optionsText: function(item) { return item.name },
+							optionsCaption : i18n.t('app:CATEGORY') + '...',
+							value: currentEntity().categoryId,
+							attr: { title: i18n.t('app:CATEGORY') }"
+                    required="required" class="form-control" aria-required="true"></select>
+        </div>
+        <div class="form-group">
             <label for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
             <div id="h-competition-date-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().date">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
