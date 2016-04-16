@@ -382,6 +382,8 @@
     <Content Include="App\viewmodels\alerts.js" />
     <Content Include="App\viewmodels\athlete.js" />
     <Content Include="App\viewmodels\competitions.js" />
+    <Content Include="App\viewmodels\jump.js" />
+    <Content Include="App\viewmodels\dressage.js" />
     <Content Include="App\viewmodels\horses.js" />
     <Content Include="App\viewmodels\register.js" />
     <Content Include="App\viewmodels\public.js" />
@@ -395,6 +397,8 @@
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\athlete.html" />
     <Content Include="App\views\competitions.html" />
+    <Content Include="App\views\jump.html" />
+    <Content Include="App\views\dressage.html" />
     <Content Include="App\views\horses.html" />
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\register.html" />
@@ -546,6 +550,7 @@
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
     <Content Include="Content\images\clear.png" />
+    <Content Include="Content\images\hipicapp-logo-blanco.png" />
     <Content Include="Content\images\hipicapp-logo.png" />
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
@@ -706,6 +711,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

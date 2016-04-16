@@ -3,7 +3,7 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils"
-], function homeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
+], function dressageViewModel(i18n, router, securityContext, stringUtils, urlUtils,
                                  validationUtils) {
         "use strict";
 
@@ -17,7 +17,6 @@ define([
 
         // module revelation
         viewModel.i18n = i18n;
-        viewModel.router = router;
         viewModel.securityContext = securityContext;
         viewModel.validationUtils = validationUtils;
 

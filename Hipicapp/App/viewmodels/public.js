@@ -16,7 +16,9 @@
                 router.map([
                     { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: false, hash: '' },
                     { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
-                    { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' }
+                    { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
+                    { route: 'dressage', title: 'Doma', moduleId: 'viewmodels/dressage', nav: false, hash: '#dressage' },
+                    { route: 'jump', title: 'Salto', moduleId: 'viewmodels/jump', nav: false, hash: '#jump' }
                 ]).buildNavigationModel();
 
                 return router.activate().then(function init() {

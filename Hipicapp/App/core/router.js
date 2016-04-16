@@ -18,11 +18,20 @@ define([
         return router.navigate("#register");
     }
 
+    function navigateToDressage() {
+        return router.navigate("#dressage");
+    }
+
+    function navigateToJump() {
+        return router.navigate("#jump");
+    }
 
     router.reloadCurrentLocation = reloadCurrentLocation;
 
     router.navigateToLogin = navigateToLogin;
     router.navigateToRegister = navigateToRegister;
+    router.navigateToDressage = navigateToDressage;
+    router.navigateToJump = navigateToJump;
 
     return router;
 });
