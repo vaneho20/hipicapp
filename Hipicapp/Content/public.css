@@ -1,0 +1,51 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100%; }
+  body .navbar {
+    background: #fff; }
+  body .block-home {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh; }
+    body .block-home:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); }
+    body .block-home a {
+      padding: 55px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-50%, -50%);
+      /* Safari */
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      border: 1px solid #fff; }
+      body .block-home a img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin: -32px 0 0 -32px; }
+    body .block-home.block-doma {
+      background: url("images/foto_doma_clasica.jpg") 50% 50%/cover no-repeat; }
+    body .block-home.block-salto {
+      background: url("images/foto_salto.jpg") 50% 50%/cover no-repeat; }
+
+/*# sourceMappingURL=public.css.map */

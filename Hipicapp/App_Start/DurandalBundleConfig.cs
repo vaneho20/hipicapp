@@ -31,6 +31,7 @@ namespace Hipicapp
                 .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/durandal.css")
                 .Include("~/Content/starterkit.css")
+                .Include("~/Content/public.css")
             );
 
             // Administration zone
