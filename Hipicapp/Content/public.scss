@@ -8,56 +8,109 @@ body {
     height: 100%;
 
     .navbar {
+        margin: 0;
+        padding: 0.8em 0;
         background: #fff;
     }
 
-    .block-home {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
+    .section-content {
+        margin-top: 5.5em;
 
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-        }
+        .block-home {
+            position: relative;
+            margin: 0;
+            padding: 0;
 
-        a {
-            padding: 55px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 25px;
-            color: #fff;
-            text-transform: uppercase;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%,-50%); /* IE 9 */
-            -webkit-transform: translate(-50%,-50%); /* Safari */
-            -moz-transform: translate(-50%,-50%);
-            -o-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-            z-index: 9;
-            border: 1px solid #fff;
-
-            img {
+            &:after {
+                content: "";
                 position: absolute;
                 top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+            }
+
+            a {
+                padding: 2em 2.5em;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2em;
+                color: #fff;
+                position: absolute;
+                top: 50%;
                 left: 50%;
-                margin: -32px 0 0 -32px;
+                text-align: center;
+                -ms-transform: translate(-50%,-50%); /* IE 9 */
+                -webkit-transform: translate(-50%,-50%); /* Safari */
+                -moz-transform: translate(-50%,-50%);
+                -o-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                z-index: 9;
+                border: 1px solid #fff;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    margin: -32px 0 0 -32px;
+                }
+
+                span {
+                    display: block;
+                    margin-top: 15px;
+                    padding: 6px 20px;
+                    font-size: 12px;
+                    color: #fff;
+                    text-transform: none;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
+                    background: #f74b4b;
+                }
+            }
+
+            .foto-home {
+                height: auto;
+                width: 100%;
             }
         }
 
-        &.block-doma {
+        .header-block {
+            margin: 0;
+            padding: 2em 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
             background: url("images/foto_doma_clasica.jpg") 50% 50% / cover no-repeat;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+            }
+
+            &.header-salto {
+                background: url("images/foto_salto.jpg") 50% 50% / cover no-repeat;
+            }
+
+            h1 {
+                position: relative;
+                z-index: 9;
+            }
         }
 
-        &.block-salto {
-            background: url("images/foto_salto.jpg") 50% 50% / cover no-repeat;
+        .menu-principal {
+            text-align: center;
+            background: #cecdcd;
         }
     }
 }
