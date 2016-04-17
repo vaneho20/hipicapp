@@ -17,7 +17,7 @@ namespace Hipicapp.Filters
             {
                 this.Roles = string.Join(",", roles.Select(r => Enum.GetName(r.GetType(), r)));
             }
-                //throw new ArgumentException("roles");
+            //throw new ArgumentException("roles");
         }
     }
 }

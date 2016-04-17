@@ -1,4 +1,3 @@
-using Hipicapp.Maps;
 using System.Web.Optimization;
 
 [assembly: WebActivator.PostApplicationStartMethod(
