@@ -29,8 +29,8 @@ namespace Hipicapp
                 .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.css")
                 .Include("~/Content/font-awesome.min.css")
-                .Include("~/Content/durandal.css")
-                .Include("~/Content/starterkit.css")
+                //.Include("~/Content/durandal.css")
+                //.Include("~/Content/starterkit.css")
                 .Include("~/Content/public.css")
             );
 
