@@ -1,29 +1,30 @@
-<form role="form" data-bind="submit: login" class="form-horizontal">
-    <div class="form-group">
-        <label class="sr-only" for="h-login-email">
-            Correo
-            electrónico
-        </label>
-        <input class="form-control" type="email" id="h-login-email" data-bind="value: credentials.userName"
-               required autofocus placeholder="Correo electrónico"
-               title="Tu dirección de correo electrónico">
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1>Login</h1>
+        </div>
     </div>
-    <div class="form-group">
-        <label class="sr-only" for="h-login-password">Contraseña</label>
-        <input type="password" id="h-login-password" class="form-control"
-               data-bind="value: credentials.password" required placeholder="Contraseña">
+</section>
+
+<section id="contenido-interior">
+    <div class="loginmodal-container">
+        <div class="card">
+            <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+            <div class="content">
+                <h2>Formulario de login</h2>
+                <form>
+                    <input type="text" name="user" placeholder="Username">
+                    <input type="password" name="pass" placeholder="Password">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                </form>
+
+                <div class="login-help">
+                    <a href="#">Recordar contraseña</a>
+                </div>
+                <div class="recordar col-sm-12">
+                    <a class="pull-left" href="#">¿Olvidaste la contraseña?</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>
-            <input type="checkbox" id="h-login-remember-me"
-                   data-bind="checked: credentials.rememberMe"
-                   title="Recordarme la próxima vez que vuelva">
-            Recordarme
-        </label>
-    </div>
-    <button type="submit"
-            title="Entrar"
-            class="btn btn-primary">
-        Entrar
-    </button>
-</form>
+</section>

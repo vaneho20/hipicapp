@@ -9,6 +9,13 @@ body {
     margin: 0;
     padding: 0.8em 0;
     background: #fff; }
+    body .navbar .enlaces-header {
+      margin-top: 1.2em; }
+      body .navbar .enlaces-header a {
+        color: #333;
+        text-decoration: underline; }
+        body .navbar .enlaces-header a:hover {
+          text-decoration: none; }
   body .section-content {
     margin-top: 5.5em; }
     body .section-content .block-home {
@@ -52,7 +59,7 @@ body {
           display: block;
           margin-top: 15px;
           padding: 6px 20px;
-          font-size: 12px;
+          font-size: 0.5em;
           color: #fff;
           text-transform: none;
           -webkit-border-radius: 4px;
@@ -86,36 +93,140 @@ body {
         z-index: 9; }
     body .section-content .menu-principal {
       text-align: center;
-      background: #cecdcd; }
-    body .section-content .card {
-      overflow: hidden;
-      position: relative;
-      border: 1px solid #CCC;
-      border-radius: 8px;
-      text-align: center;
-      padding: 0;
-      background-color: #284c79;
-      color: #88acd9; }
-      body .section-content .card .header-bg {
-        /* This stretches the canvas across the entire hero unit */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        border-bottom: 1px #FFF solid;
-        /* This positions the canvas under the text */
-        z-index: 1; }
-      body .section-content .card .avatar {
+      border-bottom: 1px solid #cecdcd;
+      background: #fff; }
+      body .section-content .menu-principal li.active a {
+        color: #fff;
+        background-color: #f74b4b; }
+        body .section-content .menu-principal li.active a:hover {
+          background-color: #de4545; }
+      body .section-content .menu-principal li a {
+        color: #333; }
+    body .section-content #contenido-interior {
+      background-color: #fff;
+      /****** LOGIN MODAL ******/ }
+      body .section-content #contenido-interior h2 {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -1px; }
+      body .section-content #contenido-interior .card {
+        overflow: hidden;
         position: relative;
-        margin-top: 15px;
-        z-index: 100; }
-        body .section-content .card .avatar img {
-          width: 90px;
-          height: 90px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          border: 5px solid rgba(0, 0, 30, 0.8); }
+        border: 1px solid #CCC;
+        border-radius: 8px;
+        text-align: center;
+        padding: 0;
+        background-color: #d9d7d7;
+        color: #333; }
+        body .section-content #contenido-interior .card .header-bg {
+          /* This stretches the canvas across the entire hero unit */
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 70px;
+          border-bottom: 1px #FFF solid;
+          /* This positions the canvas under the text */
+          z-index: 1; }
+        body .section-content #contenido-interior .card .avatar {
+          position: relative;
+          margin-top: 15px;
+          z-index: 100; }
+          body .section-content #contenido-interior .card .avatar img {
+            margin-bottom: 0.5em;
+            width: 90px;
+            height: 90px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            border: 5px solid #fff; }
+        body .section-content #contenido-interior .card .content {
+          font-family: 'Montserrat', sans-serif; }
+          body .section-content #contenido-interior .card .content .btn {
+            color: #fff;
+            background-color: #f74b4b; }
+            body .section-content #contenido-interior .card .content .btn:hover {
+              background-color: #de4545; }
+      body .section-content #contenido-interior .fila-elementos header a {
+        margin-top: 2em;
+        color: #333; }
+      body .section-content #contenido-interior .fila-elementos .content-elementos {
+        padding: 0; }
+        body .section-content #contenido-interior .fila-elementos .content-elementos .primero {
+          padding-left: 0; }
+        body .section-content #contenido-interior .fila-elementos .content-elementos .ultimo {
+          padding-right: 0; }
+      body .section-content #contenido-interior .loginmodal-container {
+        padding: 2em;
+        max-width: 40em;
+        width: 100% !important;
+        margin: 0 auto;
+        overflow: hidden;
+        font-family: 'Montserrat', sans-serif; }
+        body .section-content #contenido-interior .loginmodal-container .card {
+          padding: 0 2em 1em 2em; }
+          body .section-content #contenido-interior .loginmodal-container .card a {
+            color: #333; }
+        body .section-content #contenido-interior .loginmodal-container h2 {
+          margin: 1.2em 0 2.5em;
+          text-align: center;
+          font-family: 'Montserrat', sans-serif !important;
+          font-size: 1.5em;
+          font-family: roboto; }
+        body .section-content #contenido-interior .loginmodal-container input[type=submit] {
+          float: right;
+          padding: 1em 0;
+          width: 30%;
+          display: inline-block;
+          margin-bottom: 10px;
+          position: relative;
+          font-family: 'Montserrat', sans-serif;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px; }
+        body .section-content #contenido-interior .loginmodal-container input[type=text], body .section-content #contenido-interior .loginmodal-container input[type=password] {
+          font-size: 1em;
+          width: 100%;
+          margin-bottom: 10px;
+          -webkit-appearance: none;
+          background: #fff;
+          border: 1px solid #d9d9d9;
+          border-top: 1px solid #c0c0c0;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          padding: 1em;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box; }
+        body .section-content #contenido-interior .loginmodal-container input[type=text]:hover, body .section-content #contenido-interior .loginmodal-container input[type=password]:hover {
+          border: 1px solid #b9b9b9;
+          border-top: 1px solid #a0a0a0;
+          -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
+        body .section-content #contenido-interior .loginmodal-container .loginmodal-submit {
+          /* border: 1px solid #3079ed; */
+          border: 0px;
+          color: #fff;
+          text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+          background-color: #4d90fe;
+          padding: 17px 0px;
+          font-family: roboto;
+          font-size: 14px;
+          /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */ }
+        body .section-content #contenido-interior .loginmodal-container .loginmodal-submit:hover {
+          /* border: 1px solid #2f5bb7; */
+          border: 0px;
+          text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+          background-color: #357ae8;
+          /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */ }
+        body .section-content #contenido-interior .loginmodal-container .login-help {
+          display: block;
+          margin-top: 1.4em;
+          font-size: 1em;
+          text-align: left; }
+        body .section-content #contenido-interior .loginmodal-container .recordar {
+          margin: 1em 0 0 0;
+          padding: 1em 0;
+          border-top: 1px solid #fff; }
 
 /*# sourceMappingURL=public.css.map */
