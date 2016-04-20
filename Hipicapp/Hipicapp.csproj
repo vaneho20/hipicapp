@@ -589,6 +589,7 @@
     <Content Include="Scripts\bootstrap-2.3.2.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-es-0.0.11.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-editable.js" />
     <Content Include="Scripts\bootstrap-formhelpers-countries.en_US.js" />
     <Content Include="Scripts\bootstrap-formhelpers-countries.es_ES.js" />
@@ -623,6 +624,7 @@
     <Content Include="Content\public.css.map">
       <DependentUpon>public.css</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-datetimepicker.scss" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\i18next-builder.js" />
     <Content Include="Scripts\i18next.js" />

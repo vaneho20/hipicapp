@@ -1,11 +1,16 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Utils.Util;
 using Newtonsoft.Json;
+using NHibernate.Validator.Constraints;
 
 namespace Hipicapp.Model.Event
 {
     [JsonObject]
     public class CompetitionCategory : Entity<long?>
     {
+        [NotNull]
+        [NotEmpty]
+        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
         public virtual string Name { get; set; }
 
         public virtual int? InitialYear { get; set; }
@@ -26,7 +31,7 @@ namespace Hipicapp.Model.Event
 
             Id(x => x.Id).Column("ID").GeneratedBy.Native();
 
-            Map(x => x.Name).Column("NAME");
+            Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Previous).Column("PREVIOUS");
             Map(x => x.InitialYear).Column("INITIAL_YEAR");
             Map(x => x.Later).Column("LATER");

@@ -22,7 +22,7 @@ namespace Hipicapp.Filters
             HttpActionContext actionContext, CancellationToken cancellationToken)
         {
             Task task = null;
-            if (actionContext.Request.Method == HttpMethod.Post || actionContext.Request.Method == HttpMethod.Put)
+            if (actionContext.Request.Method == HttpMethod.Post || actionContext.Request.Method == HttpMethod.Put || actionContext.Request.Method == HttpMethod.Delete)
             {
                 task = _defaultFormatterBinding.ExecuteBindingAsync(metadataProvider, actionContext, cancellationToken);
             }
@@ -30,7 +30,7 @@ namespace Hipicapp.Filters
             {
                 object currentBoundValue = this.GetValue(actionContext);
 
-                if (actionContext.Request.Method == HttpMethod.Post)
+                if (actionContext.Request.Method == HttpMethod.Post || actionContext.Request.Method == HttpMethod.Put || actionContext.Request.Method == HttpMethod.Delete)
                 {
                     if (currentBoundValue != null)
                     {
