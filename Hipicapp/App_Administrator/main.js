@@ -65,8 +65,6 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
 
         app.start().then(function () {
             i18n.init(i18NOptions, function () {
-                app.title = i18n.t('app:title');
-
                 //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
                 //Look for partial views in a 'views' folder in the root.
                 viewLocator.useConvention();
