@@ -3,35 +3,35 @@
     <fieldset>
         <div class="form-group">
             <label for="h-horse-name"
-                   data-bind="text: i18n.t('app:HORSE_NAME')"></label>
+                   data-bind="text: i18n.t('app:NAME')"></label>
             <input class="form-control" type="text" id="h-horse-name" autofocus
                    data-bind="value: currentEntity().name,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:HORSE_NAME'),
-							title: i18n.t('app:HORSE_NAME')}"
+							placeholder: i18n.t('app:NAME'),
+							title: i18n.t('app:NAME')}"
                    required>
         </div>
         <div class="form-group">
-            <label for="h-horse-height" data-bind="text: i18n.t('app:HORSE_HEIGHT')"></label>
+            <label for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
             <input type="number" id="h-horse-height"
                    data-bind="value: currentEntity().height,
 					attr: {
 						min: 0,
 						step: 1,
 						maxlenght: validationUtils.MAX_LENGTH,
-						placeholder: i18n.t('app:HORSE_HEIGHT'),
-						title: i18n.t('app:HORSE_HEIGHT') }"
+						placeholder: i18n.t('app:HEIGHT'),
+						title: i18n.t('app:HEIGHT') }"
                    required class="form-control">
         </div>
         <div class="form-group">
-            <label for="h-horse-birthdate" data-bind="text: i18n.t('app:HORSE_BIRTHDATE')"></label>
+            <label for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
             <div id="h-horse-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="text" class="form-control" id="h-horse-birthdate"
                        data-bind="epochValue: currentEntity().birthDate,
-	 				attr: { placeholder: i18n.t('app:HORSE_BIRTHDATE'),
-	 				title: i18n.t('app:HORSE_BIRTHDATE') }" required>
+	 				attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				title: i18n.t('app:BIRTHDATE') }" required>
             </div>
         </div>
         <button type="submit"

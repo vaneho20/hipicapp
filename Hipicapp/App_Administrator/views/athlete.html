@@ -56,24 +56,24 @@
         </legend>
         <div class="form-group">
             <label for="h-athlete-name"
-                   data-bind="text: i18n.t('app:ATHLETE_NAME')"></label>
+                   data-bind="text: i18n.t('app:NAME')"></label>
             <input class="form-control" type="text" id="h-athlete-name" autofocus
                    data-bind="value: currentEntity().name,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_NAME'),
-							title: i18n.t('app:ATHLETE_NAME')}"
+							placeholder: i18n.t('app:NAME'),
+							title: i18n.t('app:NAME')}"
                    required>
         </div>
         <div class="form-group">
             <label for="h-athlete-surnames"
-                   data-bind="text: i18n.t('app:ATHLETE_SURNAMES')"></label>
+                   data-bind="text: i18n.t('app:SURNAMES')"></label>
             <input class="form-control" type="text" id="h-athlete-surnames" autofocus
                    data-bind="value: currentEntity().surnames,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_SURNAMES'),
-							title: i18n.t('app:ATHLETE_SURNAMES')}"
+							placeholder: i18n.t('app:SURNAMES'),
+							title: i18n.t('app:SURNAMES')}"
                    required>
         </div>
         <div class="form-group">
@@ -88,36 +88,25 @@
                     required="required" class="form-control" aria-required="true"></select>
         </div>
         <div class="form-group">
-            <label for="h-athlete-birthdate" data-bind="text: i18n.t('app:ATHLETE_BIRTHDATE')"></label>
+            <label for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
             <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                 <input type="text" class="form-control" id="h-athlete-birthdate"
                        data-bind="epochValue: currentEntity().birthDate,
-	 				attr: { placeholder: i18n.t('app:ATHLETE_BIRTHDATE'),
-	 				title: i18n.t('app:ATHLETE_BIRTHDATE') }" required>
+	 				attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				title: i18n.t('app:BIRTHDATE') }" required>
             </div>
         </div>
         <div class="form-group">
             <label for="h-athlete-dni"
-                   data-bind="text: i18n.t('app:ATHLETE_DNI')"></label>
+                   data-bind="text: i18n.t('app:DNI')"></label>
             <input class="form-control" type="text" id="h-athlete-dni" autofocus
                    data-bind="value: currentEntity().dni,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_DNI'),
-							title: i18n.t('app:ATHLETE_DNI')}"
+							placeholder: i18n.t('app:DNI'),
+							title: i18n.t('app:DNI')}"
                    required>
-        </div>
-        <div class="form-group">
-            <label for="h-athlete-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
-            <select id="h-athlete-category"
-                    data-bind="options: availableCategories,
-							optionsValue: function(item) { return item.id },
-							optionsText: function(item) { return item.name },
-							optionsCaption : i18n.t('app:CATEGORY') + '...',
-							value: currentEntity().categoryId,
-							attr: { title: i18n.t('app:CATEGORY') }"
-                    required="required" class="form-control" aria-required="true"></select>
         </div>
         <button type="submit"
                 data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
