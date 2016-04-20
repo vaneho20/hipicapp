@@ -624,13 +624,14 @@
       <DependentUpon>public.css</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\i18next-builder.js" />
+    <Content Include="Scripts\i18next.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\holder.min.js" />
-    <Content Include="Scripts\i18next.min.js" />
     <Content Include="Scripts\jquery.carouFredSel-6.2.1.js" />
     <Content Include="Scripts\jquery.cookie-1.4.1.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
@@ -656,6 +657,7 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require-i18next.js" />
     <Content Include="Scripts\require.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\select2.js" />

@@ -1,5 +1,4 @@
 ﻿{
-    // Localization
     "CURRENT_LANGUAGE": "es",
     "CURRENT_COUNTRY": "ES",
     "DATE_PATTERN": "DD/MM/YYYY",
@@ -8,7 +7,6 @@
     "DATETIME_PATTERN_EXAMPLE": "31/12/1999 23:59",
     "DATETIME_PICKER_PATTERN": "dd/MM/yyyy hh:mm",
     "FLOAT_PATTERN": ",00",
-    // Miscellaneous
     "YES": "Sí",
     "NO": "No",
     "GENDER": "Sexo",
@@ -18,7 +16,6 @@
     "ADMINISTRATOR": "Administrador",
     "ATHLETE": "Atleta",
     "ANONYMOUS": "Anónimo",
-    // Crud
     "SEARCH_BUTTON_TEXT": "Buscar",
     "SEARCH_BUTTON_TITLE": "Aplica las condiciones de búsqueda",
     "CLEAR_BUTTON_TEXT": "Limpiar",
@@ -70,7 +67,6 @@
     "UNASSIGN_ALL": "Desasignar todos",
     "UNASSIGN_ALL_PAGE": "Desasignar todos los de la página",
     "UNASSIGN_ALL_FILTER": "Desasignar todos los del filtro",
-    // Login
     "WELCOME": "Bienvenido, inicia tu sesión",
     "LOGIN": "Entrar",
     "LOGIN_TITLE": "Entra al backoffice de momomobile.mobi",
@@ -81,7 +77,6 @@
     "REMEMBER_ME": "Recordarme",
     "LOGOUT_BUTTON_TEXT": "Salir",
     "LOGOUT_BUTTON_TITLE": "Cierra tu sesión de usuario",
-    // Alert
     "ALERT": "Aviso",
     "ALERTS": "Avisos",
     "INFO": "Info",
@@ -94,13 +89,11 @@
     "CLEAR_ALERT_TITLE": "Elimina este mensaje",
     "CLEAR_ALERTS_TITLE": "Elimina todos los mensajes",
     "COLLAPSE_ALERTS_TITLE": "Esconde o muestra todos los mensajes",
-    // Binding
     "CHECKED_OR_VALIDATOR_MESSAGE": "Almenos una de las dos opciones debe estar marcada",
     "COLOR_VALIDATOR_MESSAGE": "El valor del campo debe ser un código hexadecimal correcto",
     "EPOCH_AFTER_VALIDATOR_MESSAGE": "El valor del campo debe ser posterior al del campo anterior",
     "EPOCH_FUTURE_VALIDATOR_MESSAGE": "El valor del campo debe ser una fecha en el futuro",
     "PASSWORDS_NOT_EQUAL_MESSAGE": "Las nuevas contraseñas no coinciden. ¿Quieres volver a intentarlo?",
-    // Generic properties
     "ADDRESS": "Dirección",
     "BASIC_DATA": "Datos básicos",
     "CHANGE_PASSWORD": "Cambiar password",
@@ -138,7 +131,6 @@
     "CONFIRM_NEW_PASSWORD": "Confirmar nueva contraseña",
     "PASS_SECURITY_TITLE": "Seguridad de la contraseña",
     "PASSWORD_SECURITY_POPOVER": "Usa {0} caracteres como mínimo y {1} como máximo. No uses una contraseña de otro sitio ni un nombre demasiado común, como el nombre de tu mascota.",
-    // User
     "USER": "Usuario",
     "USERS": "Usuarios",
     "USER_FILTER_LEGEND": "Buscar usuarios",
@@ -151,7 +143,6 @@
     "USER_TYPE": "Tipo de usuario",
     "TYPE_USER": "Administrador",
     "TYPE_ATHLETE": "Athlete",
-    // Athlete
     "ATHLETE": "Atleta",
     "ATHLETES": "Atletas",
     "ATHLETE_FILTER_LEGEND": "Buscar atletas",
@@ -162,7 +153,6 @@
     "ATHLETE_LIST_EMPTY_DETAIL": "Crea ahora un primer atleta en <strong>HIPICA</strong>.",
     "ATHLETE_GENDER_MALE": "Masculino",
     "ATHLETE_GENDER_FEMALE": "Femenino",
-    // Judge
     "JUDGE": "Juez",
     "JUDGES": "Jueces",
     "JUDGE_FILTER_LEGEND": "Buscar jueces",
@@ -171,7 +161,6 @@
     "JUDGE_LIST_CAPTION": "Lista de jueces",
     "JUDGE_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún juez!",
     "JUDGE_LIST_EMPTY_DETAIL": "Crea ahora un primer juez en <strong>HIPICA</strong>.",
-    // Horse
     "HORSE": "Caballo",
     "HORSES": "Caballos",
     "HORSE_FILTER_LEGEND": "Buscar caballos",
@@ -179,7 +168,6 @@
     "HORSE_LIST_CAPTION": "Lista de caballos",
     "HORSE_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún caballo!",
     "HORSE_LIST_EMPTY_DETAIL": "Crea ahora un primer caballo en <strong>HIPICA</strong>.",
-    // Competition
     "COMPETITION": "Concurso",
     "COMPETITIONS": "Concursos",
     "COMPETITION_FILTER_LEGEND": "Buscar concursos",
@@ -187,28 +175,11 @@
     "COMPETITION_LIST_CAPTION": "Lista de concursos",
     "COMPETITION_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún concurso!",
     "COMPETITION_LIST_EMPTY_DETAIL": "Crea ahora un primer concurso en <strong>HIPICA</strong>.",
-    // Competition categories
     "COMPETITION_CATEGORY": "Categoría",
     "COMPETITION_CATEGORIES": "Categorías",
     "COMPETITION_CATEGORY_FILTER_LEGEND": "Buscar categorías",
     "COMPETITION_CATEGORY_NAME_FILTER": "Busca los categorías cuyo nombre empieza por...",
     "COMPETITION_CATEGORY_LIST_CAPTION": "Lista de categorías",
     "COMPETITION_CATEGORY_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún categoría!",
-    "COMPETITION_CATEGORY_LIST_EMPTY_DETAIL": "Crea ahora un primer categoría en <strong>HIPICA</strong>.",
-    // Excepction
-    "es.momomobile.mobi.exception.PointOfSaleUsedInPromotionException": "¡Vaya! El punto de venta que tratas de borrar está siendo usado en una o más promociones",
-    "es.momomobile.mobi.exception.IllegalPromotionCreateAvailableDownloadsException": "¡Vaya! No dispones de suficientes descargas para la promoción que estás creando",
-    "es.momomobile.mobi.exception.IllegalPromotionUpdateAvailableDownloadsException": "¡Vaya! No dispones de suficientes descargas para la promoción que estás modificando",
-    "es.momomobile.mobi.exception.IllegalPromotionUpdateException": "¡Vaya! La promoción es de solo lectura, no puede ser modificado su contenido",
-    "es.momomobile.mobi.exception.IllegalPromotionDuplicateException": "¡Vaya! El anunciante de la promoción que intentas duplicar no tiene descargas disponibles",
-    "es.momomobile.mobi.exception.IllegalCategoryUpdateException": "¡Vaya! La categoría ya es padre",
-    "es.momomobile.mobi.exception.IllegalCategoryDelteException": "¡Vaya! La categoría que tratas de borrar o alguna de sus categorias hijas tiene promociones asociadas ",
-    "es.momomobile.mobi.web.exception.ImageException": "¡Vaya! Las imágenes tiene que estar en formato gif, jpg o png y pesar menos de {0} bytes",
-    "org.springframework.web.bind.MethodArgumentNotValidException": "¡Vaya! Alguno de los datos que has metido no es correcto, por favor, revísalos y vuelve a intentarlo",
-    "javax.validation.ConstraintViolationException": "¡Vaya! Alguno de los datos que has metido no es correcto, por favor, revísalos y vuelve a intentarlo",
-    "org.springframework.orm.hibernate3.HibernateOptimisticLockingFailureException": "¡Opps! Se te han adelantado, alguien ha modificado estos datos antes que tú, por favor recarga la página y vuelve a intentarlo",
-    "org.springframework.security.access.AccessDeniedException": "¡Oops! No tienes permiso para acceder a esa funcionalidad",
-    "org.springframework.security.authentication.BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos",
-    "org.springframework.security.web.authentication.session.SessionAuthenticationException": "¡Oops! Tu sesión ha caducado, por favor recarga la página",
-    "es.momomobile.mobi.web.exception.CsrfException": "¡Oops! Tu sesión actual ha caducado, por favor recarga la página"
+    "COMPETITION_CATEGORY_LIST_EMPTY_DETAIL": "Crea ahora un primer categoría en <strong>HIPICA</strong>."
 }

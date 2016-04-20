@@ -1,7 +1,8 @@
 ﻿requirejs.config({
     paths: {
         'text': '../Scripts/text',
-        'i18next': '../Scripts/i18next.min',
+        'i18next': '../Scripts/i18next',
+        'i18n': '../Scripts/require-i18next',
         'durandal': '../Scripts/durandal',
         'plugins': '../Scripts/durandal/plugins',
         'transitions': '../Scripts/durandal/transitions'
@@ -26,7 +27,7 @@ define('knockout', ko);
 
 define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindings/epochAfterBinding", "bindings/epochFutureBinding", "bindings/epochValueBinding", "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding",
   "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system", "durandal/app",
-  "durandal/viewLocator", "durandal/binder", "i18next", "core/router"]
+  "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"]
     , function (compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding, epochValueBinding,
         fileuploadBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext, system, app, viewLocator,
         binder, i18n, router) {
@@ -36,11 +37,11 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
 
         var i18NOptions = {
             detectFromHeaders: false,
-            //lng: window.navigator.userLanguage || window.navigator.language || 'es-ES',
-            lng: 'es-ES',
+            lng: window.navigator.userLanguage || window.navigator.language || 'es-ES',
+            //lng: 'es-ES',
             fallbackLang: 'es',
             ns: 'app',
-            resGetPath: 'App_Administrator/nls/__lng__/__ns__.json',
+            resGetPath: '__lng__/__ns__.json',
             useCookie: false
         };
 
@@ -64,7 +65,7 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
 
         app.start().then(function () {
             i18n.init(i18NOptions, function () {
-                //app.title = i18n.t('app:title');
+                app.title = i18n.t('app:title');
 
                 //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
                 //Look for partial views in a 'views' folder in the root.
@@ -72,7 +73,7 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
 
                 //Call localization on view before binding...
                 binder.binding = function (obj, view) {
-                    //$(view).i18n();
+                    $(view).i18n();
                 };
 
                 //Show the app by setting the root view model for our application with a transition.
