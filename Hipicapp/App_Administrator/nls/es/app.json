@@ -188,5 +188,6 @@
     "COMPETITION_CATEGORY_NAME_FILTER": "Busca los categorías cuyo nombre empieza por...",
     "COMPETITION_CATEGORY_LIST_CAPTION": "Lista de categorías",
     "COMPETITION_CATEGORY_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún categoría!",
-    "COMPETITION_CATEGORY_LIST_EMPTY_DETAIL": "Crea ahora un primer categoría en <strong>Hipicapp</strong>."
+    "COMPETITION_CATEGORY_LIST_EMPTY_DETAIL": "Crea ahora un primer categoría en <strong>Hipicapp</strong>.",
+    "Hipicapp.Service.Exceptions.AccessDeniedException" : "¡Oops! No tienes permiso para acceder a esa funcionalidad"
 }

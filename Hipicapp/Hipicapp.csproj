@@ -296,6 +296,7 @@
     <Compile Include="Controllers\Participant\AthleteController.cs" />
     <Compile Include="Controllers\File\FileController.cs" />
     <Compile Include="Controllers\Account\UserController.cs" />
+    <Compile Include="Filters\AccessDeniedFilterAttribute.cs" />
     <Compile Include="Filters\InvalidModelStateFilterAttribute.cs" />
     <Compile Include="Filters\ValidAttribute.cs" />
     <Compile Include="Filters\AuthorizeEnumAttribute.cs" />

@@ -100,7 +100,7 @@
     <Compile Include="Event\CompetitionService.cs" />
     <Compile Include="Event\ICompetitionCategoryService.cs" />
     <Compile Include="Event\ICompetitionService.cs" />
-    <Compile Include="Exceptions\AuthenticatedException.cs" />
+    <Compile Include="Exceptions\AccessDeniedException.cs" />
     <Compile Include="Exceptions\TicketExpiredException.cs" />
     <Compile Include="Exceptions\NoSuchTicketException.cs" />
     <Compile Include="File\FileService.cs" />

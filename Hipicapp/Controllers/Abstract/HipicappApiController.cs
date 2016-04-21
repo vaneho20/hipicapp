@@ -1,10 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Hipicapp.Filters;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 
 namespace Hipicapp.Controllers.Abstract
 {
+    [AccessDeniedFilter]
     public abstract class HipicappApiController : ApiController
     {
         protected override void Initialize(HttpControllerContext controllerContext)
