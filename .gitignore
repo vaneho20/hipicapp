@@ -31,3 +31,7 @@
 *.1
 /Hipicapp.TestDataGenerator/bin/Debug
 /Hipicapp.Tests/bin/Debug
+*.log
+*.log
+/Hipicapp/hipicapp-log.log
+*.log

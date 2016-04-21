@@ -1,4 +1,4 @@
-<form role="form" class="form-horizontal" data-bind="submit: signIn">
+<form role="form" class="form-horizontal" data-bind="submit: signIn" novalidate>
     <fieldset>
         <legend>
             Datos de registro
@@ -12,7 +12,7 @@
 										   maxlenght: validationUtils.MAX_LENGTH,
 										   placeholder: i18n.t('app:EMAIL'),
 										   title: i18n.t('app:EMAIL') }"
-                   required>
+                   required autocomplete="off">
         </div>
         <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
                class="sr-only"></label>
@@ -61,7 +61,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:ATHLETE_NAME'),
 							title: i18n.t('app:ATHLETE_NAME')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <div class="form-group">
             <label for="h-athlete-surnames" class="sr-only"
@@ -72,7 +72,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:ATHLETE_SURNAMES'),
 							title: i18n.t('app:ATHLETE_SURNAMES')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <div class="form-group">
             <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
@@ -83,7 +83,7 @@
 							optionsCaption : i18n.t('app:GENDER') + '...',
 							value: currentEntity().gender,
 							attr: { title: i18n.t('app:GENDER') }"
-                    required="required" class="form-control" aria-required="true"></select>
+                    required class="form-control" aria-required="true" autocomplete="off"></select>
         </div>
         <div class="form-group">
             <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:ATHLETE_BIRTHDATE')"></label>
@@ -92,7 +92,7 @@
                 <input type="text" class="form-control" id="h-athlete-birthdate"
                        data-bind="epochValue: currentEntity().birthDate,
 	 				attr: { placeholder: i18n.t('app:ATHLETE_BIRTHDATE'),
-	 				title: i18n.t('app:ATHLETE_BIRTHDATE') }" required>
+	 				title: i18n.t('app:ATHLETE_BIRTHDATE') }" required autocomplete="off">
             </div>
         </div>
         <div class="form-group">
@@ -104,7 +104,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:ATHLETE_DNI'),
 							title: i18n.t('app:ATHLETE_DNI')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <button type="submit"
                 data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"

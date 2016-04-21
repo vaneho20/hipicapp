@@ -9,8 +9,6 @@ namespace Hipicapp
     {
         public static void Register(HttpConfiguration config)
         {
-            config.Filters.Add(new InvalidModelStateFilterAttribute());
-
             config.ParameterBindingRules.Add(p =>
             {
                 if (p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Post) || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Put))

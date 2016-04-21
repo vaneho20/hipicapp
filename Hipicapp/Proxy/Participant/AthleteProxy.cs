@@ -23,9 +23,6 @@ namespace Hipicapp.Proxy.Participant
         [Autowired]
         private IUserService UserService { get; set; }
 
-        //[Autowired]
-        //private PasswordEncoder { get; set; }
-
         [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Page<Athlete> Paginated(AthleteFindRequest request)
         {

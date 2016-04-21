@@ -18,7 +18,7 @@ namespace Hipicapp.Aspects
                 if (attr != null)
                 {
                     var user = Thread.CurrentPrincipal;
-                    if (user == null || !user.Identity.IsAuthenticated || !attr.Roles.Any(x => user.IsInRole(x.ToString())))
+                    if (user == null || !user.Identity.IsAuthenticated || !attr.Roles.Split(new char[] { ',' }).Any(x => user.IsInRole(x.ToString())))
                     {
                         throw new AccessDeniedException();
                     }

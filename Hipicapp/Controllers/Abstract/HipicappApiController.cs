@@ -7,6 +7,7 @@ using System.Web.Http.Controllers;
 namespace Hipicapp.Controllers.Abstract
 {
     [AccessDeniedFilter]
+    [InvalidModelStateFilterAttribute]
     public abstract class HipicappApiController : ApiController
     {
         protected override void Initialize(HttpControllerContext controllerContext)
