@@ -101,7 +101,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
             if (status === "success") {
                 handleOk(data, status, xhr, success);
-            } else if (xhr.status === 401) {
+            } else if (xhr.status === 401 || (data && data.error === "401")) {
                 handleUnauthorized(xhr);
             } else if (xhr.status === 500) {
                 handleInternalServerError(data, status, error);
@@ -113,7 +113,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
     function handleOk(data, status, xhr, success) {
         success(data, status);
         if (!(xhr.readonly)) {
-            //alerts.success(i18n.SUCCESS_ALERT_TEXT);
+            alerts.success(i18n.t("SUCCESS_ALERT_TEXT"));
         }
     }
 
@@ -124,7 +124,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
             exceptionHandler.handle({
                 status: "fail",
                 data: {
-                    key: "org.springframework.security.authentication.BadCredentialsException"
+                    key: "BadCredentialsException"
                 }
             });
         } else {

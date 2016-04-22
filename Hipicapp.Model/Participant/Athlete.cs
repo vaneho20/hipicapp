@@ -15,14 +15,14 @@ namespace Hipicapp.Model.Participant
     [JsonObject]
     public class Athlete : Entity<long?>
     {
-        [NotNull]
-        [Min(0)]
+        //[NotNull]
+        //[Min(0)]
         public virtual long? CategoryId { get; set; }
 
         public virtual long? PhotoId { get; set; }
 
-        [NotNull]
-        [Min(0)]
+        //[NotNull]
+        //[Min(0)]
         public virtual long? UserId { get; set; }
 
         [NotNull]

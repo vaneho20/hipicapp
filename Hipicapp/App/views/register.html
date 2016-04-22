@@ -1,115 +1,137 @@
-<form role="form" class="form-horizontal" data-bind="submit: signIn" novalidate>
-    <fieldset>
-        <legend>
-            Datos de registro
-        </legend>
-        <div class="form-group">
-            <label for="h-user-email" data-bind="text: i18n.t('app:EMAIL')"
-                   class="sr-only"></label>
-            <input class="form-control" id="h-user-email" type="email" autofocus
-                   data-bind="value: currentEntity().user.userName,
-									attr: { max: validationUtils.MAX_LENGTH,
-										   maxlenght: validationUtils.MAX_LENGTH,
-										   placeholder: i18n.t('app:EMAIL'),
-										   title: i18n.t('app:EMAIL') }"
-                   required autocomplete="off">
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1>Registro</h1>
         </div>
-        <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
-               class="sr-only"></label>
-        <div class="form-group input-group">
-            <input class="form-control" type="password" id="h-user-new-password"
-                   data-bind="compare: { value: currentEntity().user.newPassword, otherValue: currentEntity().user.confirmNewPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-confirm-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
-							attr: {
-								pattern: validationUtils.PASSWORD_PATTERN,
-								min: validationUtils.MIN_PASSWORD_LENGTH,
-								max: validationUtils.MAX_LENGTH,
-								maxlenght: validationUtils.MAX_LENGTH,
-								placeholder: i18n.t('app:PASSWORD'),
-								title: i18n.t('app:PASSWORD') }"
-                   required autocomplete="off">
-            <span class="input-group-addon">
-                <i data-bind="attr: { title: i18n.t('app:PASS_SECURITY_TITLE'),
-								'data-content': i18n.format(i18n.t('app:PASSWORD_SECURITY_POPOVER'), validationUtils.MIN_PASSWORD_LENGTH, validationUtils.MAX_LENGTH) },
-								popover: ''"
-                   data-trigger="hover" data-animation="true" class="fa fa-question"></i>
-            </span>
-        </div>
-        <div class="form-group">
-            <label for="h-user-confirm-new-password"
-                   data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="sr-only">
-            </label>
-            <input class="form-control" type="password" id="h-user-confirm-new-password"
-                   data-bind="compare: { value: currentEntity().user.confirmNewPassword, otherValue: currentEntity().user.newPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
-							attr: {
-								max: validationUtils.MAX_LENGTH,
-								maxlenght: validationUtils.MAX_LENGTH,
-								placeholder: i18n.t('app:CONFIRM_NEW_PASSWORD'),
-								title: i18n.t('app:CONFIRM_NEW_PASSWORD') }"
-                   required autocomplete="off">
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>
-            Datos del atleta
-        </legend>
-        <div class="form-group">
-            <label for="h-athlete-name" class="sr-only"
-                   data-bind="text: i18n.t('app:ATHLETE_NAME')"></label>
-            <input class="form-control" type="text" id="h-athlete-name" autofocus
-                   data-bind="value: currentEntity().name,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_NAME'),
-							title: i18n.t('app:ATHLETE_NAME')}"
-                   required autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label for="h-athlete-surnames" class="sr-only"
-                   data-bind="text: i18n.t('app:ATHLETE_SURNAMES')"></label>
-            <input class="form-control" type="text" id="h-athlete-surnames" autofocus
-                   data-bind="value: currentEntity().surnames,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_SURNAMES'),
-							title: i18n.t('app:ATHLETE_SURNAMES')}"
-                   required autocomplete="off">
-        </div>
-        <div class="form-group">
-            <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
-            <select id="h-athlete-gender"
-                    data-bind="options: availableGenders,
-							optionsValue: function(item) { return item.value },
-							optionsText: function(item) { return item.text },
-							optionsCaption : i18n.t('app:GENDER') + '...',
-							value: currentEntity().gender,
-							attr: { title: i18n.t('app:GENDER') }"
-                    required class="form-control" aria-required="true" autocomplete="off"></select>
-        </div>
-        <div class="form-group">
-            <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:ATHLETE_BIRTHDATE')"></label>
-            <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                <input type="text" class="form-control" id="h-athlete-birthdate"
-                       data-bind="epochValue: currentEntity().birthDate,
-	 				attr: { placeholder: i18n.t('app:ATHLETE_BIRTHDATE'),
-	 				title: i18n.t('app:ATHLETE_BIRTHDATE') }" required autocomplete="off">
+    </div>
+</section>
+
+<section id="contenido-interior">
+    <div class="loginmodal-container registermodal">
+        <div class="card">
+            <div class="content">
+                 
+                <form role="form" class="form-horizontal" data-bind="submit: signIn" novalidate>
+                    <fieldset>
+                        <legend>
+                            Datos de registro
+                        </legend>
+                        <div class="content-fieldset">
+                            <div class="form-group">
+                                <label for="h-user-email" data-bind="text: i18n.t('app:EMAIL')"
+                                       class="sr-only"></label>
+                                <input id="h-user-email" type="email" autofocus
+                                       data-bind="value: currentEntity().user.userName,
+									        attr: { max: validationUtils.MAX_LENGTH,
+										           maxlenght: validationUtils.MAX_LENGTH,
+										           placeholder: i18n.t('app:EMAIL'),
+										           title: i18n.t('app:EMAIL') }"
+                                       required autocomplete="off">
+                            </div>
+                            <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
+                                   class="sr-only"></label>
+                            <div class="form-group input-group">
+                                <input type="password" id="h-user-new-password"
+                                       data-bind="compare: { value: currentEntity().user.newPassword, otherValue: currentEntity().user.confirmNewPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-confirm-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
+							        attr: {
+								        pattern: validationUtils.PASSWORD_PATTERN,
+								        min: validationUtils.MIN_PASSWORD_LENGTH,
+								        max: validationUtils.MAX_LENGTH,
+								        maxlenght: validationUtils.MAX_LENGTH,
+								        placeholder: i18n.t('app:PASSWORD'),
+								        title: i18n.t('app:PASSWORD') }"
+                                       required autocomplete="off">
+                                <span class="input-group-addon">
+                                    <i data-bind="attr: { title: i18n.t('app:PASS_SECURITY_TITLE'),
+								        'data-content': i18n.format(i18n.t('app:PASSWORD_SECURITY_POPOVER'), validationUtils.MIN_PASSWORD_LENGTH, validationUtils.MAX_LENGTH) },
+								        popover: ''"
+                                       data-trigger="hover" data-animation="true" class="fa fa-question"></i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="h-user-confirm-new-password"
+                                       data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="sr-only">
+                                </label>
+                                <input type="password" id="h-user-confirm-new-password"
+                                       data-bind="compare: { value: currentEntity().user.confirmNewPassword, otherValue: currentEntity().user.newPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
+							        attr: {
+								        max: validationUtils.MAX_LENGTH,
+								        maxlenght: validationUtils.MAX_LENGTH,
+								        placeholder: i18n.t('app:CONFIRM_NEW_PASSWORD'),
+								        title: i18n.t('app:CONFIRM_NEW_PASSWORD') }"
+                                       required autocomplete="off">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>
+                            Datos del atleta
+                        </legend>
+                        <div class="content-fieldset">
+                            <div class="form-group">
+                                <label for="h-athlete-name" class="sr-only"
+                                       data-bind="text: i18n.t('app:NAME')"></label>
+                                <input type="text" id="h-athlete-name" autofocus
+                                       data-bind="value: currentEntity().name,
+						    attr: { max: validationUtils.MAX_LENGTH,
+							    maxlength: validationUtils.MAX_LENGTH,
+							    placeholder: i18n.t('app:NAME'),
+							    title: i18n.t('app:NAME')}"
+                                       required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="h-athlete-surnames" class="sr-only"
+                                       data-bind="text: i18n.t('app:SURNAMES')"></label>
+                                <input type="text" id="h-athlete-surnames" autofocus
+                                       data-bind="value: currentEntity().surnames,
+						    attr: { max: validationUtils.MAX_LENGTH,
+							    maxlength: validationUtils.MAX_LENGTH,
+							    placeholder: i18n.t('app:SURNAMES'),
+							    title: i18n.t('app:SURNAMES')}"
+                                       required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
+                                <select id="h-athlete-gender"
+                                        data-bind="options: availableGenders,
+							    optionsValue: function(item) { return item.value },
+							    optionsText: function(item) { return item.text },
+							    optionsCaption : i18n.t('app:GENDER') + '...',
+							    value: currentEntity().gender,
+							    attr: { title: i18n.t('app:GENDER') }"
+                                        required aria-required="true" autocomplete="off"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" id="h-athlete-birthdate"
+                                           data-bind="epochValue: currentEntity().birthDate,
+	 				    attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				    title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="h-athlete-dni" class="sr-only"
+                                       data-bind="text: i18n.t('app:DNI')"></label>
+                                <input type="text" id="h-athlete-dni" autofocus
+                                       data-bind="value: currentEntity().dni,
+						    attr: { max: validationUtils.MAX_LENGTH,
+							    maxlength: validationUtils.MAX_LENGTH,
+							    placeholder: i18n.t('app:DNI'),
+							    title: i18n.t('app:DNI')}"
+                                       required autocomplete="off">
+                            </div>
+                            <button type="submit"
+                                    data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                                    class="login loginmodal-submit">
+                                <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+
             </div>
         </div>
-        <div class="form-group">
-            <label for="h-athlete-dni" class="sr-only"
-                   data-bind="text: i18n.t('app:ATHLETE_DNI')"></label>
-            <input class="form-control" type="text" id="h-athlete-dni" autofocus
-                   data-bind="value: currentEntity().dni,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:ATHLETE_DNI'),
-							title: i18n.t('app:ATHLETE_DNI')}"
-                   required autocomplete="off">
-        </div>
-        <button type="submit"
-                data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                class="btn btn-primary">
-            <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-        </button>
-    </fieldset>
-</form>
+    </div>
+</section>

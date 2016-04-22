@@ -7,6 +7,22 @@
 body {
     height: 100%;
 
+    .aleft {
+        text-align: left;
+    }
+
+    .acenter {
+        text-align: center;
+    }
+
+    .aright {
+        text-align: right;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Montserrat', sans-serif;
+    }
+
     .navbar {
         margin: 0;
         padding: 0.8em 0;
@@ -128,6 +144,9 @@ body {
             background: #fff;
 
             li {
+                display: inline-block;
+                float: none;
+
                 &.active {
                     a {
                         color: #fff;
@@ -153,6 +172,22 @@ body {
                 letter-spacing: -1px;
             }
 
+            .avatar {
+                position: relative;
+                margin-top: 15px;
+                z-index: 100;
+
+                img {
+                    margin-bottom: 0.5em;
+                    width: 90px;
+                    height: 90px;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    border-radius: 50%;
+                    border: 5px solid #fff;
+                }
+            }
+
             .card {
                 overflow: hidden;
                 position: relative;
@@ -175,22 +210,6 @@ body {
                     z-index: 1;
                 }
 
-                .avatar {
-                    position: relative;
-                    margin-top: 15px;
-                    z-index: 100;
-
-                    img {
-                        margin-bottom: 0.5em;
-                        width: 90px;
-                        height: 90px;
-                        -webkit-border-radius: 50%;
-                        -moz-border-radius: 50%;
-                        border-radius: 50%;
-                        border: 5px solid #fff;
-                    }
-                }
-
                 .content {
                     font-family: 'Montserrat', sans-serif;
 
@@ -206,15 +225,90 @@ body {
             }
 
             .fila-elementos {
+                margin: 2em 0 2em 2em;
+                padding: 0;
+                width: 23%;
+                border: 1px solid #f7f7f7;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
                 header {
-                    a {
-                        margin-top: 2em;
-                        color: #333;
+                    float: left;
+                    padding: 0.8em 1em;
+                    width: 100%;
+                    clear: both;
+                    -webkit-border-top-left-radius: 4px;
+                    -webkit-border-top-right-radius: 4px;
+                    -moz-border-radius-topleft: 4px;
+                    -moz-border-radius-topright: 4px;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    background: #eee;
+
+                    h2 {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 1.5em;
                     }
                 }
 
                 .content-elementos {
                     padding: 0;
+
+                    .col-sm-12 {
+                        padding: 0;
+
+                        .box-element {
+                            margin: 0 1em;
+                            padding: 1em 0;
+                            border-bottom: 1px solid #f7f7f7;
+
+                            h3 {
+                                margin: 0 0 0.5em;
+                                font-size: 1.1em;
+                            }
+
+                            .avatar {
+                                margin: 0;
+                            }
+
+                            i {
+                                color: #f74b4b;
+                            }
+                        }
+                    }
+
+                    .ver-todos {
+                        display: inline-block;
+                        margin: 1em;
+                        padding: 0.5em 1em;
+                        font-family: 'Montserrat', sans-serif;
+                        color: #fff;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        border-radius: 4px;
+                        background-color: #f74b4b;
+
+                        &:hover {
+                            text-decoration: none;
+                            background-color: #de4545;
+                        }
+                    }
+                }
+            }
+
+            .fila-all {
+                .content-elementos {
+                    padding: 0;
+
+                    .col-sm-3 {
+                        margin-bottom: 2em;
+                    }
 
                     .primero {
                         padding-left: 0;
@@ -233,6 +327,20 @@ body {
                 margin: 0 auto;
                 overflow: hidden;
                 font-family: 'Montserrat', sans-serif;
+
+                &.registermodal {
+                    legend {
+                        padding: 1em 0;
+                    }
+
+                    .card {
+                        padding: 0;
+
+                        .content-fieldset {
+                            padding: 0 2em 1em 2em;
+                        }
+                    }
+                }
 
                 .card {
                     padding: 0 2em 1em 2em;
@@ -263,7 +371,10 @@ body {
                     border-radius: 4px;
                 }
 
-                input[type=text], input[type=password] {
+                input,
+                input[type=text],
+                input[type=password],
+                select {
                     font-size: 1em;
                     width: 100%;
                     margin-bottom: 10px;
@@ -279,6 +390,14 @@ body {
                     -moz-box-sizing: border-box;
                 }
 
+                input[type=checkbox] {
+                    padding: 0;
+                    width: 15px;
+                    height: 15px;
+                    float: left;
+                    margin: 0.2em 0.5em 0 0;
+                }
+
                 input[type=text]:hover,
                 input[type=password]:hover {
                     border: 1px solid #b9b9b9;
@@ -290,13 +409,15 @@ body {
 
                 .loginmodal-submit {
                     /* border: 1px solid #3079ed; */
-                    border: 0px;
+                    border: 0;
                     color: #fff;
                     text-shadow: 0 1px rgba(0,0,0,0.1);
                     background-color: #4d90fe;
-                    padding: 17px 0px;
-                    font-family: roboto;
+                    padding: 1em;
                     font-size: 14px;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
                     /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
                 }
 

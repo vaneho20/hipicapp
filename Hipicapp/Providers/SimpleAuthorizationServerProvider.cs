@@ -110,7 +110,7 @@ namespace Hipicapp.Backend.Providers
 
             if (user == null || user.Password != HelperMethods.GetHash(context.Password))
             {
-                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                context.SetError("401", "Hipicapp.Service.Exceptions.BadCredentialsException");
                 return;
             }
 

@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
+using System.Web.Http;
 
 namespace Hipicapp.Proxy.Participant
 {
@@ -41,7 +42,7 @@ namespace Hipicapp.Proxy.Participant
             return this.AthleteService.GetByUserId(Convert.ToInt64(HttpContext.Current.GetOwinContext().Authentication.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value));
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [AllowAnonymous]
         public Athlete Save(Athlete athlete)
         {
             return this.AthleteService.Save(athlete);

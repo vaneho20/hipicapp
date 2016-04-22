@@ -15,12 +15,12 @@ namespace Hipicapp
                 .Include("~/Scripts/underscore-{version}.js")
                 .Include("~/Scripts/jquery-{version}.js")
                 .Include("~/Scripts/jquery.cookie.js")
+                .Include("~/Scripts/moment-with-locales.js")
                 .Include("~/Scripts/bootstrap-{version}.js")
                 .Include("~/Scripts/bootstrap-datetimepicker.js")
                 .Include("~/Scripts/knockout-{version}.js")
                 .Include("~/Scripts/amplify-{version}.js")
                 .Include("~/Scripts/amplify-request-deferred-{version}.js")
-                .Include("~/Scripts/moment-with-locales.js")
                 .Include("~/Scripts/sjcl-{version}.js")
                 .Include("~/Scripts/holder.js")
             );
