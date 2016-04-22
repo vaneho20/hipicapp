@@ -537,6 +537,38 @@
     <EmbeddedResource Include="Config\Proxies.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="Content\Administrator\custom.css" />
+    <Content Include="Content\Administrator\icheck\flat\aero%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\aero.css" />
+    <Content Include="Content\Administrator\icheck\flat\aero.png" />
+    <Content Include="Content\Administrator\icheck\flat\blue%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\blue.css" />
+    <Content Include="Content\Administrator\icheck\flat\blue.png" />
+    <Content Include="Content\Administrator\icheck\flat\flat%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\flat.css" />
+    <Content Include="Content\Administrator\icheck\flat\flat.png" />
+    <Content Include="Content\Administrator\icheck\flat\green%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\green.css" />
+    <Content Include="Content\Administrator\icheck\flat\green.png" />
+    <Content Include="Content\Administrator\icheck\flat\grey%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\grey.css" />
+    <Content Include="Content\Administrator\icheck\flat\grey.png" />
+    <Content Include="Content\Administrator\icheck\flat\orange%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\orange.css" />
+    <Content Include="Content\Administrator\icheck\flat\orange.png" />
+    <Content Include="Content\Administrator\icheck\flat\pink%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\pink.css" />
+    <Content Include="Content\Administrator\icheck\flat\pink.png" />
+    <Content Include="Content\Administrator\icheck\flat\purple%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\purple.css" />
+    <Content Include="Content\Administrator\icheck\flat\purple.png" />
+    <Content Include="Content\Administrator\icheck\flat\red%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\red.css" />
+    <Content Include="Content\Administrator\icheck\flat\red.png" />
+    <Content Include="Content\Administrator\icheck\flat\yellow%402x.png" />
+    <Content Include="Content\Administrator\icheck\flat\yellow.css" />
+    <Content Include="Content\Administrator\icheck\flat\yellow.png" />
+    <Content Include="Content\Administrator\icheck\flat\_all.css" />
     <Content Include="Content\Administrator\metisMenu.css" />
     <Content Include="Content\Administrator\sb-admin-2.css" />
     <Content Include="Content\animate.css" />
@@ -564,6 +596,7 @@
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\dressage.png" />
+    <Content Include="Content\images\people.png" />
     <Content Include="Content\images\select2-spinner.gif" />
     <Content Include="Content\images\select2.png" />
     <Content Include="Content\images\select2x2.png" />
@@ -581,6 +614,7 @@
     <Content Include="Content\utremi-animations.css" />
     <Content Include="Global.asax" />
     <Content Include="hipicap-favicon.ico" />
+    <Content Include="Scripts\Administrator\custom.js" />
     <Content Include="Scripts\Administrator\metisMenu.js" />
     <Content Include="Scripts\Administrator\sb-admin-2.js" />
     <Content Include="Scripts\almond-custom.js" />

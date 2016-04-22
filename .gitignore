@@ -36,3 +36,5 @@
 /Hipicapp/hipicapp-log.log
 *.log
 *.3
+*.2
+/Hipicapp/hipicapp-log.log.2

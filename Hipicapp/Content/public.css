@@ -24,46 +24,70 @@ body {
         text-decoration: underline; }
         body .navbar .enlaces-header a:hover {
           text-decoration: none; }
-  body .section-content {
-    margin-top: 5.5em; }
-    body .section-content .block-home {
-      position: relative;
-      margin: 0;
-      padding: 0; }
-      body .section-content .block-home:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); }
-      body .section-content .block-home a {
+  body .section-home {
+    height: 100vh;
+    overflow: hidden; }
+    body .section-home .cols {
+      overflow: hidden; }
+      body .section-home .cols .col-1of2 {
+        float: left;
+        position: relative;
+        margin-top: 77px;
+        height: 100vh;
+        width: 50%;
+        text-align: center;
+        background: url("images/foto_salto.jpg") 50% 50%/cover no-repeat; }
+        body .section-home .cols .col-1of2 .col-inner {
+          position: relative;
+          height: 100vh;
+          text-align: center;
+          /*-ms-transition: 0.5s 0.9s;
+                    -webkit-transition: 0.5s 0.9s;
+                    -moz-transition: 0.5s 0.9s;
+                    -o-transition: 0.5s 0.9s;
+                    transition: 0.5s 0.9s;*/ }
+          body .section-home .cols .col-1of2 .col-inner:hover:after {
+            background: rgba(0, 0, 0, 0.2); }
+          body .section-home .cols .col-1of2 .col-inner:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); }
+        body .section-home .cols .col-1of2.block-doma {
+          background: url("images/foto_doma_clasica.jpg") 50% 50%/cover no-repeat; }
+    body .section-home .entry {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      z-index: 9;
+      -ms-transform: translate(-50%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-50%, -50%);
+      /* Safari */
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+      body .section-home .entry a {
+        display: inline-block;
         padding: 2em 2.5em;
         font-family: 'Montserrat', sans-serif;
         font-size: 2em;
         color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
         text-align: center;
-        -ms-transform: translate(-50%, -50%);
-        /* IE 9 */
-        -webkit-transform: translate(-50%, -50%);
-        /* Safari */
-        -moz-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
         z-index: 9;
         border: 1px solid #fff; }
-        body .section-content .block-home a:hover {
+        body .section-home .entry a:hover {
           text-decoration: none; }
-        body .section-content .block-home a img {
+        body .section-home .entry a img {
           position: absolute;
           top: 0;
           left: 50%;
           margin: -32px 0 0 -32px; }
-        body .section-content .block-home a span {
+        body .section-home .entry a span {
           display: block;
           margin-top: 15px;
           padding: 6px 20px;
@@ -74,10 +98,7 @@ body {
           -moz-border-radius: 4px;
           border-radius: 4px;
           background: #f74b4b; }
-      body .section-content .block-home .foto-home {
-        height: auto;
-        width: 100%; }
-    body .section-content .header-block {
+    body .section-home .header-block {
       position: relative;
       margin: 0;
       padding: 2em 0;
@@ -86,7 +107,7 @@ body {
       color: #fff;
       text-align: center;
       background: url("images/foto_doma_clasica.jpg") 50% 50%/cover no-repeat; }
-      body .section-content .header-block:after {
+      body .section-home .header-block:after {
         content: "";
         position: absolute;
         top: 0;
@@ -94,36 +115,36 @@ body {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5); }
-      body .section-content .header-block.header-salto {
+      body .section-home .header-block.header-salto {
         background: url("images/foto_salto.jpg") 50% 50%/cover no-repeat; }
-      body .section-content .header-block h1 {
+      body .section-home .header-block h1 {
         position: relative;
         z-index: 9; }
-    body .section-content .menu-principal {
+    body .section-home .menu-principal {
       text-align: center;
       border-bottom: 1px solid #cecdcd;
       background: #fff; }
-      body .section-content .menu-principal li {
+      body .section-home .menu-principal li {
         display: inline-block;
         float: none; }
-        body .section-content .menu-principal li.active a {
+        body .section-home .menu-principal li.active a {
           color: #fff;
           background-color: #f74b4b; }
-          body .section-content .menu-principal li.active a:hover {
+          body .section-home .menu-principal li.active a:hover {
             background-color: #de4545; }
-        body .section-content .menu-principal li a {
+        body .section-home .menu-principal li a {
           color: #333; }
-    body .section-content #contenido-interior {
+    body .section-home #contenido-interior {
       background-color: #fff;
       /****** LOGIN MODAL ******/ }
-      body .section-content #contenido-interior h2 {
+      body .section-home #contenido-interior h2 {
         font-family: 'Montserrat', sans-serif;
         letter-spacing: -1px; }
-      body .section-content #contenido-interior .avatar {
+      body .section-home #contenido-interior .avatar {
         position: relative;
         margin-top: 15px;
         z-index: 100; }
-        body .section-content #contenido-interior .avatar img {
+        body .section-home #contenido-interior .avatar img {
           margin-bottom: 0.5em;
           width: 90px;
           height: 90px;
@@ -131,7 +152,7 @@ body {
           -moz-border-radius: 50%;
           border-radius: 50%;
           border: 5px solid #fff; }
-      body .section-content #contenido-interior .card {
+      body .section-home #contenido-interior .card {
         overflow: hidden;
         position: relative;
         border: 1px solid #CCC;
@@ -140,7 +161,7 @@ body {
         padding: 0;
         background-color: #d9d7d7;
         color: #333; }
-        body .section-content #contenido-interior .card .header-bg {
+        body .section-home #contenido-interior .card .header-bg {
           /* This stretches the canvas across the entire hero unit */
           position: absolute;
           top: 0;
@@ -150,14 +171,14 @@ body {
           border-bottom: 1px #FFF solid;
           /* This positions the canvas under the text */
           z-index: 1; }
-        body .section-content #contenido-interior .card .content {
+        body .section-home #contenido-interior .card .content {
           font-family: 'Montserrat', sans-serif; }
-          body .section-content #contenido-interior .card .content .btn {
+          body .section-home #contenido-interior .card .content .btn {
             color: #fff;
             background-color: #f74b4b; }
-            body .section-content #contenido-interior .card .content .btn:hover {
+            body .section-home #contenido-interior .card .content .btn:hover {
               background-color: #de4545; }
-      body .section-content #contenido-interior .fila-elementos {
+      body .section-home #contenido-interior .fila-elementos {
         margin: 2em 0 2em 2em;
         padding: 0;
         width: 23%;
@@ -165,9 +186,9 @@ body {
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px; }
-        body .section-content #contenido-interior .fila-elementos:first-child {
+        body .section-home #contenido-interior .fila-elementos:first-child {
           margin-left: 0; }
-        body .section-content #contenido-interior .fila-elementos header {
+        body .section-home #contenido-interior .fila-elementos header {
           float: left;
           padding: 0.8em 1em;
           width: 100%;
@@ -179,26 +200,26 @@ body {
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
           background: #eee; }
-          body .section-content #contenido-interior .fila-elementos header h2 {
+          body .section-home #contenido-interior .fila-elementos header h2 {
             margin: 0;
             padding: 0;
             font-size: 1.5em; }
-        body .section-content #contenido-interior .fila-elementos .content-elementos {
+        body .section-home #contenido-interior .fila-elementos .content-elementos {
           padding: 0; }
-          body .section-content #contenido-interior .fila-elementos .content-elementos .col-sm-12 {
+          body .section-home #contenido-interior .fila-elementos .content-elementos .col-sm-12 {
             padding: 0; }
-            body .section-content #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element {
+            body .section-home #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element {
               margin: 0 1em;
               padding: 1em 0;
               border-bottom: 1px solid #f7f7f7; }
-              body .section-content #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element h3 {
+              body .section-home #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element h3 {
                 margin: 0 0 0.5em;
                 font-size: 1.1em; }
-              body .section-content #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element .avatar {
+              body .section-home #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element .avatar {
                 margin: 0; }
-              body .section-content #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element i {
+              body .section-home #contenido-interior .fila-elementos .content-elementos .col-sm-12 .box-element i {
                 color: #f74b4b; }
-          body .section-content #contenido-interior .fila-elementos .content-elementos .ver-todos {
+          body .section-home #contenido-interior .fila-elementos .content-elementos .ver-todos {
             display: inline-block;
             margin: 1em;
             padding: 0.5em 1em;
@@ -208,41 +229,41 @@ body {
             -moz-border-radius: 4px;
             border-radius: 4px;
             background-color: #f74b4b; }
-            body .section-content #contenido-interior .fila-elementos .content-elementos .ver-todos:hover {
+            body .section-home #contenido-interior .fila-elementos .content-elementos .ver-todos:hover {
               text-decoration: none;
               background-color: #de4545; }
-      body .section-content #contenido-interior .fila-all .content-elementos {
+      body .section-home #contenido-interior .fila-all .content-elementos {
         padding: 0; }
-        body .section-content #contenido-interior .fila-all .content-elementos .col-sm-3 {
+        body .section-home #contenido-interior .fila-all .content-elementos .col-sm-3 {
           margin-bottom: 2em; }
-        body .section-content #contenido-interior .fila-all .content-elementos .primero {
+        body .section-home #contenido-interior .fila-all .content-elementos .primero {
           padding-left: 0; }
-        body .section-content #contenido-interior .fila-all .content-elementos .ultimo {
+        body .section-home #contenido-interior .fila-all .content-elementos .ultimo {
           padding-right: 0; }
-      body .section-content #contenido-interior .loginmodal-container {
+      body .section-home #contenido-interior .loginmodal-container {
         padding: 2em;
         max-width: 40em;
         width: 100% !important;
         margin: 0 auto;
         overflow: hidden;
         font-family: 'Montserrat', sans-serif; }
-        body .section-content #contenido-interior .loginmodal-container.registermodal legend {
+        body .section-home #contenido-interior .loginmodal-container.registermodal legend {
           padding: 1em 0; }
-        body .section-content #contenido-interior .loginmodal-container.registermodal .card {
+        body .section-home #contenido-interior .loginmodal-container.registermodal .card {
           padding: 0; }
-          body .section-content #contenido-interior .loginmodal-container.registermodal .card .content-fieldset {
+          body .section-home #contenido-interior .loginmodal-container.registermodal .card .content-fieldset {
             padding: 0 2em 1em 2em; }
-        body .section-content #contenido-interior .loginmodal-container .card {
+        body .section-home #contenido-interior .loginmodal-container .card {
           padding: 0 2em 1em 2em; }
-          body .section-content #contenido-interior .loginmodal-container .card a {
+          body .section-home #contenido-interior .loginmodal-container .card a {
             color: #333; }
-        body .section-content #contenido-interior .loginmodal-container h2 {
+        body .section-home #contenido-interior .loginmodal-container h2 {
           margin: 1.2em 0 2.5em;
           text-align: center;
           font-family: 'Montserrat', sans-serif !important;
           font-size: 1.5em;
           font-family: roboto; }
-        body .section-content #contenido-interior .loginmodal-container input[type=submit] {
+        body .section-home #contenido-interior .loginmodal-container input[type=submit] {
           float: right;
           padding: 1em 0;
           width: 30%;
@@ -253,7 +274,7 @@ body {
           -webkit-border-radius: 4px;
           -moz-border-radius: 4px;
           border-radius: 4px; }
-        body .section-content #contenido-interior .loginmodal-container input, body .section-content #contenido-interior .loginmodal-container input[type=text], body .section-content #contenido-interior .loginmodal-container input[type=password], body .section-content #contenido-interior .loginmodal-container select {
+        body .section-home #contenido-interior .loginmodal-container input, body .section-home #contenido-interior .loginmodal-container input[type=text], body .section-home #contenido-interior .loginmodal-container input[type=password], body .section-home #contenido-interior .loginmodal-container select {
           font-size: 1em;
           width: 100%;
           margin-bottom: 10px;
@@ -267,19 +288,19 @@ body {
           padding: 1em;
           box-sizing: border-box;
           -moz-box-sizing: border-box; }
-        body .section-content #contenido-interior .loginmodal-container input[type=checkbox] {
+        body .section-home #contenido-interior .loginmodal-container input[type=checkbox] {
           padding: 0;
           width: 15px;
           height: 15px;
           float: left;
           margin: 0.2em 0.5em 0 0; }
-        body .section-content #contenido-interior .loginmodal-container input[type=text]:hover, body .section-content #contenido-interior .loginmodal-container input[type=password]:hover {
+        body .section-home #contenido-interior .loginmodal-container input[type=text]:hover, body .section-home #contenido-interior .loginmodal-container input[type=password]:hover {
           border: 1px solid #b9b9b9;
           border-top: 1px solid #a0a0a0;
           -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
           -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
-        body .section-content #contenido-interior .loginmodal-container .loginmodal-submit {
+        body .section-home #contenido-interior .loginmodal-container .loginmodal-submit {
           /* border: 1px solid #3079ed; */
           border: 0;
           color: #fff;
@@ -291,18 +312,18 @@ body {
           -moz-border-radius: 4px;
           border-radius: 4px;
           /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */ }
-        body .section-content #contenido-interior .loginmodal-container .loginmodal-submit:hover {
+        body .section-home #contenido-interior .loginmodal-container .loginmodal-submit:hover {
           /* border: 1px solid #2f5bb7; */
           border: 0px;
           text-shadow: 0 1px rgba(0, 0, 0, 0.3);
           background-color: #357ae8;
           /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */ }
-        body .section-content #contenido-interior .loginmodal-container .login-help {
+        body .section-home #contenido-interior .loginmodal-container .login-help {
           display: block;
           margin-top: 1.4em;
           font-size: 1em;
           text-align: left; }
-        body .section-content #contenido-interior .loginmodal-container .recordar {
+        body .section-home #contenido-interior .loginmodal-container .recordar {
           margin: 1em 0 0 0;
           padding: 1em 0;
           border-top: 1px solid #fff; }

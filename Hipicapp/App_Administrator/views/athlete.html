@@ -1,4 +1,4 @@
-<div data-bind="compose: 'athleteNavs.html'" novalidate></div>
+<div data-bind="compose: 'athleteNavs.html'"></div>
 <form role="form" data-bind="submit: save">
     <fieldset>
         <legend>
@@ -13,7 +13,7 @@
 										   maxlenght: validationUtils.MAX_LENGTH,
 										   placeholder: i18n.t('app:EMAIL'),
 										   title: i18n.t('app:EMAIL') }"
-                   required>
+                   required autocomplete="off">
         </div>
 
         <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
@@ -63,7 +63,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:NAME'),
 							title: i18n.t('app:NAME')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <div class="form-group">
             <label for="h-athlete-surnames"
@@ -74,7 +74,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:SURNAMES'),
 							title: i18n.t('app:SURNAMES')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <div class="form-group">
             <label for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
@@ -85,7 +85,7 @@
 							optionsCaption : i18n.t('app:GENDER') + '...',
 							value: currentEntity().gender,
 							attr: { title: i18n.t('app:GENDER') }"
-                    required="required" class="form-control" aria-required="true"></select>
+                    required class="form-control" aria-required="true"></select>
         </div>
         <div class="form-group">
             <label for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
@@ -94,7 +94,7 @@
                 <input type="text" class="form-control" id="h-athlete-birthdate"
                        data-bind="epochValue: currentEntity().birthDate,
 	 				attr: { placeholder: i18n.t('app:BIRTHDATE'),
-	 				title: i18n.t('app:BIRTHDATE') }" required>
+	 				title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
             </div>
         </div>
         <div class="form-group">
@@ -106,7 +106,7 @@
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:DNI'),
 							title: i18n.t('app:DNI')}"
-                   required>
+                   required autocomplete="off">
         </div>
         <button type="submit"
                 data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"

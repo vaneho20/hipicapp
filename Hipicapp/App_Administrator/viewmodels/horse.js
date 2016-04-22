@@ -18,13 +18,13 @@ define([
 
         // lifecycle definition
         function activate(athleteId, horseId) {
-            currentEntity().athleteId = athleteId;
             if (athleteId && horseId) {
                 // allways return a promise
                 return loadEntityByHorseId(horseId).done(refreshNav);
             } else {
                 refreshCurrentEntity();
                 refreshNav();
+                currentEntity().athleteId = athleteId;
             }
         }
 

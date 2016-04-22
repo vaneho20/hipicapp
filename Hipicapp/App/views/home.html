@@ -1,18 +1,28 @@
-﻿<div class="row">
-    <div class="col-sm-6 block-home block-doma">
-        <img class="foto-home" src="/Content/images/foto_doma_clasica.jpg" alt="Doma" />
-        <a href="javascript:void(0);" data-bind="click: router.navigateToDressage">
-            <img src="/Content/images/dressage.png" />
-            Doma
-            <span>Más información</span>
-        </a>
-    </div>
-    <div class="col-sm-6 block-home block-salto">
-        <img class="foto-home" src="/Content/images/foto_salto.jpg" alt="Salto" />
-        <a href="javascript:void(0);" data-bind="click: router.navigateToJump">
-            <img src="/Content/images/jump.png" />
-            Salto
-            <span>Más información</span>
-        </a>
-    </div>
-</div>
+﻿
+<section class="section-home">
+    <div class="cols">
+        <div class="col col-1of2 block-doma">
+            <div class="col-inner" style="color: #e01e26;" data-hover-style="background: rgba(224,30,38,1);">
+                <div class="entry">
+                    <a href="javascript:void(0);" data-bind="click: router.navigateToDressage">
+                        <img src="/Content/images/dressage.png" />
+                        Doma
+                        <span>Más información</span>
+                    </a>
+                </div><!-- /.entry -->
+            </div>
+        </div><!-- /.col col-1of2 -->
+
+        <div class="col col-1of2 block-salto">
+            <div class="col-inner" style="color: #7aced6;" data-hover-style="background: rgba(122,206,214,1);">
+                <div class="entry">
+                    <a href="javascript:void(0);" data-bind="click: router.navigateToJump">
+                        <img src="/Content/images/jump.png" />
+                        Salto
+                        <span>Más información</span>
+                    </a>
+                </div><!-- /.entry -->
+            </div>
+        </div><!-- /.col col-1of2 -->
+    </div><!-- /.cols -->
+</section>
