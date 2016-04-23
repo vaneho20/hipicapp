@@ -8,7 +8,8 @@
     <div class="x_content">
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
             <div data-bind="compose: 'athleteNavs.html'"></div>
-            <form role="form" data-bind="submit: save">
+            <div id="mo-shell-alerts" data-bind="compose: 'viewmodels/alerts'"></div>
+            <form role="form" data-bind="submit: save" novalidate>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <fieldset>
                         <legend>
@@ -16,7 +17,7 @@
                         </legend>
                         <div class="form-group">
                             <label for="h-user-email" data-bind="text: i18n.t('app:EMAIL')"
-                                   class="control-label"></label>
+                                   class="control-label required"></label>
                             <input class="form-control" id="h-user-email" type="email" autofocus
                                    data-bind="value: currentEntity().user.userName,
 									attr: { max: validationUtils.MAX_LENGTH,
@@ -27,7 +28,7 @@
                         </div>
 
                         <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
-                               class="control-label"></label>
+                               class="control-label required"></label>
                         <div class="form-group input-group">
                             <input class="form-control" type="password" id="h-user-new-password"
                                    data-bind="compare: { value: currentEntity().user.newPassword, otherValue: currentEntity().user.confirmNewPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-confirm-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
@@ -48,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="h-user-confirm-new-password"
-                                   data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="control-label">
+                                   data-bind="text: i18n.t('app:CONFIRM_NEW_PASSWORD')" class="control-label required">
                             </label>
                             <input class="form-control" type="password" id="h-user-confirm-new-password"
                                    data-bind="compare: { value: currentEntity().user.confirmNewPassword, otherValue: currentEntity().user.newPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
@@ -68,7 +69,7 @@
                             Datos de usuario
                         </legend>
                         <div class="form-group">
-                            <label for="h-athlete-name"
+                            <label class="required" for="h-athlete-name"
                                    data-bind="text: i18n.t('app:NAME')"></label>
                             <input class="form-control" type="text" id="h-athlete-name" autofocus
                                    data-bind="value: currentEntity().name,
@@ -79,7 +80,7 @@
                                    required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <label for="h-athlete-surnames"
+                            <label class="required" for="h-athlete-surnames"
                                    data-bind="text: i18n.t('app:SURNAMES')"></label>
                             <input class="form-control" type="text" id="h-athlete-surnames" autofocus
                                    data-bind="value: currentEntity().surnames,
@@ -90,7 +91,7 @@
                                    required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <label for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                            <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
                             <select id="h-athlete-gender"
                                     data-bind="options: availableGenders,
 							optionsValue: function(item) { return item.value },
@@ -100,26 +101,30 @@
 							attr: { title: i18n.t('app:GENDER') }"
                                     required class="form-control" aria-required="true"></select>
                         </div>
-                        <div class="form-group">
-                            <label for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
-                            <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
-                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                <input type="text" class="form-control" id="h-athlete-birthdate"
-                                       data-bind="epochValue: currentEntity().birthDate,
-	 				attr: { placeholder: i18n.t('app:BIRTHDATE'),
-	 				title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
+                        <div class="col-md-6 col-sm-6 col-xs-6 without-padding-left">
+                            <div class="form-group">
+                                <label class="required" for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" id="h-athlete-birthdate"
+                                           data-bind="epochValue: currentEntity().birthDate,
+	 				            attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				            title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="h-athlete-dni"
-                                   data-bind="text: i18n.t('app:DNI')"></label>
-                            <input class="form-control" type="text" id="h-athlete-dni" autofocus
-                                   data-bind="value: currentEntity().dni,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:DNI'),
-							title: i18n.t('app:DNI')}"
-                                   required autocomplete="off">
+                        <div class="col-md-6 col-sm-6 col-xs-6 without-padding">
+                            <div class="form-group">
+                                <label class="required" for="h-athlete-dni"
+                                       data-bind="text: i18n.t('app:DNI')"></label>
+                                <input class="form-control" type="text" id="h-athlete-dni" autofocus
+                                       data-bind="value: currentEntity().dni,
+						            attr: { max: validationUtils.MAX_LENGTH,
+							            maxlength: validationUtils.MAX_LENGTH,
+							            placeholder: i18n.t('app:DNI'),
+							            title: i18n.t('app:DNI')}"
+                                       required autocomplete="off">
+                            </div>
                         </div>
                     </fieldset>
                 </div>

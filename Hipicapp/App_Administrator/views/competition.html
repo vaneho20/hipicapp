@@ -12,8 +12,8 @@
                 <form role="form" data-bind="submit: save" novalidate>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
-                            <label for="h-competition-name"
-                                    data-bind="text: i18n.t('app:NAME')"></label>
+                            <label class="required" for="h-competition-name"
+                                   data-bind="text: i18n.t('app:NAME')"></label>
                             <input class="form-control" type="text" id="h-competition-name" autofocus
                                     data-bind="value: currentEntity().name,
 					attr: { max: validationUtils.MAX_LENGTH,
@@ -23,18 +23,18 @@
                                     required>
                         </div>
                         <div class="form-group">
-                            <label for="h-athlete-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
+                            <label class="required" for="h-athlete-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
                             <select id="h-athlete-category"
                                     data-bind="options: availableCategories,
-						optionsValue: function(item) { return item.id },
-						optionsText: function(item) { return item.name },
-						optionsCaption : i18n.t('app:CATEGORY') + '...',
-						value: currentEntity().categoryId,
-						attr: { title: i18n.t('app:CATEGORY') }"
-                                    required="required" class="form-control" aria-required="true"></select>
+						        optionsValue: function(item) { return item.id },
+						        optionsText: function(item) { return item.name },
+						        optionsCaption : i18n.t('app:CATEGORY') + '...',
+						        value: currentEntity().categoryId,
+						        attr: { title: i18n.t('app:CATEGORY') }"
+                                            required="required" class="form-control" aria-required="true"></select>
                         </div>
                         <div class="form-group">
-                            <label for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
+                            <label class="required" for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
                             <div id="h-competition-date-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().date">
                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                 <input type="text" class="form-control" id="h-competition-date"
@@ -47,8 +47,8 @@
 
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
-                            <label for="h-competition-address"
-                                    data-bind="text: i18n.t('app:ADDRESS')"></label>
+                            <label class="required" for="h-competition-address"
+                                   data-bind="text: i18n.t('app:ADDRESS')"></label>
                             <input class="form-control" type="text" id="h-competition-address" autofocus
                                     data-bind="value: currentEntity().address,
 					attr: { max: validationUtils.MAX_LENGTH,
@@ -58,8 +58,8 @@
                                     required>
                         </div>
                         <div class="form-group">
-                            <label for="h-competition-zipcode"
-                                    data-bind="text: i18n.t('app:ZIPCODE')"></label>
+                            <label class="required" for="h-competition-zipcode"
+                                   data-bind="text: i18n.t('app:ZIPCODE')"></label>
                             <input class="form-control" type="text" id="h-competition-zipcode" autofocus
                                     data-bind="value: currentEntity().zipCode,
 					attr: { max: validationUtils.LENGTH_ZIPCODE,
@@ -73,12 +73,12 @@
                                     data-bind="text: i18n.t('app:LATITUDE')"></label>
                             <input class="form-control" type="number" id="h-competition-latitude"
                                     data-bind="value: currentEntity().latitude,
-					attr: { min: validationUtils.MIN_LATITUDE,
-						max: validationUtils.MAX_LATITUDE,
-						maxlength: validationUtils.MAX_LENGTH,
-						step: validationUtils.GEOPOSITIONAL_STEP,
-						placeholder: i18n.t('app:LATITUDE'),
-						title: i18n.t('app:LATITUDE') }"
+					            attr: { min: validationUtils.MIN_LATITUDE,
+						            max: validationUtils.MAX_LATITUDE,
+						            maxlength: validationUtils.MAX_LENGTH,
+						            step: validationUtils.GEOPOSITIONAL_STEP,
+						            placeholder: i18n.t('app:LATITUDE'),
+						            title: i18n.t('app:LATITUDE') }"
                                     required>
                         </div>
                         <div class="form-group">
@@ -86,13 +86,13 @@
                                     data-bind="text: i18n.t('app:LONGITUDE')"></label>
                             <input class="form-control" type="number" id="h-competition-longitude"
                                     data-bind="value: currentEntity().longitude,
-					attr: { min: validationUtils.MIN_LONGITUDE,
-						max: validationUtils.MAX_LONGITUDE,
-						maxlength: validationUtils.MAX_LENGTH,
-						step: validationUtils.GEOPOSITIONAL_STEP,
-						placeholder: i18n.t('app:LONGITUDE'),
-						title: i18n.t('app:LONGITUDE') }"
-                                    required>
+					            attr: { min: validationUtils.MIN_LONGITUDE,
+						            max: validationUtils.MAX_LONGITUDE,
+						            maxlength: validationUtils.MAX_LENGTH,
+						            step: validationUtils.GEOPOSITIONAL_STEP,
+						            placeholder: i18n.t('app:LONGITUDE'),
+						            title: i18n.t('app:LONGITUDE') }"
+                                                required>
                         </div>
                     </div>
 

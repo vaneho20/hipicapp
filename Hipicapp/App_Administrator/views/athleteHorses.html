@@ -47,10 +47,14 @@
                                             <td></td>
                                             <td data-bind="text: name"></td>
                                             <td>
-                                                <a data-bind="attr: {
-						                href: $root.horseBroker.getDetailUrlById(athleteId, id),
-						                title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
-                                                    <i class="fa fa-edit"></i>
+                                                <a class="btn btn-info btn-xs" data-bind="attr: {
+						                            href: $root.horseBroker.getDetailUrlById(athleteId, id),
+						                            title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </a>
+                                                <a class="btn btn-danger btn-xs" href="#" data-bind="click: $root.deleteRow,
+					                                attr: { title: $root.i18n.t('app:DELETE_BUTTON_TITLE') }">
+                                                    <i class="fa fa-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -11,7 +11,7 @@
             <form role="form" data-bind="submit: save">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="h-horse-name"
+                        <label class="required" for="h-horse-name"
                                data-bind="text: i18n.t('app:NAME')"></label>
                         <input class="form-control" type="text" id="h-horse-name" autofocus
                                data-bind="value: currentEntity().name,
@@ -22,7 +22,7 @@
                                        required>
                     </div>
                     <div class="form-group">
-                        <label for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
+                        <label class="required" for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
                         <input type="number" id="h-horse-height"
                                data-bind="value: currentEntity().height,
 				            attr: {
@@ -34,7 +34,7 @@
                                            required class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                        <label class="required" for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
                         <div id="h-horse-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             <input type="text" class="form-control" id="h-horse-birthdate"

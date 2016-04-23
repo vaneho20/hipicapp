@@ -7,7 +7,8 @@ define(["domain/competitionCategory/competitionCategoryImpl", "domain/user/userI
             DNI: "dni",
             NAME: "name",
             SURNAMES: "surnames",
-            GENDER: "gender"
+            GENDER: "gender",
+            BIRTH_DATE: "birthDate"
         }, genders = {
             MALE: "MALE",
             FEMALE: "FEMALE"

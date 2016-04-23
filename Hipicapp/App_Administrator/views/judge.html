@@ -11,25 +11,25 @@
             <form role="form" data-bind="submit: save">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="h-judge-name"
+                        <label class="required" for="h-judge-name"
                                data-bind="text: i18n.t('app:NAME')"></label>
                         <input class="form-control" type="text" id="h-judge-name" autofocus
-                               data-bind="value: currentEntity().name,
-					attr: { max: validationUtils.MAX_LENGTH,
-						maxlength: validationUtils.MAX_LENGTH,
-						placeholder: i18n.t('app:NAME'),
-						title: i18n.t('app:NAME')}">
+                                data-bind="value: currentEntity().name,
+					        attr: { max: validationUtils.MAX_LENGTH,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        placeholder: i18n.t('app:NAME'),
+						        title: i18n.t('app:NAME')}">
                     </div>
                     <div class="form-group">
-                        <label for="h-judge-surnames"
+                        <label class="required" for="h-judge-surnames"
                                data-bind="text: i18n.t('app:SURNAMES')"></label>
                         <input class="form-control" type="text" id="h-judge-surnames" autofocus
                                data-bind="value: currentEntity().surnames,
-					attr: { max: validationUtils.MAX_LENGTH,
-						maxlength: validationUtils.MAX_LENGTH,
-						placeholder: i18n.t('app:SURNAMES'),
-						title: i18n.t('app:SURNAMES')}"
-                               required>
+					        attr: { max: validationUtils.MAX_LENGTH,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        placeholder: i18n.t('app:SURNAMES'),
+						        title: i18n.t('app:SURNAMES')}"
+                                       required>
                     </div>
                 </div>
 

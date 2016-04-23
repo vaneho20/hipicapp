@@ -15,7 +15,15 @@ define([
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter =
         ko.observable(athleteFilterImpl()), currentFilter = athleteFilterImpl(), currentSort =
         ko.observable(athleteSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
-        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
+        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = [
+            {
+                value: athleteImpl.genders.MALE,
+                text: i18n.t("app:ATHLETE_GENDER_MALE")
+            }, {
+                value: athleteImpl.genders.FEMALE,
+                text: i18n.t("app:ATHLETE_GENDER_FEMALE")
+            }
+        ];
 
     // lifecycle definition
     function activate() {
@@ -108,6 +116,7 @@ define([
     viewModel.currentPager = currentPager;
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
+    viewModel.availableGenders = availableGenders;
 
     // lifecycle revelation
     viewModel.activate = activate;
@@ -147,6 +156,14 @@ define([
     viewModel.getOrderIconClassForDni = ko.computed(function getOrderIconClassForDni() {
         return currentSort().getOrderByProperty(athleteImpl.properties.DNI).getIconClass();
     });
+
+    /*viewModel.sortByBirthDate = _.partial(sortByProperty, athleteImpl.properties.BIRTH_DATE);
+    viewModel.getOrderIconTitleForBirthDate = ko.computed(function getOrderIconTitleForBirthDate() {
+        return currentSort().getOrderByProperty(athleteImpl.properties.BIRTH_DATE).getIconTitle();
+    });
+    viewModel.getOrderIconClassForBirthDate = ko.computed(function getOrderIconClassForBirthDate() {
+        return currentSort().getOrderByProperty(athleteImpl.properties.BIRTH_DATE).getIconClass();
+    });*/
 
     return viewModel;
 });

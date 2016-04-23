@@ -8,7 +8,7 @@ define(
         return function athleteSortImpl() {
             var sort =
                 sortBase([stringOrderImpl(athleteImpl.properties.NAME), stringOrderImpl(athleteImpl.properties.SURNAMES),
-                    stringOrderImpl(athleteImpl.properties.DNI)]);
+                    stringOrderImpl(athleteImpl.properties.DNI)/*, orderImpl(athleteImpl.properties.BIRTH_DATE)*/]);
 
             return sort;
         };
