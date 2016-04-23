@@ -25,7 +25,8 @@ namespace Hipicapp.Controllers.Participant
         [Autowired]
         public IHorseProxy HorseProxy { get; set; }
 
-        [HttpPost]
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
         [Route("api/horses/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<Horse> Find(HorseFindRequest request)
@@ -33,25 +34,29 @@ namespace Hipicapp.Controllers.Participant
             return this.HorseProxy.Paginated(request);
         }
 
-        [HttpGet]
+        [System.Web.Http.AcceptVerbs("GET")]
+        [System.Web.Http.HttpGet]
         public Horse Get(long? id)
         {
             return this.HorseProxy.Get(id);
         }
 
-        [HttpPost]
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
         public Horse Save([Valid] Horse horse)
         {
             return this.HorseProxy.Save(horse);
         }
 
-        [HttpPut]
+        [System.Web.Http.AcceptVerbs("PUT")]
+        [System.Web.Http.HttpPut]
         public Horse Update([Valid] Horse horse)
         {
             return this.HorseProxy.Update(horse);
         }
 
-        [HttpDelete]
+        [System.Web.Http.AcceptVerbs("DELETE")]
+        [System.Web.Http.HttpDelete]
         public Horse Delete(Horse horse)
         {
             return this.HorseProxy.Delete(horse);

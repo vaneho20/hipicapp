@@ -572,7 +572,7 @@
     <Content Include="Content\Administrator\metisMenu.css" />
     <Content Include="Content\Administrator\sb-admin-2.css" />
     <Content Include="Content\animate.css" />
-    <Content Include="Content\bootstrap-datetimepicker-0.0.11.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-editable.css" />
     <Content Include="Content\bootstrap-formhelpers-countries.flags.css" />
     <Content Include="Content\bootstrap-formhelpers.css" />
@@ -596,7 +596,8 @@
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\dressage.png" />
-    <Content Include="Content\images\people.png" />
+    <Content Include="Content\images\administrator-black.png" />
+    <Content Include="Content\images\administrator-white.png" />
     <Content Include="Content\images\select2-spinner.gif" />
     <Content Include="Content\images\select2.png" />
     <Content Include="Content\images\select2x2.png" />
@@ -659,7 +660,6 @@
     <Content Include="Content\public.css.map">
       <DependentUpon>public.css</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-datetimepicker.scss" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\i18next-builder.js" />
     <Content Include="Scripts\i18next.js" />

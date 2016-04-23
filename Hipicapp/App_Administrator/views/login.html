@@ -13,6 +13,14 @@
                         <input class="form-control" type="password" data-bind="value: credentials.password, attr: { placeholder: i18n.t('app:PASSWORD') }"
                                required>
                     </div>
+                    <div class="checkbox">
+                        <label class="">
+                            <div class="icheckbox_flat-green" style="position: relative;">
+                                <input type="checkbox" class="flat" style="position: absolute; opacity: 0;">
+                                <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
+                            </div> <!-- ko text: i18n.t('app:REMEMBER_ME') --><!-- /ko -->
+                        </label>
+                    </div>
                     <div>
                         <button type="submit"
                                 title="Entrar en el backoffice de hípica"
