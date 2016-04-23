@@ -3,6 +3,7 @@ using Hipicapp.Model.Abstract;
 using Hipicapp.Model.Account;
 using Hipicapp.Model.Event;
 using Hipicapp.Model.File;
+using Hipicapp.Utils.Converter;
 using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
@@ -45,6 +46,7 @@ namespace Hipicapp.Model.Participant
 
         [NotNull]
         [Past]
+        [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? BirthDate { get; set; }
 
         public virtual CompetitionCategory Category { get; set; }

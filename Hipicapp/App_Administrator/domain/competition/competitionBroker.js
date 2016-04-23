@@ -26,6 +26,10 @@ define([
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
+    amplify.request.define("competitions/update", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+
     amplify.request.define("competitions/simulateScore", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SIMULATION_SCORE), brokerUtils.verb.POST));
@@ -46,6 +50,10 @@ define([
 
     function save(entity) {
         return amplify.request("competitions/save", entity).always(CACHE.evict);
+    }
+
+    function update(entity) {
+        return amplify.request("competitions/update", entity).always(CACHE.evict);
     }
 
     function simulateScore(entity) {
@@ -74,6 +82,7 @@ define([
     // request revelation
     broker.findBy = findBy;
     broker.save = save;
+    broker.update = update;
     broker.simulateScore = simulateScore;
     broker.erase = erase;
     broker.findById = findById;

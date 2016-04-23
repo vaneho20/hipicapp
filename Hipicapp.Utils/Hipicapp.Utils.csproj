@@ -47,6 +47,10 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
@@ -88,6 +92,7 @@
     <Compile Include="Comparison\ToStringBuilder.cs" />
     <Compile Include="Comparison\TypeConverter.cs" />
     <Compile Include="Concurrent\Atomic\AtomicReference.cs" />
+    <Compile Include="Converter\EpochDateTimeConverter.cs" />
     <Compile Include="Date\DateUtils.cs" />
     <Compile Include="Helper\DateExtensions.cs" />
     <Compile Include="Helper\DescriptionAttributeExtensions.cs" />

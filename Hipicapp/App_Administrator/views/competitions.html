@@ -37,7 +37,7 @@
                             <tr>
                                 <td></td>
                                 <td data-bind="text: name"></td>
-                                <td data-bind="text: date"></td>
+                                <td data-bind="text: moment(date).format($root.i18n.t('app:DATETIME_PATTERN'))"></td>
                                 <td>
                                     <a data-bind="attr: {
 						                href: $root.competitionBroker.getDetailUrlById(id),

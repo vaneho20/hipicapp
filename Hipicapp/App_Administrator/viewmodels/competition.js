@@ -44,7 +44,13 @@ define([
         }
 
         function save() {
-            return competitionBroker.save(currentEntity()).done(refreshCurrentEntity);
+            var promise;
+            if (currentEntity().id) {
+                promise = competitionBroker.update(currentEntity());
+            } else {
+                promise = competitionBroker.save(currentEntity());
+            }
+            return promise.done(refreshCurrentEntity);
         }
 
         // module revelation
