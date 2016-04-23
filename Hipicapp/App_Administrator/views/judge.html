@@ -1,41 +1,52 @@
-<div data-bind="compose: 'judgeNavs.html'"></div>
-<form role="form" data-bind="submit: save">
-    <fieldset>
-        <legend>
-            Datos del juez
-        </legend>
-        <div class="form-group">
-            <label for="h-judge-name"
-                   data-bind="text: i18n.t('app:NAME')"></label>
-            <input class="form-control" type="text" id="h-judge-name" autofocus
-                   data-bind="value: currentEntity().name,
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:JUDGE')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'judgeNavs.html'"></div>
+            <form role="form" data-bind="submit: save">
+                <fieldset>
+                    <legend>
+                        Datos del juez
+                    </legend>
+                    <div class="form-group">
+                        <label for="h-judge-name"
+                               data-bind="text: i18n.t('app:NAME')"></label>
+                        <input class="form-control" type="text" id="h-judge-name" autofocus
+                               data-bind="value: currentEntity().name,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:NAME'),
 							title: i18n.t('app:NAME')}">
-        </div>
-        <div class="form-group">
-            <label for="h-judge-surnames"
-                   data-bind="text: i18n.t('app:SURNAMES')"></label>
-            <input class="form-control" type="text" id="h-judge-surnames" autofocus
-                   data-bind="value: currentEntity().surnames,
+                    </div>
+                    <div class="form-group">
+                        <label for="h-judge-surnames"
+                               data-bind="text: i18n.t('app:SURNAMES')"></label>
+                        <input class="form-control" type="text" id="h-judge-surnames" autofocus
+                               data-bind="value: currentEntity().surnames,
 						attr: { max: validationUtils.MAX_LENGTH,
 							maxlength: validationUtils.MAX_LENGTH,
 							placeholder: i18n.t('app:SURNAMES'),
 							title: i18n.t('app:SURNAMES')}"
-                   required>
-        </div>
-        <button type="submit"
-                data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                class="btn btn-primary">
-            <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-        </button>
-        <a data-bind="attr: {
+                               required>
+                    </div>
+                    <button type="submit"
+                            data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                            class="btn btn-primary">
+                        <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                    </button>
+                    <a data-bind="attr: {
 						href: judgeBroker.getListUrl(),
 						title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
-           class="btn">
-            <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
-        </a>
-    </fieldset>
-</form>
-
+                       class="btn">
+                        <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
