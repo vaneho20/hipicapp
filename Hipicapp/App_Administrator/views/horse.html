@@ -9,29 +9,29 @@
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
             <div data-bind="compose: 'horseNavs.html'"></div>
             <form role="form" data-bind="submit: save">
-                <fieldset>
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
                         <label for="h-horse-name"
                                data-bind="text: i18n.t('app:NAME')"></label>
                         <input class="form-control" type="text" id="h-horse-name" autofocus
                                data-bind="value: currentEntity().name,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:NAME'),
-							title: i18n.t('app:NAME')}"
-                               required>
+					        attr: { max: validationUtils.MAX_LENGTH,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        placeholder: i18n.t('app:NAME'),
+						        title: i18n.t('app:NAME')}"
+                                       required>
                     </div>
                     <div class="form-group">
                         <label for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
                         <input type="number" id="h-horse-height"
                                data-bind="value: currentEntity().height,
-					attr: {
-						min: 0,
-						step: 1,
-						maxlenght: validationUtils.MAX_LENGTH,
-						placeholder: i18n.t('app:HEIGHT'),
-						title: i18n.t('app:HEIGHT') }"
-                               required class="form-control">
+				            attr: {
+					            min: 0,
+					            step: 1,
+					            maxlenght: validationUtils.MAX_LENGTH,
+					            placeholder: i18n.t('app:HEIGHT'),
+					            title: i18n.t('app:HEIGHT') }"
+                                           required class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
@@ -39,22 +39,24 @@
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                             <input type="text" class="form-control" id="h-horse-birthdate"
                                    data-bind="epochValue: currentEntity().birthDate,
-	 				attr: { placeholder: i18n.t('app:BIRTHDATE'),
-	 				title: i18n.t('app:BIRTHDATE') }" required>
+	 			                attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 			                title: i18n.t('app:BIRTHDATE') }" required>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <button type="submit"
                             data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
                             class="btn btn-primary">
                         <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
                     </button>
                     <a data-bind="attr: {
-						href: horseBroker.getListUrl(currentEntity().athleteId),
-						title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+					href: horseBroker.getListUrl(currentEntity().athleteId),
+					title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
                        class="btn">
                         <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
                     </a>
-                </fieldset>
+                </div>
             </form>
         </div>
     </div>
