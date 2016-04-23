@@ -1,5 +1,4 @@
 ﻿using Hipicapp.Model.Abstract;
-using Hipicapp.Utils.Converter;
 using Hipicapp.Utils.Util;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
@@ -41,7 +40,6 @@ namespace Hipicapp.Model.Event
 
         [NotNull]
         [Future]
-        [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? Date { get; set; }
 
         public virtual CompetitionCategory Category { get; set; }

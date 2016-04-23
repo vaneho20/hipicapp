@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Filters;
+using Hipicapp.Utils.Converter;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http;
@@ -14,6 +15,7 @@ namespace Hipicapp.Controllers.Abstract
         {
             base.Initialize(controllerContext);
             this.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Serialize;
+            this.Configuration.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new EpochDateTimeConverter());
             this.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver()
             {
                 IgnoreSerializableAttribute = true,

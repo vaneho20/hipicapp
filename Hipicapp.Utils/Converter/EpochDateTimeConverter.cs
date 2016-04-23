@@ -26,11 +26,14 @@ namespace Hipicapp.Utils.Converter
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            reader.Read();
+            if (reader.TokenType == JsonToken.Null)
+            {
+                return null;
+            }
 
             long ticks = (long)reader.Value;
 
-            DateTime d = new DateTime((ticks * 10000) + InitialJavaScriptDateTicks, DateTimeKind.Utc);
+            DateTime d = new DateTime((ticks * 10000) + InitialJavaScriptDateTicks, DateTimeKind.Utc).ToLocalTime();
 
             return d;
         }
