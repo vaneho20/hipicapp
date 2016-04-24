@@ -36,7 +36,7 @@ namespace Hipicapp.Service.Participant
         [Transaction(ReadOnly = true)]
         public Page<Athlete> Paginated(AthleteFindFilter filter, PageRequest pageRequest)
         {
-            return this.AthleteRepository.Paginated(AthleteRepository.GetAllQueryable(), pageRequest);
+            return this.AthleteRepository.Paginated(AthletePredicates.ValueOf(filter, this.AthleteRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]

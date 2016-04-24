@@ -30,7 +30,7 @@ namespace Hipicapp.Service.Event
         [Transaction(ReadOnly = true)]
         public Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest)
         {
-            return CompetitionRepository.Paginated(CompetitionRepository.GetAllQueryable(), pageRequest);
+            return this.CompetitionRepository.Paginated(CompetitionPredicates.ValueOf(filter, this.CompetitionRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]

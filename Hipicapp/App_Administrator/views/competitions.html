@@ -1,12 +1,21 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header" data-bind="text: i18n.t('app:COMPETITIONS')"></h1>
-        <a data-bind="attr: {
-				href: competitionBroker.getDetailUrlById(),
-				title: i18n.t('app:CREATE_BUTTON_TITLE') }"
-           class="btn btn-primary pull-right mo-create-button animated pulse">
-            <i class="fa fa-plus"></i>
-        </a>
+        <form data-bind="submit: search" class="form-inline">
+            <fieldset>
+                <legend data-bind="text: i18n.t('COMPETITION_FILTER_LEGEND')"></legend>
+                <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
+                    <input class="form-control input-sm" type="text" id="h-judge-filter-name"
+                           data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('COMPETITION_NAME_FILTER') }" />
+                </div>
+                <button type="submit" data-bind="attr: { title: i18n.t('SEARCH_BUTTON_TITLE') }" class="btn btn-primary btn-sm">
+                    <i class="fa fa-search"></i> <span data-bind="text: i18n.t('SEARCH_BUTTON_TEXT')"></span>
+                </button>
+                <button type="submit" data-bind="click: clearFilter, attr: { title: i18n.CLEAR_BUTTON_TITLE }" class="btn btn-sm">
+                    <i class="fa fa-refresh"></i> <span data-bind="text: i18n.CLEAR_BUTTON_TEXT"></span>
+                </button>
+            </fieldset>
+        </form>
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -14,7 +23,11 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading" data-bind="text: i18n.t('app:COMPETITION_LIST_CAPTION')">
+            <div class="panel-heading">
+                <span data-bind="text: i18n.t('app:COMPETITION_LIST_CAPTION')"></span>
+                <a data-bind="attr: { href: competitionBroker.getDetailUrlById(), title: i18n.t('app:CREATE_BUTTON_TITLE') }" class="btn btn-primary pull-right mo-create-button animated pulse">
+                    <i class="fa fa-plus"></i>
+                </a>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">

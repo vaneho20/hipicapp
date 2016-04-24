@@ -21,7 +21,7 @@ namespace Hipicapp.Service.Participant
         [Transaction(ReadOnly = true)]
         public Page<Horse> Paginated(HorseFindFilter filter, PageRequest pageRequest)
         {
-            return HorseRepository.Paginated(HorsePredicates.ValueOf(filter, HorseRepository.GetAllQueryable()), pageRequest);
+            return HorseRepository.Paginated(HorsePredicates.ValueOf(filter, this.HorseRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]

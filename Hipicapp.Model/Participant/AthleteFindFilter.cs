@@ -1,3 +1,4 @@
+using Hipicapp.Model.Account;
 using System;
 
 namespace Hipicapp.Model.Participant
@@ -9,5 +10,7 @@ namespace Hipicapp.Model.Participant
         public string Name { get; set; }
 
         public DateTime? BirthDate { get; set; }
+
+        public Gender? Gender { get; set; }
     }
 }

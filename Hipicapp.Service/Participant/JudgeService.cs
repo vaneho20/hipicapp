@@ -24,7 +24,7 @@ namespace Hipicapp.Service.Participant
         [Transaction(ReadOnly = true)]
         public Page<Judge> Paginated(JudgeFindFilter filter, PageRequest pageRequest)
         {
-            return this.JudgeRepository.Paginated(JudgeRepository.GetAllQueryable(), pageRequest);
+            return this.JudgeRepository.Paginated(JudgePredicates.ValueOf(filter, this.JudgeRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]

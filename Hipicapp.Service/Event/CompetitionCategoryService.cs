@@ -17,13 +17,13 @@ namespace Hipicapp.Service.Event
         [Transaction(ReadOnly = true)]
         public IList<CompetitionCategory> FindAll()
         {
-            return CompetitionCategoryRepository.GetAll();
+            return this.CompetitionCategoryRepository.GetAll();
         }
 
         [Transaction(ReadOnly = true)]
         public Page<CompetitionCategory> Paginated(CompetitionCategoryFindFilter filter, PageRequest pageRequest)
         {
-            return CompetitionCategoryRepository.Paginated(CompetitionCategoryRepository.GetAllQueryable(), pageRequest);
+            return this.CompetitionCategoryRepository.Paginated(CompetitionCategoryPredicates.ValueOf(filter, this.CompetitionCategoryRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]
