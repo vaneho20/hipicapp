@@ -5,8 +5,12 @@
             <fieldset>
                 <legend data-bind="text: i18n.t('COMPETITION_FILTER_LEGEND')"></legend>
                 <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
-                    <input class="form-control input-sm" type="text" id="h-judge-filter-name"
+                    <input class="form-control input-sm" type="text" id="h-competition-filter-name"
                            data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('COMPETITION_NAME_FILTER') }" />
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
+                    <input class="form-control input-sm" type="text" id="h-competition-filter-zipcode" autofocus
+                           data-bind="value: nextFilter().zipCode, attr: { max: validationUtils.LENGTH_ZIPCODE, maxlength: validationUtils.LENGTH_ZIPCODE, placeholder: i18n.t('app:ZIPCODE'), title: i18n.t('app:ZIPCODE')}">
                 </div>
                 <button type="submit" data-bind="attr: { title: i18n.t('SEARCH_BUTTON_TITLE') }" class="btn btn-primary btn-sm">
                     <i class="fa fa-search"></i> <span data-bind="text: i18n.t('SEARCH_BUTTON_TEXT')"></span>
@@ -25,7 +29,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <span data-bind="text: i18n.t('app:COMPETITION_LIST_CAPTION')"></span>
-                <a data-bind="attr: { href: competitionBroker.getDetailUrlById(), title: i18n.t('app:CREATE_BUTTON_TITLE') }" class="btn btn-primary pull-right mo-create-button animated pulse">
+                <a data-bind="attr: { href: competitionBroker.getDetailUrlById(), title: i18n.t('app:CREATE_BUTTON_TITLE') }" class="btn btn-primary btn-sm pull-right mo-create-button animated pulse">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -80,10 +84,15 @@
 					                        attr: { title: $root.i18n.t('app:DELETE_BUTTON_TITLE') }">
                                         <i class="fa fa-trash"></i>
                                     </a>
+                                    <a class="btn btn-success btn-xs" href="#" data-bind="click: $root.simulateScore,
+					                        attr: { title: $root.i18n.t('app:SIMULATE_SCORE_BUTTON_TITLE') }">
+                                        <i class="fa fa-calculator"></i>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <div data-bind="compose: 'pager.html'"></div>
                 </div>
             </div>
             <!-- /.panel-body -->

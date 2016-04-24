@@ -1480,8 +1480,8 @@ table.jambo_table {
 }
 
 .dataTables_paginate {
-    float: right;
-    text-align: right;
+    float: left;
+    text-align: left;
 }
 
 table.dataTable th.focus,

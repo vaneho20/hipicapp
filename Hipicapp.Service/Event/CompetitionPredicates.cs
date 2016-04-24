@@ -14,7 +14,11 @@ namespace Hipicapp.Service.Event
             var query = q;
             if (filter.Name != null)
             {
-                query = query.Where(x => x.Name == filter.Name);
+                query = query.Where(x => x.Name.StartsWith(filter.Name));
+            }
+            if (filter.ZipCode != null)
+            {
+                query = query.Where(x => x.ZipCode.StartsWith(filter.ZipCode));
             }
             return query;
         }

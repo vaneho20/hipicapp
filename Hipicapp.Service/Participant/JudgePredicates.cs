@@ -14,7 +14,7 @@ namespace Hipicapp.Service.Participant
             var query = q;
             if (filter.Name != null)
             {
-                query = query.Where(x => x.Name == filter.Name);
+                query = query.Where(x => x.Name.StartsWith(filter.Name));
             }
             return query;
         }

@@ -60,8 +60,8 @@ namespace Hipicapp.Controllers.Event
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/judges/simulateScore")]
-        public IList<Score> SimulateScore(Competition competition)
+        //[System.Web.Http.Route("api/judges/simulateScore")]
+        public IList<Score> SimulateScore([Valid] Competition competition)
         {
             return this.CompetitionProxy.SimulateScore(competition);
         }

@@ -14,11 +14,11 @@ namespace Hipicapp.Service.Participant
             var query = q;
             if (filter.Name != null)
             {
-                query = query.Where(x => x.Name == filter.Name);
+                query = query.Where(x => x.Name.StartsWith(filter.Name));
             }
             if (filter.Dni != null)
             {
-                query = query.Where(x => x.Dni == filter.Dni);
+                query = query.Where(x => x.Dni.StartsWith(filter.Dni));
             }
             if (filter.Gender != null)
             {

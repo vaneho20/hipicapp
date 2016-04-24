@@ -35,6 +35,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         FILES: "files",
         FILE: "file",
         DOWNLOAD: "download",
+        SIMULATE_SCORE: "simulateScore",
         IMAGES: "images",
         SIGN_IN: "signIn",
         RESET_PASSWORD: "resetPassword",

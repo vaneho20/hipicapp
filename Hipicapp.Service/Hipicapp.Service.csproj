@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
+    <Compile Include="Account\UserPredicates.cs" />
     <Compile Include="Event\CompetitionCategoryPredicates.cs" />
     <Compile Include="Event\CompetitionPredicates.cs" />
     <Compile Include="Event\CompetitionCategoryService.cs" />

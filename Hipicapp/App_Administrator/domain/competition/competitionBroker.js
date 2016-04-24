@@ -32,7 +32,7 @@ define([
 
     amplify.request.define("competitions/simulateScore", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SIMULATION_SCORE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SIMULATE_SCORE), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
@@ -57,7 +57,7 @@ define([
     }
 
     function simulateScore(entity) {
-        return amplify.request("competitions/simulateScore", entity);
+        return amplify.request("competitions/simulateScore", entity).always(CACHE.evict);
     }
 
     function erase(entity) {

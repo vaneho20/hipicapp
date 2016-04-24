@@ -70,10 +70,10 @@ define([
     }
 
     function deleteRow(competitionCategory) {
-        app.showMessage(i18n.DELETE_MESSAGE_BOX_CONTENT, i18n.DELETE_MESSAGE_BOX_TITLE, [
-            i18n.YES, i18n.NO
+        app.showMessage(i18n.t('DELETE_MESSAGE_BOX_CONTENT'), i18n.t('DELETE_MESSAGE_BOX_TITLE'), [
+            i18n.t('YES'), i18n.t('NO')
         ]).done(function hideMessage(answer) {
-            if (answer === i18n.YES) {
+            if (answer === i18n.t('YES')) {
                 competitionCategoryBroker.erase(competitionCategory).done(loadCurrentPage);
             }
         });

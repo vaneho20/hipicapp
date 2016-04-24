@@ -113,7 +113,7 @@ namespace Hipicapp.Repository.Abstract
         public Page<T> Paginated(IQueryable<T> query, PageRequest pageRequest)
         {
             int total = query.Count();
-            query.Skip(pageRequest.Offset).Take(pageRequest.Size);
+            query = query.Skip(pageRequest.Offset).Take(pageRequest.Size);
 
             if (pageRequest.Sort != null && pageRequest.Sort.Orders != null && pageRequest.Sort.Orders.Count > 0)
             {
