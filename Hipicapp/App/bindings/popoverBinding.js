@@ -5,7 +5,9 @@ define(function popoverBinding() {
     var binding = {};
 
     function init(element) {
-        $(element).popover();
+        $(element).popover({
+            placement: "bottom"
+        });
     }
 
     binding.init = init;

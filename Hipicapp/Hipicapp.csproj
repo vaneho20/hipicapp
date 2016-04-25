@@ -584,6 +584,14 @@
     <Content Include="Content\durandal.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\ie10mobile.css" />
+    <Content Include="Content\images\4964996749_b68a8e5f7d_o.jpg" />
+    <Content Include="Content\images\4965601926_f8bb6c1c20_o.jpg" />
+    <Content Include="Content\images\descarga.jpg" />
+    <Content Include="Content\images\foto_caballo2.jpg" />
+    <Content Include="Content\images\foto_carrusel1.jpg" />
+    <Content Include="Content\images\foto_carrusel2.jpg" />
+    <Content Include="Content\images\foto_concurso.jpg" />
+    <Content Include="Content\images\foto_caballo.jpg" />
     <Content Include="Content\images\jump.png" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
     <Content Include="Content\images\clear.png" />
@@ -601,6 +609,7 @@
     <Content Include="Content\images\select2-spinner.gif" />
     <Content Include="Content\images\select2.png" />
     <Content Include="Content\images\select2x2.png" />
+    <Content Include="Content\images\Sicab2012.jpg" />
     <Content Include="Content\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jquery.fileupload-ui.css" />
     <Content Include="Content\public.css">
