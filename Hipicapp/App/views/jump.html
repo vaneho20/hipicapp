@@ -19,48 +19,116 @@
     <div class="container">
 
         <div class="block-top">
-            <div class="col-md-8 col-sm-8 col-xs-16">
-                <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-                    <!-- Overlay -->
-                    <div class="overlay"></div>
-
+            <div class="col-md-12 col-sm-12 col-xs-24">
+                <!-- Carousel -->
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#bs-carousel" data-slide-to="1"></li>
-                        <li data-target="#bs-carousel" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item slides active">
-                            <div class="slide-1"></div>
-                            <div class="hero">
-                                <hgroup>
-                                    <h1>Título carrusel 1</h1>
-                                </hgroup>
+                        <div class="item active">
+                            <img src="/Content/images/foto_carrusel1.jpg" alt="First slide">
+                            <!-- Static Header -->
+                            <div class="header-text hidden-xs">
+                                <div class="col-md-12 text-center">
+                                    <h2>
+                                        <span>Welcome to <strong>LOREM IPSUM</strong></span>
+                                    </h2>
+                                </div>
+                            </div><!-- /header-text -->
+                        </div>
+                        <div class="item">
+                            <img src="/Content/images/foto_carrusel2.jpg" alt="Second slide">
+                            <!-- Static Header -->
+                            <div class="header-text hidden-xs">
+                                <div class="col-md-12 text-center">
+                                    <h2>
+                                        <span>Welcome to LOREM IPSUM</span>
+                                    </h2>
+                                </div>
+                            </div><!-- /header-text -->
+                        </div>
+                        <div class="item">
+                            <img src="/Content/images/foto_carrusel1.jpg" alt="Third slide">
+                            <!-- Static Header -->
+                            <div class="header-text hidden-xs">
+                                <div class="col-md-12 text-center">
+                                    <h2>
+                                        <span>Welcome to LOREM IPSUM</span>
+                                    </h2>
+                                </div>
+                            </div><!-- /header-text -->
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div><!-- /carousel -->
+            </div>
+        </div>
+
+        <div class="block-center">
+            <div class="col-md-8 col-sm-8 col-xs-16">
+                <div class="modulo-3-noticias">
+                    <div class="inner-modulo">
+                        <div class="noticia">
+                            <div class="inner">
+                                <div class="foto">
+                                    <a href="/Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016
+                            " title="Ver artículo">
+                                        <div class="cintillo">Atletas</div>
+                                        <img src="/Content/images/foto_concurso.jpg">
+                                    </a>
+                                </div>
+                                <div class="texto">
+                                    <h3>
+                                        <a href="/Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016" title="Ver artículo">Recorridos de la segunda  jornada del CSN5* Toledo</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="item slides">
-                            <div class="slide-2"></div>
-                            <div class="hero">
-                                <hgroup>
-                                    <h1>Título carrusel 2</h1>
-                                </hgroup>
+                        <div class="noticia">
+                            <div class="inner">
+                                <div class="foto">
+                                    <a href="/Consultorios/juridico/articulo/seguros-voluntarios-y-obligatorios-para-trabajar-con-caballos" title="Ver artículo">
+                                        <div class="cintillo">Caballos</div>
+                                        <img src="/Content/images/foto_caballo2.jpg">
+                                    </a>
+                                </div>
+                                <div class="texto">
+                                    <h3>
+                                        <a href="/Consultorios/juridico/articulo/seguros-voluntarios-y-obligatorios-para-trabajar-con-caballos" title="Ver artículo">Seguros voluntarios y obligatorios para trabajar con caballos</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="item slides">
-                            <div class="slide-3"></div>
-                            <div class="hero">
-                                <hgroup>
-                                    <h1>Título carrusel 3</h1>
-                                </hgroup>
+                        <div class="noticia">
+                            <div class="inner">
+                                <div class="foto">
+                                    <a href="/Caballo/consejos/articulo/sabes-cual-es-el-contenido-de-humedad-de-tu-forraje" title="Ver artículo">
+                                        <div class="cintillo">Jueces</div>
+                                        <img src="/Content/images/descarga.jpg">
+                                    </a>
+                                </div>
+                                <div class="texto">
+                                    <h3>
+                                        <a href="/Caballo/consejos/articulo/sabes-cual-es-el-contenido-de-humedad-de-tu-forraje" title="Ver artículo">¿Sabes cuál es el contenido de humedad de tu forraje?</a>
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="block-top-der col-md-4 col-sm-4 col-xs-8">
+            <div class="block-center-der col-md-4 col-sm-4 col-xs-8">
                 <div class="box-element">
                     <header><h2>Próximos Concursos</h2></header>
                     <section class="content">
@@ -82,68 +150,6 @@
                         <a href="#" class="ver-todo">Ver Todos &raquo;</a>
                     </section>
                 </div>
-            </div>
-        </div>
-
-        <div class="block-center">
-            <div class="col-md-8 col-sm-8 col-xs-16">
-                <div class="modulo-3-noticias">
-                    <div class="inner-modulo">
-                        <div class="noticia">
-                            <div class="inner">
-                                <div class="foto">
-                                    <a href="                              /Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016
-                            " title="Ver artículo">
-                                        <div class="cintillo">Atletas</div>
-                                        <img src="/Content/images/foto_concurso.jpg">
-                                    </a>
-                                </div>
-                                <div class="texto">
-                                    <h3>
-                                        <a href="                              /Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016
-                            " title="Ver artículo">Recorridos de la segunda  jornada del CSN5* Toledo</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="noticia">
-                            <div class="inner">
-                                <div class="foto">
-                                    <a href="                              /Consultorios/juridico/articulo/seguros-voluntarios-y-obligatorios-para-trabajar-con-caballos
-                            " title="Ver artículo">
-                                        <div class="cintillo">Caballos</div>
-                                        <img src="/Content/images/foto_caballo2.jpg">
-                                    </a>
-                                </div>
-                                <div class="texto">
-                                    <h3>
-                                        <a href="                              /Consultorios/juridico/articulo/seguros-voluntarios-y-obligatorios-para-trabajar-con-caballos
-                            " title="Ver artículo">Seguros voluntarios y obligatorios para trabajar con caballos</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="noticia">
-                            <div class="inner">
-                                <div class="foto">
-                                    <a href="                              /Caballo/consejos/articulo/sabes-cual-es-el-contenido-de-humedad-de-tu-forraje
-                            " title="Ver artículo">
-                                        <div class="cintillo">Jueces</div>
-                                        <img src="/Content/images/descarga.jpg">
-                                    </a>
-                                </div>
-                                <div class="texto">
-                                    <h3>
-                                        <a href="                              /Caballo/consejos/articulo/sabes-cual-es-el-contenido-de-humedad-de-tu-forraje
-                            " title="Ver artículo">¿Sabes cuál es el contenido de humedad de tu forraje?</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-8">
             </div>
         </div>
 

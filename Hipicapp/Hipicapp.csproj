@@ -592,6 +592,7 @@
     <Content Include="Content\images\foto_carrusel2.jpg" />
     <Content Include="Content\images\foto_concurso.jpg" />
     <Content Include="Content\images\foto_caballo.jpg" />
+    <Content Include="Content\images\herradura.png" />
     <Content Include="Content\images\jump.png" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
     <Content Include="Content\images\clear.png" />
