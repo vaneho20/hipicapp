@@ -20,6 +20,11 @@ namespace Hipicapp.Model.Event
 
         [NotNull]
         [NotEmpty]
+        [Size(Max = ValidationUtils.MAX_LENGTH_DESCRIPTION)]
+        public virtual string Description { get; set; }
+
+        [NotNull]
+        [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
         public virtual string Address { get; set; }
 
@@ -42,6 +47,10 @@ namespace Hipicapp.Model.Event
         [Future]
         public virtual DateTime? Date { get; set; }
 
+        [NotNull]
+        [Future]
+        public virtual DateTime? RegistrationDeadline { get; set; }
+
         public virtual CompetitionCategory Category { get; set; }
     }
 
@@ -56,6 +65,7 @@ namespace Hipicapp.Model.Event
 
             Map(x => x.CategoryId).Column("CATEGORY_ID").Not.Nullable();
             Map(x => x.Name).Column("NAME").Not.Nullable();
+            Map(x => x.Description).Column("DESCRIPTION").Not.Nullable().Length(ValidationUtils.MAX_LENGTH_DESCRIPTION);
             Map(x => x.Address).Column("ADDRESS").Not.Nullable();
             Map(x => x.ZipCode).Column("ZIP_CODE").Not.Nullable().Length(ValidationUtils.LENGTH_ZIPCODE);
             Map(x => x.Latitude).Column("LATITUDE").Not.Nullable();

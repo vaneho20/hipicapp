@@ -4,14 +4,16 @@
             <section class="login_content">
                 <form role="form" data-bind="submit: login">
                     <h1 data-i18n="app:LOGIN_TITLE"></h1>
-                    <div>
-                        <input class="form-control" type="email" data-bind="value: credentials.userName, attr: { placeholder: i18n.t('app:EMAIL') }"
+                    <div class="col-md-12 col-sm-12 col-xs-24 form-group has-feedback without-padding">
+                        <input class="form-control has-feedback-left" type="email" data-bind="value: credentials.userName, attr: { placeholder: i18n.t('app:EMAIL') }"
                                required autofocus
                                title="Tu dirección de correo electrónico">
+                        <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                     </div>
-                    <div>
-                        <input class="form-control" type="password" data-bind="value: credentials.password, attr: { placeholder: i18n.t('app:PASSWORD') }"
+                    <div class="col-md-12 col-sm-12 col-xs-24 form-group has-feedback without-padding">
+                        <input class="form-control has-feedback-left" type="password" data-bind="value: credentials.password, attr: { placeholder: i18n.t('app:PASSWORD') }"
                                required>
+                        <span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
                     </div>
                     <div class="checkbox">
                         <label class="">

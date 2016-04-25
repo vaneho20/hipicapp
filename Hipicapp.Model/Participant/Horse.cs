@@ -20,7 +20,7 @@ namespace Hipicapp.Model.Participant
         public virtual string Name { get; set; }
 
         [NotNull]
-        public virtual int? Height { get; set; }
+        public virtual float? Height { get; set; }
 
         [NotNull]
         [Past]

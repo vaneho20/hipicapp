@@ -102,6 +102,7 @@
     "DESCRIPTION": "Descripción",
     "DISCOUNT": "Descuento",
     "EXPIRATION_DATE": "Fecha de expiración",
+    "REGISTRATION_DEADLINE": "Fecha límite de inscripción",
     "HEX_COLOR": "Color",
     "HEX_COLOR_POPOVER": "Selecciona el color corporativo de tu empresa/marca, o si tu navegador no lo soporta, introduce un color en formato hexadecimal, i.e.: #ffffff",
     "IMAGE": "Imagen",
