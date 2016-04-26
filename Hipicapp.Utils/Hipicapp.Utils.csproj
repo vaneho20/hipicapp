@@ -112,7 +112,7 @@
     <Compile Include="Text\StringUtils.cs" />
     <Compile Include="Util\ValidationUtils.cs" />
     <Compile Include="Validator\IInitializableValidator.cs" />
-    <Compile Include="Validator\Nif.cs" />
+    <Compile Include="Validator\NifAttribute.cs" />
     <Compile Include="Validator\NifValidator.cs" />
   </ItemGroup>
   <ItemGroup>

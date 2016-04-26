@@ -69,7 +69,7 @@ namespace Hipicapp.Utils.Util
                     }
                 }
                 string dni = nif.Substring(0, nif.Length - 1);
-                string letraActual = nif.Substring(nif.Length - 1, nif.Length);
+                string letraActual = nif.Substring(nif.Length - 1, nif.Length - (nif.Length - 1));
                 string caracterInicial = nif.Substring(0, 1);
                 string regla = "[0-9]";
 
@@ -84,7 +84,7 @@ namespace Hipicapp.Utils.Util
                     {
                         int dniint = int.Parse(dni);
                         int posicion = dniint % 23;
-                        string letraCorrecta = cadena.Substring(posicion, posicion + 1);
+                        string letraCorrecta = cadena.Substring(posicion, 1);
                         if (letraCorrecta.Equals(letraActual.ToUpper()))
                         {
                             salida = true;
@@ -252,7 +252,7 @@ namespace Hipicapp.Utils.Util
                     salida = false;
                 }
                 string dni = resto.Substring(0, resto.Length - 1);
-                string letraActual = resto.Substring(resto.Length - 1, resto.Length);
+                string letraActual = resto.Substring(resto.Length - 1, resto.Length - (resto.Length - 1));
                 string regla = "[0-9]";
                 if (Regex.IsMatch(letraActual, regla) || Regex.IsMatch(primerCaracter, regla))
                 {
@@ -273,7 +273,7 @@ namespace Hipicapp.Utils.Util
                     {
                         int dniint = int.Parse(dni);
                         int posicion = dniint % 23;
-                        string letraCorrecta = cadena.Substring(posicion, posicion + 1);
+                        string letraCorrecta = cadena.Substring(posicion, 1);
                         if (letraCorrecta.Equals(letraActual.ToUpper()))
                         {
                             salida = true;

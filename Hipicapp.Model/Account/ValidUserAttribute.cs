@@ -5,7 +5,7 @@ namespace Hipicapp.Model.Account
 {
     [Serializable]
     [AttributeUsage(AttributeTargets.Parameter | AttributeTargets.Class | AttributeTargets.Interface)]
-    //[ValidatorClass(typeof(DefaultUserValidator))]
+    //[ValidatorClass(typeof(IInitializableValidator))]
     public class ValidUserAttribute : Attribute, IRuleArgs
     {
         public string Message { get; set; }
