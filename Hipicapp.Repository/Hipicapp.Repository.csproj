@@ -113,7 +113,6 @@
     <Compile Include="File\IFileContentRepository.cs" />
     <Compile Include="File\IFileInfoRepository.cs" />
     <Compile Include="Fluent\AutoincrementalListener.cs" />
-    <Compile Include="Fluent\ConventionMessageInterpolator.cs" />
     <Compile Include="Fluent\CustomSharedEngineProvider.cs" />
     <Compile Include="Fluent\FluentNHibernateLocalSessionFactory.cs" />
     <Compile Include="Fluent\NHVConfiguration.cs" />

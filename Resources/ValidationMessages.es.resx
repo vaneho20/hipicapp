@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="validator.digits" xml:space="preserve">
+    <value>valor numérico fuera de los límites (se esperaba &lt;{integer} dígitos&gt;.&lt;{fraction} dígitos)</value>
+  </data>
+  <data name="validator.email" xml:space="preserve">
+    <value>no es una dirección de correo bien formada</value>
+  </data>
   <data name="validator.future" xml:space="preserve">
     <value>tiene que ser una fecha en el futuro</value>
+  </data>
+  <data name="validator.length" xml:space="preserve">
+    <value>la longitud tiene que estar entre {Min} y {Max}</value>
+  </data>
+  <data name="validator.max" xml:space="preserve">
+    <value>debe ser menor o igual que {Value}</value>
+  </data>
+  <data name="validator.min" xml:space="preserve">
+    <value>debe ser mayor o igual que {Value}</value>
+  </data>
+  <data name="validator.nif.cif.nie" xml:space="preserve">
+    <value>no válido</value>
   </data>
   <data name="validator.notEmpty" xml:space="preserve">
     <value>no puede estar vacío</value>
@@ -126,10 +144,25 @@
   <data name="validator.notNull" xml:space="preserve">
     <value>no puede estar vacío</value>
   </data>
+  <data name="validator.notNullNotEmpty" xml:space="preserve">
+    <value>no puede ser nulo o vacío</value>
+  </data>
+  <data name="validator.numeric" xml:space="preserve">
+    <value>debe ser un valor numérico</value>
+  </data>
   <data name="validator.past" xml:space="preserve">
     <value>tiene que ser una fecha en el pasado</value>
   </data>
+  <data name="validator.pattern" xml:space="preserve">
+    <value>debe coincidir con "{Regex}"</value>
+  </data>
+  <data name="validator.range" xml:space="preserve">
+    <value>debe estar entre {Min} and {Max}</value>
+  </data>
   <data name="validator.size" xml:space="preserve">
-    <value>la longitud tiene que estar entre {min} y {max}</value>
+    <value>la longitud tiene que estar entre {Min} y {Max}</value>
+  </data>
+  <data name="validator.within" xml:space="preserve">
+    <value>debe estar dentro de {Min} y {Max}</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using Hipicapp.Utils.Util;
+﻿using Hipicapp.Utils.Exceptions;
+using Hipicapp.Utils.Util;
 using NHibernate.Validator.Engine;
 
 namespace Hipicapp.Utils.Validator
@@ -43,9 +44,7 @@ namespace Hipicapp.Utils.Validator
                             break;
 
                         default:
-                            break;
-
-                        //throw new EnumConstantNotPresentException(Type.private class, type.name());
+                            throw new EnumConstantNotPresentException(type, type.ToString());
                     }
 
                     if (isValid)

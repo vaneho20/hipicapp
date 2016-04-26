@@ -1,6 +1,7 @@
 ﻿using NHibernate.Cfg;
 using NHibernate.Validator.Cfg;
 using NHibernate.Validator.Engine;
+using Resources;
 using System;
 using System.Collections.Generic;
 
@@ -17,9 +18,7 @@ namespace Hipicapp.Repository.Fluent
             {
                 { NHibernate.Validator.Cfg.Environment.ApplyToDDL, "true" },
                 { NHibernate.Validator.Cfg.Environment.AutoregisterListeners, "true" },
-                { NHibernate.Validator.Cfg.Environment.BaseNameOfMessageResource, "Resources.ValidationMessages, Resources" },
-                //{ NHibernate.Validator.Cfg.Environment.MappingLoaderClass, "Hipicapp.Model" },
-                { NHibernate.Validator.Cfg.Environment.MessageInterpolatorClass, "Hipicapp.Repository.Fluent.ConventionMessageInterpolator, Hipicapp.Repository" }
+                { NHibernate.Validator.Cfg.Environment.CustomResourceManager, ValidationMessages.ResourceManager.BaseName + ", Resources" }
             };
 
         string INHVConfiguration.SharedEngineProviderClass

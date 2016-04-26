@@ -94,6 +94,7 @@
     <Compile Include="Concurrent\Atomic\AtomicReference.cs" />
     <Compile Include="Converter\EpochDateTimeConverter.cs" />
     <Compile Include="Date\DateUtils.cs" />
+    <Compile Include="Exceptions\EnumConstantNotPresentException.cs" />
     <Compile Include="Helper\DateExtensions.cs" />
     <Compile Include="Helper\DescriptionAttributeExtensions.cs" />
     <Compile Include="Helper\HelperMethods.cs" />

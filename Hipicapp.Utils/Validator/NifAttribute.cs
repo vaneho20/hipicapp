@@ -10,7 +10,7 @@ namespace Hipicapp.Utils.Validator
     {
         private Type[] allowedTypes = { Type.NIF, Type.CIF, Type.NIE };
 
-        private string message = "{validator.nif}";
+        private string message = "{validator.nif.cif.nie}";
 
         public string Message { get { return this.message; } set { this.message = value; } }
 
