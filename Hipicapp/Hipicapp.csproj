@@ -601,9 +601,13 @@
     <Content Include="Content\images\foto_caballo2.jpg" />
     <Content Include="Content\images\foto_carrusel1.jpg" />
     <Content Include="Content\images\foto_carrusel2.jpg" />
+    <Content Include="Content\images\foto_carrusel_salto1.jpg" />
+    <Content Include="Content\images\foto_carrusel_salto2.jpg" />
+    <Content Include="Content\images\foto_carrusel_salto3.jpg" />
     <Content Include="Content\images\foto_concurso.jpg" />
     <Content Include="Content\images\foto_caballo.jpg" />
     <Content Include="Content\images\herradura.png" />
+    <Content Include="Content\images\hhp-rfhe.gif" />
     <Content Include="Content\images\jump.png" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
     <Content Include="Content\images\clear.png" />
@@ -622,6 +626,7 @@
     <Content Include="Content\images\select2.png" />
     <Content Include="Content\images\select2x2.png" />
     <Content Include="Content\images\Sicab2012.jpg" />
+    <Content Include="Content\images\todoparamicaballo.jpg" />
     <Content Include="Content\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jquery.fileupload-ui.css" />
     <Content Include="Content\public.css">
