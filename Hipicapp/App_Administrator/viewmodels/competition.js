@@ -4,23 +4,24 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/competition/competitionBroker",
     "domain/competition/competitionImpl", "domain/competitionCategory/competitionCategoryBroker",
-    "viewmodels/shell", "viewmodels/alerts"
+    "domain/specialty/specialtyBroker", "viewmodels/shell", "viewmodels/alerts"
 ],
     function competitionViewModel(i18n, router, securityContext, stringUtils, urlUtils,
                                  validationUtils, competitionBroker, competitionImpl, competitionCategoryBroker,
-                                 shell, alerts) {
+                                 specialtyBroker, shell, alerts) {
         "use strict";
 
         // state definition
-        var viewModel = {}, currentEntity = ko.observable(competitionImpl()), availableCategories = ko.observable();
+        var viewModel = {}, currentEntity = ko.observable(competitionImpl()), availableCategories = ko.observable(),
+            availableSpecialties = ko.observable();
 
         // lifecycle definition
         function activate(id) {
             if (id) {
                 // allways return a promise
-                return $.when(loadEntityByCompetitionId(id), loadAvailableCategories());
+                return $.when(loadEntityByCompetitionId(id), loadAvailableCategories(), loadAvailableSpecialties());
             } else {
-                return $.when(loadAvailableCategories()).done(function onSuccess() {
+                return $.when(loadAvailableCategories(), loadAvailableSpecialties()).done(function onSuccess() {
                     return refreshCurrentEntity();
                 });
             }
@@ -43,6 +44,14 @@ define([
             return competitionCategoryBroker.findAll().done(refreshCategories);
         }
 
+        function refreshSpecialties(data) {
+            availableSpecialties(data);
+        }
+
+        function loadAvailableSpecialties() {
+            return specialtyBroker.findAll().done(refreshSpecialties);
+        }
+
         function save() {
             var promise;
             if (currentEntity().id) {
@@ -62,6 +71,7 @@ define([
         // state revelation
         viewModel.currentEntity = currentEntity;
         viewModel.availableCategories = availableCategories;
+        viewModel.availableSpecialties = availableSpecialties;
 
         // lifecycle revelation
         viewModel.activate = activate;

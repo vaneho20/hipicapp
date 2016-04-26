@@ -73,6 +73,9 @@
     <Compile Include="Account\Ticket.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Account\ValidUserAttribute.cs" />
+    <Compile Include="Event\SpecialtyFindFilter.cs" />
+    <Compile Include="Event\SpecialtyFindRequest.cs" />
+    <Compile Include="Event\Specialty.cs" />
     <Compile Include="Participant\Athlete.cs" />
     <Compile Include="Participant\AthleteFindFilter.cs" />
     <Compile Include="Participant\AthleteFindRequest.cs" />

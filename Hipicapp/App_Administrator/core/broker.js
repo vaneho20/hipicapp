@@ -22,6 +22,8 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         COMPETITION_CATEGORY: "competitionCategory",
         CATEGORIES: "categories",
         CATEGORY: "category",
+        SPECIALTIES: "specialties",
+        SPECIALTY: "specialty",
         HANDLERS: "Handlers/AjaxFileUploaderHandler.upload",
         URL_TITLE: "{urlTitle}",
         TOKEN: "token",

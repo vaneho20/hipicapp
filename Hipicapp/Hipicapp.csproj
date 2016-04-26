@@ -289,6 +289,7 @@
     <Content Include="App\domain\athlete\athleteImpl.js" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Aspects\AuthorizationInterceptor.cs" />
+    <Compile Include="Controllers\Event\SpecialtyController.cs" />
     <Compile Include="Controllers\Event\CompetitionCategoryController.cs" />
     <Compile Include="Controllers\Event\CompetitionController.cs" />
     <Compile Include="Controllers\Participant\JudgeController.cs" />
@@ -319,8 +320,10 @@
     <Compile Include="Proxy\Authentication\IClientProxy.cs" />
     <Compile Include="Proxy\Authentication\IRefreshTokenProxy.cs" />
     <Compile Include="Proxy\Authentication\RefreshTokenProxy.cs" />
+    <Compile Include="Proxy\Event\SpecialtyProxy.cs" />
     <Compile Include="Proxy\Event\CompetitionCategoryProxy.cs" />
     <Compile Include="Proxy\Event\CompetitionProxy.cs" />
+    <Compile Include="Proxy\Event\ISpecialtyProxy.cs" />
     <Compile Include="Proxy\Event\ICompetitionCategoryProxy.cs" />
     <Compile Include="Proxy\Event\ICompetitionProxy.cs" />
     <Compile Include="Proxy\File\FileProxy.cs" />
@@ -441,6 +444,10 @@
     <Content Include="App_Administrator\core\util\stringUtils.js" />
     <Content Include="App_Administrator\core\util\urlUtils.js" />
     <Content Include="App_Administrator\core\util\validationUtils.js" />
+    <Content Include="App_Administrator\domain\specialty\specialtyBroker.js" />
+    <Content Include="App_Administrator\domain\specialty\specialtyFilterImpl.js" />
+    <Content Include="App_Administrator\domain\specialty\specialtyImpl.js" />
+    <Content Include="App_Administrator\domain\specialty\specialtySortImpl.js" />
     <Content Include="App_Administrator\domain\competitionCategory\competitionCategoryBroker.js" />
     <Content Include="App_Administrator\domain\competitionCategory\competitionCategoryFilterImpl.js" />
     <Content Include="App_Administrator\domain\competitionCategory\competitionCategoryImpl.js" />
@@ -482,6 +489,8 @@
     <Content Include="App_Administrator\bindings\typeaheadBinding.js" />
     <Content Include="App_Administrator\main.js" />
     <Content Include="App_Administrator\viewmodels\athleteHorses.js" />
+    <Content Include="App_Administrator\viewmodels\specialties.js" />
+    <Content Include="App_Administrator\viewmodels\specialty.js" />
     <Content Include="App_Administrator\viewmodels\competitionCategory.js" />
     <Content Include="App_Administrator\viewmodels\competitionCategories.js" />
     <Content Include="App_Administrator\viewmodels\judge.js" />
@@ -505,6 +514,8 @@
     <Content Include="App_Administrator\viewmodels\users.js" />
     <Content Include="App_Administrator\viewmodels\welcome.js" />
     <Content Include="App_Administrator\views\athleteHorses.html" />
+    <Content Include="App_Administrator\views\specialties.html" />
+    <Content Include="App_Administrator\views\specialty.html" />
     <Content Include="App_Administrator\views\competitionCategory.html" />
     <Content Include="App_Administrator\views\competitionCategories.html" />
     <Content Include="App_Administrator\views\judge.html" />

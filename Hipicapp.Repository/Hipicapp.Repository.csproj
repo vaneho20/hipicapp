@@ -102,8 +102,10 @@
     <Compile Include="Authentication\IClientRepository.cs" />
     <Compile Include="Authentication\IRefreshTokenRepository.cs" />
     <Compile Include="Authentication\RefreshTokenRepository.cs" />
+    <Compile Include="Event\SpecialtyRepository.cs" />
     <Compile Include="Event\CompetitionCategoryRepository.cs" />
     <Compile Include="Event\CompetitionRepository.cs" />
+    <Compile Include="Event\ISpecialtyRepository.cs" />
     <Compile Include="Event\ICompetitionCategoryRepository.cs" />
     <Compile Include="Event\ICompetitionRepository.cs" />
     <Compile Include="File\FileContentRepository.cs" />

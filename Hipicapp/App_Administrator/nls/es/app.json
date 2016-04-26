@@ -130,6 +130,7 @@
     "TITLE": "Título",
     "WEB": "Página web",
     "ZIPCODE": "Código Postal",
+    "WEIGHT": "Peso",
     "EMAIL": "Correo electrónico",
     "PASSWORD": "Contraseña",
     "STATE_CHANGE_DATE": "Fecha de cambio de estado",
@@ -190,6 +191,13 @@
     "COMPETITION_CATEGORY_LIST_CAPTION": "Lista de categorías",
     "COMPETITION_CATEGORY_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún categoría!",
     "COMPETITION_CATEGORY_LIST_EMPTY_DETAIL": "Crea ahora un primer categoría en <strong>Hipicapp</strong>.",
+    "SPECIALTY": "Especialidad",
+    "SPECIALTIES": "Especialidades",
+    "SPECIALTY_FILTER_LEGEND": "Buscar especialidades",
+    "SPECIALTY_NAME_FILTER": "Busca los especialidades cuyo nombre empieza por...",
+    "SPECIALTY_LIST_CAPTION": "Lista de especialidades",
+    "SPECIALTY_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún especialidad!",
+    "SPECIALTY_LIST_EMPTY_DETAIL": "Crea ahora un primer especialidad en <strong>Hipicapp</strong>.",
     "AccessDeniedException": "¡Oops! No tienes permiso para acceder a esa funcionalidad",
     "BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos"
 }

@@ -49,6 +49,10 @@ namespace Hipicapp.Model.Participant
         [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? BirthDate { get; set; }
 
+        [NotNull]
+        [Min(0)]
+        public virtual float? Weight { get; set; }
+
         public virtual CompetitionCategory Category { get; set; }
 
         public virtual FileInfo Photo { get; set; }
@@ -81,6 +85,7 @@ namespace Hipicapp.Model.Participant
             Map(x => x.Surnames).Column("SURNAMES");
             Map(x => x.Gender).Column("GENDER").CustomType<GenericEnumMapper<Gender>>().Not.Nullable();
             Map(x => x.BirthDate).Column("BIRTH_DATE").CustomType("Date");
+            Map(x => x.Weight).Column("WEIGHT").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();

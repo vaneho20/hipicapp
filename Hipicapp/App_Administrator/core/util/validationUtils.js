@@ -48,6 +48,10 @@ define(function validationUtils() {
 
     utils.MAX_LENGTH = MAX_LENGTH;
     utils.MIN_PASSWORD_LENGTH = 6;
+    utils.MIN_LATITUDE = -90;
+    utils.MAX_LATITUDE = 90;
+    utils.MIN_LONGITUDE = -180;
+    utils.MAX_LONGITUDE = 180;
     utils.PASSWORD_PATTERN = ".{6,}";
     utils.FLOAT_STEP = FLOAT_STEP;
     utils.MAX_FILE_SIZE = MAX_FILE_SIZE;

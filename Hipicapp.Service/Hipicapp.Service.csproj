@@ -97,10 +97,13 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\SpecialtyPredicates.cs" />
     <Compile Include="Event\CompetitionCategoryPredicates.cs" />
+    <Compile Include="Event\SpecialtyService.cs" />
     <Compile Include="Event\CompetitionPredicates.cs" />
     <Compile Include="Event\CompetitionCategoryService.cs" />
     <Compile Include="Event\CompetitionService.cs" />
+    <Compile Include="Event\ISpecialtyService.cs" />
     <Compile Include="Event\ICompetitionCategoryService.cs" />
     <Compile Include="Event\ICompetitionService.cs" />
     <Compile Include="Exceptions\BadCredentialsException.cs" />

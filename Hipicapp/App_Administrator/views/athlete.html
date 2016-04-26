@@ -73,33 +73,45 @@
                                    data-bind="text: i18n.t('app:NAME')"></label>
                             <input class="form-control" type="text" id="h-athlete-name" autofocus
                                    data-bind="value: currentEntity().name,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:NAME'),
-							title: i18n.t('app:NAME')}"
-                                   required autocomplete="off">
+						            attr: { max: validationUtils.MAX_LENGTH,
+							            maxlength: validationUtils.MAX_LENGTH,
+							            placeholder: i18n.t('app:NAME'),
+							            title: i18n.t('app:NAME')}"
+                                   required autocomplete="off" />
                         </div>
                         <div class="form-group">
                             <label class="required" for="h-athlete-surnames"
                                    data-bind="text: i18n.t('app:SURNAMES')"></label>
                             <input class="form-control" type="text" id="h-athlete-surnames" autofocus
                                    data-bind="value: currentEntity().surnames,
-						attr: { max: validationUtils.MAX_LENGTH,
-							maxlength: validationUtils.MAX_LENGTH,
-							placeholder: i18n.t('app:SURNAMES'),
-							title: i18n.t('app:SURNAMES')}"
-                                   required autocomplete="off">
+						            attr: { max: validationUtils.MAX_LENGTH,
+							            maxlength: validationUtils.MAX_LENGTH,
+							            placeholder: i18n.t('app:SURNAMES'),
+							            title: i18n.t('app:SURNAMES')}"
+                                   required autocomplete="off" />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
                             <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
                             <select id="h-athlete-gender"
                                     data-bind="options: availableGenders,
-							optionsValue: function(item) { return item.value },
-							optionsText: function(item) { return item.text },
-							optionsCaption : i18n.t('app:GENDER') + '...',
-							value: currentEntity().gender,
-							attr: { title: i18n.t('app:GENDER') }"
+							            optionsValue: function(item) { return item.value },
+							            optionsText: function(item) { return item.text },
+							            optionsCaption : i18n.t('app:GENDER') + '...',
+							            value: currentEntity().gender,
+							            attr: { title: i18n.t('app:GENDER') }"
                                     required class="form-control" aria-required="true"></select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                            <label for="h-athlete-weight"
+                                   data-bind="text: i18n.t('app:WEIGHT')"></label>
+                            <input class="form-control" type="number" id="h-athlete-weight"
+                                   data-bind="value: currentEntity().weight,
+					                attr: { min: validationUtils.MIN_LONGITUDE,
+						                max: validationUtils.MAX_LONGITUDE,
+						                maxlength: validationUtils.MAX_LENGTH,
+						                step: validationUtils.FLOAT_STEP,
+						                placeholder: i18n.t('app:WEIGHT'),
+						                title: i18n.t('app:WEIGHT') }" required>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 without-padding-left">
                             <div class="form-group">
@@ -108,8 +120,8 @@
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     <input type="text" class="form-control" id="h-athlete-birthdate"
                                            data-bind="epochValue: currentEntity().birthDate,
-	 				            attr: { placeholder: i18n.t('app:BIRTHDATE'),
-	 				            title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
+	 				                            attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				                            title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
                                 </div>
                             </div>
                         </div>
@@ -119,11 +131,11 @@
                                        data-bind="text: i18n.t('app:DNI')"></label>
                                 <input class="form-control" type="text" id="h-athlete-dni" autofocus
                                        data-bind="value: currentEntity().dni,
-						            attr: { max: validationUtils.MAX_LENGTH,
-							            maxlength: validationUtils.MAX_LENGTH,
-							            placeholder: i18n.t('app:DNI'),
-							            title: i18n.t('app:DNI')}"
-                                       required autocomplete="off">
+						                    attr: { max: validationUtils.MAX_LENGTH,
+							                    maxlength: validationUtils.MAX_LENGTH,
+							                    placeholder: i18n.t('app:DNI'),
+							                    title: i18n.t('app:DNI')}"
+                                       required autocomplete="off" />
                             </div>
                         </div>
                     </fieldset>

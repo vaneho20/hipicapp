@@ -51,7 +51,15 @@ namespace Hipicapp.Service.Event
         {
             var model = this.CompetitionRepository.Get(competition.Id);
             model.Name = competition.Name;
+            model.Description = competition.Description;
+            model.Address = competition.Address;
+            model.ZipCode = competition.ZipCode;
+            model.Latitude = competition.Latitude;
+            model.Longitude = competition.Longitude;
             model.Date = competition.Date;
+            model.RegistrationDeadline = competition.RegistrationDeadline;
+            model.CategoryId = competition.CategoryId;
+            model.SpecialtyId = competition.SpecialtyId;
             CompetitionRepository.Save(model);
             return model;
         }

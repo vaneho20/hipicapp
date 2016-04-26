@@ -33,26 +33,26 @@ namespace Hipicapp.Service.Event
         }
 
         [Transaction]
-        public CompetitionCategory Save(CompetitionCategory competition)
+        public CompetitionCategory Save(CompetitionCategory competitionCategory)
         {
-            CompetitionCategoryRepository.Save(competition);
-            return competition;
+            CompetitionCategoryRepository.Save(competitionCategory);
+            return competitionCategory;
         }
 
         [Transaction]
-        public CompetitionCategory Update(CompetitionCategory competition)
+        public CompetitionCategory Update(CompetitionCategory competitionCategory)
         {
-            var model = this.CompetitionCategoryRepository.Get(competition.Id);
-            model.Name = competition.Name;
+            var model = this.CompetitionCategoryRepository.Get(competitionCategory.Id);
+            model.Name = competitionCategory.Name;
             CompetitionCategoryRepository.Save(model);
             return model;
         }
 
         [Transaction]
-        public CompetitionCategory Delete(CompetitionCategory competition)
+        public CompetitionCategory Delete(CompetitionCategory competitionCategory)
         {
-            CompetitionCategoryRepository.Delete(this.CompetitionCategoryRepository.Get(competition.Id));
-            return competition;
+            CompetitionCategoryRepository.Delete(this.CompetitionCategoryRepository.Get(competitionCategory.Id));
+            return competitionCategory;
         }
     }
 }
