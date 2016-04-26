@@ -1,7 +1,6 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Model.Event;
 using Hipicapp.Utils.Comparison;
-using Hipicapp.Utils.Converter;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
 using System;
@@ -17,7 +16,6 @@ namespace Hipicapp.Model.Participant
 
         [NotNull]
         [Past]
-        [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? EnrollmentDate { get; set; }
     }
 

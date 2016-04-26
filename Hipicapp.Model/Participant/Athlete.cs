@@ -3,7 +3,6 @@ using Hipicapp.Model.Abstract;
 using Hipicapp.Model.Account;
 using Hipicapp.Model.Event;
 using Hipicapp.Model.File;
-using Hipicapp.Utils.Converter;
 using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
@@ -46,7 +45,6 @@ namespace Hipicapp.Model.Participant
 
         [NotNull]
         [Past]
-        [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? BirthDate { get; set; }
 
         [NotNull]
@@ -80,7 +78,7 @@ namespace Hipicapp.Model.Participant
             Map(x => x.CategoryId).Column("CATEGORY_ID").Not.Nullable();
             Map(x => x.PhotoId).Column("PHOTO_ID").Nullable();
             Map(x => x.UserId).Column("USER_ID").Not.Nullable();
-            Map(x => x.Dni).Column("DNI").Not.Nullable();
+            Map(x => x.Dni).Column("DNI").Not.Nullable().Unique();
             Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Surnames).Column("SURNAMES");
             Map(x => x.Gender).Column("GENDER").CustomType<GenericEnumMapper<Gender>>().Not.Nullable();

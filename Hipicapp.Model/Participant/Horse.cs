@@ -1,6 +1,5 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Model.File;
-using Hipicapp.Utils.Converter;
 using Hipicapp.Utils.Util;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
@@ -25,7 +24,6 @@ namespace Hipicapp.Model.Participant
 
         [NotNull]
         [Past]
-        [JsonConverter(typeof(EpochDateTimeConverter))]
         public virtual DateTime? BirthDate { get; set; }
 
         public virtual FileInfo Photo { get; set; }

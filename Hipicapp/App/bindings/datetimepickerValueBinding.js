@@ -11,7 +11,7 @@ define(["core/i18n"
         if (!$element.parents("fieldset")[0].disabled) {
             setTimeout(function doAfterBinding() {
                 $element.datetimepicker({
-                    format: i18n.t("app:DATETIME_PATTERN"),
+                    format: i18n.t("app:DATE_PATTERN"),
                     locale: i18n.t("app:CURRENT_LANGUAGE")
                 }).on("changeDate", function onChangeDate(event) {
                     var currentDate = event.localDate.getTime();

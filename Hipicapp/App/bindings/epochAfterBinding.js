@@ -16,7 +16,7 @@ define(
                         },
                         write: function write(rawValue) {
                             var targetValue = underlyingObservable(), convertedValue =
-                                moment(rawValue, i18n.t("app:DATETIME_PATTERN")).valueOf();
+                                moment(rawValue, i18n.t("app:DATE_PATTERN")).valueOf();
 
                             if (convertedValue <= targetValue) {
                                 element.setCustomValidity(message);

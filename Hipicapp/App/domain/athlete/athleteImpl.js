@@ -15,7 +15,7 @@ define(["domain/user/userImpl"], function athleteImplModule(userImpl) {
     /* jshint maxstatements: 35 */
     function athleteImpl(currentAthlete) {
         var athlete = {}, id = null, version = ko.observable(), dni = null, name = null, surnames = null, gender = null,
-            photoId = null, userId = null, birthDate = ko.observable(moment()), photo = null, user = userImpl();
+            photoId = null, userId = null, birthDate = ko.observable(moment()), photo = null, user = userImpl(), weight = 0;
 
         if (currentAthlete) {
             id = currentAthlete.id;
@@ -24,6 +24,7 @@ define(["domain/user/userImpl"], function athleteImplModule(userImpl) {
             name = currentAthlete.name;
             surnames = currentAthlete.surnames;
             gender = currentAthlete.gender;
+            weight = currentAthlete.weight;
             photoId = currentAthlete.photoId;
             userId = currentAthlete.userId;
             birthDate(currentAthlete.birthDate);
@@ -37,6 +38,7 @@ define(["domain/user/userImpl"], function athleteImplModule(userImpl) {
         athlete.name = name;
         athlete.surnames = surnames;
         athlete.gender = gender;
+        athlete.weight = weight;
         athlete.photoId = photoId;
         athlete.userId = userId;
         athlete.birthDate = birthDate;

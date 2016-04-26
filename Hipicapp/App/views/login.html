@@ -1,4 +1,3 @@
-
 <section id="section-content-login">
     <div id="contenido-interior">
         <div class="loginmodal-container">
@@ -6,10 +5,15 @@
                 <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
                 <div class="content">
                     <h2>Formulario de login</h2>
-                    <form>
-                        <input type="text" name="user" placeholder="Username">
-                        <input type="password" name="pass" placeholder="Password">
-                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                    <form id="h-login" data-bind="submit: login">
+                        <input type="email" id="h-login-user-name"
+                               data-bind="value: credentials.userName, attr : { max: validationUtils.MAX_LENGTH, maxlength : validationUtils.MAX_LENGTH, placeholder: i18n.t('EMAIL'), title: i18n.t('EMAIL') }"
+                               required autofocus>
+                        <input type="password" id="h-login-password"
+                               data-bind="value: credentials.password, attr : {	max: validationUtils.MAX_LENGTH, maxlength : validationUtils.MAX_LENGTH, placeholder: i18n.t('PASSWORD'), title: i18n.t('PASSWORD') }"
+                               required>
+                        <input type="submit" name="login" class="login loginmodal-submit"
+                               data-bind="attr : { value: i18n.t('LOGIN'), title: i18n.t('LOGIN_TITLE') }">
                     </form>
 
                     <div class="login-help">

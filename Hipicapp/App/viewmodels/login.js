@@ -1,8 +1,8 @@
 /* global define: false */
 define([
     "core/authentication/authenticationBroker", "core/authentication/securityContext",
-    "core/router", "durandal/app", "core/i18n"
-], function loginViewModel(authenticationBroker, securityContext, router, app, i18n) {
+    "core/router", "core/util/validationUtils", "durandal/app", "core/i18n"
+], function loginViewModel(authenticationBroker, securityContext, router, validationUtils, app, i18n) {
     "use strict";
 
     var viewModel = {}, credentials = {
@@ -28,7 +28,10 @@ define([
     }
 
     viewModel.i18n = i18n;
+    viewModel.validationUtils = validationUtils;
+
     viewModel.credentials = credentials;
+
     viewModel.login = login;
     viewModel.signIn = signIn;
 

@@ -11,7 +11,8 @@ namespace Hipicapp
         {
             config.ParameterBindingRules.Add(p =>
             {
-                if (p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Post) || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Put))
+                if (p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Post) || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Put)
+                    || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Delete))
                 {
                     return new ValidParameterBinding(p);
                 }

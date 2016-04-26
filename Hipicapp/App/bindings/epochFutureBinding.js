@@ -27,12 +27,12 @@ define(
 
                 var currentValue = underlyingObservable();
                 if (currentValue) {
-                    return moment(currentValue).format(i18n.t("app:DATETIME_PATTERN"));
+                    return moment(currentValue).format(i18n.t("app:DATE_PATTERN"));
                 }
             }
 
             function write(rawValue) {
-                var convertedValue = moment(rawValue, i18n.t("app:DATETIME_PATTERN")).valueOf();
+                var convertedValue = moment(rawValue, i18n.t("app:DATE_PATTERN")).valueOf();
 
                 if (condition && $element.closest("form")[0].checkValidity) {
                     checkValid(element, convertedValue);
