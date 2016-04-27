@@ -55,6 +55,7 @@ namespace Hipicapp.Model.Participant
 
         public virtual FileInfo Photo { get; set; }
 
+        [Valid]
         public virtual User User { get; set; }
 
         public virtual long? Age

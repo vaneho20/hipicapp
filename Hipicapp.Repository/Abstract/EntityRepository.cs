@@ -4,12 +4,14 @@ using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
 using Spring.Objects.Factory.Attributes;
+using Spring.Transaction.Interceptor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Hipicapp.Repository.Abstract
 {
+    [Transaction(ReadOnly = true)]
     public abstract class EntityRepository<T, K> : IEntityRepository<T, K> where T : Entity<K>
     {
         private ISessionFactory sessionFactory;

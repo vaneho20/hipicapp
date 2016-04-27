@@ -106,7 +106,6 @@
     <Compile Include="Participant\Score.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Athlete\" />
     <Folder Include="Binomial\" />
   </ItemGroup>
   <ItemGroup>

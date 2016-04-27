@@ -1,12 +1,12 @@
 ﻿using Hipicapp.Model.Account;
-using Hipicapp.Repository.Account.Impl;
+using Hipicapp.Repository.Account;
 using Hipicapp.Service.Validator;
 using NHibernate.Validator.Engine;
 using System;
 
 namespace Hipicapp.Service.Account
 {
-    public abstract class AbstractUserValidator<A> : AbstractValidator<A, User, long?, UserRepository> where A : Attribute
+    public abstract class AbstractUserValidator<A> : AbstractValidator<A, User, long?, IUserRepository> where A : Attribute
     {
         protected override bool DoIsValid(User entity, IConstraintValidatorContext context)
         {
