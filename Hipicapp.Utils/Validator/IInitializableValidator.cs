@@ -3,7 +3,7 @@ using System;
 
 namespace Hipicapp.Utils.Validator
 {
-    public abstract class IInitializableValidator<A, E> : NHibernate.Validator.Engine.IInitializableValidator<A>
+    public abstract class InitializableValidator<A, E> : IInitializableValidator<A>
         where A : Attribute
         where E : class
     {

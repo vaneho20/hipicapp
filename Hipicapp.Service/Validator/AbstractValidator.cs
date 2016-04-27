@@ -8,7 +8,7 @@ using System;
 
 namespace Hipicapp.Service.Validator
 {
-    public abstract class AbstractValidator<A, E, K, R> : IInitializableValidator<A, E>
+    public abstract class AbstractValidator<A, E, K, R> : InitializableValidator<A, E>
         where A : Attribute
         where E : Entity<K>
         where R : IEntityRepository<E, K>
@@ -19,11 +19,24 @@ namespace Hipicapp.Service.Validator
 
         protected override void Initialize2(A parameters)
         {
-            this.EntityRepository = ApplicationContextHolder.GetApplicationContext().GetObject<R>();
+            var context = ApplicationContextHolder.GetApplicationContext();
+            if (context != null)
+            {
+                this.LoadEntityFromApplicationContext();
+            }
+        }
+
+        private void LoadEntityFromApplicationContext()
+        {
+            if (this.EntityRepository == null)
+            {
+                this.EntityRepository = ApplicationContextHolder.GetApplicationContext().GetObject<R>();
+            }
         }
 
         protected override bool IsValid2(E entity, IConstraintValidatorContext context)
         {
+            this.LoadEntityFromApplicationContext();
             bool isValid = true;
 
             if (entity != null)

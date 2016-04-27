@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a tiene que ser único.
+        /// </summary>
+        public static string hipicapp_validator_unique {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.unique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El usuario ya está registrado en Hipicapp.
+        /// </summary>
+        public static string hipicapp_validator_user_email_unique {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.user.email.unique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a valor numérico fuera de los límites (se esperaba &lt;{integer} dígitos&gt;.&lt;{fraction} dígitos).
         /// </summary>
         public static string validator_digits {

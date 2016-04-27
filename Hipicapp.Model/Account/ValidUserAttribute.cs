@@ -5,9 +5,11 @@ namespace Hipicapp.Model.Account
 {
     [Serializable]
     [AttributeUsage(AttributeTargets.Parameter | AttributeTargets.Class | AttributeTargets.Interface)]
-    //[ValidatorClass(typeof(IDefaultUserValidator))]
+    [ValidatorClass("Hipicapp.Service.Account.DefaultUserValidator, Hipicapp.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")]
     public class ValidUserAttribute : Attribute, IRuleArgs
     {
-        public string Message { get; set; }
+        private string message = "{hipicapp.validator.unique}";
+
+        public string Message { get { return this.message; } set { this.message = value; } }
     }
 }

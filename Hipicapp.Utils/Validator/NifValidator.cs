@@ -4,7 +4,7 @@ using NHibernate.Validator.Engine;
 
 namespace Hipicapp.Utils.Validator
 {
-    public class NifValidator : IInitializableValidator<NifAttribute, string>
+    public class NifValidator : InitializableValidator<NifAttribute, string>
     {
         private Hipicapp.Utils.Validator.NifAttribute.Type[] AllowedTypes { get; set; }
 

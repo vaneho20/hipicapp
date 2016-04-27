@@ -31,7 +31,7 @@ namespace Hipicapp.Service.Account
             if ((checkEmailUser != null) && (user.IsNew || !checkEmailUser.Equals(user)))
             {
                 isValid = false;
-                //context.AddInvalid("{es.momomobile.mobi.validator.user.email.unique.message}").addPropertyNode(User.Properties.EMAIL).addConstraintViolation();
+                context.AddInvalid<User, string>("{hipicapp.validator.user.email.unique}", x => x.UserName);
             }
             return isValid;
         }
