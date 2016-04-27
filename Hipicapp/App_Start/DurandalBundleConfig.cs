@@ -30,8 +30,6 @@ namespace Hipicapp
                 .Include("~/Content/bootstrap.css")
                 .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/bootstrap-datetimepicker.css")
-                //.Include("~/Content/durandal.css")
-                //.Include("~/Content/starterkit.css")
                 .Include("~/Content/public.css")
             );
 
@@ -49,7 +47,6 @@ namespace Hipicapp
                 .Include("~/Scripts/bootstrap-{version}.js")
                 .Include("~/Scripts/bootstrap-datetimepicker.js")
                 //.Include("~/Scripts/bootstrap-datetimepicker-es-{version}.js")
-                //.Include("~/Scripts/Administrator/metisMenu.js")
                 .Include("~/Scripts/Administrator/custom.js")
                 .Include("~/Scripts/knockout-{version}.js")
                 .Include("~/Scripts/amplify-{version}.js")
@@ -62,12 +59,9 @@ namespace Hipicapp
                 .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.css")
                 .Include("~/Content/bootstrap-datetimepicker.css")
-                //.Include("~/Content/Administrator/metisMenu.css")
                 .Include("~/Content/Administrator/custom.css")
                 .Include("~/Content/Administrator/icheck/flat/green.css")
                 .Include("~/Content/font-awesome.min.css")
-                //.Include("~/Content/durandal.css")
-                //.Include("~/Content/starterkit.css")
             );
         }
 

@@ -30,6 +30,7 @@
 
                 return router.activate().then(function init() {
                     if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
+                        router.navigateToProfile();
                     }
                 });
             }

@@ -588,8 +588,6 @@
     <Content Include="Content\Administrator\icheck\flat\yellow.css" />
     <Content Include="Content\Administrator\icheck\flat\yellow.png" />
     <Content Include="Content\Administrator\icheck\flat\_all.css" />
-    <Content Include="Content\Administrator\metisMenu.css" />
-    <Content Include="Content\Administrator\sb-admin-2.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-editable.css" />
@@ -650,12 +648,9 @@
     <Content Include="Global.asax" />
     <Content Include="hipicap-favicon.ico" />
     <Content Include="Scripts\Administrator\custom.js" />
-    <Content Include="Scripts\Administrator\metisMenu.js" />
-    <Content Include="Scripts\Administrator\sb-admin-2.js" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\amplify-1.1.0.js" />
     <Content Include="Scripts\amplify-request-deferred-0.0.0.js" />
-    <Content Include="Scripts\audioplayer.js" />
     <Content Include="Scripts\bootstrap-2.3.2.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-es-0.0.11.js" />

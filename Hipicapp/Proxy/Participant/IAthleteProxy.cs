@@ -1,6 +1,8 @@
 ﻿using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Utils.Pager;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Hipicapp.Proxy.Participant
 {
@@ -14,7 +16,7 @@ namespace Hipicapp.Proxy.Participant
 
         Athlete Save(Athlete athlete);
 
-        Athlete Register(Athlete athlete);
+        Task<HttpResponseMessage> Register(Athlete athlete);
 
         Athlete Update(Athlete athlete);
 

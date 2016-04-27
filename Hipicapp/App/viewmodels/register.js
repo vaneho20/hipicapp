@@ -27,6 +27,7 @@ define([
 
     // behaviour definition
     function refreshCurrentEntity(data) {
+        securityContext.refresh(data);
         router.reloadCurrentLocation();
     }
 

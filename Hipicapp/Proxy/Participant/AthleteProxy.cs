@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -53,7 +54,7 @@ namespace Hipicapp.Proxy.Participant
         }
 
         [AllowAnonymous]
-        public Athlete Register(Athlete athlete)
+        public async Task<HttpResponseMessage> Register(Athlete athlete)
         {
             var unencryptedPassword = athlete.User.NewPassword;
             var model = this.AthleteService.Save(athlete);
@@ -66,8 +67,7 @@ namespace Hipicapp.Proxy.Participant
                 new KeyValuePair<string, string>("client_id", "hipicapp-web"),
                 new KeyValuePair<string, string>("client_secret", "hipicapp@2016~~")
             };
-            testServer.HttpClient.PostAsync("/api/token", new FormUrlEncodedContent(requestParams));
-            return model;
+            return await testServer.HttpClient.PostAsync("/api/token", new FormUrlEncodedContent(requestParams));
         }
 
         [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]

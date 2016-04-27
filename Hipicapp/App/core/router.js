@@ -26,12 +26,17 @@ define([
         return router.navigate("#jump");
     }
 
+    function navigateToProfile() {
+        return router.navigate("#athlete");
+    }
+
     router.reloadCurrentLocation = reloadCurrentLocation;
 
     router.navigateToLogin = navigateToLogin;
     router.navigateToRegister = navigateToRegister;
     router.navigateToDressage = navigateToDressage;
     router.navigateToJump = navigateToJump;
+    router.navigateToProfile = navigateToProfile;
 
     return router;
 });

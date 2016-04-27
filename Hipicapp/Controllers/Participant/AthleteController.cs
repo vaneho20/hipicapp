@@ -59,7 +59,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        public Athlete Register([Valid] Athlete athlete)
+        public Task<HttpResponseMessage> Register(Athlete athlete)
         {
             return this.AthleteProxy.Register(athlete);
         }
