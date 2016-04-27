@@ -43,7 +43,9 @@ body {
         margin: 0;
         padding: 0.8em 0;
         background: #fff;
-
+        .container{
+            padding:0 15px;
+            }
         .enlaces-header {
             margin-top: 1.2em;
 
@@ -159,12 +161,12 @@ body {
     .header-block {
         position: relative;
         margin: 2.8em 0 0 0;
-        padding: 2em 0;
+        padding: 1.5em 0;
         font-family: 'Montserrat', sans-serif;
-        font-size: 2em;
+        font-size: 1.8em;
         color: #fff;
         text-align: center;
-        background: url("images/foto_doma_clasica.jpg") 50% 50% / cover no-repeat;
+        background: url("images/foto_doma_clasica.jpg") 50% 30% / cover no-repeat;
 
         &:after {
             content: "";
@@ -178,8 +180,7 @@ body {
 
         &.header-salto {
             background: url("images/foto_salto.jpg") 50% 50% / cover no-repeat;
-        }
-
+        }        
         h1 {
             position: relative;
             z-index: 9;
@@ -571,17 +572,6 @@ body {
 
             .un-destacado {
                 position: relative;
-
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    content: "";
-                    background: rgba(0,0,0,0.75);
-                }
-
                 img {
                     width: 100%;
                     height: 180px;
@@ -589,18 +579,21 @@ body {
 
                 h3 {
                     position: absolute;
+                    display:inline-block;
                     margin: 0;
+                    padding:0 1em 0.3em 1em;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 2em;
-                    color: #f74b4b;
+                    color: #fff;
                     top: 50%;
-                    left: 50%;
+                    left: 0;
                     z-index: 99;
-                    -ms-transform: translate(-50%,-50%); /* IE 9 */
-                    -webkit-transform: translate(-50%,-50%); /* Safari */
-                    -moz-transform: translate(-50%,-50%);
-                    -o-transform: translate(-50%,-50%);
-                    transform: translate(-50%,-50%);
+                    -ms-transform: translate(0,-50%); /* IE 9 */
+                    -webkit-transform: translate(0,-50%); /* Safari */
+                    -moz-transform: translate(0,-50%);
+                    -o-transform: translate(0,-50%);
+                    transform: translate(0,-50%);
+                    background: url("images/subrayado_blanco.png") no-repeat 50% 100%;
                 }
             }
         }
@@ -621,10 +614,33 @@ body {
 
             .modulo-3-noticias {
                 float: left;
+                padding-top:1em;
                 width: 100%;
                 background: #f8f8f8;
                 margin-bottom: 20px;
-
+                header{
+                    h2{
+                        font-size: 1.8em;
+                        margin: 0 0 0.5em;
+                        }
+                    a.pull-right{
+                         display: inline-block;
+                        margin: 0 0 0 0;
+                        padding: 0.5em 1em;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 0.8em;
+                        color: #fff;
+                        text-transform: uppercase;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        border-radius: 4px;
+                        background: #4d4c4c;
+                        &:hover{
+                            text-decoration:none;
+                            background: #313131;
+                           }
+                        }
+                    }
                 .inner-modulo {
                     padding: 0;
 
@@ -655,7 +671,8 @@ body {
                                     bottom: 0;
                                     right: 0;
                                     display: inline-block;
-                                    font: 11px/1.1 arial,helvetica,sans-serif;
+                                    font-family: 'Montserrat', sans-serif;
+                                    font-size:0.8em;
                                     margin: 0;
                                     padding: 8px 10px;
                                     text-transform: uppercase;

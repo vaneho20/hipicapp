@@ -15,7 +15,7 @@ namespace Hipicapp.Proxy.Participant
         [Autowired]
         private IJudgeService JudgeService { get; set; }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        //[AuthorizeEnum(Rol.ADMINISTRATOR)]
         public Page<Judge> Paginated(JudgeFindRequest request)
         {
             return this.JudgeService.Paginated(request.Filter, request.PageRequest);

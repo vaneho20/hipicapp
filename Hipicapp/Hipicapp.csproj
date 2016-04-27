@@ -295,6 +295,7 @@
     <Content Include="App\core\util\urlUtils.js" />
     <Content Include="App\core\util\validationUtils.js" />
     <Content Include="App\domain\athlete\athleteBroker.js" />
+    <Content Include="App\domain\athlete\athleteFilterImpl.js" />
     <Content Include="App\domain\athlete\athleteImpl.js" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Aspects\AuthorizationInterceptor.cs" />
@@ -377,6 +378,7 @@
     <Content Include="App\core\i18n.js" />
     <Content Include="App\core\router.js" />
     <Content Include="App\core\subrouter.js" />
+    <Content Include="App\domain\athlete\athleteSortImpl.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryBroker.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryFilterImpl.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryImpl.js" />
@@ -390,11 +392,17 @@
     <Content Include="App\domain\horse\horseFilterImpl.js" />
     <Content Include="App\domain\horse\horseImpl.js" />
     <Content Include="App\domain\horse\horseSortImpl.js" />
+    <Content Include="App\domain\judge\judgeBroker.js" />
+    <Content Include="App\domain\judge\judgeFilterImpl.js" />
+    <Content Include="App\domain\judge\judgeImpl.js" />
+    <Content Include="App\domain\judge\judgeSortImpl.js" />
     <Content Include="App\domain\user\userImpl.js" />
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\alerts.js" />
-    <Content Include="App\viewmodels\athlete.js" />
+    <Content Include="App\viewmodels\athletes.js" />
     <Content Include="App\viewmodels\competitions.js" />
+    <Content Include="App\viewmodels\judges.js" />
+    <Content Include="App\viewmodels\profile.js" />
     <Content Include="App\viewmodels\jump.js" />
     <Content Include="App\viewmodels\dressage.js" />
     <Content Include="App\viewmodels\horses.js" />
@@ -408,8 +416,10 @@
     <Content Include="App\viewmodels\sidebar.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
-    <Content Include="App\views\athlete.html" />
+    <Content Include="App\views\athletes.html" />
     <Content Include="App\views\competitions.html" />
+    <Content Include="App\views\judges.html" />
+    <Content Include="App\views\profile.html" />
     <Content Include="App\views\jump.html" />
     <Content Include="App\views\dressage.html" />
     <Content Include="App\views\horses.html" />

@@ -3,18 +3,18 @@
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/competition/competitionBroker", "domain/competition/competitionFilterImpl",
-    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "durandal/app",
+    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
+    "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
-], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, competitionBroker, competitionFilterImpl,
-                        competitionSortImpl, competitionImpl, app, alerts, shell) {
+], function judges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
+                        validationUtils, judgeBroker, judgeFilterImpl,
+                        judgeSortImpl, judgeImpl, app, alerts, shell) {
     "use strict";
 
     // state definition
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter =
-        ko.observable(competitionFilterImpl()), currentFilter = competitionFilterImpl(), currentSort =
-        ko.observable(competitionSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
+        ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(), currentSort =
+        ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
         ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
 
     // lifecycle definition
@@ -31,7 +31,7 @@ define([
 
     function loadPageByIndex(index, totalElements) {
         if (index === 0 || index > 0 && index < currentPage().totalPages) {
-            return competitionBroker.findBy(
+            return judgeBroker.findBy(
                 findRequestImpl(currentFilter, pageRequestImpl(index, currentPageSize, currentSort,
                     totalElements))).done(refreshCurrentPage);
         }
@@ -57,7 +57,7 @@ define([
     }
 
     function clearFilter() {
-        nextFilter(competitionFilterImpl());
+        nextFilter(judgeFilterImpl());
 
         return search();
     }
@@ -69,25 +69,37 @@ define([
         return loadCurrentPage();
     }
 
-    function deleteRow(competition) {
+    function deleteRow(judge) {
         app.showMessage(i18n.t('DELETE_MESSAGE_BOX_CONTENT'), i18n.t('DELETE_MESSAGE_BOX_TITLE'), [
             i18n.t('YES'), i18n.t('NO')
         ]).done(function hideMessage(answer) {
             if (answer === i18n.t('YES')) {
-                competitionBroker.erase(competition).done(loadCurrentPage);
+                judgeBroker.erase(judge).done(loadCurrentPage);
             }
         });
     }
 
-    function simulateScore(competition) {
-        competitionBroker.simulateScore(competition).done(loadCurrentPage);
+    function getRowClass(row) {
+        var rowClass = "";
+
+        /*if (!row.enabled) {
+            rowClass = "error";
+        } else if (row.userType === userImpl.userType.CLIENT) {
+            rowClass = "warning";
+        } else if (row.userType === userImpl.userType.CONSUMER) {
+            rowClass = "success";
+        } else if (row.userType === userImpl.userType.USER) {
+            rowClass = "info";
+        }*/
+
+        return rowClass;
     }
 
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
-    viewModel.competitionBroker = competitionBroker;
+    viewModel.judgeBroker = judgeBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;
@@ -109,15 +121,23 @@ define([
     viewModel.search = search;
     viewModel.clearFilter = clearFilter;
     viewModel.deleteRow = deleteRow;
-    viewModel.simulateScore = simulateScore;
+    viewModel.getRowClass = getRowClass;
 
     // bind helpers
-    viewModel.sortByName = _.partial(sortByProperty, competitionImpl.properties.NAME);
+    viewModel.sortByName = _.partial(sortByProperty, judgeImpl.properties.NAME);
     viewModel.getOrderIconTitleForName = ko.computed(function getOrderIconTitleForName() {
-        return currentSort().getOrderByProperty(competitionImpl.properties.NAME).getIconTitle();
+        return currentSort().getOrderByProperty(judgeImpl.properties.NAME).getIconTitle();
     });
     viewModel.getOrderIconClassForName = ko.computed(function getOrderIconClassForName() {
-        return currentSort().getOrderByProperty(competitionImpl.properties.NAME).getIconClass();
+        return currentSort().getOrderByProperty(judgeImpl.properties.NAME).getIconClass();
+    });
+
+    viewModel.sortBySurnames = _.partial(sortByProperty, judgeImpl.properties.SURNAMES);
+    viewModel.getOrderIconTitleForSurnames = ko.computed(function getOrderIconTitleForSurnames() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.SURNAMES).getIconTitle();
+    });
+    viewModel.getOrderIconClassForSurnames = ko.computed(function getOrderIconClassForSurnames() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.SURNAMES).getIconClass();
     });
 
     return viewModel;

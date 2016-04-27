@@ -8,11 +8,11 @@
 <nav class="nav navbar menu-principal">
     <div class="container">
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">Inicio</a></li>
-            <li role="presentation"><a href="#">Atletas</a></li>
-            <li role="presentation"><a href="#">Caballos</a></li>
-            <li role="presentation"><a href="#">Concursos</a></li>
-            <li role="presentation"><a href="#">Jueces</a></li>
+            <li role="presentation" class="active"><a href="javascript:void(0);" data-bind="click: router.navigateToJump">Inicio</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToAthletes">Atletas</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToHorses">Caballos</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToCompetitions">Concursos</a></li>
+            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToJudges">Jueces</a></li>
         </ul>
     </div>
 </nav>
@@ -79,20 +79,26 @@
         <div class="block-destacados">
             <div class="col-md-4 col-sm-4 col-xs-8">
                 <div class="un-destacado">
-                    <img src="/Content/images/foto_caballo2.jpg" alt="Third slide">
-                    <h3>Atletas</h3>
+                    <a href="#" title="Atletas">
+                        <img src="/Content/images/banner_atletas.jpg" alt="Third slide">
+                        <h3>Atletas</h3>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-8">
                 <div class="un-destacado">
-                    <img src="/Content/images/foto_carrusel_salto2.jpg" alt="Third slide">
-                    <h3>Caballos</h3>
+                    <a href="#" title="Caballos">
+                        <img src="/Content/images/banner_caballos.jpg" alt="Third slide">
+                        <h3>Caballos</h3>
+                    </a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-8">
                 <div class="un-destacado">
-                    <img src="/Content/images/foto_carrusel_salto3.jpg" alt="Third slide">
-                    <h3>Atletas</h3>
+                    <a href="#" title="Atletas">
+                        <img src="/Content/images/banner_jueces.jpg" alt="Third slide">
+                        <h3>Jueces</h3>
+                    </a>
                 </div>
             </div>
         </div>

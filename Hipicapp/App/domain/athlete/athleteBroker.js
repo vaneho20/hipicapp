@@ -12,6 +12,11 @@ define([
     amplify.request_original.cache[CACHE_NAME] = CACHE;
 
     // request definition
+    amplify.request.define("athletes/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+                brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
+
     amplify.request.define("athletes/getByCurrentUser", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
@@ -20,6 +25,10 @@ define([
     amplify.request.define("athletes/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.REGISTER), brokerUtils.verb.POST));
+
+    function findBy(findRequest) {
+        return amplify.request("athletes/findBy", findRequest);
+    }
 
     function getByCurrentUser() {
         return amplify.request("athletes/getByCurrentUser");
@@ -36,6 +45,7 @@ define([
     broker.evictCache = evictCache;
 
     // request revelation
+    broker.findBy = findBy;
     broker.getByCurrentUser = getByCurrentUser;
     broker.register = register;
 

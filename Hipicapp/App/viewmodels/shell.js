@@ -22,10 +22,7 @@
             activate: function () {
                 router.map([
                     { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: false, hash: '' },
-                    { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
-                    { route: 'athlete', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: true, hash: '#athlete' },
-                    { route: 'horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true, hash: '#horses' },
-                    { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions' },
+                    { route: 'profile', title: 'Perfil', moduleId: 'viewmodels/profile', nav: true, hash: '#profile' }
                 ]).buildNavigationModel();
 
                 return router.activate().then(function init() {

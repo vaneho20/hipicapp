@@ -18,7 +18,11 @@
                     { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
                     { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
                     { route: 'dressage', title: 'Doma', moduleId: 'viewmodels/dressage', nav: false, hash: '#dressage' },
-                    { route: 'jump', title: 'Salto', moduleId: 'viewmodels/jump', nav: false, hash: '#jump' }
+                    { route: 'jump', title: 'Salto', moduleId: 'viewmodels/jump', nav: false, hash: '#jump' },
+                    { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes' },
+                    { route: 'horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true, hash: '#horses' },
+                    { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions' },
+                    { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges' }
                 ]).buildNavigationModel();
 
                 return router.activate().then(function init() {

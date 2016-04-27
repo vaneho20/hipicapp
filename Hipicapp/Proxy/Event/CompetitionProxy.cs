@@ -15,7 +15,7 @@ namespace Hipicapp.Proxy.Event
         [Autowired]
         private ICompetitionService CompetitionService { get; set; }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        //[AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Page<Competition> Paginated(CompetitionFindRequest request)
         {
             return this.CompetitionService.Paginated(request.Filter, request.PageRequest);

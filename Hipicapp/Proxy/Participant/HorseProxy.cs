@@ -25,7 +25,7 @@ namespace Hipicapp.Proxy.Participant
         //[Autowired]
         //private PasswordEncoder { get; set; }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        //[AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Page<Horse> Paginated(HorseFindRequest request)
         {
             var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;

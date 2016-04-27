@@ -27,16 +27,39 @@ define([
     }
 
     function navigateToProfile() {
-        return router.navigate("#athlete");
+        return router.navigate("#profile");
+    }
+
+    function navigateToAthletes() {
+        return router.navigate("#athletes");
+    }
+
+    function navigateToHorses() {
+        return router.navigate("#horses");
+    }
+
+    function navigateToCompetitions() {
+        return router.navigate("#competitions");
+    }
+
+    function navigateToJudges() {
+        return router.navigate("#judges");
     }
 
     router.reloadCurrentLocation = reloadCurrentLocation;
 
+    // Private site
+    router.navigateToProfile = navigateToProfile;
+
+    // Public site
     router.navigateToLogin = navigateToLogin;
     router.navigateToRegister = navigateToRegister;
     router.navigateToDressage = navigateToDressage;
     router.navigateToJump = navigateToJump;
-    router.navigateToProfile = navigateToProfile;
+    router.navigateToAthletes = navigateToAthletes;
+    router.navigateToHorses = navigateToHorses;
+    router.navigateToCompetitions = navigateToCompetitions;
+    router.navigateToJudges = navigateToJudges;
 
     return router;
 });
