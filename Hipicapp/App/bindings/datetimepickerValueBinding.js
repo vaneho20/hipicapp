@@ -8,22 +8,20 @@ define(["core/i18n"
     function init(element, valueAccessor) {
         var underliyingObservable = valueAccessor(), previousDate = null, $element = $(element);
 
-        if (!$element.parents("fieldset")[0].disabled) {
-            setTimeout(function doAfterBinding() {
-                $element.datetimepicker({
-                    format: i18n.t("app:DATE_PATTERN"),
-                    locale: i18n.t("app:CURRENT_LANGUAGE")
-                }).on("changeDate", function onChangeDate(event) {
-                    var currentDate = event.localDate.getTime();
+        setTimeout(function doAfterBinding() {
+            $element.datetimepicker({
+                format: i18n.t("app:DATETIME_PATTERN"),
+                locale: i18n.t("app:CURRENT_LANGUAGE")
+            }).on("dp.change", function onChangeDate(event) {
+                var currentDate = event.localDate.getTime();
 
-                    if (currentDate !== previousDate) {
-                        previousDate = currentDate;
-                        underliyingObservable(currentDate);
-                        $element.find("input").change();
-                    }
-                });
-            }, 0);
-        }
+                if (currentDate !== previousDate) {
+                    previousDate = currentDate;
+                    underliyingObservable(currentDate);
+                    $element.find("input").change();
+                }
+            });
+        }, 0);
     }
 
     binding.init = init;

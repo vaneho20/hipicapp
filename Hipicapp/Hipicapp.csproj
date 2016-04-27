@@ -266,6 +266,7 @@
     <Content Include="App\bindings\clickoverBinding.js" />
     <Content Include="App\bindings\compareBinding.js" />
     <Content Include="App\bindings\countriesBinding.js" />
+    <Content Include="App\bindings\datepickerValueBinding.js" />
     <Content Include="App\bindings\datetimepickerValueBinding.js" />
     <Content Include="App\bindings\editableBinding.js" />
     <Content Include="App\bindings\epochAfterBinding.js" />
@@ -426,6 +427,7 @@
     <EmbeddedResource Include="Config\Hipicapp.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="App_Administrator\bindings\datepickerValueBinding.js" />
     <Content Include="App_Administrator\bindings\epochFutureBinding.js" />
     <Content Include="App_Administrator\bindings\imageHolderBinding.js" />
     <Content Include="App_Administrator\core\app.js" />

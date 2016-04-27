@@ -1,6 +1,6 @@
 /* global $: false, define: false, setTimeout: false */
 define(["core/i18n"
-], function dateTimePickerBinding(i18n) {
+], function datePickerBinding(i18n) {
     "use strict";
 
     var binding = {};
@@ -10,7 +10,7 @@ define(["core/i18n"
 
         setTimeout(function doAfterBinding() {
             $element.datetimepicker({
-                format: i18n.t("app:DATETIME_PATTERN"),
+                format: i18n.t("app:DATE_PATTERN"),
                 locale: i18n.t("app:CURRENT_LANGUAGE")
             }).on("dp.change", function onChangeDate(event) {
                 var currentDate = event.date.toDate();

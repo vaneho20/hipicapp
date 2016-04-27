@@ -46,12 +46,11 @@
                                     </label>
                                     <input type="password" id="h-user-confirm-new-password"
                                            data-bind="compare: { value: currentEntity().user.confirmNewPassword, otherValue: currentEntity().user.newPassword, comparator: validationUtils.COMPARATOR.EQ, otherElement: '#h-user-new-password', errorMessage: i18n.t('app:PASSWORDS_NOT_EQUAL_MESSAGE') },
-							        attr: {
-								        max: validationUtils.MAX_LENGTH,
-								        maxlenght: validationUtils.MAX_LENGTH,
-								        placeholder: i18n.t('app:CONFIRM_NEW_PASSWORD'),
-								        title: i18n.t('app:CONFIRM_NEW_PASSWORD') }"
-                                           required autocomplete="off">
+							                attr: {
+								            max: validationUtils.MAX_LENGTH,
+								            maxlenght: validationUtils.MAX_LENGTH,
+								            placeholder: i18n.t('app:CONFIRM_NEW_PASSWORD'),
+								            title: i18n.t('app:CONFIRM_NEW_PASSWORD') }" required autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -97,7 +96,8 @@
                                     </div>
                                     <div class="posicionado-left col-md-4 col-sm-4 col-xs-8">
                                         <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
-                                        <div id="h-athlete-birthdate-picker" class="date input-group" data-bind="datetimepickerValue: currentEntity().birthDate">
+                                        <div id="h-athlete-birthdate-picker" class="date input-group"
+                                             data-bind="datepickerValue: currentEntity().birthDate">
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                             <input type="text" id="h-athlete-birthdate"
                                                    data-bind="epochValue: currentEntity().birthDate,
