@@ -58,16 +58,7 @@ namespace Hipicapp.Proxy.Participant
         {
             var unencryptedPassword = athlete.User.NewPassword;
             var model = this.AthleteService.Save(athlete);
-            var testServer = TestServer.Create<Startup>();
-            var requestParams = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("grant_type", "password"),
-                new KeyValuePair<string, string>("username", athlete.User.UserName),
-                new KeyValuePair<string, string>("password", unencryptedPassword),
-                new KeyValuePair<string, string>("client_id", "hipicapp-web"),
-                new KeyValuePair<string, string>("client_secret", "hipicapp@2016~~")
-            };
-            return await testServer.HttpClient.PostAsync("/api/token", new FormUrlEncodedContent(requestParams));
+            return await this.AutoLoginAfterRegistration(athlete.User.UserName, unencryptedPassword);
         }
 
         [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
@@ -94,6 +85,20 @@ namespace Hipicapp.Proxy.Participant
         {
             var athlete = this.AthleteService.Get(id);
             return this.AthleteService.Upload(athlete, file.FileName, file.ContentType, file.Contents);
+        }
+
+        private async Task<HttpResponseMessage> AutoLoginAfterRegistration(string userName, string password)
+        {
+            var testServer = TestServer.Create<Startup>();
+            var requestParams = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("grant_type", "password"),
+                new KeyValuePair<string, string>("username", userName),
+                new KeyValuePair<string, string>("password", password),
+                new KeyValuePair<string, string>("client_id", "hipicapp-web"),
+                new KeyValuePair<string, string>("client_secret", "hipicapp@2016~~")
+            };
+            return await testServer.HttpClient.PostAsync("/api/token", new FormUrlEncodedContent(requestParams));
         }
     }
 }
