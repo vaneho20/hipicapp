@@ -27,6 +27,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         GET: "get",
         GET_BY_CURRENT_USER: "getByCurrentUser",
         LOGIN: "login",
+        REGISTER: "register",
         LOGOUT: "logout",
         UPLOAD: "upload",
         FIND: "find",

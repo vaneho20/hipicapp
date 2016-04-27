@@ -14,6 +14,8 @@ namespace Hipicapp.Proxy.Participant
 
         Athlete Save(Athlete athlete);
 
+        Athlete Register(Athlete athlete);
+
         Athlete Update(Athlete athlete);
 
         Athlete Delete(Athlete athlete);

@@ -17,16 +17,16 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
                 brokerUtils.requestMappings.GET_BY_CURRENT_USER), brokerUtils.verb.GET, CACHE_NAME));
 
-    amplify.request.define("athletes/save", brokerUtils.REQUEST_TYPE, brokerUtils
+    amplify.request.define("athletes/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.REGISTER), brokerUtils.verb.POST));
 
     function getByCurrentUser() {
         return amplify.request("athletes/getByCurrentUser");
     }
 
-    function save(entity) {
-        return amplify.request("athletes/save", entity).always(CACHE.evict);
+    function register(entity) {
+        return amplify.request("athletes/register", entity).always(CACHE.evict);
     }
 
     function evictCache() {
@@ -37,7 +37,7 @@ define([
 
     // request revelation
     broker.getByCurrentUser = getByCurrentUser;
-    broker.save = save;
+    broker.register = register;
 
     return broker;
 });

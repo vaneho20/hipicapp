@@ -11,7 +11,7 @@ define(function validationUtils() {
         LT: "LT",
         LE: "LE",
         NE: "NE"
-    }, MAX_LENGTH = 255, FLOAT_STEP = 0.01, MAX_FILE_SIZE = /* 100KB */100000,
+    }, MAX_LENGTH = 255, FLOAT_STEP = 0.01, INTEGER_STEP = 1, MAX_FILE_SIZE = /* 100KB */100000,
         ACCEPT_FILE_TYPES = /(\.|\/)(gif|jpe?g|png)$/i;
 
     function valueOfArguments(args) {
@@ -54,6 +54,7 @@ define(function validationUtils() {
     utils.MAX_LONGITUDE = 180;
     utils.PASSWORD_PATTERN = ".{6,}";
     utils.FLOAT_STEP = FLOAT_STEP;
+    utils.INTEGER_STEP = INTEGER_STEP;
     utils.MAX_FILE_SIZE = MAX_FILE_SIZE;
     utils.ACCEPT_FILE_TYPES = ACCEPT_FILE_TYPES;
 

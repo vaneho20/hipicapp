@@ -44,6 +44,9 @@ namespace Hipicapp.Service.Event
         {
             var model = this.SpecialtyRepository.Get(specialty.Id);
             model.Name = specialty.Name;
+            model.MinAgeOfHorse = specialty.MinAgeOfHorse;
+            model.MaxNoOfJudges = specialty.MaxNoOfJudges;
+            model.MaxWeightOfAthlWithSaddle = specialty.MaxWeightOfAthlWithSaddle;
             SpecialtyRepository.Save(model);
             return model;
         }

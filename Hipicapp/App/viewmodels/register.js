@@ -3,53 +3,52 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
-    "domain/athlete/athleteImpl", "domain/competitionCategory/competitionCategoryBroker", "durandal/app",
-    "viewmodels/shell", "viewmodels/alerts"
+    "domain/athlete/athleteImpl", "durandal/app", "viewmodels/shell", "viewmodels/alerts"
 ], function registerViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, athleteBroker, athleteImpl, competitionCategoryBroker,
+                                 validationUtils, athleteBroker, athleteImpl,
                                  app, shell, alerts) {
-        "use strict";
+    "use strict";
 
-        // state definition
-        var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = [
-            {
-                value: athleteImpl.genders.MALE,
-                text: i18n.t("app:ATHLETE_GENDER_MALE")
-            }, {
-                value: athleteImpl.genders.FEMALE,
-                text: i18n.t("app:ATHLETE_GENDER_FEMALE")
-            }
-        ];
-
-        // lifecycle definition
-        function activate() {
-            return;
+    // state definition
+    var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = [
+        {
+            value: athleteImpl.genders.MALE,
+            text: i18n.t("app:ATHLETE_GENDER_MALE")
+        }, {
+            value: athleteImpl.genders.FEMALE,
+            text: i18n.t("app:ATHLETE_GENDER_FEMALE")
         }
+    ];
 
-        // behaviour definition
-        function refreshCurrentEntity(data) {
-            app.setRoot('viewmodels/login', 'entrance');
-        }
+    // lifecycle definition
+    function activate() {
+        return;
+    }
 
-        function signIn() {
-            return athleteBroker.save(currentEntity()).done(refreshCurrentEntity);
-        }
+    // behaviour definition
+    function refreshCurrentEntity(data) {
+        router.reloadCurrentLocation();
+    }
 
-        // module revelation
-        viewModel.i18n = i18n;
-        viewModel.securityContext = securityContext;
-        viewModel.validationUtils = validationUtils;
-        viewModel.athleteBroker = athleteBroker;
+    function signIn() {
+        return athleteBroker.register(currentEntity()).done(refreshCurrentEntity);
+    }
 
-        // state revelation
-        viewModel.currentEntity = currentEntity;
-        viewModel.availableGenders = availableGenders;
+    // module revelation
+    viewModel.i18n = i18n;
+    viewModel.securityContext = securityContext;
+    viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
 
-        // lifecycle revelation
-        viewModel.activate = activate;
+    // state revelation
+    viewModel.currentEntity = currentEntity;
+    viewModel.availableGenders = availableGenders;
 
-        // behaviour revelation
-        viewModel.signIn = signIn;
+    // lifecycle revelation
+    viewModel.activate = activate;
 
-        return viewModel;
-    });
+    // behaviour revelation
+    viewModel.signIn = signIn;
+
+    return viewModel;
+});

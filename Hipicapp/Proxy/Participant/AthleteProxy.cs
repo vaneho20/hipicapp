@@ -1,14 +1,18 @@
-﻿using Hipicapp.Filters;
+﻿using Hipicapp.Backend;
+using Hipicapp.Filters;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Service.Account;
 using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
+using Microsoft.Owin.Testing;
 using Spring.Objects.Factory.Attributes;
 using Spring.Transaction.Interceptor;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
@@ -42,10 +46,28 @@ namespace Hipicapp.Proxy.Participant
             return this.AthleteService.GetByUserId(Convert.ToInt64(HttpContext.Current.GetOwinContext().Authentication.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value));
         }
 
-        [AllowAnonymous]
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public Athlete Save(Athlete athlete)
         {
             return this.AthleteService.Save(athlete);
+        }
+
+        [AllowAnonymous]
+        public Athlete Register(Athlete athlete)
+        {
+            var unencryptedPassword = athlete.User.NewPassword;
+            var model = this.AthleteService.Save(athlete);
+            var testServer = TestServer.Create<Startup>();
+            var requestParams = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("grant_type", "password"),
+                new KeyValuePair<string, string>("username", athlete.User.UserName),
+                new KeyValuePair<string, string>("password", unencryptedPassword),
+                new KeyValuePair<string, string>("client_id", "hipicapp-web"),
+                new KeyValuePair<string, string>("client_secret", "hipicapp@2016~~")
+            };
+            testServer.HttpClient.PostAsync("/api/token", new FormUrlEncodedContent(requestParams));
+            return model;
         }
 
         [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]

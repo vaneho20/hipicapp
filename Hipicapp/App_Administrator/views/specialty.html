@@ -3,7 +3,7 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2>
-                    <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--> <!--/ko--> <small data-bind="text: i18n.t('app:COMPETITION_CATEGORY')"></small>
+                    <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--> <!--/ko--> <small data-bind="text: i18n.t('app:SPECIALTY')"></small>
                 </h2>
                 <div class="clearfix"></div>
             </div>
@@ -11,17 +11,50 @@
                 <br />
                 <form role="form" data-bind="submit: save" novalidate>
                     <fieldset>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-xs-12 without-padding-left">
                             <div class="form-group">
-                                <label class="required" for="h-competition-category-name"
+                                <label class="required" for="h-specialty-category-name"
                                        data-bind="text: i18n.t('app:NAME')"></label>
-                                <input class="form-control" type="text" id="h-competition-category-name" autofocus
+                                <input class="form-control" type="text" id="h-specialty-category-name" autofocus
                                        data-bind="value: currentEntity().name,
 						                attr: { max: validationUtils.MAX_LENGTH,
 							                maxlength: validationUtils.MAX_LENGTH,
 							                placeholder: i18n.t('app:NAME'),
 							                title: i18n.t('app:NAME')}" required>
                             </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                            <label for="h-specialty-min-age-of-horse" class="required"
+                                   data-bind="text: i18n.t('app:MIN_AGE_OF_HORSE')"></label>
+                            <input class="form-control" type="number" id="h-specialty-min-age-of-horse"
+                                   data-bind="value: currentEntity().minAgeOfHorse,
+					                attr: { min: 1,
+						                maxlength: validationUtils.MAX_LENGTH,
+						                step: validationUtils.INTEGER_STEP,
+						                placeholder: i18n.t('app:MIN_AGE_OF_HORSE'),
+						                title: i18n.t('app:MIN_AGE_OF_HORSE') }" required>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                            <label for="h-specialty-max-no-of-judges" class="required"
+                                   data-bind="text: i18n.t('app:MAX_NO_OF_JUDGES')"></label>
+                            <input class="form-control" type="number" id="h-specialty-max-no-of-judges"
+                                   data-bind="value: currentEntity().maxNoOfJudges,
+					                attr: { min: 1,
+						                maxlength: validationUtils.MAX_LENGTH,
+						                step: validationUtils.INTEGER_STEP,
+						                placeholder: i18n.t('app:MAX_NO_OF_JUDGES'),
+						                title: i18n.t('app:MAX_NO_OF_JUDGES') }" required>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                            <label for="h-specialty-max-w-of-athl-with-saddle" class="required"
+                                   data-bind="text: i18n.t('app:MAX_W_OF_ATHL_WITH_SADDLE')"></label>
+                            <input class="form-control" type="number" id="h-specialty-max-w-of-athl-with-saddle"
+                                   data-bind="value: currentEntity().maxWeightOfAthlWithSaddle,
+					                attr: { min: 1,
+						                maxlength: validationUtils.MAX_LENGTH,
+						                step: validationUtils.FLOAT_STEP,
+						                placeholder: i18n.t('app:MAX_W_OF_ATHL_WITH_SADDLE'),
+						                title: i18n.t('app:MAX_W_OF_ATHL_WITH_SADDLE') }" required>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <button type="submit"

@@ -57,6 +57,13 @@ namespace Hipicapp.Controllers.Participant
             return this.AthleteProxy.Save(athlete);
         }
 
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public Athlete Register([Valid] Athlete athlete)
+        {
+            return this.AthleteProxy.Register(athlete);
+        }
+
         [System.Web.Http.AcceptVerbs("PUT")]
         [System.Web.Http.HttpPut]
         public Athlete Update([Valid] Athlete athlete)
