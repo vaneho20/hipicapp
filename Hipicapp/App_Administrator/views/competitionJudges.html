@@ -8,7 +8,134 @@
     <div class="x_content">
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
             <div data-bind="compose: 'competitionNavs.html'"></div>
-            
+            <div class="row">
+                <div class="col-lg-12">
+                    <form data-bind="submit: search" class="form-inline">
+                        <fieldset>
+                            <legend data-bind="text: i18n.t('JUDGE_FILTER_LEGEND')"></legend>
+                            <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
+                                <input type="text" id="h-judges-filter-name"
+                                       data-bind="value: nextFilter().name, attr: {  max: validationUtils.MAX_LENGTH,
+					                maxlength: validationUtils.MAX_LENGTH,
+					                placeholder: i18n.t('NAME') + '...',
+					                title : i18n.t('JUDGE_NAME_FILTER') }" />
+                            </div>
+                            <button type="submit"
+                                    data-bind="attr: { title: i18n.t('SEARCH_BUTTON_TITLE') }" class="btn btn-primary btn-sm">
+                                <i class="fa fa-search"></i> <span data-bind="text: i18n.t('SEARCH_BUTTON_TITLE')"></span>
+                            </button>
+                            <button type="submit"
+                                    data-bind="click: clearFilter, attr: { title: i18n.t('CLEAR_BUTTON_TITLE') }" class="btn btn-sm">
+                                <i class="fa fa-refresh"></i> <span data-bind="text: i18n.t('CLEAR_BUTTON_TITLE')"></span>
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span data-bind="text: i18n.t('app:JUDGE_LIST_CAPTION')"></span>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <table data-bind="visible: !(currentPage().isEmpty())"
+                                       class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <a href="#" data-bind="click: sortByName">
+                                                    <i data-bind="attr: { title: i18n.t(getOrderIconTitleForName()) }, css: getOrderIconClassForName">
+                                                    </i>
+                                                </a> <span data-bind="text: i18n.t('NAME')"></span>
+                                            </th>
+                                            <th>
+                                                <div class="btn-group">
+                                                    <button data-bind="attr:{ title: i18n.ASSIGN_BUTTON_TITLE}"
+                                                            class="btn btn-primary">
+                                                        <i class="icon-check icon-white"></i> <span data-bind="text: i18n.t('ASSIGN_BUTTON_TEXT')"></span>
+                                                    </button>
+                                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li id="h-assign-judges-all">
+                                                            <a href="#"
+                                                               data-bind="click: assignAllJudges">
+                                                                <label for="h-assign-judges-all"
+                                                                       data-bind="text: i18n.t('ASSIGN_ALL')"></label>
+                                                            </a>
+                                                        </li>
+                                                        <li id="h-assign-judges-all-page">
+                                                            <a href="#"
+                                                               data-bind="click: assignAllJudgesById">
+                                                                <label for="h-assign-judges-all-page"
+                                                                       data-bind="text: i18n.t('ASSIGN_ALL_PAGE')"></label>
+                                                            </a>
+                                                        </li>
+                                                        <li id="h-assign-judges-all-filter">
+                                                            <a href="#"
+                                                               data-bind="click: assignAllJudgesByFilter">
+                                                                <label for="h-assign-judges-all-filter"
+                                                                       data-bind="text: i18n.t('ASSIGN_ALL_FILTER')"></label>
+                                                            </a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li id="h-unassign-judges-all">
+                                                            <a href="#"
+                                                               data-bind="click: unassignAllJudges">
+                                                                <label for="h-unassign-judges-all"
+                                                                       data-bind="text: i18n.t('UNASSIGN_ALL')"></label>
+                                                            </a>
+                                                        </li>
+                                                        <li id="h-unassign-judges-all-page">
+                                                            <a href="#"
+                                                               data-bind="click: unassignAllJudgesById">
+                                                                <label for="h-unassign-judges-all-page"
+                                                                       data-bind="text: i18n.t('UNASSIGN_ALL_PAGE')"></label>
+                                                            </a>
+                                                        </li>
+                                                        <li id="h-unassign-judges-all-filter">
+                                                            <a href="#"
+                                                               data-bind="click: unassignAllJudgesByFilter">
+                                                                <label for="h-unassign-judges-all-filter"
+                                                                       data-bind="text: i18n.t('UNASSIGN_ALL_FILTER')"></label>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: currentPage().content">
+                                        <tr>
+                                            <td data-bind="text: name"></td>
+                                            <td>
+                                                <input data-bind=" event: { change: $root.assignUnassignJudge }, checked: assign"
+                                                       type="checkbox" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div data-bind="visible: currentPage().isEmpty() && !(shell.isLoading())"
+                                     class="alert alert-info alert-block">
+                                    <div>
+                                        <strong data-bind="text: i18n.t('JUDGE_LIST_EMPTY_SUMMARY')"></strong>
+                                    </div>
+                                    <span data-bind="html: i18n.t('JUDGE_LIST_EMPTY_DETAIL')"></span>
+                                </div>
+                                <div data-bind="compose: 'pager.html'"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
         </div>
     </div>
 </div>

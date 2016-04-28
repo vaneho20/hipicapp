@@ -39,14 +39,14 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION), brokerUtils.verb.DELETE));
 
     amplify.request.define("competitions/assignAllJudges", brokerUtils.REQUEST_TYPE,
-        brokerUtils.getWriteRequestSettings(brokerUtils.BACKEND +
+        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.ASSIGNALLJUDGES), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/assignAllJudgesById", brokerUtils.REQUEST_TYPE,
         brokerUtils
-            .getWriteRequestSettings(brokerUtils.BACKEND +
+            .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
                 urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.ASSIGNALLJUDGESBYPAGE),
@@ -54,20 +54,20 @@ define([
 
     amplify.request.define("competitions/assignAllJudgesByFilter",
         brokerUtils.REQUEST_TYPE, brokerUtils.getWriteRequestSettings(
-            brokerUtils.BACKEND +
+            brokerUtils.requestMappings.BACKEND +
                 urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.ASSIGNALLJUDGESBYFILTER),
             brokerUtils.verb.POST));
 
     amplify.request.define("competitions/unassignAllJudges", brokerUtils.REQUEST_TYPE,
-        brokerUtils.getWriteRequestSettings(brokerUtils.BACKEND +
+        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.UNASSIGNALLJUDGES), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/unassignAllJudgesById", brokerUtils.REQUEST_TYPE,
-        brokerUtils.getWriteRequestSettings(brokerUtils.BACKEND +
+        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.UNASSIGNALLJUDGESBYPAGE),
@@ -75,14 +75,14 @@ define([
 
     amplify.request.define("competitions/unassignAllJudgesByFilter",
         brokerUtils.REQUEST_TYPE, brokerUtils.getWriteRequestSettings(
-            brokerUtils.BACKEND +
+            brokerUtils.requestMappings.BACKEND +
                 urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.UNASSIGNALLJUDGESBYFILTER),
             brokerUtils.verb.POST));
 
     amplify.request.define("competitions/assignUnassignJudge", brokerUtils.REQUEST_TYPE,
-        brokerUtils.getWriteRequestSettings(brokerUtils.BACKEND +
+        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.ASSIGNUNASSIGNJUDGE), brokerUtils.verb.POST));
@@ -195,6 +195,15 @@ define([
     broker.simulateScore = simulateScore;
     broker.erase = erase;
     broker.findById = findById;
+
+    broker.assignAllJudges = assignAllJudges;
+    broker.assignAllJudgesById = assignAllJudgesById;
+    broker.assignAllJudgesByFilter = assignAllJudgesByFilter;
+    broker.unassignAllJudges = unassignAllJudges;
+    broker.unassignAllJudgesById = unassignAllJudgesById;
+    broker.unassignAllJudgesByFilter = unassignAllJudgesByFilter;
+    broker.assignUnassignJudge = assignUnassignJudge;
+
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
     broker.getJudgesUrlById = getJudgesUrlById;

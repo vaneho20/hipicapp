@@ -16,6 +16,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         ATHLETE: "athlete",
         HORSES: "horses",
         HORSE: "horse",
+        COMPETITION_ID: "{competitionId}",
         COMPETITIONS: "competitions",
         COMPETITION: "competition",
         COMPETITION_CATEGORIES: "competitionCategories",
