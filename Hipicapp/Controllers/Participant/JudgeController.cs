@@ -64,6 +64,13 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
+        public Page<Judge> FindByWithAssignment(JudgeFindRequest findRequest)
+        {
+            return this.JudgeProxy.FindByWithAssignment(findRequest);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
         public async Task<FileInfo> Upload(long? id, HttpRequestMessage request)
         {
             if (!Request.Content.IsMimeMultipartContent())

@@ -17,5 +17,7 @@ namespace Hipicapp.Service.Participant
         Judge Delete(Judge judge);
 
         FileInfo Upload(Judge judge, string name, string mimeType, byte[] bytes);
+
+        Page<Judge> FindByWithAssignment(JudgeFindFilter filter, PageRequest pageRequest);
     }
 }

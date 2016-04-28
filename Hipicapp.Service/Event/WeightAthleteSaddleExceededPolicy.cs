@@ -1,9 +1,11 @@
 using Hipicapp.Model.Event;
 using Hipicapp.Model.Participant;
 using Hipicapp.Service.Exceptions;
+using Spring.Stereotype;
 
 namespace Hipicapp.Service.Event
 {
+    [Component]
     public class WeightAthleteSaddleExceededPolicy : IWeightAthleteSaddleExceededPolicy
     {
         public bool IsSatisfiedBy(Athlete athlete, Specialty specialty)

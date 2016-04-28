@@ -46,12 +46,28 @@ namespace Hipicapp.Proxy.Participant
             return this.JudgeService.Delete(judge);
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
         [Transaction]
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public FileInfo Upload(long? id, FileInfo file)
         {
             var judge = this.JudgeService.Get(id);
             return this.JudgeService.Upload(judge, file.FileName, file.ContentType, file.Contents);
+        }
+
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        public Page<Judge> FindByWithAssignment(JudgeFindRequest findRequest)
+        {
+            /*this.promotionOwnershipPolicy.checkSatisfiedBy(
+                    SecurityContextHolder.getContext().getAuthentication(),
+                    findRequest.getFilter().getPromotionId() != null ? this.promotionService.findById(findRequest
+                            .getFilter().getPromotionId()) : null);
+
+            this.aggregatorOwnershipPolicy.checkSatisfiedBy(
+                    SecurityContextHolder.getContext().getAuthentication(),
+                    findRequest.getFilter().getAggregatorId() != null ? this.aggregatorService.findById(findRequest
+                            .getFilter().getAggregatorId()) : null);*/
+
+            return this.JudgeService.FindByWithAssignment(findRequest.Filter, findRequest.PageRequest);
         }
     }
 }

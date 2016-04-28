@@ -17,5 +17,7 @@ namespace Hipicapp.Proxy.Participant
         Judge Delete(Judge athlete);
 
         FileInfo Upload(long? id, FileInfo file);
+
+        Page<Judge> FindByWithAssignment(JudgeFindRequest findRequest);
     }
 }

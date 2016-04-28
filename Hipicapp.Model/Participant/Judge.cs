@@ -22,6 +22,8 @@ namespace Hipicapp.Model.Participant
         public virtual string Surnames { get; set; }
 
         public virtual FileInfo Photo { get; set; }
+
+        public virtual bool? Assign { get; set; }
     }
 
     public class JudgeMap : EntityMap<Judge, long?>

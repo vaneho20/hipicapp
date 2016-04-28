@@ -6,6 +6,7 @@ using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
+using System.Linq;
 
 namespace Hipicapp.Service.Participant
 {
@@ -17,6 +18,9 @@ namespace Hipicapp.Service.Participant
 
         [Autowired]
         private IScoreRepository ScoreRepository { get; set; }
+
+        [Autowired]
+        private ISeminaryRepository SeminaryRepository { get; set; }
 
         [Autowired]
         private IFileService FileService { get; set; }
@@ -76,6 +80,19 @@ namespace Hipicapp.Service.Participant
             }
 
             return newPhotoFileInfo;
+        }
+
+        [Transaction(ReadOnly = true)]
+        public Page<Judge> FindByWithAssignment(JudgeFindFilter filter, PageRequest pageRequest)
+        {
+            var page = this.JudgeRepository.Paginated(JudgePredicates.ValueOf(filter, this.JudgeRepository.GetAllQueryable()), pageRequest);
+
+            page.Content.ToList().ForEach(x =>
+            {
+                x.Assign = this.SeminaryRepository.GetAllQueryable().Any(y => y.Id.JudgeId == x.Id && y.Id.CompetitionId == filter.CompetitionId);
+            });
+
+            return page;
         }
     }
 }
