@@ -19,7 +19,7 @@ namespace Hipicapp.Controllers.Participant
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [System.Web.Http.RoutePrefix("api/judges")]
+    [System.Web.Http.RoutePrefix("api/judge")]
     public class JudgeController : HipicappApiController
     {
         [Autowired]
@@ -27,7 +27,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/judges/find")]
+        [System.Web.Http.Route("api/judge/find")]
         public Page<Judge> Find(JudgeFindRequest request)
         {
             return this.JudgeProxy.Paginated(request);
@@ -35,7 +35,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("GET")]
         [System.Web.Http.HttpGet]
-        [Route("api/judges/get")]
+        [Route("api/judge/get")]
         public Judge Get(long? id)
         {
             return this.JudgeProxy.Get(id);

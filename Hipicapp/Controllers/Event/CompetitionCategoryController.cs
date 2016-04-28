@@ -14,7 +14,7 @@ namespace Hipicapp.Controllers.Event
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/competitionCategories")]
+    [RoutePrefix("api/competitionCategory")]
     public class CompetitionCategoryController : HipicappApiController
     {
         [Autowired]
@@ -29,7 +29,7 @@ namespace Hipicapp.Controllers.Event
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/competitionCategories/find")]
+        [System.Web.Http.Route("api/competitionCategory/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<CompetitionCategory> Find(CompetitionCategoryFindRequest request)
         {

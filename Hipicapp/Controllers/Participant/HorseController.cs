@@ -19,7 +19,7 @@ namespace Hipicapp.Controllers.Participant
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/horses")]
+    [RoutePrefix("api/horse")]
     public class HorseController : HipicappApiController
     {
         [Autowired]
@@ -27,7 +27,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [Route("api/horses/find")]
+        [Route("api/horse/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<Horse> Find(HorseFindRequest request)
         {

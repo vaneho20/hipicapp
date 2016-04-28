@@ -14,7 +14,7 @@ namespace Hipicapp.Controllers.Event
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/specialties")]
+    [RoutePrefix("api/specialty")]
     public class SpecialtyController : HipicappApiController
     {
         [Autowired]
@@ -29,7 +29,7 @@ namespace Hipicapp.Controllers.Event
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/specialties/find")]
+        [System.Web.Http.Route("api/specialty/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<Specialty> Find(SpecialtyFindRequest request)
         {

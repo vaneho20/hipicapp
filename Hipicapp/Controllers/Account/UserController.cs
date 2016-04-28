@@ -14,7 +14,7 @@ namespace Hipicapp.Controllers.Account
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/users")]
+    [RoutePrefix("api/user")]
     public class UserController : HipicappApiController
     {
         [Autowired]
@@ -22,7 +22,7 @@ namespace Hipicapp.Controllers.Account
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [Route("api/users/find")]
+        [Route("api/user/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<User> Find(UserFindRequest request)
         {

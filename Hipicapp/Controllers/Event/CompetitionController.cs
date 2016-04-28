@@ -15,7 +15,7 @@ namespace Hipicapp.Controllers.Event
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/competitions")]
+    [System.Web.Http.RoutePrefix("api/competition")]
     public class CompetitionController : HipicappApiController
     {
         [Autowired]
@@ -23,7 +23,7 @@ namespace Hipicapp.Controllers.Event
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [Route("api/competitions/find")]
+        [Route("api/competition/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<Competition> Find(CompetitionFindRequest request)
         {
@@ -68,6 +68,7 @@ namespace Hipicapp.Controllers.Event
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("competition/{competitionId}/assignAllJudges")]
         public IList<Seminary> AssignAllJudges(long? competitionId)
         {
             return this.CompetitionProxy.AssignAllJudges(competitionId);

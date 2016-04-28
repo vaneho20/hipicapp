@@ -19,7 +19,7 @@ namespace Hipicapp.Controllers.Participant
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [System.Web.Http.RoutePrefix("api/athletes")]
+    [System.Web.Http.RoutePrefix("api/athlete")]
     public class AthleteController : HipicappApiController
     {
         [Autowired]
@@ -27,7 +27,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("POST")]
         [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/athletes/find")]
+        [System.Web.Http.Route("api/athlete/find")]
         //[Authorize(Roles = "ATHLETE")]
         public Page<Athlete> Find(AthleteFindRequest request)
         {
@@ -36,7 +36,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("GET")]
         [System.Web.Http.HttpGet]
-        [Route("api/athletes/get")]
+        [Route("api/athlete/get")]
         public Athlete Get(long? id)
         {
             return this.AthleteProxy.Get(id);
@@ -44,7 +44,7 @@ namespace Hipicapp.Controllers.Participant
 
         [System.Web.Http.AcceptVerbs("GET")]
         [System.Web.Http.HttpGet]
-        [Route("api/athletes/getByCurrentUser")]
+        [Route("api/athlete/getByCurrentUser")]
         public Athlete GetByCurrentUser()
         {
             return this.AthleteProxy.GetByCurrentUser();

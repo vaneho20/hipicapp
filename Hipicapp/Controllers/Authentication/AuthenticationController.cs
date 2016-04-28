@@ -17,6 +17,7 @@ namespace Hipicapp.Controllers.Authentication
         public IUserService UserService { get; set; }
 
         [AllowAnonymous]
+        [System.Web.Http.Route("setup")]
         public bool Setup()
         {
             return true;
