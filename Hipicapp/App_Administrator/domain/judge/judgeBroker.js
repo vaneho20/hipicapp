@@ -17,6 +17,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
+    amplify.request.define("judges/findByWithAssignment", brokerUtils.REQUEST_TYPE, brokerUtils
+            .getReadOnlyRequestSettings(brokerUtils.BACKEND +
+                urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
+                    brokerUtils.requestMappings.FINDWITHASSIGNMENT), brokerUtils.verb.POST, CACHE_NAME));
+
     amplify.request.define("judges/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
@@ -36,6 +41,10 @@ define([
 
     function findBy(findRequest) {
         return amplify.request("judges/findBy", findRequest);
+    }
+
+    function findByWithAssignment(findRequest) {
+        return amplify.request("judges/findByWithAssignment", findRequest);
     }
 
     function findById(id) {
@@ -85,6 +94,7 @@ define([
 
     // request revelation
     broker.findBy = findBy;
+    broker.findByWithAssignment = findByWithAssignment;
     broker.save = save;
     broker.update = update;
     broker.erase = erase;

@@ -93,6 +93,8 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\WeightAthleteSaddleExceededPolicy.cs" />
+    <Compile Include="Event\IWeightAthleteSaddleExceededPolicy.cs" />
     <Compile Include="Event\SpecialtyPredicates.cs" />
     <Compile Include="Event\CompetitionCategoryPredicates.cs" />
     <Compile Include="Event\SpecialtyService.cs" />
@@ -102,6 +104,8 @@
     <Compile Include="Event\ISpecialtyService.cs" />
     <Compile Include="Event\ICompetitionCategoryService.cs" />
     <Compile Include="Event\ICompetitionService.cs" />
+    <Compile Include="Exceptions\MinimumAgeOfHorseUnsurpassedException.cs" />
+    <Compile Include="Exceptions\WeightAthleteSaddleExceededException.cs" />
     <Compile Include="Exceptions\BadCredentialsException.cs" />
     <Compile Include="Exceptions\AccessDeniedException.cs" />
     <Compile Include="Exceptions\TicketExpiredException.cs" />
@@ -115,6 +119,7 @@
     <Compile Include="Mail\Models\PasswordResetEmailModel.cs" />
     <Compile Include="Mail\Impl\AbstractMailMessage.cs" />
     <Compile Include="Mail\IMailMessage.cs" />
+    <Compile Include="Participant\IMinimumAgeOfHorseUnsurpassedPolicy.cs" />
     <Compile Include="Participant\JudgePredicates.cs" />
     <Compile Include="Participant\AthletePredicates.cs" />
     <Compile Include="Participant\HorsePredicates.cs" />
@@ -124,6 +129,7 @@
     <Compile Include="Participant\IHorseService.cs" />
     <Compile Include="Participant\IAthleteService.cs" />
     <Compile Include="Participant\AthleteService.cs" />
+    <Compile Include="Participant\MinimumAgeOfHorseUnsurpassedPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account\ITicketService.cs" />
     <Compile Include="Account\TicketService.cs" />

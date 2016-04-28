@@ -25,13 +25,22 @@ namespace Hipicapp.Service.Participant
         public ICompetitionCategoryRepository CompetitionCategoryRepository { get; set; }
 
         [Autowired]
+        public ICompetitionRepository CompetitionRepository { get; set; }
+
+        [Autowired]
         private IEnrollmentRepository EnrollmentRepository { get; set; }
+
+        [Autowired]
+        private IHorseRepository HorseRepository { get; set; }
 
         [Autowired]
         private IFileService FileService { get; set; }
 
         [Autowired]
         private IUserService UserService { get; set; }
+
+        [Autowired]
+        private IMinimumAgeOfHorseUnsurpassedPolicy MinimumAgeOfHorseUnsurpassedPolicy { get; set; }
 
         [Transaction(ReadOnly = true)]
         public Page<Athlete> Paginated(AthleteFindFilter filter, PageRequest pageRequest)
@@ -96,6 +105,7 @@ namespace Hipicapp.Service.Participant
         {
             if (this.EnrollmentRepository.GetAllQueryable().Count(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId) <= 0)
             {
+                this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(this.HorseRepository.Get(id.HorseId), this.CompetitionRepository.Get(id.CompetitionId).Specialty);
                 this.EnrollmentRepository.Save(new Enrollment()
                 {
                     Id = id,

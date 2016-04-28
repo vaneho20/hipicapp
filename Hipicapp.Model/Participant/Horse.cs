@@ -30,6 +30,8 @@ namespace Hipicapp.Model.Participant
 
         public virtual long? AthleteId { get; set; }
 
+        public virtual Athlete Athlete { get; set; }
+
         public virtual long? Age
         {
             get
@@ -55,6 +57,7 @@ namespace Hipicapp.Model.Participant
             Map(x => x.AthleteId).Column("ATHLETE_ID");
 
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
+            References<Athlete>(x => x.Athlete).Column("ATHLETE_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
         }
     }
 }

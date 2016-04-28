@@ -27,6 +27,9 @@ namespace Hipicapp.Service.Event
         [Autowired]
         private IScoreRepository ScoreRepository { get; set; }
 
+        [Autowired]
+        private IWeightAthleteSaddleExceededPolicy WeightAthleteSaddleExceededPolicy { get; set; }
+
         [Transaction(ReadOnly = true)]
         public Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest)
         {
@@ -88,6 +91,7 @@ namespace Hipicapp.Service.Event
             {
                 horses.ForEach(y =>
                 {
+                    this.WeightAthleteSaddleExceededPolicy.CheckSatisfiedBy(y.Athlete, competition.Specialty);
                     scores.Add(new Score()
                     {
                         Id = new ScoreId()

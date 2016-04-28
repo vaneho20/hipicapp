@@ -34,6 +34,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         UPLOAD: "upload",
         FIND: "find",
         FIND_ALL: "findAll",
+        FINDWITHASSIGNMENT: "findByWithAssignment",
         FILES: "files",
         FILE: "file",
         DOWNLOAD: "download",

@@ -12,11 +12,14 @@ define([
         "use strict";
 
         // state definition
-        var viewModel = {}, currentEntity = ko.observable(competitionImpl()), availableCategories = ko.observable(),
-            availableSpecialties = ko.observable();
+        var viewModel = {}, currentEntity = ko.observable(competitionImpl()), navs = {
+            BASIC_DATA: "BASIC_DATA",
+            IMAGES: "JUDGES"
+        }, nav = ko.observable(), availableCategories = ko.observable(), availableSpecialties = ko.observable();
 
         // lifecycle definition
         function activate(id) {
+            nav(navs.BASIC_DATA);
             if (id) {
                 // allways return a promise
                 return $.when(loadEntityByCompetitionId(id), loadAvailableCategories(), loadAvailableSpecialties());
@@ -70,6 +73,8 @@ define([
 
         // state revelation
         viewModel.currentEntity = currentEntity;
+        viewModel.navs = navs;
+        viewModel.nav = nav;
         viewModel.availableCategories = availableCategories;
         viewModel.availableSpecialties = availableSpecialties;
 

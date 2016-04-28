@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs bar_tabs">
+    <li data-bind="css: { active: nav() === navs.BASIC_DATA }">
+        <a href="#"
+           data-bind="attr: { href: nav() !== navs.BASIC_DATA ? competitionBroker.getDetailUrlById(currentEntity().id) : 'javascript:void(0)',
+    		            title: i18n.t('app:BASIC_DATA')
+	    	        }, text: i18n.t('app:BASIC_DATA')">
+        </a>
+    </li>
+    <li data-bind="css: { active: nav() === navs.JUDGES, disabled: !currentEntity().id }">
+        <a href="#"
+           data-bind="attr: { href: nav() !== navs.JUDGES && currentEntity().id ? competitionBroker.getJudgesUrlById(currentEntity().id) : 'javascript:void(0)',
+	    		        title: i18n.t('app:JUDGES')
+    		        }, text: i18n.t('app:JUDGES')"></a>
+    </li>
+</ul>

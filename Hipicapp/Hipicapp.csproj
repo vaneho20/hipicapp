@@ -503,6 +503,7 @@
     <Content Include="App_Administrator\bindings\typeaheadBinding.js" />
     <Content Include="App_Administrator\main.js" />
     <Content Include="App_Administrator\viewmodels\athleteHorses.js" />
+    <Content Include="App_Administrator\viewmodels\competitionJudges.js" />
     <Content Include="App_Administrator\viewmodels\specialties.js" />
     <Content Include="App_Administrator\viewmodels\specialty.js" />
     <Content Include="App_Administrator\viewmodels\competitionCategory.js" />
@@ -528,6 +529,8 @@
     <Content Include="App_Administrator\viewmodels\users.js" />
     <Content Include="App_Administrator\viewmodels\welcome.js" />
     <Content Include="App_Administrator\views\athleteHorses.html" />
+    <Content Include="App_Administrator\views\competitionNavs.html" />
+    <Content Include="App_Administrator\views\competitionJudges.html" />
     <Content Include="App_Administrator\views\specialties.html" />
     <Content Include="App_Administrator\views\specialty.html" />
     <Content Include="App_Administrator\views\competitionCategory.html" />
