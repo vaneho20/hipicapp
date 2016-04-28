@@ -10,6 +10,7 @@ using System;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
+using System.Web.Http;
 
 namespace Hipicapp.Proxy.Participant
 {
@@ -25,7 +26,7 @@ namespace Hipicapp.Proxy.Participant
         //[Autowired]
         //private PasswordEncoder { get; set; }
 
-        //[AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [AllowAnonymous]
         public Page<Horse> Paginated(HorseFindRequest request)
         {
             var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
@@ -36,22 +37,25 @@ namespace Hipicapp.Proxy.Participant
             return this.HorseService.Paginated(request.Filter, request.PageRequest);
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [AllowAnonymous]
         public Horse Get(long? id)
         {
             return this.HorseService.Get(id);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Horse Save(Horse horse)
         {
             return this.HorseService.Save(horse);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Horse Update(Horse horse)
         {
             return this.HorseService.Update(horse);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
         public Horse Delete(Horse horse)
         {
             return this.HorseService.Delete(horse);

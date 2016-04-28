@@ -6,6 +6,7 @@ using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Transaction.Interceptor;
+using System.Web.Http;
 
 namespace Hipicapp.Proxy.Participant
 {
@@ -15,7 +16,7 @@ namespace Hipicapp.Proxy.Participant
         [Autowired]
         private IJudgeService JudgeService { get; set; }
 
-        //[AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [AllowAnonymous]
         public Page<Judge> Paginated(JudgeFindRequest request)
         {
             return this.JudgeService.Paginated(request.Filter, request.PageRequest);

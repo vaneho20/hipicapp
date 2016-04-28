@@ -55,11 +55,13 @@ namespace Hipicapp.Proxy.Account
             return this.UserService.Save(user);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public User ToggleEnable(User user, bool enable)
         {
             return this.UserService.ToggleEnable(user, enable);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public User Delete(User user)
         {
             return this.UserService.Delete(user);

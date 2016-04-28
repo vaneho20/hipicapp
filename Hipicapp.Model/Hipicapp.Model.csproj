@@ -94,6 +94,7 @@
     <Compile Include="Participant\Horse.cs" />
     <Compile Include="Participant\Judge.cs" />
     <Compile Include="Participant\JudgeFindFilter.cs" />
+    <Compile Include="Participant\SeminaryIdRequest.cs" />
     <Compile Include="Participant\JudgeFindRequest.cs" />
     <Compile Include="Participant\Enrollment.cs" />
     <Compile Include="Participant\Seminary.cs" />

@@ -93,6 +93,8 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\SeminaryService.cs" />
+    <Compile Include="Event\ISeminaryService.cs" />
     <Compile Include="Event\WeightAthleteSaddleExceededPolicy.cs" />
     <Compile Include="Event\IWeightAthleteSaddleExceededPolicy.cs" />
     <Compile Include="Event\SpecialtyPredicates.cs" />

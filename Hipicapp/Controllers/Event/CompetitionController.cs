@@ -65,5 +65,54 @@ namespace Hipicapp.Controllers.Event
         {
             return this.CompetitionProxy.SimulateScore(competition);
         }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> AssignAllJudges(long? competitionId)
+        {
+            return this.CompetitionProxy.AssignAllJudges(competitionId);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> AssignAllJudgesById(long? competitionId, SeminaryIdRequest judgesId)
+        {
+            return this.CompetitionProxy.AssignAllJudgesById(competitionId, judgesId);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> AssignAllJudgesByFilter(long? competitionId, JudgeFindRequest findRequest)
+        {
+            return this.CompetitionProxy.AssignAllJudgesByFilter(competitionId, findRequest);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> UnassignAllJudges(long? competitionId)
+        {
+            return this.CompetitionProxy.UnassignAllJudges(competitionId);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> UnassignAllJudgesById(long? competitionId, SeminaryIdRequest judgesId)
+        {
+            return this.CompetitionProxy.UnassignAllJudgesById(competitionId, judgesId);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public IList<Seminary> UnassignAllJudgesByFilter(long? competitionId, JudgeFindRequest findRequest)
+        {
+            return this.CompetitionProxy.UnassignAllJudgesByFilter(competitionId, findRequest);
+        }
+
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public Seminary AssignUnassignJudge(long? competitionId, long? judgeId)
+        {
+            return this.CompetitionProxy.AssignUnassignJudge(competitionId, judgeId);
+        }
     }
 }
