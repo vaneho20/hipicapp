@@ -5,14 +5,12 @@ define(["core/i18n"
 
     var binding = {};
 
-    function init(element, valueAccessor) {
-        var underliyingObservable = valueAccessor(), previousDate = null, $element = $(element);
+    function init(element, valueAccessor, allBindingsAccessor) {
+        var underliyingObservable = valueAccessor(), previousDate = null, $element = $(element),
+            options = allBindingsAccessor().dateTimePickerOptions || {};
 
         setTimeout(function doAfterBinding() {
-            $element.datetimepicker({
-                format: i18n.t("app:DATETIME_PATTERN"),
-                locale: i18n.t("app:CURRENT_LANGUAGE")
-            }).on("dp.change", function onChangeDate(event) {
+            $element.datetimepicker(options).on("dp.change", function onChangeDate(event) {
                 var currentDate = event.date.toDate();
 
                 if (currentDate !== previousDate) {

@@ -266,7 +266,6 @@
     <Content Include="App\bindings\clickoverBinding.js" />
     <Content Include="App\bindings\compareBinding.js" />
     <Content Include="App\bindings\countriesBinding.js" />
-    <Content Include="App\bindings\datepickerValueBinding.js" />
     <Content Include="App\bindings\datetimepickerValueBinding.js" />
     <Content Include="App\bindings\editableBinding.js" />
     <Content Include="App\bindings\epochAfterBinding.js" />
@@ -437,7 +436,6 @@
     <EmbeddedResource Include="Config\Hipicapp.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="App_Administrator\bindings\datepickerValueBinding.js" />
     <Content Include="App_Administrator\bindings\epochFutureBinding.js" />
     <Content Include="App_Administrator\bindings\imageHolderBinding.js" />
     <Content Include="App_Administrator\core\app.js" />
@@ -612,6 +610,8 @@
     </Content>
     <Content Include="Content\durandal.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\4964996749_b68a8e5f7d_o.jpg" />
     <Content Include="Content\images\4965601926_f8bb6c1c20_o.jpg" />
@@ -657,13 +657,14 @@
     <Content Include="Content\select2.css" />
     <Content Include="Content\starterkit.css" />
     <Content Include="Content\utremi-animations.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="hipicap-favicon.ico" />
     <Content Include="Scripts\Administrator\custom.js" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\amplify-1.1.0.js" />
     <Content Include="Scripts\amplify-request-deferred-0.0.0.js" />
-    <Content Include="Scripts\bootstrap-2.3.2.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-es-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -675,6 +676,7 @@
     <Content Include="Scripts\bootstrap-formhelpers-phone.js" />
     <Content Include="Scripts\bootstrap-formhelpers-selectbox.js" />
     <Content Include="Scripts\bootstrap-switch.js" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrapx-clickover.js" />
     <Content Include="Scripts\durandal\activator.js" />
     <Content Include="Scripts\durandal\app.js" />
@@ -701,13 +703,23 @@
     <Content Include="Content\public.css.map">
       <DependentUpon>public.css</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\i18next-builder.js" />
     <Content Include="Scripts\i18next.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\jquery.carouFredSel-6.2.1.js" />

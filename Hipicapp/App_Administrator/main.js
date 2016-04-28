@@ -25,9 +25,9 @@
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
 
-define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindings/datepickerValueBinding", "bindings/epochAfterBinding", "bindings/epochFutureBinding", "bindings/epochValueBinding", "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding", "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system", "durandal/app",
+define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindings/epochAfterBinding", "bindings/epochFutureBinding", "bindings/epochValueBinding", "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding", "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system", "durandal/app",
   "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"]
-    , function (compareBinding, datetimepickerValueBinding, datepickerValueBinding, epochAfterBinding, epochFutureBinding,
+    , function (compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding,
         epochValueBinding, fileuploadBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext, system,
         app, viewLocator, binder, i18n, router) {
         //>>excludeStart("build", true);
@@ -47,7 +47,6 @@ define(["bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindi
         // setup knockout
         // custom binding handlers
         ko.bindingHandlers.compare = compareBinding;
-        ko.bindingHandlers.datepickerValue = datepickerValueBinding;
         ko.bindingHandlers.datetimepickerValue = datetimepickerValueBinding;
         ko.bindingHandlers.epochAfter = epochAfterBinding;
         ko.bindingHandlers.epochFuture = epochFutureBinding;

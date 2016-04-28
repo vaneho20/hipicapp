@@ -4,24 +4,25 @@ define(function epochValuebinding() {
 
     var binding = {};
 
-    function init(element, valueAccessor) {
-        var interceptor = {}, underlyingObservable = valueAccessor();
+    function init(element, valueAccessor, allBindingsAccessor) {
+        var interceptor = {}, underlyingObservable = valueAccessor(),
+            allBindings = allBindingsAccessor(), pattern = allBindings.epochValuePattern;
 
         function read() {
             var currentValue = underlyingObservable();
             if (currentValue) {
-                return moment(currentValue).format('DD/MM/YYYY');
+                return moment(currentValue).format(pattern);
             }
         }
 
         function write(rawValue) {
             var currentValue = underlyingObservable(), convertedValue =
-                moment(rawValue, 'DD/MM/YYYY').valueOf();
+                moment(rawValue, pattern).valueOf();
 
             if (convertedValue !== currentValue) {
                 underlyingObservable(convertedValue);
             } else {
-                if ((currentValue && moment(currentValue).format('DD/MM/YYYY') !== rawValue) ||
+                if ((currentValue && moment(currentValue).format(pattern) !== rawValue) ||
                     rawValue !== currentValue) {
                     underlyingObservable.valueHasMutated();
                 }

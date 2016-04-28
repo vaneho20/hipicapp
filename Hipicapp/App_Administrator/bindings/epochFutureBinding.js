@@ -16,9 +16,10 @@ define(
             }
         }
 
-        function init(element, valueAccessor) {
-            var $element = $(element), underlyingObservable = valueAccessor().value, condition =
-                valueAccessor().condition, interceptor = {};
+        function init(element, valueAccessor, allBindingsAccessor) {
+            var $element = $(element), underlyingObservable = valueAccessor().value,
+                condition = valueAccessor().condition, allBindings = allBindingsAccessor(),
+                pattern = allBindings.epochFuturePattern, interceptor = {};
 
             function read() {
                 if (condition && $element.closest("form")[0].checkValidity) {
@@ -27,12 +28,12 @@ define(
 
                 var currentValue = underlyingObservable();
                 if (currentValue) {
-                    return moment(currentValue).format(i18n.t("app:DATETIME_PATTERN"));
+                    return moment(currentValue).format(pattern);
                 }
             }
 
             function write(rawValue) {
-                var convertedValue = moment(rawValue, i18n.t("app:DATETIME_PATTERN")).valueOf();
+                var convertedValue = moment(rawValue, pattern).valueOf();
 
                 if (condition && $element.closest("form")[0].checkValidity) {
                     checkValid(element, convertedValue);

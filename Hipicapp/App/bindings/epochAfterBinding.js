@@ -8,15 +8,15 @@ define(
 
         function init(element, valueAccessor, allBindingsAccessor) {
             if ($(element).closest("form")[0].checkValidity) {
-                var underlyingObservable = valueAccessor(), allBindings = allBindingsAccessor(), message =
-                    allBindings.afterMessage, interceptor =
-                    ko.computed({
+                var underlyingObservable = valueAccessor(), allBindings = allBindingsAccessor(),
+                    message = allBindings.afterMessage, pattern = allBindings.epochAfterPattern,
+                    interceptor = ko.computed({
                         read: function read() {
                             return underlyingObservable();
                         },
                         write: function write(rawValue) {
                             var targetValue = underlyingObservable(), convertedValue =
-                                moment(rawValue, i18n.t("app:DATE_PATTERN")).valueOf();
+                                moment(rawValue, pattern).valueOf();
 
                             if (convertedValue <= targetValue) {
                                 element.setCustomValidity(message);
