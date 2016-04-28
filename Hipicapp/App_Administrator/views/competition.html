@@ -1,143 +1,141 @@
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-            <div class="x_title">
-                <h2>
-                    <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--> <!--/ko--> <small data-bind="text: i18n.t('app:COMPETITION')"></small>
-                </h2>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <br />
-                <form role="form" data-bind="submit: save" novalidate>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label class="required" for="h-competition-name"
-                                   data-bind="text: i18n.t('app:NAME')"></label>
-                            <input class="form-control" type="text" id="h-competition-name" autofocus
-                                    data-bind="value: currentEntity().name,	attr: { max: validationUtils.MAX_LENGTH,
-						            maxlength: validationUtils.MAX_LENGTH,
-						            placeholder: i18n.t('app:NAME'),
-						            title: i18n.t('app:NAME')}" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="h-competition-description"
-                                   data-bind="text: i18n.t('DESCRIPTION')" class="required"></label>
-                            <textarea rows="3" id="h-competition-description"
-                                        data-bind="value: currentEntity().description,
-									    attr: { max: validationUtils.MAX_LENGTH_DESCRIPTION,
-										maxlength: validationUtils.MAX_LENGTH_DESCRIPTION,
-										placeholder: i18n.t('DESCRIPTION'),
-										title: i18n.t('DESCRIPTION') }"
-                                        required class="form-control input-xlarge"></textarea>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
-                            <label class="required" for="h-competition-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
-                            <select id="h-competition-category"
-                                    data-bind="options: availableCategories,
-						        optionsValue: function(item) { return item.id },
-						        optionsText: function(item) { return item.name },
-						        optionsCaption : i18n.t('app:CATEGORY') + '...',
-						        value: currentEntity().categoryId,
-						        attr: { title: i18n.t('app:CATEGORY') }"
-                                    required="required" class="form-control" aria-required="true"></select>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
-                            <label class="required" for="h-competition-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
-                            <select id="h-competition-specialty"
-                                    data-bind="options: availableSpecialties,
-						        optionsValue: function(item) { return item.id },
-						        optionsText: function(item) { return item.name },
-						        optionsCaption : i18n.t('app:SPECIALTY') + '...',
-						        value: currentEntity().specialtyId,
-						        attr: { title: i18n.t('app:SPECIALTY') }"
-                                    required="required" class="form-control" aria-required="true"></select>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
-                            <label class="required" for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
-                            <div id="h-competition-date-picker" class="date input-group"
-                                 data-bind="datetimepickerValue: currentEntity().date, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
-                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                <input type="text" class="form-control" id="h-competition-date"
-                                       data-bind="epochValue: currentEntity().date, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
-	 				                attr: { placeholder: i18n.t('app:COMPETITION_DATE'),
-	 				                title: i18n.t('app:COMPETITION_DATE') }" required>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
-                            <label class="required" for="h-competition-registration-deadline" data-bind="text: i18n.t('app:REGISTRATION_DEADLINE')"></label>
-                            <div id="h-competition-registration-deadline-picker" class="date input-group"
-                                 data-bind="datetimepickerValue: currentEntity().registrationDeadline, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
-                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                <input type="text" class="form-control" id="h-competition-registration-deadline"
-                                       data-bind="epochValue: currentEntity().registrationDeadline, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
-	 				                attr: { placeholder: i18n.t('app:REGISTRATION_DEADLINE'),
-	 				                title: i18n.t('app:REGISTRATION_DEADLINE') }" required>
-                            </div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--> <!--/ko--> <small data-bind="text: i18n.t('app:COMPETITION')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'competitionNavs.html'"></div>
+            <form role="form" data-bind="submit: save" novalidate>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="required" for="h-competition-name"
+                                data-bind="text: i18n.t('app:NAME')"></label>
+                        <input class="form-control" type="text" id="h-competition-name" autofocus
+                                data-bind="value: currentEntity().name,	attr: { max: validationUtils.MAX_LENGTH,
+						    maxlength: validationUtils.MAX_LENGTH,
+						    placeholder: i18n.t('app:NAME'),
+						    title: i18n.t('app:NAME')}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="h-competition-description"
+                                data-bind="text: i18n.t('DESCRIPTION')" class="required"></label>
+                        <textarea rows="3" id="h-competition-description"
+                                    data-bind="value: currentEntity().description,
+								attr: { max: validationUtils.MAX_LENGTH_DESCRIPTION,
+								maxlength: validationUtils.MAX_LENGTH_DESCRIPTION,
+								placeholder: i18n.t('DESCRIPTION'),
+								title: i18n.t('DESCRIPTION') }"
+                                    required class="form-control input-xlarge"></textarea>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                        <label class="required" for="h-competition-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
+                        <select id="h-competition-category"
+                                data-bind="options: availableCategories,
+						optionsValue: function(item) { return item.id },
+						optionsText: function(item) { return item.name },
+						optionsCaption : i18n.t('app:CATEGORY') + '...',
+						value: currentEntity().categoryId,
+						attr: { title: i18n.t('app:CATEGORY') }"
+                                required="required" class="form-control" aria-required="true"></select>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                        <label class="required" for="h-competition-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
+                        <select id="h-competition-specialty"
+                                data-bind="options: availableSpecialties,
+						optionsValue: function(item) { return item.id },
+						optionsText: function(item) { return item.name },
+						optionsCaption : i18n.t('app:SPECIALTY') + '...',
+						value: currentEntity().specialtyId,
+						attr: { title: i18n.t('app:SPECIALTY') }"
+                                required="required" class="form-control" aria-required="true"></select>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                        <label class="required" for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
+                        <div id="h-competition-date-picker" class="date input-group"
+                                data-bind="datetimepickerValue: currentEntity().date, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            <input type="text" class="form-control" id="h-competition-date"
+                                    data-bind="epochValue: currentEntity().date, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:COMPETITION_DATE'),
+	 				        title: i18n.t('app:COMPETITION_DATE') }" required>
                         </div>
                     </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                        <label class="required" for="h-competition-registration-deadline" data-bind="text: i18n.t('app:REGISTRATION_DEADLINE')"></label>
+                        <div id="h-competition-registration-deadline-picker" class="date input-group"
+                                data-bind="datetimepickerValue: currentEntity().registrationDeadline, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            <input type="text" class="form-control" id="h-competition-registration-deadline"
+                                    data-bind="epochValue: currentEntity().registrationDeadline, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:REGISTRATION_DEADLINE'),
+	 				        title: i18n.t('app:REGISTRATION_DEADLINE') }" required>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group">
-                            <label class="required" for="h-competition-address"
-                                   data-bind="text: i18n.t('app:ADDRESS')"></label>
-                            <input class="form-control" type="text" id="h-competition-address" autofocus
-                                    data-bind="value: currentEntity().address,
-					                attr: { max: validationUtils.MAX_LENGTH,
-						            maxlength: validationUtils.MAX_LENGTH,
-						            placeholder: i18n.t('app:ADDRESS'),
-						            title: i18n.t('app:ADDRESS') }" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="required" for="h-competition-zipcode"
-                                   data-bind="text: i18n.t('app:ZIPCODE')"></label>
-                            <input class="form-control" type="text" id="h-competition-zipcode" autofocus
-                                    data-bind="value: currentEntity().zipCode,
-					                attr: { max: validationUtils.LENGTH_ZIPCODE,
-						            maxlength: validationUtils.LENGTH_ZIPCODE,
-						            placeholder: i18n.t('app:ZIPCODE'),
-						            title: i18n.t('app:ZIPCODE') }" required>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
-                            <label for="h-competition-latitude"
-                                   data-bind="text: i18n.t('app:LATITUDE')"></label>
-                            <input class="form-control" type="number" id="h-competition-latitude"
-                                   data-bind="value: currentEntity().latitude,
-					                attr: { min: validationUtils.MIN_LATITUDE,
-						                max: validationUtils.MAX_LATITUDE,
-						                maxlength: validationUtils.MAX_LENGTH,
-						                step: validationUtils.GEOPOSITIONAL_STEP,
-						                placeholder: i18n.t('app:LATITUDE'),
-						                title: i18n.t('app:LATITUDE') }" required>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
-                            <label for="h-competition-longitude"
-                                   data-bind="text: i18n.t('app:LONGITUDE')"></label>
-                            <input class="form-control" type="number" id="h-competition-longitude"
-                                   data-bind="value: currentEntity().longitude,
-					                attr: { min: validationUtils.MIN_LONGITUDE,
-						                max: validationUtils.MAX_LONGITUDE,
-						                maxlength: validationUtils.MAX_LENGTH,
-						                step: validationUtils.GEOPOSITIONAL_STEP,
-						                placeholder: i18n.t('app:LONGITUDE'),
-						                title: i18n.t('app:LONGITUDE') }" required>
-                        </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label class="required" for="h-competition-address"
+                                data-bind="text: i18n.t('app:ADDRESS')"></label>
+                        <input class="form-control" type="text" id="h-competition-address" autofocus
+                                data-bind="value: currentEntity().address,
+					        attr: { max: validationUtils.MAX_LENGTH,
+						    maxlength: validationUtils.MAX_LENGTH,
+						    placeholder: i18n.t('app:ADDRESS'),
+						    title: i18n.t('app:ADDRESS') }" required>
                     </div>
+                    <div class="form-group">
+                        <label class="required" for="h-competition-zipcode"
+                                data-bind="text: i18n.t('app:ZIPCODE')"></label>
+                        <input class="form-control" type="text" id="h-competition-zipcode" autofocus
+                                data-bind="value: currentEntity().zipCode,
+					        attr: { max: validationUtils.LENGTH_ZIPCODE,
+						    maxlength: validationUtils.LENGTH_ZIPCODE,
+						    placeholder: i18n.t('app:ZIPCODE'),
+						    title: i18n.t('app:ZIPCODE') }" required>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                        <label for="h-competition-latitude"
+                                data-bind="text: i18n.t('app:LATITUDE')"></label>
+                        <input class="form-control" type="number" id="h-competition-latitude"
+                                data-bind="value: currentEntity().latitude,
+					        attr: { min: validationUtils.MIN_LATITUDE,
+						        max: validationUtils.MAX_LATITUDE,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        step: validationUtils.GEOPOSITIONAL_STEP,
+						        placeholder: i18n.t('app:LATITUDE'),
+						        title: i18n.t('app:LATITUDE') }" required>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                        <label for="h-competition-longitude"
+                                data-bind="text: i18n.t('app:LONGITUDE')"></label>
+                        <input class="form-control" type="number" id="h-competition-longitude"
+                                data-bind="value: currentEntity().longitude,
+					        attr: { min: validationUtils.MIN_LONGITUDE,
+						        max: validationUtils.MAX_LONGITUDE,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        step: validationUtils.GEOPOSITIONAL_STEP,
+						        placeholder: i18n.t('app:LONGITUDE'),
+						        title: i18n.t('app:LONGITUDE') }" required>
+                    </div>
+                </div>
 
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <button type="submit"
-                                data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                                class="btn btn-primary">
-                            <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-                        </button>
-                        <a data-bind="attr: {
-					        href: competitionBroker.getListUrl(),
-					        title: i18n.t('app:CANCEL_BUTTON_TITLE') }" class="btn">
-                            <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
-                        </a>
-                    </div>
-                </form>
-            </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit"
+                            data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                            class="btn btn-primary">
+                        <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                    </button>
+                    <a data-bind="attr: {
+					href: competitionBroker.getListUrl(),
+					title: i18n.t('app:CANCEL_BUTTON_TITLE') }" class="btn">
+                        <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>

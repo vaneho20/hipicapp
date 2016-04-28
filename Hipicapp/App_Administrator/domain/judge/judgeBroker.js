@@ -18,7 +18,7 @@ define([
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("judges/findByWithAssignment", brokerUtils.REQUEST_TYPE, brokerUtils
-            .getReadOnlyRequestSettings(brokerUtils.BACKEND +
+            .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
                 urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
                     brokerUtils.requestMappings.FINDWITHASSIGNMENT), brokerUtils.verb.POST, CACHE_NAME));
 

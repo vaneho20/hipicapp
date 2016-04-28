@@ -78,6 +78,7 @@ namespace Hipicapp.Model.Event
             Map(x => x.Latitude).Column("LATITUDE").Not.Nullable();
             Map(x => x.Longitude).Column("LONGITUDE").Not.Nullable();
             Map(x => x.Date).Column("_DATE").Not.Nullable();
+            Map(x => x.RegistrationDeadline).Column("REG_DEADLINE").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();

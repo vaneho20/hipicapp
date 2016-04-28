@@ -2,7 +2,7 @@
 /* jshint maxparams: 15, maxstatements: 60 */
 define(
     [
-        "config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
+        "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
         "core/crud/pagerImpl", "core/crud/pageRequestImpl", "domain/judge/judgeBroker",
         "domain/competition/competitionBroker", "domain/judge/judgeFilterImpl",
         "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "viewmodels/competition",
@@ -23,8 +23,8 @@ define(
         // lifecycle definition
         function activate(competitionId) {
             return $.when(superActivate(competitionId).done(function onSuccess() {
-                currentFilter.competitionId(viewModel.currentEntity().competitionId());
-                nextFilter().competitionId(viewModel.currentEntity().competitionId());
+                currentFilter.competitionId(viewModel.currentEntity().id);
+                nextFilter().competitionId(viewModel.currentEntity().id);
             }).then(loadCurrentPage)).done(refreshNav);
         }
 
@@ -72,7 +72,7 @@ define(
         }
 
         function assignAllJudges() {
-            return competitionBroker.assignAllJudges(viewModel.currentEntity().competitionId()).done(function onSuccess() {
+            return competitionBroker.assignAllJudges(viewModel.currentEntity().id).done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
@@ -83,25 +83,22 @@ define(
                     return judgeId.judgeId;
                 });
 
-            return competitionBroker.assignAllJudgesById(
-                viewModel.currentEntity().competitionId(), listJudgesId).done(
-                function onSuccess() {
+            return competitionBroker.assignAllJudgesById(viewModel.currentEntity().id, listJudgesId)
+                .done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
 
         function assignAllJudgesByFilter() {
-            return competitionBroker.assignAllJudgesByFilter(
-                viewModel.currentEntity().competitionId(),
-                findRequestImpl(currentFilter, pageRequestImpl(currentPage().number,
-                    currentPageSize, currentSort, currentPage().totalElements))).done(
-                function onSuccess() {
+            return competitionBroker.assignAllJudgesByFilter(viewModel.currentEntity().id,
+                findRequestImpl(currentFilter, pageRequestImpl(currentPage().number, currentPageSize, currentSort, currentPage().totalElements)))
+                .done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
 
         function unassignAllJudges() {
-            return competitionBroker.unassignAllJudges(viewModel.currentEntity().competitionId()).done(function onSuccess() {
+            return competitionBroker.unassignAllJudges(viewModel.currentEntity().id).done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
@@ -112,16 +109,15 @@ define(
                     return judgeId.judgeId;
                 });
 
-            return competitionBroker.unassignAllJudgesById(
-                viewModel.currentEntity().competitionId(), listJudgesId).done(
-                function onSuccess() {
+            return competitionBroker.unassignAllJudgesById(viewModel.currentEntity().id, listJudgesId)
+                .done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
 
         function unassignAllJudgesByFilter() {
             return competitionBroker.unassignAllJudgesByFilter(
-                viewModel.currentEntity().competitionId(),
+                viewModel.currentEntity().id,
                 findRequestImpl(currentFilter, pageRequestImpl(currentPage().number,
                     currentPageSize, currentSort, currentPage().totalElements))).done(
                 function onSuccess() {
@@ -130,8 +126,8 @@ define(
         }
 
         function assignUnassignJudge(judge) {
-            return competitionBroker.assignUnassignJudge(
-                viewModel.currentEntity().competitionId(), judge).done(function onSuccess() {
+            return competitionBroker.assignUnassignJudge(viewModel.currentEntity().id, judge)
+                .done(function onSuccess() {
                     loadCurrentPage();
                 });
         }
@@ -152,7 +148,7 @@ define(
         viewModel.currentPager = currentPager;
         viewModel.currentPageSize = currentPageSize;
         viewModel.availablePageSizes = PAGE_SIZES;
-        viewModel.competitionJudges = competitionJudges;
+        //viewModel.competitionJudges = competitionJudges;
 
         // lifecycle revelation
         viewModel.activate = activate;

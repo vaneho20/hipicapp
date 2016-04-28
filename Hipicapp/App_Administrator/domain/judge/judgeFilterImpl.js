@@ -5,6 +5,8 @@ define(function judgeFilterImpl() {
     return function judgeFilterImpl() {
         var filter = {};
 
+        filter.competitionId = ko.observable();
+
         return filter;
     };
 });
