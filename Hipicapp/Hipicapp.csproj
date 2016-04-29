@@ -414,6 +414,7 @@
     <Content Include="App\views\athletes.html" />
     <Content Include="App\views\competitions.html" />
     <Content Include="App\views\judges.html" />
+    <Content Include="App\views\pager.html" />
     <Content Include="App\views\profile.html" />
     <Content Include="App\views\jump.html" />
     <Content Include="App\views\dressage.html" />
@@ -425,7 +426,6 @@
     <Content Include="App\views\passwordreset.html" />
     <Content Include="App\views\signin.html" />
     <Content Include="App\views\login.html" />
-    <Content Include="App\views\pager.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\sidebar.html" />
     <Content Include="App\views\home.html" />

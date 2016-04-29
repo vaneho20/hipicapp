@@ -14,17 +14,17 @@ define([
     // request definition
     amplify.request.define("athletes/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("athletes/getByCurrentUser", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.GET_BY_CURRENT_USER), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("athletes/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.REGISTER), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.REGISTER), brokerUtils.verb.POST));
 
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);

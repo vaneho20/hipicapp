@@ -14,7 +14,7 @@ define([
     // request definition
     amplify.request.define("competitionCategories/findAll", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES,
                 brokerUtils.requestMappings.FIND_ALL), brokerUtils.verb.GET, CACHE_NAME));
 
     function findAll() {

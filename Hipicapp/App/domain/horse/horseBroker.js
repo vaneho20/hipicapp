@@ -14,7 +14,7 @@ define([
     // request definition
     amplify.request.define("horses/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE,
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     function findBy(findRequest) {
