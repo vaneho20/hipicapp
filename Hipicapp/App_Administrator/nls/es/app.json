@@ -205,5 +205,7 @@
     "SPECIALTY_LIST_EMPTY_DETAIL": "Crea ahora un primer especialidad en <strong>Hipicapp</strong>.",
     "Hipicapp_Service_Exceptions_AccessDeniedException": "¡Oops! No tienes permiso para acceder a esa funcionalidad",
     "Hipicapp_Service_Exceptions_BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos",
-    "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException":  "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso"
+    "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException":  "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso",
+    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException":  "¡Vaya! El atleta ha superado el peso maximo con silla permitido por la especialidad del concurso",
+    "Hipicapp_Service_Exceptions_MinimumAgeOfHorseUnsurpassedException":  "¡Vaya! El caballo no supera la edad permitida por la especialidad del concurso"
 }
