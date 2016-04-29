@@ -4,9 +4,9 @@ define(function securityContext() {
 
     "use strict";
 
-    var context = {}, CACHE_TIMEOUT = 3000, CACHE_STORAGE =
-        amplify.store.sessionStorage ? amplify.store.sessionStorage : amplify.store.memory, CACHE_NAME =
-        "authentication/context", instance = ko.observable(CACHE_STORAGE(CACHE_NAME) || {}), role = {
+    var context = {}, CACHE_TIMEOUT = 3000, CACHE_NAME = "authentication/context",
+        CACHE_STORAGE = amplify.store.localStorage(CACHE_NAME) ? amplify.store.localStorage : amplify.store.sessionStorage,
+        instance = ko.observable(CACHE_STORAGE(CACHE_NAME) || {}), role = {
             ADMINISTRATOR: "ADMINISTRATOR",
             ATHLETE: "ATHLETE",
             ANONYMOUS: "ANONYMOUS"
@@ -29,6 +29,10 @@ define(function securityContext() {
 
     function isAthlete() {
         return hasRole(role.ATHLETE);
+    }
+
+    function isRememberMe() {
+        return instance.rememberMe;
     }
 
     function getPrincipal() {
@@ -62,10 +66,22 @@ define(function securityContext() {
             securityContext.roles = securityContext.roles.split(",");
         }
         instance(securityContext);
+        if (isRememberMe()) {
+            CACHE_STORAGE = amplify.store.localStorage;
+            amplify.store.sessionStorage(CACHE_NAME, null);
+        } else {
+            CACHE_STORAGE = amplify.store.sessionStorage;
+            amplify.store.localStorage(CACHE_NAME, null);
+        }
         CACHE_STORAGE(CACHE_NAME, instance());
     }
 
     function clear() {
+        if (isRememberMe()) {
+            CACHE_STORAGE = amplify.store.localStorage;
+        } else {
+            CACHE_STORAGE = amplify.store.sessionStorage;
+        }
         CACHE_STORAGE(CACHE_NAME, null);
         instance(null);
     }
