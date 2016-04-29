@@ -22,11 +22,15 @@ namespace Hipicapp.Service.Event
         [Autowired]
         private ISeminaryRepository SeminaryRepository { get; set; }
 
+        [Autowired]
+        private IMaximumNumberOfJudgesExceededPolicy MaximumNumberOfJudgesExceededPolicy { get; set; }
+
         [Transaction]
         public IList<Seminary> AssignAllJudges(long? competitionId)
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             var jury = new List<Seminary>();
@@ -58,6 +62,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             var jury = new List<Seminary>();
@@ -89,6 +94,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             /*IList<Seminary> seminary = new List<Seminary>();
@@ -123,6 +129,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             var jury = this.SeminaryRepository.GetAllQueryable().Where(x => x.Id.CompetitionId == competitionId).ToList();
@@ -138,6 +145,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             var jury = this.SeminaryRepository.GetAllQueryable().Where(x => x.Id.CompetitionId == competitionId && judgesId.Contains(x.Id.JudgeId)).ToList();
@@ -153,6 +161,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             /*IList<Seminary> seminary = new List<Seminary>();
@@ -189,6 +198,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             SeminaryId seminaryId = new SeminaryId();

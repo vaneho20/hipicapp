@@ -93,8 +93,10 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\IMaximumNumberOfJudgesExceededPolicy.cs" />
     <Compile Include="Event\SeminaryService.cs" />
     <Compile Include="Event\ISeminaryService.cs" />
+    <Compile Include="Event\MaximumNumberOfJudgesExceededPolicy.cs" />
     <Compile Include="Event\WeightAthleteSaddleExceededPolicy.cs" />
     <Compile Include="Event\IWeightAthleteSaddleExceededPolicy.cs" />
     <Compile Include="Event\SpecialtyPredicates.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Event\ISpecialtyService.cs" />
     <Compile Include="Event\ICompetitionCategoryService.cs" />
     <Compile Include="Event\ICompetitionService.cs" />
+    <Compile Include="Exceptions\MaximumNumberOfJudgesExceededException.cs" />
     <Compile Include="Exceptions\MinimumAgeOfHorseUnsurpassedException.cs" />
     <Compile Include="Exceptions\WeightAthleteSaddleExceededException.cs" />
     <Compile Include="Exceptions\BadCredentialsException.cs" />
