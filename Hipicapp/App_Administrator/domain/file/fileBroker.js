@@ -7,7 +7,7 @@ define([
     var broker = {};
 
     function getUrlByUuid(fileUuid) {
-        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.FILE, brokerUtils.requestMappings.DOWNLOAD, fileUuid);
+        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.FILES, brokerUtils.requestMappings.DOWNLOAD, fileUuid);
     }
 
     broker.getUrlByUuid = getUrlByUuid;

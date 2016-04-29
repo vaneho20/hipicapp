@@ -8,64 +8,69 @@ using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Hipicapp.Controllers.Account
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/user")]
+    [RoutePrefix("api/users")]
     public class UserController : HipicappApiController
     {
         [Autowired]
         public IUserProxy UserProxy { get; set; }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
-        [Route("api/user/find")]
-        //[Authorize(Roles = "ATHLETE")]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("find")]
         public Page<User> Find(UserFindRequest request)
         {
             return this.UserProxy.Paginated(request);
         }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("getCurrentUser")]
         public User GetCurrentUser()
         {
             return this.UserProxy.GetCurrentUser();
         }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("get/{id}")]
         public User Get(long? id)
         {
             return this.UserProxy.Get(id);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("save")]
         public User Save([Valid] User user)
         {
             return this.UserProxy.Save(user);
         }
 
-        [System.Web.Http.AcceptVerbs("PUT")]
-        [System.Web.Http.HttpPut]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("enable")]
         public User Enable([Valid] User user)
         {
             return this.UserProxy.ToggleEnable(user, true);
         }
 
-        [System.Web.Http.AcceptVerbs("PUT")]
-        [System.Web.Http.HttpPut]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("disable")]
         public User Disable([Valid] User user)
         {
             return this.UserProxy.ToggleEnable(user, false);
         }
 
-        [System.Web.Http.AcceptVerbs("DELETE")]
-        [System.Web.Http.HttpDelete]
+        [AcceptVerbs("DELETE")]
+        [HttpDelete]
+        [Route("delete")]
         public User Delete(User user)
         {
             return this.UserProxy.Delete(user);

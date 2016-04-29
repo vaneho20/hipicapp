@@ -14,30 +14,30 @@ define([
     // request definition
     amplify.request.define("competitionCategories/findAll", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES,
                 brokerUtils.requestMappings.FIND_ALL), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("competitionCategories/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("competitionCategories/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("competitionCategories/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("competitionCategories/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("competitionCategories/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORY), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES), brokerUtils.verb.DELETE));
 
     function findAll() {
         return amplify.request("competitionCategories/findAll");

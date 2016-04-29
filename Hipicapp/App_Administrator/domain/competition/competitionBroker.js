@@ -14,40 +14,40 @@ define([
     // request definition
     amplify.request.define("competitions/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("competitions/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("competitions/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("competitions/simulateScore", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, brokerUtils.requestMappings.SIMULATE_SCORE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS, brokerUtils.requestMappings.SIMULATE_SCORE), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS), brokerUtils.verb.DELETE));
 
     amplify.request.define("competitions/assignAllJudges", brokerUtils.REQUEST_TYPE,
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.ASSIGNALLJUDGES), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/assignAllJudgesById", brokerUtils.REQUEST_TYPE,
         brokerUtils
             .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.ASSIGNALLJUDGESBYPAGE),
                 brokerUtils.verb.POST));
@@ -55,20 +55,20 @@ define([
     amplify.request.define("competitions/assignAllJudgesByFilter",
         brokerUtils.REQUEST_TYPE, brokerUtils.getWriteRequestSettings(
             brokerUtils.requestMappings.BACKEND +
-                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.ASSIGNALLJUDGESBYFILTER),
             brokerUtils.verb.POST));
 
     amplify.request.define("competitions/unassignAllJudges", brokerUtils.REQUEST_TYPE,
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.UNASSIGNALLJUDGES), brokerUtils.verb.POST));
 
     amplify.request.define("competitions/unassignAllJudgesById", brokerUtils.REQUEST_TYPE,
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.UNASSIGNALLJUDGESBYPAGE),
             brokerUtils.verb.POST));
@@ -76,14 +76,14 @@ define([
     amplify.request.define("competitions/unassignAllJudgesByFilter",
         brokerUtils.REQUEST_TYPE, brokerUtils.getWriteRequestSettings(
             brokerUtils.requestMappings.BACKEND +
-                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+                urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                     brokerUtils.requestMappings.COMPETITION_ID,
                     brokerUtils.requestMappings.UNASSIGNALLJUDGESBYFILTER),
             brokerUtils.verb.POST));
 
     amplify.request.define("competitions/assignUnassignJudge", brokerUtils.REQUEST_TYPE,
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION,
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.COMPETITION_ID,
                 brokerUtils.requestMappings.ASSIGNUNASSIGNJUDGE), brokerUtils.verb.POST));
 

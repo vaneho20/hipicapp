@@ -8,57 +8,61 @@ using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Hipicapp.Controllers.Event
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/competitionCategory")]
+    [RoutePrefix("api/competitionCategories")]
     public class CompetitionCategoryController : HipicappApiController
     {
         [Autowired]
         public ICompetitionCategoryProxy CompetitionCategoryProxy { get; set; }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("findAll")]
         public IList<CompetitionCategory> FindAll()
         {
             return this.CompetitionCategoryProxy.FindAll();
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/competitionCategory/find")]
-        //[Authorize(Roles = "ATHLETE")]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("find")]
         public Page<CompetitionCategory> Find(CompetitionCategoryFindRequest request)
         {
             return this.CompetitionCategoryProxy.Paginated(request);
         }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("get/{id}")]
         public CompetitionCategory Get(long? id)
         {
             return this.CompetitionCategoryProxy.Get(id);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("save")]
         public CompetitionCategory Save([Valid] CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Save(competitionCategory);
         }
 
-        [System.Web.Http.AcceptVerbs("PUT")]
-        [System.Web.Http.HttpPut]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("update")]
         public CompetitionCategory Update([Valid] CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Update(competitionCategory);
         }
 
-        [System.Web.Http.AcceptVerbs("DELETE")]
-        [System.Web.Http.HttpDelete]
+        [AcceptVerbs("DELETE")]
+        [HttpDelete]
+        [Route("delete")]
         public CompetitionCategory Delete(CompetitionCategory competitionCategory)
         {
             return this.CompetitionCategoryProxy.Delete(competitionCategory);

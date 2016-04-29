@@ -14,25 +14,25 @@ define([
     // request definition
     amplify.request.define("athletes/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("athletes/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("athletes/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("athletes/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("athletes/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES), brokerUtils.verb.DELETE));
 
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);

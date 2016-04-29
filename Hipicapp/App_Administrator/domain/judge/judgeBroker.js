@@ -14,30 +14,30 @@ define([
     // request definition
     amplify.request.define("judges/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
+            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("judges/findByWithAssignment", brokerUtils.REQUEST_TYPE, brokerUtils
             .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-                urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
+                urlUtils.joinPath(brokerUtils.requestMappings.JUDGES,
                     brokerUtils.requestMappings.FINDWITHASSIGNMENT), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("judges/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
+            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("judges/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("judges/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("judges/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findBy(findRequest) {
         return amplify.request("judges/findBy", findRequest);

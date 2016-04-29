@@ -1,7 +1,6 @@
 ﻿using Hipicapp.Filters;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace Hipicapp
 {
@@ -25,8 +24,7 @@ namespace Hipicapp
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { action = "get", id = UrlParameter.Optional }
+                routeTemplate: "api/{controller}"
             );
         }
     }

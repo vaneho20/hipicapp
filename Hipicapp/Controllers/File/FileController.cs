@@ -11,19 +11,21 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Hipicapp.Controllers.File
 {
     [Scope(ObjectScope.Request)]
     [Controller]
+    [RoutePrefix("api/files")]
     public class FileController : HipicappApiController
     {
         [Autowired]
         public IFileProxy FileProxy { get; set; }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("download/{id}")]
         public async Task<HttpResponseMessage> Download(string id)
         {
             FileInfo fileInfo = this.FileProxy.GetContentsByUuid(id);

@@ -14,25 +14,25 @@ define([
     // request definition
     amplify.request.define("horses/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE,
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("horses/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE,
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("horses/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("horses/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("horses/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.HORSE), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findBy(findRequest) {
         return amplify.request("horses/findBy", findRequest);

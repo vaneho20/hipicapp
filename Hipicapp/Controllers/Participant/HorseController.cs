@@ -13,62 +13,66 @@ using Spring.Stereotype;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Hipicapp.Controllers.Participant
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [RoutePrefix("api/horse")]
+    [RoutePrefix("api/horses")]
     public class HorseController : HipicappApiController
     {
         [Autowired]
         public IHorseProxy HorseProxy { get; set; }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
-        [Route("api/horse/find")]
-        //[Authorize(Roles = "ATHLETE")]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("find")]
         public Page<Horse> Find(HorseFindRequest request)
         {
             return this.HorseProxy.Paginated(request);
         }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("get/{id}")]
         public Horse Get(long? id)
         {
             return this.HorseProxy.Get(id);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("save")]
         public Horse Save([Valid] Horse horse)
         {
             return this.HorseProxy.Save(horse);
         }
 
-        [System.Web.Http.AcceptVerbs("PUT")]
-        [System.Web.Http.HttpPut]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("update")]
         public Horse Update([Valid] Horse horse)
         {
             return this.HorseProxy.Update(horse);
         }
 
-        [System.Web.Http.AcceptVerbs("DELETE")]
-        [System.Web.Http.HttpDelete]
+        [AcceptVerbs("DELETE")]
+        [HttpDelete]
+        [Route("delete")]
         public Horse Delete(Horse horse)
         {
             return this.HorseProxy.Delete(horse);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("upload/{id}")]
         public async Task<FileInfo> Upload(long? id, HttpRequestMessage request)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
-                throw new System.Web.Http.HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
 
             var provider = new MultipartMemoryStreamProvider();

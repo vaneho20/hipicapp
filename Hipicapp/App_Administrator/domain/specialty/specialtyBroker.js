@@ -14,30 +14,30 @@ define([
     // request definition
     amplify.request.define("specialties/findAll", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY,
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES,
                 brokerUtils.requestMappings.FIND_ALL), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("specialties/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY,
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
     amplify.request.define("specialties/findById", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY,
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("specialties/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("specialties/update", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("specialties/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES), brokerUtils.verb.DELETE));
 
     function findAll() {
         return amplify.request("specialties/findAll");

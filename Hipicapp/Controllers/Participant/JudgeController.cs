@@ -13,69 +13,74 @@ using Spring.Stereotype;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace Hipicapp.Controllers.Participant
 {
     [Scope(ObjectScope.Request)]
     [Controller]
-    [System.Web.Http.RoutePrefix("api/judge")]
+    [RoutePrefix("api/judges")]
     public class JudgeController : HipicappApiController
     {
         [Autowired]
         public IJudgeProxy JudgeProxy { get; set; }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
-        [System.Web.Http.Route("api/judge/find")]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("find")]
         public Page<Judge> Find(JudgeFindRequest request)
         {
             return this.JudgeProxy.Paginated(request);
         }
 
-        [System.Web.Http.AcceptVerbs("GET")]
-        [System.Web.Http.HttpGet]
-        [Route("api/judge/get")]
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("get/{id}")]
         public Judge Get(long? id)
         {
             return this.JudgeProxy.Get(id);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("save")]
         public Judge Save([Valid] Judge judge)
         {
             return this.JudgeProxy.Save(judge);
         }
 
-        [System.Web.Http.AcceptVerbs("PUT")]
-        [System.Web.Http.HttpPut]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("update")]
         public Judge Update([Valid] Judge judge)
         {
             return this.JudgeProxy.Update(judge);
         }
 
-        [System.Web.Http.AcceptVerbs("DELETE")]
-        [System.Web.Http.HttpDelete]
+        [AcceptVerbs("DELETE")]
+        [HttpDelete]
+        [Route("delete")]
         public Judge Delete(Judge judge)
         {
             return this.JudgeProxy.Delete(judge);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("findByWithAssignment")]
         public Page<Judge> FindByWithAssignment(JudgeFindRequest findRequest)
         {
             return this.JudgeProxy.FindByWithAssignment(findRequest);
         }
 
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("upload/{id}")]
         public async Task<FileInfo> Upload(long? id, HttpRequestMessage request)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
-                throw new System.Web.Http.HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
 
             var provider = new MultipartMemoryStreamProvider();

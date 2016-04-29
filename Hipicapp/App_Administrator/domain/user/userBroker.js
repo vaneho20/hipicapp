@@ -14,44 +14,44 @@ define([
     // request definition
     amplify.request.define("users/findBy", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
-            brokerUtils.requestMappings.USER, brokerUtils.requestMappings.FIND),
+            brokerUtils.requestMappings.USERS, brokerUtils.requestMappings.FIND),
             brokerUtils.verb.POST), CACHE_NAME);
 
     amplify.request.define("users/findByUserId", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.USER,
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
     amplify.request.define("users/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.USER,
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS,
                 brokerUtils.requestMappings.REGISTER, brokerUtils.requestMappings.AGGREGATORS),
             brokerUtils.verb.POST));
 
     amplify.request.define("users/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.USER, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
 
     amplify.request.define("users/changePassword", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils
-                .joinPath(brokerUtils.requestMappings.USER, brokerUtils.requestMappings.CHANGE),
+                .joinPath(brokerUtils.requestMappings.USERS, brokerUtils.requestMappings.CHANGE),
             brokerUtils.verb.POST));
 
     amplify.request.define("users/disable", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.USER,
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS,
                 brokerUtils.requestMappings.DISABLE), brokerUtils.verb.PUT));
 
     amplify.request.define("users/enable", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils
-                .joinPath(brokerUtils.requestMappings.USER, brokerUtils.requestMappings.ENABLE, brokerUtils.requestMappings.ENABLE),
+                .joinPath(brokerUtils.requestMappings.USERS, brokerUtils.requestMappings.ENABLE, brokerUtils.requestMappings.ENABLE),
             brokerUtils.verb.PUT));
 
     amplify.request.define("users/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.USER, brokerUtils.requestMappings.DISABLE), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS, brokerUtils.requestMappings.DISABLE), brokerUtils.verb.DELETE));
 
     function evictCache() {
         CACHE.evict();
