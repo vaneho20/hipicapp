@@ -134,9 +134,9 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
         if (xhr.login) {
             exceptionHandler.handle({
-                status: "fail",
+                status: "error",
                 data: {
-                    key: "BadCredentialsException"
+                    exceptionType: "Hipicapp_Service_Exceptions_BadCredentialsException"
                 }
             });
         } else {

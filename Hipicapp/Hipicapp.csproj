@@ -275,6 +275,7 @@
     <Content Include="App\bindings\typeaheadBinding.js" />
     <Content Include="App\core\authentication\authenticationBroker.js" />
     <Content Include="App\core\authentication\securityContext.js" />
+    <Content Include="App\core\broker.js" />
     <Content Include="App\core\config.js" />
     <Content Include="App\core\crud\findRequestImpl.js" />
     <Content Include="App\core\crud\numberOrderImpl.js" />
@@ -284,6 +285,7 @@
     <Content Include="App\core\crud\pagerImpl.js" />
     <Content Include="App\core\crud\sortBase.js" />
     <Content Include="App\core\crud\stringOrderImpl.js" />
+    <Content Include="App\core\exceptionHandler.js" />
     <Content Include="App\core\util\arrayUtils.js" />
     <Content Include="App\core\util\csrfUtils.js" />
     <Content Include="App\core\util\stringUtils.js" />
@@ -366,9 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\core\app.js" />
-    <Content Include="App\core\broker.js" />
     <Content Include="App\core\cacheImpl.js" />
-    <Content Include="App\core\exceptionHandler.js" />
     <Content Include="App\core\frontPage.js" />
     <Content Include="App\core\i18n.js" />
     <Content Include="App\core\router.js" />

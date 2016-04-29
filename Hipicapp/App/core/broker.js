@@ -16,31 +16,46 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         ATHLETE: "athlete",
         HORSES: "horses",
         HORSE: "horse",
+        COMPETITION_ID: "{competitionId}",
         COMPETITIONS: "competitions",
         COMPETITION: "competition",
         COMPETITION_CATEGORIES: "competitionCategories",
         COMPETITION_CATEGORY: "competitionCategory",
+        CATEGORIES: "categories",
+        CATEGORY: "category",
+        SPECIALTIES: "specialties",
+        SPECIALTY: "specialty",
         HANDLERS: "Handlers/AjaxFileUploaderHandler.upload",
         URL_TITLE: "{urlTitle}",
         TOKEN: "token",
         SETUP: "setup",
         GET: "get",
-        GET_BY_CURRENT_USER: "getByCurrentUser",
         LOGIN: "login",
-        REGISTER: "register",
         LOGOUT: "logout",
         UPLOAD: "upload",
         FIND: "find",
         FIND_ALL: "findAll",
+        FINDWITHASSIGNMENT: "findByWithAssignment",
+        ASSIGNALLJUDGES: "assignAllJudges",
+        ASSIGNALLJUDGESBYPAGE: "assignAllJudgesById",
+        ASSIGNALLJUDGESBYFILTER: "assignAllJudgesByFilter",
+        UNASSIGNALLJUDGES: "unassignAllJudges",
+        UNASSIGNALLJUDGESBYPAGE: "unassignAllJudgesById",
+        UNASSIGNALLJUDGESBYFILTER: "unassignAllJudgesByFilter",
+        ASSIGNUNASSIGNJUDGE: "assignUnassignJudge",
         FILES: "files",
         FILE: "file",
         DOWNLOAD: "download",
+        SIMULATE_SCORE: "simulateScore",
         IMAGES: "images",
         SIGN_IN: "signIn",
         RESET_PASSWORD: "resetPassword",
         CHECK_TICKET: "checkTicket",
         UPDATE_PASSWORD: "updatePassword",
-        SAVE: "save"
+        ENABLE: "enable",
+        DISABLE: "disable",
+        SAVE: "save",
+        UPDATE: "update"
     }, REQUEST_TYPE = "ajax", verb = {
         HEAD: "HEAD",
         GET: "GET",
@@ -98,7 +113,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
             if (status === "success") {
                 handleOk(data, status, xhr, success);
-            } else if (xhr.status === 401) {
+            } else if (xhr.status === 401 || (data && data.error === "401")) {
                 handleUnauthorized(xhr);
             } else if (xhr.status === 500) {
                 handleInternalServerError(data, status, error);
@@ -110,7 +125,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
     function handleOk(data, status, xhr, success) {
         success(data, status);
         if (!(xhr.readonly)) {
-            //alerts.success(i18n.SUCCESS_ALERT_TEXT);
+            alerts.success(i18n.t("SUCCESS_ALERT_TEXT"));
         }
     }
 
@@ -119,9 +134,9 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
         if (xhr.login) {
             exceptionHandler.handle({
-                status: "fail",
+                status: "error",
                 data: {
-                    key: "org.springframework.security.authentication.BadCredentialsException"
+                    exceptionType: "Hipicapp_Service_Exceptions_BadCredentialsException"
                 }
             });
         } else {
@@ -132,7 +147,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
     function handleInternalServerError(data, status, error) {
         error(data, status);
-        exceptionHandler.handle(data);
+        exceptionHandler.handle(data, status);
     }
 
     function getReadOnlyRequestSettings(url, verb, cacheName) {
