@@ -4,9 +4,9 @@ define(function securityContext() {
 
     "use strict";
 
-    var context = {}, CACHE_TIMEOUT = 3000, CACHE_STORAGE =
-        amplify.store.sessionStorage ? amplify.store.sessionStorage : amplify.store.localStorage, CACHE_NAME =
-        "authentication/context", instance = ko.observable(CACHE_STORAGE(CACHE_NAME) || {}), role = {
+    var context = {}, CACHE_TIMEOUT = 3000, CACHE_NAME = "authentication/context",
+        CACHE_STORAGE = amplify.store.localStorage(CACHE_NAME) ? amplify.store.localStorage : amplify.store.sessionStorage,
+        instance = ko.observable(CACHE_STORAGE(CACHE_NAME) || {}), role = {
             ADMINISTRATOR: "ADMINISTRATOR",
             ATHLETE: "ATHLETE",
             ANONYMOUS: "ANONYMOUS"
@@ -77,6 +77,11 @@ define(function securityContext() {
     }
 
     function clear() {
+        if (isRememberMe()) {
+            CACHE_STORAGE = amplify.store.localStorage;
+        } else {
+            CACHE_STORAGE = amplify.store.sessionStorage;
+        }
         CACHE_STORAGE(CACHE_NAME, null);
         instance(null);
     }
