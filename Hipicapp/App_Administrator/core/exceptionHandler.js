@@ -26,22 +26,22 @@ define(["core/i18n", "durandal/system", "viewmodels/alerts"
     }
 
     function handleApplicationException(data) {
-        var handler = exceptionHandlers[data.key];
+        var handler = exceptionHandlers[data.exceptionType.replace(/\./g, '_')];
 
         handleException(data);
 
         if (handler) {
             handler(data);
         } else {
-            alerts.error(i18n.t(data.key));
+            alerts.error(i18n.t(data.exceptionType.replace(/\./g, '_')));
         }
     }
 
-    function handle(data) {
-        if (data.status === "fail") {
-            handleApplicationException(data.data);
+    function handle(data, status) {
+        if (status === "error") {
+            handleApplicationException(data);
         } else {
-            handleRuntimeException(data.data);
+            handleRuntimeException(data);
         }
     }
 

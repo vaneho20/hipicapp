@@ -147,7 +147,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
     function handleInternalServerError(data, status, error) {
         error(data, status);
-        exceptionHandler.handle(data);
+        exceptionHandler.handle(data, status);
     }
 
     function getReadOnlyRequestSettings(url, verb, cacheName) {
