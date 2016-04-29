@@ -13,6 +13,7 @@ define([
 
     function refreshSecurityContext(data) {
         credentials.password(null);
+        data.rememberMe = credentials.rememberMe;
         securityContext.refresh(data);
         router.reloadCurrentLocation();
     }
