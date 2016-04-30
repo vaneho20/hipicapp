@@ -39,7 +39,6 @@
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>
                                     <a href="#" data-bind="click: sortByName">
                                         <i data-bind="attr: { title: i18n.t(getOrderIconTitleForName()) }, css: getOrderIconClassForName">
@@ -69,7 +68,6 @@
                         </thead>
                         <tbody data-bind="foreach: currentPage().content">
                             <tr>
-                                <td></td>
                                 <td data-bind="text: name"></td>
                                 <td data-bind="text: moment(date).format($root.i18n.t('app:DATETIME_PATTERN'))"></td>
                                 <td data-bind="text: address"></td>
