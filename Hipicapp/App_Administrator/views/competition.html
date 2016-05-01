@@ -53,25 +53,47 @@
                                 required="required" class="form-control" aria-required="true"></select>
                     </div>
                     <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
-                        <label class="required" for="h-competition-date" data-bind="text: i18n.t('app:COMPETITION_DATE')"></label>
-                        <div id="h-competition-date-picker" class="date input-group"
-                                data-bind="datetimepickerValue: currentEntity().date, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                        <label class="required" for="h-competition-start-date" data-bind="text: i18n.t('app:COMPETITION_START_DATE')"></label>
+                        <div id="h-competition-start-date-picker" class="date input-group"
+                                data-bind="datetimepickerValue: currentEntity().startDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                            <input type="text" class="form-control" id="h-competition-date"
-                                    data-bind="epochValue: currentEntity().date, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
-	 				        attr: { placeholder: i18n.t('app:COMPETITION_DATE'),
-	 				        title: i18n.t('app:COMPETITION_DATE') }" required>
+                            <input type="text" class="form-control" id="h-competition-start-date"
+                                   data-bind="epochValue: currentEntity().startDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:COMPETITION_START_DATE'),
+	 				        title: i18n.t('app:COMPETITION_START_DATE') }" required>
                         </div>
                     </div>
                     <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
-                        <label class="required" for="h-competition-registration-deadline" data-bind="text: i18n.t('app:REGISTRATION_DEADLINE')"></label>
-                        <div id="h-competition-registration-deadline-picker" class="date input-group"
-                                data-bind="datetimepickerValue: currentEntity().registrationDeadline, dateTimePickerOptions: { format: i18n.t('app:DATETIME_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                        <label class="required" for="h-competition-end-date" data-bind="text: i18n.t('app:COMPETITION_END_DATE')"></label>
+                        <div id="h-competition-end-date-picker" class="date input-group"
+                             data-bind="datetimepickerValue: currentEntity().endDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                            <input type="text" class="form-control" id="h-competition-registration-deadline"
-                                    data-bind="epochValue: currentEntity().registrationDeadline, epochValuePattern: i18n.t('app:DATETIME_PATTERN'),
-	 				        attr: { placeholder: i18n.t('app:REGISTRATION_DEADLINE'),
-	 				        title: i18n.t('app:REGISTRATION_DEADLINE') }" required>
+                            <input type="text" class="form-control" id="h-competition-end-date"
+                                   data-bind="epochValue: currentEntity().endDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:COMPETITION_END_DATE'),
+	 				        title: i18n.t('app:COMPETITION_END_DATE') }" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                        <label class="required" for="h-competition-registration-start-date" data-bind="text: i18n.t('app:REGISTRATION_START_DATE')"></label>
+                        <div id="h-competition-registration-start-date-picker" class="date input-group"
+                                data-bind="datetimepickerValue: currentEntity().registrationStartDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            <input type="text" class="form-control" id="h-competition-registration-star-date"
+                                   data-bind="epochValue: currentEntity().registrationStartDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:REGISTRATION_START_DATE'),
+	 				        title: i18n.t('app:REGISTRATION_START_DATE') }" required>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-right">
+                        <label class="required" for="h-competition-registration-end-date" data-bind="text: i18n.t('app:REGISTRATION_END_DATE')"></label>
+                        <div id="h-competition-registration-end-date-picker" class="date input-group"
+                             data-bind="datetimepickerValue: currentEntity().registrationEndDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            <input type="text" class="form-control" id="h-competition-registration-end-date"
+                                   data-bind="epochValue: currentEntity().registrationEndDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				        attr: { placeholder: i18n.t('app:REGISTRATION_END_DATE'),
+	 				        title: i18n.t('app:REGISTRATION_END_DATE') }" required>
                         </div>
                     </div>
                 </div>

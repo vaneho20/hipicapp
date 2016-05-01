@@ -51,6 +51,7 @@ namespace Hipicapp.Service.Participant
             var model = this.JudgeRepository.Get(judge.Id);
             model.Name = judge.Name;
             model.Surnames = judge.Surnames;
+            model.Gender = judge.Gender;
             this.JudgeRepository.Update(model);
             return model;
         }

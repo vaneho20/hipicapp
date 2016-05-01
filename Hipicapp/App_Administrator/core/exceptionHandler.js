@@ -22,7 +22,7 @@ define(["core/i18n", "durandal/system", "viewmodels/alerts"
     function handleRuntimeException(data) {
         handleException(data);
 
-        alerts.fatal(i18n.t("FATAL_ALERT_TEXT"));
+        alerts.fatal(i18n.format(i18n.t("FATAL_ALERT_TEXT"), data.args));
     }
 
     function handleApplicationException(data) {
@@ -33,7 +33,7 @@ define(["core/i18n", "durandal/system", "viewmodels/alerts"
         if (handler) {
             handler(data);
         } else {
-            alerts.error(i18n.t(data.exceptionType.replace(/\./g, '_')));
+            alerts.error(i18n.format(i18n.t(data.exceptionType.replace(/\./g, '_')), data.args));
         }
     }
 

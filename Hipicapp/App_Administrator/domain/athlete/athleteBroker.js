@@ -79,7 +79,7 @@ define([
 
     function getFileuploadUrlById(entityId) {
         return brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE,
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.UPLOAD, entityId);
     }
 

@@ -42,7 +42,10 @@ namespace Hipicapp.Service.Participant
         {
             var model = this.HorseRepository.Get(horse.Id);
             model.Name = horse.Name;
+            model.Weight = horse.Weight;
+            model.Height = horse.Height;
             model.BirthDate = horse.BirthDate;
+            model.Gender = horse.Gender;
             this.HorseRepository.Update(model);
             return model;
         }

@@ -12,9 +12,10 @@ define([
     /* jshint maxstatements: 35 */
     function competitionImpl(currentCompetition) {
         var competition = {}, id = null, version = ko.observable(), categoryId = null, name = null,
-            date = ko.observable(moment()), registrationDeadline = ko.observable(moment()), category = competitionCategoryImpl(),
-            address = null, zipCode = null, latitude = null, longitude = null, description = null, specialtyId = null,
-            specialty = specialtyImpl();
+            startDate = ko.observable(moment()), endDate = ko.observable(moment()),
+            registrationStartDate = ko.observable(moment()), registrationEndDate = ko.observable(moment()),
+            category = competitionCategoryImpl(), address = null, zipCode = null, latitude = null, longitude = null,
+            description = null, specialtyId = null, specialty = specialtyImpl();
 
         if (currentCompetition) {
             id = currentCompetition.id;
@@ -27,8 +28,10 @@ define([
             zipCode = currentCompetition.zipCode;
             latitude = currentCompetition.latitude;
             longitude = currentCompetition.longitude;
-            date(currentCompetition.date);
-            registrationDeadline(currentCompetition.registrationDeadline);
+            startDate(currentCompetition.startDate);
+            endDate(currentCompetition.endDate);
+            registrationStartDate(currentCompetition.registrationStartDate);
+            registrationEndDate(currentCompetition.registrationEndDate);
             category = competitionCategoryImpl(currentCompetition.category);
             specialty = competitionCategoryImpl(currentCompetition.specialty);
         }
@@ -43,8 +46,10 @@ define([
         competition.zipCode = zipCode;
         competition.latitude = latitude;
         competition.longitude = longitude;
-        competition.date = date;
-        competition.registrationDeadline = registrationDeadline;
+        competition.startDate = startDate;
+        competition.endDate = endDate;
+        competition.registrationStartDate = registrationStartDate;
+        competition.registrationEndDate = registrationEndDate;
         competition.category = category;
         competition.specialty = specialty;
 

@@ -14,7 +14,15 @@ define([
         var viewModel = {}, currentEntity = ko.observable(horseImpl()), navs = {
             BASIC_DATA: "BASIC_DATA",
             IMAGES: "IMAGES"
-        }, nav = ko.observable();
+        }, nav = ko.observable(), availableGenders = [
+            {
+                value: "MALE",
+                text: i18n.t("app:GENDER_MALE")
+            }, {
+                value: "FEMALE",
+                text: i18n.t("app:GENDER_FEMALE")
+            }
+        ];
 
         // lifecycle definition
         function activate(athleteId, horseId) {
@@ -61,6 +69,7 @@ define([
         viewModel.currentEntity = currentEntity;
         viewModel.navs = navs;
         viewModel.nav = nav;
+        viewModel.availableGenders = availableGenders;
 
         // lifecycle revelation
         viewModel.activate = activate;

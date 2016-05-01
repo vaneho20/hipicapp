@@ -86,7 +86,6 @@
     <Compile Include="Event\CompetitionFindFilter.cs" />
     <Compile Include="Event\CompetitionFindRequest.cs" />
     <Compile Include="Event\Competition.cs" />
-    <Compile Include="Exception\ImageException.cs" />
     <Compile Include="File\FileContent.cs" />
     <Compile Include="File\FileInfo.cs" />
     <Compile Include="Participant\HorseFindFilter.cs" />

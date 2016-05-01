@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Hipicapp.Model.Exceptions
+namespace Hipicapp.Exceptions
 {
     public class ImageException : ApplicationException
     {

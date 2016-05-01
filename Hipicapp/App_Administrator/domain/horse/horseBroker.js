@@ -72,7 +72,7 @@ define([
     }
 
     function getFileuploadUrlById(entityId) {
-        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.HORSE, brokerUtils.requestMappings.UPLOAD, entityId);
+        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.UPLOAD, entityId);
     }
 
     function evictCache() {

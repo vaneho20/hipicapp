@@ -17,11 +17,11 @@ define([
             HORSES: "HORSES"
         }, nav = ko.observable(), availableGenders = [
             {
-                value: athleteImpl.genders.MALE,
-                text: i18n.t("app:ATHLETE_GENDER_MALE")
+                value: "MALE",
+                text: i18n.t("app:GENDER_MALE")
             }, {
-                value: athleteImpl.genders.FEMALE,
-                text: i18n.t("app:ATHLETE_GENDER_FEMALE")
+                value: "FEMALE",
+                text: i18n.t("app:GENDER_FEMALE")
             }
         ], availableCategories = ko.observable();
 

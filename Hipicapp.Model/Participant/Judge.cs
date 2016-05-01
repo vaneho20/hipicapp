@@ -1,4 +1,6 @@
-﻿using Hipicapp.Model.Abstract;
+﻿using FluentNHibernate.Mapping;
+using Hipicapp.Model.Abstract;
+using Hipicapp.Model.Account;
 using Hipicapp.Model.File;
 using Hipicapp.Utils.Util;
 using Newtonsoft.Json;
@@ -21,6 +23,9 @@ namespace Hipicapp.Model.Participant
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
         public virtual string Surnames { get; set; }
 
+        [NotNull]
+        public virtual Gender? Gender { get; set; }
+
         public virtual FileInfo Photo { get; set; }
 
         public virtual bool? Assign { get; set; }
@@ -38,6 +43,7 @@ namespace Hipicapp.Model.Participant
             Map(x => x.PhotoId).Column("PHOTO_ID").Nullable();
             Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Surnames).Column("SURNAMES");
+            Map(x => x.Gender).Column("GENDER").CustomType<GenericEnumMapper<Gender>>().Not.Nullable();
 
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
         }

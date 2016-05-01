@@ -1,10 +1,10 @@
 /* global $:false, define: false, setTimeout: false */
 /* jshint maxparams: 10 */
 define([
-    "core/broker", "core/exceptionHandler", "core/i18n", "core/util/urlUtils",
-    "core/util/validationUtils", "viewmodels/alerts"
-], function fileuploadBinding(brokerUtils, exceptionHandler, i18n, urlUtils, validationUtils,
-                              alerts) {
+    "core/authentication/securityContext", "core/broker", "core/exceptionHandler", "core/i18n",
+    "core/util/urlUtils", "core/util/validationUtils", "viewmodels/alerts"
+], function fileuploadBinding(securityContext, brokerUtils, exceptionHandler, i18n,
+    urlUtils, validationUtils, alerts) {
     "use strict";
 
     var binding = {};
@@ -21,7 +21,7 @@ define([
 
             if ($thumbnail && $thumbnail.length) {
                 $thumbnail.attr("src", brokerUtils.requestMappings.BACKEND +
-                    urlUtils.joinPath(brokerUtils.requestMappings.FILE, brokerUtils.requestMappings.DOWNLOAD, data.result.fileUuid));
+                    urlUtils.joinPath(brokerUtils.requestMappings.FILES, brokerUtils.requestMappings.DOWNLOAD, data.result.fileUuid));
             } else {
                 alerts.success(i18n.t('app:SUCCESS_ALERT_TEXT'));
             }
@@ -39,9 +39,9 @@ define([
 
         function processfail() {
             exceptionHandler.handle({
-                status: "fail",
+                status: "error",
                 data: {
-                    key: "es.momomobile.mobi.web.exception.ImageException",
+                    exceptionType: "Hipicapp.Exceptions.ImageException",
                     args: validationUtils.MAX_FILE_SIZE
                 }
             });
@@ -67,8 +67,12 @@ define([
             progressall: progressall,
             done: done,
             fail: fail,
+            type: "POST",
             dropZone: $dropZone,
-            pasteZone: $dropZone
+            pasteZone: $dropZone,
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader('Authorization', 'Bearer ' + securityContext.getAuthenticationToken());
+            }
         });
 
         // set dropzone after page is loaded

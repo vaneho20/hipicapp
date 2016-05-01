@@ -3,11 +3,11 @@
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
+    "domain/file/fileBroker", "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
     "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function judges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, judgeBroker, judgeFilterImpl,
+                        validationUtils, fileBroker, judgeBroker, judgeFilterImpl,
                         judgeSortImpl, judgeImpl, app, alerts, shell) {
     "use strict";
 
@@ -99,6 +99,7 @@ define([
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
+    viewModel.fileBroker = fileBroker;
     viewModel.judgeBroker = judgeBroker;
 
     // state revelation

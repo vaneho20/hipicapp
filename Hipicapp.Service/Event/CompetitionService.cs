@@ -59,8 +59,10 @@ namespace Hipicapp.Service.Event
             model.ZipCode = competition.ZipCode;
             model.Latitude = competition.Latitude;
             model.Longitude = competition.Longitude;
-            model.Date = competition.Date;
-            model.RegistrationDeadline = competition.RegistrationDeadline;
+            model.StartDate = competition.StartDate;
+            model.EndDate = competition.EndDate;
+            model.RegistrationStartDate = competition.RegistrationStartDate;
+            model.RegistrationEndDate = competition.RegistrationEndDate;
             model.CategoryId = competition.CategoryId;
             model.SpecialtyId = competition.SpecialtyId;
             CompetitionRepository.Save(model);

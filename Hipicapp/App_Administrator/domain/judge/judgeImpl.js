@@ -9,13 +9,15 @@ define(function judgeImplModule() {
 
     /* jshint maxstatements: 35 */
     function judgeImpl(currentJudge) {
-        var judge = {}, id = null, version = ko.observable(), name = null, surnames = null, photoId = null, photo = null;
+        var judge = {}, id = null, version = ko.observable(), name = null, surnames = null, photoId = null, photo = null,
+            gender = null;
 
         if (currentJudge) {
             id = currentJudge.id;
             version(currentJudge.version);
             name = currentJudge.name;
             surnames = currentJudge.surnames;
+            gender = currentJudge.gender;
             photoId = currentJudge.photoId;
             photo = currentJudge.photo;
         }
@@ -24,6 +26,7 @@ define(function judgeImplModule() {
         judge.version = version;
         judge.name = name;
         judge.surnames = surnames;
+        judge.gender = gender;
         judge.photoId = photoId;
         judge.photo = photo;
 

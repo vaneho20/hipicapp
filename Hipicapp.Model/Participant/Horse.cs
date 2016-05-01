@@ -1,4 +1,6 @@
-﻿using Hipicapp.Model.Abstract;
+﻿using FluentNHibernate.Mapping;
+using Hipicapp.Model.Abstract;
+using Hipicapp.Model.Account;
 using Hipicapp.Model.File;
 using Hipicapp.Utils.Util;
 using Newtonsoft.Json;
@@ -25,6 +27,13 @@ namespace Hipicapp.Model.Participant
         [NotNull]
         [Past]
         public virtual DateTime? BirthDate { get; set; }
+
+        [NotNull]
+        public virtual Gender? Gender { get; set; }
+
+        [NotNull]
+        [Min(0)]
+        public virtual float? Weight { get; set; }
 
         public virtual FileInfo Photo { get; set; }
 
@@ -54,6 +63,8 @@ namespace Hipicapp.Model.Participant
             Map(x => x.Name).Column("NAME");
             Map(x => x.Height).Column("HEIGHT");
             Map(x => x.BirthDate).Column("BIRTH_DATE");
+            Map(x => x.Gender).Column("GENDER").CustomType<GenericEnumMapper<Gender>>().Not.Nullable();
+            Map(x => x.Weight).Column("WEIGHT").Not.Nullable();
             Map(x => x.AthleteId).Column("ATHLETE_ID");
 
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();

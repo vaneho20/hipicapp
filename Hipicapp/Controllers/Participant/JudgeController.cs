@@ -1,6 +1,6 @@
 ﻿using Hipicapp.Controllers.Abstract;
+using Hipicapp.Exceptions;
 using Hipicapp.Filters;
-using Hipicapp.Model.Exceptions;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Proxy.Participant;
@@ -76,7 +76,7 @@ namespace Hipicapp.Controllers.Participant
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("upload/{id}")]
-        public async Task<FileInfo> Upload(long? id, HttpRequestMessage request)
+        public async Task<FileInfo> Upload([FromUri]long? id, HttpRequestMessage request)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {

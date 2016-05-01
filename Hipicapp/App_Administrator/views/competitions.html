@@ -49,7 +49,7 @@
                                     <!--<a href="#" data-bind="click: sortByName">
                                         <i data-bind="attr: { title: i18n.t(getOrderIconTitleForName()) }, css: getOrderIconClassForName">
                                         </i>
-                                    </a> --><span data-bind="text: i18n.t('app:COMPETITION_DATE')"></span>
+                                    </a> --><span data-bind="text: i18n.t('app:COMPETITION_START_DATE')"></span>
                                 </th>
                                 <th>
                                     <!--<a href="#" data-bind="click: sortByName">
@@ -69,7 +69,7 @@
                         <tbody data-bind="foreach: currentPage().content">
                             <tr>
                                 <td data-bind="text: name"></td>
-                                <td data-bind="text: moment(date).format($root.i18n.t('app:DATETIME_PATTERN'))"></td>
+                                <td data-bind="text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN'))"></td>
                                 <td data-bind="text: address"></td>
                                 <td data-bind="text: zipCode"></td>
                                 <td>

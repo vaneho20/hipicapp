@@ -17,11 +17,11 @@ define([
         ko.observable(athleteSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
         ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = [
             {
-                value: athleteImpl.genders.MALE,
-                text: i18n.t("app:ATHLETE_GENDER_MALE")
+                value: "MALE",
+                text: i18n.t("app:GENDER_MALE")
             }, {
-                value: athleteImpl.genders.FEMALE,
-                text: i18n.t("app:ATHLETE_GENDER_FEMALE")
+                value: "FEMALE",
+                text: i18n.t("app:GENDER_FEMALE")
             }
         ];
 

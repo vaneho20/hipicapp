@@ -49,11 +49,19 @@ namespace Hipicapp.Model.Event
 
         [NotNull]
         [Future]
-        public virtual DateTime? Date { get; set; }
+        public virtual DateTime? StartDate { get; set; }
 
         [NotNull]
         [Future]
-        public virtual DateTime? RegistrationDeadline { get; set; }
+        public virtual DateTime? EndDate { get; set; }
+
+        [NotNull]
+        [Future]
+        public virtual DateTime? RegistrationStartDate { get; set; }
+
+        [NotNull]
+        [Future]
+        public virtual DateTime? RegistrationEndDate { get; set; }
 
         public virtual CompetitionCategory Category { get; set; }
 
@@ -77,8 +85,10 @@ namespace Hipicapp.Model.Event
             Map(x => x.ZipCode).Column("ZIP_CODE").Not.Nullable().Length(ValidationUtils.LENGTH_ZIPCODE);
             Map(x => x.Latitude).Column("LATITUDE").Not.Nullable();
             Map(x => x.Longitude).Column("LONGITUDE").Not.Nullable();
-            Map(x => x.Date).Column("_DATE").Not.Nullable();
-            Map(x => x.RegistrationDeadline).Column("REG_DEADLINE").Not.Nullable();
+            Map(x => x.StartDate).Column("START_DATE").Not.Nullable();
+            Map(x => x.EndDate).Column("END_DATE").Not.Nullable();
+            Map(x => x.RegistrationStartDate).Column("REG_START_DATE").Not.Nullable();
+            Map(x => x.RegistrationEndDate).Column("REG_END_DATE").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();

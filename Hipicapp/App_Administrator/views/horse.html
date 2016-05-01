@@ -44,6 +44,29 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
+                    <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                    <select id="h-athlete-gender"
+                            data-bind="options: availableGenders,
+							    optionsValue: function(item) { return item.value },
+							    optionsText: function(item) { return item.text },
+							    optionsCaption : i18n.t('app:GENDER') + '...',
+							    value: currentEntity().gender,
+							    attr: { title: i18n.t('app:GENDER') }"
+                            required class="form-control" aria-required="true"></select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding">
+                    <label for="h-athlete-weight"
+                            data-bind="text: i18n.t('app:WEIGHT')"></label>
+                    <input class="form-control" type="number" id="h-athlete-weight"
+                            data-bind="value: currentEntity().weight,
+					        attr: { min: validationUtils.MIN_LONGITUDE,
+						        max: validationUtils.MAX_LONGITUDE,
+						        maxlength: validationUtils.MAX_LENGTH,
+						        step: validationUtils.FLOAT_STEP,
+						        placeholder: i18n.t('app:WEIGHT'),
+						        title: i18n.t('app:WEIGHT') }" required>
+                </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <button type="submit"
                             data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"

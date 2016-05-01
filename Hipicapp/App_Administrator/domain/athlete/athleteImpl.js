@@ -9,9 +9,6 @@ define(["domain/competitionCategory/competitionCategoryImpl", "domain/user/userI
             SURNAMES: "surnames",
             GENDER: "gender",
             BIRTH_DATE: "birthDate"
-        }, genders = {
-            MALE: "MALE",
-            FEMALE: "FEMALE"
         };
 
         /* jshint maxstatements: 35 */
@@ -56,7 +53,6 @@ define(["domain/competitionCategory/competitionCategoryImpl", "domain/user/userI
         }
 
         athleteImpl.properties = properties;
-        athleteImpl.genders = genders;
 
         return athleteImpl;
     });
