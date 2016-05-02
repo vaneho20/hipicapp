@@ -15,15 +15,9 @@ define([
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter =
         ko.observable(athleteFilterImpl()), currentFilter = athleteFilterImpl(), currentSort =
         ko.observable(athleteSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
-        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = [
-            {
-                value: "MALE",
-                text: i18n.t("app:GENDER_MALE")
-            }, {
-                value: "FEMALE",
-                text: i18n.t("app:GENDER_FEMALE")
-            }
-        ];
+        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+            "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
+        };
 
     // lifecycle definition
     function activate() {

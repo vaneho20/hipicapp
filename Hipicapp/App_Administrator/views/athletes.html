@@ -95,7 +95,7 @@
                             <tr data-bind="css: $root.getRowClass($data)">
                                 <td data-bind="text: name"></td>
                                 <td data-bind="text: surnames"></td>
-                                <td data-bind="text: $root.availableGenders[gender].text"></td>
+                                <td data-bind="text: $root.availableGenders[gender]"></td>
                                 <td data-bind="text: dni"></td>
                                 <td data-bind="text: category.name"></td>
                                 <td data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))"></td>
