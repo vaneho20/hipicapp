@@ -13,11 +13,11 @@ define([
         // state definition
         var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = [
             {
-                value: athleteImpl.genders.MALE,
-                text: i18n.t("app:ATHLETE_GENDER_MALE")
+                value: "male",
+                text: i18n.t("app:GENDER_MALE")
             }, {
-                value: athleteImpl.genders.FEMALE,
-                text: i18n.t("app:ATHLETE_GENDER_FEMALE")
+                value: "female",
+                text: i18n.t("app:GENDER_FEMALE")
             }
         ];
 
@@ -33,10 +33,6 @@ define([
                 alerts.warn(i18n.ATHLETE_COMPLETE_REGISTRATION);
                 securityContext.getPrincipal().autoLogin = false;
             }*/
-        }
-
-        function loadEntityByCurrentUser() {
-            return athleteBroker.getByCurrentUser().done(refreshCurrentEntity);
         }
 
         function loadEntityByCurrentUser() {

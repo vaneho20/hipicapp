@@ -30,6 +30,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         TOKEN: "token",
         SETUP: "setup",
         GET: "get",
+        GET_BY_CURRENT_USER: "getByCurrentUser",
         LOGIN: "login",
         LOGOUT: "logout",
         UPLOAD: "upload",

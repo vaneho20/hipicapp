@@ -9,7 +9,9 @@ body {
   height: 100%;
   /*      Buscador    */
   /*      Listado elementos       */
-  /*  Paginador   */ }
+  /*  Paginador   */
+  /*  Ficha element   */
+  /*  footer  */ }
   body .aleft {
     text-align: left; }
   body .acenter {
@@ -577,6 +579,15 @@ body {
           border: 0;
           box-shadow: none;
           border-left: solid 1px #ccc; }
+  body .foto-listados {
+    padding-left: 0; }
+    body .foto-listados img {
+      width: 80px;
+      height: 80px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 3px solid #E4E4E4; }
   body .listado-elements h2 {
     display: block;
     padding: 0 0 0.5em;
@@ -584,15 +595,6 @@ body {
     border-bottom: 3px solid #f74b4b; }
   body .listado-elements .one-element {
     padding: 0 0 1.5em; }
-    body .listado-elements .one-element .foto-listados {
-      padding-left: 0; }
-      body .listado-elements .one-element .foto-listados img {
-        width: 80px;
-        height: 80px;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        border: 3px solid #E4E4E4; }
     body .listado-elements .one-element .info-listados {
       padding-left: 0; }
       body .listado-elements .one-element .info-listados h3 {
@@ -635,6 +637,89 @@ body {
       width: auto;
       padding: 0.7em 0.5em;
       height: auto; }
+  body .block-ficha {
+    padding: 3em 0 0; }
+    body .block-ficha .ficha-col-izq {
+      padding-right: 3em; }
+      body .block-ficha .ficha-col-izq #mis-caballos, body .block-ficha .ficha-col-izq #mis-concursos {
+        padding: 0 0 3em; }
+        body .block-ficha .ficha-col-izq #mis-caballos header, body .block-ficha .ficha-col-izq #mis-concursos header {
+          position: relative;
+          margin: 0 0 1em;
+          padding: 0 0 0.5em;
+          border-bottom: 3px solid #f74b4b; }
+          body .block-ficha .ficha-col-izq #mis-caballos header h2, body .block-ficha .ficha-col-izq #mis-concursos header h2 {
+            margin: 0;
+            padding: 0 0.5em 0 0;
+            font-size: 1.6em; }
+          body .block-ficha .ficha-col-izq #mis-caballos header a, body .block-ficha .ficha-col-izq #mis-concursos header a {
+            z-index: 99;
+            background: #f74b4b;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            margin: 0;
+            padding: 8px 10px;
+            text-transform: uppercase;
+            width: auto; }
+        body .block-ficha .ficha-col-izq #mis-caballos .encabezado-listados, body .block-ficha .ficha-col-izq #mis-concursos .encabezado-listados {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 0.8em;
+          margin: 0;
+          padding: 1em 0.6em;
+          text-transform: uppercase;
+          background: #E4E4E4; }
+      body .block-ficha .ficha-col-izq article {
+        border-bottom: 1px solid #E4E4E4; }
+        body .block-ficha .ficha-col-izq article .foto-listados {
+          padding: 0.5em 0;
+          text-align: center; }
+          body .block-ficha .ficha-col-izq article .foto-listados img {
+            width: 50px;
+            height: 50px; }
+        body .block-ficha .ficha-col-izq article .datos-listados {
+          padding: 1.5em 0.6em;
+          vertical-align: middle; }
+    body .block-ficha .ficha-col-der {
+      position: relative;
+      margin-top: 3em;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      background: #E4E4E4; }
+      body .block-ficha .ficha-col-der .foto-listados {
+        position: absolute;
+        left: 50%;
+        top: -40px;
+        text-align: center;
+        -ms-transform: translate(-50%, 0);
+        /* IE 9 */
+        -webkit-transform: translate(-50%, 0);
+        /* Safari */
+        -moz-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        transform: translate(-50%, 0); }
+        body .block-ficha .ficha-col-der .foto-listados img {
+          width: 120px;
+          height: 120px; }
+      body .block-ficha .ficha-col-der .info-listados {
+        padding-top: 5.5em; }
+        body .block-ficha .ficha-col-der .info-listados h3 {
+          margin: 0;
+          padding: 1em 0 0.5em;
+          border-bottom: 1px solid #fff; }
+        body .block-ficha .ficha-col-der .info-listados p {
+          margin: 0;
+          padding: 1em 0;
+          border-bottom: 1px solid #fff; }
+        body .block-ficha .ficha-col-der .info-listados .ver-todo {
+          float: none;
+          margin: 1.5em 0; }
   body footer {
     padding: 1em 0;
     text-align: center;

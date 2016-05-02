@@ -1,40 +1,154 @@
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-
-    <div class="row">
-        <div class="col-md-3 col-lg-3 " align="center">
-            <img alt="User Pic" data-bind="attr: { src: fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) }" class="img-responsive">
-        </div>
-        <div class=" col-md-9 col-lg-9 ">
-            <table class="table table-user-information">
-                <tbody>
-                    <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
-                    </tr>
-                    <tr>
-                        <td>Hire date:</td>
-                        <td>06/23/2013</td>
-                    </tr>
-                    <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
-                    </tr>
-
-                    <tr>
-                    <tr>
-                        <td>Gender</td>
-                        <td>Male</td>
-                    </tr>
-                    <tr>
-                        <td>Home Address</td>
-                        <td>Metro Manila,Philippines</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                    </tr>
-                </tbody>
-            </table>
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
+                    <section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-24">
+                        <header class="col-md-12 col-sm-12 col-xs-24">
+                            <h2 class="pull-left">Mis Caballos</h2>
+                            <a class="pull-right" href="Ver todos">Ver todos</a>
+                        </header>
+                        <article class="row">
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Foto Caballos
+                            </div>
+                            <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+                                Nombre Caballo
+                            </div>
+                            <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+                                Fecha nacimiento
+                            </div>
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Peso y Altura
+                            </div>
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Sexo Caballo
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+                                <img src="/Content/images/foto_caballo.jpg" />
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Nombre Caballo
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Fecha nacimiento
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Peso y Altura
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Yegua
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+                                <img src="/Content/images/foto_caballo.jpg" />
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Nombre Caballo
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Fecha nacimiento
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Peso y Altura
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Yegua
+                            </div>
+                        </article>
+                    </section>
+                    <section id="mis-concursos">
+                        <header class="col-md-12 col-sm-12 col-xs-24">
+                            <h2 class="pull-left">Mis Concursos</h2>
+                            <h2 class="pull-left">  |  Pr&oacute;ximos Concursos</h2>
+                            <a class="pull-right" href="Ver todos">Ver todos</a>
+                        </header>
+                        <article class="row">
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Foto Concurso
+                            </div>
+                            <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+                                Nombre Concurso
+                            </div>
+                            <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+                                Direcci&oacute;n
+                            </div>
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Fecha
+                            </div>
+                            <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Categor&iacute;a
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+                                <img src="/Content/images/foto_caballo.jpg" />
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                CSN** Real Club de Polo de Barcelona
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Real Club De Polo Barcelona
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                06/05/2016
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Infantil
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+                                <img src="/Content/images/foto_caballo.jpg" />
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Nombre Caballo
+                            </div>
+                            <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+                                Fecha nacimiento
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Peso y Altura
+                            </div>
+                            <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+                                Yegua
+                            </div>
+                        </article>
+                    </section>
+                </div>
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" src="/Content/images/cara_jinete1.jpg">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3>Nombre Apellidos Jinete</h3>
+                            <p>
+                                <strong>Sexo:</strong>
+                                <span>Masculino</span>
+                            </p>
+                            <p>
+                                <strong>D.N.I</strong>
+                                <span>53530247-R</span>
+                            </p>
+                            <p>
+                                <strong>Categor&iacute;a:</strong>
+                                <span>Infantil</span>
+                            </p>
+                            <p>
+                                <strong>Fecha Nacimiento:</strong>
+                                <span>13/11/1982</span>
+                            </p>
+                            <a class="ver-todo" data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Ver Especialidad
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>

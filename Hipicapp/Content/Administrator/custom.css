@@ -13,8 +13,9 @@ label.required:after {
 }
 
     #mo-shell-alerts .mo-alert {
-        width: 66%;
-        margin-bottom: 2px;
+        width: 96.4%;
+        margin: 0 1.6em;
+        padding: 0.6em 0.5em;
     }
 
     #mo-shell-alerts .mo-alert-fatal {
@@ -477,13 +478,13 @@ body {
     line-height: 1.471;
 }
 
-body.backoffice-blue {
-    background: #2A3F54;
-}
+    body.backoffice-blue {
+        background: #2A3F54;
+    }
 
-body.backoffice-white {
-    background: white;
-}
+    body.backoffice-white {
+        background: white;
+    }
 
 .main_container .top_nav {
     display: block;
