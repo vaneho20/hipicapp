@@ -20,7 +20,7 @@ namespace Hipicapp.Service.Account
         [Transaction(ReadOnly = true)]
         public Page<User> Paginated(UserFindFilter filter, PageRequest pageRequest)
         {
-            return UserRepository.Paginated(UserRepository.GetAllQueryable(), pageRequest);
+            return UserRepository.Paginated(UserPredicates.ValueOf(filter, this.UserRepository.GetAllQueryable()), pageRequest);
         }
 
         [Transaction(ReadOnly = true)]
