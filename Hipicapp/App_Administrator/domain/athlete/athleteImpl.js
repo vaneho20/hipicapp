@@ -13,9 +13,10 @@ define(["domain/competitionCategory/competitionCategoryImpl", "domain/user/userI
 
         /* jshint maxstatements: 35 */
         function athleteImpl(currentAthlete) {
-            var athlete = {}, id = null, version = ko.observable(), dni = null, name = null, surnames = null, gender = null,
-                photoId = null, userId = null, categoryId = null, birthDate = ko.observable(moment()), photo = null,
-                user = userImpl(), category = competitionCategoryImpl(), weight = null;
+            var athlete = {}, id = null, version = ko.observable(), dni = null, name = null, surnames = null,
+                gender = ko.observable(null), photoId = null, userId = null, categoryId = null,
+                birthDate = ko.observable(moment()), photo = null, user = userImpl(), category = competitionCategoryImpl(),
+                weight = null;
 
             if (currentAthlete) {
                 id = currentAthlete.id;
@@ -23,7 +24,7 @@ define(["domain/competitionCategory/competitionCategoryImpl", "domain/user/userI
                 dni = currentAthlete.dni;
                 name = currentAthlete.name;
                 surnames = currentAthlete.surnames;
-                gender = currentAthlete.gender;
+                gender(currentAthlete.gender);
                 weight = currentAthlete.weight;
                 categoryId = currentAthlete.categoryId;
                 photoId = currentAthlete.photoId;

@@ -16,10 +16,10 @@ define([
             IMAGES: "IMAGES"
         }, nav = ko.observable(), availableGenders = [
             {
-                value: "MALE",
+                value: "male",
                 text: i18n.t("app:GENDER_MALE")
             }, {
-                value: "FEMALE",
+                value: "female",
                 text: i18n.t("app:GENDER_FEMALE")
             }
         ];
