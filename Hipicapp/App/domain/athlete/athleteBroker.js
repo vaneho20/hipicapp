@@ -38,6 +38,11 @@ define([
         return amplify.request("athletes/register", entity).always(CACHE.evict);
     }
 
+    function getDetailUrlById(athleteId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, athleteId);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -48,6 +53,7 @@ define([
     broker.findBy = findBy;
     broker.getByCurrentUser = getByCurrentUser;
     broker.register = register;
+    broker.getDetailUrlById = getDetailUrlById;
 
     return broker;
 });
