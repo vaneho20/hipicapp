@@ -22,7 +22,7 @@ namespace Hipicapp.Proxy.Participant
             return this.JudgeService.Paginated(request.Filter, request.PageRequest);
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [AllowAnonymous]
         public Judge Get(long? id)
         {
             return this.JudgeService.Get(id);

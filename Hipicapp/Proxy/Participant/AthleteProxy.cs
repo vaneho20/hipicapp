@@ -29,13 +29,13 @@ namespace Hipicapp.Proxy.Participant
         [Autowired]
         private IUserService UserService { get; set; }
 
-        //[AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [AllowAnonymous]
         public Page<Athlete> Paginated(AthleteFindRequest request)
         {
             return this.AthleteService.Paginated(request.Filter, request.PageRequest);
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [AllowAnonymous]
         public Athlete Get(long? id)
         {
             return this.AthleteService.Get(id);

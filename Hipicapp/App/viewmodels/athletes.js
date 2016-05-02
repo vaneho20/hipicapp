@@ -4,11 +4,11 @@ define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
     "domain/athlete/athleteBroker", "domain/athlete/athleteFilterImpl",
-    "domain/athlete/athleteSortImpl", "domain/athlete/athleteImpl", "durandal/app",
-    "viewmodels/alerts", "viewmodels/shell"
+    "domain/athlete/athleteSortImpl", "domain/athlete/athleteImpl", "domain/file/fileBroker",
+    "durandal/app", "viewmodels/alerts", "viewmodels/shell"
 ], function athletes(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
                         validationUtils, athleteBroker, athleteFilterImpl,
-                        athleteSortImpl, athleteImpl, app, alerts, shell) {
+                        athleteSortImpl, athleteImpl, fileBroker, app, alerts, shell) {
     "use strict";
 
     // state definition
@@ -102,6 +102,7 @@ define([
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
     viewModel.athleteBroker = athleteBroker;
+    viewModel.fileBroker = fileBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;

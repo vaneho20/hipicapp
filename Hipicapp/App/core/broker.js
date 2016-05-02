@@ -134,11 +134,8 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
         if (xhr.login) {
             exceptionHandler.handle({
-                status: "error",
-                data: {
-                    exceptionType: "Hipicapp_Service_Exceptions_BadCredentialsException"
-                }
-            });
+                exceptionType: "Hipicapp_Service_Exceptions_BadCredentialsException"
+            }, "error");
         } else {
             router.navigate("");
             router.reloadCurrentLocation();

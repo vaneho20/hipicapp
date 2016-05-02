@@ -1,0 +1,100 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:ATHLETE')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <form role="form" data-bind="submit: save" novalidate>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <fieldset>
+                        <legend>
+                            Datos de usuario
+                        </legend>
+                        <div class="form-group">
+                            <label class="required" for="h-athlete-name"
+                                   data-bind="text: i18n.t('app:NAME')"></label>
+                            <input class="form-control" type="text" id="h-athlete-name" autofocus
+                                   data-bind="value: currentEntity().name,
+						            attr: { max: validationUtils.MAX_LENGTH,
+							            maxlength: validationUtils.MAX_LENGTH,
+							            placeholder: i18n.t('app:NAME'),
+							            title: i18n.t('app:NAME')}"
+                                   required autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="h-athlete-surnames"
+                                   data-bind="text: i18n.t('app:SURNAMES')"></label>
+                            <input class="form-control" type="text" id="h-athlete-surnames" autofocus
+                                   data-bind="value: currentEntity().surnames,
+						            attr: { max: validationUtils.MAX_LENGTH,
+							            maxlength: validationUtils.MAX_LENGTH,
+							            placeholder: i18n.t('app:SURNAMES'),
+							            title: i18n.t('app:SURNAMES')}"
+                                   required autocomplete="off" />
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
+                            <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                            <select id="h-athlete-gender"
+                                    data-bind="options: availableGenders,
+							            optionsValue: function(item) { return item.value },
+							            optionsText: function(item) { return item.text },
+							            optionsCaption : i18n.t('app:GENDER') + '...',
+							            value: currentEntity().gender,
+							            attr: { title: i18n.t('app:GENDER') }"
+                                    required class="form-control" aria-required="true"></select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding">
+                            <label for="h-athlete-weight"
+                                   data-bind="text: i18n.t('app:WEIGHT')"></label>
+                            <input class="form-control" type="number" id="h-athlete-weight"
+                                   data-bind="value: currentEntity().weight,
+					                attr: { min: validationUtils.MIN_LONGITUDE,
+						                max: validationUtils.MAX_LONGITUDE,
+						                maxlength: validationUtils.MAX_LENGTH,
+						                step: validationUtils.FLOAT_STEP,
+						                placeholder: i18n.t('app:WEIGHT'),
+						                title: i18n.t('app:WEIGHT') }" required>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 without-padding-left">
+                            <div class="form-group">
+                                <label class="required" for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                <div id="h-athlete-birthdate-picker" class="date input-group"
+                                     data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" id="h-athlete-birthdate"
+                                           data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				                            attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				                            title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 without-padding">
+                            <div class="form-group">
+                                <label class="required" for="h-athlete-dni"
+                                       data-bind="text: i18n.t('app:DNI')"></label>
+                                <input class="form-control" type="text" id="h-athlete-dni" autofocus
+                                       data-bind="value: currentEntity().dni,
+						                    attr: { max: validationUtils.MAX_LENGTH,
+							                    maxlength: validationUtils.MAX_LENGTH,
+							                    placeholder: i18n.t('app:DNI'),
+							                    title: i18n.t('app:DNI')}"
+                                       required autocomplete="off" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a data-bind="attr: {
+						href: athleteBroker.getListUrl(),
+						title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+                       class="btn">
+                        <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

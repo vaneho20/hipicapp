@@ -17,6 +17,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
+    amplify.request.define("athletes/findById", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
+                brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
+
     amplify.request.define("athletes/getByCurrentUser", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
@@ -30,12 +35,22 @@ define([
         return amplify.request("athletes/findBy", findRequest);
     }
 
+    function findById(id) {
+        return amplify.request("athletes/findById", {
+            id: id
+        });
+    }
+
     function getByCurrentUser() {
         return amplify.request("athletes/getByCurrentUser");
     }
 
     function register(entity) {
         return amplify.request("athletes/register", entity).always(CACHE.evict);
+    }
+
+    function getListUrl() {
+        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES);
     }
 
     function getDetailUrlById(athleteId) {
@@ -51,8 +66,10 @@ define([
 
     // request revelation
     broker.findBy = findBy;
+    broker.findById = findById;
     broker.getByCurrentUser = getByCurrentUser;
     broker.register = register;
+    broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
 
     return broker;

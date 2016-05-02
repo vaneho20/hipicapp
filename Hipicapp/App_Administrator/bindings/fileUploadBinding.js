@@ -39,12 +39,9 @@ define([
 
         function processfail() {
             exceptionHandler.handle({
-                status: "error",
-                data: {
-                    exceptionType: "Hipicapp.Exceptions.ImageException",
-                    args: validationUtils.MAX_FILE_SIZE
-                }
-            });
+                exceptionType: "Hipicapp.Exceptions.ImageException",
+                args: validationUtils.MAX_FILE_SIZE
+            }, "error");
         }
 
         function progressall(event, data) {

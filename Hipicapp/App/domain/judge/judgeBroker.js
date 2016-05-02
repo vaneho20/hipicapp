@@ -22,18 +22,6 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.JUDGES,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
-    amplify.request.define("judges/save", brokerUtils.REQUEST_TYPE, brokerUtils
-        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
-
-    amplify.request.define("judges/update", brokerUtils.REQUEST_TYPE, brokerUtils
-        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
-
-    amplify.request.define("judges/erase", brokerUtils.REQUEST_TYPE, brokerUtils
-        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGES), brokerUtils.verb.DELETE));
-
     function findBy(findRequest) {
         return amplify.request("judges/findBy", findRequest);
     }
@@ -42,18 +30,6 @@ define([
         return amplify.request("judges/findById", {
             id: id
         });
-    }
-
-    function save(entity) {
-        return amplify.request("judges/save", entity).always(CACHE.evict);
-    }
-
-    function update(entity) {
-        return amplify.request("judges/update", entity).always(CACHE.evict);
-    }
-
-    function erase(entity) {
-        return amplify.request("judges/erase", entity).always(CACHE.evict);
     }
 
     function getListUrl() {
@@ -65,18 +41,6 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.JUDGE, judgeId);
     }
 
-    function getImagesUrlById(judgeId) {
-        return brokerUtils.HASH_CHAR +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE, judgeId,
-                brokerUtils.requestMappings.IMAGES);
-    }
-
-    function getFileuploadUrlById(entityId) {
-        return brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.JUDGE,
-                brokerUtils.requestMappings.UPLOAD, entityId);
-    }
-
     function evictCache() {
         CACHE.evict();
     }
@@ -85,14 +49,9 @@ define([
 
     // request revelation
     broker.findBy = findBy;
-    broker.save = save;
-    broker.update = update;
-    broker.erase = erase;
     broker.findById = findById;
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
-    broker.getImagesUrlById = getImagesUrlById;
-    broker.getFileuploadUrlById = getFileuploadUrlById;
 
     return broker;
 });

@@ -67,7 +67,7 @@ namespace Hipicapp.Controllers.Participant
 
         [AcceptVerbs("PUT")]
         [HttpPut]
-        [Route("find")]
+        [Route("update")]
         public Athlete Update([Valid] Athlete athlete)
         {
             return this.AthleteProxy.Update(athlete);

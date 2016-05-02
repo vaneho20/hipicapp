@@ -37,6 +37,12 @@ body {
         -moz-border-radius: 4px;
         border-radius: 4px;
         background: #f74b4b;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
     }
 
     .navbar {
@@ -597,7 +603,7 @@ body {
                     -moz-transform: translate(0,-50%);
                     -o-transform: translate(0,-50%);
                     transform: translate(0,-50%);
-                    background: url("images/subrayado_blanco.png") no-repeat 50% 100%;
+                    background: url("/images/subrayado_blanco.png") no-repeat 50% 100%;
                 }
             }
         }
@@ -769,6 +775,154 @@ body {
                     }
                 }
             }
+        }
+    }
+    /*      Buscador    */
+    #custom-search-input {
+        float: left;
+        padding: 2em 0;
+        width: 100%;
+        clear: both;
+
+        .campo-buscador {
+            float: left;
+            padding: 0 0 0 2%;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            input,
+            select {
+                width: 100%;
+                font-size: 1.1em;
+                border: solid 1px #E4E4E4;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                background-color: #fff;
+                box-shadow: none;
+            }
+
+            .glyphicon-search {
+                font-size: 23px;
+            }
+
+            button {
+                margin: 2px 0 0 0;
+                background: none;
+                box-shadow: none;
+                border: 0;
+                color: #666666;
+                padding: 8px 0 8px 16px;
+                border-left: solid 1px #E4E4E4;
+
+                &:hover {
+                    border: 0;
+                    box-shadow: none;
+                    border-left: solid 1px #ccc;
+                }
+            }
+        }
+    }
+    /*      Listado elementos       */
+    .listado-elements {
+        h2 {
+            display: block;
+            padding: 0 0 0.5em;
+            margin: 0 0 1em;
+            border-bottom: 3px solid #f74b4b;
+        }
+
+        .one-element {
+            padding: 0 0 1.5em;
+
+            .foto-listados {
+                padding-left: 0;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    border-radius: 50%;
+                    border: 3px solid #E4E4E4;
+                }
+            }
+
+            .info-listados {
+                padding-left: 0;
+
+                h3 {
+                    font-size: 1.3em;
+                    margin: 0 0 0.2em;
+                    padding: 0.3em 0 0.2em 0;
+                }
+
+                p {
+                    margin: 0 0 0.2em;
+                }
+
+                .ver-todo {
+                    margin-top: 0.5em;
+                    padding: 5px 15px;
+                    float: left;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+    /*  Paginador   */
+    .paginador {
+        padding: 1.5em 0;
+        border-top: 1px solid #E4E4E4;
+
+        div {
+            padding: 0;
+
+            .pull-right {
+                padding-top: 0.5em;
+            }
+        }
+
+        ul {
+            margin: 0.5em 0 0 0;
+
+            li {
+                a {
+                    color: #f74b4b;
+
+                    &:hover {
+                        color: #fff;
+                        border: 1px solid #f74b4b;
+                        background: #f74b4b;
+                    }
+                }
+
+                &.active {
+                    a {
+                        border: 1px solid #f74b4b;
+                        background: #f74b4b;
+
+                        &:hover {
+                            border: 1px solid #f74b4b;
+                            background: #f74b4b;
+                        }
+                    }
+                }
+            }
+        }
+
+        span {
+            display: inline-block;
+            padding: 0.5em;
+        }
+
+        select {
+            display: inline-block;
+            width: auto;
+            padding: 0.7em 0.5em;
+            height: auto;
         }
     }
 

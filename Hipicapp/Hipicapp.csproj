@@ -395,8 +395,10 @@
     <Content Include="App\domain\user\userImpl.js" />
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\alerts.js" />
+    <Content Include="App\viewmodels\athlete.js" />
     <Content Include="App\viewmodels\athletes.js" />
     <Content Include="App\viewmodels\competitions.js" />
+    <Content Include="App\viewmodels\judge.js" />
     <Content Include="App\viewmodels\judges.js" />
     <Content Include="App\viewmodels\profile.js" />
     <Content Include="App\viewmodels\jump.js" />
@@ -412,8 +414,10 @@
     <Content Include="App\viewmodels\sidebar.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
+    <Content Include="App\views\athlete.html" />
     <Content Include="App\views\athletes.html" />
     <Content Include="App\views\competitions.html" />
+    <Content Include="App\views\judge.html" />
     <Content Include="App\views\judges.html" />
     <Content Include="App\views\pager.html" />
     <Content Include="App\views\profile.html" />
