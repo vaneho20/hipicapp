@@ -39,7 +39,7 @@ define([
     amplify.request.define("authentication/checkTicket", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
             brokerUtils.requestMappings.AUTHENTICATION,
-            brokerUtils.requestMappings.EMAIL, brokerUtils.requestMappings.CHECK_TICKET),
+            brokerUtils.requestMappings.KEY, brokerUtils.requestMappings.CHECK_TICKET),
             brokerUtils.verb.POST));
 
     amplify.request.define("authentication/updatePassword", brokerUtils.REQUEST_TYPE, brokerUtils

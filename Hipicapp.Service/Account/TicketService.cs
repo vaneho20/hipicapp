@@ -58,7 +58,7 @@ namespace Hipicapp.Service.Account
             return user;
         }
 
-        [Transaction]
+        [Transaction(NoRollbackFor = new Type[] { typeof(TicketExpiredException) })]
         public Ticket CheckTicket(string key)
         {
             var ticket = this.TicketRepository.Get(key);

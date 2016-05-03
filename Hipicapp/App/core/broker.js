@@ -9,6 +9,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         AUTHENTICATION: "authentication",
         ID: "{id}",
         EMAIL: "{userName}",
+        KEY: "{key}",
         USERS: "users",
         USER: "user",
         JUDGES: "judges",
