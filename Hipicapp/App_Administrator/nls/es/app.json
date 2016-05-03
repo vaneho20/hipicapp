@@ -1,6 +1,7 @@
 ﻿{
     "CURRENT_LANGUAGE": "es",
     "CURRENT_COUNTRY": "ES",
+    "YEAR_PATTERN": "YYYY",
     "DATE_PATTERN": "DD/MM/YYYY",
     "DATE_PATTERN_EXAMPLE": "31/12/1999",
     "DATETIME_PATTERN": "DD/MM/YYYY HH:mm",
@@ -127,6 +128,8 @@
     "PUBLICATION_DATE": "Fecha de publicación",
     "COMPETITION_START_DATE": "Inicio de la competición",
     "COMPETITION_END_DATE": "Fin de la competición",
+    "INITIAL_YEAR": "Desde",
+    "FINAL_YEAR": "Hasta",
     "BIRTHDATE": "Fecha de nacimiento",
     "MIN_AGE_OF_HORSE": "Edad mínima del caballo",
     "MAX_NO_OF_JUDGES": "Número máximo de jueces",
