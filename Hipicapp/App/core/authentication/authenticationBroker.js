@@ -20,11 +20,6 @@ define([
         .getLoginRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
         brokerUtils.requestMappings.TOKEN), brokerUtils.verb.POST));
 
-    amplify.request.define("authentication/logout", brokerUtils.REQUEST_TYPE, brokerUtils
-        .getReadOnlyRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
-            brokerUtils.requestMappings.AUTHENTICATION, brokerUtils.requestMappings.LOGOUT),
-            brokerUtils.verb.POST));
-
     amplify.request.define("authentication/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
             brokerUtils.requestMappings.AUTHENTICATION, brokerUtils.requestMappings.SAVE),
@@ -37,16 +32,19 @@ define([
 
     amplify.request.define("authentication/resetPassword", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
+            brokerUtils.requestMappings.AUTHENTICATION,
             brokerUtils.requestMappings.EMAIL, brokerUtils.requestMappings.RESET_PASSWORD),
             brokerUtils.verb.POST));
 
     amplify.request.define("authentication/checkTicket", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
+            brokerUtils.requestMappings.AUTHENTICATION,
             brokerUtils.requestMappings.EMAIL, brokerUtils.requestMappings.CHECK_TICKET),
             brokerUtils.verb.POST));
 
     amplify.request.define("authentication/updatePassword", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
+            brokerUtils.requestMappings.AUTHENTICATION,
             brokerUtils.requestMappings.EMAIL, brokerUtils.requestMappings.UPDATE_PASSWORD),
             brokerUtils.verb.PUT));
 

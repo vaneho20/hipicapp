@@ -1,8 +1,8 @@
 /* global define: false */
 define([
     "core/authentication/authenticationBroker", "core/authentication/securityContext",
-    "core/router", "core/i18n", "viewmodels/shell"
-], function passwordResetViewModel(authenticationBroker, securityContext, router, i18n, shell) {
+    "core/router", "core/i18n"
+], function passwordResetViewModel(authenticationBroker, securityContext, router, i18n) {
     "use strict";
 
     // state definition
@@ -11,7 +11,6 @@ define([
 
     // lifecycle definition
     function activate(route) {
-        shell.useLeftBar(false);
         mailSent(false);
     }
 

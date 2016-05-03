@@ -9,7 +9,7 @@ namespace Hipicapp.Proxy.Account
 
         Ticket CreateTicketAndSendEmail(string userName);
 
-        User UpdatePassword(string key, string newPassword);
+        User UpdatePassword(Ticket ticket);
 
         void CheckTicket(string key);
 

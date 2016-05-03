@@ -1,5 +1,6 @@
 ﻿using Hipicapp.Controllers.Abstract;
-using Hipicapp.Service.Account;
+using Hipicapp.Model.Account;
+using Hipicapp.Proxy.Account;
 using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
@@ -14,7 +15,10 @@ namespace Hipicapp.Controllers.Authentication
     public class AuthenticationController : HipicappApiController
     {
         [Autowired]
-        public IUserService UserService { get; set; }
+        public IUserProxy UserProxy { get; set; }
+
+        [Autowired]
+        public ITicketProxy TicketProxy { get; set; }
 
         [AllowAnonymous]
         [Route("setup")]
@@ -23,12 +27,13 @@ namespace Hipicapp.Controllers.Authentication
             return true;
         }
 
-        /*[HttpPut]
-        public bool SignIn(SignInUserRequest d)
+        [AllowAnonymous]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("{userName}/resetPassword")]
+        public Ticket ResetPassword([FromUri]string userName)
         {
-            User user = Mapper.Map<SignInUserRequest, User>(d);
-            this.UserService.SignIn(user, Mapper.Map<MeInstrumentRequest, Instrument>(d.PrincipalInstrument));
-            return true;
-        }*/
+            return this.TicketProxy.CreateTicketAndSendEmail(userName);
+        }
     }
 }

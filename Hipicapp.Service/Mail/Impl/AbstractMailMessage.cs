@@ -21,15 +21,15 @@ namespace Hipicapp.Service.Mail.Impl
         {
             StringBuilder mailMessage = new StringBuilder();
 
-            /*@SuppressWarnings("restriction")
-            final String lineSeparator = java.security.AccessController
+            /*
+            string lineSeparator = java.security.AccessController
                     .doPrivileged(new sun.security.action.GetPropertyAction("line.separator"));
 
             mailMessage.Append(lineSeparator);*/
             mailMessage.Append("TO: ").Append(this.To)/*.Append(lineSeparator)*/;
             mailMessage.Append("FROM: ").Append(this.From)/*.Append(lineSeparator)*/;
             mailMessage.Append("SUBJECT: ").Append(this.Subject)/*.Append(lineSeparator)*/;
-            /*mailMessage.Append(this.getBody()).Append(lineSeparator);*/
+            /*mailMessage.Append(this.Body).Append(lineSeparator);*/
 
             return mailMessage.ToString();
         }

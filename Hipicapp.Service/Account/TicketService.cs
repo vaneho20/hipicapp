@@ -1,6 +1,9 @@
 ﻿using Hipicapp.Model.Account;
 using Hipicapp.Repository.Account;
 using Hipicapp.Service.Exceptions;
+using Hipicapp.Service.Mail.Impl;
+using Hipicapp.Service.Mail.Models;
+using Hipicapp.Service.Util;
 using Hipicapp.Utils.Security;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
@@ -28,20 +31,24 @@ namespace Hipicapp.Service.Account
         [Transaction]
         public Ticket CreateTicketAndSendEmail(string userName)
         {
-            Ticket ticket = new Ticket();
+            var ticket = new Ticket();
             ticket.CreateDate = DateTime.Now;
             ticket.User = this.UserRepository.GetByUserName(userName);
             ticket.Key = Guid.NewGuid().ToString();
+            ticket.ExpirationDate = new DateTime(DateTime.Now.Ticks + (86400 * 1000));
             this.TicketRepository.Save(ticket);
+            MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage("Reestablecer la contraseña", null, "vaneho@gmail.com", ticket));
             return ticket;
         }
 
         [Transaction]
-        public User UpdatePassword(string key, string newPassword)
+        public User UpdatePassword(Ticket ticket)
         {
-            Ticket ticket = this.TicketRepository.Get(key);
-            User user = ticket.User;
-            string newPasswordEncrypted = CryptographyUtil.Encrypted(newPassword);
+            this.CheckTicket(ticket.Key);
+
+            var model = this.TicketRepository.Get(ticket.Key);
+            var user = model.User;
+            string newPasswordEncrypted = CryptographyUtil.Encrypted(user.NewPassword);
             if (!string.Equals(newPasswordEncrypted, user.Password))
             {
                 user.Password = newPasswordEncrypted;
@@ -54,7 +61,7 @@ namespace Hipicapp.Service.Account
         [Transaction]
         public void CheckTicket(string key)
         {
-            Ticket ticket = this.TicketRepository.Get(key);
+            var ticket = this.TicketRepository.Get(key);
             if (ticket == null)
             {
                 throw new NoSuchTicketException();

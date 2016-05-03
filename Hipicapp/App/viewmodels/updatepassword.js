@@ -1,25 +1,24 @@
 /* global define: false */
 define([
     "core/authentication/authenticationBroker", "core/authentication/securityContext",
-    "core/router", "core/i18n", "viewmodels/shell", "domain/profile/passwordResetImpl"
-], function updatePasswordViewModel(authenticationBroker, securityContext, router, i18n, shell, passwordResetImpl) {
+    "core/router", "core/i18n", "domain/ticket/ticketImpl"
+], function updatePasswordViewModel(authenticationBroker, securityContext, router, i18n, ticketImpl) {
     "use strict";
 
     // state definition
-    var viewModel = {}, currentEntity = ko.observable(passwordResetImpl()),
+    var viewModel = {}, currentEntity = ko.observable(ticketImpl()),
         updatedPassword = ko.observable();
 
     // lifecycle definition
-    function activate(route) {
-        shell.useLeftBar(false);
+    function activate(key) {
         updatedPassword(false);
         // allways return a promise
-        return checkTicket(route.Key);
+        return checkTicket(key);
     }
 
     // behaviour definition
     function refreshCurrentEntity(data) {
-        currentEntity(passwordResetImpl(data));
+        currentEntity(ticketImpl(data));
     }
 
     // Promise

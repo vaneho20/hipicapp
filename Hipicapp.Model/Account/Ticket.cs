@@ -42,13 +42,13 @@ namespace Hipicapp.Model.Account
             Table("TICKET");
             Cache.NonStrictReadWrite();
 
-            Id(x => x.Id).Column("ID");
+            Id(x => x.Id).Column("ID").GeneratedBy.Native();
 
             Map(x => x.CreateDate).Column("CREATE_DATE").Not.Nullable();
             Map(x => x.ExpirationDate).Column("EXPIRATION_DATE");
             Map(x => x.Key).Column("KEY_").Index("IX_KEY_").Not.Nullable().Length(36);
 
-            References<User>(x => x.User).Column("USER_ID").LazyLoad();
+            References<User>(x => x.User).Column("USER_ID").Fetch.Join().Not.LazyLoad();
         }
     }
 }

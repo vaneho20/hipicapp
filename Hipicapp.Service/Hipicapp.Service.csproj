@@ -59,6 +59,10 @@
       <HintPath>..\packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Spring.Aop, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Spring.Aop.2.0.1\lib\net45\Spring.Aop.dll</HintPath>
@@ -124,6 +128,11 @@
     <Compile Include="Mail\Models\PasswordResetEmailModel.cs" />
     <Compile Include="Mail\Impl\AbstractMailMessage.cs" />
     <Compile Include="Mail\IMailMessage.cs" />
+    <Compile Include="Mail\Templates\PasswordReset.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PasswordReset.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Participant\IMinimumAgeOfHorseUnsurpassedPolicy.cs" />
     <Compile Include="Participant\JudgePredicates.cs" />
     <Compile Include="Participant\AthletePredicates.cs" />
@@ -144,6 +153,11 @@
     <Compile Include="Authentication\IClientService.cs" />
     <Compile Include="Authentication\IRefreshTokenService.cs" />
     <Compile Include="Authentication\RefreshTokenService.cs" />
+    <Compile Include="SampleTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTemplate.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="ServiceLocator.cs" />
     <Compile Include="Util\MailUtil.cs" />
     <Compile Include="Util\HibernateUtils.cs" />
@@ -173,12 +187,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mail\Templates\PasswordReset.cshtml" />
+    <Content Include="Mail\Templates\PasswordReset.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PasswordReset.generated.cs</LastGenOutput>
+    </Content>
     <None Include="app.config" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filters\" />

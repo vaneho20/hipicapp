@@ -392,6 +392,7 @@
     <Content Include="App\domain\judge\judgeFilterImpl.js" />
     <Content Include="App\domain\judge\judgeImpl.js" />
     <Content Include="App\domain\judge\judgeSortImpl.js" />
+    <Content Include="App\domain\ticket\ticketImpl.js" />
     <Content Include="App\domain\user\userImpl.js" />
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\alerts.js" />
@@ -525,11 +526,9 @@
     <Content Include="App_Administrator\viewmodels\athletes.js" />
     <Content Include="App_Administrator\viewmodels\alerts.js" />
     <Content Include="App_Administrator\viewmodels\login.js" />
-    <Content Include="App_Administrator\viewmodels\passwordreset.js" />
     <Content Include="App_Administrator\viewmodels\shell.js" />
     <Content Include="App_Administrator\viewmodels\sidebar.js" />
     <Content Include="App_Administrator\viewmodels\signin.js" />
-    <Content Include="App_Administrator\viewmodels\updatepassword.js" />
     <Content Include="App_Administrator\viewmodels\user.js" />
     <Content Include="App_Administrator\viewmodels\users.js" />
     <Content Include="App_Administrator\viewmodels\welcome.js" />
@@ -557,11 +556,9 @@
     <Content Include="App_Administrator\views\detail.html" />
     <Content Include="App_Administrator\views\login.html" />
     <Content Include="App_Administrator\views\pager.html" />
-    <Content Include="App_Administrator\views\passwordreset.html" />
     <Content Include="App_Administrator\views\shell.html" />
     <Content Include="App_Administrator\views\sidebar.html" />
     <Content Include="App_Administrator\views\signin.html" />
-    <Content Include="App_Administrator\views\updatepassword.html" />
     <Content Include="App_Administrator\views\user.html" />
     <Content Include="App_Administrator\views\userChangePassword.html" />
     <Content Include="App_Administrator\views\userNavs.html" />

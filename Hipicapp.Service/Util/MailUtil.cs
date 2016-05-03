@@ -1,7 +1,6 @@
 ﻿using Hipicapp.Service.Mail;
 using Hipicapp.Service.Mail.Models;
-
-/*using RazorEngine;*/
+using System.Net.Mail;
 
 namespace Hipicapp.Service.Util
 {
@@ -14,29 +13,33 @@ namespace Hipicapp.Service.Util
 
         public static void SendMessage<T>(IMailMessage<T> urmMailMessage) where T : EmailModel
         {
-            System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage();
-            mailMessage.From = urmMailMessage.From;
-            mailMessage.To.Add(urmMailMessage.To);
-            mailMessage.Subject = urmMailMessage.Subject;
-            /*mailMessage.Body = ParseTemplate<T>(urmMailMessage.Model);*/
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Priority = mailMessage.Priority;
-            if (urmMailMessage.Attachments != null && urmMailMessage.Attachments.Count > 0)
+            using (var client = new SmtpClient())
             {
-                foreach (System.Net.Mail.Attachment attachment in urmMailMessage.Attachments)
+                using (var mailMessage = new MailMessage())
                 {
-                    mailMessage.Attachments.Add(attachment);
+                    mailMessage.From = urmMailMessage.From;
+                    mailMessage.To.Add(urmMailMessage.To);
+                    mailMessage.Subject = urmMailMessage.Subject;
+                    mailMessage.Body = urmMailMessage.Body;
+                    mailMessage.IsBodyHtml = true;
+                    mailMessage.Priority = mailMessage.Priority;
+                    if (urmMailMessage.Attachments != null && urmMailMessage.Attachments.Count > 0)
+                    {
+                        foreach (var attachment in urmMailMessage.Attachments)
+                        {
+                            mailMessage.Attachments.Add(attachment);
+                        }
+                    }
+                    try
+                    {
+                        client.Send(mailMessage);
+                    }
+                    catch (SmtpException e)
+                    {
+                        throw e;
+                    }
                 }
             }
-
-            new System.Net.Mail.SmtpClient().Send(mailMessage);
-        }/*
-
-        private static string ParseTemplate<T>(T model)
-        {
-            //var template = File.ReadAllText(string.Format(@"{0}.cshtml", typeof(T).Name));
-            var template = File.ReadAllText("C://desarrollo//asp.net//Hipicappv3//Hipicapp.Service//Mail//Templates//PasswordReset.cshtml");
-            return Razor.Parse(template, model);
-        }*/
+        }
     }
 }
