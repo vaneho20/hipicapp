@@ -28,17 +28,17 @@
                     { route: 'athlete/:id/horses', title: 'Caballos', moduleId: 'viewmodels/athleteHorses', nav: false, hash: '#horses' },
                     { route: 'athlete/:athleteId/horse(/:horseId)', title: 'Caballo', moduleId: 'viewmodels/horse', nav: false },
                     { route: 'athlete/:athleteId/horse/:horseId/images', title: 'Foto', moduleId: 'viewmodels/horseImages', nav: false },
-                    { route: 'categories', title: 'Categorías', moduleId: 'viewmodels/competitionCategories', nav: true, hash: '#categories' },
+                    { route: 'categories', title: 'Categorías', moduleId: 'viewmodels/competitionCategories', nav: true, hash: '#categories', icon: "fa fa-sitemap" },
                     { route: 'category(/:id)', title: 'Categoría', moduleId: 'viewmodels/competitionCategory', nav: false, hash: '#category' },
-                    { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions' },
+                    { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions', icon: "fa fa-trophy" },
                     { route: 'competition(/:id)', title: 'Concurso', moduleId: 'viewmodels/competition', nav: false, hash: '#competition' },
                     { route: 'competition/:id/judges', title: 'Jueces', moduleId: 'viewmodels/competitionJudges', nav: false },
-                    { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges' },
+                    { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges', icon: "fa fa-balance-scale" },
                     { route: 'judge(/:id)', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' },
                     { route: 'judge(/:id/images)', title: 'Foto', moduleId: 'viewmodels/judgeImages', nav: false, hash: '#judge' },
-                    { route: 'specialties', title: 'Especialidades', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties' },
+                    { route: 'specialties', title: 'Especialidades', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties', icon: "fa fa-certificate" },
                     { route: 'specialty(/:id)', title: 'Especialidad', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
-                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: ko.observable("fa fa-users") },
+                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: "fa fa-users" },
                     { route: 'user(/:id)', title: 'Usuario', moduleId: 'viewmodels/user', nav: false, hash: '#user' }
                 ]).buildNavigationModel();
 
