@@ -26,7 +26,7 @@
                         <ul class="nav side-menu">
                             <!-- ko foreach: router.navigationModel -->
                             <li data-bind="css: { active: isActive }">
-                                <i data-bind="attr: { class: $data.icon }" aria-hidden="true"></i> <a data-bind="attr: { href: hash }, text: title"></a>
+                                <i data-bind="attr: { class: $data.icon() }" aria-hidden="true"></i> <a data-bind="attr: { href: hash }, text: title"></a>
                             </li>
                             <!-- /ko -->
                         </ul>

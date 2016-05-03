@@ -525,7 +525,6 @@
     <Content Include="App_Administrator\viewmodels\alerts.js" />
     <Content Include="App_Administrator\viewmodels\login.js" />
     <Content Include="App_Administrator\viewmodels\shell.js" />
-    <Content Include="App_Administrator\viewmodels\signin.js" />
     <Content Include="App_Administrator\viewmodels\user.js" />
     <Content Include="App_Administrator\viewmodels\users.js" />
     <Content Include="App_Administrator\viewmodels\welcome.js" />
@@ -553,7 +552,6 @@
     <Content Include="App_Administrator\views\login.html" />
     <Content Include="App_Administrator\views\pager.html" />
     <Content Include="App_Administrator\views\shell.html" />
-    <Content Include="App_Administrator\views\signin.html" />
     <Content Include="App_Administrator\views\user.html" />
     <Content Include="App_Administrator\views\userChangePassword.html" />
     <Content Include="App_Administrator\views\userNavs.html" />

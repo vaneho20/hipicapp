@@ -38,7 +38,7 @@
                     { route: 'judge(/:id/images)', title: 'Foto', moduleId: 'viewmodels/judgeImages', nav: false, hash: '#judge' },
                     { route: 'specialties', title: 'Especialidades', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties' },
                     { route: 'specialty(/:id)', title: 'Especialidad', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
-                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: "'fa fa-users'" },
+                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: ko.observable("fa fa-users") },
                     { route: 'user(/:id)', title: 'Usuario', moduleId: 'viewmodels/user', nav: false, hash: '#user' }
                 ]).buildNavigationModel();
 

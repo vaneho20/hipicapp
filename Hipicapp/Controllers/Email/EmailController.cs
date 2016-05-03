@@ -16,7 +16,7 @@ namespace Hipicapp.Controllers.Email
         {
             string userName = data.userName;
             // Enviar correo electronico
-            MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage("probando envio de email", null, userName, this.TicketService.CreateTicketAndSendEmail(userName)));
+            MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage("probando envio de email", userName, this.TicketService.CreateTicketAndSendEmail(userName)));
             return true;
         }
 
