@@ -59,7 +59,7 @@ namespace Hipicapp.Service.Account
         }
 
         [Transaction]
-        public void CheckTicket(string key)
+        public Ticket CheckTicket(string key)
         {
             var ticket = this.TicketRepository.Get(key);
             if (ticket == null)
@@ -71,6 +71,7 @@ namespace Hipicapp.Service.Account
                 this.TicketRepository.Delete(ticket);
                 throw new TicketExpiredException();
             }
+            return ticket;
         }
 
         [Transaction]

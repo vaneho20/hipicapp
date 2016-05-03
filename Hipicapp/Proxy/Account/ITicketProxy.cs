@@ -11,7 +11,7 @@ namespace Hipicapp.Proxy.Account
 
         User UpdatePassword(Ticket ticket);
 
-        void CheckTicket(string key);
+        Ticket CheckTicket(string key);
 
         void Save(IList<Ticket> tickets);
     }

@@ -35,5 +35,14 @@ namespace Hipicapp.Controllers.Authentication
         {
             return this.TicketProxy.CreateTicketAndSendEmail(userName);
         }
+
+        [AllowAnonymous]
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("{key}/checkTicket")]
+        public Ticket CheckTicket([FromUri]string key)
+        {
+            return this.TicketProxy.CheckTicket(key);
+        }
     }
 }

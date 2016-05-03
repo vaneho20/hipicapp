@@ -26,9 +26,9 @@ namespace Hipicapp.Proxy.Account
             return this.TicketService.UpdatePassword(ticket);
         }
 
-        public void CheckTicket(string key)
+        public Ticket CheckTicket(string key)
         {
-            this.TicketService.CheckTicket(key);
+            return this.TicketService.CheckTicket(key);
         }
 
         public void Save(IList<Ticket> tickets)
