@@ -412,7 +412,6 @@
     <Content Include="App\viewmodels\signin.js" />
     <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\shell.js" />
-    <Content Include="App\viewmodels\sidebar.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\athlete.html" />
@@ -433,7 +432,6 @@
     <Content Include="App\views\signin.html" />
     <Content Include="App\views\login.html" />
     <Content Include="App\views\shell.html" />
-    <Content Include="App\views\sidebar.html" />
     <Content Include="App\views\home.html" />
     <EmbeddedResource Include="Config\Hipicapp.xml">
       <SubType>Designer</SubType>
@@ -527,7 +525,6 @@
     <Content Include="App_Administrator\viewmodels\alerts.js" />
     <Content Include="App_Administrator\viewmodels\login.js" />
     <Content Include="App_Administrator\viewmodels\shell.js" />
-    <Content Include="App_Administrator\viewmodels\sidebar.js" />
     <Content Include="App_Administrator\viewmodels\signin.js" />
     <Content Include="App_Administrator\viewmodels\user.js" />
     <Content Include="App_Administrator\viewmodels\users.js" />
@@ -553,11 +550,9 @@
     <Content Include="App_Administrator\views\competitions.html" />
     <Content Include="App_Administrator\views\athletes.html" />
     <Content Include="App_Administrator\views\alerts.html" />
-    <Content Include="App_Administrator\views\detail.html" />
     <Content Include="App_Administrator\views\login.html" />
     <Content Include="App_Administrator\views\pager.html" />
     <Content Include="App_Administrator\views\shell.html" />
-    <Content Include="App_Administrator\views\sidebar.html" />
     <Content Include="App_Administrator\views\signin.html" />
     <Content Include="App_Administrator\views\user.html" />
     <Content Include="App_Administrator\views\userChangePassword.html" />
