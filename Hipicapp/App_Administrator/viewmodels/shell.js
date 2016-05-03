@@ -22,7 +22,7 @@
             activate: function () {
                 router.map([
                     { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: false, hash: '' },
-                    { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes' },
+                    { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes', icon: "fa fa-users" },
                     { route: 'athlete(/:id)', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
                     { route: 'athlete/:id/images', title: 'Foto', moduleId: 'viewmodels/athleteImages', nav: false },
                     { route: 'athlete/:id/horses', title: 'Caballos', moduleId: 'viewmodels/athleteHorses', nav: false, hash: '#horses' },
@@ -38,7 +38,7 @@
                     { route: 'judge(/:id/images)', title: 'Foto', moduleId: 'viewmodels/judgeImages', nav: false, hash: '#judge' },
                     { route: 'specialties', title: 'Especialidades', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties', icon: "fa fa-certificate" },
                     { route: 'specialty(/:id)', title: 'Especialidad', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
-                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: "fa fa-users" },
+                    { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: "fa fa-lock" },
                     { route: 'user(/:id)', title: 'Usuario', moduleId: 'viewmodels/user', nav: false, hash: '#user' }
                 ]).buildNavigationModel();
 
