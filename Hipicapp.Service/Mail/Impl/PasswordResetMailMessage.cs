@@ -1,15 +1,14 @@
 using ASP;
 using Hipicapp.Model.Account;
 using Hipicapp.Service.Mail.Models;
-using System.Collections.Generic;
 using System.Net.Mail;
 
 namespace Hipicapp.Service.Mail.Impl
 {
     public class PasswordResetMailMessage : AbstractMailMessage<PasswordResetEmailModel>
     {
-        public PasswordResetMailMessage(string subject, IList<Attachment> attachments, string to, Ticket ticket)
-            : base(MailPriority.Normal, subject, attachments)
+        public PasswordResetMailMessage(string subject, string to, Ticket ticket)
+            : base(MailPriority.Normal, subject, null)
         {
             var template = new _Mail_Templates_PasswordReset_cshtml();
             template.message = this.Model;

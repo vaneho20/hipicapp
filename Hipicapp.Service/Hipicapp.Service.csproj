@@ -185,6 +185,10 @@
       <Project>{abb47de3-0f21-4632-8e5d-3ea53a74e6a6}</Project>
       <Name>Hipicapp.Utils</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{1da37dcc-9716-4f4f-81ef-5e26bc8898f0}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mail\Templates\PasswordReset.cshtml">

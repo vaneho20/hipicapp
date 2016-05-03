@@ -5,6 +5,7 @@ using Hipicapp.Service.Mail.Impl;
 using Hipicapp.Service.Mail.Models;
 using Hipicapp.Service.Util;
 using Hipicapp.Utils.Security;
+using Resources;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -37,7 +38,7 @@ namespace Hipicapp.Service.Account
             ticket.Key = Guid.NewGuid().ToString();
             ticket.ExpirationDate = new DateTime(DateTime.Now.Ticks + (86400 * 1000));
             this.TicketRepository.Save(ticket);
-            MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage("Reestablecer la contraseña", null, "vaneho@gmail.com", ticket));
+            MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage(MailMessages.PasswordResetSubject, ticket.User.UserName, ticket));
             return ticket;
         }
 
