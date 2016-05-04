@@ -165,6 +165,9 @@
   <data name="validator.range" xml:space="preserve">
     <value>debe estar entre {Min} and {Max}</value>
   </data>
+  <data name="validator.safeHtml" xml:space="preserve">
+    <value>pueden tener un contenido html inseguro</value>
+  </data>
   <data name="validator.size" xml:space="preserve">
     <value>la longitud tiene que estar entre {Min} y {Max}</value>
   </data>

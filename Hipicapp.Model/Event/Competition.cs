@@ -1,7 +1,9 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Utils.Util;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using NSoup.Safety;
 using System;
 
 namespace Hipicapp.Model.Event
@@ -20,21 +22,25 @@ namespace Hipicapp.Model.Event
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
+        [SafeHtml(Whitelist.None)]
         public virtual string Name { get; set; }
 
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DESCRIPTION)]
+        [SafeHtml(Whitelist.None)]
         public virtual string Description { get; set; }
 
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
+        [SafeHtml(Whitelist.None)]
         public virtual string Address { get; set; }
 
         [NotNull]
         [NotEmpty]
         [Size(Min = ValidationUtils.LENGTH_ZIPCODE, Max = ValidationUtils.LENGTH_ZIPCODE)]
+        [SafeHtml(Whitelist.None)]
         public virtual string ZipCode { get; set; }
 
         [NotNull]

@@ -1,6 +1,8 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using NSoup.Safety;
 using System;
 
 namespace Hipicapp.Model.Account
@@ -10,6 +12,7 @@ namespace Hipicapp.Model.Account
     {
         [NotNull]
         [NotEmpty]
+        [SafeHtml(Whitelist.None)]
         public virtual string Key { get; set; }
 
         public virtual User User { get; set; }
@@ -18,7 +21,6 @@ namespace Hipicapp.Model.Account
 
         public virtual DateTime? ExpirationDate { get; set; }
 
-        //[NotMapped]
         public virtual bool IsExpired
         {
             get

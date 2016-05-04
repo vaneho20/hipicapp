@@ -1,13 +1,17 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
+using NSoup.Safety;
 
 namespace Hipicapp.Model.Authentication
 {
     [JsonObject]
     public class Client : Entity<string>
     {
+        [SafeHtml(Whitelist.None)]
         public virtual string Secret { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string Name { get; set; }
 
         public virtual ApplicationTypes ApplicationType { get; set; }
@@ -16,6 +20,7 @@ namespace Hipicapp.Model.Authentication
 
         public virtual int RefreshTokenLifeTime { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string AllowedOrigin { get; set; }
     }
 

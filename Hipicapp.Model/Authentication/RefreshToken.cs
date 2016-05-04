@@ -1,5 +1,7 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
+using NSoup.Safety;
 using System;
 
 namespace Hipicapp.Model.Authentication
@@ -7,14 +9,17 @@ namespace Hipicapp.Model.Authentication
     [JsonObject]
     public class RefreshToken : Entity<string>
     {
+        [SafeHtml(Whitelist.None)]
         public virtual string Subject { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string ClientId { get; set; }
 
         public virtual DateTime? IssuedUtc { get; set; }
 
         public virtual DateTime? ExpiresUtc { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string ProtectedTicket { get; set; }
     }
 

@@ -2,8 +2,10 @@
 using Hipicapp.Model.Abstract;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Utils.Util;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using NSoup.Safety;
 using System.Collections.Generic;
 
 namespace Hipicapp.Model.Account
@@ -16,7 +18,7 @@ namespace Hipicapp.Model.Account
         [NotEmpty]
         [Email]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        //[SafeHtml(whitelistType = WhiteListType.NONE)
+        [SafeHtml(Whitelist.None)]
         public virtual string UserName { get; set; }
 
         [NotNull]
@@ -32,14 +34,19 @@ namespace Hipicapp.Model.Account
         public virtual bool? AccountNonLocked { get; set; }
 
         [JsonIgnore]
+        [SafeHtml(Whitelist.None)]
         public virtual string Password { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string OldPassword { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string NewPassword { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string ConfirmNewPassword { get; set; }
 
+        [SafeHtml(Whitelist.None)]
         public virtual string PasswordRecoveryHash { get; set; }
 
         public virtual ISet<Rol> Roles { get; set; }

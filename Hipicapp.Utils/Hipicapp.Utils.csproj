@@ -60,6 +60,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NodaTime.2.0.0-alpha20150728\lib\net4-Client\NodaTime.dll</HintPath>
     </Reference>
+    <Reference Include="NSoup, Version=0.8.0.0, Culture=neutral, PublicKeyToken=6d44e53f0a65e802, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSoup.0.8.0\lib\net40\NSoup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SHA3">
       <HintPath>..\packages\SHA3.0.9.2\lib\net40\SHA3.dll</HintPath>
     </Reference>
@@ -109,6 +113,8 @@
     <Compile Include="Text\StringUtils.cs" />
     <Compile Include="Util\ValidationUtils.cs" />
     <Compile Include="Validator\IInitializableValidator.cs" />
+    <Compile Include="Validator\SafeHtmlValidator.cs" />
+    <Compile Include="Validator\SafeHtmlAttribute.cs" />
     <Compile Include="Validator\NifAttribute.cs" />
     <Compile Include="Validator\NifValidator.cs" />
   </ItemGroup>

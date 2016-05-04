@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a pueden tener un contenido html inseguro.
+        /// </summary>
+        public static string validator_safeHtml {
+            get {
+                return ResourceManager.GetString("validator.safeHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a la longitud tiene que estar entre {Min} y {Max}.
         /// </summary>
         public static string validator_size {

@@ -1,7 +1,9 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Utils.Util;
+using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using NSoup.Safety;
 
 namespace Hipicapp.Model.Event
 {
@@ -11,6 +13,7 @@ namespace Hipicapp.Model.Event
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
+        [SafeHtml(Whitelist.None)]
         public virtual string Name { get; set; }
 
         public virtual int? MinAgeOfHorse { get; set; }
