@@ -109,5 +109,19 @@ namespace Hipicapp.Service.Event
             });
             return scores;
         }
+
+        [Transaction(ReadOnly = true)]
+        public IList<Ranking> AdultRankingsBySpecialty(Specialty specialty)
+        {
+            return this.ScoreRepository.GetAllQueryable()
+                .Where(x => x.Competition.Name.StartsWith("Adulto") && x.Competition.Specialty.Id == specialty.Id)
+                .OrderByDescending(x => x.Value)
+                .GroupBy(x => x.Horse.Athlete)
+                .Select(x => new Ranking
+                {
+                    Athlete = x.Key,
+                    Value = x.Sum(y => y.Value)
+                }).Take(3).ToList();
+        }
     }
 }

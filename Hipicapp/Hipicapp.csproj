@@ -392,6 +392,8 @@
     <Content Include="App\domain\judge\judgeFilterImpl.js" />
     <Content Include="App\domain\judge\judgeImpl.js" />
     <Content Include="App\domain\judge\judgeSortImpl.js" />
+    <Content Include="App\domain\specialty\specialtyBroker.js" />
+    <Content Include="App\domain\specialty\specialtyImpl.js" />
     <Content Include="App\domain\ticket\ticketImpl.js" />
     <Content Include="App\domain\user\userImpl.js" />
     <Content Include="App\main.js" />
@@ -407,6 +409,7 @@
     <Content Include="App\viewmodels\horses.js" />
     <Content Include="App\viewmodels\register.js" />
     <Content Include="App\viewmodels\public.js" />
+    <Content Include="App\viewmodels\specialty.js" />
     <Content Include="App\viewmodels\updatepassword.js" />
     <Content Include="App\viewmodels\passwordreset.js" />
     <Content Include="App\viewmodels\signin.js" />
@@ -427,6 +430,7 @@
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\register.html" />
     <Content Include="App\views\public.html" />
+    <Content Include="App\views\specialty.html" />
     <Content Include="App\views\updatepassword.html" />
     <Content Include="App\views\passwordreset.html" />
     <Content Include="App\views\signin.html" />

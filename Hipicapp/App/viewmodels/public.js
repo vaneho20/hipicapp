@@ -25,6 +25,7 @@
                     { route: 'athlete/:id', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
                     { route: 'horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true, hash: '#horses' },
                     { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions' },
+                    { route: 'specialty/:id', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
                     { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges' },
                     { route: 'judge/:id', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' }
                 ]).buildNavigationModel();

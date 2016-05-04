@@ -11,6 +11,8 @@ namespace Hipicapp.Proxy.Event
 
         Competition Get(long? id);
 
+        IList<Ranking> AdultRankingsBySpecialty(Specialty specialty);
+
         Competition Save(Competition competition);
 
         Competition Update(Competition competition);

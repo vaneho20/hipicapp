@@ -18,5 +18,7 @@ namespace Hipicapp.Service.Event
         Competition Delete(Competition competition);
 
         IList<Score> SimulateScore(Competition competition);
+
+        IList<Ranking> AdultRankingsBySpecialty(Specialty specialty);
     }
 }

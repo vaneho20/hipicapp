@@ -39,6 +39,14 @@ namespace Hipicapp.Controllers.Event
 
         [AcceptVerbs("POST")]
         [HttpPost]
+        [Route("adultRankingsBySpecialty")]
+        public IList<Ranking> AdultRankingsBySpecialty([FromBody]Specialty specialty)
+        {
+            return this.CompetitionProxy.AdultRankingsBySpecialty(specialty);
+        }
+
+        [AcceptVerbs("POST")]
+        [HttpPost]
         [Route("save")]
         public Competition Save([Valid] Competition competition)
         {

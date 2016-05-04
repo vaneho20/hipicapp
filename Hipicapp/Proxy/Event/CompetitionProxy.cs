@@ -31,6 +31,12 @@ namespace Hipicapp.Proxy.Event
             return this.CompetitionService.Get(id);
         }
 
+        [AllowAnonymous]
+        public IList<Ranking> AdultRankingsBySpecialty(Specialty specialty)
+        {
+            return this.CompetitionService.AdultRankingsBySpecialty(specialty);
+        }
+
         [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public Competition Save(Competition competition)
         {

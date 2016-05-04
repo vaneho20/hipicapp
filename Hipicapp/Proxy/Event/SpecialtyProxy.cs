@@ -5,6 +5,7 @@ using Hipicapp.Service.Event;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using System.Collections.Generic;
+using System.Web.Http;
 
 namespace Hipicapp.Proxy.Event
 {
@@ -14,7 +15,7 @@ namespace Hipicapp.Proxy.Event
         [Autowired]
         private ISpecialtyService SpecialtyService { get; set; }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [AllowAnonymous]
         public IList<Specialty> FindAll()
         {
             return this.SpecialtyService.FindAll();
@@ -26,7 +27,7 @@ namespace Hipicapp.Proxy.Event
             return this.SpecialtyService.Paginated(request.Filter, request.PageRequest);
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [AllowAnonymous]
         public Specialty Get(long? id)
         {
             return this.SpecialtyService.Get(id);

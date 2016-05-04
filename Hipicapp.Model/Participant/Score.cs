@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Model.Event;
 using Hipicapp.Utils.Comparison;
 using Newtonsoft.Json;
 
@@ -8,6 +9,12 @@ namespace Hipicapp.Model.Participant
     public class Score : Entity<ScoreId>
     {
         public virtual float? Value { get; set; }
+
+        public virtual Competition Competition { get; set; }
+
+        public virtual Horse Horse { get; set; }
+
+        public virtual Judge Judge { get; set; }
     }
 
     public class ScoreMap : EntityMap<Score, ScoreId>
@@ -23,6 +30,10 @@ namespace Hipicapp.Model.Participant
                 .KeyProperty(x => x.JudgeId, "JUDGE_ID");
 
             Map(x => x.Value).Column("VALUE_");
+
+            References<Competition>(x => x.Competition).Column("COMPETITION_ID").Fetch.Join().LazyLoad().ReadOnly();
+            References<Horse>(x => x.Horse).Column("HORSE_ID").Fetch.Join().LazyLoad().ReadOnly();
+            References<Judge>(x => x.Judge).Column("JUDGE_ID").Fetch.Join().LazyLoad().ReadOnly();
         }
     }
 
