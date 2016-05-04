@@ -42,6 +42,7 @@ define([
 
     // module revelation
     viewModel.i18n = i18n;
+    viewModel.router = router;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
     viewModel.specialtyBroker = specialtyBroker;

@@ -17,7 +17,7 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
-    amplify.request.define("athletes/adultRankingsBySpecialty", brokerUtils.REQUEST_TYPE, brokerUtils
+    amplify.request.define("competitions/adultRankingsBySpecialty", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.ADULT_RANKINGS_BY_SPECIALTY), brokerUtils.verb.POST, CACHE_NAME));
