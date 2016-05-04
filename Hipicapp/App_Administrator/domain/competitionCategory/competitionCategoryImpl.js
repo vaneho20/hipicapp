@@ -8,15 +8,25 @@ define(function competitionCategoryImplModule() {
 
     /* jshint maxstatements: 35 */
     function competitionCategoryImpl(currentCompetitionCategory) {
-        var competitionCategory = {}, id = null, version = ko.observable(), name = null, from = null, to = null,
+        var competitionCategory = {}, id = null, version = ko.observable(), name = null,
+            initialYear = ko.observable(moment), finalYear = ko.observable(moment()),
             previous = ko.observable(false), later = ko.observable(false);
 
         if (currentCompetitionCategory) {
             id = currentCompetitionCategory.id;
             version(currentCompetitionCategory.version);
             name = currentCompetitionCategory.name;
-            from = currentCompetitionCategory.from;
-            to = currentCompetitionCategory.to;
+
+            if (currentCompetitionCategory.initialYear) {
+                var m = moment(currentCompetitionCategory.initialYear, ["YYYY-MM-DD"]);
+                initialYear(new Date(Date.UTC(m.year(), m.month(), m.date())));
+            }
+
+            if (currentCompetitionCategory.finalYear) {
+                var m = moment(currentCompetitionCategory.finalYear, ["YYYY-MM-DD"]);
+                finalYear(new Date(Date.UTC(m.year(), m.month(), m.date())));
+            }
+
             previous(currentCompetitionCategory.previous);
             later(currentCompetitionCategory.later);
         }
@@ -24,8 +34,8 @@ define(function competitionCategoryImplModule() {
         competitionCategory.id = id;
         competitionCategory.version = version;
         competitionCategory.name = name;
-        competitionCategory.from = from;
-        competitionCategory.to = to;
+        competitionCategory.initialYear = initialYear;
+        competitionCategory.finalYear = finalYear;
         competitionCategory.previous = previous;
         competitionCategory.later = later;
 
