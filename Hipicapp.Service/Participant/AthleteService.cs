@@ -40,7 +40,13 @@ namespace Hipicapp.Service.Participant
         private IUserService UserService { get; set; }
 
         [Autowired]
+        private IAvailableCompetitionCategoryPolicy AvailableCompetitionCategoryPolicy { get; set; }
+
+        [Autowired]
         private IMinimumAgeOfHorseUnsurpassedPolicy MinimumAgeOfHorseUnsurpassedPolicy { get; set; }
+
+        [Autowired]
+        private ISameCompetitionCategoryPolicy SameCompetitionCategoryPolicy { get; set; }
 
         [Transaction(ReadOnly = true)]
         public Page<Athlete> Paginated(AthleteFindFilter filter, PageRequest pageRequest)
@@ -75,6 +81,7 @@ namespace Hipicapp.Service.Participant
                 .FirstOrDefault(x => (x.Later == true && year >= x.InitialYear)
                     || (year >= x.InitialYear && year <= x.FinalYear)
                     || (x.Previous == true && year <= x.FinalYear));
+            this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(athlete.Category);
             athlete.CategoryId = athlete.Category.Id;
             athlete.Id = this.AthleteRepository.Save(athlete);
             return athlete;
@@ -87,7 +94,16 @@ namespace Hipicapp.Service.Participant
             model.Name = athlete.Name;
             model.Surnames = athlete.Surnames;
             model.Dni = athlete.Dni;
-            model.BirthDate = athlete.BirthDate;
+            if (model.BirthDate != athlete.BirthDate)
+            {
+                model.BirthDate = athlete.BirthDate;
+                var year = athlete.BirthDate.Value.Year;
+                athlete.Category = this.CompetitionCategoryRepository.GetAllQueryable()
+                    .FirstOrDefault(x => (x.Later == true && year >= x.InitialYear)
+                        || (year >= x.InitialYear && year <= x.FinalYear)
+                        || (x.Previous == true && year <= x.FinalYear));
+                this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(athlete.Category);
+            }
             model.Gender = athlete.Gender;
             this.AthleteRepository.Update(model);
             return model;
@@ -105,7 +121,10 @@ namespace Hipicapp.Service.Participant
         {
             if (this.EnrollmentRepository.GetAllQueryable().Count(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId) <= 0)
             {
-                this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(this.HorseRepository.Get(id.HorseId), this.CompetitionRepository.Get(id.CompetitionId).Specialty);
+                var horse = this.HorseRepository.Get(id.HorseId);
+                var competition = this.CompetitionRepository.Get(id.CompetitionId);
+                this.SameCompetitionCategoryPolicy.CheckSatisfiedBy(horse.Athlete.Category, competition.Category);
+                this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(horse, competition.Specialty);
                 this.EnrollmentRepository.Save(new Enrollment()
                 {
                     Id = id,

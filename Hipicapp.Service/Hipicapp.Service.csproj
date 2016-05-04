@@ -114,6 +114,8 @@
     <Compile Include="Event\ICompetitionService.cs" />
     <Compile Include="Exceptions\MaximumNumberOfJudgesExceededException.cs" />
     <Compile Include="Exceptions\MinimumAgeOfHorseUnsurpassedException.cs" />
+    <Compile Include="Exceptions\NoSameCompetitionCategoryException.cs" />
+    <Compile Include="Exceptions\NoSuchCompetitionCategoryException.cs" />
     <Compile Include="Exceptions\WeightAthleteSaddleExceededException.cs" />
     <Compile Include="Exceptions\BadCredentialsException.cs" />
     <Compile Include="Exceptions\AccessDeniedException.cs" />
@@ -133,6 +135,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PasswordReset.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Participant\SameCompetitionCategoryPolicy.cs" />
+    <Compile Include="Participant\ISameCompetitionCategoryPolicy.cs" />
+    <Compile Include="Participant\IAvailableCompetitionCategoryPolicy.cs" />
     <Compile Include="Participant\IMinimumAgeOfHorseUnsurpassedPolicy.cs" />
     <Compile Include="Participant\JudgePredicates.cs" />
     <Compile Include="Participant\AthletePredicates.cs" />
@@ -143,6 +148,7 @@
     <Compile Include="Participant\IHorseService.cs" />
     <Compile Include="Participant\IAthleteService.cs" />
     <Compile Include="Participant\AthleteService.cs" />
+    <Compile Include="Participant\AvailableCompetitionCategoryPolicy.cs" />
     <Compile Include="Participant\MinimumAgeOfHorseUnsurpassedPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account\ITicketService.cs" />
