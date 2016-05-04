@@ -5,8 +5,7 @@
             logout: function () {
                 return authenticationBroker.logout().done(securityContext.clear).done(
                 function () {
-                    app.setRoot('viewmodels/login', 'entrance');
-                    router.navigate("");
+                    router.reloadCurrentLocation()
                 });
             },
             isLoading: ko.computed(function () {
@@ -22,6 +21,7 @@
             activate: function () {
                 router.map([
                     { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: false, hash: '' },
+                    { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
                     { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes', icon: "fa fa-users" },
                     { route: 'athlete(/:id)', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
                     { route: 'athlete/:id/images', title: 'Foto', moduleId: 'viewmodels/athleteImages', nav: false },
@@ -48,7 +48,6 @@
                 });
             },
             attached: function () {
-                console.log("attached");
                 var URL = window.location,
                     $BODY = $('body'),
                     $MENU_TOGGLE = $('#menu_toggle'),
@@ -59,6 +58,11 @@
                     $NAV_MENU = $('.nav_menu'),
                     $FOOTER = $('footer');
 
+                if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
+                    $BODY.css("background", "#2A3F54");
+                } else {
+                    $BODY.css("background", "#F7F7F7");
+                }
                 var setContentHeight = function () {
                     // reset height
                     $RIGHT_COL.css('min-height', $(window).height());
