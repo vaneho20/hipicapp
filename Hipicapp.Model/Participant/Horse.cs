@@ -6,7 +6,6 @@ using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
-using NSoup.Safety;
 using System;
 using Unne.Utils.Date;
 
@@ -20,7 +19,7 @@ namespace Hipicapp.Model.Participant
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string Name { get; set; }
 
         [NotNull]

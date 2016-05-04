@@ -1,14 +1,13 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
-using NSoup.Safety;
 
 namespace Hipicapp.Model.Penalty
 {
     [JsonObject]
     public class Penalty : Entity<long?>
     {
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string Name { get; set; }
     }
 

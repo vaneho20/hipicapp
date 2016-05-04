@@ -3,7 +3,6 @@ using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
-using NSoup.Safety;
 
 namespace Hipicapp.Model.File
 {
@@ -13,19 +12,19 @@ namespace Hipicapp.Model.File
         [NotNull]
         [NotEmpty]
         [Size(Min = 36, Max = 36)]
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string FileUuid { get; set; }
 
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string FileName { get; set; }
 
         [NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string ContentType { get; set; }
 
         [JsonIgnore]

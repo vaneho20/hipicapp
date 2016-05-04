@@ -1,5 +1,4 @@
 ﻿using NHibernate.Validator.Engine;
-using NSoup.Safety;
 using System;
 
 namespace Hipicapp.Utils.Validator
@@ -9,7 +8,7 @@ namespace Hipicapp.Utils.Validator
     [ValidatorClass(typeof(SafeHtmlValidator))]
     public class SafeHtmlAttribute : Attribute, IRuleArgs
     {
-        private Whitelist whitelistType = Whitelist.Relaxed;
+        private WhiteListType whitelistType = WhiteListType.RELAXED;
 
         private string message = "{validator.safeHtml}";
 
@@ -19,15 +18,20 @@ namespace Hipicapp.Utils.Validator
         {
         }
 
-        public SafeHtmlAttribute(Whitelist type)
+        public SafeHtmlAttribute(WhiteListType type)
         {
             this.whitelistType = type;
         }
 
-        public Whitelist WhitelistType
+        public WhiteListType WhitelistType
         {
             get { return whitelistType; }
             set { whitelistType = value; }
         }
+    }
+
+    public enum WhiteListType
+    {
+        BASIC, BASIC_WITH_IMAGES, NONE, RELAXED, SIMPLE_TEXT
     }
 }

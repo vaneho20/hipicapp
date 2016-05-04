@@ -2,7 +2,6 @@
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
-using NSoup.Safety;
 using System;
 
 namespace Hipicapp.Model.Account
@@ -12,7 +11,7 @@ namespace Hipicapp.Model.Account
     {
         [NotNull]
         [NotEmpty]
-        [SafeHtml(Whitelist.None)]
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string Key { get; set; }
 
         public virtual User User { get; set; }
