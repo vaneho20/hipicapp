@@ -11,6 +11,13 @@ define([
         rememberMe: null
     };
 
+    function attached() {
+        $('input.flat').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+    }
+
     function refreshSecurityContext(data) {
         credentials.password(null);
         data.rememberMe = credentials.rememberMe;
@@ -28,6 +35,8 @@ define([
     viewModel.validationUtils = validationUtils;
 
     viewModel.credentials = credentials;
+
+    viewModel.attached = attached;
 
     viewModel.login = login;
 
