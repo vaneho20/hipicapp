@@ -1,4 +1,5 @@
-﻿using NHibernate.Validator.Engine;
+﻿using Hipicapp.Utils.Exceptions;
+using NHibernate.Validator.Engine;
 using NSoup;
 using NSoup.Safety;
 
@@ -13,24 +14,27 @@ namespace Hipicapp.Utils.Validator
             switch (parameters.WhitelistType)
             {
                 case WhiteListType.BASIC:
-                    Whitelist = Whitelist.Basic;
+                    this.Whitelist = Whitelist.Basic;
                     break;
 
                 case WhiteListType.BASIC_WITH_IMAGES:
-                    Whitelist = Whitelist.BasicWithImages;
+                    this.Whitelist = Whitelist.BasicWithImages;
                     break;
 
                 case WhiteListType.NONE:
-                    Whitelist = Whitelist.None;
+                    this.Whitelist = Whitelist.None;
                     break;
 
                 case WhiteListType.RELAXED:
-                    Whitelist = Whitelist.Relaxed;
+                    this.Whitelist = Whitelist.Relaxed;
                     break;
 
                 case WhiteListType.SIMPLE_TEXT:
-                    Whitelist = Whitelist.SimpleText;
+                    this.Whitelist = Whitelist.SimpleText;
                     break;
+
+                default:
+                    throw new EnumConstantNotPresentException(parameters.WhitelistType, parameters.WhitelistType.ToString());
             }
         }
 
