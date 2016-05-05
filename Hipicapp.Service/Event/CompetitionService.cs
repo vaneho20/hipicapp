@@ -111,10 +111,10 @@ namespace Hipicapp.Service.Event
         }
 
         [Transaction(ReadOnly = true)]
-        public IList<Ranking> AdultRankingsBySpecialty(Specialty specialty)
+        public IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId)
         {
             return this.ScoreRepository.GetAllQueryable()
-                .Where(x => x.Competition.Name.StartsWith("Adulto") && x.Competition.Specialty.Id == specialty.Id)
+                .Where(x => x.Competition.Name.StartsWith("Adulto") && x.Competition.Specialty.Id == specialtyId)
                 .OrderByDescending(x => x.Value)
                 .GroupBy(x => x.Horse.Athlete)
                 .Select(x => new Ranking
@@ -122,6 +122,12 @@ namespace Hipicapp.Service.Event
                     Athlete = x.Key,
                     Value = x.Sum(y => y.Value)
                 }).Take(3).ToList();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
+        {
+            return this.CompetitionRepository.GetAllQueryable().Where(x => x.SpecialtyId == specialtyId && x.StartDate > DateTime.Now.Date).Take(6).ToList();
         }
     }
 }

@@ -19,6 +19,8 @@ namespace Hipicapp.Service.Event
 
         IList<Score> SimulateScore(Competition competition);
 
-        IList<Ranking> AdultRankingsBySpecialty(Specialty specialty);
+        IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId);
+
+        IList<Competition> FindNextBySpecialtyId(long? specialtyId);
     }
 }

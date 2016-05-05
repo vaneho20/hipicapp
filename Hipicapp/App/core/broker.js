@@ -27,13 +27,15 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         CATEGORY: "category",
         SPECIALTIES: "specialties",
         SPECIALTY: "specialty",
+        SPECIALTY_ID: "{specialtyId}",
         HANDLERS: "Handlers/AjaxFileUploaderHandler.upload",
         URL_TITLE: "{urlTitle}",
         TOKEN: "token",
         SETUP: "setup",
         GET: "get",
         GET_BY_CURRENT_USER: "getByCurrentUser",
-        ADULT_RANKINGS_BY_SPECIALTY: "adultRankingsBySpecialty",
+        ADULT_RANKINGS_BY_SPECIALTY_ID: "adultRankingsBySpecialtyId",
+        FIND_NEXT_BY_SPECIALTY_ID: "findNextBySpecialtyId",
         LOGIN: "login",
         LOGOUT: "logout",
         UPLOAD: "upload",
@@ -72,6 +74,10 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
     /*ko.mapping.defaultOptions().ignore = [
         "getIconTitle", "getIconClass"
     ];*/
+
+    amplify.subscribe("request.ajax.preprocess", function ajaxSetup(defnSettings, settings, ajaxSettings) {
+        ajaxSettings.cache = false;
+    });
 
     amplify.subscribe("request.before.ajax", function incrementRequestCount() {
         requestCount(requestCount() + 1);
@@ -116,24 +122,26 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
             csrfUtils.extractCsrfFromXhr(xhr);
 
             if (status === "success") {
-                handleOk(data, status, xhr, success);
-            } else if (xhr.status === 401 || (data && data.error === "401")) {
-                handleUnauthorized(xhr);
+                handleOk(data, status, xhr, success, error);
+            } else if (xhr.status === 401 || xhr.status === 403 || (data && (data.error === "401" || data.error === "403"))) {
+                handleUnauthorized(data, status, xhr, success, error);
+            } else if (xhr.status === 409) {
+                handleConflict(data, status, xhr, success, error);
             } else if (xhr.status === 500) {
-                handleInternalServerError(data, status, error);
+                handleInternalServerError(data, status, xhr, success, error);
             } else if (status !== "nocontent") {
                 $("html").html(xhr.responseText);
             }
         };
 
-    function handleOk(data, status, xhr, success) {
+    function handleOk(data, status, xhr, success, error) {
         success(data, status);
         if (!(xhr.readonly)) {
             alerts.success(i18n.t("SUCCESS_ALERT_TEXT"));
         }
     }
 
-    function handleUnauthorized(xhr) {
+    function handleUnauthorized(data, status, xhr, success, error) {
         securityContext.clear();
 
         if (xhr.login) {
@@ -146,7 +154,21 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         }
     }
 
-    function handleInternalServerError(data, status, error) {
+    function handleConflict(data, status, xhr, success, error) {
+        error(data, status);
+        securityContext.clear();
+        if (xhr.login || !xhr.authentication) {
+            /*exceptionHandler
+                .handle({
+                    status: "fail",
+                    data: {
+                        key: "org.springframework.security.web.authentication.session.SessionAuthenticationException"
+                    }
+                });*/
+        }
+    }
+
+    function handleInternalServerError(data, status, xhr, success, error) {
         error(data, status);
         exceptionHandler.handle(data, status);
     }

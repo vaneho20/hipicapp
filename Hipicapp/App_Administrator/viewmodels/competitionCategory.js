@@ -26,14 +26,28 @@ define([
         // behaviour definition
         function refreshCurrentEntity(data) {
             currentEntity(competitionCategoryImpl(data));
+            if (currentEntity().initialYear()) {
+                currentEntity().initialYear(moment(currentEntity().initialYear(), ["YYYY-MM-DD"]));
+            }
+
+            if (currentEntity().finalYear()) {
+                currentEntity().finalYear(moment(currentEntity().finalYear(), ["YYYY-MM-DD"]));
+            }
         }
 
         function loadEntityByCompetitionCategoryId(id) {
             return competitionCategoryBroker.findById(id).done(refreshCurrentEntity);
         }
 
-        function save() {
+        function save(event, otro) {
             var promise;
+            if (currentEntity().initialYear()) {
+                currentEntity().initialYear(moment(currentEntity().initialYear()).year());
+            }
+
+            if (currentEntity().finalYear()) {
+                currentEntity().finalYear(moment(currentEntity().finalYear()).year());
+            }
             if (currentEntity().id) {
                 promise = competitionCategoryBroker.update(currentEntity());
             } else {

@@ -10,13 +10,14 @@ define([
     "use strict";
 
     // state definition
-    var viewModel = {}, currentEntity = ko.observable(specialtyImpl()), ranking = ko.observableArray([]);
+    var viewModel = {}, currentEntity = ko.observable(specialtyImpl()), ranking = ko.observableArray([]),
+        nextCompetitions = ko.observableArray([]);
 
     // lifecycle definition
     function activate(id) {
         if (id) {
             // allways return a promise
-            return loadEntityBySpecialtyId(id);
+            return $.when(loadEntityBySpecialtyId(id), loadRankingBySpecialtyId(id), loadNextCompetitionsBySpecialtyId(id));
         } else {
             refreshCurrentEntity();
         }
@@ -25,7 +26,6 @@ define([
     // behaviour definition
     function refreshCurrentEntity(data) {
         currentEntity(specialtyImpl(data));
-        loadRanking(currentEntity());
     }
 
     function loadEntityBySpecialtyId(id) {
@@ -36,8 +36,16 @@ define([
         ranking(data);
     }
 
-    function loadRanking(specialty) {
-        return competitionBroker.adultRankingsBySpecialty(specialty).done(refreshRanking);
+    function loadRankingBySpecialtyId(specialtyId) {
+        return competitionBroker.adultRankingsBySpecialtyId(specialtyId).done(refreshRanking);
+    }
+
+    function refreshNextCompetitions(data) {
+        nextCompetitions(data);
+    }
+
+    function loadNextCompetitionsBySpecialtyId(specialtyId) {
+        return competitionBroker.findNextBySpecialtyId(specialtyId).done(refreshNextCompetitions);
     }
 
     // module revelation
@@ -50,6 +58,7 @@ define([
     // state revelation
     viewModel.currentEntity = currentEntity;
     viewModel.ranking = ranking;
+    viewModel.nextCompetitions = nextCompetitions;
 
     // lifecycle revelation
     viewModel.activate = activate;

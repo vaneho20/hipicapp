@@ -37,12 +37,20 @@ namespace Hipicapp.Controllers.Event
             return this.CompetitionProxy.Get(id);
         }
 
-        [AcceptVerbs("POST")]
-        [HttpPost]
-        [Route("adultRankingsBySpecialty")]
-        public IList<Ranking> AdultRankingsBySpecialty([FromBody]Specialty specialty)
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("AdultRankingsBySpecialtyId/{specialtyId}")]
+        public IList<Ranking> AdultRankingsBySpecialtyId([FromUri]long? specialtyId)
         {
-            return this.CompetitionProxy.AdultRankingsBySpecialty(specialty);
+            return this.CompetitionProxy.AdultRankingsBySpecialtyId(specialtyId);
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("findNextBySpecialtyId/{specialtyId}")]
+        public IList<Competition> FindNextBySpecialtyId([FromUri]long? specialtyId)
+        {
+            return this.CompetitionProxy.FindNextBySpecialtyId(specialtyId);
         }
 
         [AcceptVerbs("POST")]

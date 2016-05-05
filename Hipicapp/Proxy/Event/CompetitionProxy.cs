@@ -32,9 +32,9 @@ namespace Hipicapp.Proxy.Event
         }
 
         [AllowAnonymous]
-        public IList<Ranking> AdultRankingsBySpecialty(Specialty specialty)
+        public IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId)
         {
-            return this.CompetitionService.AdultRankingsBySpecialty(specialty);
+            return this.CompetitionService.AdultRankingsBySpecialtyId(specialtyId);
         }
 
         [AuthorizeEnum(Rol.ADMINISTRATOR)]
@@ -101,6 +101,12 @@ namespace Hipicapp.Proxy.Event
         public Seminary AssignUnassignJudge(long? competitionId, long? judgeId)
         {
             return this.SeminaryService.AssignUnassignJudge(competitionId, judgeId);
+        }
+
+        [AllowAnonymous]
+        public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
+        {
+            return this.CompetitionService.FindNextBySpecialtyId(specialtyId);
         }
     }
 }

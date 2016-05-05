@@ -11,7 +11,7 @@ namespace Hipicapp.Proxy.Event
 
         Competition Get(long? id);
 
-        IList<Ranking> AdultRankingsBySpecialty(Specialty specialty);
+        IList<Ranking> AdultRankingsBySpecialtyId(long? specialty);
 
         Competition Save(Competition competition);
 
@@ -34,5 +34,7 @@ namespace Hipicapp.Proxy.Event
         IList<Seminary> UnassignAllJudgesByFilter(long? competitionId, JudgeFindRequest findRequest);
 
         Seminary AssignUnassignJudge(long? competitionId, long? judgeId);
+
+        IList<Competition> FindNextBySpecialtyId(long? specialtyId);
     }
 }
