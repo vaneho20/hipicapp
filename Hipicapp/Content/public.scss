@@ -739,13 +739,11 @@ body {
                         width: 100%;
                         clear: both;
                         border-bottom: 3px solid #f74b4b;
-
                         h2 {
                             display: block;
                             margin: 0 0 0.4em;
                             padding: 0.2em 0;
-                            font-size: 1.6em;
-                            background: url("/Content/images/herradura.png") 100% 0 no-repeat;
+                            font-size: 1.6em;                            
                         }
                     }
 
@@ -753,22 +751,26 @@ body {
                         float: left;
                         width: 100%;
                         clear: both;
+                        h3 {
+                            margin: 0 0 0.5em;
+                            font-size: 1.2em;
+                        }
 
-                        .fila-element {
+                        ul {
                             margin: 0;
-                            padding: 0.5em 1em;
-                            border-top: 1px solid #f8f8f8;
-
-                            h3 {
-                                margin: 0 0 0.5em;
-                                font-size: 1.2em;
-                            }
-
-                            ul {
-                                margin: 0 0 0 2em;
-
-                                li {
-                                    list-style-type: square;
+                            list-style:none;
+                            li {
+                                float:left;
+                                margin:0;
+                                padding:0;
+                                width:100%;
+                                clear:both;
+                                &:nth-child(1),
+                                &:nth-child(2),
+                                &:nth-child(3){
+                                    float:left;
+                                    width:33.3%;
+                                    clear:none;
                                 }
                             }
                         }

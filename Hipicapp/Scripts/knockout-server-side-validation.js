@@ -325,7 +325,7 @@ if (typeof (ko) === undefined) { throw 'Knockout is required, please ensure it i
     If handler is set, then user needs to take care to remove all previous validation messages.
     */
     self.serverSideValidator.validateModel = function (viewModel, data, unhandledMessagesHandler) {
-        var valid = data && !(data.KoValid == false);
+        var valid = data && !data.modelState;
         //Remove all automatically added messages and classes from elements
         $("*[" + self.serverSideValidator.getConfigOptions().dataValidateUniqueAttribute + "]").remove();
         $("*[" + self.serverSideValidator.getConfigOptions().uniqueAttributeName + "]").removeClass(self.serverSideValidator.getConfigOptions().inputValidationErrorClass);
@@ -341,7 +341,7 @@ if (typeof (ko) === undefined) { throw 'Knockout is required, please ensure it i
                 viewModelElement.serverMessage(null);
             }
             //If data is not valid
-            if (data && !data.KoValid && data.modelState) {
+            if (data && data.modelState) {
                 $.each(data.modelState, function (index, element) {
                     if (index == elementName) {
                         var message = element;

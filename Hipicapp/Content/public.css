@@ -529,23 +529,27 @@ body {
             display: block;
             margin: 0 0 0.4em;
             padding: 0.2em 0;
-            font-size: 1.6em;
-            background: url("/Content/images/herradura.png") 100% 0 no-repeat; }
+            font-size: 1.6em; }
         body #contenido-interior .block-center .block-center-der .box-element .content {
           float: left;
           width: 100%;
           clear: both; }
-          body #contenido-interior .block-center .block-center-der .box-element .content .fila-element {
+          body #contenido-interior .block-center .block-center-der .box-element .content h3 {
+            margin: 0 0 0.5em;
+            font-size: 1.2em; }
+          body #contenido-interior .block-center .block-center-der .box-element .content ul {
             margin: 0;
-            padding: 0.5em 1em;
-            border-top: 1px solid #f8f8f8; }
-            body #contenido-interior .block-center .block-center-der .box-element .content .fila-element h3 {
-              margin: 0 0 0.5em;
-              font-size: 1.2em; }
-            body #contenido-interior .block-center .block-center-der .box-element .content .fila-element ul {
-              margin: 0 0 0 2em; }
-              body #contenido-interior .block-center .block-center-der .box-element .content .fila-element ul li {
-                list-style-type: square; }
+            list-style: none; }
+            body #contenido-interior .block-center .block-center-der .box-element .content ul li {
+              float: left;
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              clear: both; }
+              body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(1), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(3) {
+                float: left;
+                width: 33.3%;
+                clear: none; }
   body #custom-search-input {
     float: left;
     padding: 2em 0;
