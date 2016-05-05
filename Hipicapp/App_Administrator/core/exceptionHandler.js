@@ -1,6 +1,6 @@
 /* global _: false, define: false */
-define(["core/i18n", "durandal/system", "viewmodels/alerts"
-], function exceptionHandler(i18n, system, alerts) {
+define(["core/i18n", "core/router", "durandal/system", "viewmodels/alerts"
+], function exceptionHandler(i18n, router, system, alerts) {
     "use strict";
 
     var handler = {}, exceptionHandlers = {
@@ -39,6 +39,7 @@ define(["core/i18n", "durandal/system", "viewmodels/alerts"
                     errors.push(i + ": " + item);
                 });
                 alerts.error(errors);
+                ko.serverSideValidator.validateModel(router.activeItem().currentEntity(), data);
             } else {
                 alerts.error(i18n.format(i18n.t(data.exceptionType.replace(/\./g, '_')), data.args));
             }

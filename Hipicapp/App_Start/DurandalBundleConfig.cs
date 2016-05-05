@@ -50,6 +50,8 @@ namespace Hipicapp
                 .Include("~/Scripts/Administrator/custom.js")
                 .Include("~/Scripts/Administrator/icheck/icheck.js")
                 .Include("~/Scripts/knockout-{version}.js")
+                .Include("~/Scripts/knockout-mapping-{version}.js")
+                .Include("~/Scripts/knockout-server-side-validation.js")
                 .Include("~/Scripts/amplify-{version}.js")
                 .Include("~/Scripts/amplify-request-deferred-{version}.js")
                 .Include("~/Scripts/fastclick.js")

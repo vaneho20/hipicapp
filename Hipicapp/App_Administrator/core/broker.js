@@ -112,13 +112,14 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
     /* jshint camelcase: false */
     amplify.request_original.decoders.exceptionHandler =
         function handler(data, status, xhr, success, error) {
-            console.log(router);
             requestCount(requestCount() - 1);
 
             csrfUtils.extractCsrfFromXhr(xhr);
 
             if (status === "success") {
                 handleOk(data, status, xhr, success, error);
+            } else if (xhr.status === 400) {
+                handleBadRequest(data, status, xhr, success, error);
             } else if (xhr.status === 401 || xhr.status === 403 || (data && (data.error === "401" || data.error === "403"))) {
                 handleUnauthorized(data, status, xhr, success, error);
             } else if (xhr.status === 409) {
@@ -135,6 +136,11 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         if (!(xhr.readonly)) {
             alerts.success(i18n.t("SUCCESS_ALERT_TEXT"));
         }
+    }
+
+    function handleBadRequest(data, status, xhr, success, error) {
+        error(data, status);
+        exceptionHandler.handle(data, status);
     }
 
     function handleUnauthorized(data, status, xhr, success, error) {
