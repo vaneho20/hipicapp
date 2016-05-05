@@ -26,14 +26,22 @@ define(["core/i18n", "durandal/system", "viewmodels/alerts"
     }
 
     function handleApplicationException(data) {
-        var handler = exceptionHandlers[data.exceptionType.replace(/\./g, '_')];
+        var handler = data.exceptionType ? exceptionHandlers[data.exceptionType.replace(/\./g, '_')] : undefined,
+            errors = [];
 
         handleException(data);
 
         if (handler) {
             handler(data);
         } else {
-            alerts.error(i18n.format(i18n.t(data.exceptionType.replace(/\./g, '_')), data.args));
+            if (data.modelState) {
+                _.each(data.modelState, function items(item, i) {
+                    errors.push(i + ": " + item);
+                });
+                alerts.error(errors);
+            } else {
+                alerts.error(i18n.format(i18n.t(data.exceptionType.replace(/\./g, '_')), data.args));
+            }
         }
     }
 
