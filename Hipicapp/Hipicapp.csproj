@@ -667,6 +667,7 @@
     <Content Include="Scripts\durandal\transitions\entrance.js" />
     <Content Include="Scripts\durandal\viewEngine.js" />
     <Content Include="Scripts\durandal\viewLocator.js" />
+    <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\h5bp-4.2.0.js" />
     <Content Include="App_Administrator\nls\dev\app.json" />
     <Content Include="App_Administrator\nls\es\app.json" />
