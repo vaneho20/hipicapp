@@ -70,7 +70,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario ya está registrado en Hipicapp.
+        ///   Busca una cadena traducida similar a ya está registrado en Hipicapp.
         /// </summary>
         public static string hipicapp_validator_user_email_unique {
             get {
