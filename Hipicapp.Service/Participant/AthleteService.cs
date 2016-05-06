@@ -77,6 +77,7 @@ namespace Hipicapp.Service.Participant
             athlete.User.Roles = new HashSet<Rol>() { Rol.ATHLETE };
             athlete.User = this.UserService.Save(athlete.User);
             athlete.UserId = athlete.User.Id;
+            athlete.User.RegistrationDate = DateTime.Now;
             athlete.Category = this.CompetitionCategoryRepository.GetAllQueryable()
                 .FirstOrDefault(x => (x.Later == true && year >= x.InitialYear)
                     || (year >= x.InitialYear && year <= x.FinalYear)
@@ -105,6 +106,7 @@ namespace Hipicapp.Service.Participant
                 this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(athlete.Category);
             }
             model.Gender = athlete.Gender;
+            model.Weight = athlete.Weight;
             this.AthleteRepository.Update(model);
             return model;
         }

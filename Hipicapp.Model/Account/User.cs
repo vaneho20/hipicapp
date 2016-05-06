@@ -5,6 +5,7 @@ using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using System;
 using System.Collections.Generic;
 
 namespace Hipicapp.Model.Account
@@ -31,6 +32,8 @@ namespace Hipicapp.Model.Account
 
         [NotNull]
         public virtual bool? AccountNonLocked { get; set; }
+
+        public virtual DateTime? RegistrationDate { get; set; }
 
         [JsonIgnore]
         [SafeHtml(WhiteListType.NONE)]
@@ -67,6 +70,7 @@ namespace Hipicapp.Model.Account
             Map(x => x.AccountNonLocked).Column("ACCOUNT_NON_LOCKED");
             Map(x => x.Password).Column("PASSWORD_").Not.Nullable();
             Map(x => x.PasswordRecoveryHash).Column("PASSWORD_RECOVERY_HASH");
+            Map(x => x.RegistrationDate).Column("REGISTRATION_DATE").Not.Nullable();
 
             HasMany(x => x.Roles).Table("USER_AUTHORITY").KeyColumn("USER_ID")
                 .Element("AUTHORITY", e => e.Type<GenericEnumMapper<Rol>>()).Not.LazyLoad().Fetch.Join()
