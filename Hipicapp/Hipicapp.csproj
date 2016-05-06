@@ -713,7 +713,6 @@
     <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\knockout-bootstrap-2.3.1.js" />
     <Content Include="Scripts\knockout-mapping-2.4.1.js" />
-    <Content Include="Scripts\knockout-server-side-validation.js" />
     <Content Include="Scripts\knockout-switch-case-1.2.3.js" />
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

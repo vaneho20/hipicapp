@@ -68,6 +68,10 @@ define([
         dialog: true
     });
 
+    /*ko.serverSideValidator.showValidationMessageHandler = function (elem, message) {
+        console.log("ELEMENT::::" + elem);
+        console.log("MESSAGE::::" + message);
+    }*/
     app.start().then(function () {
         i18n.init(i18NOptions, function () {
             //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
@@ -77,6 +81,14 @@ define([
             //Call localization on view before binding...
             binder.binding = function (obj, view) {
                 $(view).i18n();
+            };
+
+            binder.bindingComplete = function (obj, view) {
+                //if (obj.currentEntity && ko.isObservable(obj.currentEntity) && obj.currentEntity().hasOwnProperty('id')) {
+                if ($(view).find("form").length > 0) {
+                    //ko.applyValidation(obj.currentEntity(), $(view).find("form")[0]);
+                }
+                //}
             };
 
             //Show the app by setting the root view model for our application with a transition.
