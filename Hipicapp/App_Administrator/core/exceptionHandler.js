@@ -39,7 +39,6 @@ define(["core/i18n", "core/router", "durandal/system", "viewmodels/alerts"
                     errors.push(i + ": " + item);
                 });
                 alerts.error(errors);
-                ko.serverSideValidator.validateModel(router.activeItem().currentEntity(), data);
             } else {
                 alerts.error(i18n.format(i18n.t(data.exceptionType.replace(/\./g, '_')), data.args));
             }
