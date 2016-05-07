@@ -44,6 +44,14 @@ namespace Hipicapp.Controllers.Account
             return this.UserProxy.Get(id);
         }
 
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("getTileCount")]
+        public TileCount GetTileCount()
+        {
+            return this.UserProxy.GetTileCount();
+        }
+
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("save")]

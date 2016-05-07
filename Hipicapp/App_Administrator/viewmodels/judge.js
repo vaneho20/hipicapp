@@ -4,8 +4,7 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/judge/judgeBroker",
     "domain/judge/judgeImpl", "viewmodels/shell", "viewmodels/alerts"
-],
-    function judgeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
+], function judgeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
                                  validationUtils, judgeBroker, judgeImpl, shell, alerts) {
         "use strict";
 

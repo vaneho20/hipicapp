@@ -40,6 +40,12 @@ namespace Hipicapp.Proxy.Account
             return this.UserService.GetByUserName(username);
         }
 
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        public TileCount GetTileCount()
+        {
+            return this.UserService.GetTileCount();
+        }
+
         public User Save(User user)
         {
             return this.UserService.Save(user);

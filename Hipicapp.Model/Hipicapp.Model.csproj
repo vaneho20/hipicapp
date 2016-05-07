@@ -71,6 +71,7 @@
     <Compile Include="Abstract\Entity.cs" />
     <Compile Include="Account\Gender.cs" />
     <Compile Include="Account\Ticket.cs" />
+    <Compile Include="Account\TileCount.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Account\ValidUserAttribute.cs" />
     <Compile Include="Event\SpecialtyFindFilter.cs" />

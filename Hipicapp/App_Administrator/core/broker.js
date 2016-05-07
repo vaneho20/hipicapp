@@ -31,6 +31,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         SETUP: "setup",
         GET: "get",
         GET_BY_CURRENT_USER: "getByCurrentUser",
+        GET_TILE_COUNT: "getTileCount",
         LOGIN: "login",
         LOGOUT: "logout",
         UPLOAD: "upload",

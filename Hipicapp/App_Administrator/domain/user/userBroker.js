@@ -22,6 +22,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.USERS,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
+    amplify.request.define("users/getTileCount", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS,
+                brokerUtils.requestMappings.GET_TILE_COUNT), brokerUtils.verb.GET, CACHE_NAME));
+
     amplify.request.define("users/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.USERS,
@@ -67,6 +72,10 @@ define([
         });
     }
 
+    function getTileCount() {
+        return amplify.request("users/getTileCount");
+    }
+
     function register(client) {
         return amplify.request("users/register", client).always(CACHE.evict);
     }
@@ -109,6 +118,7 @@ define([
 
     broker.findBy = findBy;
     broker.findByUserId = findByUserId;
+    broker.getTileCount = getTileCount;
     broker.register = register;
     broker.save = save;
     broker.changePassword = changePassword;

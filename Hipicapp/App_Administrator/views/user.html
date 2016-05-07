@@ -8,7 +8,7 @@
     <div class="x_content">
         <div class="" role="tabpanel" data-example-id="togglable-tabs">
             <div data-bind="compose: 'userNavs.html'"></div>
-            <form role="form" data-bind="submit: save">
+            <form role="form" data-bind="submit: save" novalidate>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
                         <label for="h-user-email" data-bind="text: i18n.t('app:EMAIL')"
@@ -68,7 +68,7 @@
                         <a data-bind="attr: {
 				            href: userBroker.getListUrl(),
 				            title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
-                                       class="btn">
+                           class="btn">
                             <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
                         </a>
                     </div>

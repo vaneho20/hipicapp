@@ -1,6 +1,8 @@
 ﻿using Hipicapp.Model.Account;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Repository.Account;
+using Hipicapp.Repository.Event;
+using Hipicapp.Repository.Participant;
 using Hipicapp.Utils.Helper;
 using Hipicapp.Utils.Pager;
 using Hipicapp.Utils.Security;
@@ -8,6 +10,7 @@ using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Hipicapp.Service.Account
 {
@@ -16,6 +19,12 @@ namespace Hipicapp.Service.Account
     {
         [Autowired]
         private IUserRepository UserRepository { get; set; }
+
+        [Autowired]
+        private IAthleteRepository AthleteRepository { get; set; }
+
+        [Autowired]
+        private ICompetitionRepository CompetitionRepository { get; set; }
 
         [Transaction(ReadOnly = true)]
         public Page<User> Paginated(UserFindFilter filter, PageRequest pageRequest)
@@ -33,6 +42,18 @@ namespace Hipicapp.Service.Account
         public User GetByUserName(string username)
         {
             return this.UserRepository.GetByUserName(username);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public TileCount GetTileCount()
+        {
+            return new TileCount()
+            {
+                TotalUsers = this.UserRepository.GetAllQueryable().LongCount(x => x.Roles.Any(y => y == Rol.ATHLETE)),
+                TotalHorseMen = this.AthleteRepository.GetAllQueryable().LongCount(x => x.Gender == Gender.Male && x.User.Roles.Any(y => y == Rol.ATHLETE)),
+                TotalHorseWomen = this.AthleteRepository.GetAllQueryable().LongCount(x => x.Gender == Gender.Female && x.User.Roles.Any(y => y == Rol.ATHLETE)),
+                TotalCompetitions = this.CompetitionRepository.GetAllQueryable().LongCount()
+            };
         }
 
         [Transaction]

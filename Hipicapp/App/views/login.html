@@ -5,7 +5,7 @@
                 <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
                 <div class="content">
                     <h2>Formulario de login</h2>
-                    <form id="h-login" data-bind="submit: login">
+                    <form id="h-login" data-bind="submit: login" novalidate>
                         <input type="email" id="h-login-user-name"
                                data-bind="value: credentials.userName, attr : { max: validationUtils.MAX_LENGTH, maxlength : validationUtils.MAX_LENGTH, placeholder: i18n.t('EMAIL'), title: i18n.t('EMAIL') }"
                                required autofocus>

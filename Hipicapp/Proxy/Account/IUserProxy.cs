@@ -15,6 +15,8 @@ namespace Hipicapp.Proxy.Account
 
         User GetByUserName(string username);
 
+        TileCount GetTileCount();
+
         User Save(User user);
 
         void Save(IList<User> users);

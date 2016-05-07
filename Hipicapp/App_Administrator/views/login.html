@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div id="login" class="animate form">
             <section class="login_content">
-                <form role="form" data-bind="submit: login">
+                <form role="form" data-bind="submit: login" novalidate>
                     <h1 data-i18n="app:LOGIN_TITLE"></h1>
                     <div>
                         <input class="form-control" type="email" data-bind="value: credentials.userName, attr: { placeholder: i18n.t('app:EMAIL') }"

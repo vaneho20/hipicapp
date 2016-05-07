@@ -2,7 +2,7 @@
     <div id="contenido-interior">
         <div class="loginmodal-container registermodal">
             <div class="card">                
-                <form role="form" class="form-horizontal" data-bind="submit: signIn">
+                <form role="form" class="form-horizontal" data-bind="submit: signIn" novalidate>
                     <fieldset>
                         <h2> Datos de registro</h2>
                         <div class="content-fieldset">
@@ -20,7 +20,7 @@
                                 </div>
                             </div>
                             <label for="h-user-new-password" data-bind="text: i18n.t('app:PASSWORD')"
-                                    class="sr-only"></label>
+                                   class="sr-only"></label>
                             <div class="form-group">
                                 <div class="posicionado col-md-6 col-sm-6 col-xs-12">
                                     <input type="password" id="h-user-new-password"
@@ -57,72 +57,72 @@
                     </fieldset>
                     <fieldset>
                         <h2> Datos de registro</h2>
-                            <div class="content-fieldset">
-                                <div class="form-group">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <label for="h-athlete-name" class="sr-only"
-                                               data-bind="text: i18n.t('app:NAME')"></label>
-                                        <input type="text" id="h-athlete-name" autofocus
-                                               data-bind="value: currentEntity().name,
+                        <div class="content-fieldset">
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label for="h-athlete-name" class="sr-only"
+                                           data-bind="text: i18n.t('app:NAME')"></label>
+                                    <input type="text" id="h-athlete-name" autofocus
+                                           data-bind="value: currentEntity().name,
 						                        attr: { max: validationUtils.MAX_LENGTH,
 							                        maxlength: validationUtils.MAX_LENGTH,
 							                        placeholder: i18n.t('app:NAME'),
 							                        title: i18n.t('app:NAME')}"
-                                               required autocomplete="off">
-                                    </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <label for="h-athlete-surnames" class="sr-only"
-                                               data-bind="text: i18n.t('app:SURNAMES')"></label>
-                                        <input type="text" id="h-athlete-surnames" autofocus
-                                               data-bind="value: currentEntity().surnames,
+                                           required autocomplete="off">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <label for="h-athlete-surnames" class="sr-only"
+                                           data-bind="text: i18n.t('app:SURNAMES')"></label>
+                                    <input type="text" id="h-athlete-surnames" autofocus
+                                           data-bind="value: currentEntity().surnames,
 						                        attr: { max: validationUtils.MAX_LENGTH,
 							                        maxlength: validationUtils.MAX_LENGTH,
 							                        placeholder: i18n.t('app:SURNAMES'),
 							                        title: i18n.t('app:SURNAMES')}"
-                                               required autocomplete="off">
-                                    </div>
+                                           required autocomplete="off">
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-4 col-sm-4 col-xs-8">
-                                        <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
-                                        <select id="h-athlete-gender"
-                                                data-bind="options: availableGenders,
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4 col-sm-4 col-xs-8">
+                                    <label for="h-athlete-gender" class="sr-only" data-bind="text: i18n.t('app:GENDER')"></label>
+                                    <select id="h-athlete-gender"
+                                            data-bind="options: availableGenders,
 							                        optionsValue: function(item) { return item.value },
 							                        optionsText: function(item) { return item.text },
 							                        optionsCaption : i18n.t('app:GENDER') + '...',
 							                        value: currentEntity().gender,
 							                        attr: { title: i18n.t('app:GENDER') }"
-                                                required aria-required="true" autocomplete="off"></select>
-                                    </div>
-                                    <div class="posicionado-left col-md-4 col-sm-4 col-xs-8">
-                                        <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
-                                        <div id="h-athlete-birthdate-picker" class="date input-group"
-                                             data-bind="datepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" id="h-athlete-birthdate"
-                                                   data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                            required aria-required="true" autocomplete="off"></select>
+                                </div>
+                                <div class="posicionado-left col-md-4 col-sm-4 col-xs-8">
+                                    <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                    <div id="h-athlete-birthdate-picker" class="date input-group"
+                                         data-bind="datepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" id="h-athlete-birthdate"
+                                               data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				                                attr: { placeholder: i18n.t('app:BIRTHDATE'),
 	 				                                title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-4 col-xs-8">
-                                        <label for="h-athlete-dni" class="sr-only"
-                                               data-bind="text: i18n.t('app:DNI')"></label>
-                                        <input type="text" id="h-athlete-dni" autofocus
-                                               data-bind="value: currentEntity().dni,
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-8">
+                                    <label for="h-athlete-dni" class="sr-only"
+                                           data-bind="text: i18n.t('app:DNI')"></label>
+                                    <input type="text" id="h-athlete-dni" autofocus
+                                           data-bind="value: currentEntity().dni,
 						                        attr: { max: validationUtils.MAX_LENGTH,
 							                        maxlength: validationUtils.MAX_LENGTH,
 							                        placeholder: i18n.t('app:DNI'),
 							                        title: i18n.t('app:DNI')}"
-                                               required autocomplete="off">
-                                    </div>
+                                           required autocomplete="off">
                                 </div>
-                                <button type="submit"
-                                        data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                                        class="login loginmodal-submit">
-                                    <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-                                </button>
                             </div>
+                            <button type="submit"
+                                    data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                                    class="login loginmodal-submit">
+                                <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                            </button>
+                        </div>
                     </fieldset>
                 </form>
             </div>

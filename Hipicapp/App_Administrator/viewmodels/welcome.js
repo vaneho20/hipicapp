@@ -1,26 +1,44 @@
-﻿define(function() {
-    var ctor = function () {
-        this.displayName = 'Welcome to the Durandal Starter Kit!';
-        this.description = 'Durandal is a cross-device, cross-platform client framework written in JavaScript and designed to make Single Page Applications (SPAs) easy to create and maintain.';
-        this.features = [
-            'Clean MV* Architecture',
-            'JS & HTML Modularity',
-            'Simple App Lifecycle',
-            'Eventing, Modals, Message Boxes, etc.',
-            'Navigation & Screen State Management',
-            'Consistent Async Programming w/ Promises',
-            'App Bundling and Optimization',
-            'Use any Backend Technology',
-            'Built on top of jQuery, Knockout & RequireJS',
-            'Integrates with other libraries such as SammyJS & Bootstrap',
-            'Make jQuery & Bootstrap widgets templatable and bindable (or build your own widgets).'
-        ];
-    };
+﻿/* global define: false, ko: false */
+/* jshint maxparams: 11 */
+define([
+    "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
+    "core/util/urlUtils", "core/util/validationUtils", "domain/user/userBroker",
+    "viewmodels/shell", "viewmodels/alerts"
+], function welcomeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
+                                 validationUtils, userBroker, shell, alerts) {
+    "use strict";
 
-    //Note: This module exports a function. That means that you, the developer, can create multiple instances.
-    //This pattern is also recognized by Durandal so that it can create instances on demand.
-    //If you wish to create a singleton, you should export an object instead of a function.
-    //See the "flickr" module for an example of object export.
+    // state definition
+    var viewModel = {}, tileCount = ko.observable();
 
-    return ctor;
+    // lifecycle definition
+    function activate() {
+        // allways return a promise
+        return loadTileCount();
+    }
+
+    // behaviour definition
+    function refreshTileCount(data) {
+        tileCount(data);
+    }
+
+    function loadTileCount() {
+        return userBroker.getTileCount().done(refreshTileCount);
+    }
+
+    // module revelation
+    viewModel.i18n = i18n;
+    viewModel.securityContext = securityContext;
+    viewModel.validationUtils = validationUtils;
+    viewModel.userBroker = userBroker;
+
+    // state revelation
+    viewModel.tileCount = tileCount;
+
+    // lifecycle revelation
+    viewModel.activate = activate;
+
+    // behaviour revelation
+
+    return viewModel;
 });
