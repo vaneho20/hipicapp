@@ -12,8 +12,8 @@ define([
     /* jshint maxstatements: 35 */
     function competitionImpl(currentCompetition) {
         var competition = {}, id = null, version = ko.observable(), categoryId = null, name = null,
-            startDate = ko.observable(moment()), endDate = ko.observable(moment()),
-            registrationStartDate = ko.observable(moment()), registrationEndDate = ko.observable(moment()),
+            startDate = ko.observable(null), endDate = ko.observable(null),
+            registrationStartDate = ko.observable(null), registrationEndDate = ko.observable(null),
             category = competitionCategoryImpl(), address = null, zipCode = null, latitude = null, longitude = null,
             description = null, specialtyId = null, specialty = specialtyImpl();
 

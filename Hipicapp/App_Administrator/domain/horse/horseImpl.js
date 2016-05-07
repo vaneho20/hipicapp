@@ -9,7 +9,7 @@ define(function horseImplModule() {
     /* jshint maxstatements: 35 */
     function horseImpl(currentHorse) {
         var horse = {}, id = null, version = ko.observable(), name = null, height = null, photoId = null,
-            birthDate = ko.observable(moment()), photo = null, athleteId = null, gender = null, weight = null;
+            birthDate = ko.observable(null), photo = null, athleteId = null, gender = null, weight = null;
 
         if (currentHorse) {
             id = currentHorse.id;
