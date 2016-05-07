@@ -18,7 +18,6 @@
 </nav>
 <section id="contenido-interior">
     <div class="container">
-
         <div class="block-top">
             <div class="col-md-12 col-sm-12 col-xs-24">
                 <!-- Carousel -->
@@ -75,7 +74,6 @@
                 </div><!-- /carousel -->
             </div>
         </div>
-
         <div class="block-destacados">
             <div class="col-md-4 col-sm-4 col-xs-8">
                 <div class="un-destacado">
@@ -102,49 +100,78 @@
                 </div>
             </div>
         </div>
-
         <div class="block-center">
             <div class="col-md-8 col-sm-8 col-xs-16">
                 <div class="modulo-3-noticias">
                     <header>
                         <h2 class="pull-left">
-                            Próximos Concursos
+                            Pr&oacute;ximos Concursos
                         </h2>
                         <a class="pull-right" href="#" title="Ver todos">Ver todos &raquo;</a>
                     </header>
                     <div class="inner-modulo">
                         <!-- ko foreach: nextCompetitions -->
-                            <div class="noticia">
-                                <div class="inner">
-                                    <div class="foto">
-                                        <a href="/Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016" title="Ver artículo">
-                                            <div class="cintillo">Madrid</div>
-                                            <img src="/Content/images/foto_concurso.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="texto">
-                                        <h3 data-bind="text: name"></h3>
-                                        <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> <!-- ko text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN')) --><!-- /ko --></p>
-                                    </div>
+                        <div class="noticia">
+                            <div class="inner">
+                                <div class="foto">
+                                    <a href="/Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016" title="Ver artículo">
+                                        <div class="cintillo">Madrid</div>
+                                        <img src="/Content/images/foto_concurso.jpg">
+                                    </a>
+                                </div>
+                                <div class="texto">
+                                    <h3 data-bind="text: name"></h3>
+                                    <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> <!-- ko text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN')) --><!-- /ko --></p>
                                 </div>
                             </div>
+                        </div>
                         <!-- /ko -->
                     </div>
                 </div>
             </div>
             <div class="block-center-der col-md-4 col-sm-4 col-xs-8">
                 <div class="box-element">
-                    <header><h2>Últimos resultados</h2></header>
+                    <header><h2>&Uacute;ltimos resultados</h2></header>
                     <section class="content">
-                        <h3>Nombre Concurso1</h3>
                         <ul>
-                            <li>1º Nombre del primer jinete</li>
-                            <li>2º Nombre del primer jinete</li>
-                            <li>3º Nombre del primer jinete</li>
-                            <li><span>4º</span> Nombre del primer jinete</li>
-                            <li><span>5º</span> Nombre del primer jinete</li>
-                            <li><span>6º</span> Nombre del primer jinete</li>
+                            <li>
+                                <span>54 puntos</span>
+                                <img src="/Content/images/cara_jinete1.jpg" alt="" />
+                                <div class="puesto">
+                                    <h3>Nombre<br /> jinete</h3>
+                                    <span>2</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>54 puntos</span>
+                                <img src="/Content/images/cara_jinete2.jpg" alt="" />
+                                <div class="puesto">
+                                    <h3>Nombre<br /> jinete</h3>
+                                    <span>1</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>54 puntos</span>
+                                <img src="/Content/images/cara_jinete1.jpg" alt="" />
+                                <div class="puesto">
+                                    <h3>Nombre<br /> jinete</h3>
+                                    <span>3</span>
+                                </div>
+                            </li>
+                            <li>
+                                <h3><span>4.</span>Nombre del primer jinete</h3>
+                                <span class="puntos pull-right">36 puntos</span>
+                            </li>
+                            <li>
+                                <h3><span>5.</span>Nombre del primer jinete</h3>
+                                <span class="puntos pull-right">32 puntos</span>
+                            </li>
+                            <li>
+                                <h3><span>6.</span>Nombre del primer jinete</h3>
+                                <span class="puntos pull-right">31 puntos</span>
+                            </li>
                         </ul>
+                        <div class="pull-right"><a href="#" class="ver-todo">Ver clasificaci&oacute;n completa &raquo;</a></div>
                     </section>
                 </div>
                 <div class="banners">
