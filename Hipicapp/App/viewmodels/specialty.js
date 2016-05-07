@@ -3,10 +3,10 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/specialty/specialtyBroker",
-    "domain/specialty/specialtyImpl", "domain/competition/competitionBroker", "viewmodels/shell",
-    "viewmodels/alerts"
+    "domain/specialty/specialtyImpl", "domain/competition/competitionBroker",
+    "domain/file/fileBroker", "viewmodels/shell", "viewmodels/alerts"
 ], function specialtyViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, specialtyBroker, specialtyImpl, competitionBroker, shell, alerts) {
+    validationUtils, specialtyBroker, specialtyImpl, competitionBroker, fileBroker, shell, alerts) {
     "use strict";
 
     // state definition
@@ -53,6 +53,7 @@ define([
     viewModel.router = router;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
+    viewModel.fileBroker = fileBroker;
     viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation

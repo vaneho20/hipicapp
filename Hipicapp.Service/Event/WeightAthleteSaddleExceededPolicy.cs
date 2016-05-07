@@ -10,7 +10,7 @@ namespace Hipicapp.Service.Event
     {
         public bool IsSatisfiedBy(Athlete athlete, Specialty specialty)
         {
-            return specialty.MaxWeightOfAthlWithSaddle <= athlete.Weight;
+            return specialty.MaxWeightOfAthlWithSaddle >= athlete.Weight;
         }
 
         public void CheckSatisfiedBy(Athlete athlete, Specialty specialty)

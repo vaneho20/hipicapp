@@ -114,14 +114,14 @@ namespace Hipicapp.Service.Event
         public IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId)
         {
             return this.ScoreRepository.GetAllQueryable()
-                .Where(x => x.Competition.Name.StartsWith("Adulto") && x.Competition.Specialty.Id == specialtyId)
+                .Where(x => /*x.Competition.Name.StartsWith("Adulto") && */x.Competition.Specialty.Id == specialtyId)
                 .OrderByDescending(x => x.Value)
                 .GroupBy(x => x.Horse.Athlete)
                 .Select(x => new Ranking
                 {
                     Athlete = x.Key,
                     Value = x.Sum(y => y.Value)
-                }).Take(3).ToList();
+                }).Take(6).ToList();
         }
 
         [Transaction(ReadOnly = true)]

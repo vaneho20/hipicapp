@@ -9,5 +9,7 @@
         public virtual long TotalHorseWomen { get; set; }
 
         public virtual long TotalCompetitions { get; set; }
+
+        public virtual long TotalConnections { get; set; }
     }
 }

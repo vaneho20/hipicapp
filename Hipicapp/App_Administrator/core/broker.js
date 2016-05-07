@@ -12,6 +12,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         USER: "user",
         JUDGES: "judges",
         JUDGE: "judge",
+        JUDGE_ID: "{judgeId}",
         ATHLETES: "athletes",
         ATHLETE: "athlete",
         HORSES: "horses",

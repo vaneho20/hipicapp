@@ -85,6 +85,7 @@ define([
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.COMPETITION_ID,
+                brokerUtils.requestMappings.JUDGE_ID,
                 brokerUtils.requestMappings.ASSIGNUNASSIGNJUDGE), brokerUtils.verb.POST));
 
     function findBy(findRequest) {
@@ -163,7 +164,7 @@ define([
 
         return amplify.request("competitions/assignUnassignJudge", {
             competitionId: id,
-            judgeId: entity.judgeId
+            judgeId: entity.id
         }).always(judgeBroker.evictCache);
     }
 

@@ -151,7 +151,7 @@ namespace Hipicapp.Repository.Abstract
 
         public void Delete(K id)
         {
-            CurrentSession.Delete(id);
+            CurrentSession.Delete(CurrentSession.Get<K>(id));
         }
     }
 }

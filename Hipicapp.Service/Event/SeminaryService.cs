@@ -198,7 +198,7 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
-            //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
+            this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.SeminaryRepository.GetAllQueryable().Count(x => x.Competition.Id == competitionId), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             SeminaryId seminaryId = new SeminaryId();

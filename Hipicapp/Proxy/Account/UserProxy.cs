@@ -43,7 +43,8 @@ namespace Hipicapp.Proxy.Account
         [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public TileCount GetTileCount()
         {
-            return this.UserService.GetTileCount();
+            var tileCount = this.UserService.GetTileCount();
+            return tileCount;
         }
 
         public User Save(User user)
