@@ -9,6 +9,8 @@ namespace Hipicapp.Proxy.Event
     {
         Page<Competition> Paginated(CompetitionFindRequest request);
 
+        Page<Enrollment> PaginatedInscriptions(CompetitionFindRequest request);
+
         Competition Get(long? id);
 
         IList<Ranking> AdultRankingsBySpecialtyId(long? specialty);
@@ -36,5 +38,7 @@ namespace Hipicapp.Proxy.Event
         Seminary AssignUnassignJudge(long? competitionId, long? judgeId);
 
         IList<Competition> FindNextBySpecialtyId(long? specialtyId);
+
+        IList<Competition> FindLast();
     }
 }

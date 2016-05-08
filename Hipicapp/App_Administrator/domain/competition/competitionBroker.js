@@ -22,6 +22,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.GET, brokerUtils.requestMappings.ID), brokerUtils.verb.GET, CACHE_NAME));
 
+    amplify.request.define("competitions/findLast", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
+                brokerUtils.requestMappings.FIND_LAST), brokerUtils.verb.GET, CACHE_NAME));
+
     amplify.request.define("competitions/save", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
@@ -96,6 +101,10 @@ define([
         return amplify.request("competitions/findById", {
             id: id
         });
+    }
+
+    function findLast() {
+        return amplify.request("competitions/findLast");
     }
 
     function save(entity) {
@@ -196,6 +205,7 @@ define([
     broker.simulateScore = simulateScore;
     broker.erase = erase;
     broker.findById = findById;
+    broker.findLast = findLast;
 
     broker.assignAllJudges = assignAllJudges;
     broker.assignAllJudgesById = assignAllJudgesById;

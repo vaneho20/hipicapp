@@ -36,7 +36,7 @@ define(function securityContext() {
     }
 
     function getPrincipal() {
-        return instance().principal;
+        return instance();
     }
 
     function getAuthorities() {

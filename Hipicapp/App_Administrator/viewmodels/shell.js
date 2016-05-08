@@ -33,11 +33,11 @@
                     { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions', icon: "fa fa-trophy" },
                     { route: 'competition(/:id)', title: 'Concurso', moduleId: 'viewmodels/competition', nav: false, hash: '#competition' },
                     { route: 'competition/:id/judges', title: 'Jueces', moduleId: 'viewmodels/competitionJudges', nav: false },
+                    //{ route: 'specialties', title: 'Disciplinas', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties', icon: "fa fa-certificate" },
+                    //{ route: 'specialty(/:id)', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
                     { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges', icon: "fa fa-balance-scale" },
                     { route: 'judge(/:id)', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' },
                     { route: 'judge(/:id/images)', title: 'Foto', moduleId: 'viewmodels/judgeImages', nav: false, hash: '#judge' },
-                    { route: 'specialties', title: 'Disciplinas', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties', icon: "fa fa-certificate" },
-                    { route: 'specialty(/:id)', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
                     { route: 'users', title: 'Usuarios', moduleId: 'viewmodels/users', nav: true, hash: '#users', icon: "fa fa-lock" },
                     { route: 'user(/:id)', title: 'Usuario', moduleId: 'viewmodels/user', nav: false, hash: '#user' }
                 ]).buildNavigationModel();

@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\EnrollmentPredicates.cs" />
     <Compile Include="Event\IMaximumNumberOfJudgesExceededPolicy.cs" />
     <Compile Include="Event\SeminaryService.cs" />
     <Compile Include="Event\ISeminaryService.cs" />

@@ -26,8 +26,8 @@ define([
         return router.navigate("#jump");
     }
 
-    function navigateToProfile() {
-        return router.navigate("#profile");
+    function navigateToAthlete(id) {
+        return router.navigate("#athlete/" + id);
     }
 
     function navigateToAthletes() {
@@ -49,7 +49,7 @@ define([
     router.reloadCurrentLocation = reloadCurrentLocation;
 
     // Private site
-    router.navigateToProfile = navigateToProfile;
+    router.navigateToAthlete = navigateToAthlete;
 
     // Public site
     router.navigateToLogin = navigateToLogin;

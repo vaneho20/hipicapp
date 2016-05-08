@@ -5,6 +5,8 @@ define(function competitionFilterImpl() {
     return function competitionFilterImpl() {
         var filter = {};
 
+        filter.athleteId = ko.observable(athleteId);
+
         return filter;
     };
 });

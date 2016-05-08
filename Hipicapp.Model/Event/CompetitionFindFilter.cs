@@ -5,5 +5,7 @@ namespace Hipicapp.Model.Event
         public string Name { get; set; }
 
         public string ZipCode { get; set; }
+
+        public long? AthleteId { get; set; }
     }
 }

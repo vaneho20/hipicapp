@@ -61,8 +61,7 @@
                            data-bind="text: i18n.t('app:WEIGHT')"></label>
                     <input class="form-control" type="number" id="h-athlete-weight"
                            data-bind="value: currentEntity().weight,
-					        attr: { min: validationUtils.MIN_LONGITUDE,
-						        max: validationUtils.MAX_LONGITUDE,
+					        attr: { min: 0,
 						        maxlength: validationUtils.MAX_LENGTH,
 						        step: validationUtils.FLOAT_STEP,
 						        placeholder: i18n.t('app:WEIGHT'),

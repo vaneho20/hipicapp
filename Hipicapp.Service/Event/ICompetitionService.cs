@@ -9,6 +9,8 @@ namespace Hipicapp.Service.Event
     {
         Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest);
 
+        Page<Enrollment> PaginatedInscriptions(CompetitionFindFilter filter, PageRequest pageRequest);
+
         Competition Get(long? id);
 
         Competition Save(Competition competition);
@@ -22,5 +24,7 @@ namespace Hipicapp.Service.Event
         IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId);
 
         IList<Competition> FindNextBySpecialtyId(long? specialtyId);
+
+        IList<Competition> FindLast();
     }
 }

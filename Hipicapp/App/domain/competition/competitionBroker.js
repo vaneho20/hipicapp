@@ -17,6 +17,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
+    amplify.request.define("competitions/findInscriptionsBy", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
+                brokerUtils.requestMappings.FIND_INSCRIPTIONS), brokerUtils.verb.POST, CACHE_NAME));
+
     amplify.request.define("competitions/adultRankingsBySpecialtyId", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
@@ -29,6 +34,10 @@ define([
 
     function findBy(findRequest) {
         return amplify.request("competitions/findBy", findRequest);
+    }
+
+    function findInscriptionsBy(findRequest) {
+        return amplify.request("competitions/findInscriptionsBy", findRequest);
     }
 
     function adultRankingsBySpecialtyId(specialtyId) {
@@ -51,6 +60,7 @@ define([
 
     // request revelation
     broker.findBy = findBy;
+    broker.findInscriptionsBy = findInscriptionsBy;
     broker.findNextBySpecialtyId = findNextBySpecialtyId;
     broker.adultRankingsBySpecialtyId = adultRankingsBySpecialtyId;
 

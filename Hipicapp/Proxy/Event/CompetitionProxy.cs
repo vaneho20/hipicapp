@@ -26,6 +26,12 @@ namespace Hipicapp.Proxy.Event
         }
 
         [AllowAnonymous]
+        public Page<Enrollment> PaginatedInscriptions(CompetitionFindRequest request)
+        {
+            return this.CompetitionService.PaginatedInscriptions(request.Filter, request.PageRequest);
+        }
+
+        [AllowAnonymous]
         public Competition Get(long? id)
         {
             return this.CompetitionService.Get(id);
@@ -107,6 +113,12 @@ namespace Hipicapp.Proxy.Event
         public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
         {
             return this.CompetitionService.FindNextBySpecialtyId(specialtyId);
+        }
+
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        public IList<Competition> FindLast()
+        {
+            return this.CompetitionService.FindLast();
         }
     }
 }

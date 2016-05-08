@@ -1,0 +1,36 @@
+<header class="col-md-12 col-sm-12 col-xs-24">
+    <h2 class="pull-left">Mis Caballos</h2>
+    <a class="pull-right" href="Ver todos">Ver todos</a>
+</header>
+<article class="row">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+        Foto Caballos
+    </div>
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+        Nombre Caballo
+    </div>
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+        Fecha nacimiento
+    </div>
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+        Peso y Altura
+    </div>
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+        Sexo Caballo
+    </div>
+</article>
+<article class="row" data-bind="foreach: currentPage().content">
+    <div class="row">
+        <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+            <img alt="Lorem ipsum" data-bind="attr: { src: $data.photo ? fileBroker.getUrlByUuid($data.photo.fileUuid) : '' }">
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: name">
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))">
+        </div>
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: weight + 'kg y ' + height + ' cm'">
+        </div>
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: $root.availableGenders[gender]">
+        </div>
+    </div>
+</article>

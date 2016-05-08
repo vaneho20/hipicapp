@@ -41,6 +41,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         UPLOAD: "upload",
         FIND: "find",
         FIND_ALL: "findAll",
+        FIND_INSCRIPTIONS: "findInscriptions",
         FINDWITHASSIGNMENT: "findByWithAssignment",
         ASSIGNALLJUDGES: "assignAllJudges",
         ASSIGNALLJUDGESBYPAGE: "assignAllJudgesById",

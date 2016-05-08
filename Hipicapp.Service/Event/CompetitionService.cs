@@ -37,6 +37,12 @@ namespace Hipicapp.Service.Event
         }
 
         [Transaction(ReadOnly = true)]
+        public Page<Enrollment> PaginatedInscriptions(CompetitionFindFilter filter, PageRequest pageRequest)
+        {
+            return this.EnrollmentRepository.Paginated(EnrollmentPredicates.ValueOf(filter, this.EnrollmentRepository.GetAllQueryable()), pageRequest);
+        }
+
+        [Transaction(ReadOnly = true)]
         public Competition Get(long? id)
         {
             return this.CompetitionRepository.Get(id);
@@ -128,6 +134,12 @@ namespace Hipicapp.Service.Event
         public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
         {
             return this.CompetitionRepository.GetAllQueryable().Where(x => x.SpecialtyId == specialtyId && x.StartDate > DateTime.Now.Date).Take(6).ToList();
+        }
+
+        [Transaction(ReadOnly = true)]
+        public IList<Competition> FindLast()
+        {
+            return this.CompetitionRepository.GetAllQueryable().OrderByDescending(x => x.EndDate).Take(4).ToList();
         }
     }
 }

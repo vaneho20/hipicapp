@@ -29,6 +29,14 @@ namespace Hipicapp.Controllers.Event
             return this.CompetitionProxy.Paginated(request);
         }
 
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("findInscriptions")]
+        public Page<Enrollment> FindInscriptions(CompetitionFindRequest request)
+        {
+            return this.CompetitionProxy.PaginatedInscriptions(request);
+        }
+
         [AcceptVerbs("GET")]
         [HttpGet]
         [Route("get/{id}")]
@@ -51,6 +59,14 @@ namespace Hipicapp.Controllers.Event
         public IList<Competition> FindNextBySpecialtyId([FromUri]long? specialtyId)
         {
             return this.CompetitionProxy.FindNextBySpecialtyId(specialtyId);
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("findLast")]
+        public IList<Competition> FindLast()
+        {
+            return this.CompetitionProxy.FindLast();
         }
 
         [AcceptVerbs("POST")]
