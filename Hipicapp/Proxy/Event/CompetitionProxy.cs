@@ -26,7 +26,7 @@ namespace Hipicapp.Proxy.Event
         }
 
         [AllowAnonymous]
-        public Page<Enrollment> PaginatedInscriptions(CompetitionFindRequest request)
+        public Page<Enrollment> PaginatedInscriptions(EnrollmentFindRequest request)
         {
             return this.CompetitionService.PaginatedInscriptions(request.Filter, request.PageRequest);
         }

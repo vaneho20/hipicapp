@@ -3,19 +3,19 @@
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/competition/competitionBroker", "domain/competition/competitionFilterImpl",
-    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "durandal/app",
+    "domain/competition/competitionBroker", "domain/enrollment/enrollmentFilterImpl",
+    "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, competitionBroker, competitionFilterImpl,
-                        competitionSortImpl, competitionImpl, app, alerts, shell) {
+                        validationUtils, competitionBroker, enrollmentFilterImpl,
+                        enrollmentSortImpl, enrollmentImpl, app, alerts, shell) {
     "use strict";
 
     // state definition
-    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter =
-        ko.observable(competitionFilterImpl()), currentFilter = competitionFilterImpl(), currentSort =
-        ko.observable(competitionSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
-        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
+    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
+        nextFilter = ko.observable(enrollmentFilterImpl()), currentFilter = enrollmentFilterImpl(),
+        currentSort = ko.observable(enrollmentSortImpl()), currentPage = ko.observable(pageImpl()),
+        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
 
     // lifecycle definition
     function activate(athleteId) {
@@ -110,13 +110,13 @@ define([
     viewModel.deleteRow = deleteRow;
 
     // bind helpers
-    viewModel.sortByName = _.partial(sortByProperty, competitionImpl.properties.NAME);
+    /*viewModel.sortByName = _.partial(sortByProperty, "competition." + competitionImpl.properties.NAME);
     viewModel.getOrderIconTitleForName = ko.computed(function getOrderIconTitleForName() {
-        return currentSort().getOrderByProperty(competitionImpl.properties.NAME).getIconTitle();
+        return currentSort().getOrderByProperty("competition." + competitionImpl.properties.NAME).getIconTitle();
     });
     viewModel.getOrderIconClassForName = ko.computed(function getOrderIconClassForName() {
-        return currentSort().getOrderByProperty(competitionImpl.properties.NAME).getIconClass();
-    });
+        return currentSort().getOrderByProperty("competition." + competitionImpl.properties.NAME).getIconClass();
+    });*/
 
     return viewModel;
 });

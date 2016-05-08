@@ -74,6 +74,8 @@
     <Compile Include="Account\TileCount.cs" />
     <Compile Include="Account\User.cs" />
     <Compile Include="Account\ValidUserAttribute.cs" />
+    <Compile Include="Event\EnrollmentFindFilter.cs" />
+    <Compile Include="Event\EnrollmentFindRequest.cs" />
     <Compile Include="Event\SpecialtyFindFilter.cs" />
     <Compile Include="Event\SpecialtyFindRequest.cs" />
     <Compile Include="Event\Specialty.cs" />

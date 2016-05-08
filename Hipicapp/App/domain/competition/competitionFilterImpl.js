@@ -2,7 +2,7 @@
 define(function competitionFilterImpl() {
     "use strict";
 
-    return function competitionFilterImpl() {
+    return function competitionFilterImpl(athleteId) {
         var filter = {};
 
         filter.athleteId = ko.observable(athleteId);

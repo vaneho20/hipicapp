@@ -9,7 +9,7 @@ namespace Hipicapp.Proxy.Event
     {
         Page<Competition> Paginated(CompetitionFindRequest request);
 
-        Page<Enrollment> PaginatedInscriptions(CompetitionFindRequest request);
+        Page<Enrollment> PaginatedInscriptions(EnrollmentFindRequest request);
 
         Competition Get(long? id);
 

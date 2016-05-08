@@ -32,8 +32,8 @@ namespace Hipicapp.Model.Participant
 
             Map(x => x.EnrollmentDate).Column("ENROLLMENT_DATE").Not.Nullable();
 
-            References<Competition>(x => x.Competition).Column("COMPETITION_ID").Fetch.Join().ReadOnly();
-            References<Horse>(x => x.Horse).Column("HORSE_ID").Fetch.Join().ReadOnly();
+            References<Competition>(x => x.Competition).Column("COMPETITION_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
+            References<Horse>(x => x.Horse).Column("HORSE_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
         }
     }
 

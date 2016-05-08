@@ -37,7 +37,7 @@ namespace Hipicapp.Service.Event
         }
 
         [Transaction(ReadOnly = true)]
-        public Page<Enrollment> PaginatedInscriptions(CompetitionFindFilter filter, PageRequest pageRequest)
+        public Page<Enrollment> PaginatedInscriptions(EnrollmentFindFilter filter, PageRequest pageRequest)
         {
             return this.EnrollmentRepository.Paginated(EnrollmentPredicates.ValueOf(filter, this.EnrollmentRepository.GetAllQueryable()), pageRequest);
         }

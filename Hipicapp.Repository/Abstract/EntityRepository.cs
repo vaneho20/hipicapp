@@ -117,7 +117,7 @@ namespace Hipicapp.Repository.Abstract
             int total = query.Count();
             query = query.Skip(pageRequest.Offset).Take(pageRequest.Size);
 
-            if (pageRequest.Sort != null && pageRequest.Sort.Orders != null && pageRequest.Sort.Orders.Count > 0)
+            /*if (pageRequest.Sort != null && pageRequest.Sort.Orders != null && pageRequest.Sort.Orders.Count > 0)
             {
                 foreach (var o in pageRequest.Sort.Orders)
                 {
@@ -132,7 +132,7 @@ namespace Hipicapp.Repository.Abstract
                         query.OrderByDescending(expression);
                     }
                 }
-            }
+            }*/
 
             IList<T> result = query.ToList<T>();
 

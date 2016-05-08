@@ -375,6 +375,9 @@
     <Content Include="App\core\router.js" />
     <Content Include="App\core\subrouter.js" />
     <Content Include="App\domain\athlete\athleteSortImpl.js" />
+    <Content Include="App\domain\enrollment\enrollmentFilterImpl.js" />
+    <Content Include="App\domain\enrollment\enrollmentImpl.js" />
+    <Content Include="App\domain\enrollment\enrollmentSortImpl.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryBroker.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryFilterImpl.js" />
     <Content Include="App\domain\competitionCategory\competitionCategoryImpl.js" />

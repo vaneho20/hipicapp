@@ -32,7 +32,7 @@ namespace Hipicapp.Controllers.Event
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("findInscriptions")]
-        public Page<Enrollment> FindInscriptions(CompetitionFindRequest request)
+        public Page<Enrollment> FindInscriptions(EnrollmentFindRequest request)
         {
             return this.CompetitionProxy.PaginatedInscriptions(request);
         }

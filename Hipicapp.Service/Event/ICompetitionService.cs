@@ -9,7 +9,7 @@ namespace Hipicapp.Service.Event
     {
         Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest);
 
-        Page<Enrollment> PaginatedInscriptions(CompetitionFindFilter filter, PageRequest pageRequest);
+        Page<Enrollment> PaginatedInscriptions(EnrollmentFindFilter filter, PageRequest pageRequest);
 
         Competition Get(long? id);
 

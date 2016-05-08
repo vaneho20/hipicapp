@@ -10,7 +10,7 @@ namespace Hipicapp.Service.Event
         {
         }
 
-        public static IQueryable<Enrollment> ValueOf(CompetitionFindFilter filter, IQueryable<Enrollment> q)
+        public static IQueryable<Enrollment> ValueOf(EnrollmentFindFilter filter, IQueryable<Enrollment> q)
         {
             var query = q;
             if (filter.Name != null)
