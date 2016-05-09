@@ -39,3 +39,7 @@
 *.2
 /Hipicapp/hipicapp-log.log.2
 *.2
+/Hipicapp/App_Data/ASPNETDB.MDF
+/Hipicapp/App_Data/aspnetdb_log.ldf
+/Hipicapp/App_Data/ASPNETDB_TMP.MDF
+/Hipicapp/App_Data/ASPNETDB_TMP_log.LDF
