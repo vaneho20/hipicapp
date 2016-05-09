@@ -3,6 +3,7 @@
         'text': '../Scripts/text',
         'i18next': '../Scripts/i18next',
         'i18n': '../Scripts/require-i18next',
+        'async': '../Scripts/async',
         'durandal': '../Scripts/durandal',
         'plugins': '../Scripts/durandal/plugins',
         'transitions': '../Scripts/durandal/transitions'
@@ -24,6 +25,11 @@
 
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
+define('gmaps', ['async!http://maps.google.com/maps/api/js?sensor=false'],
+    function () {
+        console.log('Google maps loaded');
+        return window.google.maps;
+    });
 
 define([
     "bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindings/epochAfterBinding", "bindings/epochFutureBinding",

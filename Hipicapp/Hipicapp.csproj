@@ -644,6 +644,7 @@
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\amplify-1.1.0.js" />
     <Content Include="Scripts\amplify-request-deferred-0.0.0.js" />
+    <Content Include="Scripts\async.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker-es-0.0.11.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />

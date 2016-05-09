@@ -72,7 +72,7 @@ define([
             }
         });
 
-        $('#world-map-gdp').vectorMap({
+        /*$('#world-map-gdp').vectorMap({
             map: 'world_mill_en',
             backgroundColor: 'transparent',
             zoomOnScroll: false,
@@ -86,7 +86,7 @@ define([
             onRegionTipShow: function (e, el, code) {
                 el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
             }
-        });
+        });*/
     }
 
     // behaviour definition

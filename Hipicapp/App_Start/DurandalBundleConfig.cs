@@ -47,7 +47,6 @@ namespace Hipicapp
                 .Include("~/Scripts/bootstrap.js")
                 .Include("~/Scripts/moment-with-locales.js")
                 .Include("~/Scripts/bootstrap-datetimepicker.js")
-                .Include("~/Scripts/Administrator/custom.js")
                 // iCheck
                 .Include("~/Scripts/Administrator/icheck/icheck.js")
                 // Flot and Flot plugins
@@ -61,10 +60,12 @@ namespace Hipicapp
                 .Include("~/Scripts/Administrator/flot/jquery.flot.spline.js")
                 .Include("~/Scripts/Administrator/flot/curvedLines.js")
                 // jVectorMap
-                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-{version}.min.js")
-                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill-en.js")
-                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-us-aea-en.js")
-                .Include("~/Scripts/Administrator/maps/gdp-data.js")
+                //.Include("~/Scripts/Administrator/maps/jquery-jvectormap-{version}.min.js")
+                //.Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill-en.js")
+                //.Include("~/Scripts/Administrator/maps/jquery-jvectormap-us-aea-en.js")
+                //.Include("~/Scripts/Administrator/maps/gdp-data.js")
+                // Custom Theme Scripts
+                .Include("~/Scripts/Administrator/custom.js")
                 // Knockout JS
                 .Include("~/Scripts/knockout-{version}.js")
                 .Include("~/Scripts/knockout-mapping-{version}.js")
