@@ -5,7 +5,7 @@
             logout: function () {
                 return authenticationBroker.logout().done(securityContext.clear).done(
                 function () {
-                    router.reloadCurrentLocation()
+                    router.reloadCurrentLocation();
                 });
             },
             isLoading: ko.computed(function () {

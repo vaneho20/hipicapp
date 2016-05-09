@@ -121,7 +121,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
 
             if (status === "success") {
                 handleOk(data, status, xhr, success, error);
-            } else if (xhr.status === 400) {
+            } else if (xhr.status === 400 && data.error !== "401") {
                 handleBadRequest(data, status, xhr, success, error);
             } else if (xhr.status === 401 || xhr.status === 403 || (data && (data.error === "401" || data.error === "403"))) {
                 handleUnauthorized(data, status, xhr, success, error);
