@@ -62,7 +62,7 @@ namespace Hipicapp
                 .Include("~/Scripts/Administrator/flot/curvedLines.js")
                 // jVectorMap
                 .Include("~/Scripts/Administrator/maps/jquery-jvectormap-{version}.min.js")
-                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill.js")
+                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill-en.js")
                 .Include("~/Scripts/Administrator/maps/jquery-jvectormap-us-aea-en.js")
                 .Include("~/Scripts/Administrator/maps/gdp-data.js")
                 // Knockout JS
