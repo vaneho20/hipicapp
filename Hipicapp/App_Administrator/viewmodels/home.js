@@ -73,7 +73,7 @@ define([
         });
 
         $('#world-map-gdp').vectorMap({
-            map: 'world_mill',
+            map: 'world_mill_en',
             backgroundColor: 'transparent',
             zoomOnScroll: false,
             series: {
