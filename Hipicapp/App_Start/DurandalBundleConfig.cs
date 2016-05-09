@@ -60,6 +60,11 @@ namespace Hipicapp
                 .Include("~/Scripts/Administrator/flot/date.js")
                 .Include("~/Scripts/Administrator/flot/jquery.flot.spline.js")
                 .Include("~/Scripts/Administrator/flot/curvedLines.js")
+                // jVectorMap
+                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-{version}.min.js")
+                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill.js")
+                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-us-aea-en.js")
+                .Include("~/Scripts/Administrator/maps/gdp-data.js")
                 // Knockout JS
                 .Include("~/Scripts/knockout-{version}.js")
                 .Include("~/Scripts/knockout-mapping-{version}.js")
@@ -75,8 +80,11 @@ namespace Hipicapp
                 .Include("~/Content/bootstrap.css")
                 .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/bootstrap-datetimepicker.css")
-                .Include("~/Content/Administrator/custom.css")
+                // iCheck
                 .Include("~/Content/Administrator/icheck/flat/red.css")
+                // jVectorMap
+                .Include("~/Content/Administrator/maps/jquery-jvectormap-{version}.css")
+                .Include("~/Content/Administrator/custom.css")
             );
         }
 

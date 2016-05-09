@@ -41,7 +41,7 @@ define([
 
         //flot options
         var plot = $.plot($("#placeholder3xx3"), [{
-            label: "Registrations",
+            label: "Registros",
             data: d1,
             lines: {
                 fillColor: "rgba(150, 202, 89, 0.12)"
@@ -69,6 +69,22 @@ define([
                     bottom: "#7F8790",
                     left: "#7F8790"
                 }
+            }
+        });
+
+        $('#world-map-gdp').vectorMap({
+            map: 'world_mill',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            series: {
+                regions: [{
+                    values: gdpData,
+                    scale: ['#E6F2F0', '#149B7E'],
+                    normalizeFunction: 'polynomial'
+                }]
+            },
+            onRegionTipShow: function (e, el, code) {
+                el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
             }
         });
     }
