@@ -6,6 +6,7 @@ using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Security;
 
 namespace Hipicapp.Proxy.Account
 {
@@ -44,6 +45,7 @@ namespace Hipicapp.Proxy.Account
         public TileCount GetTileCount()
         {
             var tileCount = this.UserService.GetTileCount();
+            tileCount.TotalConnections = Membership.GetNumberOfUsersOnline();
             return tileCount;
         }
 

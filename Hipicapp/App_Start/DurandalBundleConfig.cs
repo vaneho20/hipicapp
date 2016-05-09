@@ -48,7 +48,19 @@ namespace Hipicapp
                 .Include("~/Scripts/moment-with-locales.js")
                 .Include("~/Scripts/bootstrap-datetimepicker.js")
                 .Include("~/Scripts/Administrator/custom.js")
+                // iCheck
                 .Include("~/Scripts/Administrator/icheck/icheck.js")
+                // Flot and Flot plugins
+                .Include("~/Scripts/jquery.flot.js")
+                .Include("~/Scripts/jquery.flot.pie.js")
+                .Include("~/Scripts/jquery.flot.time.js")
+                .Include("~/Scripts/jquery.flot.stack.js")
+                .Include("~/Scripts/jquery.flot.resize.js")
+                .Include("~/Scripts/Administrator/flot/jquery.flot.orderBars.js")
+                .Include("~/Scripts/Administrator/flot/date.js")
+                .Include("~/Scripts/Administrator/flot/jquery.flot.spline.js")
+                .Include("~/Scripts/Administrator/flot/curvedLines.js")
+                // Knockout JS
                 .Include("~/Scripts/knockout-{version}.js")
                 .Include("~/Scripts/knockout-mapping-{version}.js")
                 .Include("~/Scripts/amplify-{version}.js")

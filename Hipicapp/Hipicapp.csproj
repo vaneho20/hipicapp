@@ -310,14 +310,6 @@
     <Compile Include="Filters\ValidAttribute.cs" />
     <Compile Include="Filters\AuthorizeEnumAttribute.cs" />
     <Compile Include="Filters\ValidParameterBinding.cs" />
-    <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\RefreshToken.cs" />
-    <Compile Include="Models\Repository\AdsData.cs" />
-    <Compile Include="Models\Repository\ApplicationDbContext.cs" />
-    <Compile Include="Models\Repository\EfRepository.cs" />
-    <Compile Include="Models\Repository\IAdsData.cs" />
-    <Compile Include="Models\Repository\IRepository.cs" />
-    <Compile Include="Models\UserSession.cs" />
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
     <Compile Include="Proxy\Account\ITicketProxy.cs" />
@@ -536,7 +528,7 @@
     <Content Include="App_Administrator\viewmodels\shell.js" />
     <Content Include="App_Administrator\viewmodels\user.js" />
     <Content Include="App_Administrator\viewmodels\users.js" />
-    <Content Include="App_Administrator\viewmodels\welcome.js" />
+    <Content Include="App_Administrator\viewmodels\home.js" />
     <Content Include="App_Administrator\views\athleteHorses.html" />
     <Content Include="App_Administrator\views\competitionNavs.html" />
     <Content Include="App_Administrator\views\competitionJudges.html" />
@@ -565,7 +557,7 @@
     <Content Include="App_Administrator\views\userChangePassword.html" />
     <Content Include="App_Administrator\views\userNavs.html" />
     <Content Include="App_Administrator\views\users.html" />
-    <Content Include="App_Administrator\views\welcome.html" />
+    <Content Include="App_Administrator\views\home.html" />
     <EmbeddedResource Include="Config\Proxies.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -639,6 +631,10 @@
     <Content Include="Global.asax" />
     <Content Include="hipicap-favicon.ico" />
     <Content Include="Scripts\Administrator\custom.js" />
+    <Content Include="Scripts\Administrator\flot\curvedLines.js" />
+    <Content Include="Scripts\Administrator\flot\date.js" />
+    <Content Include="Scripts\Administrator\flot\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\Administrator\flot\jquery.flot.spline.js" />
     <Content Include="Scripts\Administrator\icheck\icheck.js" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\amplify-1.1.0.js" />
@@ -709,6 +705,11 @@
     <Content Include="Scripts\jquery.fileupload-process.js" />
     <Content Include="Scripts\jquery.fileupload-validate.js" />
     <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.flot.js" />
+    <Content Include="Scripts\jquery.flot.pie.js" />
+    <Content Include="Scripts\jquery.flot.resize.js" />
+    <Content Include="Scripts\jquery.flot.stack.js" />
+    <Content Include="Scripts\jquery.flot.time.js" />
     <Content Include="Scripts\jquery.iframe-transport.js" />
     <Content Include="Scripts\jquery.ui.widget.js" />
     <Content Include="Scripts\jquery.uploadfile.js" />
@@ -753,6 +754,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\font\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

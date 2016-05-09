@@ -4,7 +4,6 @@
 
 namespace Hipicapp.Backend
 {
-    using Hipicapp.Backend.Authentication.Repository;
     using Microsoft.Owin.Cors;
     using Owin;
     using System.Web.Http;
@@ -13,8 +12,6 @@ namespace Hipicapp.Backend
     {
         public void Configuration(IAppBuilder app)
         {
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-
             app.UseCors(CorsOptions.AllowAll);
 
             ConfigureAuth(app);
