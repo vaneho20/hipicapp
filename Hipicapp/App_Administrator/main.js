@@ -74,10 +74,6 @@ define([
         dialog: true
     });
 
-    /*ko.serverSideValidator.showValidationMessageHandler = function (elem, message) {
-        console.log("ELEMENT::::" + elem);
-        console.log("MESSAGE::::" + message);
-    }*/
     app.start().then(function () {
         i18n.init(i18NOptions, function () {
             //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
