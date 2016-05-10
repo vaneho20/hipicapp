@@ -7,8 +7,8 @@ define([
     "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, competitionBroker, enrollmentFilterImpl,
-                        enrollmentSortImpl, enrollmentImpl, app, alerts, shell) {
+    validationUtils, competitionBroker, enrollmentFilterImpl, enrollmentSortImpl, enrollmentImpl,
+    app, alerts, shell) {
     "use strict";
 
     // state definition

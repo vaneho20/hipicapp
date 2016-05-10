@@ -25,7 +25,7 @@
 
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
-define('gmaps', ['async!http://maps.google.com/maps/api/js?sensor=false'],
+define('gmaps', ['async!https://maps.google.com/maps/api/js?key=AIzaSyBdhF5Dy-TepU3vwbWsbIP8RGsIJW72Dhg'],
     function () {
         console.log('Google maps loaded');
         return window.google.maps;

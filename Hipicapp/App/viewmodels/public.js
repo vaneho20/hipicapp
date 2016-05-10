@@ -14,8 +14,8 @@
             },
             activate: function () {
                 router.map([
-                    { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: false, hash: '' },
-                    { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
+                    { route: '', title: 'Inicio', moduleId: 'viewmodels/home', nav: false, hash: '' },
+                    { route: 'login', title: 'Acceso', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
                     { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
                     { route: 'reset-password', title: 'Reestablecer contraseña', moduleId: 'viewmodels/passwordreset', nav: false, hash: '#reset-password' },
                     { route: 'update-password/:key', title: 'Actualizar contraseña', moduleId: 'viewmodels/updatepassword', nav: false, hash: '#update-password' },

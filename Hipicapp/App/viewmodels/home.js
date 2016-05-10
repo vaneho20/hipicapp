@@ -4,7 +4,7 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/specialty/specialtyBroker"
 ], function homeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, specialtyBroker) {
+    validationUtils, specialtyBroker) {
     "use strict";
 
     // state definition

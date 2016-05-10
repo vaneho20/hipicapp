@@ -7,8 +7,8 @@ define([
     "domain/specialty/specialtySortImpl", "domain/specialty/specialtyImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function specialties(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, specialtyBroker, specialtyFilterImpl,
-                        specialtySortImpl, specialtyImpl, app, alerts, shell) {
+    validationUtils, specialtyBroker, specialtyFilterImpl, specialtySortImpl, specialtyImpl,
+    app, alerts, shell) {
     "use strict";
 
     // state definition

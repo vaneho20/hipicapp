@@ -7,8 +7,8 @@ define([
     "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, competitionBroker, competitionFilterImpl,
-                        competitionSortImpl, competitionImpl, app, alerts, shell) {
+    validationUtils, competitionBroker, competitionFilterImpl, competitionSortImpl, competitionImpl,
+    app, alerts, shell) {
     "use strict";
 
     // state definition

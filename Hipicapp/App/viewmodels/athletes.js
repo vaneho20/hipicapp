@@ -7,8 +7,8 @@ define([
     "domain/athlete/athleteSortImpl", "domain/athlete/athleteImpl", "domain/file/fileBroker",
     "durandal/app", "viewmodels/alerts", "viewmodels/shell"
 ], function athletes(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, athleteBroker, athleteFilterImpl,
-                        athleteSortImpl, athleteImpl, fileBroker, app, alerts, shell) {
+    validationUtils, athleteBroker, athleteFilterImpl, athleteSortImpl, athleteImpl, fileBroker,
+    app, alerts, shell) {
     "use strict";
 
     // state definition

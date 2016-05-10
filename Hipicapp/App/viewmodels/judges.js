@@ -7,8 +7,8 @@ define([
     "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function judges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-                        validationUtils, fileBroker, judgeBroker, judgeFilterImpl,
-                        judgeSortImpl, judgeImpl, app, alerts, shell) {
+    validationUtils, fileBroker, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl,
+    app, alerts, shell) {
     "use strict";
 
     // state definition

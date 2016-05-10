@@ -5,8 +5,7 @@ define([
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
     "domain/athlete/athleteImpl", "durandal/app", "viewmodels/shell", "viewmodels/alerts"
 ], function registerViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, athleteBroker, athleteImpl,
-                                 app, shell, alerts) {
+    validationUtils, athleteBroker, athleteImpl, app, shell, alerts) {
     "use strict";
 
     // state definition

@@ -4,64 +4,60 @@ define([
     "core/i18n", "core/util/stringUtils", "core/util/urlUtils", "core/util/validationUtils",
     "domain/user/userBroker", "domain/user/userImpl", "core/router", "viewmodels/shell",
     "viewmodels/alerts"
-],
-    function userViewModel(i18n, stringUtils, urlUtils, validationUtils, userBroker,
-                           userImpl, router, shell, alerts) {
+], function userViewModel(i18n, stringUtils, urlUtils, validationUtils, userBroker,
+    userImpl, router, shell, alerts) {
+    "use strict";
 
-        "use strict";
+    // state definition
+    var viewModel = {}, currentEntity = ko.observable(userImpl()), navs = {
+        BASIC_DATA: "BASIC_DATA",
+        CHANGE_PASSWORD: "CHANGE_PASSWORD",
+        USER_PROMOTIONS: "USER_PROMOTIONS"
+    }, nav = ko.observable();
 
-        // state definition
-        var viewModel = {}, currentEntity = ko.observable(userImpl()), navs = {
-            BASIC_DATA : "BASIC_DATA",
-            CHANGE_PASSWORD : "CHANGE_PASSWORD",
-            USER_PROMOTIONS : "USER_PROMOTIONS"
-        }, nav = ko.observable();
+    // lifecycle definition
+    function activate(route) {
+        nav(navs.BASIC_DATA);
 
-        // lifecycle definition
-        function activate(route) {
-
-            nav(navs.BASIC_DATA);
-
-            if (route && route.id) {
-                // allways return a promise
-                return $.when(loadEntityByUserId(route.id));
-            } else {
-                refreshCurrentEntity();
-            }
+        if (route && route.id) {
+            // allways return a promise
+            return $.when(loadEntityByUserId(route.id));
+        } else {
+            refreshCurrentEntity();
         }
+    }
 
-        // behaviour definition
-        function refreshCurrentEntity(data) {
-            currentEntity(userImpl(data));
-        }
+    // behaviour definition
+    function refreshCurrentEntity(data) {
+        currentEntity(userImpl(data));
+    }
 
-        function loadEntityByUserId(id) {
-            return userBroker.findByUserId(id).done(refreshCurrentEntity);
-        }
+    function loadEntityByUserId(id) {
+        return userBroker.findByUserId(id).done(refreshCurrentEntity);
+    }
 
-        function save() {
+    function save() {
+        var promise = userBroker.save(userImpl(currentEntity())).done(refreshCurrentEntity);
 
-            var promise = userBroker.save(userImpl(currentEntity())).done(refreshCurrentEntity);
+        return promise;
+    }
 
-            return promise;
-        }
+    // module revelation
+    viewModel.i18n = i18n;
+    viewModel.validationUtils = validationUtils;
+    viewModel.userBroker = userBroker;
+    viewModel.userImpl = userImpl;
 
-        // module revelation
-        viewModel.i18n = i18n;
-        viewModel.validationUtils = validationUtils;
-        viewModel.userBroker = userBroker;
-        viewModel.userImpl = userImpl;
+    // state revelation
+    viewModel.currentEntity = currentEntity;
+    viewModel.navs = navs;
+    viewModel.nav = nav;
 
-        // state revelation
-        viewModel.currentEntity = currentEntity;
-        viewModel.navs = navs;
-        viewModel.nav = nav;
+    // lifecycle revelation
+    viewModel.activate = activate;
 
-        // lifecycle revelation
-        viewModel.activate = activate;
+    // behaviour revelation
+    viewModel.save = save;
 
-        // behaviour revelation
-        viewModel.save = save;
-
-        return viewModel;
-    });
+    return viewModel;
+});

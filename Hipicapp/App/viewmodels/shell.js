@@ -21,8 +21,8 @@
             },
             activate: function () {
                 router.map([
-                    { route: '', title: 'Home', moduleId: 'viewmodels/home', nav: false, hash: '' },
-                    { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
+                    { route: '', title: 'Inicio', moduleId: 'viewmodels/home', nav: false, hash: '' },
+                    { route: 'login', title: 'Acceso', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
                     { route: 'athlete/:id', title: 'Perfil', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' }
                 ]).buildNavigationModel();
 

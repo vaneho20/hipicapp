@@ -21,7 +21,7 @@
             activate: function () {
                 router.map([
                     { route: '', title: 'Inicio', moduleId: 'viewmodels/home', nav: false, hash: '' },
-                    { route: 'login', title: 'Login', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
+                    { route: 'login', title: 'Acceso', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
                     { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes', icon: "fa fa-users" },
                     { route: 'athlete(/:id)', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
                     { route: 'athlete/:id/images', title: 'Foto', moduleId: 'viewmodels/athleteImages', nav: false },

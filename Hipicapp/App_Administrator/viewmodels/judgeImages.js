@@ -2,8 +2,7 @@
 define([
     "core/i18n", "core/util/validationUtils", "domain/file/fileBroker",
     "domain/judge/judgeBroker", "viewmodels/judge"
-], function judgeImages(i18n, validationUtils, fileBroker, judgeBroker,
-                             judgeViewModel) {
+], function judgeImages(i18n, validationUtils, fileBroker, judgeBroker, judgeViewModel) {
     "use strict";
 
     // state definition

@@ -4,72 +4,70 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/competitionCategory/competitionCategoryBroker",
     "domain/competitionCategory/competitionCategoryImpl", "viewmodels/shell", "viewmodels/alerts"
-],
-    function competitionCategoryViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-                                 validationUtils, competitionCategoryBroker, competitionCategoryImpl, shell,
-                                 alerts) {
-        "use strict";
+], function competitionCategoryViewModel(i18n, router, securityContext, stringUtils, urlUtils,
+    validationUtils, competitionCategoryBroker, competitionCategoryImpl, shell, alerts) {
+    "use strict";
 
-        // state definition
-        var viewModel = {}, currentEntity = ko.observable(competitionCategoryImpl());
+    // state definition
+    var viewModel = {}, currentEntity = ko.observable(competitionCategoryImpl());
 
-        // lifecycle definition
-        function activate(id) {
-            if (id) {
-                // allways return a promise
-                return loadEntityByCompetitionCategoryId(id);
-            } else {
-                refreshCurrentEntity();
-            }
+    // lifecycle definition
+    function activate(id) {
+        if (id) {
+            // allways return a promise
+            return loadEntityByCompetitionCategoryId(id);
+        } else {
+            refreshCurrentEntity();
+        }
+    }
+
+    // behaviour definition
+    function refreshCurrentEntity(data) {
+        currentEntity(competitionCategoryImpl(data));
+        if (currentEntity().initialYear()) {
+            currentEntity().initialYear(moment(currentEntity().initialYear(), ["YYYY-MM-DD"]));
         }
 
-        // behaviour definition
-        function refreshCurrentEntity(data) {
-            currentEntity(competitionCategoryImpl(data));
-            if (currentEntity().initialYear()) {
-                currentEntity().initialYear(moment(currentEntity().initialYear(), ["YYYY-MM-DD"]));
-            }
+        if (currentEntity().finalYear()) {
+            currentEntity().finalYear(moment(currentEntity().finalYear(), ["YYYY-MM-DD"]));
+        }
+    }
 
-            if (currentEntity().finalYear()) {
-                currentEntity().finalYear(moment(currentEntity().finalYear(), ["YYYY-MM-DD"]));
-            }
+    function loadEntityByCompetitionCategoryId(id) {
+        return competitionCategoryBroker.findById(id).done(refreshCurrentEntity);
+    }
+
+    function save(event, otro) {
+        var promise;
+        if (currentEntity().initialYear()) {
+            currentEntity().initialYear(moment(currentEntity().initialYear()).year());
         }
 
-        function loadEntityByCompetitionCategoryId(id) {
-            return competitionCategoryBroker.findById(id).done(refreshCurrentEntity);
+        if (currentEntity().finalYear()) {
+            currentEntity().finalYear(moment(currentEntity().finalYear()).year());
         }
-
-        function save(event, otro) {
-            var promise;
-            if (currentEntity().initialYear()) {
-                currentEntity().initialYear(moment(currentEntity().initialYear()).year());
-            }
-
-            if (currentEntity().finalYear()) {
-                currentEntity().finalYear(moment(currentEntity().finalYear()).year());
-            }
-            if (currentEntity().id) {
-                promise = competitionCategoryBroker.update(currentEntity());
-            } else {
-                promise = competitionCategoryBroker.save(currentEntity());
-            }
-            return promise.done(refreshCurrentEntity);
+        if (currentEntity().id) {
+            promise = competitionCategoryBroker.update(currentEntity());
+        } else {
+            promise = competitionCategoryBroker.save(currentEntity());
         }
+        return promise.done(refreshCurrentEntity);
+    }
 
-        // module revelation
-        viewModel.i18n = i18n;
-        viewModel.securityContext = securityContext;
-        viewModel.validationUtils = validationUtils;
-        viewModel.competitionCategoryBroker = competitionCategoryBroker;
+    // module revelation
+    viewModel.i18n = i18n;
+    viewModel.securityContext = securityContext;
+    viewModel.validationUtils = validationUtils;
+    viewModel.competitionCategoryBroker = competitionCategoryBroker;
 
-        // state revelation
-        viewModel.currentEntity = currentEntity;
+    // state revelation
+    viewModel.currentEntity = currentEntity;
 
-        // lifecycle revelation
-        viewModel.activate = activate;
+    // lifecycle revelation
+    viewModel.activate = activate;
 
-        // behaviour revelation
-        viewModel.save = save;
+    // behaviour revelation
+    viewModel.save = save;
 
-        return viewModel;
-    });
+    return viewModel;
+});
