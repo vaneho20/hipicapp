@@ -437,6 +437,7 @@
     <EmbeddedResource Include="Config\Hipicapp.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="App_Administrator\bindings\addressBinding.js" />
     <Content Include="App_Administrator\bindings\epochFutureBinding.js" />
     <Content Include="App_Administrator\bindings\imageHolderBinding.js" />
     <Content Include="App_Administrator\core\app.js" />

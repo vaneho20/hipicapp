@@ -4,10 +4,10 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/competition/competitionBroker",
     "domain/competition/competitionImpl", "domain/competitionCategory/competitionCategoryBroker",
-    "domain/specialty/specialtyBroker", "gmaps", "viewmodels/shell", "viewmodels/alerts"
+    "domain/specialty/specialtyBroker", "viewmodels/shell", "viewmodels/alerts"
 ], function competitionViewModel(i18n, router, securityContext, stringUtils, urlUtils,
     validationUtils, competitionBroker, competitionImpl, competitionCategoryBroker,
-    specialtyBroker, gmaps, shell, alerts) {
+    specialtyBroker, shell, alerts) {
     "use strict";
 
     // state definition

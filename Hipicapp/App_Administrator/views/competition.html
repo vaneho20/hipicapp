@@ -103,7 +103,7 @@
                         <label class="required" for="h-competition-address"
                                 data-bind="text: i18n.t('app:ADDRESS')"></label>
                         <input class="form-control" type="text" id="h-competition-address" autofocus
-                                data-bind="value: currentEntity().address,
+                               data-bind="address: { route: currentEntity().address, postal_code: currentEntity().zipCode },
 					        attr: { max: validationUtils.MAX_LENGTH,
 						    maxlength: validationUtils.MAX_LENGTH,
 						    placeholder: i18n.t('app:ADDRESS'),
