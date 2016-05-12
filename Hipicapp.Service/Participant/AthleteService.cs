@@ -34,6 +34,9 @@ namespace Hipicapp.Service.Participant
         private IHorseRepository HorseRepository { get; set; }
 
         [Autowired]
+        public ISpecialtyRepository SpecialtyRepository { get; set; }
+
+        [Autowired]
         private IFileService FileService { get; set; }
 
         [Autowired]
@@ -84,6 +87,8 @@ namespace Hipicapp.Service.Participant
                     || (x.Previous == true && year <= x.FinalYear));
             this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(athlete.Category);
             athlete.CategoryId = athlete.Category.Id;
+            athlete.Specialty = this.SpecialtyRepository.Get(athlete.SpecialtyId);
+            athlete.SpecialtyId = athlete.Specialty.Id;
             athlete.Id = this.AthleteRepository.Save(athlete);
             return athlete;
         }
@@ -107,6 +112,11 @@ namespace Hipicapp.Service.Participant
             }
             model.Gender = athlete.Gender;
             model.Weight = athlete.Weight;
+            model.Federation = athlete.Federation;
+            model.ZipCode = athlete.ZipCode;
+            model.PlaceId = athlete.PlaceId;
+            model.Specialty = this.SpecialtyRepository.Get(athlete.SpecialtyId);
+            model.SpecialtyId = model.Specialty.Id;
             this.AthleteRepository.Update(model);
             return model;
         }

@@ -36,7 +36,7 @@ define(["core/i18n", "core/router", "durandal/system", "viewmodels/alerts"
         } else {
             if (data.modelState) {
                 _.each(data.modelState, function items(item, i) {
-                    errors.push(i + ": " + item);
+                    errors.push(i18n.t(i) + ": " + item);
                 });
                 alerts.error(errors);
             } else {

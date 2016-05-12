@@ -32,6 +32,7 @@ define([
     // behaviour definition
     function refreshCurrentEntity(data) {
         currentEntity(competitionImpl(data));
+        currentEntity().address.valueHasMutated();
     }
 
     function loadEntityByCompetitionId(id) {

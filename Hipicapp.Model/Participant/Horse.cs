@@ -39,6 +39,8 @@ namespace Hipicapp.Model.Participant
 
         public virtual FileInfo Photo { get; set; }
 
+        [NotNull]
+        [Min(0)]
         public virtual long? AthleteId { get; set; }
 
         public virtual Athlete Athlete { get; set; }

@@ -4,9 +4,9 @@ define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
     "domain/athlete/athleteImpl", "domain/competitionCategory/competitionCategoryBroker",
-    "viewmodels/shell", "viewmodels/alerts"
+    "domain/specialty/specialtyBroker", "viewmodels/shell", "viewmodels/alerts"
 ], function athleteViewModel(i18n, router, securityContext, stringUtils, urlUtils, validationUtils,
-    athleteBroker, athleteImpl, competitionCategoryBroker, shell, alerts) {
+    athleteBroker, athleteImpl, competitionCategoryBroker, specialtyBroker, shell, alerts) {
     "use strict";
 
     // state definition
@@ -22,7 +22,7 @@ define([
             value: "female",
             text: i18n.t("app:GENDER_FEMALE")
         }
-    ], availableCategories = ko.observable();
+    ], availableCategories = ko.observable(), availableSpecialties = ko.observable();
 
     // lifecycle definition
     function activate(id) {
@@ -34,9 +34,9 @@ define([
 
         if (id) {
             // allways return a promise
-            return $.when(loadEntityByAthleteId(id), loadAvailableCategories());
+            return $.when(loadEntityByAthleteId(id), loadAvailableCategories(), loadAvailableSpecialties());
         } else {
-            return $.when(loadAvailableCategories()).done(function onSuccess() {
+            return $.when(loadAvailableCategories(), loadAvailableSpecialties()).done(function onSuccess() {
                 return refreshCurrentEntity();
             });
         }
@@ -63,6 +63,14 @@ define([
         return competitionCategoryBroker.findAll().done(refreshCategories);
     }
 
+    function refreshSpecialties(data) {
+        availableSpecialties(data);
+    }
+
+    function loadAvailableSpecialties() {
+        return specialtyBroker.findAll().done(refreshSpecialties);
+    }
+
     function save() {
         var promise;
         if (currentEntity().id) {
@@ -85,6 +93,7 @@ define([
     viewModel.nav = nav;
     viewModel.availableGenders = availableGenders;
     viewModel.availableCategories = availableCategories;
+    viewModel.availableSpecialties = availableSpecialties;
 
     // lifecycle revelation
     viewModel.activate = activate;

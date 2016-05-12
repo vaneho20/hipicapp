@@ -6321,3 +6321,7 @@ ul.notifications {
     width: 100%;
     height: 2px;
 }
+
+input.gsc-input {
+    background-image: none !important;
+}

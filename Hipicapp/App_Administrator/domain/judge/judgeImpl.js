@@ -1,16 +1,20 @@
 /* global define: false, ko: false */
-define(function judgeImplModule() {
+define([
+    "domain/specialty/specialtyImpl"
+], function judgeImplModule(specialtyImpl) {
     "use strict";
 
     var properties = {
         NAME: "name",
-        SURNAMES: "surnames"
+        SURNAMES: "surnames",
+        SPECIALTY_ID: "specialtyId"
     };
 
     /* jshint maxstatements: 35 */
     function judgeImpl(currentJudge) {
-        var judge = {}, id = null, version = ko.observable(), name = null, surnames = null, photoId = null, photo = null,
-            gender = null;
+        var judge = {}, id = null, version = ko.observable(), name = null, surnames = null, photoId = null,
+            photo = null, gender = null, specialtyId = null, specialty = specialtyImpl(),
+            federation = ko.observable(null), zipCode = ko.observable(null), placeId = ko.observable(null);
 
         if (currentJudge) {
             id = currentJudge.id;
@@ -18,8 +22,13 @@ define(function judgeImplModule() {
             name = currentJudge.name;
             surnames = currentJudge.surnames;
             gender = currentJudge.gender;
+            specialtyId = currentJudge.specialtyId;
             photoId = currentJudge.photoId;
+            federation(currentJudge.federation);
+            zipCode(currentJudge.zipCode);
+            placeId(currentJudge.placeId);
             photo = currentJudge.photo;
+            specialty = specialtyImpl(currentJudge.specialty);
         }
 
         judge.id = id;
@@ -27,8 +36,13 @@ define(function judgeImplModule() {
         judge.name = name;
         judge.surnames = surnames;
         judge.gender = gender;
+        judge.federation = federation;
+        judge.zipCode = zipCode;
+        judge.placeId = placeId;
         judge.photoId = photoId;
+        judge.specialtyId = specialtyId;
         judge.photo = photo;
+        judge.specialty = specialty;
 
         return judge;
     }

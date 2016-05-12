@@ -114,8 +114,8 @@
                         <div class="noticia">
                             <div class="inner">
                                 <div class="foto">
-                                    <a href="/Deporte/saltos/articulo/recorridos-de-la-segunda-jornada-del-csn5-toledo-23-4-2016" title="Ver artículo">
-                                        <div class="cintillo">Madrid</div>
+                                    <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id) }" title="Ver artículo">
+                                        <div class="cintillo" data-bind="text: locality"></div>
                                         <img src="/Content/images/foto_concurso.jpg">
                                     </a>
                                 </div>

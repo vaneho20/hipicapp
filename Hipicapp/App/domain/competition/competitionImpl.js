@@ -6,16 +6,18 @@ define([
 
     var properties = {
         NAME: "name",
-        DATE: "date"
+        DATE: "date",
+        CATEGORY_ID: "categoryId",
+        SPECIALTY_ID: "specialtyId"
     };
 
     /* jshint maxstatements: 35 */
     function competitionImpl(currentCompetition) {
         var competition = {}, id = null, version = ko.observable(), categoryId = null, name = null,
-            startDate = ko.observable(null), endDate = ko.observable(null),
-            registrationStartDate = ko.observable(null), registrationEndDate = ko.observable(null),
-            category = competitionCategoryImpl(), address = null, zipCode = null, latitude = null, longitude = null,
-            description = null, specialtyId = null, specialty = specialtyImpl();
+            startDate = ko.observable(null), endDate = ko.observable(null), registrationStartDate = ko.observable(null),
+            registrationEndDate = ko.observable(null), category = competitionCategoryImpl(), address = ko.observable(null),
+            zipCode = ko.observable(null), placeId = ko.observable(null), description = null, specialtyId = null,
+            specialty = specialtyImpl();
 
         if (currentCompetition) {
             id = currentCompetition.id;
@@ -24,10 +26,9 @@ define([
             specialtyId = currentCompetition.specialtyId;
             name = currentCompetition.name;
             description = currentCompetition.description;
-            address = currentCompetition.address;
-            zipCode = currentCompetition.zipCode;
-            latitude = currentCompetition.latitude;
-            longitude = currentCompetition.longitude;
+            address(currentCompetition.address);
+            zipCode(currentCompetition.zipCode);
+            placeId(currentCompetition.placeId);
             startDate(currentCompetition.startDate);
             endDate(currentCompetition.endDate);
             registrationStartDate(currentCompetition.registrationStartDate);
@@ -44,8 +45,7 @@ define([
         competition.description = description;
         competition.address = address;
         competition.zipCode = zipCode;
-        competition.latitude = latitude;
-        competition.longitude = longitude;
+        competition.placeId = placeId;
         competition.startDate = startDate;
         competition.endDate = endDate;
         competition.registrationStartDate = registrationStartDate;

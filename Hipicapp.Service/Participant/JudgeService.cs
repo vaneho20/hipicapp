@@ -1,5 +1,6 @@
 ﻿using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
+using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
@@ -23,6 +24,9 @@ namespace Hipicapp.Service.Participant
         private ISeminaryRepository SeminaryRepository { get; set; }
 
         [Autowired]
+        public ISpecialtyRepository SpecialtyRepository { get; set; }
+
+        [Autowired]
         private IFileService FileService { get; set; }
 
         [Transaction(ReadOnly = true)]
@@ -42,6 +46,8 @@ namespace Hipicapp.Service.Participant
         {
             judge.Id = null;
             judge.Id = this.JudgeRepository.Save(judge);
+            judge.Specialty = this.SpecialtyRepository.Get(judge.SpecialtyId);
+            judge.SpecialtyId = judge.Specialty.Id;
             return judge;
         }
 
@@ -52,6 +58,11 @@ namespace Hipicapp.Service.Participant
             model.Name = judge.Name;
             model.Surnames = judge.Surnames;
             model.Gender = judge.Gender;
+            model.Federation = judge.Federation;
+            model.ZipCode = judge.ZipCode;
+            model.PlaceId = judge.PlaceId;
+            model.Specialty = this.SpecialtyRepository.Get(judge.SpecialtyId);
+            model.SpecialtyId = model.Specialty.Id;
             this.JudgeRepository.Update(model);
             return model;
         }

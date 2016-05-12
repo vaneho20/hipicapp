@@ -43,14 +43,10 @@ namespace Hipicapp.Model.Event
         public virtual string ZipCode { get; set; }
 
         [NotNull]
-        [Min(ValidationUtils.MIN_LATITUDE)]
-        [Max(ValidationUtils.MAX_LATITUDE)]
-        public virtual double? Latitude { get; set; }
-
-        [NotNull]
-        [Min(ValidationUtils.MIN_LONGITUDE)]
-        [Max(ValidationUtils.MAX_LONGITUDE)]
-        public virtual double? Longitude { get; set; }
+        [NotEmpty]
+        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
+        [SafeHtml(WhiteListType.NONE)]
+        public virtual string PlaceId { get; set; }
 
         [NotNull]
         [Future]
@@ -88,8 +84,7 @@ namespace Hipicapp.Model.Event
             Map(x => x.Description).Column("DESCRIPTION").Not.Nullable().Length(ValidationUtils.MAX_LENGTH_DESCRIPTION);
             Map(x => x.Address).Column("ADDRESS").Not.Nullable();
             Map(x => x.ZipCode).Column("ZIP_CODE").Not.Nullable().Length(ValidationUtils.LENGTH_ZIPCODE);
-            Map(x => x.Latitude).Column("LATITUDE").Not.Nullable();
-            Map(x => x.Longitude).Column("LONGITUDE").Not.Nullable();
+            Map(x => x.PlaceId).Column("PLACE_ID").Not.Nullable();
             Map(x => x.StartDate).Column("START_DATE").Not.Nullable();
             Map(x => x.EndDate).Column("END_DATE").Not.Nullable();
             Map(x => x.RegistrationStartDate).Column("REG_START_DATE").Not.Nullable();

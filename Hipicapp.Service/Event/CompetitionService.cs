@@ -63,8 +63,7 @@ namespace Hipicapp.Service.Event
             model.Description = competition.Description;
             model.Address = competition.Address;
             model.ZipCode = competition.ZipCode;
-            model.Latitude = competition.Latitude;
-            model.Longitude = competition.Longitude;
+            model.PlaceId = competition.PlaceId;
             model.StartDate = competition.StartDate;
             model.EndDate = competition.EndDate;
             model.RegistrationStartDate = competition.RegistrationStartDate;

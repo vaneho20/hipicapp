@@ -20,21 +20,20 @@ define([
             value: "female",
             text: i18n.t("app:GENDER_FEMALE")
         }
-    ];
+    ], availableSpecialties = ko.observable();
 
     // lifecycle definition
     function activate(id) {
+        nav(navs.BASIC_DATA);
+
         if (id) {
             // allways return a promise
-            return loadEntityByJudgeId(id).done(refreshNav);
+            return $.when(loadEntityByJudgeId(id), loadAvailableSpecialties());
         } else {
-            refreshCurrentEntity();
-            refreshNav();
+            return $.when(loadAvailableSpecialties()).done(function onSuccess() {
+                return refreshCurrentEntity();
+            });
         }
-    }
-
-    function refreshNav() {
-        nav(navs.BASIC_DATA);
     }
 
     // behaviour definition
@@ -48,6 +47,14 @@ define([
 
     function loadEntityByJudgeId(id) {
         return judgeBroker.findById(id).done(refreshCurrentEntity);
+    }
+
+    function refreshSpecialties(data) {
+        availableSpecialties(data);
+    }
+
+    function loadAvailableSpecialties() {
+        return specialtyBroker.findAll().done(refreshSpecialties);
     }
 
     function save() {
@@ -71,6 +78,7 @@ define([
     viewModel.navs = navs;
     viewModel.nav = nav;
     viewModel.availableGenders = availableGenders;
+    viewModel.availableSpecialties = availableSpecialties;
 
     // lifecycle revelation
     viewModel.activate = activate;

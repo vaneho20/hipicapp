@@ -52,6 +52,11 @@ define([
         });
     }
 
+    function getDetailUrlById(competitionId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -63,6 +68,8 @@ define([
     broker.findInscriptionsBy = findInscriptionsBy;
     broker.findNextBySpecialtyId = findNextBySpecialtyId;
     broker.adultRankingsBySpecialtyId = adultRankingsBySpecialtyId;
+
+    broker.getDetailUrlById = getDetailUrlById;
 
     return broker;
 });

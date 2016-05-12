@@ -11,11 +11,13 @@ define([
     "use strict";
 
     // state definition
-    var viewModel = $.extend(false, {}, competitionViewModel), superActivate = viewModel.activate, PAGE_SIZE =
-        config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, availableProvinces = ko.observable(), nextFilter =
-        ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(), currentSort =
-        ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
-        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
+    var viewModel = $.extend(false, {}, competitionViewModel), superActivate = viewModel.activate,
+        PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, availableProvinces = ko.observable(),
+        nextFilter = ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(),
+        currentSort = ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()),
+        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+            "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
+        };
 
     // lifecycle definition
     function activate(competitionId) {
@@ -145,6 +147,7 @@ define([
     viewModel.currentPager = currentPager;
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
+    viewModel.availableGenders = availableGenders;
     //viewModel.competitionJudges = competitionJudges;
 
     // lifecycle revelation
@@ -168,18 +171,19 @@ define([
 
     // bind helpers
     viewModel.sortByName = _.partial(sortByProperty, judgeImpl.properties.NAME);
+    viewModel.getOrderIconTitleForName = ko.computed(function getOrderIconTitleForName() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.NAME).getIconTitle();
+    });
+    viewModel.getOrderIconClassForName = ko.computed(function getOrderIconClassForName() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.NAME).getIconClass();
+    });
 
-    viewModel.getOrderIconTitleForName =
-        ko.computed(function getOrderIconTitleForName() {
-            return currentSort().getOrderByProperty(judgeImpl.properties.NAME)
-                .getIconTitle();
-        });
-
-    viewModel.getOrderIconClassForName =
-        ko.computed(function getOrderIconClassForName() {
-            return currentSort().getOrderByProperty(judgeImpl.properties.NAME)
-                .getIconClass();
-        });
-
+    viewModel.sortBySurnames = _.partial(sortByProperty, judgeImpl.properties.SURNAMES);
+    viewModel.getOrderIconTitleForSurnames = ko.computed(function getOrderIconTitleForSurnames() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.SURNAMES).getIconTitle();
+    });
+    viewModel.getOrderIconClassForSurnames = ko.computed(function getOrderIconClassForSurnames() {
+        return currentSort().getOrderByProperty(judgeImpl.properties.SURNAMES).getIconClass();
+    });
     return viewModel;
 });

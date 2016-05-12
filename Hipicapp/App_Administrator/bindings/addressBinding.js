@@ -2,7 +2,7 @@
 define(["gmaps"], function addressBinding(gmaps) {
     "use strict";
 
-    var binding = {}, componentForm = {
+    var binding = {}, component = {
         street_number: 'short_name',
         route: 'long_name',
         locality: 'long_name',
@@ -22,6 +22,10 @@ define(["gmaps"], function addressBinding(gmaps) {
     function fillIn(autocomplete, underlyingObservable) {
         var place = autocomplete.getPlace();
 
+        underlyingObservable["value"](place.name);
+        underlyingObservable["value"].valueHasMutated();
+        underlyingObservable["place_id"](place.place_id);
+        underlyingObservable["place_id"].valueHasMutated();
         /*for (var component in underlyingObservable) {
             if (ko.isObservable(component)) {
 
@@ -34,10 +38,10 @@ define(["gmaps"], function addressBinding(gmaps) {
         for (var i = 0; i < place.address_components.length; i++) {
             var addressType = place.address_components[i].types[0];
             if (addressType in underlyingObservable) {
-                //var val = place.address_components[i][underlyingObservable[addressType]];
-                var val = place.address_components[i]["long_name"];
+                var val = place.address_components[i][component[addressType]];
                 if (ko.isObservable(underlyingObservable[addressType])) {
                     underlyingObservable[addressType](val);
+                    underlyingObservable[addressType].valueHasMutated();
                 } else {
                     underlyingObservable[addressType] = val;
                 }
