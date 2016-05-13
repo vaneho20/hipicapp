@@ -19,7 +19,6 @@ define([
     }
 
     function attached() {
-        //flot options
         var plot = $.plot($("#placeholder3xx3"), [{
             label: "Registros",
             data: registrations(),
@@ -76,14 +75,13 @@ define([
                 noColumns: 0,
                 labelBoxBorderColor: null,
                 labelFormatter: function (label, series) {
-                    // just add some space to labes
                     return label + '&nbsp;&nbsp;';
                 },
                 width: 40,
                 height: 1
             },
             shadowSize: 0,
-            tooltip: true, //activate tooltip
+            tooltip: true,
             tooltipOpts: {
                 content: "%s: %y.0",
                 xDateFormat: "%d/%m",
@@ -95,10 +93,9 @@ define([
             }
         });
 
-        /*$('#world-map-gdp').vectorMap({
-            map: 'world_mill_en',
+        $('#world-map-gdp').vectorMap({
+            map: 'world_mill',
             backgroundColor: 'transparent',
-            zoomOnScroll: false,
             series: {
                 regions: [{
                     values: gdpData,
@@ -109,7 +106,7 @@ define([
             onRegionTipShow: function (e, el, code) {
                 el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
             }
-        });*/
+        });
     }
 
     // behaviour definition
@@ -143,6 +140,10 @@ define([
         }).done(refreshRegistrations);
     }
 
+    function getTimeAgo(competition) {
+        return moment.duration(moment().diff(moment(competition.creationDate))).humanize(true);
+    }
+
     // module revelation
     viewModel.i18n = i18n;
     viewModel.securityContext = securityContext;
@@ -160,6 +161,7 @@ define([
     viewModel.attached = attached;
 
     // behaviour revelation
+    viewModel.getTimeAgo = getTimeAgo;
 
     return viewModel;
 });

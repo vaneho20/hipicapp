@@ -640,8 +640,7 @@
     <Content Include="Scripts\Administrator\icheck\icheck.js" />
     <Content Include="Scripts\Administrator\maps\gdp-data.js" />
     <Content Include="Scripts\Administrator\maps\jquery-jvectormap-2.0.3.min.js" />
-    <Content Include="Scripts\Administrator\maps\jquery-jvectormap-us-aea-en.js" />
-    <Content Include="Scripts\Administrator\maps\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Scripts\Administrator\maps\jquery-jvectormap-world-mill.js" />
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\amplify-1.1.0.js" />
     <Content Include="Scripts\amplify-request-deferred-0.0.0.js" />

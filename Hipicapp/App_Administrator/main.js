@@ -56,6 +56,8 @@ define([
         useCookie: false
     };
 
+    moment.locale("es");
+
     // setup knockout
     // custom binding handlers
     ko.bindingHandlers.address = addressBinding;

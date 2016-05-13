@@ -51,6 +51,7 @@ namespace Hipicapp.Service.Event
         [Transaction]
         public Competition Save(Competition competition)
         {
+            competition.CreationDate = DateTime.Now;
             CompetitionRepository.Save(competition);
             return competition;
         }

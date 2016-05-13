@@ -64,6 +64,8 @@ namespace Hipicapp.Model.Event
         [Future]
         public virtual DateTime? RegistrationEndDate { get; set; }
 
+        public virtual DateTime? CreationDate { get; set; }
+
         public virtual CompetitionCategory Category { get; set; }
 
         public virtual Specialty Specialty { get; set; }
@@ -89,6 +91,7 @@ namespace Hipicapp.Model.Event
             Map(x => x.EndDate).Column("END_DATE").Not.Nullable();
             Map(x => x.RegistrationStartDate).Column("REG_START_DATE").Not.Nullable();
             Map(x => x.RegistrationEndDate).Column("REG_END_DATE").Not.Nullable();
+            Map(x => x.CreationDate).Column("CREATION_DATE").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
