@@ -61,9 +61,9 @@ namespace Hipicapp.Service.Account
         public IList<Registration> GetRegistrationsBetweenDates(DateTime? ini, DateTime? end)
         {
             return this.UserRepository.GetAllQueryable()
-                .Where(x => x.RegistrationDate >= ini.Value.Date && x.RegistrationDate <= end.Value.Date)
-                .OrderBy(x => x.RegistrationDate)
-                .GroupBy(x => x.RegistrationDate)
+                .Where(x => x.Roles.Any(y => y == Rol.ATHLETE) && x.RegistrationDate >= ini.Value.Date && x.RegistrationDate <= end.Value.Date)
+                .OrderBy(x => x.RegistrationDate.Value.Date)
+                .GroupBy(x => x.RegistrationDate.Value.Date)
                 .Select(x => new Registration()
                 {
                     Date = x.Key,
