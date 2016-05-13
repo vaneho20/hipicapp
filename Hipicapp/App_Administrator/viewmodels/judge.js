@@ -3,9 +3,9 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/judge/judgeBroker",
-    "domain/judge/judgeImpl", "viewmodels/shell", "viewmodels/alerts"
+    "domain/judge/judgeImpl", "domain/specialty/specialtyBroker", "viewmodels/shell", "viewmodels/alerts"
 ], function judgeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, judgeBroker, judgeImpl, shell, alerts) {
+    validationUtils, judgeBroker, judgeImpl, specialtyBroker, shell, alerts) {
     "use strict";
 
     // state definition

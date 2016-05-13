@@ -9,66 +9,89 @@ define([
     "use strict";
 
     // state definition
-    var viewModel = {}, tileCount = ko.observable(), lastCompetitions = ko.observableArray([]);
+    var viewModel = {}, tileCount = ko.observable(), lastCompetitions = ko.observableArray([]),
+        registrations = ko.observableArray([]);
 
     // lifecycle definition
     function activate() {
         // allways return a promise
-        return $.when(loadTileCount(), loadLastCompetitions());
+        return $.when(loadTileCount(), loadLastCompetitions(), loadRegistrations());
     }
 
     function attached() {
-        //random data
-        var d1 = [
-          [0, 1],
-          [1, 9],
-          [2, 6],
-          [3, 10],
-          [4, 5],
-          [5, 17],
-          [6, 6],
-          [7, 10],
-          [8, 7],
-          [9, 11],
-          [10, 35],
-          [11, 9],
-          [12, 12],
-          [13, 5],
-          [14, 3],
-          [15, 4],
-          [16, 9]
-        ];
-
         //flot options
         var plot = $.plot($("#placeholder3xx3"), [{
             label: "Registros",
-            data: d1,
+            data: registrations(),
             lines: {
                 fillColor: "rgba(150, 202, 89, 0.12)"
-            }, //#96CA59 rgba(150, 202, 89, 0.42)
+            },
             points: {
                 fillColor: "#fff"
             }
         }], {
             series: {
-                curvedLines: {
-                    apply: true,
-                    active: true,
-                    monotonicFit: true
+                lines: {
+                    show: true,
+                    fill: true,
+                    lineWidth: 2,
+                    steps: false
+                },
+                points: {
+                    show: true,
+                    radius: 4.5,
+                    symbol: "circle",
+                    lineWidth: 3.0
                 }
             },
-            colors: ["#26B99A"],
+            colors: ["#96CA59", "#3F97EB", "#72c380", "#6f7a8a", "#f7cb38", "#5a8022", "#2c7282"],
             grid: {
-                borderWidth: {
-                    top: 0,
-                    right: 0,
-                    bottom: 1,
-                    left: 1
+                show: true,
+                aboveData: true,
+                color: "#3f3f3f",
+                labelMargin: 10,
+                axisMargin: 0,
+                borderWidth: 0,
+                borderColor: null,
+                minBorderMargin: 5,
+                clickable: true,
+                hoverable: true,
+                autoHighlight: true,
+                mouseActiveRadius: 100
+            },
+            xaxis: {
+                mode: "time",
+                minTickSize: [1, "day"],
+                timeformat: "%d/%m/%y",
+                min: moment().startOf("week").valueOf(),
+                max: moment().endOf("week").valueOf()
+            },
+            yaxis: {
+                min: 0,
+                tickDecimals: 0
+            },
+            legend: {
+                position: "ne",
+                margin: [0, 15],
+                noColumns: 0,
+                labelBoxBorderColor: null,
+                labelFormatter: function (label, series) {
+                    // just add some space to labes
+                    return label + '&nbsp;&nbsp;';
                 },
-                borderColor: {
-                    bottom: "#7F8790",
-                    left: "#7F8790"
-                }
+                width: 40,
+                height: 1
+            },
+            shadowSize: 0,
+            tooltip: true, //activate tooltip
+            tooltipOpts: {
+                content: "%s: %y.0",
+                xDateFormat: "%d/%m",
+                shifts: {
+                    x: -30,
+                    y: -50
+                },
+                defaultTheme: false
             }
         });
 
@@ -106,6 +129,20 @@ define([
         return competitionBroker.findLast().done(refreshLastCompetitions);
     }
 
+    function refreshRegistrations(data) {
+        registrations([]);
+        _.map(data, function items(item) {
+            registrations.push([item.date, item.amount]);
+        });
+        registrations.valueHasMutated();
+    }
+
+    function loadRegistrations() {
+        return userBroker.getRegistrationsBetweenDates({
+            ini: moment().startOf("week").valueOf(), end: moment().endOf("week").valueOf()
+        }).done(refreshRegistrations);
+    }
+
     // module revelation
     viewModel.i18n = i18n;
     viewModel.securityContext = securityContext;
@@ -116,6 +153,7 @@ define([
     // state revelation
     viewModel.lastCompetitions = lastCompetitions;
     viewModel.tileCount = tileCount;
+    viewModel.registrations = registrations;
 
     // lifecycle revelation
     viewModel.activate = activate;

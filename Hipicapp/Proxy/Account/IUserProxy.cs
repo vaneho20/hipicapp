@@ -1,6 +1,7 @@
 ﻿using Hipicapp.Model.Account;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Utils.Pager;
+using System;
 using System.Collections.Generic;
 
 namespace Hipicapp.Proxy.Account
@@ -16,6 +17,8 @@ namespace Hipicapp.Proxy.Account
         User GetByUserName(string username);
 
         TileCount GetTileCount();
+
+        IList<Registration> GetRegistrationsBetweenDates(DateTime? ini, DateTime? end);
 
         User Save(User user);
 

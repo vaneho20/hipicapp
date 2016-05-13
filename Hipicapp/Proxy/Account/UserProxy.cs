@@ -4,6 +4,7 @@ using Hipicapp.Model.Authentication;
 using Hipicapp.Service.Account;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Web;
 
@@ -45,6 +46,12 @@ namespace Hipicapp.Proxy.Account
         {
             var tileCount = this.UserService.GetTileCount();
             return tileCount;
+        }
+
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        public IList<Registration> GetRegistrationsBetweenDates(DateTime? ini, DateTime? end)
+        {
+            return this.UserService.GetRegistrationsBetweenDates(ini, end);
         }
 
         public User Save(User user)

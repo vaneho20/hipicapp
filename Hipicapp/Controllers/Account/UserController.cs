@@ -8,6 +8,7 @@ using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Hipicapp.Controllers.Account
@@ -50,6 +51,14 @@ namespace Hipicapp.Controllers.Account
         public TileCount GetTileCount()
         {
             return this.UserProxy.GetTileCount();
+        }
+
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("getRegistrationsBetweenDates")]
+        public IList<Registration> GetRegistrationsBetweenDates([FromBody]DateRangeRequest range)
+        {
+            return this.UserProxy.GetRegistrationsBetweenDates(range.Ini, range.End);
         }
 
         [AcceptVerbs("POST")]

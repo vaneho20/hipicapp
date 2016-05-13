@@ -9,6 +9,7 @@ using Hipicapp.Utils.Security;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -54,6 +55,20 @@ namespace Hipicapp.Service.Account
                 TotalHorseWomen = this.AthleteRepository.GetAllQueryable().LongCount(x => x.Gender == Gender.Female && x.User.Roles.Any(y => y == Rol.ATHLETE)),
                 TotalCompetitions = this.CompetitionRepository.GetAllQueryable().LongCount()
             };
+        }
+
+        [Transaction(ReadOnly = true)]
+        public IList<Registration> GetRegistrationsBetweenDates(DateTime? ini, DateTime? end)
+        {
+            return this.UserRepository.GetAllQueryable()
+                .Where(x => x.RegistrationDate >= ini.Value.Date && x.RegistrationDate <= end.Value.Date)
+                .OrderBy(x => x.RegistrationDate)
+                .GroupBy(x => x.RegistrationDate)
+                .Select(x => new Registration()
+                {
+                    Date = x.Key,
+                    Amount = x.Count()
+                }).ToList();
         }
 
         [Transaction]

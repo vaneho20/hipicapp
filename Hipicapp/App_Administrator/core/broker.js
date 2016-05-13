@@ -33,6 +33,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         GET: "get",
         GET_BY_CURRENT_USER: "getByCurrentUser",
         GET_TILE_COUNT: "getTileCount",
+        GET_REGISTRATIONS_BETWEEN_DATES: "getRegistrationsBetweenDates",
         LOGIN: "login",
         LOGOUT: "logout",
         UPLOAD: "upload",

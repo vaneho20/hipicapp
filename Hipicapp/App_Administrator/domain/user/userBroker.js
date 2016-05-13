@@ -27,6 +27,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.USERS,
                 brokerUtils.requestMappings.GET_TILE_COUNT), brokerUtils.verb.GET, CACHE_NAME));
 
+    amplify.request.define("users/getRegistrationsBetweenDates", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.USERS,
+                brokerUtils.requestMappings.GET_REGISTRATIONS_BETWEEN_DATES), brokerUtils.verb.POST, CACHE_NAME));
+
     amplify.request.define("users/register", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.USERS,
@@ -76,6 +81,10 @@ define([
         return amplify.request("users/getTileCount");
     }
 
+    function getRegistrationsBetweenDates(range) {
+        return amplify.request("users/getRegistrationsBetweenDates", range);
+    }
+
     function register(client) {
         return amplify.request("users/register", client).always(CACHE.evict);
     }
@@ -119,6 +128,7 @@ define([
     broker.findBy = findBy;
     broker.findByUserId = findByUserId;
     broker.getTileCount = getTileCount;
+    broker.getRegistrationsBetweenDates = getRegistrationsBetweenDates;
     broker.register = register;
     broker.save = save;
     broker.changePassword = changePassword;

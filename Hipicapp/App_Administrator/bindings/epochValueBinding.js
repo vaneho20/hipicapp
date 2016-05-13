@@ -16,8 +16,7 @@ define(function epochValuebinding() {
         }
 
         function write(rawValue) {
-            var currentValue = underlyingObservable(), convertedValue =
-                moment(rawValue, pattern).valueOf();
+            var currentValue = underlyingObservable(), convertedValue = moment(rawValue, pattern).valueOf();
 
             if (convertedValue !== currentValue) {
                 underlyingObservable(convertedValue);
