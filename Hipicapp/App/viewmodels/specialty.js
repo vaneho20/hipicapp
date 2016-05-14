@@ -43,14 +43,14 @@ define([
 
     function refreshNextCompetitions(data) {
         _.each(data, function competitions(competition) {
-            competition.locality = null;
+            competition.locality = ko.observable(null);
             geocoder.geocode({ placeId: competition.placeId, componentRestrictions: { postalCode: competition.zipCode } }, function (results, status) {
                 if (status === gmaps.GeocoderStatus.OK) {
-                    competition.locality = _.find(results[0].address_components, function items(item) {
+                    competition.locality(_.find(results[0].address_components, function items(item) {
                         return _.contains(item.types, "locality");
-                    }).long_name;
+                    }).long_name);
                 } else {
-                    competition.locality = null;
+                    competition.locality(null);
                 }
                 nextCompetitions.valueHasMutated();
             });
