@@ -472,46 +472,42 @@ body {
         body #contenido-interior .block-center .modulo-3-noticias .inner-modulo {
           padding: 0; }
           body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia {
-            float: left;
-            width: 33.3%;
             margin-bottom: 20px; }
-            body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner {
-              padding: 0 15px 0 15px; }
-              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto {
-                position: relative;
-                border-bottom: 3px solid #f74b4b;
-                background: #fff;
-                text-align: center; }
-                body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto img {
-                  width: 100%;
-                  height: 146px; }
-                body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto .cintillo {
-                  z-index: 99;
-                  background: #f74b4b;
-                  color: #fff;
-                  position: absolute;
-                  bottom: 0;
-                  right: 0;
-                  display: inline-block;
-                  font-family: 'Montserrat', sans-serif;
-                  font-size: 0.8em;
-                  margin: 0;
-                  padding: 8px 10px;
-                  text-transform: uppercase;
-                  width: auto; }
-              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto {
-                background: #fff url(../img/slider-noticias/bg-herradura.jpg) no-repeat 95% 50%;
-                padding: 10px; }
-                body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 {
-                  margin: 0.3em 0;
-                  line-height: 21px;
-                  font-size: 18px;
-                  font-weight: 400;
+            body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto {
+              position: relative;
+              border-bottom: 3px solid #f74b4b;
+              background: #fff;
+              text-align: center; }
+              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto img {
+                width: 100%;
+                height: 146px; }
+              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto .cintillo {
+                z-index: 99;
+                background: #f74b4b;
+                color: #fff;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: inline-block;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.8em;
+                margin: 0;
+                padding: 8px 10px;
+                text-transform: uppercase;
+                width: auto; }
+            body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto {
+              background: #fff url(../img/slider-noticias/bg-herradura.jpg) no-repeat 95% 50%;
+              padding: 10px; }
+              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 {
+                margin: 0.3em 0;
+                line-height: 21px;
+                font-size: 18px;
+                font-weight: 400;
+                color: #333; }
+                body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 a {
                   color: #333; }
-                  body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 a {
-                    color: #333; }
-                body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto i {
-                  color: #f74b4b; }
+              body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto i {
+                color: #f74b4b; }
       body #contenido-interior .block-center .block-center-der .banners img {
         margin: 1em 0;
         width: 100%;
@@ -575,7 +571,7 @@ body {
                   height: 3.8em;
                   background: #e2e1e1; }
                   body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2) .puesto h3 {
-                    padding: 1.1em;
+                    padding: 1.1em 1.8em 0.6em 0.8em;
                     font-size: 0.9em; }
               body #contenido-interior .block-center .block-center-der .box-element .content ul li .puesto {
                 position: relative;
@@ -584,12 +580,14 @@ body {
                 height: 3em;
                 color: #333;
                 text-align: center;
+                overflow: hidden;
                 background: #f8f8f8; }
                 body #contenido-interior .block-center .block-center-der .box-element .content ul li .puesto h3 {
                   float: none;
                   margin: 0;
-                  padding: 0.6em 2.2em 0.6em 1em;
-                  font-size: 0.9em; }
+                  padding: 0.6em 2.2em 0.6em 0.5em;
+                  font-size: 0.9em;
+                  line-height: 1.3em; }
                 body #contenido-interior .block-center .block-center-der .box-element .content ul li .puesto span {
                   position: absolute;
                   bottom: -15px;
