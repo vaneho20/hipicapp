@@ -22,7 +22,6 @@ namespace Hipicapp
                 .Include("~/Scripts/amplify-{version}.js")
                 .Include("~/Scripts/amplify-request-deferred-{version}.js")
                 .Include("~/Scripts/fastclick.js")
-                .Include("~/Scripts/sjcl-{version}.js")
                 .Include("~/Scripts/holder.js")
             );
 
@@ -73,7 +72,6 @@ namespace Hipicapp
                 .Include("~/Scripts/amplify-{version}.js")
                 .Include("~/Scripts/amplify-request-deferred-{version}.js")
                 .Include("~/Scripts/fastclick.js")
-                .Include("~/Scripts/sjcl-{version}.js")
                 .Include("~/Scripts/holder.js")
             );
 

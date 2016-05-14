@@ -604,7 +604,7 @@ body {
                     -moz-transform: translate(0,-50%);
                     -o-transform: translate(0,-50%);
                     transform: translate(0,-50%);
-                    background: url("/images/subrayado_blanco.png") no-repeat 50% 100%;
+                    background: url("/Content/images/subrayado_blanco.png") no-repeat 50% 100%;
                 }
             }
         }
@@ -693,7 +693,7 @@ body {
                             }
 
                             .texto {
-                                background: #fff url(../img/slider-noticias/bg-herradura.jpg) no-repeat 95% 50%;
+                                //background: #fff url(/Content/images/herradura.png) no-repeat 95% 50%;
                                 padding: 10px;
 
                                 h3 {

@@ -435,7 +435,7 @@ body {
           -moz-transform: translate(0, -50%);
           -o-transform: translate(0, -50%);
           transform: translate(0, -50%);
-          background: url("/images/subrayado_blanco.png") no-repeat 50% 100%; }
+          background: url("/Content/images/subrayado_blanco.png") no-repeat 50% 100%; }
     body #contenido-interior .block-center {
       float: left;
       margin-top: 1.5em;
@@ -496,7 +496,6 @@ body {
                 text-transform: uppercase;
                 width: auto; }
             body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto {
-              background: #fff url(../img/slider-noticias/bg-herradura.jpg) no-repeat 95% 50%;
               padding: 10px; }
               body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 {
                 margin: 0.3em 0;
