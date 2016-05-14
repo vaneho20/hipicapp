@@ -43,3 +43,16 @@
 /Hipicapp/App_Data/aspnetdb_log.ldf
 /Hipicapp/App_Data/ASPNETDB_TMP.MDF
 /Hipicapp/App_Data/ASPNETDB_TMP_log.LDF
+/Hipicapp/obj/Release
+/Hipicapp.Model/bin/Release
+/Hipicapp.Model/obj/Release
+/Hipicapp.Repository/bin/Release
+/Hipicapp.Repository/obj/Release
+/Hipicapp.Service/bin/Release
+/Hipicapp.Service/obj/Release
+/Hipicapp.TestDataGenerator/obj/Release
+/Hipicapp.Tests/obj/Release
+/Hipicapp.Utils/bin/Release
+/Hipicapp.Utils/obj/Release
+/Resources/bin/Release
+/Resources/obj/Release
