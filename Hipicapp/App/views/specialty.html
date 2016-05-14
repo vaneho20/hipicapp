@@ -116,7 +116,7 @@
                                 <div class="foto">
                                     <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id) }" title="Ver artículo">
                                         <div class="cintillo" data-bind="text: locality"></div>
-                                        <img src="/Content/images/foto_concurso.jpg">
+                                        <img alt="Foto concurso" src="/Content/images/foto_concurso.jpg">
                                     </a>
                                 </div>
                                 <div class="texto">
@@ -136,7 +136,7 @@
                         <ul>
                             <li>
                                 <span><!-- ko text: ranking().length > 0 ? ranking()[1].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[1].athlete.photo.fileUuid) : '' }" alt="" />
+                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[1].athlete.photo.fileUuid) : '' }" alt="Foto atleta" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 0 ? ranking()[1].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[1].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>2</span>
@@ -144,7 +144,7 @@
                             </li>
                             <li>
                                 <span><!-- ko text: ranking().length > 0 ? ranking()[0].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[0].athlete.photo.fileUuid) : '' }" alt="" />
+                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[0].athlete.photo.fileUuid) : '' }" alt="Foto atleta" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 0 ? ranking()[0].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[0].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>1</span>
@@ -152,7 +152,7 @@
                             </li>
                             <li>
                                 <span><!-- ko text: ranking().length > 0 ? ranking()[2].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[2].athlete.photo.fileUuid) : '' }" alt="" />
+                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[2].athlete.photo.fileUuid) : '' }" alt="Foto atleta" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 0 ? ranking()[2].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[2].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>3</span>
@@ -175,7 +175,7 @@
                     </section>
                 </div>
                 <div class="banners">
-                    <img src="/Content/images/hhp-rfhe.gif" />
+                    <img alt="Federacion hípica española" src="/Content/images/hhp-rfhe.gif" />
                 </div>
             </div>
         </div>
