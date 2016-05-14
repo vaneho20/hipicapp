@@ -9,7 +9,7 @@
     padding: 0;
     width: 20px;
     height: 20px;
-    background: url(red.png) no-repeat;
+    background: url(/Content/Administrator/icheck/flat/red.png) no-repeat;
     border: none;
     cursor: pointer;
 }
