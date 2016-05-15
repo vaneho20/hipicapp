@@ -7,6 +7,7 @@
                 function () {
                     app.setRoot('viewmodels/home', 'entrance');
                     router.navigate("");
+                    router.reloadCurrentLocation();
                 });
             },
             isLoading: ko.computed(function () {
@@ -23,12 +24,16 @@
                 router.map([
                     { route: '', title: 'Inicio', moduleId: 'viewmodels/home', nav: false, hash: '' },
                     { route: 'login', title: 'Acceso', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
+                    { route: 'specialty/:id', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
+                    { route: 'specialty/:id/athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true },
+                    { route: 'specialty/:id/competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true },
+                    { route: 'specialty/:id/horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true },
+                    { route: 'specialty/:id/judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true },
                     { route: 'athlete(/:id)', title: 'Perfil', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' }
                 ]).buildNavigationModel();
 
                 return router.activate().then(function init() {
                     if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
-                        router.navigateToAthlete();
                     }
                 });
             }

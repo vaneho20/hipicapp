@@ -1,14 +1,15 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 40 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
+    "core/config", "core/i18n", "core/router", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/competition/competitionBroker", "domain/competition/competitionFilterImpl",
-    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "durandal/app",
-    "viewmodels/alerts", "viewmodels/shell"
-], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    validationUtils, competitionBroker, competitionFilterImpl, competitionSortImpl, competitionImpl,
-    app, alerts, shell) {
+    "domain/athlete/athleteBroker", "domain/competition/competitionBroker", "domain/competition/competitionFilterImpl",
+    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "domain/horse/horseBroker",
+    "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "durandal/app", "viewmodels/alerts",
+    "viewmodels/shell"
+], function competitions(config, i18n, router, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
+    validationUtils, athleteBroker, competitionBroker, competitionFilterImpl, competitionSortImpl, competitionImpl,
+    horseBroker, judgeBroker, specialtyBroker, app, alerts, shell) {
     "use strict";
 
     // state definition
@@ -75,8 +76,13 @@ define([
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.router = router;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.horseBroker = horseBroker;
+    viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;

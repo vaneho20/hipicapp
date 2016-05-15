@@ -1,10 +1,21 @@
 <section class="header-block">
     <div class="container">
         <div class="row">
-            <h1>Salto - Atletas</h1>
+            <h1 data-bind="text: (nextFilter().specialtyId() === 1 ? 'Dome' : 'Salto') + ' - Atletas'"></h1>
         </div>
     </div>
 </section>
+<nav class="nav navbar menu-principal">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(nextFilter().specialtyId()) }">Inicio</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(nextFilter().specialtyId()) }">Atletas</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(nextFilter().specialtyId()) }">Caballos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(nextFilter().specialtyId()) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(nextFilter().specialtyId()) }">Jueces</a></li>
+        </ul>
+    </div>
+</nav>
 <section id="contenido-interior">
     <div class="container">
         <div class="row">

@@ -10,6 +10,10 @@ define([
         return location.reload();
     }
 
+    function navigateToHome() {
+        return router.navigate("#home");
+    }
+
     function navigateToLogin() {
         return router.navigate("#login");
     }
@@ -52,6 +56,7 @@ define([
     router.navigateToAthlete = navigateToAthlete;
 
     // Public site
+    router.navigateToHome = navigateToHome;
     router.navigateToLogin = navigateToLogin;
     router.navigateToRegister = navigateToRegister;
     router.navigateToDressage = navigateToDressage;

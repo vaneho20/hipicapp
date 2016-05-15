@@ -14,6 +14,7 @@ define([
     function refreshSecurityContext(data) {
         credentials.password(null);
         securityContext.refresh(data);
+        router.navigate("#athlete");
         router.reloadCurrentLocation();
     }
 

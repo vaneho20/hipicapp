@@ -8,7 +8,7 @@
 <nav class="nav navbar menu-principal">
     <div class="container">
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="javascript:void(0);" data-bind="click: router.navigateToJump">Inicio</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().id) }">Inicio</a></li>
             <li role="presentation"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().id) }">Atletas</a></li>
             <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().id) }">Caballos</a></li>
             <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().id) }">Concursos</a></li>

@@ -27,7 +27,7 @@ namespace Hipicapp.Proxy.Participant
         public Page<Horse> Paginated(HorseFindRequest request)
         {
             var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
-            if (user != null && user.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString()))
+            if (user != null && user.Any(x => x.Type == ClaimTypes.Role && x.Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString())))
             {
                 request.Filter.AthleteId = this.AthleteService.GetByUserId(Convert.ToInt64(user.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value)).Id;
             }

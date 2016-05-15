@@ -4,16 +4,20 @@
         <a class="logo" href="/">
             <img alt="Logo hipicapp" src="/Content/images/hipicapp-logoh.png" />
         </a>
+        <!-- Links -->
+        <div class="enlaces-header pull-right">
+            <i class="fa fa-power-off" aria-hidden="true"></i> <a class="nav-link" href="javascript:void(0);" data-bind="click: logout">Salir</a>
+        </div>
     </div>
 </nav>
 
-<section class="header-block">
+<!--<section class="header-block">
     <div class="container">
         <div class="row">
-            <h1>Doma</h1>
+            <h1 data-bind="text: router.activeInstruction() ? router.activeInstruction().config.title : ''"></h1>
         </div>
     </div>
-</section>
+</section>-->
 
 <div id="mo-shell-alerts" data-bind="compose: 'viewmodels/alerts'"></div>
 <div class="section-content" data-bind="router: { transition:'entrance' }"></div>

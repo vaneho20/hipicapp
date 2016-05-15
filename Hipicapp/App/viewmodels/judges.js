@@ -1,13 +1,15 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 40 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
-    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
-    "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app",
-    "viewmodels/alerts", "viewmodels/shell"
-], function judges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    validationUtils, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, app, alerts, shell) {
+    "core/config", "core/i18n", "core/router", "core/crud/findRequestImpl", "core/crud/pageImpl",
+    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils", "domain/athlete/athleteBroker",
+    "domain/competition/competitionBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
+    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl", "domain/judge/judgeSortImpl",
+    "domain/judge/judgeImpl", "domain/specialty/specialtyBroker", "durandal/app", "viewmodels/alerts",
+    "viewmodels/shell"
+], function judges(config, i18n, router, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
+    validationUtils, athleteBroker, competitionBroker, fileBroker, horseBroker, judgeBroker,
+    judgeFilterImpl, judgeSortImpl, judgeImpl, specialtyBroker, app, alerts, shell) {
     "use strict";
 
     // state definition
@@ -92,8 +94,14 @@ define([
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.router = router;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
+    viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
+    viewModel.horseBroker = horseBroker;
     viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;

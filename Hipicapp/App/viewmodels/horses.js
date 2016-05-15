@@ -1,11 +1,14 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 100 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
-    "core/crud/pageRequestImpl", "core/util/validationUtils", "domain/horse/horseBroker", "domain/horse/horseFilterImpl",
-    "domain/horse/horseSortImpl", "domain/horse/horseImpl", "durandal/app", "viewmodels/shell"
-], function athleteHorses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, validationUtils, horseBroker,
-    horseFilterImpl, horseSortImpl, horseImpl, app, shell) {
+    "core/config", "core/i18n", "core/router", "core/crud/findRequestImpl", "core/crud/pageImpl",
+    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils", "domain/athlete/athleteBroker",
+    "domain/competition/competitionBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
+    "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl", "domain/horse/horseImpl",
+    "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "durandal/app", "viewmodels/shell"
+], function athleteHorses(config, i18n, router, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, validationUtils,
+    athleteBroker, competitionBroker, fileBroker, horseBroker, horseFilterImpl, horseSortImpl, horseImpl, judgeBroker,
+    specialtyBroker, app, shell) {
     "use strict";
 
     // state definition
@@ -73,8 +76,14 @@ define([
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.router = router;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
+    viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
     viewModel.horseBroker = horseBroker;
+    viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;

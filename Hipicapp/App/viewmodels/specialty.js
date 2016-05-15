@@ -70,9 +70,9 @@ define([
     viewModel.validationUtils = validationUtils;
     viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
     viewModel.horseBroker = horseBroker;
     viewModel.judgeBroker = judgeBroker;
-    viewModel.fileBroker = fileBroker;
     viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
