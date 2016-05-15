@@ -20,6 +20,10 @@ namespace Hipicapp.Service.Event
             {
                 query = query.Where(x => x.ZipCode.StartsWith(filter.ZipCode));
             }
+            if (filter.SpecialtyId != null)
+            {
+                query = query.Where(x => x.SpecialtyId == filter.SpecialtyId);
+            }
             return query;
         }
     }

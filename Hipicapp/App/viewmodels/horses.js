@@ -1,21 +1,21 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 100 */
 define([
-        "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
-        "core/crud/pageRequestImpl", "domain/horse/horseBroker", "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl",
-        "domain/horse/horseImpl", "durandal/app", "viewmodels/shell"
-], function horses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    horseBroker, horseFilterImpl, horseSortImpl, horseImpl, app, shell) {
+    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
+    "core/crud/pageRequestImpl", "domain/horse/horseBroker", "domain/horse/horseFilterImpl",
+    "domain/horse/horseSortImpl", "domain/horse/horseImpl", "durandal/app", "viewmodels/shell"
+], function athleteHorses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, horseBroker,
+    horseFilterImpl, horseSortImpl, horseImpl, app, shell) {
     "use strict";
 
     // state definition
-    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
+    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, availableProvinces = ko.observable(),
         nextFilter = ko.observable(horseFilterImpl()), currentFilter = horseFilterImpl(),
         currentSort = ko.observable(horseSortImpl()), currentPage = ko.observable(pageImpl()),
         currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
 
     // lifecycle definition
-    function activate() {
+    function activate(athleteId) {
         return $.when(loadCurrentPage());
     }
 
@@ -53,7 +53,7 @@ define([
     }
 
     function clearFilter() {
-        nextFilter(horseFilterImpl());
+        nextFilter(horseFilterImpl(currentFilter.athleteId()));
 
         return search();
     }
@@ -66,6 +66,7 @@ define([
     }
 
     // module revelation
+    viewModel.nav = athleteViewModel.nav;
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.horseBroker = horseBroker;

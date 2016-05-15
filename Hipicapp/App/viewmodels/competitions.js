@@ -69,20 +69,6 @@ define([
         return loadCurrentPage();
     }
 
-    function deleteRow(competition) {
-        app.showMessage(i18n.t('DELETE_MESSAGE_BOX_CONTENT'), i18n.t('DELETE_MESSAGE_BOX_TITLE'), [
-            i18n.t('YES'), i18n.t('NO')
-        ]).done(function hideMessage(answer) {
-            if (answer === i18n.t('YES')) {
-                competitionBroker.erase(competition).done(loadCurrentPage);
-            }
-        });
-    }
-
-    function simulateScore(competition) {
-        competitionBroker.simulateScore(competition).done(loadCurrentPage);
-    }
-
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
@@ -108,8 +94,6 @@ define([
     viewModel.loadLastPage = loadLastPage;
     viewModel.search = search;
     viewModel.clearFilter = clearFilter;
-    viewModel.deleteRow = deleteRow;
-    viewModel.simulateScore = simulateScore;
 
     // bind helpers
     viewModel.sortByName = _.partial(sortByProperty, competitionImpl.properties.NAME);

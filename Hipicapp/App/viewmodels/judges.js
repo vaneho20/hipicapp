@@ -3,19 +3,20 @@
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
-    "domain/file/fileBroker", "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
+    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
     "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app",
     "viewmodels/alerts", "viewmodels/shell"
 ], function judges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    validationUtils, fileBroker, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl,
-    app, alerts, shell) {
+    validationUtils, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, app, alerts, shell) {
     "use strict";
 
     // state definition
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter =
         ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(), currentSort =
         ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()), currentPager =
-        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
+        ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+            "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
+        };
 
     // lifecycle definition
     function activate() {
@@ -69,16 +70,6 @@ define([
         return loadCurrentPage();
     }
 
-    function deleteRow(judge) {
-        app.showMessage(i18n.t('DELETE_MESSAGE_BOX_CONTENT'), i18n.t('DELETE_MESSAGE_BOX_TITLE'), [
-            i18n.t('YES'), i18n.t('NO')
-        ]).done(function hideMessage(answer) {
-            if (answer === i18n.t('YES')) {
-                judgeBroker.erase(judge).done(loadCurrentPage);
-            }
-        });
-    }
-
     function getRowClass(row) {
         var rowClass = "";
 
@@ -99,7 +90,6 @@ define([
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
-    viewModel.fileBroker = fileBroker;
     viewModel.judgeBroker = judgeBroker;
 
     // state revelation
@@ -109,6 +99,7 @@ define([
     viewModel.currentPager = currentPager;
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
+    viewModel.availableGenders = availableGenders;
 
     // lifecycle revelation
     viewModel.activate = activate;
@@ -121,7 +112,6 @@ define([
     viewModel.loadLastPage = loadLastPage;
     viewModel.search = search;
     viewModel.clearFilter = clearFilter;
-    viewModel.deleteRow = deleteRow;
     viewModel.getRowClass = getRowClass;
 
     // bind helpers

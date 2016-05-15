@@ -17,38 +17,19 @@ define([
     function activate(id) {
         if (id) {
             // allways return a promise
-            return loadEntityByJudgeId(id).done(refreshNav);
+            return loadEntityByJudgeId(id);
         } else {
             refreshCurrentEntity();
-            refreshNav();
         }
-    }
-
-    function refreshNav() {
-        nav(navs.BASIC_DATA);
     }
 
     // behaviour definition
     function refreshCurrentEntity(data) {
         currentEntity(judgeImpl(data));
-        /*if (securityContext.getPrincipal().autoLogin) {
-            alerts.warn(i18n.ATHLETE_COMPLETE_REGISTRATION);
-            securityContext.getPrincipal().autoLogin = false;
-        }*/
     }
 
     function loadEntityByJudgeId(id) {
         return judgeBroker.findById(id).done(refreshCurrentEntity);
-    }
-
-    function save() {
-        var promise;
-        if (currentEntity().id) {
-            promise = judgeBroker.update(currentEntity());
-        } else {
-            promise = judgeBroker.save(currentEntity());
-        }
-        return promise.done(refreshCurrentEntity);
     }
 
     // module revelation
@@ -59,8 +40,6 @@ define([
 
     // state revelation
     viewModel.currentEntity = currentEntity;
-    viewModel.navs = navs;
-    viewModel.nav = nav;
     viewModel.availableGenders = availableGenders;
 
     // lifecycle revelation

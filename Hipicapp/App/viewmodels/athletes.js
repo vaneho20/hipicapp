@@ -71,16 +71,6 @@ define([
         return loadCurrentPage();
     }
 
-    function deleteRow(athlete) {
-        app.showMessage(i18n.t('DELETE_MESSAGE_BOX_CONTENT'), i18n.t('DELETE_MESSAGE_BOX_TITLE'), [
-            i18n.t('YES'), i18n.t('NO')
-        ]).done(function hideMessage(answer) {
-            if (answer === i18n.t('YES')) {
-                athleteBroker.erase(athlete).done(loadCurrentPage);
-            }
-        });
-    }
-
     function getRowClass(row) {
         var rowClass = "";
 
@@ -124,7 +114,6 @@ define([
     viewModel.loadLastPage = loadLastPage;
     viewModel.search = search;
     viewModel.clearFilter = clearFilter;
-    viewModel.deleteRow = deleteRow;
     viewModel.getRowClass = getRowClass;
 
     // bind helpers

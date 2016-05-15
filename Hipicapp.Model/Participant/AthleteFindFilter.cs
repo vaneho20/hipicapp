@@ -12,5 +12,7 @@ namespace Hipicapp.Model.Participant
         public DateTime? BirthDate { get; set; }
 
         public Gender? Gender { get; set; }
+
+        public long? SpecialtyId { get; set; }
     }
 }

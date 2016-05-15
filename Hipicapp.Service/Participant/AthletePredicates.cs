@@ -24,6 +24,10 @@ namespace Hipicapp.Service.Participant
             {
                 query = query.Where(x => x.Gender == filter.Gender);
             }
+            if (filter.SpecialtyId != null)
+            {
+                query = query.Where(x => x.SpecialtyId == filter.SpecialtyId);
+            }
             return query;
         }
     }

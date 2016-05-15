@@ -107,7 +107,7 @@
                         <h2 class="pull-left">
                             Pr&oacute;ximos Concursos
                         </h2>
-                        <a class="pull-right" href="javascript:void(0);" data-bind="click: router.navigateToCompetitions" title="Ver todos">Ver todos &raquo;</a>
+                        <a class="pull-right" data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().id) }" title="Ver todos">Ver todos &raquo;</a>
                     </header>
                     <div class="inner-modulo">
                         <!-- ko foreach: nextCompetitions -->

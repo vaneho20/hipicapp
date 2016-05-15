@@ -1,3 +1,73 @@
-<section>
-    <blockquote data-bind="text:'Horses'"></blockquote>
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1>Salto - Atletas</h1>
+        </div>
+    </div>
+</section>
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form data-bind="submit: search" class="form-inline">
+                    <div id="custom-search-input">
+                        <div class="campo-buscador col-md-6 col-sm-6 col-xs-12">
+                            <input class="form-control input-lg" type="text" id="h-horse-filter-name"
+                                   data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('HORSE_NAME_FILTER') }" />
+                        </div>
+                        <div class="campo-buscador col-md-2 col-sm-2 col-xs-4">
+                            <select id="h-horse-filter-gender"
+                                    data-bind="options: availableGenders,
+								optionsValue: function(item) { return item.value },
+								optionsText: function(item) { return item.text },
+								optionsCaption : i18n.t('app:GENDER') + '...',
+								value: nextFilter().gender,
+								attr: { title: i18n.t('app:GENDER') }"
+                                    class="form-control input-lg"></select>
+                        </div>
+                        <div class="campo-buscador col-md-1 col-sm-1 col-xs-2">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <section class="listado-elements col-xs-12 col-sm-6 col-md-12" data-bind="visible: !(currentPage().isEmpty())">
+                <h2>Listado Atletas</h2>
+                <div data-bind="foreach: currentPage().content">
+                    <article class="one-element col-md-4 col-sm-4 col-xs-8">
+                        <div class="foto-listados col-md-3 col-sm-3 col-xs-6">
+                            <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <img alt="Lorem ipsum" data-bind="attr: { src: photo ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '' }">
+                            </a>
+                        </div>
+                        <div class="info-listados col-md-9 col-sm-9 col-xs-18">
+                            <h3><span data-bind="text: name"></span></h3>
+                            <p>
+                                <strong>Athlete</strong>
+                                <span data-bind="text: athlete.name"></span> <span data-bind="text: athlete.surnames"></span>
+                            </p>
+                            <p>
+                                <strong>Fecha Nacimiento:</strong>
+                                <!-- ko text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN')) --><!-- /ko -->
+                            </p>
+                            <a class="ver-todo" data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Ver ficha
+                            </a>
+                        </div>
+                        <span class="clearfix borda"></span>
+                    </article>
+                </div>
+
+                <div class="paginador col-xs-12 col-sm-6 col-md-12" data-bind="compose: 'pager.html'"></div>
+            </section>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
 </section>

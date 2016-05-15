@@ -20,6 +20,10 @@ namespace Hipicapp.Service.Participant
             {
                 query = query.Where(x => x.Name.StartsWith(filter.Name));
             }
+            if (filter.SpecialtyId != null)
+            {
+                query = query.Where(x => x.Athlete.SpecialtyId == filter.SpecialtyId);
+            }
             return query;
         }
     }
