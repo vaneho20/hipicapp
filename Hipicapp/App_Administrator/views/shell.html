@@ -23,12 +23,10 @@
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
                         <h3>&nbsp;</h3>
-                        <ul class="nav side-menu">
-                            <!-- ko foreach: router.navigationModel -->
+                        <ul class="nav side-menu" data-bind="foreach: router.navigationModel">
                             <li data-bind="css: { active: isActive }">
                                 <a data-bind="attr: { href: hash }"><i data-bind="attr: { class: $data.icon }" aria-hidden="true"></i> <!-- ko text: title --><!-- /ko --></a>
                             </li>
-                            <!-- /ko -->
                         </ul>
                     </div>
                 </div>
