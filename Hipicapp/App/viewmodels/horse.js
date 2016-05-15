@@ -17,16 +17,11 @@ define([
     function activate(athleteId, horseId) {
         if (athleteId && horseId) {
             // allways return a promise
-            return loadEntityByHorseId(horseId).done(refreshNav);
+            return loadEntityByHorseId(horseId);
         } else {
             refreshCurrentEntity();
-            refreshNav();
             currentEntity().athleteId = athleteId;
         }
-    }
-
-    function refreshNav() {
-        nav(navs.BASIC_DATA);
     }
 
     // behaviour definition
@@ -56,8 +51,6 @@ define([
 
     // state revelation
     viewModel.currentEntity = currentEntity;
-    viewModel.navs = navs;
-    viewModel.nav = nav;
     viewModel.availableGenders = availableGenders;
 
     // lifecycle revelation

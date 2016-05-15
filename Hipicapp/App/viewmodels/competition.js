@@ -77,7 +77,6 @@ define([
     viewModel.activate = activate;
 
     // behaviour revelation
-    viewModel.save = save;
 
     return viewModel;
 });

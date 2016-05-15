@@ -3,9 +3,12 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
-    "domain/athlete/athleteImpl", "domain/file/fileBroker", "viewmodels/shell", "viewmodels/alerts"
+    "domain/athlete/athleteImpl", "domain/competition/competitionBroker", "domain/file/fileBroker",
+    "domain/horse/horseBroker", "domain/judge/judgeBroker", "domain/specialty/specialtyBroker",
+    "viewmodels/shell", "viewmodels/alerts"
 ], function athleteViewModel(i18n, router, securityContext, stringUtils, urlUtils, validationUtils,
-    athleteBroker, athleteImpl, fileBroker, shell, alerts) {
+    athleteBroker, athleteImpl, competitionBroker, fileBroker, horseBroker, judgeBroker, specialtyBroker,
+    shell, alerts) {
     "use strict";
 
     // state definition
@@ -53,7 +56,11 @@ define([
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
     viewModel.athleteBroker = athleteBroker;
+    viewModel.competitionBroker = competitionBroker;
     viewModel.fileBroker = fileBroker;
+    viewModel.horseBroker = horseBroker;
+    viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.currentEntity = currentEntity;
