@@ -15,11 +15,7 @@ define([
 
     // lifecycle definition
     function activate(id) {
-        if (securityContext.isAthlete()) {
-            id = securityContext.getPrincipal().id;
-        }
-
-        if (id) {
+        if (id || securityContext.isAthlete()) {
             // allways return a promise
             return $.when(loadEntityByAthleteId(id));
         } else {
@@ -33,7 +29,13 @@ define([
     }
 
     function loadEntityByAthleteId(id) {
-        return athleteBroker.findById(id).done(refreshCurrentEntity);
+        var promise;
+        if (securityContext.isAthlete()) {
+            promise = athleteBroker.getByCurrentUser().done(refreshCurrentEntity);
+        } else {
+            promise = athleteBroker.findById(id).done(refreshCurrentEntity);
+        }
+        return promise;
     }
 
     function save() {

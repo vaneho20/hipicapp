@@ -3,9 +3,14 @@ using Hipicapp.Model.Authentication;
 using Hipicapp.Model.Event;
 using Hipicapp.Model.Participant;
 using Hipicapp.Service.Event;
+using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Web;
 using System.Web.Http;
 
 namespace Hipicapp.Proxy.Event
@@ -13,6 +18,9 @@ namespace Hipicapp.Proxy.Event
     [Proxy]
     public class CompetitionProxy : ICompetitionProxy
     {
+        [Autowired]
+        private IAthleteService AthleteService { get; set; }
+
         [Autowired]
         private ICompetitionService CompetitionService { get; set; }
 
@@ -28,6 +36,11 @@ namespace Hipicapp.Proxy.Event
         [AllowAnonymous]
         public Page<Enrollment> PaginatedInscriptions(EnrollmentFindRequest request)
         {
+            var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
+            if (user != null && user.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString()))
+            {
+                request.Filter.AthleteId = this.AthleteService.GetByUserId(Convert.ToInt64(user.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value)).Id;
+            }
             return this.CompetitionService.PaginatedInscriptions(request.Filter, request.PageRequest);
         }
 

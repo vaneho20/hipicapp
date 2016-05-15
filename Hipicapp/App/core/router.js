@@ -27,7 +27,7 @@ define([
     }
 
     function navigateToAthlete(id) {
-        return router.navigate("#athlete/" + id);
+        return router.navigate("#athlete" + (id ? "/" + id : ""));
     }
 
     function navigateToAthletes() {

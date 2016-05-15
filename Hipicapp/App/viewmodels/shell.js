@@ -23,12 +23,12 @@
                 router.map([
                     { route: '', title: 'Inicio', moduleId: 'viewmodels/home', nav: false, hash: '' },
                     { route: 'login', title: 'Acceso', moduleId: 'viewmodels/login', nav: false, hash: '#login' },
-                    { route: 'athlete/:id', title: 'Perfil', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' }
+                    { route: 'athlete(/:id)', title: 'Perfil', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' }
                 ]).buildNavigationModel();
 
                 return router.activate().then(function init() {
                     if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
-                        router.navigateToAthlete(securityContext.getPrincipal().id);
+                        router.navigateToAthlete();
                     }
                 });
             }

@@ -36,10 +36,6 @@ define([
             category = competitionCategoryImpl(currentAthlete.category);
         }
 
-        function completeName() {
-
-        }
-
         athlete.id = id;
         athlete.version = version;
         athlete.dni = dni;

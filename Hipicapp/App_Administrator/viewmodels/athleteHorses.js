@@ -1,10 +1,11 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 100 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl", "core/crud/pageRequestImpl",
-    "domain/horse/horseBroker", "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl", "domain/horse/horseImpl",
-    "durandal/app", "viewmodels/shell", "domain/athlete/athleteImpl", "viewmodels/athlete"
-], function athleteHorses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
+    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
+    "core/crud/pageRequestImpl", "core/util/validationUtils", "domain/horse/horseBroker",
+    "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl", "domain/horse/horseImpl", "durandal/app",
+    "viewmodels/shell", "domain/athlete/athleteImpl", "viewmodels/athlete"
+], function athleteHorses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, validationUtils,
     horseBroker, horseFilterImpl, horseSortImpl, horseImpl, app, shell, athleteImpl, athleteViewModel) {
     "use strict";
 
@@ -87,6 +88,7 @@ define([
     viewModel.nav = athleteViewModel.nav;
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.validationUtils = validationUtils;
     viewModel.horseBroker = horseBroker;
 
     // state revelation

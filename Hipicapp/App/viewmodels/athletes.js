@@ -20,7 +20,10 @@ define([
         };
 
     // lifecycle definition
-    function activate() {
+    function activate(specialtyId) {
+        currentFilter.specialtyId(specialtyId);
+        nextFilter().specialtyId(specialtyId);
+
         // allways return a promise
         return loadCurrentPage();
     }
