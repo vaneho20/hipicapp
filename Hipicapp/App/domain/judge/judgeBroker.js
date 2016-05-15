@@ -32,8 +32,8 @@ define([
         });
     }
 
-    function getListUrl() {
-        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.JUDGES);
+    function getListUrl(specialtyId) {
+        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, specialtyId, brokerUtils.requestMappings.JUDGES);
     }
 
     function getDetailUrlById(judgeId) {

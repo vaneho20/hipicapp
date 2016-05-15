@@ -21,6 +21,10 @@ define([
         return amplify.request("horses/findBy", findRequest);
     }
 
+    function getListUrl(specialtyId) {
+        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, specialtyId, brokerUtils.requestMappings.HORSES);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -29,6 +33,7 @@ define([
 
     // request revelation
     broker.findBy = findBy;
+    broker.getListUrl = getListUrl;
 
     return broker;
 });

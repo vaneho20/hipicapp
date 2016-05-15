@@ -2,12 +2,13 @@
 /* jshint maxparams: 11 */
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
-    "core/util/urlUtils", "core/util/validationUtils", "domain/specialty/specialtyBroker",
-    "domain/specialty/specialtyImpl", "domain/competition/competitionBroker",
-    "domain/file/fileBroker", "gmaps", "viewmodels/shell", "viewmodels/alerts"
-], function specialtyViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, specialtyBroker, specialtyImpl, competitionBroker, fileBroker, gmaps,
-    shell, alerts) {
+    "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
+    "domain/competition/competitionBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
+    "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "domain/specialty/specialtyImpl",
+    "gmaps", "viewmodels/shell", "viewmodels/alerts"
+], function specialtyViewModel(i18n, router, securityContext, stringUtils, urlUtils, validationUtils,
+    athleteBroker, competitionBroker, fileBroker, horseBroker, judgeBroker, specialtyBroker, specialtyImpl,
+    gmaps, shell, alerts) {
     "use strict";
 
     // state definition
@@ -67,7 +68,10 @@ define([
     viewModel.router = router;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.horseBroker = horseBroker;
+    viewModel.judgeBroker = judgeBroker;
     viewModel.fileBroker = fileBroker;
     viewModel.specialtyBroker = specialtyBroker;
 

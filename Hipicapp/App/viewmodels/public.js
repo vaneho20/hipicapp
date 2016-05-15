@@ -19,14 +19,14 @@
                     { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
                     { route: 'reset-password', title: 'Reestablecer contraseña', moduleId: 'viewmodels/passwordreset', nav: false, hash: '#reset-password' },
                     { route: 'update-password/:key', title: 'Actualizar contraseña', moduleId: 'viewmodels/updatepassword', nav: false, hash: '#update-password' },
-                    { route: 'dressage', title: 'Doma', moduleId: 'viewmodels/dressage', nav: false, hash: '#dressage' },
-                    { route: 'jump', title: 'Salto', moduleId: 'viewmodels/jump', nav: false, hash: '#jump' },
-                    { route: 'athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true, hash: '#athletes' },
-                    { route: 'athlete/:id', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
-                    { route: 'horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true, hash: '#horses' },
-                    { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions' },
                     { route: 'specialty/:id', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
-                    { route: 'judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true, hash: '#judges' },
+                    { route: 'specialty/:id/athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true },
+                    { route: 'specialty/:id/competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true },
+                    { route: 'specialty/:id/horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true },
+                    { route: 'specialty/:id/judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true },
+                    { route: 'athlete/:id', title: 'Atleta', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
+                    { route: 'competition/:id', title: 'Concurso', moduleId: 'viewmodels/competition', nav: false, hash: '#competition' },
+                    { route: 'horse/:id', title: 'Caballo', moduleId: 'viewmodels/horse', nav: false, hash: '#horse' },
                     { route: 'judge/:id', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' }
                 ]).buildNavigationModel();
 

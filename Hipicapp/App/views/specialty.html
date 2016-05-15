@@ -9,10 +9,10 @@
     <div class="container">
         <ul class="nav nav-pills">
             <li role="presentation" class="active"><a href="javascript:void(0);" data-bind="click: router.navigateToJump">Inicio</a></li>
-            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToAthletes">Atletas</a></li>
-            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToHorses">Caballos</a></li>
-            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToCompetitions">Concursos</a></li>
-            <li role="presentation"><a href="javascript:void(0);" data-bind="click: router.navigateToJudges">Jueces</a></li>
+            <li role="presentation"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().id) }">Atletas</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().id) }">Caballos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().id) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().id) }">Jueces</a></li>
         </ul>
     </div>
 </nav>
@@ -77,7 +77,7 @@
         <div class="block-destacados">
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="un-destacado">
-                    <a href="javascript:void(0);" data-bind="click: router.navigateToAthletes" title="Atletas">
+                    <a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().id) }" title="Atletas">
                         <img src="/Content/images/banner_atletas.jpg" alt="Third slide">
                         <h3>Atletas</h3>
                     </a>
@@ -85,7 +85,7 @@
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="un-destacado">
-                    <a href="javascript:void(0);" data-bind="click: router.navigateToHorses" title="Caballos">
+                    <a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().id) }" title="Caballos">
                         <img src="/Content/images/banner_caballos.jpg" alt="Third slide">
                         <h3>Caballos</h3>
                     </a>
@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="un-destacado">
-                    <a href="javascript:void(0);" data-bind="click: router.navigateToJudges" title="Atletas">
+                    <a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().id) }" title="Jueces">
                         <img src="/Content/images/banner_jueces.jpg" alt="Third slide">
                         <h3>Jueces</h3>
                     </a>

@@ -150,6 +150,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
     }
 
     function handleUnauthorized(data, status, xhr, success, error) {
+        error(data, status);
         securityContext.clear();
 
         if (xhr.login) {
@@ -157,8 +158,11 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
                 exceptionType: "Hipicapp_Service_Exceptions_BadCredentialsException"
             }, "error");
         } else {
-            router.navigate("");
-            router.reloadCurrentLocation();
+            exceptionHandler.handle({
+                exceptionType: "Hipicapp_Service_Exceptions_AccessDeniedException"
+            }, "error");
+            //router.navigate("");
+            //router.reloadCurrentLocation();
         }
     }
 

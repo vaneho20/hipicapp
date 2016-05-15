@@ -11,7 +11,11 @@ body {
   /*      Listado elementos       */
   /*  Paginador   */
   /*  Ficha element   */
-  /*  footer  */ }
+  /*  footer  */
+  /* Alert */
+  /* Splash */
+  /* theming */
+  /* /theming */ }
   body .aleft {
     text-align: left; }
   body .acenter {
@@ -793,5 +797,68 @@ body {
     background: #222; }
     body footer .row {
       padding: 0 15px; }
+  body #mo-shell-alerts {
+    position: fixed;
+    top: 47px;
+    left: 17%;
+    right: 0;
+    z-index: 7000; }
+  body #mo-shell-alerts .mo-alert {
+    width: 96.4%;
+    margin: 0 1.6em;
+    padding: 0.6em 0.5em; }
+  body #mo-shell-alerts .mo-alert-fatal {
+    background-color: #444;
+    border-color: #111;
+    color: #fff; }
+  body #mo-shell-alerts .mo-alert-1 .animated {
+    -webkit-animation-delay: 0.25s;
+    -moz-animation-delay: 0.25s;
+    -o-animation-delay: 0.25s;
+    animation-delay: 0.25s; }
+  body #mo-shell-alerts .mo-alert-2 .animated {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s; }
+  body #mo-shell-alerts .mo-alert-3 .animated {
+    -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
+    animation-delay: 0.75s; }
+  body #h-splash {
+    text-align: center;
+    margin: 12% 0 0 0; }
+  body #h-splash img {
+    max-width: 60%; }
+  body #h-splash p {
+    font-size: 3em;
+    line-height: 3em;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px; }
+  body #h-splash .icon-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 5em;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px; }
+  body .alert-success {
+    color: #ffffff;
+    background-color: rgba(38, 185, 154, 0.88);
+    border-color: rgba(38, 185, 154, 0.88); }
+  body .alert-info {
+    color: #E9EDEF;
+    background-color: rgba(52, 152, 219, 0.88);
+    border-color: rgba(52, 152, 219, 0.88); }
+  body .alert-warning {
+    color: #E9EDEF;
+    background-color: rgba(243, 156, 18, 0.88);
+    border-color: rgba(243, 156, 18, 0.88); }
+  body .alert-danger, body .alert-error {
+    color: #E9EDEF;
+    background-color: rgba(231, 76, 60, 0.88);
+    border-color: rgba(231, 76, 60, 0.88); }
+  body .alert-dark {
+    color: #E9EDEF;
+    background-color: rgba(52, 73, 94, 0.88);
+    border-color: rgba(52, 73, 94, 0.88); }
 
 /*# sourceMappingURL=public.css.map */

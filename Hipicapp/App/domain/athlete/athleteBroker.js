@@ -49,8 +49,8 @@ define([
         return amplify.request("athletes/register", entity).always(CACHE.evict);
     }
 
-    function getListUrl() {
-        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES);
+    function getListUrl(specialtyId) {
+        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, specialtyId, brokerUtils.requestMappings.ATHLETES);
     }
 
     function getDetailUrlById(athleteId) {
