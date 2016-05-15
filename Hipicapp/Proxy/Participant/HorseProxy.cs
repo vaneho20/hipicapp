@@ -6,10 +6,6 @@ using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Transaction.Interceptor;
-using System;
-using System.Linq;
-using System.Security.Claims;
-using System.Web;
 using System.Web.Http;
 
 namespace Hipicapp.Proxy.Participant
@@ -22,9 +18,6 @@ namespace Hipicapp.Proxy.Participant
 
         [Autowired]
         private IAthleteService AthleteService { get; set; }
-
-        //[Autowired]
-        //private PasswordEncoder { get; set; }
 
         [AllowAnonymous]
         public Page<Horse> Paginated(HorseFindRequest request)

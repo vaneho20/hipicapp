@@ -21,7 +21,7 @@ namespace Hipicapp.Proxy.Event
             return this.SpecialtyService.FindAll();
         }
 
-        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [AllowAnonymous]
         public Page<Specialty> Paginated(SpecialtyFindRequest request)
         {
             return this.SpecialtyService.Paginated(request.Filter, request.PageRequest);
