@@ -56,7 +56,7 @@ namespace Hipicapp.Service.Account
             {
                 user.Password = newPasswordEncrypted;
                 this.UserRepository.Save(user);
-                this.TicketRepository.Delete(ticket);
+                this.TicketRepository.Delete(model);
             }
             return user;
         }
