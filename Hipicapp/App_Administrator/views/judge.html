@@ -33,18 +33,6 @@
                     </div>
                 </div>
                 <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
-                    <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
-                    <select id="h-athlete-gender"
-                            data-bind="options: availableGenders,
-							    optionsValue: function(item) { return item.value },
-							    optionsText: function(item) { return item.text },
-							    optionsCaption : i18n.t('app:GENDER') + '...',
-							    value: currentEntity().gender,
-							    attr: { title: i18n.t('app:GENDER') }"
-                            required class="form-control" aria-required="true"></select>
-                </div>
-
-                <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-left">
                     <label class="required" for="h-competition-federation"
                            data-bind="text: i18n.t('app:FEDERATION')"></label>
                     <input class="form-control" type="text" id="h-competition-federation" autofocus
@@ -52,9 +40,10 @@
 					        attr: { max: validationUtils.MAX_LENGTH,
 						    maxlength: validationUtils.MAX_LENGTH,
 						    placeholder: i18n.t('app:FEDERATION'),
-						    title: i18n.t('app:FEDERATION') }" required>
+						    title: i18n.t('app:FEDERATION') }" required>                    
                 </div>
-                <div class="form-group col-md-2 col-sm-2 col-xs-4">
+
+                <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-left">
                     <label class="required" for="h-competition-zipcode"
                            data-bind="text: i18n.t('app:ZIPCODE')"></label>
                     <input class="form-control" readonly type="text" id="h-competition-zipcode" autofocus
@@ -63,6 +52,17 @@
 						    maxlength: validationUtils.LENGTH_ZIPCODE,
 						    placeholder: i18n.t('app:ZIPCODE'),
 						    title: i18n.t('app:ZIPCODE') }" required>
+                </div>
+                <div class="form-group col-md-2 col-sm-2 col-xs-4">
+                    <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                    <select id="h-athlete-gender"
+                            data-bind="options: availableGenders,
+							    optionsValue: function(item) { return item.value },
+							    optionsText: function(item) { return item.text },
+							    optionsCaption : i18n.t('app:GENDER') + '...',
+							    value: currentEntity().gender,
+							    attr: { title: i18n.t('app:GENDER') }"
+                            required class="form-control" aria-required="true"></select>                    
                 </div>
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
