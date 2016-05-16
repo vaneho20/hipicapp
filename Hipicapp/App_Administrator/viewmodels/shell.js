@@ -35,6 +35,7 @@
                     { route: 'category(/:id)', title: 'Categoría', moduleId: 'viewmodels/competitionCategory', nav: false, hash: '#category' },
                     { route: 'competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true, hash: '#competitions', icon: "fa fa-trophy" },
                     { route: 'competition(/:id)', title: 'Concurso', moduleId: 'viewmodels/competition', nav: false, hash: '#competition' },
+                    { route: 'competition/:id/images', title: 'Foto', moduleId: 'viewmodels/competitionImages', nav: false },
                     { route: 'competition/:id/judges', title: 'Jueces', moduleId: 'viewmodels/competitionJudges', nav: false },
                     //{ route: 'specialties', title: 'Disciplinas', moduleId: 'viewmodels/specialties', nav: true, hash: '#specialties', icon: "fa fa-certificate" },
                     //{ route: 'specialty(/:id)', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
