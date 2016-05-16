@@ -1,0 +1,62 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:COMPETITION')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'competitionNavs.html'"></div>
+            <form role="form">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <fieldset>
+                            <legend>
+                                <span data-bind="text: i18n.t('app:PHOTO')"></span>
+                            </legend>
+                            <div id="h-competition-photo-dropzone" class="control-group">
+                                <div id="h-competition-photo-thumbnail" class="thumbnail">
+                                    <img data-bind="attr: {
+									src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '',
+									alt: i18n.t('app:PHOTO'),
+									title: i18n.t('app:PHOTO')
+								}, imageHolder: '115x150'">
+                                </div>
+                                <div id="h-competition-photo-progress"
+                                     class="progress progress-striped active">
+                                    <div class="bar" style="width: 0%;"></div>
+                                </div>
+                                <label for="h-competition-photo" data-bind="text: i18n.t('app:PHOTO')"
+                                       class="control-label"></label>
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <input type="file" id="h-competition-photo"
+                                               data-bind="fileupload: {
+										broker: competitionBroker,
+										entityId: currentEntity().id,
+										dropZone: '#h-competition-photo-dropzone',
+										thumbnail: '#h-competition-photo-thumbnail',
+										progress: '#h-competition-photo-progress'
+									    },
+									    attr: {
+										    max: validationUtils.MAX_FILES,
+										    placeholder: i18n.t('app:PHOTO'),
+ 										    title: i18n.t('app:PHOTO')
+ 									    }"
+                                               required> <span class="add-on">
+                                            <i data-bind="attr: { title: i18n.t('app:PHOTO'),
+									'data-content': i18n.format(i18n.t('app:IMAGE_POPOVER'), validationUtils.MAX_FILE_SIZE) },
+									popover: ''"
+                                               data-trigger="hover" data-animation="true" class="fa fa-picture-o"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

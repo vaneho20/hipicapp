@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Model.Event;
+using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Utils.Pager;
 using System.Collections.Generic;
@@ -26,5 +27,7 @@ namespace Hipicapp.Service.Event
         IList<Competition> FindNextBySpecialtyId(long? specialtyId);
 
         IList<Competition> FindLast();
+
+        FileInfo Upload(Competition competition, string name, string mimeType, byte[] bytes);
     }
 }

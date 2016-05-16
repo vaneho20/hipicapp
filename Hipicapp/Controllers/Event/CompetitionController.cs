@@ -1,14 +1,20 @@
 ﻿using Hipicapp.Controllers.Abstract;
+using Hipicapp.Exceptions;
 using Hipicapp.Filters;
 using Hipicapp.Model.Event;
+using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Proxy.Event;
 using Hipicapp.Utils.Pager;
+using Hipicapp.Utils.Util;
 using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Hipicapp.Controllers.Event
@@ -155,6 +161,35 @@ namespace Hipicapp.Controllers.Event
         public Seminary AssignUnassignJudge([FromUri]long? competitionId, [FromUri]long? judgeId)
         {
             return this.CompetitionProxy.AssignUnassignJudge(competitionId, judgeId);
+        }
+
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("upload/{id}")]
+        public async Task<FileInfo> Upload([FromUri]long? id, HttpRequestMessage request)
+        {
+            if (!Request.Content.IsMimeMultipartContent())
+            {
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+            }
+
+            var provider = new MultipartMemoryStreamProvider();
+            await request.Content.ReadAsMultipartAsync(provider);
+            foreach (var file in provider.Contents)
+            {
+                FileInfo fileInfo = new FileInfo();
+                fileInfo.FileName = file.Headers.ContentDisposition.FileName.Replace("\"", "");
+                fileInfo.ContentType = file.Headers.ContentType.MediaType;
+                fileInfo.Contents = await file.ReadAsByteArrayAsync();
+                if (!ValidationUtils.IsValidImageMimeType(fileInfo.ContentType)
+                        || !ValidationUtils.IsValidFileSize(fileInfo.Contents.LongLength))
+                {
+                    throw new ImageException();
+                }
+                return this.CompetitionProxy.Upload(id, fileInfo);
+            }
+
+            return null;
         }
     }
 }

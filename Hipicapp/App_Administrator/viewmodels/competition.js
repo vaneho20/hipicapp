@@ -13,7 +13,8 @@ define([
     // state definition
     var viewModel = {}, currentEntity = ko.observable(competitionImpl()), navs = {
         BASIC_DATA: "BASIC_DATA",
-        IMAGES: "JUDGES"
+        IMAGES: "IMAGES",
+        JUDGES: "JUDGES"
     }, nav = ko.observable(), availableCategories = ko.observable(), availableSpecialties = ko.observable();
 
     // lifecycle definition

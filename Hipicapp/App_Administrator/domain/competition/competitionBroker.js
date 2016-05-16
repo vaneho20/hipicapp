@@ -186,10 +186,22 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId);
     }
 
+    function getImagesUrlById(competitionId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId,
+                brokerUtils.requestMappings.IMAGES);
+    }
+
     function getJudgesUrlById(competitionId) {
         return brokerUtils.HASH_CHAR +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId,
                 brokerUtils.requestMappings.JUDGES);
+    }
+
+    function getFileuploadUrlById(entityId) {
+        return brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
+                brokerUtils.requestMappings.UPLOAD, entityId);
     }
 
     function evictCache() {
@@ -217,7 +229,9 @@ define([
 
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getImagesUrlById = getImagesUrlById;
     broker.getJudgesUrlById = getJudgesUrlById;
+    broker.getFileuploadUrlById = getFileuploadUrlById;
 
     return broker;
 });

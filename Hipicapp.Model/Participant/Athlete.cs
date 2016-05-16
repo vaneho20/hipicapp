@@ -114,8 +114,8 @@ namespace Hipicapp.Model.Participant
             Map(x => x.PlaceId).Column("PLACE_ID").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
-            References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
+            References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<User>(x => x.User).Column("USER_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
         }
     }

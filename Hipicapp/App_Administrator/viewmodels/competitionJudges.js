@@ -24,6 +24,8 @@ define([
         return $.when(superActivate(competitionId).done(function onSuccess() {
             currentFilter.competitionId(viewModel.currentEntity().id);
             nextFilter().competitionId(viewModel.currentEntity().id);
+            currentFilter.specialtyId(viewModel.currentEntity().specialtyId);
+            nextFilter().specialtyId(viewModel.currentEntity().specialtyId);
         }).then(loadCurrentPage)).done(refreshNav);
     }
 

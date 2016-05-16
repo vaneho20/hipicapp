@@ -1,7 +1,9 @@
 ﻿using Hipicapp.Model.Event;
+using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
+using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
@@ -29,6 +31,9 @@ namespace Hipicapp.Service.Event
 
         [Autowired]
         private IWeightAthleteSaddleExceededPolicy WeightAthleteSaddleExceededPolicy { get; set; }
+
+        [Autowired]
+        private IFileService FileService { get; set; }
 
         [Transaction(ReadOnly = true)]
         public Page<Competition> Paginated(CompetitionFindFilter filter, PageRequest pageRequest)
@@ -140,6 +145,26 @@ namespace Hipicapp.Service.Event
         public IList<Competition> FindLast()
         {
             return this.CompetitionRepository.GetAllQueryable().OrderByDescending(x => x.EndDate).Take(4).ToList();
+        }
+
+        [Transaction]
+        public FileInfo Upload(Competition competition, string name, string mimeType, byte[] bytes)
+        {
+            long? previousPhotoId = competition.PhotoId;
+
+            FileInfo newPhotoFileInfo = this.FileService.Save(name, mimeType, bytes);
+
+            competition.PhotoId = newPhotoFileInfo.Id;
+            competition.Photo = newPhotoFileInfo;
+
+            this.CompetitionRepository.Update(competition);
+
+            if (previousPhotoId != null)
+            {
+                this.FileService.Delete(previousPhotoId);
+            }
+
+            return newPhotoFileInfo;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Model.Abstract;
+using Hipicapp.Model.File;
 using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
@@ -17,6 +18,8 @@ namespace Hipicapp.Model.Event
         [NotNull]
         [Min(0)]
         public virtual long? SpecialtyId { get; set; }
+
+        public virtual long? PhotoId { get; set; }
 
         [NotNull]
         [NotEmpty]
@@ -69,6 +72,8 @@ namespace Hipicapp.Model.Event
         public virtual CompetitionCategory Category { get; set; }
 
         public virtual Specialty Specialty { get; set; }
+
+        public virtual FileInfo Photo { get; set; }
     }
 
     public class CompetitionMap : EntityMap<Competition, long?>
@@ -82,6 +87,7 @@ namespace Hipicapp.Model.Event
 
             Map(x => x.CategoryId).Column("CATEGORY_ID").Not.Nullable();
             Map(x => x.SpecialtyId).Column("SPECIALTY_ID").Not.Nullable();
+            Map(x => x.PhotoId).Column("PHOTO_ID").Not.Nullable();
             Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Description).Column("DESCRIPTION").Not.Nullable().Length(ValidationUtils.MAX_LENGTH_DESCRIPTION);
             Map(x => x.Address).Column("ADDRESS").Not.Nullable();
@@ -94,6 +100,7 @@ namespace Hipicapp.Model.Event
             Map(x => x.CreationDate).Column("CREATION_DATE").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
+            References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
         }
     }

@@ -1,11 +1,13 @@
 ﻿using Hipicapp.Filters;
 using Hipicapp.Model.Authentication;
 using Hipicapp.Model.Event;
+using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Service.Event;
 using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
+using Spring.Transaction.Interceptor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -132,6 +134,14 @@ namespace Hipicapp.Proxy.Event
         public IList<Competition> FindLast()
         {
             return this.CompetitionService.FindLast();
+        }
+
+        [AuthorizeEnum(Rol.ADMINISTRATOR)]
+        [Transaction]
+        public FileInfo Upload(long? id, FileInfo file)
+        {
+            var competition = this.CompetitionService.Get(id);
+            return this.CompetitionService.Upload(competition, file.FileName, file.ContentType, file.Contents);
         }
     }
 }
