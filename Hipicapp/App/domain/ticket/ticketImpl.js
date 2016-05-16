@@ -5,11 +5,11 @@ define([
     "use strict";
 
     function ticketImpl(currentTicket) {
-        var ticket = {}, user = userImpl(), key = ko.observable().extend({ required: true });
+        var ticket = {}, user = userImpl(), key = ko.observable();
 
         if (currentTicket) {
             user = userImpl(currentTicket.user);
-            key(currentTicket.Key);
+            key(currentTicket.key);
         }
 
         ticket.user = user;

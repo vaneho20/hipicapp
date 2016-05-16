@@ -44,8 +44,7 @@ define([
 
     amplify.request.define("authentication/updatePassword", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(urlUtils.joinPath(brokerUtils.requestMappings.BACKEND,
-            brokerUtils.requestMappings.AUTHENTICATION,
-            brokerUtils.requestMappings.EMAIL, brokerUtils.requestMappings.UPDATE_PASSWORD),
+            brokerUtils.requestMappings.AUTHENTICATION, brokerUtils.requestMappings.UPDATE_PASSWORD),
             brokerUtils.verb.PUT));
 
     function setup() {

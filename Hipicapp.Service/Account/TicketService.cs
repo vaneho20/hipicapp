@@ -4,7 +4,7 @@ using Hipicapp.Service.Exceptions;
 using Hipicapp.Service.Mail.Impl;
 using Hipicapp.Service.Mail.Models;
 using Hipicapp.Service.Util;
-using Hipicapp.Utils.Security;
+using Hipicapp.Utils.Helper;
 using Resources;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
@@ -38,7 +38,7 @@ namespace Hipicapp.Service.Account
             ticket.User = this.UserRepository.GetByUserName(userName);
             ticket.Key = Guid.NewGuid().ToString();
             ticket.ExpirationDate = new DateTime(DateTime.Now.Ticks + (86400 * 1000));
-            ticket.ExpirationDate.Value.AddDays(1);
+            ticket.ExpirationDate = ticket.ExpirationDate.Value.AddDays(1);
             ticket.Id = this.TicketRepository.Save(ticket);
             MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage(MailMessages.PasswordResetSubject, ticket.User.UserName, ticket));
             return ticket;
@@ -51,7 +51,7 @@ namespace Hipicapp.Service.Account
 
             var model = this.TicketRepository.Get(ticket.Key);
             var user = model.User;
-            string newPasswordEncrypted = CryptographyUtil.Encrypted(user.NewPassword);
+            string newPasswordEncrypted = HelperMethods.GetHash(ticket.User.NewPassword);
             if (!string.Equals(newPasswordEncrypted, user.Password))
             {
                 user.Password = newPasswordEncrypted;

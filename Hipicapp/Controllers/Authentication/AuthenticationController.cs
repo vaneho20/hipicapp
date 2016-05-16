@@ -44,5 +44,14 @@ namespace Hipicapp.Controllers.Authentication
         {
             return this.TicketProxy.CheckTicket(key);
         }
+
+        [AllowAnonymous]
+        [AcceptVerbs("PUT")]
+        [HttpPut]
+        [Route("updatePassword")]
+        public User UpdatePassword([FromBody]Ticket ticket)
+        {
+            return this.TicketProxy.UpdatePassword(ticket);
+        }
     }
 }
