@@ -34,7 +34,7 @@ namespace Hipicapp.Service.Publicity
         [Transaction(ReadOnly = true)]
         public IList<Banner> FindVisibleBySpecialtyId(long? specialtyId)
         {
-            return this.BannerRepository.GetAllQueryable().Where(x => x.Visible.Value).ToList();
+            return this.BannerRepository.GetAllQueryable().Where(x => x.Visible.Value && x.SpecialtyId == specialtyId).ToList();
         }
 
         [Transaction(ReadOnly = true)]

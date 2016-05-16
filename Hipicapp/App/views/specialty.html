@@ -20,36 +20,33 @@
     <div class="container">
         <div class="block-top">
             <div class="col-md-12 col-sm-12 col-xs-24">
-                <!-- Carousel -->
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <!-- ko foreach: banners -->
+                        <li data-target="#carousel-example-generic" data-bind="attr: { 'data-slide-to': $index() }, css: { active: $index() === 0 }"></li>
+                        <!-- /ko -->
                     </ol>
                     <div class="carousel-inner">
                         <!-- ko foreach: banners -->
-                            <div class="item active">
-                                <img src="/Content/images/foto_carrusel_salto1.jpg" alt="First slide">
+                            <div class="item" data-bind="css: { active: $index() === 0 }">
+                                <img data-bind="attr: { src: image ? $root.fileBroker.getUrlByUuid(image.fileUuid) : '' }" alt="First slide">
                                 <div class="header-text hidden-xs">
                                     <div class="col-md-12 text-center">
                                         <h2>
-                                            <a data-bind="attr: { href: web }"><span data-bind="text: title"></span></a>
+                                            <a data-bind="attr: { href: web, target: '_blank' }"><span data-bind="text: title"></span></a>
                                         </h2>
                                     </div>
                                 </div>
                             </div>
                         <!-- /ko -->
                     </div>
-                    <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                     <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
-                </div><!-- /carousel -->
+                </div>
             </div>
         </div>
         <div class="block-destacados">

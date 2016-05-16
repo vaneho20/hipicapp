@@ -66,6 +66,7 @@ define([
 
     function refreshBanners(data) {
         banners(data);
+        banners.valueHasMutated();
     }
 
     function loadVisibleBySpecialtyId(specialtyId) {
