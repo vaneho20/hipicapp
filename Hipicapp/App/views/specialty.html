@@ -29,7 +29,7 @@
                     <div class="carousel-inner">
                         <!-- ko foreach: banners -->
                             <div class="item" data-bind="css: { active: $index() === 0 }">
-                                <img data-bind="attr: { src: image ? $root.fileBroker.getUrlByUuid(image.fileUuid) : '' }" alt="First slide">
+                                <img data-bind="attr: { src: imageId ? $root.fileBroker.getUrlByUuid(image.fileUuid) : '' }" alt="First slide">
                                 <div class="header-text hidden-xs">
                                     <div class="col-md-12 text-center">
                                         <h2>
@@ -91,7 +91,7 @@
                                 <div class="foto">
                                     <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id) }" title="Ver artículo">
                                         <div class="cintillo" data-bind="text: locality"></div>
-                                        <img alt="Foto concurso" src="/Content/images/foto_concurso.jpg">
+                                        <img alt="Foto concurso" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '' }">
                                     </a>
                                 </div>
                                 <div class="texto">
