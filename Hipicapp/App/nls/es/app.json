@@ -38,6 +38,8 @@
     "DISABLE_BUTTON_TITLE": "Deshabilita esta fila",
     "ENABLE_BUTTON_TEXT": "Habilitar",
     "ENABLE_BUTTON_TITLE": "Habilitar esta fila",
+    "SEND_BUTTON_TEXT": "Enviar",
+    "SEND_BUTTON_TITLE": "Enviar email",
     "DELETE_MESSAGE_BOX_TITLE": "Confirmación",
     "DELETE_MESSAGE_BOX_CONTENT": "¿Está seguro de que desea eliminar ésta fila?",
     "DISABLE_MESSAGE_BOX_TITLE": "Confirmación",
