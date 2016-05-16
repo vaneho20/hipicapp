@@ -24,7 +24,7 @@ namespace Hipicapp.Model.Account
         {
             get
             {
-                if (ExpirationDate != null && DateTime.Compare(ExpirationDate.Value, DateTime.Now) < 0)
+                if (this.ExpirationDate != null && DateTime.Compare(this.ExpirationDate.Value, DateTime.Now) < 0)
                 {
                     return true;
                 }

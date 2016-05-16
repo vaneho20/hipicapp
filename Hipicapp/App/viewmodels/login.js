@@ -29,6 +29,7 @@ define([
     }
 
     viewModel.i18n = i18n;
+    viewModel.router = router;
     viewModel.validationUtils = validationUtils;
 
     viewModel.credentials = credentials;

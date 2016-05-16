@@ -18,16 +18,12 @@ define([
         return router.navigate("#login");
     }
 
+    function navigateToPasswordReset() {
+        return router.navigate("#reset-password");
+    }
+
     function navigateToRegister() {
         return router.navigate("#register");
-    }
-
-    function navigateToDressage() {
-        return router.navigate("#dressage");
-    }
-
-    function navigateToJump() {
-        return router.navigate("#jump");
     }
 
     function navigateToAthlete(id) {
@@ -58,9 +54,8 @@ define([
     // Public site
     router.navigateToHome = navigateToHome;
     router.navigateToLogin = navigateToLogin;
+    router.navigateToPasswordReset = navigateToPasswordReset;
     router.navigateToRegister = navigateToRegister;
-    router.navigateToDressage = navigateToDressage;
-    router.navigateToJump = navigateToJump;
     router.navigateToAthletes = navigateToAthletes;
     router.navigateToHorses = navigateToHorses;
     router.navigateToCompetitions = navigateToCompetitions;

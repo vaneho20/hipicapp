@@ -33,11 +33,13 @@ namespace Hipicapp.Service.Account
         public Ticket CreateTicketAndSendEmail(string userName)
         {
             var ticket = new Ticket();
+            ticket.Id = null;
             ticket.CreateDate = DateTime.Now;
             ticket.User = this.UserRepository.GetByUserName(userName);
             ticket.Key = Guid.NewGuid().ToString();
             ticket.ExpirationDate = new DateTime(DateTime.Now.Ticks + (86400 * 1000));
-            this.TicketRepository.Save(ticket);
+            ticket.ExpirationDate.Value.AddDays(1);
+            ticket.Id = this.TicketRepository.Save(ticket);
             MailUtil.SendMessage<PasswordResetEmailModel>(new PasswordResetMailMessage(MailMessages.PasswordResetSubject, ticket.User.UserName, ticket));
             return ticket;
         }
