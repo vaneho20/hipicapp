@@ -4,8 +4,12 @@ using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Service.Account;
+using Hipicapp.Service.Mail.Impl;
+using Hipicapp.Service.Mail.Models;
+using Hipicapp.Service.Util;
 using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
+using Resources;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -90,6 +94,7 @@ namespace Hipicapp.Service.Participant
             athlete.Specialty = this.SpecialtyRepository.Get(athlete.SpecialtyId);
             athlete.SpecialtyId = athlete.Specialty.Id;
             athlete.Id = this.AthleteRepository.Save(athlete);
+            MailUtil.SendMessage<CreatedAccountEmailModel>(new CreatedAccountMailMessage(MailMessages.CreatedAccountSubject, athlete.User.UserName));
             return athlete;
         }
 

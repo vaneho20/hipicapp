@@ -110,6 +110,9 @@
     <Compile Include="Penalty\Penalty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Participant\Score.cs" />
+    <Compile Include="Publicity\BannerFindFilter.cs" />
+    <Compile Include="Publicity\BannerFindRequest.cs" />
+    <Compile Include="Publicity\Banner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Binomial\" />

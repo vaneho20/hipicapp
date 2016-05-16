@@ -1,0 +1,60 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().title--><!--/ko--> <small data-bind="text: i18n.t('app:BANNER')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'bannerNavs.html'"></div>
+            <form role="form">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <fieldset>
+                            <legend>
+                                <span data-bind="text: i18n.t('app:IMAGE')"></span>
+                            </legend>
+                            <div id="h-banner-image-dropzone" class="control-group">
+                                <div id="h-banner-image-thumbnail" class="thumbnail">
+                                    <img data-bind="attr: {
+									src: currentEntity().imageId ? fileBroker.getUrlByUuid(currentEntity().image.fileUuid) : '',
+									alt: i18n.t('app:IMAGE'),
+									title: i18n.t('app:IMAGE')
+								}, imageHolder: '460x1200'">
+                                </div>
+                                <div id="h-banner-image-progress"
+                                     class="progress progress-striped active">
+                                    <div class="bar" style="width: 0%;"></div>
+                                </div>
+                                <label for="h-banner-image" data-bind="text: i18n.t('app:IMAGE')"
+                                       class="control-label"></label>
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <input type="file" id="h-banner-image"
+                                               data-bind="fileupload: {
+										broker: bannerBroker,
+										entityId: currentEntity().id,
+										dropZone: '#h-banner-image-dropzone',
+										thumbnail: '#h-banner-image-thumbnail',
+										progress: '#h-banner-image-progress'
+									},
+									attr: {
+										max: validationUtils.MAX_FILES,
+										placeholder: i18n.t('app:IMAGE'),
+ 										title: i18n.t('app:IMAGE')
+ 									}" required> <span class="add-on">
+                                        <i data-bind="attr: { title: i18n.t('app:IMAGE'),
+									        'data-content': i18n.format(i18n.t('app:IMAGE_POPOVER'), validationUtils.MAX_FILE_SIZE) },
+									        popover: ''" data-trigger="hover" data-animation="true" class="fa fa-picture-o"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

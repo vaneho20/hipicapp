@@ -304,6 +304,7 @@
     <Compile Include="Controllers\Participant\AthleteController.cs" />
     <Compile Include="Controllers\File\FileController.cs" />
     <Compile Include="Controllers\Account\UserController.cs" />
+    <Compile Include="Controllers\Publicity\BannerController.cs" />
     <Compile Include="Exceptions\ImageException.cs" />
     <Compile Include="Filters\AccessDeniedFilterAttribute.cs" />
     <Compile Include="Filters\InvalidModelStateFilterAttribute.cs" />
@@ -335,6 +336,8 @@
     <Compile Include="Proxy\Participant\IAthleteProxy.cs" />
     <Compile Include="Proxy\Participant\AthleteProxy.cs" />
     <Compile Include="Proxy\Proxy.cs" />
+    <Compile Include="Proxy\Publicity\BannerProxy.cs" />
+    <Compile Include="Proxy\Publicity\IBannerProxy.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\EmailValidator.cs" />
     <Compile Include="Validators\EmailValidatorAttribute.cs" />
@@ -464,6 +467,10 @@
     <Content Include="App_Administrator\core\util\stringUtils.js" />
     <Content Include="App_Administrator\core\util\urlUtils.js" />
     <Content Include="App_Administrator\core\util\validationUtils.js" />
+    <Content Include="App_Administrator\domain\banner\bannerBroker.js" />
+    <Content Include="App_Administrator\domain\banner\bannerFilterImpl.js" />
+    <Content Include="App_Administrator\domain\banner\bannerImpl.js" />
+    <Content Include="App_Administrator\domain\banner\bannerSortImpl.js" />
     <Content Include="App_Administrator\domain\specialty\specialtyBroker.js" />
     <Content Include="App_Administrator\domain\specialty\specialtyFilterImpl.js" />
     <Content Include="App_Administrator\domain\specialty\specialtyImpl.js" />
@@ -509,8 +516,11 @@
     <Content Include="App_Administrator\bindings\typeaheadBinding.js" />
     <Content Include="App_Administrator\main.js" />
     <Content Include="App_Administrator\viewmodels\athleteHorses.js" />
+    <Content Include="App_Administrator\viewmodels\bannerImages.js" />
     <Content Include="App_Administrator\viewmodels\competitionJudges.js" />
+    <Content Include="App_Administrator\viewmodels\banners.js" />
     <Content Include="App_Administrator\viewmodels\specialties.js" />
+    <Content Include="App_Administrator\viewmodels\banner.js" />
     <Content Include="App_Administrator\viewmodels\specialty.js" />
     <Content Include="App_Administrator\viewmodels\competitionCategory.js" />
     <Content Include="App_Administrator\viewmodels\competitionCategories.js" />
@@ -530,7 +540,11 @@
     <Content Include="App_Administrator\viewmodels\user.js" />
     <Content Include="App_Administrator\viewmodels\users.js" />
     <Content Include="App_Administrator\viewmodels\home.js" />
+    <Content Include="App_Administrator\views\banner.html" />
     <Content Include="App_Administrator\views\athleteHorses.html" />
+    <Content Include="App_Administrator\views\bannerImages.html" />
+    <Content Include="App_Administrator\views\bannerNavs.html" />
+    <Content Include="App_Administrator\views\banners.html" />
     <Content Include="App_Administrator\views\competitionNavs.html" />
     <Content Include="App_Administrator\views\competitionJudges.html" />
     <Content Include="App_Administrator\views\specialties.html" />

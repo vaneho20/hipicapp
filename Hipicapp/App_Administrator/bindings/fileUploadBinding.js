@@ -32,7 +32,7 @@ define([
         function fail(event, data) {
             broker.evictCache();
 
-            exceptionHandler.handle(data.jqXHR.responseJSON);
+            exceptionHandler.handle(data.jqXHR.responseJSON, "error");
 
             $progress.hide();
         }

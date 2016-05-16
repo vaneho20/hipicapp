@@ -1,8 +1,8 @@
 /* global define: false*/
-define(function competitionCategoryFilterImpl() {
+define(function specialtyyFilterImpl() {
     "use strict";
 
-    return function competitionCategoryFilterImpl() {
+    return function specialtyyFilterImpl() {
         var filter = {};
 
         return filter;

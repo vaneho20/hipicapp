@@ -125,6 +125,8 @@
     <Compile Include="Participant\IAthleteRepository.cs" />
     <Compile Include="Participant\AthleteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publicity\BannerRepository.cs" />
+    <Compile Include="Publicity\IBannerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -130,11 +130,22 @@
     <Compile Include="File\FileSystemCache.cs" />
     <Compile Include="File\IFileService.cs" />
     <Compile Include="File\IFileSystemCache.cs" />
+    <Compile Include="Mail\Impl\CreatedAccountMailMessage.cs" />
     <Compile Include="Mail\Models\EmailModel.cs" />
     <Compile Include="Mail\Impl\PasswordResetMailMessage.cs" />
+    <Compile Include="Mail\Models\CreatedAccountEmailModel.cs" />
     <Compile Include="Mail\Models\PasswordResetEmailModel.cs" />
     <Compile Include="Mail\Impl\AbstractMailMessage.cs" />
     <Compile Include="Mail\IMailMessage.cs" />
+    <Content Include="Mail\Templates\CreatedAccount.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CreatedAccount.generated.cs</LastGenOutput>
+    </Content>
+    <Compile Include="Mail\Templates\CreatedAccount.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreatedAccount.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Mail\Templates\PasswordReset.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,6 +175,9 @@
     <Compile Include="Authentication\IClientService.cs" />
     <Compile Include="Authentication\IRefreshTokenService.cs" />
     <Compile Include="Authentication\RefreshTokenService.cs" />
+    <Compile Include="Publicity\BannerPredicates.cs" />
+    <Compile Include="Publicity\BannerService.cs" />
+    <Compile Include="Publicity\IBannerService.cs" />
     <Compile Include="SampleTemplate.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

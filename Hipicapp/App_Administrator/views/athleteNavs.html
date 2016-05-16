@@ -9,8 +9,8 @@
     <li data-bind="css: { active: nav() === navs.IMAGES, disabled: !currentEntity().id }">
         <a href="#" data-bind="attr: {
 				        href: nav() !== navs.IMAGES && currentEntity().id ? athleteBroker.getImagesUrlById(currentEntity().id) : 'javascript:void(0)',
-				        title: i18n.t('app:IMAGES')
-			            }, text: i18n.t('app:IMAGES')"></a>
+				        title: i18n.t('app:PHOTO')
+			            }, text: i18n.t('app:PHOTO')"></a>
     </li>
     <li data-bind="css: { active: nav() === navs.HORSES, disabled: !currentEntity().id }">
         <a href="#" data-bind="attr: {

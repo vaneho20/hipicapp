@@ -1,0 +1,74 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().title--><!--/ko--> <small data-bind="text: i18n.t('app:BANNER')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'bannerNavs.html'"></div>
+            <form role="form" data-bind="submit: save" novalidate>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-left">
+                        <label class="required" for="h-banner-title"
+                               data-bind="text: i18n.t('app:TITLE')"></label>
+                        <input class="form-control" type="text" id="h-banner-title" autofocus
+                               data-bind="value: currentEntity().title,
+						        attr: { max: validationUtils.MAX_LENGTH,
+							        maxlength: validationUtils.MAX_LENGTH,
+							        placeholder: i18n.t('app:TITLE'),
+							        title: i18n.t('app:TITLE')}"
+                               required autocomplete="off" />
+                    </div>
+                    <div class="form-group col-md-8 col-sm-8 col-xs-16 without-padding">
+                        <label class="required" for="h-banner-web"
+                                data-bind="text: i18n.t('app:WEB')"></label>
+                        <input class="form-control" type="url" id="h-banner-web" autofocus
+                                data-bind="value: currentEntity().web,
+						        attr: { max: validationUtils.MAX_LENGTH_URL,
+							        maxlength: validationUtils.MAX_LENGTH_URL,
+							        placeholder: i18n.t('app:WEB'),
+							        title: i18n.t('app:WEB')}"
+                                required autocomplete="off" />
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-right">
+                        <label class="required" for="h-banner-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
+                        <select id="h-banner-specialty"
+                                data-bind="options: availableSpecialties,
+						            optionsValue: function(item) { return item.id },
+						            optionsText: function(item) { return item.name },
+						            optionsCaption : i18n.t('app:SPECIALTY') + '...',
+						            value: currentEntity().specialtyId,
+						            attr: { title: i18n.t('app:SPECIALTY') }"
+                                required="required" class="form-control" aria-required="true"></select>
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               id="h-banner-visible"
+                               data-bind="checked: currentEntity().visible,
+								attr: {
+									placeholder: i18n.t('app:VISIBLE'),
+									title: i18n.t('app:VISIBLE') }">
+                        <span data-bind="text: i18n.t('app:VISIBLE')"></span>
+                    </label>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button type="submit"
+                            data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                            class="btn btn-primary">
+                        <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                    </button>
+                    <a data-bind="attr: {
+						href: bannerBroker.getListUrl(),
+						title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+                       class="btn">
+                        <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

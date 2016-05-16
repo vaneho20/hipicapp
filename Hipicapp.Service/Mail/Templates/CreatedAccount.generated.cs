@@ -16,20 +16,20 @@ namespace ASP
     using System.Linq;
     using System.Text;
     
-    #line 3 "..\..\Mail\Templates\PasswordReset.cshtml"
+    #line 3 "..\..\Mail\Templates\CreatedAccount.cshtml"
     using Hipicapp.Service.Mail.Models;
     
     #line default
     #line hidden
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    public partial class _Mail_Templates_PasswordReset_cshtml : RazorGenerator.Templating.RazorTemplateBase
+    public partial class _Mail_Templates_CreatedAccount_cshtml : RazorGenerator.Templating.RazorTemplateBase
     {
 #line hidden
 
-        #line 5 "..\..\Mail\Templates\PasswordReset.cshtml"
+        #line 5 "..\..\Mail\Templates\CreatedAccount.cshtml"
 
-    public PasswordResetEmailModel message;
+    public CreatedAccountEmailModel message;
 
         #line default
         #line hidden
@@ -38,10 +38,10 @@ namespace ASP
         {
 
 
-WriteLiteral("\n\n");
+WriteLiteral("\r\n\r\n");
 
 
-WriteLiteral("\n");
+WriteLiteral("\r\n");
 
 
 WriteLiteral(@"
@@ -59,14 +59,14 @@ WriteLiteral(@"
 
 
             
-            #line 18 "..\..\Mail\Templates\PasswordReset.cshtml"
+            #line 18 "..\..\Mail\Templates\CreatedAccount.cshtml"
            Write(message.Url);
 
             
             #line default
             #line hidden
-WriteLiteral("\">Restablecer contraseña</a></p>\n    <p>Gracias,</p>\n    <p>El equipo de cuentas " +
-"de Hipicapp</p>\r\n</body>\n</html>");
+WriteLiteral("\">Restablecer contraseña</a></p>\r\n    <p>Gracias,</p>\r\n    <p>El equipo de cuenta" +
+"s de Hipicapp</p>\r\n</body>\r\n</html>");
 
 
         }

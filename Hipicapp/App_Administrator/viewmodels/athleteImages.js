@@ -9,7 +9,7 @@ define([
     // state definition
     var viewModel = $.extend(false, {}, athleteViewModel), superActivate = viewModel.activate;
 
-    function activate(athleteId, horseId) {
+    function activate(athleteId) {
         return superActivate(athleteId).done(refreshNav);
     }
 
