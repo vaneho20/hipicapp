@@ -3,23 +3,24 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
-    "domain/competition/competitionBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
-    "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "domain/specialty/specialtyImpl",
-    "gmaps", "viewmodels/shell", "viewmodels/alerts"
+    "domain/banner/bannerBroker", "domain/competition/competitionBroker", "domain/file/fileBroker",
+    "domain/horse/horseBroker", "domain/judge/judgeBroker", "domain/specialty/specialtyBroker",
+    "domain/specialty/specialtyImpl", "gmaps", "viewmodels/shell", "viewmodels/alerts"
 ], function specialtyViewModel(i18n, router, securityContext, stringUtils, urlUtils, validationUtils,
-    athleteBroker, competitionBroker, fileBroker, horseBroker, judgeBroker, specialtyBroker, specialtyImpl,
-    gmaps, shell, alerts) {
+    athleteBroker, bannerBroker, competitionBroker, fileBroker, horseBroker, judgeBroker, specialtyBroker,
+    specialtyImpl, gmaps, shell, alerts) {
     "use strict";
 
     // state definition
     var viewModel = {}, currentEntity = ko.observable(specialtyImpl()), ranking = ko.observableArray([]),
-        nextCompetitions = ko.observableArray([]), geocoder = new gmaps.Geocoder;
+        nextCompetitions = ko.observableArray([]), geocoder = new gmaps.Geocoder, banners = ko.observableArray([]);
 
     // lifecycle definition
     function activate(id) {
         if (id) {
             // allways return a promise
-            return $.when(loadEntityBySpecialtyId(id), loadRankingBySpecialtyId(id), loadNextCompetitionsBySpecialtyId(id));
+            return $.when(loadEntityBySpecialtyId(id), loadRankingBySpecialtyId(id), loadVisibleBySpecialtyId(id),
+                loadNextCompetitionsBySpecialtyId(id));
         } else {
             refreshCurrentEntity();
         }
@@ -63,6 +64,14 @@ define([
         return competitionBroker.findNextBySpecialtyId(specialtyId).done(refreshNextCompetitions);
     }
 
+    function refreshBanners(data) {
+        banners(data);
+    }
+
+    function loadVisibleBySpecialtyId(specialtyId) {
+        return bannerBroker.findVisibleBySpecialtyId(specialtyId).done(refreshBanners);
+    }
+
     // module revelation
     viewModel.i18n = i18n;
     viewModel.router = router;
@@ -79,6 +88,7 @@ define([
     viewModel.currentEntity = currentEntity;
     viewModel.ranking = ranking;
     viewModel.nextCompetitions = nextCompetitions;
+    viewModel.banners = banners;
 
     // lifecycle revelation
     viewModel.activate = activate;

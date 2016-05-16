@@ -7,6 +7,7 @@ using Hipicapp.Service.Publicity;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Transaction.Interceptor;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace Hipicapp.Proxy.Publicity
@@ -56,6 +57,11 @@ namespace Hipicapp.Proxy.Publicity
         {
             var banner = this.BannerService.Get(id);
             return this.BannerService.Upload(banner, file.FileName, file.ContentType, file.Contents);
+        }
+
+        public IList<Banner> FindVisibleBySpecialtyId(long? specialtyId)
+        {
+            return this.BannerService.FindVisibleBySpecialtyId(specialtyId);
         }
     }
 }

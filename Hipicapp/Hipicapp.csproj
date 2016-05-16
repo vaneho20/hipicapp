@@ -370,6 +370,8 @@
     <Content Include="App\core\router.js" />
     <Content Include="App\core\subrouter.js" />
     <Content Include="App\domain\athlete\athleteSortImpl.js" />
+    <Content Include="App\domain\banner\bannerBroker.js" />
+    <Content Include="App\domain\banner\bannerSortImpl.js" />
     <Content Include="App\domain\enrollment\enrollmentFilterImpl.js" />
     <Content Include="App\domain\enrollment\enrollmentImpl.js" />
     <Content Include="App\domain\enrollment\enrollmentSortImpl.js" />

@@ -10,6 +10,7 @@ using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -31,6 +32,14 @@ namespace Hipicapp.Controllers.Publicity
         public Page<Banner> Find(BannerFindRequest request)
         {
             return this.BannerProxy.Paginated(request);
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("findVisibleBySpecialtyId/{specialtyId}")]
+        public IList<Banner> FindVisibleBySpecialtyId([FromUri]long? specialtyId)
+        {
+            return this.BannerProxy.FindVisibleBySpecialtyId(specialtyId);
         }
 
         [AcceptVerbs("GET")]

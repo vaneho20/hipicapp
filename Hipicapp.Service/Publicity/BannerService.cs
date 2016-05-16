@@ -8,6 +8,8 @@ using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Hipicapp.Service.Publicity
 {
@@ -27,6 +29,12 @@ namespace Hipicapp.Service.Publicity
         public Page<Banner> Paginated(BannerFindFilter filter, PageRequest pageRequest)
         {
             return this.BannerRepository.Paginated(BannerPredicates.ValueOf(filter, this.BannerRepository.GetAllQueryable()), pageRequest);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public IList<Banner> FindVisibleBySpecialtyId(long? specialtyId)
+        {
+            return this.BannerRepository.GetAllQueryable().Where(x => x.Visible.Value).ToList();
         }
 
         [Transaction(ReadOnly = true)]
