@@ -84,7 +84,7 @@ namespace Hipicapp.Controllers.Participant
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("inscription")]
-        public EnrollmentId Inscription(EnrollmentId id)
+        public EnrollmentId Inscription([FromBody]EnrollmentId id)
         {
             return this.AthleteProxy.Inscription(id);
         }

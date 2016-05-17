@@ -8,6 +8,8 @@ namespace Hipicapp.Proxy.Participant
     {
         Page<Horse> Paginated(HorseFindRequest request);
 
+        Page<Horse> PaginatedByCurrentUser(HorseFindRequest request);
+
         Horse Get(long? id);
 
         Horse Save(Horse horse);

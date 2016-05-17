@@ -17,8 +17,17 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
                 brokerUtils.requestMappings.FIND), brokerUtils.verb.POST, CACHE_NAME));
 
+    amplify.request.define("horses/findByCurrentUser", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
+                brokerUtils.requestMappings.FIND_BY_CURRENT_USER), brokerUtils.verb.POST, CACHE_NAME));
+
     function findBy(findRequest) {
         return amplify.request("horses/findBy", findRequest);
+    }
+
+    function findByCurrentUser(findRequest) {
+        return amplify.request("horses/findByCurrentUser", findRequest);
     }
 
     function getDetailUrlById(horseId) {
@@ -38,6 +47,7 @@ define([
 
     // request revelation
     broker.findBy = findBy;
+    broker.findByCurrentUser = findByCurrentUser;
     broker.getDetailUrlById = getDetailUrlById;
     broker.getListUrl = getListUrl;
 

@@ -101,8 +101,12 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\EnrollmentExpiredPolicy.cs" />
     <Compile Include="Event\EnrollmentPredicates.cs" />
+    <Compile Include="Event\IEnrollmentExpiredPolicy.cs" />
+    <Compile Include="Event\ICompetitionExpiredPolicy.cs" />
     <Compile Include="Event\IMaximumNumberOfJudgesExceededPolicy.cs" />
+    <Compile Include="Event\CompetitionExpiredPolicy.cs" />
     <Compile Include="Event\SeminaryService.cs" />
     <Compile Include="Event\ISeminaryService.cs" />
     <Compile Include="Event\MaximumNumberOfJudgesExceededPolicy.cs" />
@@ -117,8 +121,11 @@
     <Compile Include="Event\ISpecialtyService.cs" />
     <Compile Include="Event\ICompetitionCategoryService.cs" />
     <Compile Include="Event\ICompetitionService.cs" />
+    <Compile Include="Exceptions\EnrollmentExpiredException.cs" />
+    <Compile Include="Exceptions\CompetitionExpiredException.cs" />
     <Compile Include="Exceptions\MaximumNumberOfJudgesExceededException.cs" />
     <Compile Include="Exceptions\MinimumAgeOfHorseUnsurpassedException.cs" />
+    <Compile Include="Exceptions\NoSameSpecialtyException.cs" />
     <Compile Include="Exceptions\NoSameCompetitionCategoryException.cs" />
     <Compile Include="Exceptions\NoSuchCompetitionCategoryException.cs" />
     <Compile Include="Exceptions\WeightAthleteSaddleExceededException.cs" />

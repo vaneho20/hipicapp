@@ -257,6 +257,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\bindings\addressBinding.js" />
     <Content Include="App\bindings\bootstrapSwitchBinding.js" />
     <Content Include="App\bindings\carouselBinding.js" />
     <Content Include="App\bindings\clickoverBinding.js" />
@@ -321,6 +322,8 @@
     <Compile Include="Proxy\Authentication\IClientProxy.cs" />
     <Compile Include="Proxy\Authentication\IRefreshTokenProxy.cs" />
     <Compile Include="Proxy\Authentication\RefreshTokenProxy.cs" />
+    <Compile Include="Proxy\Event\ISameSpecialtyPolicy.cs" />
+    <Compile Include="Proxy\Event\SameSpecialtyPolicy.cs" />
     <Compile Include="Proxy\Event\SpecialtyProxy.cs" />
     <Compile Include="Proxy\Event\CompetitionCategoryProxy.cs" />
     <Compile Include="Proxy\Event\CompetitionProxy.cs" />
@@ -399,6 +402,7 @@
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\alerts.js" />
     <Content Include="App\viewmodels\athlete.js" />
+    <Content Include="App\viewmodels\competitionHorses.js" />
     <Content Include="App\viewmodels\athleteHorses.js" />
     <Content Include="App\viewmodels\athletes.js" />
     <Content Include="App\viewmodels\athleteCompetitions.js" />
@@ -419,6 +423,7 @@
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\athlete.html" />
+    <Content Include="App\views\competitionHorses.html" />
     <Content Include="App\views\athleteHorses.html" />
     <Content Include="App\views\athletes.html" />
     <Content Include="App\views\athleteCompetitions.html" />

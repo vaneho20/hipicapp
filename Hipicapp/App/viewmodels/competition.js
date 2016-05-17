@@ -52,16 +52,6 @@ define([
         return specialtyBroker.findAll().done(refreshSpecialties);
     }
 
-    function save() {
-        var promise;
-        if (currentEntity().id) {
-            promise = competitionBroker.update(currentEntity());
-        } else {
-            promise = competitionBroker.save(currentEntity());
-        }
-        return promise.done(refreshCurrentEntity);
-    }
-
     // module revelation
     viewModel.i18n = i18n;
     viewModel.securityContext = securityContext;

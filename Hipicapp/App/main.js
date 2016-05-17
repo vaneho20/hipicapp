@@ -32,13 +32,14 @@ define('gmaps', ['async!https://maps.google.com/maps/api/js?key=AIzaSyBdhF5Dy-Te
     });
 
 define([
-    "bindings/compareBinding", "bindings/datetimepickerValueBinding", "bindings/epochAfterBinding", "bindings/epochFutureBinding",
-    "bindings/epochValueBinding", "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding",
-    "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system", "durandal/app",
-    "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"
-], function (compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding, epochValueBinding,
-        fileuploadBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext, system, app, viewLocator,
-        binder, i18n, router) {
+    "bindings/addressBinding", "bindings/compareBinding", "bindings/datetimepickerValueBinding",
+    "bindings/epochAfterBinding", "bindings/epochFutureBinding", "bindings/epochValueBinding",
+    "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding",
+    "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system",
+    "durandal/app", "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"
+], function (addressBinding, compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding,
+    epochValueBinding, fileuploadBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext,
+    system, app, viewLocator, binder, i18n, router) {
     // Fast click
     FastClick.attach(document.body);
 
@@ -56,8 +57,11 @@ define([
         useCookie: false
     };
 
+    moment.locale("es");
+
     // setup knockout
     // custom binding handlers
+    ko.bindingHandlers.address = addressBinding;
     ko.bindingHandlers.compare = compareBinding;
     ko.bindingHandlers.datetimepickerValue = datetimepickerValueBinding;
     ko.bindingHandlers.epochAfter = epochAfterBinding;

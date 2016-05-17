@@ -72,6 +72,12 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId);
     }
 
+    function getHorsesUrlById(competitionId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION, competitionId,
+                brokerUtils.requestMappings.HORSES);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -87,6 +93,7 @@ define([
 
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getHorsesUrlById = getHorsesUrlById;
 
     return broker;
 });

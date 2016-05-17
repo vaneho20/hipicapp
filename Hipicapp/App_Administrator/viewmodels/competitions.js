@@ -84,13 +84,9 @@ define([
 
         if (moment(row.endDate) < moment()) {
             rowClass = "danger";
-        }/* else if (row.userType === userImpl.userType.CLIENT) {
-                rowClass = "warning";
-            } else if (row.userType === userImpl.userType.CONSUMER) {
-                rowClass = "success";
-            } else if (row.userType === userImpl.userType.USER) {
-                rowClass = "info";
-            }*/
+        } else if (moment(row.registrationEndDate) >= moment()) {
+            rowClass = "warning";
+        }
 
         return rowClass;
     }

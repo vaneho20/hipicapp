@@ -177,7 +177,7 @@
     "ATHLETES": "Atletas",
     "ATHLETE_FILTER_LEGEND": "Buscar atletas",
     "ATHLETE_NAME_FILTER": "Busca los atletas cuyo nombre empieza por...",
-    "ATHLETE_DNI_FILTER": "Busca los atletas cuyo dni empieza por...",
+    "ATHLETE_FEDERATION_FILTER": "Busca los atletas cuya federación empieza por...",
     "ATHLETE_GENDER_FILTER": "Busca los atletas cuyo sexo es igual a...",
     "ATHLETE_LIST_CAPTION": "Lista de atletas",
     "ATHLETE_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún atleta!",
@@ -251,11 +251,14 @@
     "Hipicapp_Exceptions_ImageException" : "¡Vaya! Las imágenes tiene que estar en formato gif, jpg o png y pesar menos de {0} bytes",
     "Hipicapp_Service_Exceptions_AccessDeniedException": "¡Oops! No tienes permiso para acceder a esa funcionalidad",
     "Hipicapp_Service_Exceptions_BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos",
-    "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException":  "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso",
+    "Hipicapp_Service_Exceptions_CompetitionExpiredException": "¡Vaya! El concurso ha expirado",
+    "Hipicapp_Service_Exceptions_EnrollmentExpiredException": "¡Vaya! La fecha de inscripción al concurso ha caducadoS",
+    "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException": "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso",
     "Hipicapp_Service_Exceptions_MinimumAgeOfHorseUnsurpassedException": "¡Vaya! El caballo no supera la edad permitida por la especialidad del concurso",
-    "Hipicapp_Service_Exceptions_NoSameCompetitionCategoryException":  "¡Vaya! No tienes la misma categoría que el concurso al que deseas inscribirte",
-    "Hipicapp_Service_Exceptions_NoSuchCompetitionCategoryException":  "¡Vaya! No existe categoría para tu año de nacimiento",
+    "Hipicapp_Service_Exceptions_NoSameCompetitionCategoryException": "¡Vaya! No perteneces a la misma categoría que el concurso al que deseas inscribirte",
+    "Hipicapp_Service_Exceptions_NoSameSpecialtyException": "¡Vaya! No perteneces a la misma disciplina que el concurso al que deseas inscribirte",
+    "Hipicapp_Service_Exceptions_NoSuchCompetitionCategoryException": "¡Vaya! No existe categoría para tu año de nacimiento",
     "Hipicapp_Service_Exceptions_NoSuchTicketException": "¡Oops! El vínculo no ha sido encontrado",
     "Hipicapp_Service_Exceptions_TicketExpiredException": "¡Oops! El vínculo ha expirado",
-    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException":  "¡Vaya! El atleta ha superado el peso maximo con silla permitido por la especialidad del concurso"
+    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException": "¡Vaya! El atleta ha superado el peso maximo con silla permitido por la especialidad del concurso"
 }

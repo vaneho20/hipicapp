@@ -7,5 +7,7 @@ namespace Hipicapp.Model.Participant
         public long? AthleteId { get; set; }
 
         public long? SpecialtyId { get; set; }
+
+        public long? CompetitionId { get; set; }
     }
 }

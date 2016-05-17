@@ -142,12 +142,12 @@ define([
         return currentSort().getOrderByProperty(athleteImpl.properties.SURNAMES).getIconClass();
     });
 
-    viewModel.sortByDni = _.partial(sortByProperty, athleteImpl.properties.DNI);
-    viewModel.getOrderIconTitleForDni = ko.computed(function getOrderIconTitleForDni() {
-        return currentSort().getOrderByProperty(athleteImpl.properties.DNI).getIconTitle();
+    viewModel.sortByFederation = _.partial(sortByProperty, athleteImpl.properties.FEDERATION);
+    viewModel.getOrderIconTitleForFederation = ko.computed(function getOrderIconTitleForFederation() {
+        return currentSort().getOrderByProperty(athleteImpl.properties.FEDERATION).getIconTitle();
     });
-    viewModel.getOrderIconClassForDni = ko.computed(function getOrderIconClassForDni() {
-        return currentSort().getOrderByProperty(athleteImpl.properties.DNI).getIconClass();
+    viewModel.getOrderIconClassForFederation = ko.computed(function getOrderIconClassForFederation() {
+        return currentSort().getOrderByProperty(athleteImpl.properties.FEDERATION).getIconClass();
     });
 
     /*viewModel.sortByBirthDate = _.partial(sortByProperty, athleteImpl.properties.BIRTH_DATE);

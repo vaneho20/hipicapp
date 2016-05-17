@@ -23,6 +23,12 @@ namespace Hipicapp.Service.Event
         private ISeminaryRepository SeminaryRepository { get; set; }
 
         [Autowired]
+        private ICompetitionExpiredPolicy CompetitionExpiredPolicy { get; set; }
+
+        [Autowired]
+        private IEnrollmentExpiredPolicy EnrollmentExpiredPolicy { get; set; }
+
+        [Autowired]
         private IMaximumNumberOfJudgesExceededPolicy MaximumNumberOfJudgesExceededPolicy { get; set; }
 
         [Transaction]
@@ -30,6 +36,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
@@ -62,6 +70,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
@@ -94,6 +104,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
@@ -129,6 +141,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
@@ -161,6 +175,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             //this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
@@ -198,6 +214,8 @@ namespace Hipicapp.Service.Event
         {
             Competition previousCompetition = this.CompetitionRepository.Get(competitionId);
 
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.SeminaryRepository.GetAllQueryable().Count(x => x.Competition.Id == competitionId), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 

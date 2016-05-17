@@ -4,6 +4,7 @@ using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Service.Account;
+using Hipicapp.Service.Event;
 using Hipicapp.Service.Mail.Impl;
 using Hipicapp.Service.Mail.Models;
 using Hipicapp.Service.Util;
@@ -48,6 +49,12 @@ namespace Hipicapp.Service.Participant
 
         [Autowired]
         private IAvailableCompetitionCategoryPolicy AvailableCompetitionCategoryPolicy { get; set; }
+
+        [Autowired]
+        private ICompetitionExpiredPolicy CompetitionExpiredPolicy { get; set; }
+
+        [Autowired]
+        private IEnrollmentExpiredPolicy EnrollmentExpiredPolicy { get; set; }
 
         [Autowired]
         private IMinimumAgeOfHorseUnsurpassedPolicy MinimumAgeOfHorseUnsurpassedPolicy { get; set; }
@@ -136,10 +143,12 @@ namespace Hipicapp.Service.Participant
         [Transaction]
         public EnrollmentId Inscription(EnrollmentId id)
         {
-            if (this.EnrollmentRepository.GetAllQueryable().Count(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId) <= 0)
+            if (!this.EnrollmentRepository.GetAllQueryable().Any(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId))
             {
                 var horse = this.HorseRepository.Get(id.HorseId);
                 var competition = this.CompetitionRepository.Get(id.CompetitionId);
+                this.EnrollmentExpiredPolicy.CheckSatisfiedBy(competition);
+                this.CompetitionExpiredPolicy.CheckSatisfiedBy(competition);
                 this.SameCompetitionCategoryPolicy.CheckSatisfiedBy(horse.Athlete.Category, competition.Category);
                 this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(horse, competition.Specialty);
                 this.EnrollmentRepository.Save(new Enrollment()

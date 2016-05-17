@@ -1,8 +1,8 @@
 /* global amplify: false, define: false, require: false */
 /* jshint maxstatements: 35 */
 define([
-    "core/broker", "core/cacheImpl", "core/util/urlUtils"
-], function athleteBroker(brokerUtils, cacheImpl, urlUtils) {
+    "core/broker", "core/cacheImpl", "core/util/urlUtils", "domain/competition/competitionBroker"
+], function athleteBroker(brokerUtils, cacheImpl, urlUtils, competitionBroker) {
     "use strict";
 
     var broker = {}, CACHE_NAME = "athletes", CACHE = cacheImpl(CACHE_NAME);
@@ -31,6 +31,10 @@ define([
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.REGISTER), brokerUtils.verb.POST));
 
+    amplify.request.define("athletes/inscription", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.INSCRIPTION), brokerUtils.verb.POST));
+
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);
     }
@@ -47,6 +51,13 @@ define([
 
     function register(entity) {
         return amplify.request("athletes/register", entity).always(CACHE.evict);
+    }
+
+    function inscription(competitionId, horseId) {
+        return amplify.request("athletes/inscription", {
+            competitionId: competitionId,
+            horseId: horseId
+        }).always(CACHE.evict).always(competitionBroker.evictCache);
     }
 
     function getListUrl(specialtyId) {
@@ -69,6 +80,8 @@ define([
     broker.findById = findById;
     broker.getByCurrentUser = getByCurrentUser;
     broker.register = register;
+    broker.inscription = inscription;
+
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
 

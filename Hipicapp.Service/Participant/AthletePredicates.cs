@@ -20,6 +20,10 @@ namespace Hipicapp.Service.Participant
             {
                 query = query.Where(x => x.Dni.StartsWith(filter.Dni));
             }
+            if (filter.Federation != null)
+            {
+                query = query.Where(x => x.Federation.StartsWith(filter.Federation));
+            }
             if (filter.Gender != null)
             {
                 query = query.Where(x => x.Gender == filter.Gender);

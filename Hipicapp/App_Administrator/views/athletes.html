@@ -9,8 +9,8 @@
                            data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('ATHLETE_NAME_FILTER') }" />
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
-                    <input class="form-control input-sm" type="text" id="h-athlete-filter-dni"
-                           data-bind="value: nextFilter().dni, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('DNI') + '...', title : i18n.t('ATHLETE_DNI_FILTER') }" />
+                    <input class="form-control input-sm" type="text" id="h-athlete-filter-federation"
+                           data-bind="value: nextFilter().federation, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('FEDERATION') + '...', title : i18n.t('ATHLETE_FEDERATION_FILTER') }" />
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-4 without-padding-left">
                     <select id="h-athlete-filter-gender"
@@ -73,12 +73,6 @@
                                     <a href="#" data-bind="click: sortByName">
                                         <i data-bind="attr: { title: i18n.t(getOrderIconTitleForName()) }, css: getOrderIconClassForName">
                                         </i>
-                                    </a> <span data-bind="text: i18n.t('app:DNI')"></span>
-                                </th>
-                                <th>
-                                    <a href="#" data-bind="click: sortByName">
-                                        <i data-bind="attr: { title: i18n.t(getOrderIconTitleForName()) }, css: getOrderIconClassForName">
-                                        </i>
                                     </a> <span data-bind="text: i18n.t('app:FEDERATION')"></span>
                                 </th>
                                 <th>
@@ -108,7 +102,6 @@
                                 <td data-bind="text: name"></td>
                                 <td data-bind="text: surnames"></td>
                                 <td data-bind="text: $root.availableGenders[gender]"></td>
-                                <td data-bind="text: dni"></td>
                                 <td data-bind="text: federation"></td>
                                 <td data-bind="text: specialty.name"></td>
                                 <td data-bind="text: category.name"></td>

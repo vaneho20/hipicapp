@@ -1,3 +1,13 @@
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1 data-bind="text: 'Concurso'"></h1>
+        </div>
+    </div>
+</section>
 <div>
-    Concurso
+    <a data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE'), href: competitionBroker.getHorsesUrlById(currentEntity().id) }"
+            class="btn btn-primary">
+        <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+    </a>
 </div>

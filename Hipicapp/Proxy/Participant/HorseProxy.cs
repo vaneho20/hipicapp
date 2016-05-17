@@ -2,6 +2,8 @@
 using Hipicapp.Model.Authentication;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
+using Hipicapp.Proxy.Event;
+using Hipicapp.Service.Event;
 using Hipicapp.Service.Participant;
 using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
@@ -18,19 +20,41 @@ namespace Hipicapp.Proxy.Participant
     public class HorseProxy : IHorseProxy
     {
         [Autowired]
+        private IAthleteService AthleteService { get; set; }
+
+        [Autowired]
+        private ICompetitionService CompetitionService { get; set; }
+
+        [Autowired]
         private IHorseService HorseService { get; set; }
 
         [Autowired]
-        private IAthleteService AthleteService { get; set; }
+        private ISameSpecialtyPolicy SameSpecialtyPolicy { get; set; }
 
         [AllowAnonymous]
         public Page<Horse> Paginated(HorseFindRequest request)
         {
-            var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
+            /*var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
             if (user != null && user.Any(x => x.Type == ClaimTypes.Role && x.Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString())))
             {
                 request.Filter.AthleteId = this.AthleteService.GetByUserId(Convert.ToInt64(user.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value)).Id;
+            }*/
+            return this.HorseService.Paginated(request.Filter, request.PageRequest);
+        }
+
+        [AuthorizeEnum(Rol.ATHLETE)]
+        public Page<Horse> PaginatedByCurrentUser(HorseFindRequest request)
+        {
+            var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
+            Athlete athlete = null;
+            if (user != null && user.Any(x => x.Type == ClaimTypes.Role && x.Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString())))
+            {
+                athlete = this.AthleteService.GetByUserId(Convert.ToInt64(user.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value));
+                request.Filter.AthleteId = athlete.Id;
             }
+
+            var competition = this.CompetitionService.Get(request.Filter.CompetitionId);
+            this.SameSpecialtyPolicy.CheckSatisfiedBy(competition.Specialty, athlete.Specialty);
             return this.HorseService.Paginated(request.Filter, request.PageRequest);
         }
 

@@ -9,6 +9,7 @@ define([
         NAME: "name",
         SURNAMES: "surnames",
         GENDER: "gender",
+        FEDERATION: "federation",
         BIRTH_DATE: "birthDate",
         SPECIALTY_ID: "specialtyId"
     };
@@ -44,7 +45,6 @@ define([
         }
 
         function completeName() {
-
         }
 
         athlete.id = id;

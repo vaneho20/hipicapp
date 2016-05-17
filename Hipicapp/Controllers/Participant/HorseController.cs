@@ -33,6 +33,14 @@ namespace Hipicapp.Controllers.Participant
             return this.HorseProxy.Paginated(request);
         }
 
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("findByCurrentUser")]
+        public Page<Horse> FindByCurrentUser(HorseFindRequest request)
+        {
+            return this.HorseProxy.PaginatedByCurrentUser(request);
+        }
+
         [AcceptVerbs("GET")]
         [HttpGet]
         [Route("get/{id}")]

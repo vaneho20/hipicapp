@@ -27,8 +27,8 @@
                                    data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('ATHLETE_NAME_FILTER') }" />
                         </div>
                         <div class="campo-buscador col-md-3 col-sm-3 col-xs-6">
-                            <input class="form-control input-lg" type="text" id="h-athlete-filter-dni"
-                                   data-bind="value: nextFilter().dni, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('DNI') + '...', title : i18n.t('ATHLETE_DNI_FILTER') }" />
+                            <input class="form-control input-lg" type="text" id="h-athlete-filter-federation"
+                                   data-bind="value: nextFilter().federation, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('FEDERATION') + '...', title : i18n.t('ATHLETE_FEDERATION_FILTER') }" />
                         </div>
                         <div class="campo-buscador col-md-2 col-sm-2 col-xs-4">
                             <select id="h-athlete-filter-gender"
@@ -65,8 +65,8 @@
                         <div class="info-listados col-md-9 col-sm-9 col-xs-18">
                             <h3><span data-bind="text: name"></span> <span data-bind="text: surnames"></span></h3>
                             <p>
-                                <strong>D.N.I</strong>
-                                <span data-bind="text: dni"></span>
+                                <strong>Federación:</strong>
+                                <span data-bind="text: federation"></span>
                             </p>
                             <p>
                                 <strong>Fecha Nacimiento:</strong>

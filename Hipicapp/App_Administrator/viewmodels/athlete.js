@@ -45,10 +45,6 @@ define([
     // behaviour definition
     function refreshCurrentEntity(data) {
         currentEntity(athleteImpl(data));
-        /*if (securityContext.getPrincipal().autoLogin) {
-            alerts.warn(i18n.ATHLETE_COMPLETE_REGISTRATION);
-            securityContext.getPrincipal().autoLogin = false;
-        }*/
     }
 
     function loadEntityByAthleteId(id) {
