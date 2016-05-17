@@ -5,9 +5,47 @@
         </div>
     </div>
 </section>
-<div>
-    <a data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE'), href: competitionBroker.getHorsesUrlById(currentEntity().id) }"
-            class="btn btn-primary">
-        <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-    </a>
-</div>
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
+                    <!--<section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-24"
+                             data-bind="compose: { model: 'viewmodels/athleteHorses', activationData: currentEntity().id }"></section>
+                    <section id="mis-concursos"
+                             data-bind="compose: { model: 'viewmodels/athleteCompetitions', activationData: currentEntity().id }"></section>-->
+                </div>
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '' }">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3 data-bind="text: currentEntity().name"></h3>
+                            <p>
+                                <strong>Categor&iacute;a:</strong>
+                                <span data-bind="text: currentEntity().category.name"></span>
+                            </p>
+                            <p>
+                                <strong>Recinto:</strong>
+                                <span data-bind="text: currentEntity().address"></span>
+                            </p>
+                            <p>
+                                <strong>Disciplina:</strong>
+                                <span data-bind="text: currentEntity().specialty.name"></span>
+                            </p>
+                            <p>
+                                <strong>Fechas:</strong>
+                                <span data-bind="text: moment(currentEntity().startDate()).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(currentEntity().endDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+
+                            <a class="ver-todo" data-bind="attr: { title: i18n.t('app:ENROLL_BUTTON_TITLE'), href: competitionBroker.getHorsesUrlById(currentEntity().id) }">
+                                <i class="fa fa-edit"></i> <span data-bind="text: i18n.t('app:ENROLL_BUTTON_TEXT')"></span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

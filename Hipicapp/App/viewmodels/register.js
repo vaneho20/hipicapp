@@ -3,31 +3,34 @@
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
     "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
-    "domain/athlete/athleteImpl", "durandal/app", "viewmodels/shell", "viewmodels/alerts"
+    "domain/athlete/athleteImpl", "domain/specialty/specialtyBroker", "durandal/app",
+    "viewmodels/shell", "viewmodels/alerts"
 ], function registerViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, athleteBroker, athleteImpl, app, shell, alerts) {
+    validationUtils, athleteBroker, athleteImpl, specialtyBroker, app, shell, alerts) {
     "use strict";
 
     // state definition
-    var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = [
-        {
-            value: athleteImpl.genders.MALE,
-            text: i18n.t("app:ATHLETE_GENDER_MALE")
-        }, {
-            value: athleteImpl.genders.FEMALE,
-            text: i18n.t("app:ATHLETE_GENDER_FEMALE")
-        }
-    ];
+    var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = {
+        "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
+    }, availableSpecialties = ko.observable();
 
     // lifecycle definition
     function activate() {
-        return;
+        return $.when(loadAvailableSpecialties());
     }
 
     // behaviour definition
     function refreshCurrentEntity(data) {
         securityContext.refresh(data);
         router.reloadCurrentLocation();
+    }
+
+    function refreshSpecialties(data) {
+        availableSpecialties(data);
+    }
+
+    function loadAvailableSpecialties() {
+        return specialtyBroker.findAll().done(refreshSpecialties);
     }
 
     function signIn() {
@@ -43,6 +46,7 @@ define([
     // state revelation
     viewModel.currentEntity = currentEntity;
     viewModel.availableGenders = availableGenders;
+    viewModel.availableSpecialties = availableSpecialties;
 
     // lifecycle revelation
     viewModel.activate = activate;
