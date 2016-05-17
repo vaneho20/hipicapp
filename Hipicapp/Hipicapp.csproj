@@ -407,6 +407,7 @@
     <Content Include="App\viewmodels\athletes.js" />
     <Content Include="App\viewmodels\athleteCompetitions.js" />
     <Content Include="App\viewmodels\competition.js" />
+    <Content Include="App\viewmodels\competitionJudges.js" />
     <Content Include="App\viewmodels\competitions.js" />
     <Content Include="App\viewmodels\horse.js" />
     <Content Include="App\viewmodels\judge.js" />
@@ -428,6 +429,7 @@
     <Content Include="App\views\athletes.html" />
     <Content Include="App\views\athleteCompetitions.html" />
     <Content Include="App\views\competition.html" />
+    <Content Include="App\views\competitionJudges.html" />
     <Content Include="App\views\competitions.html" />
     <Content Include="App\views\horse.html" />
     <Content Include="App\views\judge.html" />
