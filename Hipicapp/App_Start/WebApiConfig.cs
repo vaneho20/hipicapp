@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Filters;
+using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 
@@ -10,8 +11,8 @@ namespace Hipicapp
         {
             config.ParameterBindingRules.Add(p =>
             {
-                if (p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Post) || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Put)
-                    || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Delete))
+                if (p.GetCustomAttributes<ValidAttribute>().Any() && (p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Post) || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Put)
+                    || p.ActionDescriptor.SupportedHttpMethods.Contains(HttpMethod.Delete)))
                 {
                     return new ValidParameterBinding(p);
                 }

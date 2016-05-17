@@ -102,7 +102,7 @@ namespace Hipicapp.Controllers.Event
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("simulateScore")]
-        public IList<Score> SimulateScore([Valid] Competition competition)
+        public IList<Score> SimulateScore(Competition competition)
         {
             return this.CompetitionProxy.SimulateScore(competition);
         }

@@ -79,7 +79,7 @@
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: currentPage().content">
-                            <tr>
+                            <tr data-bind="css: $root.getRowClass($data)">
                                 <td data-bind="text: name"></td>
                                 <td data-bind="text: category.name"></td>
                                 <td data-bind="text: specialty.name"></td>

@@ -79,6 +79,22 @@ define([
         });
     }
 
+    function getRowClass(row) {
+        var rowClass = "";
+
+        if (moment(row.endDate) < moment()) {
+            rowClass = "danger";
+        }/* else if (row.userType === userImpl.userType.CLIENT) {
+                rowClass = "warning";
+            } else if (row.userType === userImpl.userType.CONSUMER) {
+                rowClass = "success";
+            } else if (row.userType === userImpl.userType.USER) {
+                rowClass = "info";
+            }*/
+
+        return rowClass;
+    }
+
     function simulateScore(competition) {
         competitionBroker.simulateScore(competition).done(loadCurrentPage);
     }
@@ -109,6 +125,7 @@ define([
     viewModel.search = search;
     viewModel.clearFilter = clearFilter;
     viewModel.deleteRow = deleteRow;
+    viewModel.getRowClass = getRowClass;
     viewModel.simulateScore = simulateScore;
 
     // bind helpers
