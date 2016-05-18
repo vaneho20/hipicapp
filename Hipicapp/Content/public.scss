@@ -540,15 +540,24 @@ body {
             -moz-transform: translate(-50%,-50%);
             -o-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
-        }
 
-        .header-text h2 {
-            font-size: 40px;
-        }
+            h2 {
+                font-size: 40px;
 
-        .header-text h2 span {
-            background: rgba(0,0,0,0.5);
-            padding: 10px;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                span {
+                    background: rgba(0,0,0,0.5);
+                    padding: 10px;
+                }
+            }
         }
 
         .header-text h3 span {

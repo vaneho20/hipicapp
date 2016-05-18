@@ -391,11 +391,16 @@ body {
       -moz-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
-    body #contenido-interior .header-text h2 {
-      font-size: 40px; }
-    body #contenido-interior .header-text h2 span {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px; }
+      body #contenido-interior .header-text h2 {
+        font-size: 40px; }
+        body #contenido-interior .header-text h2 a {
+          color: #fff;
+          text-decoration: none; }
+          body #contenido-interior .header-text h2 a:hover {
+            text-decoration: none; }
+        body #contenido-interior .header-text h2 span {
+          background: rgba(0, 0, 0, 0.5);
+          padding: 10px; }
     body #contenido-interior .header-text h3 span {
       background-color: #000;
       padding: 15px; }

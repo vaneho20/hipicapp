@@ -52,7 +52,7 @@ namespace Hipicapp.Model.Event
         public virtual string PlaceId { get; set; }
 
         [NotNull]
-        [Future]
+        //[Future]
         public virtual DateTime? StartDate { get; set; }
 
         [NotNull]
@@ -60,11 +60,11 @@ namespace Hipicapp.Model.Event
         public virtual DateTime? EndDate { get; set; }
 
         [NotNull]
-        [Future]
+        //[Future]
         public virtual DateTime? RegistrationStartDate { get; set; }
 
         [NotNull]
-        [Future]
+        //[Future]
         public virtual DateTime? RegistrationEndDate { get; set; }
 
         public virtual DateTime? CreationDate { get; set; }
@@ -87,7 +87,7 @@ namespace Hipicapp.Model.Event
 
             Map(x => x.CategoryId).Column("CATEGORY_ID").Not.Nullable();
             Map(x => x.SpecialtyId).Column("SPECIALTY_ID").Not.Nullable();
-            Map(x => x.PhotoId).Column("PHOTO_ID").Not.Nullable();
+            Map(x => x.PhotoId).Column("PHOTO_ID").Nullable();
             Map(x => x.Name).Column("NAME").Not.Nullable();
             Map(x => x.Description).Column("DESCRIPTION").Not.Nullable().Length(ValidationUtils.MAX_LENGTH_DESCRIPTION);
             Map(x => x.Address).Column("ADDRESS").Not.Nullable();
