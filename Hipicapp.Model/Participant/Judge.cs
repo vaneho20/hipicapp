@@ -47,10 +47,10 @@ namespace Hipicapp.Model.Participant
         [SafeHtml(WhiteListType.NONE)]
         public virtual string ZipCode { get; set; }
 
-        [NotNull]
+        /*[NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(WhiteListType.NONE)]
+        [SafeHtml(WhiteListType.NONE)]*/
         public virtual string PlaceId { get; set; }
 
         public virtual FileInfo Photo { get; set; }

@@ -62,6 +62,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         INSCRIPTION: "inscription",
         IMAGES: "images",
         SIGN_IN: "signIn",
+        REGISTER: "register",
         RESET_PASSWORD: "resetPassword",
         CHECK_TICKET: "checkTicket",
         UPDATE_PASSWORD: "updatePassword",
