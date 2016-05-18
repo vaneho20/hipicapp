@@ -11,7 +11,7 @@ define(function validationUtils() {
         LT: "LT",
         LE: "LE",
         NE: "NE"
-    }, MAX_LENGTH = 255, FLOAT_STEP = 0.01, INTEGER_STEP = 1, MAX_FILE_SIZE = /* 100KB */100000,
+    }, MAX_LENGTH = 255, FLOAT_STEP = 0.01, INTEGER_STEP = 1, MAX_FILE_SIZE = /* 250KB */250000,
         ACCEPT_FILE_TYPES = /(\.|\/)(gif|jpe?g|png)$/i;
 
     function valueOfArguments(args) {

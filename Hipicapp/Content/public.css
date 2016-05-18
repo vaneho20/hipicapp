@@ -500,6 +500,7 @@ body {
                 text-transform: uppercase;
                 width: auto; }
             body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto {
+              background: #fff;
               padding: 10px; }
               body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto h3 {
                 margin: 0.3em 0;
