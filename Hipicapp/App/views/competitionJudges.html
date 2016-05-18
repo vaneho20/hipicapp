@@ -19,7 +19,7 @@
 <article data-bind="foreach: currentPage().content">
     <div class="row">
         <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
-            <img alt="Foto juez" data-bind="attr: { src: photoId ? fileBroker.getUrlByUuid(photo.fileUuid) : '' }" />
+            <img alt="Foto juez" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '' }" />
         </div>
         <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: fullName">
         </div>

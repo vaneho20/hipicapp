@@ -3,10 +3,10 @@
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "domain/competition/competitionBroker",
-    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl", "domain/judge/judgeSortImpl",
-    "domain/judge/judgeImpl", "durandal/app", "viewmodels/shell"
+    "domain/file/fileBroker", "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl",
+    "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "durandal/app", "viewmodels/shell"
 ], function competitionJudges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    competitionBroker, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, app, shell) {
+    competitionBroker, fileBroker, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, app, shell) {
     "use strict";
 
     // state definition
@@ -71,9 +71,12 @@ define([
         return loadCurrentPage();
     }
 
-    // state revelation
+    // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.fileBroker = fileBroker;
+
+    // state revelation
     viewModel.nextFilter = nextFilter;
     viewModel.currentSort = currentSort;
     viewModel.currentPage = currentPage;
