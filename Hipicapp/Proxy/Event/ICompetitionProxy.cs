@@ -12,6 +12,8 @@ namespace Hipicapp.Proxy.Event
 
         Page<Enrollment> PaginatedInscriptions(EnrollmentFindRequest request);
 
+        Page<Judge> PaginatedSeminary(JudgeFindRequest request);
+
         Competition Get(long? id);
 
         IList<Ranking> AdultRankingsBySpecialtyId(long? specialty);

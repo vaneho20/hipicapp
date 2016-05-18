@@ -14,26 +14,24 @@
         Direcci&oacute;n
     </div>
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
-        Fecha
+        Fechas
     </div>
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
         Categor&iacute;a
     </div>
 </article>
-<article class="row" data-bind="foreach: currentPage().content">
-    <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
-        <img alt="Foto caballo" src="/Content/images/foto_caballo.jpg" />
-    </div>
-    <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
-        CSN** Real Club de Polo de Barcelona
-    </div>
-    <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
-        Real Club De Polo Barcelona
-    </div>
-    <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
-        06/05/2016
-    </div>
-    <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
-        Infantil
+<article data-bind="foreach: currentPage().content">
+    <div class="row">
+        <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+            <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? fileBroker.getUrlByUuid(competition.photo.fileUuid) : '' }" />
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.name">
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.address">
+        </div>
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
+        </div>
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: competition.category.name">
+        </div>
     </div>
 </article>

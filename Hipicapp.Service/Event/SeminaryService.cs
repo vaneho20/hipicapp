@@ -2,6 +2,7 @@
 using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
+using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -30,6 +31,12 @@ namespace Hipicapp.Service.Event
 
         [Autowired]
         private IMaximumNumberOfJudgesExceededPolicy MaximumNumberOfJudgesExceededPolicy { get; set; }
+
+        [Transaction(ReadOnly = true)]
+        public Page<Judge> Paginated(JudgeFindFilter filter, PageRequest pageRequest)
+        {
+            return this.JudgeRepository.Paginated(SeminaryPredicates.ValueOf(filter, this.SeminaryRepository.GetAllQueryable()), pageRequest);
+        }
 
         [Transaction]
         public IList<Seminary> AssignAllJudges(long? competitionId)

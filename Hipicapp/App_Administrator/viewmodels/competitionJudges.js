@@ -12,10 +12,10 @@ define([
 
     // state definition
     var viewModel = $.extend(false, {}, competitionViewModel), superActivate = viewModel.activate,
-        PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, availableProvinces = ko.observable(),
-        nextFilter = ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(),
-        currentSort = ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()),
-        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+        PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter = ko.observable(judgeFilterImpl()),
+        currentFilter = judgeFilterImpl(), currentSort = ko.observable(judgeSortImpl()),
+        currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
+        currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
         };
 

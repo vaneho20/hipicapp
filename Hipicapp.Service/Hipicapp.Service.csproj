@@ -107,6 +107,7 @@
     <Compile Include="Event\ICompetitionExpiredPolicy.cs" />
     <Compile Include="Event\IMaximumNumberOfJudgesExceededPolicy.cs" />
     <Compile Include="Event\CompetitionExpiredPolicy.cs" />
+    <Compile Include="Event\SeminaryPredicates.cs" />
     <Compile Include="Event\SeminaryService.cs" />
     <Compile Include="Event\ISeminaryService.cs" />
     <Compile Include="Event\MaximumNumberOfJudgesExceededPolicy.cs" />

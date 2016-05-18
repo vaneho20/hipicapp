@@ -7,6 +7,7 @@ using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
+using System.Collections.Generic;
 
 namespace Hipicapp.Model.Participant
 {
@@ -56,7 +57,18 @@ namespace Hipicapp.Model.Participant
 
         public virtual Specialty Specialty { get; set; }
 
+        [JsonIgnore]
+        public virtual ISet<Seminary> Seminary { get; set; }
+
         public virtual bool? Assign { get; set; }
+
+        public virtual string FullName
+        {
+            get
+            {
+                return this.Name + " " + this.Surnames;
+            }
+        }
     }
 
     public class JudgeMap : EntityMap<Judge, long?>
@@ -79,6 +91,8 @@ namespace Hipicapp.Model.Participant
 
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
+
+            HasMany<Seminary>(x => x.Seminary).KeyColumn("JUDGE_ID").NotFound.Ignore().LazyLoad();
         }
     }
 }

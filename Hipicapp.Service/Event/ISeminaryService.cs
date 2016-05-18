@@ -1,10 +1,13 @@
 ﻿using Hipicapp.Model.Participant;
+using Hipicapp.Utils.Pager;
 using System.Collections.Generic;
 
 namespace Hipicapp.Service.Event
 {
     public interface ISeminaryService
     {
+        Page<Judge> Paginated(JudgeFindFilter filter, PageRequest pageRequest);
+
         IList<Seminary> AssignAllJudges(long? competitionId);
 
         IList<Seminary> AssignAllJudgesById(long? competitionId, IList<long?> judgesId);

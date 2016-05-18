@@ -46,6 +46,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         FIND_ALL: "findAll",
         FIND_BY_CURRENT_USER: "findByCurrentUser",
         FIND_INSCRIPTIONS: "findInscriptions",
+        FIND_SEMINARY: "findSeminary",
         FINDWITHASSIGNMENT: "findByWithAssignment",
         ASSIGNALLJUDGES: "assignAllJudges",
         ASSIGNALLJUDGESBYPAGE: "assignAllJudgesById",

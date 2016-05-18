@@ -2,20 +2,18 @@
 /* jshint maxparams: 15, maxstatements: 60 */
 define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
-    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "domain/judge/judgeBroker",
-    "domain/competition/competitionBroker", "domain/judge/judgeFilterImpl",
-    "domain/judge/judgeSortImpl", "domain/judge/judgeImpl", "viewmodels/competition",
-    "durandal/app", "viewmodels/shell"
+    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "domain/competition/competitionBroker",
+    "domain/judge/judgeBroker", "domain/judge/judgeFilterImpl", "domain/judge/judgeSortImpl",
+    "domain/judge/judgeImpl", "durandal/app", "viewmodels/shell"
 ], function competitionJudges(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    judgeBroker, competitionBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, competitionViewModel, app, shell) {
+    competitionBroker, judgeBroker, judgeFilterImpl, judgeSortImpl, judgeImpl, app, shell) {
     "use strict";
 
     // state definition
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
-        availableProvinces = ko.observable(), nextFilter = ko.observable(judgeFilterImpl()),
-        currentFilter = judgeFilterImpl(), currentSort = ko.observable(judgeSortImpl()),
-        currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
-        currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+        nextFilter = ko.observable(judgeFilterImpl()), currentFilter = judgeFilterImpl(),
+        currentSort = ko.observable(judgeSortImpl()), currentPage = ko.observable(pageImpl()),
+        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
         };
 
@@ -35,7 +33,7 @@ define([
 
     function loadPageByIndex(index, totalElements) {
         if (index === 0 || index > 0 && index < currentPage().totalPages) {
-            return judgeBroker.findByWithAssignment(
+            return competitionBroker.findSeminaryBy(
                 findRequestImpl(currentFilter, pageRequestImpl(index, currentPageSize,
                     currentSort, totalElements))).done(refreshCurrentPage);
         }

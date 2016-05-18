@@ -88,6 +88,14 @@ namespace Hipicapp.Model.Participant
                 return DateUtils.GetAgeExactInYears(this.BirthDate);
             }
         }
+
+        public virtual string FullName
+        {
+            get
+            {
+                return this.Name + " " + this.Surnames;
+            }
+        }
     }
 
     public class AthleteMap : EntityMap<Athlete, long?>

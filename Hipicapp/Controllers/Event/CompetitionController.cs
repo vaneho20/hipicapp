@@ -43,6 +43,14 @@ namespace Hipicapp.Controllers.Event
             return this.CompetitionProxy.PaginatedInscriptions(request);
         }
 
+        [AcceptVerbs("POST")]
+        [HttpPost]
+        [Route("findSeminary")]
+        public Page<Judge> FindSeminary(JudgeFindRequest request)
+        {
+            return this.CompetitionProxy.PaginatedSeminary(request);
+        }
+
         [AcceptVerbs("GET")]
         [HttpGet]
         [Route("get/{id}")]

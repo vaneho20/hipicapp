@@ -47,6 +47,12 @@ namespace Hipicapp.Proxy.Event
         }
 
         [AllowAnonymous]
+        public Page<Judge> PaginatedSeminary(JudgeFindRequest request)
+        {
+            return this.SeminaryService.Paginated(request.Filter, request.PageRequest);
+        }
+
+        [AllowAnonymous]
         public Competition Get(long? id)
         {
             return this.CompetitionService.Get(id);
