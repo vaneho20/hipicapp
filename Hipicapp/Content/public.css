@@ -834,12 +834,12 @@ body {
   body #h-splash p {
     font-size: 3em;
     line-height: 3em;
-    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px; }
+    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px; }
   body #h-splash .icon-spinner {
     text-align: center;
     display: inline-block;
     font-size: 5em;
-    text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px; }
+    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px; }
   body .alert-success {
     color: #ffffff;
     background-color: rgba(38, 185, 154, 0.88);
