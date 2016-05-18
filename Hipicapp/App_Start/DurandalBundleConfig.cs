@@ -26,10 +26,10 @@ namespace Hipicapp
             );
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.css")
-                .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/bootstrap-datetimepicker.css")
+                .Include("~/Content/font-awesome.min.css")
+                .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/public.css")
             );
 
@@ -76,14 +76,15 @@ namespace Hipicapp
             );
 
             bundles.Add(new StyleBundle("~/Content/administrator-css")
-                .Include("~/Content/ie10mobile.css")
                 .Include("~/Content/bootstrap.css")
-                .Include("~/Content/font-awesome.min.css")
                 .Include("~/Content/bootstrap-datetimepicker.css")
+                .Include("~/Content/font-awesome.min.css")
+                .Include("~/Content/ie10mobile.css")
                 // iCheck
                 .Include("~/Content/Administrator/icheck/flat/red.css")
                 // jVectorMap
                 .Include("~/Content/Administrator/maps/jquery-jvectormap-{version}.css")
+                .Include("~/Content/durandal.css")
                 .Include("~/Content/Administrator/custom.css")
             );
         }

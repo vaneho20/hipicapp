@@ -6328,3 +6328,7 @@ ul.notifications {
 input.gsc-input {
     background-image: none !important;
 }
+
+.messageBox .modal-footer .btn {
+    margin-bottom: 0 !important;
+}
