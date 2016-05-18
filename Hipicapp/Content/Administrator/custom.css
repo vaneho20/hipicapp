@@ -6332,3 +6332,13 @@ input.gsc-input {
 .messageBox .modal-footer .btn {
     margin-bottom: 0 !important;
 }
+
+.nav_menu .loader {
+	margin: 14px 8px 4px 8px;
+	text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+	visibility: hidden;
+}
+
+.nav_menu .loader.active {
+	visibility: visible;
+}
