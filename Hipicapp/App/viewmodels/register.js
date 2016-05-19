@@ -10,9 +10,15 @@ define([
     "use strict";
 
     // state definition
-    var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = {
-        "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
-    }, availableSpecialties = ko.observable();
+    var viewModel = {}, currentEntity = ko.observable(athleteImpl()), availableGenders = [
+        {
+            value: "male",
+            text: i18n.t("app:GENDER_MALE")
+        }, {
+            value: "female",
+            text: i18n.t("app:GENDER_FEMALE")
+        }
+    ], availableSpecialties = ko.observable();
 
     // lifecycle definition
     function activate() {
@@ -22,6 +28,7 @@ define([
     // behaviour definition
     function refreshCurrentEntity(data) {
         securityContext.refresh(data);
+        router.navigate("#athlete");
         router.reloadCurrentLocation();
     }
 
