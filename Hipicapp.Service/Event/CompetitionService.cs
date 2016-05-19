@@ -126,8 +126,8 @@ namespace Hipicapp.Service.Event
         {
             return this.ScoreRepository.GetAllQueryable()
                 .Where(x => /*x.Competition.Name.StartsWith("Adulto") && */x.Competition.Specialty.Id == specialtyId)
-                .OrderByDescending(x => x.Value)
                 .GroupBy(x => x.Horse.Athlete)
+                .OrderByDescending(x => x.Sum(y => y.Value))
                 .Select(x => new Ranking
                 {
                     Athlete = x.Key,
