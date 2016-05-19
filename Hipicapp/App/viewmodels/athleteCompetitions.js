@@ -4,11 +4,11 @@ define([
     "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
     "domain/competition/competitionBroker", "domain/enrollment/enrollmentFilterImpl",
-    "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl", "durandal/app",
-    "viewmodels/alerts", "viewmodels/shell"
+    "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl",
+    "domain/file/fileBroker", "durandal/app", "viewmodels/alerts", "viewmodels/shell"
 ], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
     validationUtils, competitionBroker, enrollmentFilterImpl, enrollmentSortImpl, enrollmentImpl,
-    app, alerts, shell) {
+    fileBroker, app, alerts, shell) {
     "use strict";
 
     // state definition
@@ -87,6 +87,7 @@ define([
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;
