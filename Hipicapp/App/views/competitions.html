@@ -16,3 +16,67 @@
         </ul>
     </div>
 </nav>
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form data-bind="submit: search" class="form-inline">
+                    <div id="custom-search-input">
+                        <div class="campo-buscador col-md-6 col-sm-6 col-xs-12">
+                            <input class="form-control input-lg" type="text" id="h-competition-filter-name"
+                                   data-bind="value: nextFilter().name, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('NAME') + '...', title : i18n.t('ATHLETE_NAME_FILTER') }" />
+                        </div>
+                        <div class="campo-buscador col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control input-lg" type="text" id="h-competition-filter-federation"
+                                   data-bind="value: nextFilter().address, attr: { max: validationUtils.MAX_LENGTH, maxlength: validationUtils.MAX_LENGTH, placeholder: i18n.t('ENCLOSURE_NAME') + '...', title : i18n.t('ATHLETE_ADDRESS_FILTER') }" />
+                        </div>
+                        <div class="campo-buscador col-md-1 col-sm-1 col-xs-2">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <section class="listado-elements col-xs-12 col-sm-6 col-md-12" data-bind="visible: !(currentPage().isEmpty())">
+                <h2>Listado Concursos</h2>
+                <div data-bind="foreach: currentPage().content">
+                    <article class="one-element col-md-4 col-sm-4 col-xs-8">
+                        <div class="foto-listados col-md-3 col-sm-3 col-xs-6">
+                            <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <img alt="Lorem ipsum" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '' }">
+                            </a>
+                        </div>
+                        <div class="info-listados col-md-9 col-sm-9 col-xs-18">
+                            <h3><span data-bind="text: name"></span></h3>
+                            <p>
+                                <strong>Disciplina:</strong>
+                                <span data-bind="text: specialty.name"></span>
+                            </p>
+                            <p>
+                                <strong>Nombre recinto:</strong>
+                                <span data-bind="text: address"></span>
+                            </p>
+                            <p>
+                                <strong>Fechas:</strong>
+                                <!-- ko text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(endDate).format($root.i18n.t('app:DATE_PATTERN')) --><!-- /ko -->
+                            </p>
+                            <a class="ver-todo" data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Ver detalle
+                            </a>
+                        </div>
+                        <span class="clearfix borda"></span>
+                    </article>
+                </div>
+
+                <div class="paginador col-xs-12 col-sm-6 col-md-12" data-bind="compose: 'pager.html'"></div>
+            </section>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</section>

@@ -4,12 +4,12 @@ define([
     "core/config", "core/i18n", "core/router", "core/crud/findRequestImpl", "core/crud/pageImpl",
     "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
     "domain/athlete/athleteBroker", "domain/competition/competitionBroker", "domain/competition/competitionFilterImpl",
-    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "domain/horse/horseBroker",
-    "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "durandal/app", "viewmodels/alerts",
-    "viewmodels/shell"
+    "domain/competition/competitionSortImpl", "domain/competition/competitionImpl", "domain/file/fileBroker",
+    "domain/horse/horseBroker", "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "durandal/app",
+    "viewmodels/alerts", "viewmodels/shell"
 ], function competitions(config, i18n, router, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
     validationUtils, athleteBroker, competitionBroker, competitionFilterImpl, competitionSortImpl, competitionImpl,
-    horseBroker, judgeBroker, specialtyBroker, app, alerts, shell) {
+    fileBroker, horseBroker, judgeBroker, specialtyBroker, app, alerts, shell) {
     "use strict";
 
     // state definition
@@ -80,6 +80,7 @@ define([
     viewModel.validationUtils = validationUtils;
     viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
     viewModel.horseBroker = horseBroker;
     viewModel.judgeBroker = judgeBroker;
     viewModel.specialtyBroker = specialtyBroker;
