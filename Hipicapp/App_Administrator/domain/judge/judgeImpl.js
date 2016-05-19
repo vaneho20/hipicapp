@@ -12,16 +12,17 @@ define([
 
     /* jshint maxstatements: 35 */
     function judgeImpl(currentJudge) {
-        var judge = {}, id = null, version = ko.observable(), name = null, surnames = null, photoId = null,
-            photo = null, gender = null, specialtyId = null, specialty = specialtyImpl(),
-            federation = ko.observable(null), zipCode = ko.observable(null), placeId = ko.observable(null);
+        var judge = {}, id = null, version = ko.observable(), name = ko.observable(null),
+            surnames = ko.observable(null), photoId = null, photo = null, gender = ko.observable(null),
+            specialtyId = null, specialty = specialtyImpl(), federation = ko.observable(null),
+            zipCode = ko.observable(null), placeId = ko.observable(null);
 
         if (currentJudge) {
             id = currentJudge.id;
             version(currentJudge.version);
-            name = currentJudge.name;
-            surnames = currentJudge.surnames;
-            gender = currentJudge.gender;
+            name(currentJudge.name);
+            surnames(currentJudge.surnames);
+            gender(currentJudge.gender);
             specialtyId = currentJudge.specialtyId;
             photoId = currentJudge.photoId;
             federation(currentJudge.federation);
@@ -43,6 +44,9 @@ define([
         judge.specialtyId = specialtyId;
         judge.photo = photo;
         judge.specialty = specialty;
+        judge.fullName = ko.computed(function () {
+            return judge.name() + " " + judge.surnames();
+        }, judge);
 
         return judge;
     }

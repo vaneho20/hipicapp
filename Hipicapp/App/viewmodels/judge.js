@@ -2,10 +2,13 @@
 /* jshint maxparams: 11 */
 define([
     "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
-    "core/util/urlUtils", "core/util/validationUtils", "domain/judge/judgeBroker",
-    "domain/judge/judgeImpl", "viewmodels/shell", "viewmodels/alerts"
+    "core/util/urlUtils", "core/util/validationUtils", "domain/athlete/athleteBroker",
+    "domain/competition/competitionBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
+    "domain/judge/judgeBroker", "domain/judge/judgeImpl", "domain/specialty/specialtyBroker",
+    "viewmodels/shell", "viewmodels/alerts"
 ], function judgeViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, judgeBroker, judgeImpl, shell, alerts) {
+    validationUtils, athleteBroker, competitionBroker, fileBroker, horseBroker, judgeBroker, judgeImpl,
+    specialtyBroker, shell, alerts) {
     "use strict";
 
     // state definition
@@ -36,7 +39,12 @@ define([
     viewModel.i18n = i18n;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
+    viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
+    viewModel.horseBroker = horseBroker;
     viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.currentEntity = currentEntity;

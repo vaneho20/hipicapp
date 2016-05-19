@@ -44,10 +44,6 @@ define([
             specialty = specialtyImpl(currentAthlete.specialty);
         }
 
-        function completeName() {
-
-        }
-
         athlete.id = id;
         athlete.version = version;
         athlete.dni = dni;

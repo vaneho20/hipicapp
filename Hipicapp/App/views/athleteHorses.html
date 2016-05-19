@@ -19,7 +19,7 @@
         Sexo Caballo
     </div>
 </article>
-<article class="row" data-bind="foreach: currentPage().content">
+<article data-bind="foreach: currentPage().content">
     <div class="row">
         <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
             <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '' }">
@@ -34,3 +34,9 @@
         </div>
     </div>
 </article>
+<div data-bind="visible: currentPage().isEmpty() && !(shell.isLoading())" class="alert alert-info alert-block">
+    <div>
+        <strong data-bind="text: i18n.t('ATHLETE_HORSE_LIST_EMPTY_SUMMARY')"></strong>
+    </div>
+    <span data-bind="html: i18n.t('ATHLETE_HORSE_LIST_EMPTY_DETAIL')"></span>
+</div>
