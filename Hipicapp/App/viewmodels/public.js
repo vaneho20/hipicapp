@@ -20,7 +20,7 @@
                     { route: 'reset-password', title: 'Reestablecer contraseña', moduleId: 'viewmodels/passwordreset', nav: false, hash: '#reset-password' },
                     { route: 'update-password/:key', title: 'Actualizar contraseña', moduleId: 'viewmodels/updatepassword', nav: false, hash: '#update-password' },
                     { route: 'specialty/:id', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
-                    { route: 'specialty/:id/athletes', title: 'Atletas', moduleId: 'viewmodels/athletes', nav: true },
+                    { route: 'specialty/:id/athletes', title: 'Jinetes', moduleId: 'viewmodels/athletes', nav: true },
                     { route: 'specialty/:id/competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true },
                     { route: 'specialty/:id/horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true },
                     { route: 'specialty/:id/judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true },

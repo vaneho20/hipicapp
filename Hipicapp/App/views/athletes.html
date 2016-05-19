@@ -1,7 +1,7 @@
 <section class="header-block">
     <div class="container">
         <div class="row">
-            <h1 data-bind="text: (nextFilter().specialtyId() === '1' ? 'Doma' : 'Salto') + ' - Atletas'"></h1>
+            <h1 data-bind="text: (nextFilter().specialtyId() === '1' ? 'Doma' : 'Salto') + ' - Jinetes'"></h1>
         </div>
     </div>
 </section>
@@ -9,7 +9,7 @@
     <div class="container">
         <ul class="nav nav-pills">
             <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(nextFilter().specialtyId()) }">Inicio</a></li>
-            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(nextFilter().specialtyId()) }">Atletas</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(nextFilter().specialtyId()) }">Jinetes</a></li>
             <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(nextFilter().specialtyId()) }">Caballos</a></li>
             <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(nextFilter().specialtyId()) }">Concursos</a></li>
             <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(nextFilter().specialtyId()) }">Jueces</a></li>
@@ -54,7 +54,7 @@
 
         <div class="row">
             <section class="listado-elements col-xs-12 col-sm-6 col-md-12" data-bind="visible: !(currentPage().isEmpty())">
-                <h2>Listado Atletas</h2>
+                <h2>Listado Jinetes</h2>
                 <div data-bind="foreach: currentPage().content">
                     <article class="one-element col-md-4 col-sm-4 col-xs-8">
                         <div class="foto-listados col-md-3 col-sm-3 col-xs-6">
