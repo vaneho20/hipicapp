@@ -46,6 +46,12 @@ body {
         }
     }
 
+    .navbar-fixed-top {
+        -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+    }
+
     .navbar {
         margin: 0;
         padding: 0.8em 0;
@@ -250,7 +256,7 @@ body {
 
                 &.registermodal {
                     h2 {
-                        margin: 1.5em 0 1em;
+                        margin: 1.2em 0 1em;
                         text-align: left;
                     }
 
@@ -265,18 +271,27 @@ body {
                             position: absolute;
                             top: 0;
                             right: 0;
-                            padding: 17px 16px 17px 8px;
+                            padding: 14px 16px 14px 8px;
                         }
                     }
 
                     .posicionado-left {
                         position: relative;
 
+                        .input-group {
+                            margin-left: 14px;
+                            width: 94%;
+
+                            input[type=text] {
+                                padding-left: 22px;
+                            }
+                        }
+
                         .input-group-addon {
                             position: absolute;
                             top: 0;
                             left: -14px;
-                            padding: 17px 20px 17px 8px;
+                            padding: 15px 20px 14px 8px;
                         }
                     }
 
@@ -306,9 +321,11 @@ body {
                     font-size: 1.5em;
                 }
 
-                input[type=submit] {
+                input[type=submit],
+                button[type=submit] {
                     float: right;
-                    padding: 1em 0;
+                    margin: 0;
+                    padding: 0.8em 0;
                     width: 30%;
                     display: inline-block;
                     margin-bottom: 10px;
@@ -317,14 +334,22 @@ body {
                     -webkit-border-radius: 4px;
                     -moz-border-radius: 4px;
                     border-radius: 4px;
+                    background: #f74b4b;
+
+                    &:hover {
+                        color: #fff;
+                        background: #f74b4b;
+                    }
                 }
 
                 input,
                 input[type=text],
                 input[type=password],
+                input[type=number],
                 select {
                     font-size: 1em;
                     width: 100%;
+                    height: auto;
                     margin-bottom: 10px;
                     -webkit-appearance: none;
                     background: #fff;
@@ -333,7 +358,7 @@ body {
                     -webkit-border-radius: 4px;
                     -moz-border-radius: 4px;
                     border-radius: 4px;
-                    padding: 1em;
+                    padding: 0.8em 1em;
                     -webkit-box-sizing: border-box;
                     -moz-box-sizing: border-box;
                     box-sizing: border-box;
@@ -555,7 +580,8 @@ body {
 
                 span {
                     background: rgba(0,0,0,0.5);
-                    padding: 10px;
+                    padding: 0 10px;
+                    line-height: normal;
                 }
             }
         }
@@ -1036,47 +1062,47 @@ body {
         .ficha-col-izq {
             padding-right: 3em;
 
-            #mis-caballos,
-            #mis-concursos {
-                padding: 0 0 3em;
+            header {
+                position: relative;
+                margin: 0 0 1em;
+                padding: 0 0 0.5em;
+                border-bottom: 3px solid #f74b4b;
 
-                header {
-                    position: relative;
-                    margin: 0 0 1em;
-                    padding: 0 0 0.5em;
-                    border-bottom: 3px solid #f74b4b;
-
-                    h2 {
-                        margin: 0;
-                        padding: 0 0.5em 0 0;
-                        font-size: 1.6em;
-                    }
-
-                    a {
-                        z-index: 99;
-                        background: #f74b4b;
-                        color: #fff;
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        display: inline-block;
-                        font-family: 'Montserrat', sans-serif;
-                        font-size: 0.8em;
-                        margin: 0;
-                        padding: 8px 10px;
-                        text-transform: uppercase;
-                        width: auto;
-                    }
+                h2 {
+                    margin: 0;
+                    padding: 0 0.5em 0 0;
+                    font-size: 1.6em;
                 }
 
-                .encabezado-listados {
+                a {
+                    z-index: 99;
+                    background: #f74b4b;
+                    color: #fff;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    display: inline-block;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 0.8em;
                     margin: 0;
-                    padding: 1em 0.6em;
+                    padding: 8px 10px;
                     text-transform: uppercase;
-                    background: #E4E4E4;
+                    width: auto;
                 }
+            }
+
+            .encabezado-listados {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.8em;
+                margin: 0;
+                padding: 1em 0.6em;
+                text-transform: uppercase;
+                background: #E4E4E4;
+            }
+
+            #mis-caballos,
+            #mis-concursos {
+                padding: 0 0 3em;
             }
 
             article {
@@ -1122,6 +1148,9 @@ body {
                 img {
                     width: 120px;
                     height: 120px;
+                    background: #fff;
+                    padding: 6px;
+                    border: 0;
                 }
             }
 

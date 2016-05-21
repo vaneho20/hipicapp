@@ -9,7 +9,8 @@ define(function horseImplModule() {
     /* jshint maxstatements: 35 */
     function horseImpl(currentHorse) {
         var horse = {}, id = null, version = ko.observable(), name = null, height = null, photoId = null,
-            birthDate = ko.observable(null), photo = null, athleteId = null, gender = null, weight = null;
+            birthDate = ko.observable(null), photo = null, athleteId = null, gender = ko.observable(null),
+            weight = null, athlete = null;
 
         if (currentHorse) {
             id = currentHorse.id;
@@ -18,10 +19,11 @@ define(function horseImplModule() {
             height = currentHorse.height;
             photoId = currentHorse.photoId;
             birthDate(currentHorse.birthDate);
-            gender = currentHorse.gender;
+            gender(currentHorse.gender);
             weight = currentHorse.weight;
             photo = currentHorse.photo;
             athleteId = currentHorse.athleteId;
+            athlete = currentHorse.athlete;
         }
 
         horse.id = id;
@@ -34,6 +36,7 @@ define(function horseImplModule() {
         horse.weight = weight;
         horse.photo = photo;
         horse.athleteId = athleteId;
+        horse.athlete = athlete;
 
         return horse;
     }

@@ -39,6 +39,10 @@ body {
     background: #f74b4b; }
     body .ver-todo:hover, body .ver-todo:active, body .ver-todo:focus {
       text-decoration: none; }
+  body .navbar-fixed-top {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3); }
   body .navbar {
     margin: 0;
     padding: 0.8em 0;
@@ -188,7 +192,7 @@ body {
         -o-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
         body #section-content-login #contenido-interior .loginmodal-container.registermodal h2 {
-          margin: 1.5em 0 1em;
+          margin: 1.2em 0 1em;
           text-align: left; }
         body #section-content-login #contenido-interior .loginmodal-container.registermodal .form-group {
           margin-bottom: 5px; }
@@ -198,14 +202,19 @@ body {
             position: absolute;
             top: 0;
             right: 0;
-            padding: 17px 16px 17px 8px; }
+            padding: 14px 16px 14px 8px; }
         body #section-content-login #contenido-interior .loginmodal-container.registermodal .posicionado-left {
           position: relative; }
+          body #section-content-login #contenido-interior .loginmodal-container.registermodal .posicionado-left .input-group {
+            margin-left: 14px;
+            width: 94%; }
+            body #section-content-login #contenido-interior .loginmodal-container.registermodal .posicionado-left .input-group input[type=text] {
+              padding-left: 22px; }
           body #section-content-login #contenido-interior .loginmodal-container.registermodal .posicionado-left .input-group-addon {
             position: absolute;
             top: 0;
             left: -14px;
-            padding: 17px 20px 17px 8px; }
+            padding: 15px 20px 14px 8px; }
         body #section-content-login #contenido-interior .loginmodal-container.registermodal .loginmodal-submit {
           padding: 14px 28px;
           float: left; }
@@ -221,9 +230,10 @@ body {
           text-align: center;
           font-family: 'Montserrat', sans-serif !important;
           font-size: 1.5em; }
-        body #section-content-login #contenido-interior .loginmodal-container input[type=submit] {
+        body #section-content-login #contenido-interior .loginmodal-container input[type=submit], body #section-content-login #contenido-interior .loginmodal-container button[type=submit] {
           float: right;
-          padding: 1em 0;
+          margin: 0;
+          padding: 0.8em 0;
           width: 30%;
           display: inline-block;
           margin-bottom: 10px;
@@ -231,10 +241,15 @@ body {
           font-family: 'Montserrat', sans-serif;
           -webkit-border-radius: 4px;
           -moz-border-radius: 4px;
-          border-radius: 4px; }
-        body #section-content-login #contenido-interior .loginmodal-container input, body #section-content-login #contenido-interior .loginmodal-container input[type=text], body #section-content-login #contenido-interior .loginmodal-container input[type=password], body #section-content-login #contenido-interior .loginmodal-container select {
+          border-radius: 4px;
+          background: #f74b4b; }
+          body #section-content-login #contenido-interior .loginmodal-container input[type=submit]:hover, body #section-content-login #contenido-interior .loginmodal-container button[type=submit]:hover {
+            color: #fff;
+            background: #f74b4b; }
+        body #section-content-login #contenido-interior .loginmodal-container input, body #section-content-login #contenido-interior .loginmodal-container input[type=text], body #section-content-login #contenido-interior .loginmodal-container input[type=password], body #section-content-login #contenido-interior .loginmodal-container input[type=number], body #section-content-login #contenido-interior .loginmodal-container select {
           font-size: 1em;
           width: 100%;
+          height: auto;
           margin-bottom: 10px;
           -webkit-appearance: none;
           background: #fff;
@@ -243,7 +258,7 @@ body {
           -webkit-border-radius: 4px;
           -moz-border-radius: 4px;
           border-radius: 4px;
-          padding: 1em;
+          padding: 0.8em 1em;
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box; }
@@ -400,7 +415,8 @@ body {
             text-decoration: none; }
         body #contenido-interior .header-text h2 span {
           background: rgba(0, 0, 0, 0.5);
-          padding: 10px; }
+          padding: 0 10px;
+          line-height: normal; }
     body #contenido-interior .header-text h3 span {
       background-color: #000;
       padding: 15px; }
@@ -718,38 +734,38 @@ body {
     padding: 3em 0 0; }
     body .block-ficha .ficha-col-izq {
       padding-right: 3em; }
-      body .block-ficha .ficha-col-izq #mis-caballos, body .block-ficha .ficha-col-izq #mis-concursos {
-        padding: 0 0 3em; }
-        body .block-ficha .ficha-col-izq #mis-caballos header, body .block-ficha .ficha-col-izq #mis-concursos header {
-          position: relative;
-          margin: 0 0 1em;
-          padding: 0 0 0.5em;
-          border-bottom: 3px solid #f74b4b; }
-          body .block-ficha .ficha-col-izq #mis-caballos header h2, body .block-ficha .ficha-col-izq #mis-concursos header h2 {
-            margin: 0;
-            padding: 0 0.5em 0 0;
-            font-size: 1.6em; }
-          body .block-ficha .ficha-col-izq #mis-caballos header a, body .block-ficha .ficha-col-izq #mis-concursos header a {
-            z-index: 99;
-            background: #f74b4b;
-            color: #fff;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8em;
-            margin: 0;
-            padding: 8px 10px;
-            text-transform: uppercase;
-            width: auto; }
-        body .block-ficha .ficha-col-izq #mis-caballos .encabezado-listados, body .block-ficha .ficha-col-izq #mis-concursos .encabezado-listados {
+      body .block-ficha .ficha-col-izq header {
+        position: relative;
+        margin: 0 0 1em;
+        padding: 0 0 0.5em;
+        border-bottom: 3px solid #f74b4b; }
+        body .block-ficha .ficha-col-izq header h2 {
+          margin: 0;
+          padding: 0 0.5em 0 0;
+          font-size: 1.6em; }
+        body .block-ficha .ficha-col-izq header a {
+          z-index: 99;
+          background: #f74b4b;
+          color: #fff;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          display: inline-block;
           font-family: 'Montserrat', sans-serif;
           font-size: 0.8em;
           margin: 0;
-          padding: 1em 0.6em;
+          padding: 8px 10px;
           text-transform: uppercase;
-          background: #E4E4E4; }
+          width: auto; }
+      body .block-ficha .ficha-col-izq .encabezado-listados {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8em;
+        margin: 0;
+        padding: 1em 0.6em;
+        text-transform: uppercase;
+        background: #E4E4E4; }
+      body .block-ficha .ficha-col-izq #mis-caballos, body .block-ficha .ficha-col-izq #mis-concursos {
+        padding: 0 0 3em; }
       body .block-ficha .ficha-col-izq article {
         border-bottom: 1px solid #E4E4E4; }
         body .block-ficha .ficha-col-izq article .foto-listados {
@@ -783,7 +799,10 @@ body {
         transform: translate(-50%, 0); }
         body .block-ficha .ficha-col-der .foto-listados img {
           width: 120px;
-          height: 120px; }
+          height: 120px;
+          background: #fff;
+          padding: 6px;
+          border: 0; }
       body .block-ficha .ficha-col-der .info-listados {
         padding-top: 5.5em; }
         body .block-ficha .ficha-col-der .info-listados h3 {
