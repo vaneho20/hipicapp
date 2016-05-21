@@ -24,6 +24,10 @@ namespace Hipicapp.Service.Event
             {
                 query = query.Where(x => x.SpecialtyId == filter.SpecialtyId);
             }
+            if (filter.JudgeId != null)
+            {
+                query = query.Where(x => x.Seminary.Any(y => y.Id.JudgeId == filter.JudgeId));
+            }
             return query;
         }
     }

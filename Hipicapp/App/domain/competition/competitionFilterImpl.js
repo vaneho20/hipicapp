@@ -7,6 +7,7 @@ define(function competitionFilterImpl() {
 
         filter.athleteId = ko.observable(athleteId);
         filter.specialtyId = ko.observable(null);
+        filter.judgeId = ko.observable(null);
 
         return filter;
     };

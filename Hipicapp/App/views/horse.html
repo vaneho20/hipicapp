@@ -21,10 +21,8 @@
         <div class="row">
             <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
                 <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
-                    <!--<section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-24"
-                             data-bind="compose: { model: 'viewmodels/athleteHorses', activationData: currentEntity().id }"></section>
                     <section id="mis-concursos"
-                             data-bind="compose: { model: 'viewmodels/athleteCompetitions', activationData: currentEntity().id }"></section>-->
+                             data-bind="compose: { model: 'viewmodels/horseCompetitions', activationData: currentEntity().id }"></section>
                 </div>
                 <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
                     <article>
@@ -38,8 +36,20 @@
                                 <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
                             </p>
                             <p>
+                                <strong>Peso:</strong>
+                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                            </p>
+                            <p>
+                                <strong>Altura:</strong>
+                                <span data-bind="text: currentEntity().height + 'cm'"></span>
+                            </p>
+                            <p>
                                 <strong>Fecha Nacimiento:</strong>
                                 <span data-bind="text: moment(currentEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+                            <p>
+                                <strong>Jinete:</strong>
+                                <span data-bind="text: currentEntity().athlete.fullName"></span>
                             </p>
                             <a class="ver-todo" data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Ver Especialidad

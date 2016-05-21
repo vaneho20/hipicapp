@@ -25,6 +25,10 @@ namespace Hipicapp.Service.Event
             {
                 query = query.Where(x => x.Horse.AthleteId == filter.AthleteId);
             }
+            if (filter.HorseId != null)
+            {
+                query = query.Where(x => x.Id.HorseId == filter.HorseId);
+            }
             return query;
         }
     }

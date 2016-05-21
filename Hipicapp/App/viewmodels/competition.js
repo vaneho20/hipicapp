@@ -1,13 +1,14 @@
 /* global define: false, ko: false */
 /* jshint maxparams: 11 */
 define([
-    "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils",
-    "core/util/urlUtils", "core/util/validationUtils", "domain/competition/competitionBroker",
-    "domain/competition/competitionImpl", "domain/competitionCategory/competitionCategoryBroker",
-    "domain/specialty/specialtyBroker", "viewmodels/shell", "viewmodels/alerts"
-], function competitionViewModel(i18n, router, securityContext, stringUtils, urlUtils,
-    validationUtils, competitionBroker, competitionImpl, competitionCategoryBroker,
-    specialtyBroker, shell, alerts) {
+    "core/i18n", "core/router", "core/authentication/securityContext", "core/util/stringUtils", "core/util/urlUtils",
+    "core/util/validationUtils", "domain/athlete/athleteBroker", "domain/competition/competitionBroker",
+    "domain/competition/competitionImpl", "domain/competitionCategory/competitionCategoryBroker", "domain/file/fileBroker",
+    "domain/horse/horseBroker", "domain/judge/judgeBroker", "domain/specialty/specialtyBroker", "viewmodels/shell",
+    "viewmodels/alerts"
+], function competitionViewModel(i18n, router, securityContext, stringUtils, urlUtils, validationUtils, athleteBroker,
+    competitionBroker, competitionImpl, competitionCategoryBroker, fileBroker, horseBroker, judgeBroker, specialtyBroker,
+    shell, alerts) {
     "use strict";
 
     // state definition
@@ -56,7 +57,12 @@ define([
     viewModel.i18n = i18n;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
+    viewModel.fileBroker = fileBroker;
+    viewModel.horseBroker = horseBroker;
+    viewModel.judgeBroker = judgeBroker;
+    viewModel.specialtyBroker = specialtyBroker;
 
     // state revelation
     viewModel.currentEntity = currentEntity;

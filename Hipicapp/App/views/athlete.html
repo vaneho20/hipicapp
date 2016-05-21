@@ -9,7 +9,7 @@
     <div class="container">
         <ul class="nav nav-pills">
             <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().specialtyId) }">Inicio</a></li>
-            <li role="presentation"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().specialtyId) }">Jinetes</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().specialtyId) }">Jinetes</a></li>
             <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().specialtyId) }">Caballos</a></li>
             <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().specialtyId) }">Concursos</a></li>
             <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().specialtyId) }">Jueces</a></li>
@@ -36,16 +36,28 @@
                         <div class="info-listados col-md-12 col-sm-12 col-xs-24">
                             <h3 data-bind="text: currentEntity().fullName"></h3>
                             <p>
-                                <strong>Sexo:</strong>
-                                <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
-                            </p>
-                            <p>
                                 <strong>D.N.I</strong>
                                 <span data-bind="text: currentEntity().dni"></span>
                             </p>
                             <p>
+                                <strong>Sexo:</strong>
+                                <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
+                            </p>
+                            <p>
+                                <strong>Peso:</strong>
+                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                            </p>
+                            <p>
+                                <strong>Disciplina:</strong>
+                                <span data-bind="text: currentEntity().specialty.name"></span>
+                            </p>
+                            <p>
                                 <strong>Categor&iacute;a:</strong>
                                 <span data-bind="text: currentEntity().category.name"></span>
+                            </p>
+                            <p>
+                                <strong>Federaci&oacute;n:</strong>
+                                <span data-bind="text: currentEntity().federation"></span>
                             </p>
                             <p>
                                 <strong>Fecha Nacimiento:</strong>

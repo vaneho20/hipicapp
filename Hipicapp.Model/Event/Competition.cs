@@ -1,10 +1,12 @@
 ﻿using Hipicapp.Model.Abstract;
 using Hipicapp.Model.File;
+using Hipicapp.Model.Participant;
 using Hipicapp.Utils.Util;
 using Hipicapp.Utils.Validator;
 using Newtonsoft.Json;
 using NHibernate.Validator.Constraints;
 using System;
+using System.Collections.Generic;
 
 namespace Hipicapp.Model.Event
 {
@@ -49,6 +51,7 @@ namespace Hipicapp.Model.Event
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
         [SafeHtml(WhiteListType.NONE)]*/
+
         public virtual string PlaceId { get; set; }
 
         [NotNull]
@@ -74,6 +77,9 @@ namespace Hipicapp.Model.Event
         public virtual Specialty Specialty { get; set; }
 
         public virtual FileInfo Photo { get; set; }
+
+        [JsonIgnore]
+        public virtual ISet<Seminary> Seminary { get; set; }
     }
 
     public class CompetitionMap : EntityMap<Competition, long?>
@@ -102,6 +108,8 @@ namespace Hipicapp.Model.Event
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
+
+            HasMany<Seminary>(x => x.Seminary).KeyColumn("COMPETITION_ID").NotFound.Ignore().LazyLoad();
         }
     }
 }

@@ -1,6 +1,5 @@
 <header class="col-md-12 col-sm-12 col-xs-24">
-    <h2 class="pull-left">Mis Concursos</h2>
-    <h2 class="pull-left">  |  Pr&oacute;ximos Concursos</h2>
+    <h2 class="pull-left">Participaciones</h2>
     <a class="pull-right" href="Ver todos">Ver todos</a>
 </header>
 <article class="row">
@@ -23,15 +22,15 @@
 <article data-bind="foreach: currentPage().content">
     <div class="row">
         <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
-            <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? $root.fileBroker.getUrlByUuid(competition.photo.fileUuid) : '' }" />
+            <img alt="Foto caballo" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '' }" />
         </div>
-        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.name">
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: name">
         </div>
-        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.address">
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: address">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(endDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: competition.category.name">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: category.name">
         </div>
     </div>
 </article>
