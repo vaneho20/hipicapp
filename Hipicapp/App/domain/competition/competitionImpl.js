@@ -13,17 +13,18 @@ define([
 
     /* jshint maxstatements: 35 */
     function competitionImpl(currentCompetition) {
-        var competition = {}, id = null, version = ko.observable(), categoryId = null, name = null,
+        var competition = {}, id = null, version = ko.observable(), categoryId = null, name = null, photoId = null,
             startDate = ko.observable(null), endDate = ko.observable(null), registrationStartDate = ko.observable(null),
             registrationEndDate = ko.observable(null), category = competitionCategoryImpl(), address = ko.observable(null),
             zipCode = ko.observable(null), placeId = ko.observable(null), description = null, specialtyId = null,
-            specialty = specialtyImpl();
+            specialty = specialtyImpl(), photo = null;
 
         if (currentCompetition) {
             id = currentCompetition.id;
             version(currentCompetition.version);
             categoryId = currentCompetition.categoryId;
             specialtyId = currentCompetition.specialtyId;
+            photoId = currentCompetition.photoId;
             name = currentCompetition.name;
             description = currentCompetition.description;
             address(currentCompetition.address);
@@ -35,12 +36,14 @@ define([
             registrationEndDate(currentCompetition.registrationEndDate);
             category = competitionCategoryImpl(currentCompetition.category);
             specialty = competitionCategoryImpl(currentCompetition.specialty);
+            photo = currentCompetition.photo;
         }
 
         competition.id = id;
         competition.version = version;
         competition.categoryId = categoryId;
         competition.specialtyId = specialtyId;
+        competition.photoId = photoId;
         competition.name = name;
         competition.description = description;
         competition.address = address;
@@ -52,6 +55,7 @@ define([
         competition.registrationEndDate = registrationEndDate;
         competition.category = category;
         competition.specialty = specialty;
+        competition.photo = photo;
 
         return competition;
     }

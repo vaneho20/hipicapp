@@ -6,7 +6,9 @@ define([
 
     var properties = {
         NAME: "name",
-        DATE: "date"
+        DATE: "date",
+        CATEGORY_ID: "categoryId",
+        SPECIALTY_ID: "specialtyId"
     };
 
     /* jshint maxstatements: 35 */
