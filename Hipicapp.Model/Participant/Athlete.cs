@@ -60,16 +60,16 @@ namespace Hipicapp.Model.Participant
         [SafeHtml(WhiteListType.NONE)]
         public virtual string Federation { get; set; }
 
-        [NotNull]
+        /*[NotNull]
         [NotEmpty]
-        [Size(Min = ValidationUtils.LENGTH_ZIPCODE, Max = ValidationUtils.LENGTH_ZIPCODE)]
+        [Size(Min = ValidationUtils.LENGTH_ZIPCODE, Max = ValidationUtils.LENGTH_ZIPCODE)]*/
         [SafeHtml(WhiteListType.NONE)]
         public virtual string ZipCode { get; set; }
 
         /*[NotNull]
         [NotEmpty]
-        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(WhiteListType.NONE)]*/
+        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]*/
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string PlaceId { get; set; }
 
         public virtual CompetitionCategory Category { get; set; }

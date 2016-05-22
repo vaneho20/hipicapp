@@ -49,9 +49,8 @@ namespace Hipicapp.Model.Event
 
         /*[NotNull]
         [NotEmpty]
-        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]
-        [SafeHtml(WhiteListType.NONE)]*/
-
+        [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]*/
+        [SafeHtml(WhiteListType.NONE)]
         public virtual string PlaceId { get; set; }
 
         [NotNull]
