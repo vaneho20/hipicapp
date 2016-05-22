@@ -37,7 +37,7 @@ define([
 
     amplify.request.define("competitionCategories/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITION_CATEGORIES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findAll() {
         return amplify.request("competitionCategories/findAll");

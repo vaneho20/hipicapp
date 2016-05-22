@@ -37,7 +37,7 @@ define([
 
     amplify.request.define("banners/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.BANNERS), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.BANNERS, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findAll() {
         return amplify.request("banners/findAll");

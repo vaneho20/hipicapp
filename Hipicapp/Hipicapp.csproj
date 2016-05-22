@@ -613,6 +613,8 @@
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\4964996749_b68a8e5f7d_o.jpg" />
     <Content Include="Content\images\4965601926_f8bb6c1c20_o.jpg" />
+    <Content Include="Content\images\banner-1.png" />
+    <Content Include="Content\images\banner-2.png" />
     <Content Include="Content\images\banner_atletas.jpg" />
     <Content Include="Content\images\banner_caballos.jpg" />
     <Content Include="Content\images\banner_jueces.jpg" />

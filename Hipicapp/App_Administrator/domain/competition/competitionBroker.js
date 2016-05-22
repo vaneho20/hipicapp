@@ -41,7 +41,7 @@ define([
 
     amplify.request.define("competitions/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     amplify.request.define("competitions/assignAllJudges", brokerUtils.REQUEST_TYPE,
         brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +

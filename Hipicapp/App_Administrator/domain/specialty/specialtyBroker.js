@@ -37,7 +37,7 @@ define([
 
     amplify.request.define("specialties/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTIES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findAll() {
         return amplify.request("specialties/findAll");

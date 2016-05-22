@@ -32,7 +32,7 @@ define([
 
     amplify.request.define("athletes/erase", brokerUtils.REQUEST_TYPE, brokerUtils
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
-            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES), brokerUtils.verb.DELETE));
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
 
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);

@@ -62,7 +62,8 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         ENABLE: "enable",
         DISABLE: "disable",
         SAVE: "save",
-        UPDATE: "update"
+        UPDATE: "update",
+        DELETE: "delete"
     }, REQUEST_TYPE = "ajax", verb = {
         HEAD: "HEAD",
         GET: "GET",
