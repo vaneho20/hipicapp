@@ -30,6 +30,10 @@ define([
         return router.navigate("#athlete" + (id ? "/" + id : ""));
     }
 
+    function navigateToProfile() {
+        return router.navigate("#athlete");
+    }
+
     function navigateToAthletes() {
         return router.navigate("#athletes");
     }
@@ -49,13 +53,14 @@ define([
     router.reloadCurrentLocation = reloadCurrentLocation;
 
     // Private site
-    router.navigateToAthlete = navigateToAthlete;
+    router.navigateToProfile = navigateToProfile;
 
     // Public site
     router.navigateToHome = navigateToHome;
     router.navigateToLogin = navigateToLogin;
     router.navigateToPasswordReset = navigateToPasswordReset;
     router.navigateToRegister = navigateToRegister;
+    router.navigateToAthlete = navigateToAthlete;
     router.navigateToAthletes = navigateToAthletes;
     router.navigateToHorses = navigateToHorses;
     router.navigateToCompetitions = navigateToCompetitions;

@@ -47,9 +47,9 @@ body {
     }
 
     .navbar-fixed-top {
-        -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-        -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-        box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.3);
+        -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.3);
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.3);
     }
 
     .navbar {
@@ -217,7 +217,9 @@ body {
                     color: #fff;
                     background-color: #f74b4b;
 
-                    &:hover {
+                    &:hover,
+                    &:focus,
+                    &:active {
                         background-color: #de4545;
                     }
                 }
@@ -1060,6 +1062,7 @@ body {
         padding: 3em 0 0;
 
         .ficha-col-izq {
+            margin-bottom: 3em;
             padding-right: 3em;
 
             header {
@@ -1109,17 +1112,18 @@ body {
                 border-bottom: 1px solid #E4E4E4;
 
                 .foto-listados {
-                    padding: 0.5em 0;
+                    padding: 0.8em 0;
                     text-align: center;
 
                     img {
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                     }
                 }
 
                 .datos-listados {
                     padding: 1.5em 0.6em;
+                    line-height: normal;
                     vertical-align: middle;
                 }
             }
@@ -1127,7 +1131,8 @@ body {
 
         .ficha-col-der {
             position: relative;
-            margin-top: 3em;
+            margin-top: 5em;
+            margin-bottom: 3em;
             font-family: 'Montserrat', sans-serif;
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
@@ -1137,7 +1142,7 @@ body {
             .foto-listados {
                 position: absolute;
                 left: 50%;
-                top: -40px;
+                top: -80px;
                 text-align: center;
                 -ms-transform: translate(-50%,0); /* IE 9 */
                 -webkit-transform: translate(-50%,0); /* Safari */
@@ -1146,8 +1151,8 @@ body {
                 transform: translate(-50%,0);
 
                 img {
-                    width: 120px;
-                    height: 120px;
+                    width: 160px;
+                    height: 160px;
                     background: #fff;
                     padding: 6px;
                     border: 0;
@@ -1259,8 +1264,8 @@ body {
 
     .alert-info {
         color: #E9EDEF;
-        background-color: rgba(52, 152, 219, 0.88);
-        border-color: rgba(52, 152, 219, 0.88);
+        background-color: #a4acb9;
+        border-color: #97aacb;
     }
 
     .alert-warning {
