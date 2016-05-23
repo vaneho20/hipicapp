@@ -632,6 +632,10 @@
     <Content Include="Content\images\foto_caballo.jpg" />
     <Content Include="Content\images\herradura.png" />
     <Content Include="Content\images\hhp-rfhe.gif" />
+    <Content Include="Content\images\hipicapp-defecto-caballo.png" />
+    <Content Include="Content\images\hipicapp-defecto-1.png" />
+    <Content Include="Content\images\hipicapp-defecto-2.png" />
+    <Content Include="Content\images\hipicapp-defecto-usuario.png" />
     <Content Include="Content\images\hipicapp-logoh.png" />
     <Content Include="Content\images\jump.png" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />

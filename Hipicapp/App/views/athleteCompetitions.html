@@ -23,7 +23,7 @@
 <article data-bind="foreach: currentPage().content">
     <div class="row">
         <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
-            <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? $root.fileBroker.getUrlByUuid(competition.photo.fileUuid) : '' }" />
+            <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? $root.fileBroker.getUrlByUuid(competition.photo.fileUuid) : '/Content/images/hipicapp-defecto-' + competition.specialty.id + '.png' }" />
         </div>
         <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.name">
         </div>
