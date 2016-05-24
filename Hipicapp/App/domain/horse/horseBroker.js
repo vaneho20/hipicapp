@@ -27,6 +27,18 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.HORSES,
                 brokerUtils.requestMappings.FIND_BY_CURRENT_USER), brokerUtils.verb.POST, CACHE_NAME));
 
+    amplify.request.define("horses/save", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.SAVE), brokerUtils.verb.POST));
+
+    amplify.request.define("horses/update", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+
+    amplify.request.define("horses/erase", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.DELETE), brokerUtils.verb.DELETE));
+
     function findBy(findRequest) {
         return amplify.request("horses/findBy", findRequest);
     }
@@ -41,9 +53,26 @@ define([
         return amplify.request("horses/findByCurrentUser", findRequest);
     }
 
+    function save(entity) {
+        return amplify.request("horses/save", entity).always(CACHE.evict);
+    }
+
+    function update(entity) {
+        return amplify.request("horses/update", entity).always(CACHE.evict);
+    }
+
+    function erase(entity) {
+        return amplify.request("horses/erase", entity).always(CACHE.evict);
+    }
+
     function getDetailUrlById(horseId) {
         return brokerUtils.HASH_CHAR +
             urlUtils.joinPath(brokerUtils.requestMappings.HORSE, horseId);
+    }
+
+    function getEditUrlById(horseId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE + "-" + brokerUtils.requestMappings.HORSE, horseId);
     }
 
     function getListUrl(specialtyId) {
@@ -60,7 +89,11 @@ define([
     broker.findBy = findBy;
     broker.findById = findById;
     broker.findByCurrentUser = findByCurrentUser;
+    broker.save = save;
+    broker.update = update;
+    broker.erase = erase;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getEditUrlById = getEditUrlById;
     broker.getListUrl = getListUrl;
 
     return broker;

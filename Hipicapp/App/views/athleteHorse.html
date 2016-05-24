@@ -1,0 +1,100 @@
+<section id="section-content-login">
+    <div id="contenido-interior">
+        <div class="loginmodal-container registermodal">
+            <div class="card">
+                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+                <div class="content">
+                    <h2>Formulario de login</h2>
+                    <form role="form" data-bind="submit: save" novalidate>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label class="required hidden" for="h-horse-name"
+                                       data-bind="text: i18n.t('app:NAME')"></label>
+                                <input class="form-control" type="text" id="h-horse-name" autofocus
+                                       data-bind="value: currentEntity().name,
+					                    attr: { max: validationUtils.MAX_LENGTH,
+						                    maxlength: validationUtils.MAX_LENGTH,
+						                    placeholder: i18n.t('app:NAME'),
+						                    title: i18n.t('app:NAME')}"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label class="required hidden" for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
+                                <input type="number" id="h-horse-height"
+                                       data-bind="value: currentEntity().height,
+				                        attr: {
+					                        min: 0,
+					                        step: 1,
+					                        maxlenght: validationUtils.MAX_LENGTH,
+					                        placeholder: i18n.t('app:HEIGHT'),
+					                        title: i18n.t('app:HEIGHT') }"
+                                       required class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="required hidden" for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                <div id="h-horse-birthdate-picker" class="date input-group"
+                                     data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" id="h-horse-birthdate"
+                                           data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				                                attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				                                title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
+                            <label class="required hidden" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                            <select id="h-athlete-gender"
+                                    data-bind="options: availableGenders,
+							                optionsValue: function(item) { return item.value },
+							                optionsText: function(item) { return item.text },
+							                optionsCaption : i18n.t('app:GENDER') + '...',
+							                value: currentEntity().gender,
+							                attr: { title: i18n.t('app:GENDER') }"
+                                    required class="form-control" aria-required="true"></select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding">
+                            <label class="hidden" for="h-athlete-weight"
+                                   data-bind="text: i18n.t('app:WEIGHT')"></label>
+                            <input class="form-control" type="number" id="h-athlete-weight"
+                                   data-bind="value: currentEntity().weight,
+					                    attr: { min: 0,
+						                    maxlength: validationUtils.MAX_LENGTH,
+						                    step: validationUtils.FLOAT_STEP,
+						                    placeholder: i18n.t('app:WEIGHT'),
+						                    title: i18n.t('app:WEIGHT') }" required>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit"
+                                    data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                                    class="btn btn-primary">
+                                <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                            </button>
+                            <a data-bind="attr: {
+					            href: horseBroker.getListUrl(currentEntity().athleteId),
+					            title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+                               class="btn">
+                                <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>
+            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
+        </h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div data-bind="compose: 'athleteHorseNavs.html'"></div>
+            
+        </div>
+    </div>
+</div>

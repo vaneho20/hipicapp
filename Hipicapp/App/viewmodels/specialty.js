@@ -73,6 +73,16 @@ define([
         return bannerBroker.findVisibleBySpecialtyId(specialtyId).done(refreshBanners);
     }
 
+    function getUrlById(specialtyId) {
+        var url;
+        if (specialtyId === 1) {
+            url = "http://www.rfhe.com/doma-clasica/";
+        } else {
+            url = "http://www.rfhe.com/salto-de-obstaculos/";
+        }
+        return url;
+    }
+
     // module revelation
     viewModel.i18n = i18n;
     viewModel.router = router;
@@ -95,6 +105,7 @@ define([
     viewModel.activate = activate;
 
     // behaviour revelation
+    viewModel.getUrlById = getUrlById;
 
     return viewModel;
 });

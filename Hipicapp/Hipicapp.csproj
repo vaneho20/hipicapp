@@ -402,6 +402,8 @@
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\alerts.js" />
     <Content Include="App\viewmodels\athlete.js" />
+    <Content Include="App\viewmodels\athleteHorse.js" />
+    <Content Include="App\viewmodels\athleteHorseImages.js" />
     <Content Include="App\viewmodels\judgeCompetitions.js" />
     <Content Include="App\viewmodels\horseCompetitions.js" />
     <Content Include="App\viewmodels\competitionHorses.js" />
@@ -426,6 +428,9 @@
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\views\alerts.html" />
     <Content Include="App\views\athlete.html" />
+    <Content Include="App\views\athleteHorse.html" />
+    <Content Include="App\views\athleteHorseNavs.html" />
+    <Content Include="App\views\athleteHorseImages.html" />
     <Content Include="App\views\judgeCompetitions.html" />
     <Content Include="App\views\horseCompetitions.html" />
     <Content Include="App\views\competitionHorses.html" />

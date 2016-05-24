@@ -65,8 +65,14 @@ namespace Hipicapp.Proxy.Participant
         }
 
         [AuthorizeEnum(Rol.ADMINISTRATOR, Rol.ATHLETE)]
+        [Transaction]
         public Horse Save(Horse horse)
         {
+            var user = HttpContext.Current.GetOwinContext().Authentication.User.Claims;
+            if (user != null && user.Any(x => x.Type == ClaimTypes.Role && x.Value.Split(new char[] { ',' }).ToArray().Contains(Rol.ATHLETE.ToString())))
+            {
+                horse.AthleteId = this.AthleteService.GetByUserId(Convert.ToInt64(user.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value)).Id;
+            }
             return this.HorseService.Save(horse);
         }
 

@@ -150,7 +150,9 @@
                     </section>
                 </div>
                 <div class="banners">
-                    <img alt="Federacion hípica española" data-bind="attr: { src: '/Content/images/banner-' + currentEntity().id + '.png' }" />
+                    <a title="" data-bind="attr: { href: getUrlById(currentEntity().id), target: '_blank' }">
+                        <img alt="Federacion hípica española" data-bind="attr: { src: '/Content/images/banner-' + currentEntity().id + '.png' }" />
+                    </a>
                 </div>
             </div>
         </div>
