@@ -640,6 +640,7 @@
     <Content Include="Content\images\hipicapp-defecto-caballo.png" />
     <Content Include="Content\images\hipicapp-defecto-1.png" />
     <Content Include="Content\images\hipicapp-defecto-2.png" />
+    <Content Include="Content\images\hipicapp-defecto-juez.png" />
     <Content Include="Content\images\hipicapp-defecto-usuario.png" />
     <Content Include="Content\images\hipicapp-logoh.png" />
     <Content Include="Content\images\jump.png" />
