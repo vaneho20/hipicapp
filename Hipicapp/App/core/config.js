@@ -51,9 +51,9 @@
     config.PAGE_SIZES_LOWER = [
         1, 2, 3, 4, 5
     ];
-    config.PAGE_SIZE = 10;
+    config.PAGE_SIZE = 9;
     config.PAGE_SIZES = [
-        1, 5, 10, 20, 50, 100
+        1, 3, 6, 9, 48, 96
     ];
 
     config.NUM_MAX_PAGES = 5;

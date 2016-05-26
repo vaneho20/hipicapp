@@ -33,7 +33,7 @@ define([
 
     function loadEntityByAthleteId(id) {
         var promise;
-        if (securityContext.isAthlete()) {
+        if (!id && securityContext.isAthlete()) {
             promise = athleteBroker.getByCurrentUser().done(refreshCurrentEntity);
         } else {
             promise = athleteBroker.findById(id).done(refreshCurrentEntity);

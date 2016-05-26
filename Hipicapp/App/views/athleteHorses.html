@@ -1,6 +1,8 @@
 <header class="col-md-12 col-sm-12 col-xs-24">
     <h2 class="pull-left">Mis Caballos</h2>
-    <a class="pull-right" data-bind="text: i18n.t('app:CREATE_BUTTON_TEXT'), attr: { href: horseBroker.getEditUrlById() }"></a>
+    <a class="pull-right" data-bind="attr: { href: horseBroker.getEditUrlById() }">
+        <i class="fa fa-plus" aria-hidden="true"></i> <!-- ko text: i18n.t('app:CREATE_BUTTON_TEXT') --><!-- /ko -->
+    </a>
 </header>
 <article class="row">
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">

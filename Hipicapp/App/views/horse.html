@@ -51,9 +51,11 @@
                                 <strong>Jinete:</strong>
                                 <span data-bind="text: currentEntity().athlete.fullName"></span>
                             </p>
-                            <a class="ver-todo" data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Ver Especialidad
+                            <!-- ko if: securityContext.isAuthenticated() && currentEntity().athlete.userId === parseInt(securityContext.getPrincipal().id) -->
+                            <a class="ver-todo" data-bind="attr: { href: $root.horseBroker.getEditUrlById(currentEntity().id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-edit" aria-hidden="true"></i> Editar
                             </a>
+                            <!-- /ko -->
                         </div>
                     </article>
                 </div>
