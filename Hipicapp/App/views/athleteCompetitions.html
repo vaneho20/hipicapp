@@ -16,7 +16,7 @@
         Fechas
     </div>
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
-        Categor&iacute;a
+        Caballo
     </div>
 </article>
 <article data-bind="foreach: currentPage().content">
@@ -30,7 +30,7 @@
         </div>
         <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: competition.category.name">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: horse.name">
         </div>
     </div>
 </article>

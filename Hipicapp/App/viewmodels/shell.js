@@ -13,6 +13,7 @@
             isLoading: ko.computed(function () {
                 return brokerUtils.requestCount > 0 || router.isNavigating();
             }),
+            securityContext: securityContext,
             router: router,
             i18n: i18n,
             search: function () {

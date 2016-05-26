@@ -14,6 +14,8 @@ namespace Hipicapp.Proxy.Participant
 
         Athlete GetByCurrentUser();
 
+        string GetFullNameByUserId(long? userId);
+
         Athlete Save(Athlete athlete);
 
         Task<HttpResponseMessage> Register(Athlete athlete);

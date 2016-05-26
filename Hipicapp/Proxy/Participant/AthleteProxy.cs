@@ -47,6 +47,12 @@ namespace Hipicapp.Proxy.Participant
             return this.AthleteService.GetByUserId(Convert.ToInt64(HttpContext.Current.GetOwinContext().Authentication.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value));
         }
 
+        [AllowAnonymous]
+        public string GetFullNameByUserId(long? userId)
+        {
+            return this.AthleteService.GetFullNameByUserId(userId);
+        }
+
         [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public Athlete Save(Athlete athlete)
         {

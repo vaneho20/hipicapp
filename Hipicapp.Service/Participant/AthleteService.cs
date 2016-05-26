@@ -80,6 +80,12 @@ namespace Hipicapp.Service.Participant
             return this.AthleteRepository.GetByUserId(userId);
         }
 
+        [Transaction(ReadOnly = true)]
+        public string GetFullNameByUserId(long? userId)
+        {
+            return this.AthleteRepository.GetByUserId(userId).FullName;
+        }
+
         [Transaction]
         public Athlete Save(Athlete athlete)
         {

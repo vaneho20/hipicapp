@@ -12,6 +12,8 @@ namespace Hipicapp.Service.Participant
 
         Athlete GetByUserId(long? userId);
 
+        string GetFullNameByUserId(long? userId);
+
         Athlete Save(Athlete athlete);
 
         Athlete Update(Athlete athlete);

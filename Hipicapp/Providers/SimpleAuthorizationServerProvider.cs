@@ -2,6 +2,7 @@
 using Hipicapp.Model.Authentication;
 using Hipicapp.Proxy.Account;
 using Hipicapp.Proxy.Authentication;
+using Hipicapp.Proxy.Participant;
 using Hipicapp.Utils.Helper;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
@@ -15,11 +16,11 @@ namespace Hipicapp.Backend.Providers
 {
     public class SimpleAuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
-        private IUserProxy UserProxy
+        private IAthleteProxy AthleteProxy
         {
             get
             {
-                return (IUserProxy)ContextRegistry.GetContext().GetObject<IUserProxy>();
+                return (IAthleteProxy)ContextRegistry.GetContext().GetObject<IAthleteProxy>();
             }
         }
 
@@ -28,6 +29,14 @@ namespace Hipicapp.Backend.Providers
             get
             {
                 return (IClientProxy)ContextRegistry.GetContext().GetObject<IClientProxy>();
+            }
+        }
+
+        private IUserProxy UserProxy
+        {
+            get
+            {
+                return (IUserProxy)ContextRegistry.GetContext().GetObject<IUserProxy>();
             }
         }
 
@@ -128,6 +137,9 @@ namespace Hipicapp.Backend.Providers
                 },
                 {
                     "username", context.UserName
+                },
+                {
+                    "fullname", user.Roles.Any(x => x == Rol.ATHLETE) ? AthleteProxy.GetFullNameByUserId(user.Id) : context.UserName
                 },
                 {
                     "roles", rolesString
