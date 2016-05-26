@@ -25,8 +25,7 @@
                              data-bind="compose: { model: 'viewmodels/athleteHorses', activationData: currentEntity().id }">
                     </section>
                     <section id="mis-concursos"
-                             data-bind="compose: { model: 'viewmodels/athleteCompetitions', activationData: currentEntity().id }">
-                    </section>
+                             data-bind="compose: { model: 'viewmodels/athleteCompetitions', activationData: [currentEntity().id, currentEntity().specialtyId] }"></section>
                 </div>
                 <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
                     <article>

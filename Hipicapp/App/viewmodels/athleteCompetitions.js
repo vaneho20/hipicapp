@@ -15,12 +15,14 @@ define([
     var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
         nextFilter = ko.observable(enrollmentFilterImpl()), currentFilter = enrollmentFilterImpl(),
         currentSort = ko.observable(enrollmentSortImpl()), currentPage = ko.observable(pageImpl()),
-        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);
+        currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE),
+        specialty = ko.observable();
 
     // lifecycle definition
-    function activate(athleteId) {
+    function activate(athleteId, specialtyId) {
         currentFilter.athleteId(athleteId);
         nextFilter().athleteId(athleteId);
+        specialty(specialtyId);
 
         // allways return a promise
         return $.when(loadCurrentPage());
@@ -96,6 +98,7 @@ define([
     viewModel.currentPager = currentPager;
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
+    viewModel.specialty = specialty;
 
     // lifecycle revelation
     viewModel.activate = activate;
