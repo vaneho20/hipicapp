@@ -1,10 +1,11 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 100 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
-    "core/crud/pageRequestImpl", "domain/file/fileBroker", "domain/horse/horseBroker", "domain/horse/horseFilterImpl",
-    "domain/horse/horseSortImpl", "domain/horse/horseImpl", "durandal/app", "viewmodels/shell"
-], function athleteHorses(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
+    "core/config", "core/i18n", "core/authentication/securityContext", "core/crud/findRequestImpl",
+    "core/crud/pageImpl", "core/crud/pagerImpl", "core/crud/pageRequestImpl", "domain/file/fileBroker",
+    "domain/horse/horseBroker", "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl",
+    "domain/horse/horseImpl", "durandal/app", "viewmodels/shell"
+], function athleteHorses(config, i18n, securityContext, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
     fileBroker, horseBroker, horseFilterImpl, horseSortImpl, horseImpl, app, shell) {
     "use strict";
 
@@ -84,6 +85,7 @@ define([
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
+    viewModel.securityContext = securityContext;
     viewModel.fileBroker = fileBroker;
     viewModel.horseBroker = horseBroker;
 

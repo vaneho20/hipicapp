@@ -72,6 +72,10 @@ body {
                     text-decoration: none;
                 }
             }
+
+            .fa {
+                margin-left: 0.5em;
+            }
         }
     }
 
@@ -714,7 +718,6 @@ body {
 
                                 .cintillo {
                                     z-index: 99;
-                                    background: #f74b4b;
                                     color: #fff;
                                     position: absolute;
                                     bottom: 0;
@@ -726,6 +729,10 @@ body {
                                     padding: 8px 10px;
                                     text-transform: uppercase;
                                     width: auto;
+                                    -webkit-border-top-left-radius: 3px;
+                                    -moz-border-radius-topleft: 3px;
+                                    border-top-left-radius: 3px;
+                                    background: #f74b4b;
                                 }
                             }
 
@@ -800,13 +807,15 @@ body {
                         }
 
                         ul {
-                            margin: 1.2em 0 0;
+                            float: left;
+                            margin: 2em 0 1em;
+                            width: 100%;
                             list-style: none;
 
                             li {
                                 float: left;
                                 margin: 0;
-                                padding: 1em 0;
+                                padding: 1.2em 0;
                                 width: 100%;
                                 clear: both;
                                 font-family: 'Montserrat', sans-serif;
@@ -816,6 +825,7 @@ body {
                                 &:nth-child(2),
                                 &:nth-child(3) {
                                     float: left;
+                                    margin-bottom: 0.5em;
                                     padding: 0;
                                     width: 33.3%;
                                     clear: none;
@@ -841,12 +851,13 @@ body {
                                     margin-top: -0.8em;
 
                                     .puesto {
-                                        height: 3.8em;
+                                        height: 4.3em;
                                         background: #e2e1e1;
 
                                         h3 {
-                                            padding: 1.1em 1.8em 0.6em 0.8em;
-                                            font-size: 0.9em;
+                                            padding: 0.4em 1.6em 0.6em 0.8em;
+                                            font-size: 1em;
+                                            line-height: 1.2em;
                                         }
                                     }
                                 }
@@ -855,7 +866,7 @@ body {
                                     position: relative;
                                     float: left;
                                     width: 100%;
-                                    height: 3em;
+                                    height: 3.5em;
                                     color: #333;
                                     text-align: center;
                                     overflow: hidden;
@@ -984,6 +995,7 @@ body {
 
             .info-listados {
                 padding-left: 0;
+                padding-right: 24px;
 
                 h3 {
                     font-size: 1.3em;
@@ -1088,9 +1100,22 @@ body {
                     font-family: 'Montserrat', sans-serif;
                     font-size: 0.8em;
                     margin: 0;
-                    padding: 8px 10px;
+                    padding: 0.8em 1em;
                     text-transform: uppercase;
                     width: auto;
+                    -webkit-border-top-left-radius: 3px;
+                    -webkit-border-top-right-radius: 3px;
+                    -moz-border-radius-topleft: 3px;
+                    -moz-border-radius-topright: 3px;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        text-decoration: none;
+                        background-color: #de4545;
+                    }
                 }
             }
 
@@ -1161,6 +1186,7 @@ body {
 
             .info-listados {
                 padding-top: 5.5em;
+                padding-bottom: 3em;
 
                 h3 {
                     margin: 0;

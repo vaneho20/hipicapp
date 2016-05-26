@@ -56,6 +56,8 @@ body {
         text-decoration: underline; }
         body .navbar .enlaces-header a:hover {
           text-decoration: none; }
+      body .navbar .enlaces-header .fa {
+        margin-left: 0.5em; }
   body .section-home {
     height: 100vh;
     overflow: hidden; }
@@ -508,7 +510,6 @@ body {
                 height: 146px; }
               body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto .cintillo {
                 z-index: 99;
-                background: #f74b4b;
                 color: #fff;
                 position: absolute;
                 bottom: 0;
@@ -519,7 +520,11 @@ body {
                 margin: 0;
                 padding: 8px 10px;
                 text-transform: uppercase;
-                width: auto; }
+                width: auto;
+                -webkit-border-top-left-radius: 3px;
+                -moz-border-radius-topleft: 3px;
+                border-top-left-radius: 3px;
+                background: #f74b4b; }
             body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .texto {
               background: #fff;
               padding: 10px; }
@@ -564,18 +569,21 @@ body {
             margin: 0 0 0.5em;
             font-size: 1.2em; }
           body #contenido-interior .block-center .block-center-der .box-element .content ul {
-            margin: 1.2em 0 0;
+            float: left;
+            margin: 2em 0 1em;
+            width: 100%;
             list-style: none; }
             body #contenido-interior .block-center .block-center-der .box-element .content ul li {
               float: left;
               margin: 0;
-              padding: 1em 0;
+              padding: 1.2em 0;
               width: 100%;
               clear: both;
               font-family: 'Montserrat', sans-serif;
               border-bottom: 1px solid #f8f8f8; }
               body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(1), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(3) {
                 float: left;
+                margin-bottom: 0.5em;
                 padding: 0;
                 width: 33.3%;
                 clear: none;
@@ -594,16 +602,17 @@ body {
               body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2) {
                 margin-top: -0.8em; }
                 body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2) .puesto {
-                  height: 3.8em;
+                  height: 4.3em;
                   background: #e2e1e1; }
                   body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2) .puesto h3 {
-                    padding: 1.1em 1.8em 0.6em 0.8em;
-                    font-size: 0.9em; }
+                    padding: 0.4em 1.6em 0.6em 0.8em;
+                    font-size: 1em;
+                    line-height: 1.2em; }
               body #contenido-interior .block-center .block-center-der .box-element .content ul li .puesto {
                 position: relative;
                 float: left;
                 width: 100%;
-                height: 3em;
+                height: 3.5em;
                 color: #333;
                 text-align: center;
                 overflow: hidden;
@@ -689,7 +698,8 @@ body {
   body .listado-elements .one-element {
     padding: 0 0 1.5em; }
     body .listado-elements .one-element .info-listados {
-      padding-left: 0; }
+      padding-left: 0;
+      padding-right: 24px; }
       body .listado-elements .one-element .info-listados h3 {
         font-size: 1.3em;
         margin: 0 0 0.2em;
@@ -755,9 +765,18 @@ body {
           font-family: 'Montserrat', sans-serif;
           font-size: 0.8em;
           margin: 0;
-          padding: 8px 10px;
+          padding: 0.8em 1em;
           text-transform: uppercase;
-          width: auto; }
+          width: auto;
+          -webkit-border-top-left-radius: 3px;
+          -webkit-border-top-right-radius: 3px;
+          -moz-border-radius-topleft: 3px;
+          -moz-border-radius-topright: 3px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px; }
+          body .block-ficha .ficha-col-izq header a:hover, body .block-ficha .ficha-col-izq header a:active, body .block-ficha .ficha-col-izq header a:focus {
+            text-decoration: none;
+            background-color: #de4545; }
       body .block-ficha .ficha-col-izq .encabezado-listados {
         font-family: 'Montserrat', sans-serif;
         font-size: 0.8em;
@@ -807,7 +826,8 @@ body {
           padding: 6px;
           border: 0; }
       body .block-ficha .ficha-col-der .info-listados {
-        padding-top: 5.5em; }
+        padding-top: 5.5em;
+        padding-bottom: 3em; }
         body .block-ficha .ficha-col-der .info-listados h3 {
           margin: 0;
           padding: 1em 0 0.5em;
