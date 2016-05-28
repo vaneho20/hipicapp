@@ -29,6 +29,12 @@ define([
         }).then(loadCurrentPage)).done(refreshNav);
     }
 
+    function attached() {
+        $("input:checkbox").iCheck({
+            checkboxClass: "icheckbox_flat-red"
+        });
+    }
+
     function refreshNav() {
         viewModel.nav(viewModel.navs.JUDGES);
     }
@@ -157,6 +163,7 @@ define([
 
     // lifecycle revelation
     viewModel.activate = activate;
+    viewModel.attached = attached;
 
     // behaviour revelation
     viewModel.refreshCurrentPage = refreshCurrentPage;
