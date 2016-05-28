@@ -15,13 +15,16 @@
                         <h2 class="pull-left">Mis Caballos</h2>
                     </header>
                     <article class="row">
-                        <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                        <div class="encabezado-listados col-md-1 col-sm-1 col-xs-2">
+                            &nbsp;
+                        </div>
+                        <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
                             Foto Caballos
                         </div>
                         <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
                             Nombre Caballo
                         </div>
-                        <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+                        <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
                             Fecha nacimiento
                         </div>
                         <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
@@ -33,7 +36,7 @@
                     </article>
                     <article data-bind="foreach: currentPage().content">
                         <div class="row">
-                            <div class="col-md-1 col-sm-1 col-xs-2">
+                            <div class="datos-listados acenter col-md-1 col-sm-1 col-xs-2">
                                 <input name="inscription" data-bind="event: { change: $root.enroll }" type="radio" />
                             </div>
                             <div class="foto-listados col-md-2 col-sm-2 col-xs-4">

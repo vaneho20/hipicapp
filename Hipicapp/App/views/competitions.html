@@ -1,7 +1,10 @@
 <section class="header-block">
     <div class="container">
         <div class="row">
-            <h1 data-bind="text: (nextFilter().specialtyId() === '1' ? 'Doma' : 'Salto') + ' - Concursos'"></h1>
+            <h1>
+                <span data-bind="text: (nextFilter().specialtyId() === '1' ? 'Doma' : 'Salto')"></span>
+                Concursos
+            </h1>
         </div>
     </div>
 </section>
@@ -53,7 +56,9 @@
                             </a>
                         </div>
                         <div class="info-listados col-md-9 col-sm-9 col-xs-18">
-                            <h3><span data-bind="text: name"></span></h3>
+                            <h3>
+                                <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }"><span data-bind="text: name"></span></a>
+                            </h3>
                             <p>
                                 <strong>Disciplina:</strong>
                                 <span data-bind="text: specialty.name"></span>

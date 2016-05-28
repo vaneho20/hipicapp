@@ -3,7 +3,7 @@
     <a class="pull-right" data-bind="attr: { href: competitionBroker.getListUrl(specialty()) }"><i class="fa fa-calendar" aria-hidden="true"></i> Pr&oacute;ximos Concursos</a>
 </header>
 <article class="row">
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
         Foto
     </div>
     <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
@@ -15,13 +15,13 @@
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
         Fechas
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
         Caballo
     </div>
 </article>
 <article data-bind="foreach: currentPage().content">
     <div class="row">
-        <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+        <div class="acenter foto-listados col-md-2 col-sm-2 col-xs-4">
             <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? $root.fileBroker.getUrlByUuid(competition.photo.fileUuid) : '/Content/images/hipicapp-defecto-' + competition.specialty.id + '.png' }" />
         </div>
         <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.name">
@@ -30,7 +30,7 @@
         </div>
         <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: horse.name">
+        <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: horse.name">
         </div>
     </div>
 </article>

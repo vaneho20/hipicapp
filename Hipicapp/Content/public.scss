@@ -204,6 +204,31 @@ body {
         h1 {
             position: relative;
             z-index: 9;
+
+            span {
+                display: block;
+                font-size: 0.5em;
+                text-transform: uppercase;
+                margin: 0 0 0.5em;
+
+                &:before,
+                &:after {
+                    content: "";
+                    float: left;
+                    margin: 0 0.5em 0 -2em;
+                    width: 1.5em;
+                    height: 2px;
+                    display: inline-block;
+                    position: absolute;
+                    left: auto;
+                    top: 7px;
+                    background: #fff;
+                }
+
+                &:after {
+                    margin: 0 0.5em 0 0.5em;
+                }
+            }
         }
     }
 
@@ -808,7 +833,7 @@ body {
 
                         ul {
                             float: left;
-                            margin: 2em 0 1em;
+                            margin: 1.5em 0 0.5em;
                             width: 100%;
                             list-style: none;
 
@@ -1001,6 +1026,10 @@ body {
                     font-size: 1.3em;
                     margin: 0 0 0.2em;
                     padding: 0.3em 0 0.2em 0;
+
+                    a {
+                        color: #333;
+                    }
                 }
 
                 p {
@@ -1192,6 +1221,10 @@ body {
                     margin: 0;
                     padding: 1em 0 0.5em;
                     border-bottom: 1px solid #fff;
+
+                    a {
+                        color: #333;
+                    }
                 }
 
                 p {

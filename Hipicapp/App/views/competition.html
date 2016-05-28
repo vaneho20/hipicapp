@@ -1,7 +1,10 @@
 <section class="header-block">
     <div class="container">
         <div class="row">
-            <h1 data-bind="text: 'Concurso'"></h1>
+            <h1>
+                <span data-bind="text: currentEntity().specialty.name"></span>
+                Ficha Concurso
+            </h1>
         </div>
     </div>
 </section>
@@ -24,7 +27,27 @@
                     <!--<section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-24"
                              data-bind="compose: { model: 'viewmodels/competitionAthletes', activationData: currentEntity().id }"></section>-->
                     <section id="mis-concursos"
-                             data-bind="compose: { model: 'viewmodels/competitionJudges', activationData: currentEntity().id }"></section>
+                             data-bind="compose: { model: 'viewmodels/competitionJudges', activationData: currentEntity().id }">                        
+                    </section>
+                    <section>
+                        <header class="col-md-12 col-sm-12 col-xs-24">
+                            <h2 class="pull-left">Jinetes participantes</h2>
+                        </header>
+                        <article class="row">
+                            <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Foto Jinete
+                            </div>
+                            <div class="encabezado-listados col-md-4 col-sm-4 col-xs-8">
+                                Nombre Jinete
+                            </div>
+                            <div class="encabezado-listados col-md-4 col-sm-4 col-xs-8">
+                                Federaci&oacute;n
+                            </div>
+                            <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+                                Disciplina
+                            </div>
+                        </article>
+                    </section>
                 </div>
                 <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
                     <article>

@@ -154,6 +154,24 @@ body {
     body .header-block h1 {
       position: relative;
       z-index: 9; }
+      body .header-block h1 span {
+        display: block;
+        font-size: 0.5em;
+        text-transform: uppercase;
+        margin: 0 0 0.5em; }
+        body .header-block h1 span:before, body .header-block h1 span:after {
+          content: "";
+          float: left;
+          margin: 0 0.5em 0 -2em;
+          width: 1.5em;
+          height: 2px;
+          display: inline-block;
+          position: absolute;
+          left: auto;
+          top: 7px;
+          background: #fff; }
+        body .header-block h1 span:after {
+          margin: 0 0.5em 0 0.5em; }
   body .menu-principal {
     text-align: center;
     border-bottom: 1px solid #cecdcd;
@@ -570,7 +588,7 @@ body {
             font-size: 1.2em; }
           body #contenido-interior .block-center .block-center-der .box-element .content ul {
             float: left;
-            margin: 2em 0 1em;
+            margin: 1.5em 0 0.5em;
             width: 100%;
             list-style: none; }
             body #contenido-interior .block-center .block-center-der .box-element .content ul li {
@@ -704,6 +722,8 @@ body {
         font-size: 1.3em;
         margin: 0 0 0.2em;
         padding: 0.3em 0 0.2em 0; }
+        body .listado-elements .one-element .info-listados h3 a {
+          color: #333; }
       body .listado-elements .one-element .info-listados p {
         margin: 0 0 0.2em; }
       body .listado-elements .one-element .info-listados .ver-todo {
@@ -832,6 +852,8 @@ body {
           margin: 0;
           padding: 1em 0 0.5em;
           border-bottom: 1px solid #fff; }
+          body .block-ficha .ficha-col-der .info-listados h3 a {
+            color: #333; }
         body .block-ficha .ficha-col-der .info-listados p {
           margin: 0;
           padding: 1em 0;
