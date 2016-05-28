@@ -30,12 +30,6 @@ define([
         }
     }
 
-    function attached(view, parent) {
-        $("input:checkbox").iCheck({
-            checkboxClass: "icheckbox_flat-red"
-        });
-    }
-
     // behaviour definition
     function refreshCurrentEntity(data) {
         currentEntity(competitionImpl(data));
@@ -87,7 +81,6 @@ define([
 
     // lifecycle revelation
     viewModel.activate = activate;
-    viewModel.attached = attached;
 
     // behaviour revelation
     viewModel.save = save;

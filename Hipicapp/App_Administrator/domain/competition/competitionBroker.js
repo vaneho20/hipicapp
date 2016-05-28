@@ -127,7 +127,7 @@ define([
 
         return amplify.request("competitions/assignAllJudges", {
             competitionId: competitionId
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function assignAllJudgesById(id, judgesId) {
@@ -135,7 +135,7 @@ define([
         return amplify.request("competitions/assignAllJudgesById", {
             competitionId: id,
             judgesId: judgesId
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function assignAllJudgesByFilter(id, find) {
@@ -143,14 +143,14 @@ define([
         return amplify.request("competitions/assignAllJudgesByFilter", {
             competitionId: id,
             filter: find.filter
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function unassignAllJudges(competitionId) {
 
         return amplify.request("competitions/unassignAllJudges", {
             competitionId: competitionId
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function unassignAllJudgesById(id, judgesId) {
@@ -158,7 +158,7 @@ define([
         return amplify.request("competitions/unassignAllJudgesById", {
             competitionId: id,
             judgesId: judgesId
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function unassignAllJudgesByFilter(id, find) {
@@ -166,7 +166,7 @@ define([
         return amplify.request("competitions/unassignAllJudgesByFilter", {
             competitionId: id,
             filter: find.filter
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function assignUnassignJudge(id, entity) {
@@ -174,7 +174,7 @@ define([
         return amplify.request("competitions/assignUnassignJudge", {
             competitionId: id,
             judgeId: entity.id
-        }).always(judgeBroker.evictCache);
+        }).always(judgeBroker.evictCache).always(CACHE.evict);
     }
 
     function getListUrl() {

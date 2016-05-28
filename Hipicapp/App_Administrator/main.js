@@ -38,8 +38,8 @@ define([
     "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system",
     "durandal/app", "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"
 ], function (addressBinding, compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding,
-    epochValueBinding, fileuploadBinding, iCheckBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext,
-    system, app, viewLocator, binder, i18n, router) {
+    epochValueBinding, fileuploadBinding, iCheckBinding, imageHolderBinding, popoverBinding, authenticationBroker,
+    securityContext, system, app, viewLocator, binder, i18n, router) {
     // Fast click
     FastClick.attach(document.body);
 

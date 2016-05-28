@@ -269,6 +269,7 @@
     <Content Include="App\bindings\epochFutureBinding.js" />
     <Content Include="App\bindings\epochValueBinding.js" />
     <Content Include="App\bindings\fileUploadBinding.js" />
+    <Content Include="App\bindings\iCheckBinding.js" />
     <Content Include="App\bindings\imageHolderBinding.js" />
     <Content Include="App\bindings\phonesBinding.js" />
     <Content Include="App\bindings\popoverBinding.js" />

@@ -14,7 +14,7 @@
                         <label class="required" for="h-competition-name"
                                data-bind="text: i18n.t('app:NAME')"></label>
                         <input class="form-control" type="text" id="h-competition-name" autofocus
-                               data-bind="value: currentEntity().name,	attr: { max: validationUtils.MAX_LENGTH,
+                               data-bind="disable : currentEntity().finalized(), value: currentEntity().name,	attr: { max: validationUtils.MAX_LENGTH,
 						    maxlength: validationUtils.MAX_LENGTH,
 						    placeholder: i18n.t('app:NAME'),
 						    title: i18n.t('app:NAME')}" required>
@@ -23,7 +23,7 @@
                         <label class="required" for="h-competition-address"
                                data-bind="text: i18n.t('app:ENCLOSURE_NAME')"></label>
                         <input class="form-control" type="text" id="h-competition-address" autofocus
-                               data-bind="value: currentEntity().address, address: { value: currentEntity().address, postal_code: currentEntity().zipCode, place_id: currentEntity().placeId },
+                               data-bind="disable : currentEntity().finalized(), value: currentEntity().address, address: { value: currentEntity().address, postal_code: currentEntity().zipCode, place_id: currentEntity().placeId },
 					        attr: { max: validationUtils.MAX_LENGTH,
 						    maxlength: validationUtils.MAX_LENGTH,
 						    placeholder: i18n.t('app:ENCLOSURE_NAME'),
@@ -42,7 +42,7 @@
                     <div class="form-group col-md-4 col-sm-4 col-xs-12 without-padding-left">
                         <label class="required" for="h-competition-category" data-bind="text: i18n.t('app:CATEGORY')"></label>
                         <select id="h-competition-category"
-                                data-bind="options: availableCategories,
+                                data-bind="disable : currentEntity().finalized(), options: availableCategories,
 						optionsValue: function(item) { return item.id },
 						optionsText: function(item) { return item.name },
 						optionsCaption : i18n.t('app:CATEGORY') + '...',
@@ -53,7 +53,7 @@
                     <div class="form-group col-md-4 col-sm-4 col-xs-12 without-padding-right">
                         <label class="required" for="h-competition-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
                         <select id="h-competition-specialty"
-                                data-bind="options: availableSpecialties,
+                                data-bind="disable : currentEntity().finalized(), options: availableSpecialties,
 						optionsValue: function(item) { return item.id },
 						optionsText: function(item) { return item.name },
 						optionsCaption : i18n.t('app:SPECIALTY') + '...',
@@ -65,7 +65,7 @@
                         <label>
                             <input type="checkbox" class="flat" style="position: absolute; opacity: 0;"
                                    id="h-competition-finalized"
-                                   data-bind="checked: currentEntity().finalized, attr: {
+                                   data-bind="iCheck: currentEntity().finalized, attr: {
 									    placeholder: i18n.t('app:FINISH_COMPETITION'),
 									    title: i18n.t('app:FINISH_COMPETITION') }">
                             <ins class="iCheck-helper"></ins>
@@ -79,7 +79,7 @@
                         <label for="h-competition-description"
                                data-bind="text: i18n.t('DESCRIPTION')" class="required"></label>
                         <textarea rows="3" id="h-competition-description"
-                                  data-bind="value: currentEntity().description,
+                                  data-bind="disable : currentEntity().finalized(), value: currentEntity().description,
 								attr: { max: validationUtils.MAX_LENGTH_DESCRIPTION,
 								maxlength: validationUtils.MAX_LENGTH_DESCRIPTION,
 								placeholder: i18n.t('DESCRIPTION'),
@@ -92,7 +92,7 @@
                              data-bind="datetimepickerValue: currentEntity().startDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                             <input type="text" class="form-control" id="h-competition-start-date"
-                                   data-bind="epochValue: currentEntity().startDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                   data-bind="disable : currentEntity().finalized(), epochValue: currentEntity().startDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				        attr: { placeholder: i18n.t('app:COMPETITION_START_DATE'),
 	 				        title: i18n.t('app:COMPETITION_START_DATE') }" required>
                         </div>
@@ -103,7 +103,7 @@
                              data-bind="datetimepickerValue: currentEntity().endDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                             <input type="text" class="form-control" id="h-competition-end-date"
-                                   data-bind="epochValue: currentEntity().endDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                   data-bind="disable : currentEntity().finalized(), epochValue: currentEntity().endDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				        attr: { placeholder: i18n.t('app:COMPETITION_END_DATE'),
 	 				        title: i18n.t('app:COMPETITION_END_DATE') }" required>
                         </div>
@@ -114,7 +114,7 @@
                              data-bind="datetimepickerValue: currentEntity().registrationStartDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                             <input type="text" class="form-control" id="h-competition-registration-star-date"
-                                   data-bind="epochValue: currentEntity().registrationStartDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                   data-bind="disable : currentEntity().finalized(), epochValue: currentEntity().registrationStartDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				        attr: { placeholder: i18n.t('app:REGISTRATION_START_DATE'),
 	 				        title: i18n.t('app:REGISTRATION_START_DATE') }" required>
                         </div>
@@ -125,7 +125,7 @@
                              data-bind="datetimepickerValue: currentEntity().registrationEndDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { time: 'fa fa-clock-o', date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
                             <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                             <input type="text" class="form-control" id="h-competition-registration-end-date"
-                                   data-bind="epochValue: currentEntity().registrationEndDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                   data-bind="disable : currentEntity().finalized(), epochValue: currentEntity().registrationEndDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				        attr: { placeholder: i18n.t('app:REGISTRATION_END_DATE'),
 	 				        title: i18n.t('app:REGISTRATION_END_DATE') }" required>
                         </div>
