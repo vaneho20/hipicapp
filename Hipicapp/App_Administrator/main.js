@@ -34,11 +34,11 @@ define('gmaps', ['async!https://maps.google.com/maps/api/js?key=AIzaSyBdhF5Dy-Te
 define([
     "bindings/addressBinding", "bindings/compareBinding", "bindings/datetimepickerValueBinding",
     "bindings/epochAfterBinding", "bindings/epochFutureBinding", "bindings/epochValueBinding",
-    "bindings/fileuploadBinding", "bindings/imageHolderBinding", "bindings/popoverBinding",
+    "bindings/fileuploadBinding", "bindings/iCheckBinding", "bindings/imageHolderBinding", "bindings/popoverBinding",
     "core/authentication/authenticationBroker", "core/authentication/securityContext", "durandal/system",
     "durandal/app", "durandal/viewLocator", "durandal/binder", "i18n!nls", "core/router"
 ], function (addressBinding, compareBinding, datetimepickerValueBinding, epochAfterBinding, epochFutureBinding,
-    epochValueBinding, fileuploadBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext,
+    epochValueBinding, fileuploadBinding, iCheckBinding, imageHolderBinding, popoverBinding, authenticationBroker, securityContext,
     system, app, viewLocator, binder, i18n, router) {
     // Fast click
     FastClick.attach(document.body);
@@ -68,6 +68,7 @@ define([
     ko.bindingHandlers.epochFuture = epochFutureBinding;
     ko.bindingHandlers.epochValue = epochValueBinding;
     ko.bindingHandlers.fileupload = fileuploadBinding;
+    ko.bindingHandlers.iCheck = iCheckBinding;
     ko.bindingHandlers.imageHolder = imageHolderBinding;
     ko.bindingHandlers.popover = popoverBinding;
 

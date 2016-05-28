@@ -45,7 +45,6 @@ namespace Hipicapp.Service.Event
 
             this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
-            this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             var jury = new List<Seminary>();
@@ -68,6 +67,7 @@ namespace Hipicapp.Service.Event
                 }
             });
 
+            this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.JudgeRepository.GetAllQueryable().Count(), previousCompetition.Specialty);
             this.SeminaryRepository.Save(jury);
             return jury;
         }
@@ -223,7 +223,6 @@ namespace Hipicapp.Service.Event
 
             this.CompetitionExpiredPolicy.CheckSatisfiedBy(previousCompetition);
             this.EnrollmentExpiredPolicy.CheckSatisfiedBy(previousCompetition);
-            this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.SeminaryRepository.GetAllQueryable().Count(x => x.Competition.Id == competitionId), previousCompetition.Specialty);
             //this.updateAllowancePolicy.checkSatisfiedBy(previousCompetition);
 
             SeminaryId seminaryId = new SeminaryId();
@@ -235,10 +234,11 @@ namespace Hipicapp.Service.Event
 
             if (this.SeminaryRepository.GetAllQueryable().Any(x => x.Id == seminaryId))
             {
-                this.SeminaryRepository.Delete(seminaryId);
+                this.SeminaryRepository.Delete(this.SeminaryRepository.Get(seminaryId));
             }
             else
             {
+                this.MaximumNumberOfJudgesExceededPolicy.CheckSatisfiedBy(this.SeminaryRepository.GetAllQueryable().Count(x => x.Competition.Id == competitionId), previousCompetition.Specialty);
                 this.SeminaryRepository.Save(seminary);
             }
 

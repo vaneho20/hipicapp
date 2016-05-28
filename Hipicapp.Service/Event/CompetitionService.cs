@@ -56,6 +56,7 @@ namespace Hipicapp.Service.Event
         [Transaction]
         public Competition Save(Competition competition)
         {
+            competition.Finalized = false;
             competition.CreationDate = DateTime.Now;
             CompetitionRepository.Save(competition);
             return competition;
@@ -65,17 +66,21 @@ namespace Hipicapp.Service.Event
         public Competition Update(Competition competition)
         {
             var model = this.CompetitionRepository.Get(competition.Id);
-            model.Name = competition.Name;
-            model.Description = competition.Description;
-            model.Address = competition.Address;
-            model.ZipCode = competition.ZipCode;
-            model.PlaceId = competition.PlaceId;
-            model.StartDate = competition.StartDate;
-            model.EndDate = competition.EndDate;
-            model.RegistrationStartDate = competition.RegistrationStartDate;
-            model.RegistrationEndDate = competition.RegistrationEndDate;
-            model.CategoryId = competition.CategoryId;
-            model.SpecialtyId = competition.SpecialtyId;
+            model.Finalized = competition.Finalized;
+            if (model.Finalized == null || !model.Finalized.Value)
+            {
+                model.Name = competition.Name;
+                model.Description = competition.Description;
+                model.Address = competition.Address;
+                model.ZipCode = competition.ZipCode;
+                model.PlaceId = competition.PlaceId;
+                model.StartDate = competition.StartDate;
+                model.EndDate = competition.EndDate;
+                model.RegistrationStartDate = competition.RegistrationStartDate;
+                model.RegistrationEndDate = competition.RegistrationEndDate;
+                model.CategoryId = competition.CategoryId;
+                model.SpecialtyId = competition.SpecialtyId;
+            }
             CompetitionRepository.Save(model);
             return model;
         }
@@ -138,7 +143,10 @@ namespace Hipicapp.Service.Event
         [Transaction(ReadOnly = true)]
         public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
         {
-            return this.CompetitionRepository.GetAllQueryable().Where(x => x.SpecialtyId == specialtyId && x.StartDate > DateTime.Now.Date).Take(6).ToList();
+            return this.CompetitionRepository.GetAllQueryable()
+                .Where(x => (x.Finalized == null || !x.Finalized.Value) && x.SpecialtyId == specialtyId && x.StartDate > DateTime.Now.Date)
+                .Take(6)
+                .ToList();
         }
 
         [Transaction(ReadOnly = true)]

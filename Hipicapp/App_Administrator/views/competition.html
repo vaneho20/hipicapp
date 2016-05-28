@@ -60,7 +60,18 @@
 						value: currentEntity().specialtyId,
 						attr: { title: i18n.t('app:SPECIALTY') }"
                                 required="required" class="form-control" aria-required="true"></select>
-                    </div>                    
+                    </div>
+                    <div class="form-group-checkbox col-md-6 col-sm-6 col-xs-12" data-bind="visible: currentEntity().id">
+                        <label>
+                            <input type="checkbox" class="flat" style="position: absolute; opacity: 0;"
+                                   id="h-competition-finalized"
+                                   data-bind="checked: currentEntity().finalized, attr: {
+									    placeholder: i18n.t('app:FINISH_COMPETITION'),
+									    title: i18n.t('app:FINISH_COMPETITION') }">
+                            <ins class="iCheck-helper"></ins>
+                            <!-- ko text: i18n.t('app:FINISH_COMPETITION') --><!-- /ko -->
+                        </label>
+                    </div>
                 </div>
 
                 <div class="col-md-6 col-sm-6 col-xs-12">

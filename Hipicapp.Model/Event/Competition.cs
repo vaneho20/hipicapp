@@ -50,6 +50,7 @@ namespace Hipicapp.Model.Event
         /*[NotNull]
         [NotEmpty]
         [Size(Max = ValidationUtils.MAX_LENGTH_DEFAULT)]*/
+
         [SafeHtml(WhiteListType.NONE)]
         public virtual string PlaceId { get; set; }
 
@@ -70,6 +71,9 @@ namespace Hipicapp.Model.Event
         public virtual DateTime? RegistrationEndDate { get; set; }
 
         public virtual DateTime? CreationDate { get; set; }
+
+        [NotNull]
+        public virtual bool? Finalized { get; set; }
 
         public virtual CompetitionCategory Category { get; set; }
 
@@ -103,6 +107,7 @@ namespace Hipicapp.Model.Event
             Map(x => x.RegistrationStartDate).Column("REG_START_DATE").Not.Nullable();
             Map(x => x.RegistrationEndDate).Column("REG_END_DATE").Not.Nullable();
             Map(x => x.CreationDate).Column("CREATION_DATE").Not.Nullable();
+            Map(x => x.Finalized).Column("FINALIZED").Not.Nullable();
 
             References<CompetitionCategory>(x => x.Category).Column("CATEGORY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();

@@ -8,19 +8,12 @@ define([
     var viewModel = {}, credentials = {
         userName: null,
         password: ko.observable(null),
-        rememberMe: null
+        rememberMe: ko.observable(null)
     };
-
-    function attached() {
-        $('input.flat').iCheck({
-            checkboxClass: 'icheckbox_flat-red',
-            radioClass: 'iradio_flat-red'
-        });
-    }
 
     function refreshSecurityContext(data) {
         credentials.password(null);
-        data.rememberMe = credentials.rememberMe;
+        data.rememberMe = credentials.rememberMe();
         securityContext.refresh(data);
         router.reloadCurrentLocation();
     }
@@ -31,14 +24,17 @@ define([
         return promise;
     }
 
+    function setRememberMe(event) {
+        console.log(event);
+    }
+
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
 
     viewModel.credentials = credentials;
 
-    viewModel.attached = attached;
-
     viewModel.login = login;
+    viewModel.setRememberMe = setRememberMe;
 
     return viewModel;
 });

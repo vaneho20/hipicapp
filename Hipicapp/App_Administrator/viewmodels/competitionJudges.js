@@ -37,6 +37,9 @@ define([
     function refreshCurrentPage(data) {
         currentPage(pageImpl(data));
         currentPager(pagerImpl(data));
+        $("input:checkbox").iCheck({
+            checkboxClass: "icheckbox_flat-red"
+        });
     }
 
     function loadPageByIndex(index, totalElements) {

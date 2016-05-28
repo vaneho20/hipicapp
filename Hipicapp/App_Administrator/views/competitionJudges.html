@@ -135,7 +135,7 @@
                                             <td data-bind="text: $root.availableGenders[gender]"></td>
                                             <td data-bind="text: specialty.name"></td>
                                             <td>
-                                                <input data-bind="event: { change: $root.assignUnassignJudge }, checked: assign"
+                                                <input data-bind="checked: assign, event: { ifToggled: $root.assignUnassignJudge }"
                                                        type="checkbox" />
                                             </td>
                                         </tr>

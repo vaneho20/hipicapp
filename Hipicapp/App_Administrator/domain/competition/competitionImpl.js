@@ -17,7 +17,7 @@ define([
             startDate = ko.observable(null), endDate = ko.observable(null), registrationStartDate = ko.observable(null),
             registrationEndDate = ko.observable(null), category = competitionCategoryImpl(), address = ko.observable(null),
             zipCode = ko.observable(null), placeId = ko.observable(null), description = null, specialtyId = null,
-            specialty = specialtyImpl(), photo = null;
+            specialty = specialtyImpl(), photo = null, finalized = ko.observable(null);
 
         if (currentCompetition) {
             id = currentCompetition.id;
@@ -34,6 +34,7 @@ define([
             endDate(currentCompetition.endDate);
             registrationStartDate(currentCompetition.registrationStartDate);
             registrationEndDate(currentCompetition.registrationEndDate);
+            finalized(currentCompetition.finalized);
             category = competitionCategoryImpl(currentCompetition.category);
             specialty = competitionCategoryImpl(currentCompetition.specialty);
             photo = currentCompetition.photo;
@@ -53,6 +54,7 @@ define([
         competition.endDate = endDate;
         competition.registrationStartDate = registrationStartDate;
         competition.registrationEndDate = registrationEndDate;
+        competition.finalized = finalized;
         competition.category = category;
         competition.specialty = specialty;
         competition.photo = photo;

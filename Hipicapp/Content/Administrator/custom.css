@@ -6342,3 +6342,8 @@ input.gsc-input {
 .nav_menu .loader.active {
 	visibility: visible;
 }
+
+.form-group-checkbox {
+    margin-top: 10px;
+    margin-left: -10px;
+}

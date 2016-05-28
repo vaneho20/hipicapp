@@ -9,7 +9,7 @@ namespace Hipicapp.Service.Event
     {
         public bool IsSatisfiedBy(int? numberOfJudges, Specialty specialty)
         {
-            return numberOfJudges != null && numberOfJudges.Value <= specialty.MaxNoOfJudges;
+            return numberOfJudges != null && numberOfJudges.Value < specialty.MaxNoOfJudges;
         }
 
         public void CheckSatisfiedBy(int? numberOfJudges, Specialty specialty)

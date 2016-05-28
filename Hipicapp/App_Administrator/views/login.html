@@ -14,12 +14,11 @@
                         <input class="form-control" type="password" data-bind="value: credentials.password, attr: { placeholder: i18n.t('app:PASSWORD') }"
                                required>
                     </div>
-                    <div class="checkbox">
-                        <label class="">
-                            <div class="icheckbox_flat-red" style="position: relative;">
-                                <input type="checkbox" class="flat" style="position: absolute; opacity: 0;">
-                                <ins class="iCheck-helper"></ins>
-                            </div> <!-- ko text: i18n.t('app:REMEMBER_ME') --><!-- /ko -->
+                    <div>
+                        <label>
+                            <input type="checkbox" class="flat" style="position: absolute; opacity: 0;" data-bind="iCheck: credentials.rememberMe">
+                            <ins class="iCheck-helper"></ins>
+                            <!-- ko text: i18n.t('app:REMEMBER_ME') --><!-- /ko -->
                         </label>
                     </div>
                     <div>
