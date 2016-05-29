@@ -1,4 +1,5 @@
-﻿using Hipicapp.Controllers.Abstract;
+﻿using ASP;
+using Hipicapp.Controllers.Abstract;
 using Hipicapp.Exceptions;
 using Hipicapp.Filters;
 using Hipicapp.Model.Event;
@@ -9,8 +10,8 @@ using Hipicapp.Proxy.Event;
 using Hipicapp.Utils.Pager;
 using Hipicapp.Utils.Util;
 using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
@@ -218,23 +219,18 @@ namespace Hipicapp.Controllers.Event
             {
                 try
                 {
+                    var tempalte = new _Templates_advanceProgram_cshtml();
                     var ms = new System.IO.MemoryStream();
-                    var txtReader = new System.IO.StringReader("Hello <b>World</b>");
 
-                    var doc = new Document(PageSize.A4, 25, 25, 25, 25);
+                    var document = new Document(PageSize.A4);
 
-                    var oPdfWriter = PdfWriter.GetInstance(doc, ms);
+                    var oPdfWriter = PdfWriter.GetInstance(document, ms);
 
-                    var htmlWorker = new HTMLWorker(doc);
+                    document.Open();
 
-                    doc.Open();
-                    htmlWorker.StartDocument();
+                    XMLWorkerHelper.GetInstance().ParseXHtml(oPdfWriter, document, new System.IO.StringReader(tempalte.TransformText()));
 
-                    htmlWorker.Parse(txtReader);
-
-                    htmlWorker.EndDocument();
-                    htmlWorker.Close();
-                    doc.Close();
+                    document.Close();
 
                     content = ms.ToArray();
                     response.Content = new ByteArrayContent(content);

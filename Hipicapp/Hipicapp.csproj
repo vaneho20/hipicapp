@@ -152,6 +152,10 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RazorPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorPDF2.2.0.0\lib\net40\RazorPDF.dll</HintPath>
       <Private>True</Private>
@@ -342,6 +346,11 @@
     <Compile Include="Proxy\Proxy.cs" />
     <Compile Include="Proxy\Publicity\BannerProxy.cs" />
     <Compile Include="Proxy\Publicity\IBannerProxy.cs" />
+    <Compile Include="SampleTemplate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleTemplate.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Validators\EmailValidator.cs" />
     <Compile Include="Validators\EmailValidatorAttribute.cs" />
@@ -757,6 +766,10 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Scripts\Administrator\maps\us-unemployment.json" />
     <None Include="Properties\PublishProfiles\HipicappPro.pubxml" />
+    <Content Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\holder.js" />
