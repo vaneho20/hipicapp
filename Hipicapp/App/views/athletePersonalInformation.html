@@ -1,0 +1,206 @@
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1>
+                <span data-bind="text: currentEntity().specialty.name"></span>
+                Ficha Jinete
+            </h1>
+        </div>
+    </div>
+</section>
+<nav class="nav navbar menu-principal">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().specialtyId) }">Inicio</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().specialtyId) }">Jinetes</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().specialtyId) }">Caballos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().specialtyId) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().specialtyId) }">Jueces</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
+                    <header class="col-md-12 col-sm-12 col-xs-24">
+                        <h2 class="pull-left">
+                            <!--ko text: currentEntity().fullName--><!--/ko--> <small data-bind="text: i18n.t('app:ATHLETE')"></small>
+                            |
+                        </h2>
+                        <a class="pull-left" data-bind="attr: { href: athleteBroker.getImagesUrlById(currentEntity().id) }"> Foto</a>
+                        <div class="clearfix"></div>
+                    </header>
+                    <section>
+                        <div id="contenido-interior">
+                            <div class="loginmodal-container registermodal">
+                                <div class="content">
+                                    <form role="form" data-bind="submit: save" novalidate>
+                                        <div class="col-md-12 col-sm-12 col-xs-24">
+                                            <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-left">
+                                                <label class="required" for="h-athlete-name"
+                                                        data-bind="text: i18n.t('app:NAME')"></label>
+                                                <input class="form-control" type="text" id="h-athlete-name" autofocus
+                                                        data-bind="value: currentEntity().name,
+						                                attr: { max: validationUtils.MAX_LENGTH,
+							                                maxlength: validationUtils.MAX_LENGTH,
+							                                placeholder: i18n.t('app:NAME'),
+							                                title: i18n.t('app:NAME')}"
+                                                        required autocomplete="off" />
+                                            </div>
+                                            <div class="form-group col-md-8 col-sm-8 col-xs-16 without-padding">
+                                                <label class="required" for="h-athlete-surnames"
+                                                        data-bind="text: i18n.t('app:SURNAMES')"></label>
+                                                <input class="form-control" type="text" id="h-athlete-surnames" autofocus
+                                                        data-bind="value: currentEntity().surnames,
+						                                attr: { max: validationUtils.MAX_LENGTH,
+							                                maxlength: validationUtils.MAX_LENGTH,
+							                                placeholder: i18n.t('app:SURNAMES'),
+							                                title: i18n.t('app:SURNAMES')}"
+                                                        required autocomplete="off" />
+                                            </div>
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding-left">
+                                                <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                                                <select id="h-athlete-gender"
+                                                        data-bind="options: availableGenders,
+							                                optionsValue: function(item) { return item.value },
+							                                optionsText: function(item) { return item.text },
+							                                optionsCaption : i18n.t('app:GENDER') + '...',
+							                                value: currentEntity().gender,
+							                                attr: { title: i18n.t('app:GENDER') }"
+                                                        required class="form-control" aria-required="true"></select>
+                                            </div>
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding">
+                                                <label for="h-athlete-weight"
+                                                        data-bind="text: i18n.t('app:WEIGHT')"></label>
+                                                <input class="form-control" type="number" id="h-athlete-weight"
+                                                        data-bind="value: currentEntity().weight,
+					                                    attr: { maxlength: validationUtils.MAX_LENGTH,
+						                                    step: validationUtils.FLOAT_STEP,
+						                                    placeholder: i18n.t('app:WEIGHT'),
+						                                    title: i18n.t('app:WEIGHT') }" required>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-8 without-padding-left">
+                                                <div class="form-group">
+                                                    <label class="required" for="h-athlete-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                                    <div id="h-athlete-birthdate-picker" class="date input-group"
+                                                            data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                        <input type="text" class="form-control" id="h-athlete-birthdate"
+                                                                data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+	 				                                                attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				                                                title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-8">
+                                                <div class="form-group">
+                                                    <label class="required" for="h-athlete-dni"
+                                                            data-bind="text: i18n.t('app:DNI')"></label>
+                                                    <input class="form-control" type="text" id="h-athlete-dni" autofocus
+                                                            data-bind="value: currentEntity().dni,
+						                                        attr: { max: validationUtils.MAX_LENGTH,
+							                                        maxlength: validationUtils.MAX_LENGTH,
+							                                        placeholder: i18n.t('app:DNI'),
+							                                        title: i18n.t('app:DNI')}"
+                                                            required autocomplete="off" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-right">
+                                                <label class="required" for="h-athlete-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
+                                                <select id="h-athlete-specialty"
+                                                        data-bind="options: availableSpecialties,
+						                                    optionsValue: function(item) { return item.id },
+						                                    optionsText: function(item) { return item.name },
+						                                    optionsCaption : i18n.t('app:SPECIALTY') + '...',
+						                                    value: currentEntity().specialtyId,
+						                                    attr: { title: i18n.t('app:SPECIALTY') }"
+                                                        required="required" class="form-control" aria-required="true"></select>
+                                            </div>
+
+                                            <div class="form-group col-md-8 col-sm-8 col-xs-16 without-padding-left">
+                                                <label class="required" for="h-athlete-federation"
+                                                        data-bind="text: i18n.t('app:FEDERATION')"></label>
+                                                <input class="form-control" type="text" id="h-athlete-federation" autofocus
+                                                        data-bind="value: currentEntity().federation, address: { value: currentEntity().federation, postal_code: currentEntity().zipCode, place_id: currentEntity().placeId },
+					                                attr: { max: validationUtils.MAX_LENGTH,
+						                            maxlength: validationUtils.MAX_LENGTH,
+						                            placeholder: i18n.t('app:FEDERATION'),
+						                            title: i18n.t('app:FEDERATION') }" required>
+                                            </div>
+
+                                            <div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-right">
+                                                <label class="required" for="h-athlete-zipcode"
+                                                        data-bind="text: i18n.t('app:ZIPCODE')"></label>
+                                                <input class="form-control" readonly type="text" id="h-athlete-zipcode" autofocus
+                                                        data-bind="value: currentEntity().zipCode,
+					                                attr: { max: validationUtils.LENGTH_ZIPCODE,
+						                            maxlength: validationUtils.LENGTH_ZIPCODE,
+						                            placeholder: i18n.t('app:ZIPCODE'),
+						                            title: i18n.t('app:ZIPCODE') }" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <button type="submit"
+                                                    data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                                                    class="btn btn-primary">
+                                                <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                                            </button>
+                                            <a data-bind="attr: {
+						                        href: $root.athleteBroker.getDetailUrlById(),
+						                        title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
+                                               class="btn">
+                                                <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3 data-bind="text: currentEntity().fullName"></h3>
+                            <!--<p>
+                                <strong>Sexo:</strong>
+                                <span data-bind="text: $root.superAvailableGenders[currentEntity().gender()]"></span>
+                            </p>-->
+                            <p>
+                                <strong>Peso:</strong>
+                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                            </p>
+                            <p>
+                                <strong>Disciplina:</strong>
+                                <span data-bind="text: currentEntity().specialty.name"></span>
+                            </p>
+                            <p>
+                                <strong>Categor&iacute;a:</strong>
+                                <span data-bind="text: currentEntity().category.name"></span>
+                            </p>
+                            <p>
+                                <strong>Federaci&oacute;n:</strong>
+                                <span data-bind="text: currentEntity().federation"></span>
+                            </p>
+                            <p>
+                                <strong>Fecha Nacimiento:</strong>
+                                <span data-bind="text: moment(currentEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+                            <!-- ko if: securityContext.isAuthenticated() -->
+                            <a class="ver-todo" data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i> Ver ficha
+                            </a>
+                            <!-- /ko -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

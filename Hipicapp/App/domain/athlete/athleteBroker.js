@@ -35,6 +35,10 @@ define([
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.INSCRIPTION), brokerUtils.verb.POST));
 
+    amplify.request.define("athletes/update", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
+
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);
     }
@@ -60,6 +64,10 @@ define([
         }).always(CACHE.evict).always(competitionBroker.evictCache);
     }
 
+    function update(entity) {
+        return amplify.request("athletes/update", entity).always(CACHE.evict);
+    }
+
     function getListUrl(specialtyId) {
         return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, specialtyId, brokerUtils.requestMappings.ATHLETES);
     }
@@ -67,6 +75,23 @@ define([
     function getDetailUrlById(athleteId) {
         return brokerUtils.HASH_CHAR +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, athleteId);
+    }
+
+    function getEditUrlById(athleteId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, athleteId, brokerUtils.requestMappings.PERSONAL_INFORMATION);
+    }
+
+    function getImagesUrlById(athleteId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE, athleteId,
+                brokerUtils.requestMappings.IMAGES);
+    }
+
+    function getFileuploadUrlById(entityId) {
+        return brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
+                brokerUtils.requestMappings.UPLOAD, entityId);
     }
 
     function evictCache() {
@@ -81,9 +106,13 @@ define([
     broker.getByCurrentUser = getByCurrentUser;
     broker.register = register;
     broker.inscription = inscription;
+    broker.update = update;
 
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getEditUrlById = getEditUrlById;
+    broker.getImagesUrlById = getImagesUrlById;
+    broker.getFileuploadUrlById = getFileuploadUrlById;
 
     return broker;
 });

@@ -12,8 +12,7 @@ define([
     // state definition
     var viewModel = {}, currentEntity = ko.observable(athleteImpl()), navs = {
         BASIC_DATA: "BASIC_DATA",
-        IMAGES: "IMAGES",
-        HORSES: "HORSES"
+        IMAGES: "IMAGES"
     }, nav = ko.observable(), availableGenders = [
         {
             value: "male",

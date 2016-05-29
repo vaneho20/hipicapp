@@ -1,7 +1,9 @@
 <section data-bind="css: { 'header-doma' : currentEntity().id === 1, 'header-salto' : currentEntity().id === 2 }" class="header-block">
     <div class="container">
         <div class="row">
-            <h1 data-bind="text: currentEntity().name"></h1>
+            <h1>
+                <span data-bind="text: currentEntity().name"></span>
+            </h1>
         </div>
     </div>
 </section>

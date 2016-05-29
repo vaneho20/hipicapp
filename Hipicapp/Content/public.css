@@ -937,5 +937,7 @@ body {
     visibility: hidden; }
   body .navbar .loader.active {
     visibility: visible; }
+  body .public-photo-upload {
+    margin-top: 3em; }
 
 /*# sourceMappingURL=public.css.map */
