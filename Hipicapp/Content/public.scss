@@ -1358,4 +1358,17 @@ body {
     .public-photo-upload {
         margin-top: 3em;
     }
+
+    .without-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .without-padding-left {
+        padding-left: 0 !important;
+    }
+
+    .without-padding-right {
+        padding-right: 0 !important;
+    }
 }

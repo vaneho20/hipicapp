@@ -939,5 +939,12 @@ body {
     visibility: visible; }
   body .public-photo-upload {
     margin-top: 3em; }
+  body .without-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
+  body .without-padding-left {
+    padding-left: 0 !important; }
+  body .without-padding-right {
+    padding-right: 0 !important; }
 
 /*# sourceMappingURL=public.css.map */
