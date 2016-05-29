@@ -52,6 +52,7 @@
                             </div>
                         </div>
                     </article>
+                    <div class="paginador col-md-12 col-sm-12 col-xs-24" data-bind="compose: 'pager.html'"></div>
                     <div data-bind="visible: currentPage().isEmpty() && !(shell.isLoading())" class="alert alert-info alert-block">
                         <div>
                             <strong data-bind="text: i18n.t('HORSE_LIST_EMPTY_SUMMARY')"></strong>

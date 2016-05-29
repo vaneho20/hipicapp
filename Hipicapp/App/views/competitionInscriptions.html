@@ -1,0 +1,37 @@
+<header class="col-md-12 col-sm-12 col-xs-24">
+    <h2 class="pull-left">Jinetes participantes</h2>
+</header>
+<article class="row">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+        Foto
+    </div>
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+        Jinete
+    </div>
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+        Caballo
+    </div>
+    <div class="encabezado-listados col-md-4 col-sm-4 col-xs-8">
+        Federaci&oacute;n
+    </div>
+</article>
+<article data-bind="foreach: currentPage().content">
+    <div class="row">
+        <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+            <img alt="Lorem ipsum" data-bind="attr: { src: $data.horse.athlete.photoId ? $root.fileBroker.getUrlByUuid($data.horse.athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: horse.athlete.fullName">
+        </div>
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: horse.name">
+        </div>
+        <div class="datos-listados col-md-4 col-sm-4 col-xs-8" data-bind="text: horse.athlete.federation">
+        </div>
+    </div>
+</article>
+<div class="paginador col-md-12 col-sm-12 col-xs-24" data-bind="compose: 'pager.html'"></div>
+<div data-bind="visible: currentPage().isEmpty() && !(shell.isLoading())" class="alert alert-info alert-block">
+    <div>
+        <strong data-bind="text: i18n.t('ATHLETE_HORSE_LIST_EMPTY_SUMMARY')"></strong>
+    </div>
+    <span data-bind="html: i18n.t('ATHLETE_HORSE_LIST_EMPTY_DETAIL')"></span>
+</div>
