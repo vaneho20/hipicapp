@@ -87,6 +87,11 @@ define([
                 brokerUtils.requestMappings.HORSES);
     }
 
+    function downloadAdvanceProgramById(competitionId) {
+        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
+            brokerUtils.requestMappings.DOWNLOAD_ADVANCE_PROGRAM, competitionId);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -104,6 +109,8 @@ define([
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
     broker.getHorsesUrlById = getHorsesUrlById;
+
+    broker.downloadAdvanceProgramById = downloadAdvanceProgramById;
 
     return broker;
 });

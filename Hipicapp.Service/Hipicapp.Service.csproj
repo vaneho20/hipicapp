@@ -192,6 +192,11 @@
       <DependentUpon>SampleTemplate.cshtml</DependentUpon>
     </Compile>
     <Compile Include="ServiceLocator.cs" />
+    <Compile Include="Templates\AdvanceProgram.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvanceProgram.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Util\MailUtil.cs" />
     <Compile Include="Util\HibernateUtils.cs" />
     <Compile Include="Account\AbstractUserValidator.cs" />
@@ -237,6 +242,10 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
     </None>
+    <Content Include="Templates\AdvanceProgram.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>AdvanceProgram2.generated.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filters\" />

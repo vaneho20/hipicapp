@@ -59,6 +59,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         FILES: "files",
         FILE: "file",
         DOWNLOAD: "download",
+        DOWNLOAD_ADVANCE_PROGRAM: "downloadAdvanceProgram",
         SIMULATE_SCORE: "simulateScore",
         INSCRIPTION: "inscription",
         IMAGES: "images",

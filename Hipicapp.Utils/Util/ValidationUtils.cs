@@ -39,9 +39,16 @@ namespace Hipicapp.Utils.Util
 
         public static Regex IMAGE_MIME_TYPE_PATTERN = new Regex("image/(gif|jpe?g|png)", RegexOptions.Compiled);
 
-        public static bool IsValidImageMimeType(string MimeType)
+        public static Regex PDF_MIME_TYPE_PATTERN = new Regex("application/pdf", RegexOptions.Compiled);
+
+        public static bool IsValidPdfMimeType(string mimeType)
         {
-            return IMAGE_MIME_TYPE_PATTERN.IsMatch(MimeType);
+            return PDF_MIME_TYPE_PATTERN.IsMatch(mimeType);
+        }
+
+        public static bool IsValidImageMimeType(string mimeType)
+        {
+            return IMAGE_MIME_TYPE_PATTERN.IsMatch(mimeType);
         }
 
         public static bool IsValidFileSize(long size)

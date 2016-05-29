@@ -57,6 +57,9 @@
                             <a class="ver-todo" data-bind="attr: { title: i18n.t('app:ENROLL_BUTTON_TITLE'), href: competitionBroker.getHorsesUrlById(currentEntity().id) }">
                                 <i class="fa fa-edit"></i> <span data-bind="text: i18n.t('app:ENROLL_BUTTON_TEXT')"></span>
                             </a>
+                            <a class="ver-todo" data-bind="attr: { title: i18n.t('app:ADVANCE_BUTTON_TITLE'), href: competitionBroker.downloadAdvanceProgramById(currentEntity().id), target: '_blank' }">
+                                <i class="fa fa-file-pdf-o"></i> <span data-bind="text: i18n.t('app:ADVANCE_BUTTON_TEXT')"></span>
+                            </a>
                         </div>
                     </article>
                 </div>

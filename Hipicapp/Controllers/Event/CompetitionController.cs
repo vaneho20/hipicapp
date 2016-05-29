@@ -2,18 +2,24 @@
 using Hipicapp.Exceptions;
 using Hipicapp.Filters;
 using Hipicapp.Model.Event;
+using Hipicapp.Model.Exception;
 using Hipicapp.Model.File;
 using Hipicapp.Model.Participant;
 using Hipicapp.Proxy.Event;
 using Hipicapp.Utils.Pager;
 using Hipicapp.Utils.Util;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 using Spring.Context.Attributes;
 using Spring.Objects.Factory.Attributes;
 using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -198,6 +204,56 @@ namespace Hipicapp.Controllers.Event
             }
 
             return null;
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("downloadAdvanceProgram/{id}")]
+        public async Task<HttpResponseMessage> DownloadAdvanceProgram(long? id)
+        {
+            var response = Request.CreateResponse(HttpStatusCode.OK);
+            byte[] content = null;
+
+            if (id != null)
+            {
+                try
+                {
+                    var ms = new System.IO.MemoryStream();
+                    var txtReader = new System.IO.StringReader("Hello <b>World</b>");
+
+                    var doc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    var oPdfWriter = PdfWriter.GetInstance(doc, ms);
+
+                    var htmlWorker = new HTMLWorker(doc);
+
+                    doc.Open();
+                    htmlWorker.StartDocument();
+
+                    htmlWorker.Parse(txtReader);
+
+                    htmlWorker.EndDocument();
+                    htmlWorker.Close();
+                    doc.Close();
+
+                    content = ms.ToArray();
+                    response.Content = new ByteArrayContent(content);
+                }
+                catch (ArgumentNullException e)
+                {
+                    throw new ApplicationRuntimeException(e.Message, e);
+                }
+
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+                response.Content.Headers.ContentLength = content.LongLength;
+                response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("inline");
+                response.Content.Headers.ContentDisposition.FileName = "Avance de programa.pdf";
+            }
+            else
+            {
+                response.StatusCode = HttpStatusCode.NotFound;
+            }
+            return await Task.FromResult(response);
         }
     }
 }

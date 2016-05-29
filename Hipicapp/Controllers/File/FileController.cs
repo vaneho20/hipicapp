@@ -1,4 +1,5 @@
 ﻿using Hipicapp.Controllers.Abstract;
+using Hipicapp.Model.Exception;
 using Hipicapp.Model.File;
 using Hipicapp.Proxies.File;
 using Hipicapp.Utils.Util;
@@ -39,7 +40,7 @@ namespace Hipicapp.Controllers.File
                 }
                 catch (ArgumentNullException e)
                 {
-                    //throw new ApplicationRuntimeException(e);
+                    throw new ApplicationRuntimeException(e.Message, e);
                 }
 
                 response.Content.Headers.ContentType = new MediaTypeHeaderValue(fileInfo.ContentType);
