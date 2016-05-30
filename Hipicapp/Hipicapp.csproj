@@ -642,6 +642,7 @@
     <Content Include="Content\images\banner_caballos.jpg" />
     <Content Include="Content\images\banner_jueces.jpg" />
     <Content Include="Content\images\bg_direction_nav.png" />
+    <Content Include="Content\images\caballo-form.png" />
     <Content Include="Content\images\cara_jinete1.jpg" />
     <Content Include="Content\images\cara_jinete2.jpg" />
     <Content Include="Content\images\descarga.jpg" />
