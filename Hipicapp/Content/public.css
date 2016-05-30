@@ -24,7 +24,10 @@ body {
     text-align: right; }
   body h1, body h2, body h3, body h4 {
     font-family: 'Montserrat', sans-serif; }
-  body .ver-todo {
+  body a.btn {
+    padding: 0.8em 1.2em;
+    color: #333; }
+  body .ver-todo, body .btn-red {
     display: inline-block;
     float: right;
     margin: 0 1em 1em 0;
@@ -37,8 +40,13 @@ body {
     -moz-border-radius: 4px;
     border-radius: 4px;
     background: #f74b4b; }
-    body .ver-todo:hover, body .ver-todo:active, body .ver-todo:focus {
+    body .ver-todo:hover, body .ver-todo:active, body .ver-todo:focus, body .btn-red:hover, body .btn-red:active, body .btn-red:focus {
       text-decoration: none; }
+  body .btn-red {
+    float: left;
+    padding: 0.8em 1.2em; }
+    body .btn-red:hover, body .btn-red:active, body .btn-red:focus {
+      color: #fff; }
   body .navbar-fixed-top {
     -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
@@ -767,7 +775,7 @@ body {
       padding-right: 3em; }
       body .block-ficha .ficha-col-izq header {
         position: relative;
-        margin: 0 0 1em;
+        margin: 0 0 2.5em;
         padding: 0 0 0.5em;
         border-bottom: 3px solid #f74b4b; }
         body .block-ficha .ficha-col-izq header h2 {
@@ -804,6 +812,19 @@ body {
         padding: 1em 0.6em;
         text-transform: uppercase;
         background: #E4E4E4; }
+      body .block-ficha .ficha-col-izq .fondo-horse {
+        height: 256px;
+        background: url("/Content/images/caballo-form.png") no-repeat 0 0; }
+      body .block-ficha .ficha-col-izq .form-public p {
+        margin: 0 0 1em;
+        padding: 0 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.4em; }
+      body .block-ficha .ficha-col-izq .form-public .form-group {
+        margin-bottom: 1.5em; }
+        body .block-ficha .ficha-col-izq .form-public .form-group .form-control {
+          padding: 0.8em;
+          height: 44px; }
       body .block-ficha .ficha-col-izq #mis-caballos, body .block-ficha .ficha-col-izq #mis-concursos {
         padding: 0 0 3em; }
       body .block-ficha .ficha-col-izq article {

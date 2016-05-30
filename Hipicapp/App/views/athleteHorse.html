@@ -31,35 +31,27 @@
                         <div id="contenido-interior">
                             <div class="loginmodal-container registermodal">
                                 <div class="content">
-                                    <form role="form" data-bind="submit: save" novalidate>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="fondo-horse col-md-4 col-sm-4 col-xs-8">&nbsp;</div>
+                                    <form class="col-md-8 col-sm-8 col-xs-16 form-public" role="form" data-bind="submit: save" novalidate>
+                                        <p>Introduce los datos de tu caballo:</p>
+                                        <div class="col-md-12 col-sm-12 col-xs-24">
                                             <div class="form-group">
-                                                <label class="required hidden" for="h-horse-name"
-                                                        data-bind="text: i18n.t('app:NAME')"></label>
+                                                <label class="required" for="h-horse-name"
+                                                       data-bind="text: i18n.t('app:NAME')"></label>
                                                 <input class="form-control" type="text" id="h-horse-name" autofocus
-                                                        data-bind="value: currentEntity().name,
+                                                       data-bind="value: currentEntity().name,
 					                                attr: { max: validationUtils.MAX_LENGTH,
 						                                maxlength: validationUtils.MAX_LENGTH,
 						                                placeholder: i18n.t('app:NAME'),
 						                                title: i18n.t('app:NAME')}"
-                                                                        required>
+                                                       required>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group">
-                                                <label class="required hidden" for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
-                                                <input type="number" id="h-horse-height"
-                                                        data-bind="value: currentEntity().height,
-				                                    attr: {
-					                                    min: 0,
-					                                    step: 1,
-					                                    maxlenght: validationUtils.MAX_LENGTH,
-					                                    placeholder: i18n.t('app:HEIGHT'),
-					                                    title: i18n.t('app:HEIGHT') }"
-                                                                        required class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="required hidden" for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
+                                                <label class="required" for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
                                                 <div id="h-horse-birthdate-picker" class="date input-group"
-                                                        data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                                     data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                     <input type="text" class="form-control" id="h-horse-birthdate"
                                                            data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
@@ -67,33 +59,47 @@
 	 				                                        title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label class="required" for="h-horse-height" data-bind="text: i18n.t('app:HEIGHT')"></label>
+                                                <input type="number" id="h-horse-height"
+                                                       data-bind="value: currentEntity().height,
+				                                    attr: {
+					                                    min: 0,
+					                                    step: 1,
+					                                    maxlenght: validationUtils.MAX_LENGTH,
+					                                    placeholder: i18n.t('app:HEIGHT'),
+					                                    title: i18n.t('app:HEIGHT') }"
+                                                       required class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-6 without-padding-left">
-                                            <label class="required hidden" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
-                                            <select id="h-athlete-gender"
-                                                    data-bind="options: availableGenders,
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required" for="h-athlete-gender" data-bind="text: i18n.t('app:GENDER')"></label>
+                                                <select id="h-athlete-gender"
+                                                        data-bind="options: availableGenders,
 							                    optionsValue: function(item) { return item.value },
 							                    optionsText: function(item) { return item.text },
 							                    optionsCaption : i18n.t('app:GENDER') + '...',
 							                    value: currentEntity().gender,
 							                    attr: { title: i18n.t('app:GENDER') }"
-                                                            required class="form-control" aria-required="true"></select>
-                                        </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-12 without-padding">
-                                            <label class="hidden" for="h-athlete-weight"
-                                                    data-bind="text: i18n.t('app:WEIGHT')"></label>
-                                            <input class="form-control" type="number" id="h-athlete-weight"
-                                                    data-bind="value: currentEntity().weight,
+                                                        required class="form-control" aria-required="true"></select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="" for="h-athlete-weight"
+                                                       data-bind="text: i18n.t('app:WEIGHT')"></label>
+                                                <input class="form-control" type="number" id="h-athlete-weight"
+                                                       data-bind="value: currentEntity().weight,
 					                        attr: { min: 0,
 						                        maxlength: validationUtils.MAX_LENGTH,
 						                        step: validationUtils.FLOAT_STEP,
 						                        placeholder: i18n.t('app:WEIGHT'),
 						                        title: i18n.t('app:WEIGHT') }" required>
+                                            </div>
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <button type="submit"
                                                     data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-red">
                                                 <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
                                             </button>
                                             <a data-bind="attr: {
