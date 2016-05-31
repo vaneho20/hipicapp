@@ -14,6 +14,8 @@ namespace Hipicapp.Service.Event
 
         Competition Get(long? id);
 
+        Competition GetWithJudgesAndHorses(long? id);
+
         Competition Save(Competition competition);
 
         Competition Update(Competition competition);

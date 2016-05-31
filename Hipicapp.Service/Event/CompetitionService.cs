@@ -5,6 +5,7 @@ using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
+using NHibernate;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -51,6 +52,15 @@ namespace Hipicapp.Service.Event
         public Competition Get(long? id)
         {
             return this.CompetitionRepository.Get(id);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public Competition GetWithJudgesAndHorses(long? id)
+        {
+            var competition = this.CompetitionRepository.Get(id);
+            NHibernateUtil.Initialize(competition.Inscriptions);
+            NHibernateUtil.Initialize(competition.Seminary);
+            return competition;
         }
 
         [Transaction]

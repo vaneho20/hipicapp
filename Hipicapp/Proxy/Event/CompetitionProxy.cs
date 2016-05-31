@@ -59,6 +59,12 @@ namespace Hipicapp.Proxy.Event
         }
 
         [AllowAnonymous]
+        public Competition GetWithJudgesAndHorses(long? id)
+        {
+            return this.CompetitionService.GetWithJudgesAndHorses(id);
+        }
+
+        [AllowAnonymous]
         public IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId)
         {
             return this.CompetitionService.AdultRankingsBySpecialtyId(specialtyId);

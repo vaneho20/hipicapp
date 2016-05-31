@@ -82,6 +82,9 @@ namespace Hipicapp.Model.Event
         public virtual FileInfo Photo { get; set; }
 
         [JsonIgnore]
+        public virtual ISet<Enrollment> Inscriptions { get; set; }
+
+        [JsonIgnore]
         public virtual ISet<Seminary> Seminary { get; set; }
     }
 
@@ -113,6 +116,7 @@ namespace Hipicapp.Model.Event
             References<FileInfo>(x => x.Photo).Column("PHOTO_ID").NotFound.Ignore().LazyLoad().Fetch.Join().ReadOnly();
             References<Specialty>(x => x.Specialty).Column("SPECIALTY_ID").Fetch.Join().Not.LazyLoad().ReadOnly();
 
+            HasMany<Enrollment>(x => x.Inscriptions).KeyColumn("COMPETITION_ID").NotFound.Ignore().LazyLoad();
             HasMany<Seminary>(x => x.Seminary).KeyColumn("COMPETITION_ID").NotFound.Ignore().LazyLoad();
         }
     }

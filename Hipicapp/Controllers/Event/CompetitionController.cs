@@ -18,6 +18,7 @@ using Spring.Objects.Factory.Support;
 using Spring.Stereotype;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -219,7 +220,13 @@ namespace Hipicapp.Controllers.Event
             {
                 try
                 {
-                    var tempalte = new _Templates_advanceProgram_cshtml();
+                    var competition = this.CompetitionProxy.GetWithJudgesAndHorses(id);
+                    var template = new _Templates_AdvanceProgram_cshtml()
+                    {
+                        competition = competition,
+                        inscriptions = competition.Inscriptions.ToList(),
+                        seminary = competition.Seminary.ToList()
+                    };
                     var ms = new System.IO.MemoryStream();
 
                     var document = new Document(PageSize.A4);
@@ -228,7 +235,7 @@ namespace Hipicapp.Controllers.Event
 
                     document.Open();
 
-                    XMLWorkerHelper.GetInstance().ParseXHtml(oPdfWriter, document, new System.IO.StringReader(tempalte.TransformText()));
+                    XMLWorkerHelper.GetInstance().ParseXHtml(oPdfWriter, document, new System.IO.StringReader(template.TransformText()));
 
                     document.Close();
 

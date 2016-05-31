@@ -192,7 +192,7 @@
       <DependentUpon>SampleTemplate.cshtml</DependentUpon>
     </Compile>
     <Compile Include="ServiceLocator.cs" />
-    <Compile Include="Templates\AdvanceProgram.generated.cs">
+    <Compile Include="Templates\AdvanceProgram2.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdvanceProgram.cshtml</DependentUpon>

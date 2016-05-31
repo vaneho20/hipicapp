@@ -97,7 +97,9 @@
                                     </a>
                                 </div>
                                 <div class="texto">
-                                    <h3 data-bind="text: name"></h3>
+                                    <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id) }" title="Ver artículo">
+                                        <h3 data-bind="text: name"></h3>
+                                    </a>
                                     <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> <!-- ko text: moment(startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(endDate).format($root.i18n.t('app:DATE_PATTERN')) --><!-- /ko --></p>
                                 </div>
                             </div>

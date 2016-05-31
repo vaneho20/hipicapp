@@ -1,18 +1,68 @@
 ﻿@* Generator: Template *@
 
+@using Hipicapp.Model.Participant;
+@using Hipicapp.Model.Event;
+
+@functions {
+    public Competition competition;
+    public IList<Enrollment> inscriptions;
+    public IList<Seminary> seminary;
+}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Contenido del concurso</title>
 </head>
 <body>
-    <h2>Html List in PDF</h2>
-    <table>
-        <tr>
-            <td>First Name</td>
+    <h2>Datos generales del concurso</h2>
+    <table border="0">
+        <tbody>
+            <tr>
+                <td>Nombre:</td>
+                <td>@competition.Name</td>
+            </tr>
+            <tr>
+                <td>Categoría:</td>
+                <td>@competition.Category.Name</td>
+            </tr>
+            <tr>
+                <td>Disciplina:</td>
+                <td>@competition.Specialty.Name</td>
+            </tr>
+            <tr>
+                <td>Fechas:</td>
+                <td>@competition.StartDate.Value.ToShortDateString() - @competition.EndDate.Value.ToShortDateString()</td>
+            </tr>
+            <tr>
+                <td>Recinto:</td>
+                <td>@competition.Address</td>
+            </tr>
+        </tbody>
+    </table>
 
-            <td>Last Name</td>
-        </tr>
+    <h2>Miembros del jurado</h2>
+    <table border="0">
+        <tbody>
+            @foreach (Seminary judge in seminary)
+            {
+                <tr>
+                    <td>@judge.Judge.FullName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2>Participantes</h2>
+    <table border="0">
+        <tbody>
+            @foreach (Enrollment enrollment in inscriptions)
+            {
+                <tr>
+                    <td>@enrollment.Horse.Athlete.FullName</td>
+                </tr>
+            }
+        </tbody>
     </table>
 </body>
 </html>
