@@ -62,7 +62,11 @@
                             </a>
                         </div>
                         <div class="info-listados col-md-9 col-sm-9 col-xs-18">
-                            <h3><span data-bind="text: name"></span></h3>
+                            <h3>
+                                <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                    <span data-bind="text: name"></span>
+                                </a>
+                            </h3>
                             <p>
                                 <strong>Jinete:</strong>
                                 <span data-bind="text: athlete.name"></span> <span data-bind="text: athlete.surnames"></span>

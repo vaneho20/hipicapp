@@ -66,7 +66,11 @@
                             </a>
                         </div>
                         <div class="info-listados col-md-9 col-sm-9 col-xs-18">
-                            <h3><span data-bind="text: name"></span> <span data-bind="text: surnames"></span></h3>
+                            <h3>
+                                <a data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                    <span data-bind="text: fullName"></span>
+                                </a>
+                            </h3>
                             <p>
                                 <strong>Federaci&oacute;n:</strong>
                                 <span data-bind="text: federation"></span>
