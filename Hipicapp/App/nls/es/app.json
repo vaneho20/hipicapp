@@ -270,5 +270,6 @@
     "Hipicapp_Service_Exceptions_NoSuchCompetitionCategoryException": "¡Vaya! No existe categoría para tu año de nacimiento",
     "Hipicapp_Service_Exceptions_NoSuchTicketException": "¡Oops! El vínculo no ha sido encontrado",
     "Hipicapp_Service_Exceptions_TicketExpiredException": "¡Oops! El vínculo ha expirado",
-    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException": "¡Vaya! El jinete ha superado el peso maximo con silla permitido por la especialidad del concurso"
+    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException": "¡Vaya! El jinete ha superado el peso maximo con silla permitido por la especialidad del concurso",
+    "Spring_Dao_DataIntegrityViolationException": "El elemento no puede ser borrado por violación de integridad de datos"
 }

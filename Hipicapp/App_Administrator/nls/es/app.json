@@ -254,5 +254,6 @@
     "Hipicapp_Service_Exceptions_CompetitionExpiredException": "¡Vaya! El concurso ha expirado",
     "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException": "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso",
     "Hipicapp_Service_Exceptions_MinimumAgeOfHorseUnsurpassedException": "¡Vaya! El caballo no supera la edad permitida por la especialidad del concurso",
-    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException": "¡Vaya! El jinete ha superado el peso maximo con silla permitido por la especialidad del concurso"
+    "Hipicapp_Service_Exceptions_WeightAthleteSaddleExceededException": "¡Vaya! El jinete ha superado el peso maximo con silla permitido por la especialidad del concurso",
+    "Spring_Dao_DataIntegrityViolationException": "El elemento no puede ser borrado por violación de integridad de datos"
 }
