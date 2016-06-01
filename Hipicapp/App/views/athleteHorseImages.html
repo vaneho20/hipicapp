@@ -1,62 +1,123 @@
-<div class="x_panel">
-    <div class="x_title">
-        <h2>
-            <i class="fa fa-info-circle"></i> <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
-        </h2>
-        <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-        <div class="" role="tabpanel" data-example-id="togglable-tabs">
-            <div data-bind="compose: 'athleteHorseNavs.html'"></div>
-            <form class="form-horizontal">
-                <div class="row-fluid">
-                    <div class="span6">
-                        <fieldset>
-                            <legend>
-                                <span data-bind="text: i18n.t('app:PHOTO')"></span>
-                            </legend>
-                            <div id="h-horse-photo-dropzone" class="control-group">
-                                <div id="h-horse-photo-thumbnail" class="thumbnail">
-                                    <img data-bind="attr: {
-									src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '',
-									alt: i18n.t('app:PHOTO'),
-									title: i18n.t('app:PHOTO')
-								}, imageHolder: '115x150'">
-                                </div>
-                                <div id="h-horse-photo-progress"
-                                     class="progress progress-striped active">
-                                    <div class="bar" style="width: 0;"></div>
-                                </div>
-                                <label for="h-horse-photo" data-bind="text: i18n.t('app:PHOTO')"
-                                       class="control-label"></label>
-                                <div class="controls">
-                                    <div class="input-append">
-                                        <input type="file" id="h-horse-photo"
-                                               data-bind="fileupload: {
-										broker: horseBroker,
-										entityId: currentEntity().id,
-										dropZone: '#h-horse-photo-dropzone',
-										thumbnail: '#h-horse-photo-thumbnail',
-										progress: '#h-horse-photo-progress'
-									},
-									attr: {
-										max: validationUtils.MAX_FILES,
-										placeholder: i18n.t('app:PHOTO'),
- 										title: i18n.t('app:PHOTO')
- 									}"
-                                               required> <span class="add-on">
-                                            <i data-bind="attr: { title: i18n.t('app:PHOTO'),
-									'data-content': i18n.format(i18n.t('app:IMAGE_POPOVER'), validationUtils.MAX_FILE_SIZE) },
-									popover: ''"
-                                               data-trigger="hover" data-animation="true" class="fa fa-picture-o"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </form>
+<section class="header-block">
+    <div class="container">
+        <div class="row">
+            <h1>
+                <span data-bind="text: superCurrentEntity().specialty.name"></span>
+                Ficha Jinete
+            </h1>
         </div>
     </div>
-</div>
+</section>
+<nav class="nav navbar menu-principal">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(superCurrentEntity().specialtyId) }">Inicio</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(superCurrentEntity().specialtyId) }">Jinetes</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(superCurrentEntity().specialtyId) }">Caballos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(superCurrentEntity().specialtyId) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(superCurrentEntity().specialtyId) }">Jueces</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="contenido-interior">
+    <div class="container">
+        <div class="row">
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
+                    <header class="col-md-12 col-sm-12 col-xs-24">
+                        <h2 class="pull-left">
+                            <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
+                            |
+                        </h2>
+                        <a class="pull-left" data-bind="attr: { href: horseBroker.getImagesUrlById(currentEntity().id) }"> Foto</a>
+                        <div class="clearfix"></div>
+                    </header>
+                    <section>
+                        <div id="contenido-interior">
+                            <div class="loginmodal-container registermodal">
+                                <div class="content">
+                                    <form role="form" novalidate>
+                                        <div id="h-horse-photo-dropzone" class="control-group public-photo-upload">
+                                            <div id="h-horse-photo-thumbnail" class="thumbnail">
+                                                <img data-bind="attr: {
+									            src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '',
+									            alt: i18n.t('app:PHOTO'),
+									            title: i18n.t('app:PHOTO')
+								            }, imageHolder: '115x150'">
+                                            </div>
+                                            <div id="h-horse-photo-progress"
+                                                 class="progress progress-striped active">
+                                                <div class="bar" style="width: 0;"></div>
+                                            </div>
+                                            <label for="h-horse-photo" data-bind="text: i18n.t('app:PHOTO')"
+                                                   class="control-label"></label>
+                                            <div class="controls">
+                                                <div class="input-append">
+                                                    <input type="file" id="h-horse-photo"
+                                                           data-bind="fileupload: {
+										            broker: horseBroker,
+										            entityId: currentEntity().id,
+										            dropZone: '#h-horse-photo-dropzone',
+										            thumbnail: '#h-horse-photo-thumbnail',
+										            progress: '#h-horse-photo-progress'
+									            },
+									            attr: {
+										            max: validationUtils.MAX_FILES,
+										            placeholder: i18n.t('app:PHOTO'),
+ 										            title: i18n.t('app:PHOTO')
+ 									            }"
+                                                           required> <span class="add-on">
+                                                        <i data-bind="attr: { title: i18n.t('app:PHOTO'),
+									            'data-content': i18n.format(i18n.t('app:IMAGE_POPOVER'), validationUtils.MAX_FILE_SIZE) },
+									            popover: ''"
+                                                           data-trigger="hover" data-animation="true" class="fa fa-picture-o"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3 data-bind="text: currentEntity().name"></h3>
+                            <p>
+                                <strong>Jinete:</strong>
+                                <span data-bind="text: currentEntity().athlete.fullName"></span>
+                            </p>
+                            <p>
+                                <strong>Sexo:</strong>
+                                <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
+                            </p>
+                            <p>
+                                <strong>Peso:</strong>
+                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                            </p>
+                            <p>
+                                <strong>Altura:</strong>
+                                <span data-bind="text: currentEntity().height + 'cm'"></span>
+                            </p>
+                            <p>
+                                <strong>Fecha Nacimiento:</strong>
+                                <span data-bind="text: moment(currentEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+                            <!-- ko if: securityContext.isAuthenticated() && currentEntity().athlete.userId === parseInt(securityContext.getPrincipal().id) -->
+                            <a class="ver-todo" data-bind="attr: { href: $root.horseBroker.getEditUrlById(currentEntity().id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                                <i class="fa fa-edit" aria-hidden="true"></i> Editar
+                            </a>
+                            <!-- /ko -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

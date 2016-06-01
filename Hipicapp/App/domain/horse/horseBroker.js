@@ -70,6 +70,12 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.HORSE, horseId);
     }
 
+    function getImagesUrlById(horseId) {
+        return brokerUtils.HASH_CHAR +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE + "-" + brokerUtils.requestMappings.HORSE, horseId,
+                brokerUtils.requestMappings.PHOTO);
+    }
+
     function getEditUrlById(horseId) {
         return brokerUtils.HASH_CHAR +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETE + "-" + brokerUtils.requestMappings.HORSE, horseId);
@@ -77,6 +83,10 @@ define([
 
     function getListUrl(specialtyId) {
         return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, specialtyId, brokerUtils.requestMappings.HORSES);
+    }
+
+    function getFileuploadUrlById(entityId) {
+        return brokerUtils.requestMappings.BACKEND + urlUtils.joinPath(brokerUtils.requestMappings.HORSES, brokerUtils.requestMappings.UPLOAD, entityId);
     }
 
     function evictCache() {
@@ -93,8 +103,10 @@ define([
     broker.update = update;
     broker.erase = erase;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getImagesUrlById = getImagesUrlById;
     broker.getEditUrlById = getEditUrlById;
     broker.getListUrl = getListUrl;
+    broker.getFileuploadUrlById = getFileuploadUrlById;
 
     return broker;
 });

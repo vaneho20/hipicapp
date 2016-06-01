@@ -69,7 +69,12 @@ define([
     viewModel.router = router;
     viewModel.securityContext = securityContext;
     viewModel.validationUtils = validationUtils;
-    viewModel.horseBroker = horseBroker;
+    viewModel.athleteBroker = athleteViewModel.athleteBroker;
+    viewModel.competitionBroker = athleteViewModel.competitionBroker;
+    viewModel.fileBroker = athleteViewModel.fileBroker;
+    viewModel.horseBroker = athleteViewModel.horseBroker;
+    viewModel.judgeBroker = athleteViewModel.judgeBroker;
+    viewModel.specialtyBroker = athleteViewModel.specialtyBroker;
 
     // state revelation
     viewModel.currentEntity = currentEntity;

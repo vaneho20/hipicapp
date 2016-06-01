@@ -25,6 +25,7 @@
                         <h2 class="pull-left">
                             <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
                         </h2>
+                        <a class="pull-left" data-bind="attr: { href: currentEntity().id ? horseBroker.getImagesUrlById(currentEntity().id) : 'javascript:void(0)', title: i18n.t('app:PHOTO') }, text: i18n.t('app:PHOTO')"></a>
                         <div class="clearfix"></div>
                     </header>
                     <section>
@@ -116,6 +117,7 @@
                     </section>
                 </div>
                 <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                    <!-- ko if: currentEntity().id === null -->
                     <article>
                         <div class="foto-listados col-md12 col-sm-12 col-xs-24">
                             <img alt="Lorem ipsum" data-bind="attr: { src: superCurrentEntity().photoId ? fileBroker.getUrlByUuid(superCurrentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }">
@@ -153,6 +155,37 @@
                             <!-- /ko -->
                         </div>
                     </article>
+                    <!-- /ko -->
+                    <!-- ko if: currentEntity().id !== null -->
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3 data-bind="text: currentEntity().name"></h3>
+                            <p>
+                                <strong>Jinete:</strong>
+                                <span data-bind="text: currentEntity().athlete.fullName"></span>
+                            </p>
+                            <p>
+                                <strong>Sexo:</strong>
+                                <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
+                            </p>
+                            <p>
+                                <strong>Peso:</strong>
+                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                            </p>
+                            <p>
+                                <strong>Altura:</strong>
+                                <span data-bind="text: currentEntity().height + 'cm'"></span>
+                            </p>
+                            <p>
+                                <strong>Fecha Nacimiento:</strong>
+                                <span data-bind="text: moment(currentEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+                        </div>
+                    </article>
+                    <!-- /ko -->
                 </div>
             </div>
         </div>

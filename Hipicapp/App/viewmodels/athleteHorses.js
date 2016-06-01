@@ -16,10 +16,13 @@ define([
         currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
         currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
-        };
+        }, usuario = ko.observable(null);
 
     // lifecycle definition
-    function activate(athleteId) {
+    function activate(athleteId, userId) {
+        if (userId) {
+            usuario(parseInt(userId));
+        }
         currentFilter.athleteId(athleteId);
         nextFilter().athleteId(athleteId);
 
@@ -97,6 +100,7 @@ define([
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
     viewModel.availableGenders = availableGenders;
+    viewModel.usuario = usuario;
 
     // lifecycle revelation
     viewModel.activate = activate;

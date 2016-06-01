@@ -1,7 +1,7 @@
 /* global define: false */
 define([
     "core/i18n", "core/util/validationUtils", "domain/file/fileBroker",
-    "domain/horse/horseBroker", "viewmodels/horse"
+    "domain/horse/horseBroker", "viewmodels/athleteHorse"
 ], function athleteHorseImages(i18n, validationUtils, fileBroker, horseBroker, horseViewModel) {
     "use strict";
 

@@ -63,6 +63,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         SIMULATE_SCORE: "simulateScore",
         INSCRIPTION: "inscription",
         IMAGES: "images",
+        PHOTO: "photo",
         SIGN_IN: "signIn",
         REGISTER: "register",
         RESET_PASSWORD: "resetPassword",
