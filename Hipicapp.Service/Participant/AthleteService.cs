@@ -5,12 +5,8 @@ using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Service.Account;
 using Hipicapp.Service.Event;
-using Hipicapp.Service.Mail.Impl;
-using Hipicapp.Service.Mail.Models;
-using Hipicapp.Service.Util;
 using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
-using Resources;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -46,6 +42,9 @@ namespace Hipicapp.Service.Participant
 
         [Autowired]
         private IUserService UserService { get; set; }
+
+        [Autowired]
+        private IAlreadyEnrolledPolicy AlreadyEnrolledPolicy { get; set; }
 
         [Autowired]
         private IAvailableCompetitionCategoryPolicy AvailableCompetitionCategoryPolicy { get; set; }
@@ -149,23 +148,24 @@ namespace Hipicapp.Service.Participant
         [Transaction]
         public EnrollmentId Inscription(EnrollmentId id)
         {
-            if (!this.EnrollmentRepository.GetAllQueryable().Any(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId))
+            this.AlreadyEnrolledPolicy.CheckSatisfiedBy(id);
+
+            var enroll = this.EnrollmentRepository.GetAllQueryable().FirstOrDefault(x => x.Id.CompetitionId == id.CompetitionId);
+            if (enroll != null)
             {
-                var horse = this.HorseRepository.Get(id.HorseId);
-                var competition = this.CompetitionRepository.Get(id.CompetitionId);
-                this.EnrollmentExpiredPolicy.CheckSatisfiedBy(competition);
-                this.CompetitionExpiredPolicy.CheckSatisfiedBy(competition);
-                this.SameCompetitionCategoryPolicy.CheckSatisfiedBy(horse.Athlete.Category, competition.Category);
-                this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(horse, competition.Specialty);
-                this.EnrollmentRepository.Save(new Enrollment()
-                {
-                    Id = id,
-                    EnrollmentDate = DateTime.Now
-                });
+                this.EnrollmentRepository.Delete(enroll);
             }
-            else
+            var horse = this.HorseRepository.Get(id.HorseId);
+            var competition = this.CompetitionRepository.Get(id.CompetitionId);
+            this.EnrollmentExpiredPolicy.CheckSatisfiedBy(competition);
+            this.CompetitionExpiredPolicy.CheckSatisfiedBy(competition);
+            this.SameCompetitionCategoryPolicy.CheckSatisfiedBy(horse.Athlete.Category, competition.Category);
+            this.MinimumAgeOfHorseUnsurpassedPolicy.CheckSatisfiedBy(horse, competition.Specialty);
+            this.EnrollmentRepository.Save(new Enrollment()
             {
-            }
+                Id = id,
+                EnrollmentDate = DateTime.Now
+            });
             return id;
         }
 

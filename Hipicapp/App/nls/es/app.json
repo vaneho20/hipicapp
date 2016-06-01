@@ -260,6 +260,7 @@
     "SPECIALTY_LIST_EMPTY_DETAIL": "Crea ahora una primera disciplina en <strong>Hipicapp</strong>.",
     "Hipicapp_Exceptions_ImageException" : "¡Vaya! Las imágenes tiene que estar en formato gif, jpg o png y pesar menos de {0} bytes",
     "Hipicapp_Service_Exceptions_AccessDeniedException": "¡Oops! No tienes permiso para acceder a esa funcionalidad",
+    "Hipicapp_Service_Exceptions_AlreadyEnrolledException": "¡Oops! Este caballo ya esta inscrito al concurso",
     "Hipicapp_Service_Exceptions_BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos",
     "Hipicapp_Service_Exceptions_CompetitionExpiredException": "¡Vaya! El concurso ha expirado",
     "Hipicapp_Service_Exceptions_EnrollmentExpiredException": "¡Vaya! La fecha de inscripción al concurso ha caducadoS",
