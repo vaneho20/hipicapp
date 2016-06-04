@@ -10,7 +10,7 @@ label.required:after {
 /* Alert */
 #mo-shell-alerts {
     position: fixed;
-    top: 47px;
+    top: 59px;
     left: 17%;
     right: 0;
     z-index: 7000;

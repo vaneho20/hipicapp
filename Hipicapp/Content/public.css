@@ -41,12 +41,14 @@ body {
     border-radius: 4px;
     background: #f74b4b; }
     body .ver-todo:hover, body .ver-todo:active, body .ver-todo:focus, body .btn-red:hover, body .btn-red:active, body .btn-red:focus {
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: #de4545; }
   body .btn-red {
     float: left;
     padding: 0.8em 1.2em; }
     body .btn-red:hover, body .btn-red:active, body .btn-red:focus {
-      color: #fff; }
+      color: #fff;
+      background-color: #de4545; }
   body .navbar-fixed-top {
     -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
@@ -67,7 +69,8 @@ body {
       body .navbar .enlaces-header .fa {
         margin-left: 0.5em; }
   body .section-home {
-    height: 100vh;
+    /*margin-top: 5.5em;
+        height: 100vh;*/
     overflow: hidden; }
     body .section-home .cols {
       overflow: hidden; }
@@ -75,6 +78,7 @@ body {
         float: left;
         position: relative;
         margin-top: 77px;
+        padding: 0;
         height: 100vh;
         width: 50%;
         text-align: center;
@@ -142,7 +146,7 @@ body {
           background: #f74b4b; }
   body .header-block {
     position: relative;
-    margin: 2.8em 0 0 0;
+    margin: 3.1em 0 0 0;
     padding: 1.5em 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8em;
@@ -160,6 +164,7 @@ body {
     body .header-block.header-salto {
       background: url("images/foto_salto.jpg") 50% 50%/cover no-repeat; }
     body .header-block h1 {
+      margin: 0;
       position: relative;
       z-index: 9; }
       body .header-block h1 span {
@@ -723,6 +728,8 @@ body {
     border-bottom: 3px solid #f74b4b; }
   body .listado-elements .one-element {
     padding: 0 0 1.5em; }
+    body .listado-elements .one-element:nth-child(3n+1) {
+      clear: left; }
     body .listado-elements .one-element .info-listados {
       padding-left: 0;
       padding-right: 24px; }
@@ -750,14 +757,14 @@ body {
       margin: 0.5em 0 0 0; }
       body .paginador ul li a {
         color: #f74b4b; }
-        body .paginador ul li a:hover {
+        body .paginador ul li a:hover, body .paginador ul li a:active, body .paginador ul li a:focus {
           color: #fff;
           border: 1px solid #f74b4b;
           background: #f74b4b; }
       body .paginador ul li.active a {
         border: 1px solid #f74b4b;
         background: #f74b4b; }
-        body .paginador ul li.active a:hover {
+        body .paginador ul li.active a:hover, body .paginador ul li.active a:active, body .paginador ul li.active a:focus {
           border: 1px solid #f74b4b;
           background: #f74b4b; }
     body .paginador span {
@@ -827,18 +834,27 @@ body {
           height: 44px; }
       body .block-ficha .ficha-col-izq #mis-caballos, body .block-ficha .ficha-col-izq #mis-concursos {
         padding: 0 0 3em; }
-      body .block-ficha .ficha-col-izq article {
-        border-bottom: 1px solid #E4E4E4; }
-        body .block-ficha .ficha-col-izq article .foto-listados {
-          padding: 0.8em 0;
-          text-align: center; }
-          body .block-ficha .ficha-col-izq article .foto-listados img {
-            width: 40px;
-            height: 40px; }
-        body .block-ficha .ficha-col-izq article .datos-listados {
-          padding: 1.5em 0.6em;
-          line-height: normal;
-          vertical-align: middle; }
+      body .block-ficha .ficha-col-izq article .row {
+        border-top: 1px solid #E4E4E4; }
+      body .block-ficha .ficha-col-izq article .foto-listados {
+        padding: 0.8em 0;
+        text-align: center; }
+        body .block-ficha .ficha-col-izq article .foto-listados img {
+          width: 40px;
+          height: 40px; }
+      body .block-ficha .ficha-col-izq article .datos-listados {
+        padding: 1.5em 0.6em;
+        line-height: normal;
+        vertical-align: middle; }
+        body .block-ficha .ficha-col-izq article .datos-listados a {
+          padding: 0 0.5em;
+          color: #f74b4b; }
+          body .block-ficha .ficha-col-izq article .datos-listados a:hover, body .block-ficha .ficha-col-izq article .datos-listados a:active, body .block-ficha .ficha-col-izq article .datos-listados a:focus {
+            text-decoration: none; }
+      body .block-ficha .ficha-col-izq .paginador {
+        padding: 0.5em 0; }
+        body .block-ficha .ficha-col-izq .paginador .pull-right {
+          display: none; }
     body .block-ficha .ficha-col-der {
       position: relative;
       margin-top: 5em;
@@ -891,14 +907,14 @@ body {
       padding: 0 15px; }
   body #mo-shell-alerts {
     position: fixed;
-    top: 47px;
-    left: 17%;
+    top: 66px;
+    left: 0;
     right: 0;
     z-index: 7000; }
   body #mo-shell-alerts .mo-alert {
     width: 96.4%;
     margin: 0 1.6em;
-    padding: 0.6em 0.5em; }
+    padding: 1em; }
   body #mo-shell-alerts .mo-alert-fatal {
     background-color: #444;
     border-color: #111;
@@ -967,5 +983,70 @@ body {
     padding-left: 0 !important; }
   body .without-padding-right {
     padding-right: 0 !important; }
+
+/* Media query */
+@media (max-width: 768px) {
+  body .section-home {
+    height: 100%;
+    overflow: hidden; }
+
+  html body .section-home .cols .col-1of2 {
+    height: 100%; }
+
+  html body .section-home .cols .col-1of2 .col-inner {
+    position: initial;
+    height: 50vh; }
+
+  html body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia:nth-child(2n+1) {
+    clear: left; }
+
+  html body #contenido-interior .block-center .block-center-der .banners img {
+    height: auto; }
+ }
+
+@media (width: 640px) and (height: 360px) {
+  html body .section-home .cols .col-1of2 {
+    height: 100vh; }
+ }
+
+@media (max-width: 767px) {
+  html body #contenido-interior .block-center .block-center-der .banners img {
+    width: auto; }
+
+  html body .block-ficha {
+    display: table;
+    margin: 7em 0 0 0; }
+
+  html body .block-ficha .ficha-col-izq {
+    padding-right: 15px; }
+
+  html body .block-ficha .ficha-col-izq header {
+    min-height: 2.5em; }
+
+  html body .block-ficha .ficha-col-der {
+    display: table-header-group;
+    float: none; }
+ }
+
+@media (max-width: 640px) {
+  html body .section-home {
+    overflow: inherit;
+    height: 100%; }
+
+  html body .section-home .cols .col-1of2 {
+    margin-top: 0;
+    width: 100%; }
+
+  html body .section-home .cols .col-1of2.block-doma {
+    margin-top: 77px; }
+
+  body .section-home .cols .col-1of2 .col-inner {
+    /*height: 50vh;*/ }
+ }
+
+@media (max-width: 360px) {
+  body .header-block {
+    margin: 4.5em 0 0 0; }
+ }
 
 /*# sourceMappingURL=public.css.map */

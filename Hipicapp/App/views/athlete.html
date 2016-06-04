@@ -22,19 +22,19 @@
 <section id="contenido-interior">
     <div class="container">
         <div class="row">
-            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
-                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
-                    <section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-24"
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-12">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-12">
+                    <section id="mis-caballos" class="col-md-12 col-sm-12 col-xs-12"
                              data-bind="compose: { model: 'viewmodels/athleteHorses', activationData: [currentEntity().id, currentEntity().user.id()] }"></section>
                     <section id="mis-concursos"
                              data-bind="compose: { model: 'viewmodels/athleteCompetitions', activationData: [currentEntity().id, currentEntity().specialtyId] }"></section>
                 </div>
-                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-12">
                     <article>
-                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-12">
                             <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }">
                         </div>
-                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-12">
                             <h3 data-bind="text: currentEntity().fullName"></h3>
                             <p>
                                 <strong>Sexo:</strong>
