@@ -9,8 +9,8 @@
 <section id="contenido-interior">
     <div class="container">
         <div class="row">
-            <div class="block-ficha col-md-12 col-sm-12 col-xs-24">
-                <div class="ficha-col-izq col-md-12 col-sm-12 col-xs-24">
+            <div class="block-ficha col-md-12 col-sm-12 col-xs-12">
+                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-12">
                     <header class="col-md-12 col-sm-12 col-xs-24">
                         <h2 class="pull-left">Mis Caballos</h2>
                     </header>
@@ -19,19 +19,19 @@
                             &nbsp;
                         </div>
                         <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
-                            Foto Caballos
+                            Foto
                         </div>
                         <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
-                            Nombre Caballo
+                            Nombre
                         </div>
                         <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
-                            Fecha nacimiento
+                            Nacimiento
                         </div>
                         <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
                             Peso y Altura
                         </div>
                         <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
-                            Sexo Caballo
+                            Sexo
                         </div>
                     </article>
                     <article data-bind="foreach: currentPage().content">
@@ -39,7 +39,7 @@
                             <div class="datos-listados acenter col-md-1 col-sm-1 col-xs-2">
                                 <input name="inscription" data-bind="event: { change: $root.enroll }, checkedValue: id, checked: assign" type="radio" />
                             </div>
-                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+                            <div class="foto-listados col-md-2 col-sm-1 col-xs-2">
                                 <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
                             </div>
                             <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: name">
@@ -59,6 +59,32 @@
                         <span data-bind="html: i18n.t('HORSE_LIST_EMPTY_DETAIL')"></span>
                     </div>
                     <div class="paginador col-md-12 col-sm-12 col-xs-24" data-bind="compose: 'pager.html'"></div>
+                </div>
+                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-12">
+                    <article>
+                        <div class="foto-listados col-md12 col-sm-12 col-xs-24">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? $root.fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-' + currentEntity().specialty.id + '.png' }">
+                        </div>
+                        <div class="info-listados col-md-12 col-sm-12 col-xs-24">
+                            <h3 data-bind="text: currentEntity().name"></h3>
+                            <p>
+                                <strong>Categor&iacute;a:</strong>
+                                <span data-bind="text: currentEntity().category.name"></span>
+                            </p>
+                            <p>
+                                <strong>Recinto:</strong>
+                                <span data-bind="text: currentEntity().address"></span>
+                            </p>
+                            <p>
+                                <strong>Disciplina:</strong>
+                                <span data-bind="text: currentEntity().specialty.name"></span>
+                            </p>
+                            <p>
+                                <strong>Fechas:</strong>
+                                <span data-bind="text: moment(currentEntity().startDate()).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(currentEntity().endDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                            </p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>

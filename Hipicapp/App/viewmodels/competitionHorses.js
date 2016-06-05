@@ -4,17 +4,17 @@ define([
     "core/config", "core/i18n", "core/router", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
     "core/crud/pageRequestImpl", "domain/athlete/athleteBroker", "domain/file/fileBroker", "domain/horse/horseBroker",
     "domain/horse/horseFilterImpl", "domain/horse/horseSortImpl", "domain/horse/horseImpl", "durandal/app",
-    "viewmodels/shell"
+    "viewmodels/competition", "viewmodels/shell"
 ], function athleteHorses(config, i18n, router, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, athleteBroker,
-    fileBroker, horseBroker, horseFilterImpl, horseSortImpl, horseImpl, app, shell) {
+    fileBroker, horseBroker, horseFilterImpl, horseSortImpl, horseImpl, app, competitionViewModel, shell) {
     "use strict";
 
     // state definition
-    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
-        availableProvinces = ko.observable(), nextFilter = ko.observable(horseFilterImpl()),
+    var viewModel = $.extend(false, {}, competitionViewModel), superActivate = viewModel.activate,
+        PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES, nextFilter = ko.observable(horseFilterImpl()),
         currentFilter = horseFilterImpl(), currentSort = ko.observable(horseSortImpl()),
         currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
-        currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
+        currentPageSize = ko.observable(PAGE_SIZE), currentEntity = viewModel.currentEntity, availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
         };
 
@@ -23,7 +23,9 @@ define([
         currentFilter.competitionId(competitionId);
         nextFilter().competitionId(competitionId);
 
-        return $.when(loadCurrentPage());
+        return $.when(superActivate(competitionId).done(function onSuccess() {
+            return loadCurrentPage();
+        }));
     }
 
     // behaviour definition
@@ -100,6 +102,7 @@ define([
     viewModel.currentPage = currentPage;
     viewModel.currentPager = currentPager;
     viewModel.currentPageSize = currentPageSize;
+    viewModel.currentEntity = currentEntity;
     viewModel.availablePageSizes = PAGE_SIZES;
     viewModel.availableGenders = availableGenders;
 
