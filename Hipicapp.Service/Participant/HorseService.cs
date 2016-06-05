@@ -6,12 +6,16 @@ using Hipicapp.Utils.Pager;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
+using System.Linq;
 
 namespace Hipicapp.Service.Participant
 {
     [Service]
     public class HorseService : IHorseService
     {
+        [Autowired]
+        private IEnrollmentRepository EnrollmentRepository { get; set; }
+
         [Autowired]
         private IHorseRepository HorseRepository { get; set; }
 
@@ -22,6 +26,19 @@ namespace Hipicapp.Service.Participant
         public Page<Horse> Paginated(HorseFindFilter filter, PageRequest pageRequest)
         {
             return HorseRepository.Paginated(HorsePredicates.ValueOf(filter, this.HorseRepository.GetAllQueryable()), pageRequest);
+        }
+
+        [Transaction(ReadOnly = true)]
+        public Page<Horse> PaginatedByCurrentUser(HorseFindFilter filter, PageRequest pageRequest)
+        {
+            var page = this.HorseRepository.Paginated(HorsePredicates.ValueOf(filter, this.HorseRepository.GetAllQueryable()), pageRequest);
+
+            page.Content.ToList().ForEach(x =>
+            {
+                x.Assign = this.EnrollmentRepository.GetAllQueryable().Any(y => y.Id.HorseId == x.Id && y.Id.CompetitionId == filter.CompetitionId) ? x.Id : null;
+            });
+
+            return page;
         }
 
         [Transaction(ReadOnly = true)]

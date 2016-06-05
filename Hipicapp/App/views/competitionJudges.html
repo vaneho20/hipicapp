@@ -20,7 +20,8 @@
         <div class="acenter foto-listados col-md-2 col-sm-2 col-xs-4">
             <img alt="Foto juez" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '/Content/images/hipicapp-defecto-juez.png' }" />
         </div>
-        <div class="datos-listados col-md-4 col-sm-4 col-xs-8" data-bind="text: fullName">
+        <div class="datos-listados col-md-4 col-sm-4 col-xs-8">
+            <a data-bind="attr: { href: $root.judgeBroker.getDetailUrlById(id) }, text: fullName"></a>
         </div>
         <div class="datos-listados col-md-4 col-sm-4 col-xs-8" data-bind="text: federation">
         </div>

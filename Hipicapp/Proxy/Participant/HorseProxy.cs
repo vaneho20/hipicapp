@@ -55,7 +55,7 @@ namespace Hipicapp.Proxy.Participant
 
             var competition = this.CompetitionService.Get(request.Filter.CompetitionId);
             this.SameSpecialtyPolicy.CheckSatisfiedBy(competition.Specialty, athlete.Specialty);
-            return this.HorseService.Paginated(request.Filter, request.PageRequest);
+            return this.HorseService.PaginatedByCurrentUser(request.Filter, request.PageRequest);
         }
 
         [AllowAnonymous]

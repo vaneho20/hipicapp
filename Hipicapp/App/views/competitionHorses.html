@@ -35,9 +35,9 @@
                         </div>
                     </article>
                     <article data-bind="foreach: currentPage().content">
-                        <div class="row">
+                        <div class="row" data-bind="css: $root.getRowClass($data)">
                             <div class="datos-listados acenter col-md-1 col-sm-1 col-xs-2">
-                                <input name="inscription" data-bind="event: { change: $root.enroll }" type="radio" />
+                                <input name="inscription" data-bind="event: { change: $root.enroll }, checkedValue: id, checked: assign" type="radio" />
                             </div>
                             <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
                                 <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">

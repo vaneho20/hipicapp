@@ -1,14 +1,14 @@
 /* global _: false, define: false, ko: false */
 /* jshint maxparams: 15, maxstatements: 40 */
 define([
-    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl",
-    "core/crud/pagerImpl", "core/crud/pageRequestImpl", "core/util/validationUtils",
+    "core/config", "core/i18n", "core/crud/findRequestImpl", "core/crud/pageImpl", "core/crud/pagerImpl",
+    "core/crud/pageRequestImpl", "core/util/validationUtils", "domain/athlete/athleteBroker",
     "domain/competition/competitionBroker", "domain/enrollment/enrollmentFilterImpl",
-    "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl",
-    "domain/file/fileBroker", "durandal/app", "viewmodels/alerts", "viewmodels/shell"
-], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl,
-    validationUtils, competitionBroker, enrollmentFilterImpl, enrollmentSortImpl, enrollmentImpl,
-    fileBroker, app, alerts, shell) {
+    "domain/enrollment/enrollmentSortImpl", "domain/enrollment/enrollmentImpl", "domain/file/fileBroker",
+    "durandal/app", "viewmodels/alerts", "viewmodels/shell"
+], function competitions(config, i18n, findRequestImpl, pageImpl, pagerImpl, pageRequestImpl, validationUtils,
+    athleteBroker, competitionBroker, enrollmentFilterImpl, enrollmentSortImpl, enrollmentImpl, fileBroker, app,
+    alerts, shell) {
     "use strict";
 
     // state definition
@@ -86,6 +86,7 @@ define([
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.validationUtils = validationUtils;
+    viewModel.athleteBroker = athleteBroker;
     viewModel.competitionBroker = competitionBroker;
     viewModel.fileBroker = fileBroker;
 

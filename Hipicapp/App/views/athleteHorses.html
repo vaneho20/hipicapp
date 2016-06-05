@@ -31,7 +31,8 @@
         <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
             <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: name">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+            <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id) }, text: name"></a>
         </div>
         <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>

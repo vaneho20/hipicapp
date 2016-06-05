@@ -52,6 +52,8 @@ namespace Hipicapp.Model.Participant
                 return DateUtils.GetAgeExactInYears(this.BirthDate);
             }
         }
+
+        public virtual long? Assign { get; set; }
     }
 
     public class HorseMap : EntityMap<Horse, long?>

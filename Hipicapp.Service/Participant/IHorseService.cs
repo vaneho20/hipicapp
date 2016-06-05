@@ -8,6 +8,8 @@ namespace Hipicapp.Service.Participant
     {
         Page<Horse> Paginated(HorseFindFilter filter, PageRequest pageRequest);
 
+        Page<Horse> PaginatedByCurrentUser(HorseFindFilter filter, PageRequest pageRequest);
+
         Horse Get(long? id);
 
         Horse Save(Horse horse);

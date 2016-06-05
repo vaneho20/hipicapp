@@ -93,7 +93,7 @@
                                 <div class="foto">
                                     <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(id) }" title="Ver artículo">
                                         <div class="cintillo" data-bind="text: locality"></div>
-                                        <img alt="Foto concurso" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }">
+                                        <img alt="Foto concurso" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '/Content/images/hipicapp-defecto-' + $root.currentEntity().id + '.png' }">
                                     </a>
                                 </div>
                                 <div class="texto">

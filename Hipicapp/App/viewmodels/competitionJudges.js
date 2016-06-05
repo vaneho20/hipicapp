@@ -75,6 +75,7 @@ define([
     viewModel.shell = shell;
     viewModel.i18n = i18n;
     viewModel.fileBroker = fileBroker;
+    viewModel.judgeBroker = judgeBroker;
 
     // state revelation
     viewModel.nextFilter = nextFilter;

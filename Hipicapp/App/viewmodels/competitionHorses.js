@@ -78,6 +78,16 @@ define([
         });
     }
 
+    function getRowClass(row) {
+        var rowClass = "";
+
+        if (row.assign) {
+            rowClass = "danger";
+        }
+
+        return rowClass;
+    }
+
     // module revelation
     viewModel.shell = shell;
     viewModel.i18n = i18n;
@@ -105,6 +115,7 @@ define([
     viewModel.search = search;
     viewModel.enroll = enroll;
     viewModel.clearFilter = clearFilter;
+    viewModel.getRowClass = getRowClass;
 
     // bind helpers
     viewModel.sortByName = _.partial(sortByProperty, horseImpl.properties.NAME);
