@@ -4,7 +4,7 @@ define(function securityContext() {
 
     "use strict";
 
-    var context = {}, CACHE_TIMEOUT = 3000, CACHE_NAME = "authentication/context",
+    var context = {}, CACHE_TIMEOUT = 1800000, CACHE_NAME = "authentication/context",
         CACHE_STORAGE = amplify.store.localStorage(CACHE_NAME) ? amplify.store.localStorage : amplify.store.sessionStorage,
         instance = ko.observable(CACHE_STORAGE(CACHE_NAME) || {}), role = {
             ADMINISTRATOR: "ADMINISTRATOR",
@@ -19,8 +19,12 @@ define(function securityContext() {
             });
     }
 
+    function isCacheStorage() {
+        return CACHE_STORAGE(CACHE_NAME);
+    }
+
     function isAuthenticated() {
-        return instance() && instance().authenticated;
+        return isCacheStorage() && instance() && instance().authenticated;
     }
 
     function isAdministrator() {
@@ -52,7 +56,7 @@ define(function securityContext() {
     }
 
     function getAuthenticationToken() {
-        return (instance() && instance().authenticationToken) || 0;
+        return (isCacheStorage() && instance() && instance().authenticationToken) || 0;
     }
 
     function refresh(securityContext) {
@@ -73,7 +77,9 @@ define(function securityContext() {
             CACHE_STORAGE = amplify.store.sessionStorage;
             amplify.store.localStorage(CACHE_NAME, null);
         }
-        CACHE_STORAGE(CACHE_NAME, instance());
+        CACHE_STORAGE(CACHE_NAME, instance(), {
+            expires: CACHE_TIMEOUT
+        });
     }
 
     function clear() {

@@ -30,11 +30,9 @@
                     { route: 'competition/:id/judges', title: 'Jueces', moduleId: 'viewmodels/competitionJudges', nav: false },
                     { route: 'horse/:id', title: 'Caballo', moduleId: 'viewmodels/horse', nav: false, hash: '#horse' },
                     { route: 'judge/:id', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' }
-                ]).buildNavigationModel();
+                ]).buildNavigationModel().mapUnknownRoutes('viewmodels/home', '');
 
                 return router.activate().then(function init() {
-                    if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
-                    }
                 });
             }
         };

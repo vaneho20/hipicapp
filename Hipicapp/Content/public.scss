@@ -1442,6 +1442,11 @@ body {
     .without-padding-right {
         padding-right: 0 !important;
     }
+
+    label.required:after {
+        content: " *";
+        color: rgba(231, 76, 60, 0.88);
+    }
 }
 
 /* Media query */

@@ -81,7 +81,7 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
         PUT: "PUT",
         DELETE: "DELETE"
     }, CONTENT_TYPE = "application/json; charset=utf-8", DATA_TYPE = "json", DEFAULT_CACHE_TIMEOUT =
-        300000, EXCEPTION_HANDLER_DECODER = "exceptionHandler", requestCount = ko.observable(0);
+        3, EXCEPTION_HANDLER_DECODER = "exceptionHandler", requestCount = ko.observable(0);
 
     /*ko.mapping.defaultOptions().ignore = [
         "getIconTitle", "getIconClass"
@@ -172,8 +172,8 @@ define(["core/authentication/securityContext", "core/i18n", "core/util/csrfUtils
             exceptionHandler.handle({
                 exceptionType: "Hipicapp_Service_Exceptions_AccessDeniedException"
             }, "error");
-            //router.navigate("");
-            //router.reloadCurrentLocation();
+            router.navigate("");
+            router.reloadCurrentLocation();
         }
     }
 

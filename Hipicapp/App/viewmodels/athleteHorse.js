@@ -10,7 +10,7 @@ define([
 
     // state definition
     var viewModel = $.extend(false, {}, athleteViewModel), superActivate = viewModel.activate,
-        currentEntity = ko.observable(horseImpl()), superCurrentEntity = viewModel.currentEntity, navs = {
+        currentHorseEntity = ko.observable(horseImpl()), superCurrentEntity = viewModel.currentEntity, navs = {
             BASIC_DATA: "BASIC_DATA",
             IMAGES: "IMAGES"
         }, nav = ko.observable(), superAvailableGenders = viewModel.availableGenders, availableGenders = [
@@ -44,7 +44,8 @@ define([
 
     // behaviour definition
     function refreshCurrentEntity(data) {
-        currentEntity(horseImpl(data));
+        currentHorseEntity(horseImpl(data));
+        currentHorseEntity.valueHasMutated();
     }
 
     function loadEntityByHorseId(id) {
@@ -53,11 +54,11 @@ define([
 
     function save() {
         var promise;
-        currentEntity().athleteId = superCurrentEntity().id;
-        if (currentEntity().id) {
-            promise = horseBroker.update(currentEntity());
+        currentHorseEntity().athleteId = superCurrentEntity().id;
+        if (currentHorseEntity().id) {
+            promise = horseBroker.update(currentHorseEntity());
         } else {
-            promise = horseBroker.save(currentEntity());
+            promise = horseBroker.save(currentHorseEntity());
         }
         return promise.done(refreshCurrentEntity).done(function success() {
             router.navigateToProfile();
@@ -77,7 +78,7 @@ define([
     viewModel.specialtyBroker = athleteViewModel.specialtyBroker;
 
     // state revelation
-    viewModel.currentEntity = currentEntity;
+    viewModel.currentHorseEntity = currentHorseEntity;
     viewModel.superCurrentEntity = superCurrentEntity;
     viewModel.navs = navs;
     viewModel.nav = nav;

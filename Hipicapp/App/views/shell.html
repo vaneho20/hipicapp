@@ -6,7 +6,7 @@
         </a>
         <!-- Links -->
         <div class="enlaces-header pull-right">
-            Bienvenido <strong data-bind="text: securityContext.getPrincipal().fullname"></strong>, 
+            Bienvenido <strong data-bind="text: securityContext.getPrincipal() ? securityContext.getPrincipal().fullname : ''"></strong>, 
             <i class="fa fa-user" aria-hidden="true"></i> <a class="nav-link" href="javascript:void(0);" data-bind="click: router.navigateToProfile">Ficha</a>
             <i class="fa fa-sign-out" aria-hidden="true"></i> <a class="nav-link" href="javascript:void(0);" data-bind="click: logout">Salir</a>
         </div>

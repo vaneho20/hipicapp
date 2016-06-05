@@ -3,11 +3,11 @@
     , function (authenticationBroker, securityContext, brokerUtils, router, i18n, app) {
         return {
             logout: function () {
-                return authenticationBroker.logout().done(securityContext.clear).done(
-                function () {
-                    app.setRoot('viewmodels/home', 'entrance');
-                    router.navigate("");
-                    router.reloadCurrentLocation();
+                return authenticationBroker.logout().done(securityContext.clear)
+                    .done(function () {
+                        app.setRoot('viewmodels/home', 'entrance');
+                        router.navigate("");
+                        router.reloadCurrentLocation();
                 });
             },
             isLoading: ko.computed(function () {
@@ -40,11 +40,9 @@
                     { route: 'competition/:id/judges', title: 'Jueces', moduleId: 'viewmodels/competitionJudges', nav: false },
                     { route: 'horse/:id', title: 'Caballo', moduleId: 'viewmodels/horse', nav: false, hash: '#horse' },
                     { route: 'judge/:id', title: 'Juez', moduleId: 'viewmodels/judge', nav: false, hash: '#judge' }
-                ]).buildNavigationModel();
+                ]).buildNavigationModel().mapUnknownRoutes('viewmodels/home', '');
 
                 return router.activate().then(function init() {
-                    if (securityContext.isAuthenticated() !== undefined && securityContext.isAuthenticated() === true) {
-                    }
                 });
             }
         };

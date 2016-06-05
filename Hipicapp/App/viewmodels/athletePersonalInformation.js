@@ -27,17 +27,11 @@ define([
     ], availableCategories = ko.observable(), availableSpecialties = ko.observable();
 
     // lifecycle definition
-    function activate(id) {
+    function activate() {
         nav(navs.BASIC_DATA);
 
-        if (id || securityContext.isAthlete()) {
-            // allways return a promise
-            return $.when(loadEntityByAthleteId(id), loadAvailableCategories(), loadAvailableSpecialties());
-        } else {
-            return $.when(loadAvailableCategories(), loadAvailableSpecialties()).done(function onSuccess() {
-                return refreshCurrentEntity();
-            });
-        }
+        // allways return a promise
+        return $.when(loadEntityByAthleteId(), loadAvailableCategories(), loadAvailableSpecialties());
     }
 
     // behaviour definition
@@ -45,14 +39,8 @@ define([
         currentEntity(athleteImpl(data));
     }
 
-    function loadEntityByAthleteId(id) {
-        var promise;
-        if (!id && securityContext.isAthlete()) {
-            promise = athleteBroker.getByCurrentUser().done(refreshCurrentEntity);
-        } else {
-            promise = athleteBroker.findById(id).done(refreshCurrentEntity);
-        }
-        return promise;
+    function loadEntityByAthleteId() {
+        return athleteBroker.getByCurrentUser().done(refreshCurrentEntity);
     }
 
     function refreshCategories(data) {

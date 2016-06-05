@@ -12,7 +12,7 @@ define([
     "use strict";
 
     // state definition
-    var viewModel = {}, PAGE_SIZE = config.PAGE_SIZE, PAGE_SIZES = config.PAGE_SIZES,
+    var viewModel = {}, PAGE_SIZE = 3, PAGE_SIZES = config.PAGE_SIZES,
         nextFilter = ko.observable(enrollmentFilterImpl()), currentFilter = enrollmentFilterImpl(),
         currentSort = ko.observable(enrollmentSortImpl()), currentPage = ko.observable(pageImpl()),
         currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE);

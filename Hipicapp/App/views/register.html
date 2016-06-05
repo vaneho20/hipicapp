@@ -102,7 +102,7 @@
 					                        attr: { maxlength: validationUtils.MAX_LENGTH,
 						                        step: validationUtils.FLOAT_STEP,
 						                        placeholder: i18n.t('app:WEIGHT'),
-						                        title: i18n.t('app:WEIGHT') }" required>
+						                        title: i18n.t('app:WEIGHT') }" required autocomplete="off">
                                 </div>
                                 <div class="posicionado-left col-md-6 col-sm-6 col-xs-12">
                                     <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
@@ -130,14 +130,14 @@
                                 </div>
                                 <div class=" col-md-3 col-sm-3 col-xs-6">
                                 <label class="required hidden" for="h-athlete-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
-                                <select id="h-athlete-specialty"
-                                        data-bind="options: availableSpecialties,
+                                    <select id="h-athlete-specialty"
+                                            data-bind="options: availableSpecialties,
 						                        optionsValue: function(item) { return item.id },
 						                        optionsText: function(item) { return item.name },
 						                        optionsCaption : i18n.t('app:SPECIALTY') + '...',
 						                        value: currentEntity().specialtyId,
 						                        attr: { title: i18n.t('app:SPECIALTY') }"
-                                        required="required" class="form-control" aria-required="true"></select>
+                                            required="required" class="form-control" aria-required="true" autocomplete="off"></select>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <label class="required hidden" for="h-athlete-federation"
@@ -147,7 +147,7 @@
 					                    attr: { max: validationUtils.MAX_LENGTH,
 						                maxlength: validationUtils.MAX_LENGTH,
 						                placeholder: i18n.t('app:FEDERATION'),
-						                title: i18n.t('app:FEDERATION') }" required>
+						                title: i18n.t('app:FEDERATION') }" required autocomplete="off">
                                 </div>
 
                                 <!--<div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-right">
