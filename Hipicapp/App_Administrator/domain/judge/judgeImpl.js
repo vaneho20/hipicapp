@@ -45,7 +45,7 @@ define([
         judge.photo = photo;
         judge.specialty = specialty;
         judge.fullName = ko.computed(function () {
-            return judge.name() + " " + judge.surnames();
+            return judge.id ? judge.name() + " " + judge.surnames() : "";
         }, judge);
 
         return judge;

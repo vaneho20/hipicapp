@@ -64,7 +64,7 @@ define([
         athlete.specialty = specialty;
         athlete.user = user;
         athlete.fullName = ko.computed(function () {
-            return athlete.name() + " " + athlete.surnames();
+            return athlete.id ? athlete.name() + " " + athlete.surnames() : "";
         }, athlete);
 
         return athlete;

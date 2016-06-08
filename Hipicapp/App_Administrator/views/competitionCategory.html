@@ -11,48 +11,78 @@
                 <br />
                 <form role="form" data-bind="submit: save" novalidate>
                     <fieldset>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label class="required" for="h-competition-category-name"
-                                       data-bind="text: i18n.t('app:NAME')"></label>
-                                <input class="form-control" type="text" id="h-competition-category-name" autofocus
-                                       data-bind="value: currentEntity().name,
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="required" for="h-competition-category-name"
+                                           data-bind="text: i18n.t('app:NAME')"></label>
+                                    <input class="form-control" type="text" id="h-competition-category-name" autofocus
+                                           data-bind="value: currentEntity().name,
 						                attr: { max: validationUtils.MAX_LENGTH,
 							                maxlength: validationUtils.MAX_LENGTH,
 							                placeholder: i18n.t('app:NAME'),
 							                title: i18n.t('app:NAME')}" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-2 col-sm-2 col-xs-3 without-padding-left">
-                            <label class="required" for="h-initial-year" data-bind="text: i18n.t('app:INITIAL_YEAR')"></label>
-                            <div id="h-initial-year-picker" class="date input-group"
-                                 data-bind="datetimepickerValue: currentEntity().initialYear, dateTimePickerOptions: { format: i18n.t('app:YEAR_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
-                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                <input type="text" class="form-control" id="h-initial-year"
-                                       data-bind="attr: { placeholder: i18n.t('app:INITIAL_YEAR'), title: i18n.t('app:INITIAL_YEAR') }" required>
+                        <div class="row">
+                            <div class="group-form-checkbox col-md-2 col-sm-2 col-xs-4">
+                                <label>
+                                    <input type="checkbox" class="flat" style="position: absolute; opacity: 0;"
+                                           id="h-competition-category-previous"
+                                           data-bind="iCheck: currentEntity().previous, attr: {
+									    placeholder: i18n.t('app:PREVIOUS'),
+									    title: i18n.t('app:PREVIOUS') }">
+                                    <ins class="iCheck-helper"></ins>
+                                    <!-- ko text: i18n.t('app:PREVIOUS') --><!-- /ko -->
+                                </label>
+                            </div>
+                            <div class="form-group col-md-2 col-sm-2 col-xs-3 without-padding-left">
+                                <label class="required" for="h-initial-year" data-bind="text: i18n.t('app:INITIAL_YEAR')"></label>
+                                <div id="h-initial-year-picker" class="date input-group"
+                                     data-bind="datetimepickerValue: currentEntity().initialYear, dateTimePickerOptions: { format: i18n.t('app:YEAR_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="text" class="form-control" id="h-initial-year"
+                                           data-bind="attr: { placeholder: i18n.t('app:INITIAL_YEAR'), title: i18n.t('app:INITIAL_YEAR') }, epochValue: currentEntity().initialYear, epochValuePattern: i18n.t('app:YEAR_PATTERN')" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-2 col-sm-2 col-xs-3 without-padding-right">
-                            <label class="required" for="h-final-year" data-bind="text: i18n.t('app:FINAL_YEAR')"></label>
-                            <div id="h-final-year-picker" class="date input-group"
-                                 data-bind="datetimepickerValue: currentEntity().finalYear, dateTimePickerOptions: { format: i18n.t('app:YEAR_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
-                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                <input type="text" class="form-control" id="h-final-year"
-                                       data-bind="attr: { placeholder: i18n.t('app:FINAL_YEAR'), title: i18n.t('app:FINAL_YEAR') }" required>
+                        <div class="row">
+                            <div class="form-group col-md-2 col-sm-2 col-xs-3 without-padding-right">
+                                <label class="required" for="h-final-year" data-bind="text: i18n.t('app:FINAL_YEAR')"></label>
+                                <div id="h-final-year-picker" class="date input-group"
+                                     data-bind="datetimepickerValue: currentEntity().finalYear, dateTimePickerOptions: { format: i18n.t('app:YEAR_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE'), icons: { date: 'fa fa-calendar' , up: 'fa fa-arrow-up', down: 'fa fa-arrow-down' } }">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="text" class="form-control" id="h-final-year"
+                                           data-bind="attr: { placeholder: i18n.t('app:FINAL_YEAR'), title: i18n.t('app:FINAL_YEAR') }, epochValue: currentEntity().finalYear, epochValuePattern: i18n.t('app:YEAR_PATTERN')" required>
+                                </div>
+                            </div>
+                            <div class="group-form-checkbox col-md-2 col-sm-2 col-xs-4">
+                                <label>
+                                    <input type="checkbox" class="flat" style="position: absolute; opacity: 0;"
+                                           id="h-competition-category-later"
+                                           data-bind="iCheck: currentEntity().later, attr: {
+									    placeholder: i18n.t('app:LATER'),
+									    title: i18n.t('app:LATER') }">
+                                    <ins class="iCheck-helper"></ins>
+                                    <!-- ko text: i18n.t('app:LATER') --><!-- /ko -->
+                                </label>
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit"
-                                    data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
-                                    class="btn btn-primary">
-                                <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
-                            </button>
-                            <a data-bind="attr: {
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit"
+                                        data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"
+                                        class="btn btn-primary">
+                                    <i class="fa fa-save"></i> <span data-bind="text: i18n.t('app:SAVE_BUTTON_TEXT')"></span>
+                                </button>
+                                <a data-bind="attr: {
 						        href: competitionCategoryBroker.getListUrl(),
 						        title: i18n.t('app:CANCEL_BUTTON_TITLE') }"
-                               class="btn">
-                                <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
-                            </a>
+                                   class="btn">
+                                    <i class="fa fa-undo"></i> <span data-bind="text: i18n.t('app:CANCEL_BUTTON_TEXT')"></span>
+                                </a>
+                            </div>
                         </div>
                     </fieldset>
                 </form>

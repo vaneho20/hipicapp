@@ -6348,3 +6348,7 @@ input.gsc-input {
     margin-top: 10px;
     margin-left: -10px;
 }
+.group-form-checkbox {
+    margin-top: 30px;
+    margin-left: 0;
+}
