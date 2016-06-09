@@ -107,14 +107,14 @@
                                 <div class="posicionado-left col-md-6 col-sm-6 col-xs-12">
                                     <label for="h-athlete-birthdate" class="sr-only" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
                                     <div id="h-athlete-birthdate-picker" class="date input-group"
-                                         data-bind="datepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                         data-bind="datetimepickerValue: currentEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
                                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                        <input type="text" id="h-athlete-birthdate"
+                                        <input type="text" id="h-currentEntity-birthdate"
                                                data-bind="epochValue: currentEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
-	 				                                attr: { placeholder: i18n.t('app:BIRTHDATE'),
-	 				                                title: i18n.t('app:BIRTHDATE') }" required autocomplete="off">
+	 				                                        attr: { placeholder: i18n.t('app:BIRTHDATE'),
+	 				                                        title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-3 col-xs-6">
@@ -129,7 +129,7 @@
                                            required autocomplete="off">
                                 </div>
                                 <div class=" col-md-3 col-sm-3 col-xs-6">
-                                <label class="required hidden" for="h-athlete-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
+                                    <label class="required hidden" for="h-athlete-specialty" data-bind="text: i18n.t('app:SPECIALTY')"></label>
                                     <select id="h-athlete-specialty"
                                             data-bind="options: availableSpecialties,
 						                        optionsValue: function(item) { return item.id },
@@ -151,15 +151,15 @@
                                 </div>
 
                                 <!--<div class="form-group col-md-4 col-sm-4 col-xs-8 without-padding-right">
-                                    <label class="required" for="h-athlete-zipcode"
-                                           data-bind="text: i18n.t('app:ZIPCODE')"></label>
-                                    <input class="form-control" readonly type="text" id="h-athlete-zipcode" autofocus
-                                           data-bind="value: currentEntity().zipCode,
-					                    attr: { max: validationUtils.LENGTH_ZIPCODE,
-						                maxlength: validationUtils.LENGTH_ZIPCODE,
-						                placeholder: i18n.t('app:ZIPCODE'),
-						                title: i18n.t('app:ZIPCODE') }" required>
-                                </div>-->
+                    <label class="required" for="h-athlete-zipcode"
+                           data-bind="text: i18n.t('app:ZIPCODE')"></label>
+                    <input class="form-control" readonly type="text" id="h-athlete-zipcode" autofocus
+                           data-bind="value: currentEntity().zipCode,
+                        attr: { max: validationUtils.LENGTH_ZIPCODE,
+                        maxlength: validationUtils.LENGTH_ZIPCODE,
+                        placeholder: i18n.t('app:ZIPCODE'),
+                        title: i18n.t('app:ZIPCODE') }" required>
+                </div>-->
                             </div>
                             <button type="submit"
                                     data-bind="attr: { title: i18n.t('app:SAVE_BUTTON_TITLE')}"

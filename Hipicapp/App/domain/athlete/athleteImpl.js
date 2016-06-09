@@ -19,7 +19,7 @@ define([
         var athlete = {}, id = null, version = ko.observable(), dni = null, name = ko.observable(null),
             surnames = ko.observable(null), gender = ko.observable(null), photoId = null, userId = null,
             categoryId = null, birthDate = ko.observable(null), photo = null, user = userImpl(),
-            category = competitionCategoryImpl(), weight = null, specialtyId = null, specialty = specialtyImpl(),
+            category = null, weight = null, specialtyId = null, specialty = specialtyImpl(),
             federation = ko.observable(null), zipCode = ko.observable(null), placeId = ko.observable(null);
 
         if (currentAthlete) {
