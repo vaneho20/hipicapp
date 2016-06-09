@@ -1,11 +1,24 @@
 <section class="header-block">
     <div class="container">
         <div class="row">
-            <h1 data-bind="text: 'Inscripci&oacute;n'"></h1>
+            <h1>
+                <span data-bind="text: currentEntity().specialty.name"></span>
+                Inscripci&oacute;n
+            </h1>>
         </div>
     </div>
 </section>
-
+<nav class="nav navbar menu-principal">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().specialtyId) }">Inicio</a></li>
+            <li role="presentation"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().specialtyId) }">Jinetes</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().specialtyId) }">Caballos</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().specialtyId) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().specialtyId) }">Jueces</a></li>
+        </ul>
+    </div>
+</nav>
 <section id="contenido-interior">
     <div class="container">
         <div class="row">

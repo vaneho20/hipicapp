@@ -386,9 +386,12 @@ body {
                     -webkit-border-radius: 4px;
                     -moz-border-radius: 4px;
                     border-radius: 4px;
+                    border: 1px solid #f74b4b;
                     background: #f74b4b;
 
-                    &:hover {
+                    &:hover,
+                    &:active,
+                    &:focus {
                         color: #fff;
                         background: #f74b4b;
                     }
@@ -1389,15 +1392,15 @@ body {
     }
     /* theming */
     .alert-success {
-        color: #333;
-        background-color: #dff0d8;
-        border-color: #dff0d8;
+        color: #ffffff;
+        background-color: rgba(38, 185, 154, 0.88);
+        border-color: rgba(38, 185, 154, 0.88);
     }
 
     .alert-info {
-        color: #333;
-        background-color: #d9edf7;
-        border-color: #d9edf7;
+        color: #E9EDEF;
+        background-color: #a4acb9;
+        border-color: #97aacb;
     }
 
     .alert-warning {
@@ -1407,9 +1410,9 @@ body {
     }
 
     .alert-danger, .alert-error {
-        color: #333;
-        background-color: #f2dede;
-        border-color: #f2dede;
+        color: #E9EDEF;
+        background-color: rgba(231, 76, 60, 0.88);
+        border-color: rgba(231, 76, 60, 0.88);
     }
 
     .alert-dark {

@@ -275,8 +275,9 @@ body {
           -webkit-border-radius: 4px;
           -moz-border-radius: 4px;
           border-radius: 4px;
+          border: 1px solid #f74b4b;
           background: #f74b4b; }
-          body #section-content-login #contenido-interior .loginmodal-container input[type=submit]:hover, body #section-content-login #contenido-interior .loginmodal-container button[type=submit]:hover {
+          body #section-content-login #contenido-interior .loginmodal-container input[type=submit]:hover, body #section-content-login #contenido-interior .loginmodal-container input[type=submit]:active, body #section-content-login #contenido-interior .loginmodal-container input[type=submit]:focus, body #section-content-login #contenido-interior .loginmodal-container button[type=submit]:hover, body #section-content-login #contenido-interior .loginmodal-container button[type=submit]:active, body #section-content-login #contenido-interior .loginmodal-container button[type=submit]:focus {
             color: #fff;
             background: #f74b4b; }
         body #section-content-login #contenido-interior .loginmodal-container input, body #section-content-login #contenido-interior .loginmodal-container input[type=text], body #section-content-login #contenido-interior .loginmodal-container input[type=password], body #section-content-login #contenido-interior .loginmodal-container input[type=number], body #section-content-login #contenido-interior .loginmodal-container select {
@@ -949,21 +950,21 @@ body {
     font-size: 5em;
     text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px; }
   body .alert-success {
-    color: #333;
-    background-color: #dff0d8;
-    border-color: #dff0d8; }
+    color: #ffffff;
+    background-color: rgba(38, 185, 154, 0.88);
+    border-color: rgba(38, 185, 154, 0.88); }
   body .alert-info {
-    color: #333;
-    background-color: #d9edf7;
-    border-color: #d9edf7; }
+    color: #E9EDEF;
+    background-color: #a4acb9;
+    border-color: #97aacb; }
   body .alert-warning {
     color: #333;
     background-color: #fcf8e3;
     border-color: #fcf8e3; }
   body .alert-danger, body .alert-error {
-    color: #333;
-    background-color: #f2dede;
-    border-color: #f2dede; }
+    color: #E9EDEF;
+    background-color: rgba(231, 76, 60, 0.88);
+    border-color: rgba(231, 76, 60, 0.88); }
   body .alert-dark {
     color: #E9EDEF;
     background-color: rgba(52, 73, 94, 0.88);

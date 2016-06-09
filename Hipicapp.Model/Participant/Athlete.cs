@@ -107,7 +107,7 @@ namespace Hipicapp.Model.Participant
 
             Id(x => x.Id).Column("ID").GeneratedBy.Native();
 
-            Map(x => x.CategoryId).Column("CATEGORY_ID").Not.Nullable();
+            Map(x => x.CategoryId).Column("CATEGORY_ID");
             Map(x => x.SpecialtyId).Column("SPECIALTY_ID").Not.Nullable();
             Map(x => x.PhotoId).Column("PHOTO_ID").Nullable();
             Map(x => x.UserId).Column("USER_ID").Not.Nullable();
