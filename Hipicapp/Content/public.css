@@ -949,21 +949,21 @@ body {
     font-size: 5em;
     text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px; }
   body .alert-success {
-    color: #ffffff;
-    background-color: rgba(38, 185, 154, 0.88);
-    border-color: rgba(38, 185, 154, 0.88); }
+    color: #333;
+    background-color: #dff0d8;
+    border-color: #dff0d8; }
   body .alert-info {
-    color: #E9EDEF;
-    background-color: #a4acb9;
-    border-color: #97aacb; }
+    color: #333;
+    background-color: #d9edf7;
+    border-color: #d9edf7; }
   body .alert-warning {
-    color: #E9EDEF;
-    background-color: rgba(243, 156, 18, 0.88);
-    border-color: rgba(243, 156, 18, 0.88); }
+    color: #333;
+    background-color: #fcf8e3;
+    border-color: #fcf8e3; }
   body .alert-danger, body .alert-error {
-    color: #E9EDEF;
-    background-color: rgba(231, 76, 60, 0.88);
-    border-color: rgba(231, 76, 60, 0.88); }
+    color: #333;
+    background-color: #f2dede;
+    border-color: #f2dede; }
   body .alert-dark {
     color: #E9EDEF;
     background-color: rgba(52, 73, 94, 0.88);

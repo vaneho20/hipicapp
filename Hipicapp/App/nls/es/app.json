@@ -234,6 +234,7 @@
     "COMPETITION_JUDGE_LIST_EMPTY_DETAIL": "",
     "COMPETITION_ATHLETE_LIST_EMPTY_SUMMARY": "¡Aún no se han inscripto jinetes a este concurso!",
     "COMPETITION_ATHLETE_LIST_EMPTY_DETAIL": "",
+    "COMPETITION_HORSE_ENROLLED": "¡Actualmente estas inscrito a este concurso, si lo deseas puedes cambiar de caballo!",
     "COMPETITION_CATEGORY": "Categoría",
     "COMPETITION_CATEGORIES": "Categorías",
     "COMPETITION_CATEGORY_FILTER_LEGEND": "Buscar categorías",
