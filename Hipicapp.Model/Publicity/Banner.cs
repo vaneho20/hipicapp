@@ -28,6 +28,7 @@ namespace Hipicapp.Model.Publicity
         [NotEmpty]
         [Size(Min = 1, Max = ValidationUtils.MAX_LENGTH_URL)]
         [SafeHtml(WhiteListType.NONE)]
+        [URL]
         public virtual string Web { get; set; }
 
         [NotNull]

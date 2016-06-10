@@ -200,6 +200,8 @@
     "BANNER_LIST_EMPTY_SUMMARY": "¡Aún no has creado ningún banner!",
     "BANNER_LIST_EMPTY_DETAIL": "Crea ahora un primer banner en <strong>Hipicapp</strong>.",
     "visible": "Visible",
+    "title": "Título",
+    "web": "Página web",
     "JUDGE": "Juez",
     "JUDGES": "Jueces",
     "JUDGE_FILTER_LEGEND": "Buscar jueces",

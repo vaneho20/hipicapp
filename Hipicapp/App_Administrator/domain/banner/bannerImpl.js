@@ -8,7 +8,7 @@ define(["domain/specialty/specialtyImpl"], function bannerImplModule(specialtyIm
 
     /* jshint maxstatements: 35 */
     function bannerImpl(currentBanner) {
-        var banner = {}, id = null, version = ko.observable(), title = null, web = null, visible = null,
+        var banner = {}, id = null, version = ko.observable(), title = null, web = null, visible = ko.observable(),
             imageId = null, specialtyId = null, image = null, specialty = specialtyImpl();
 
         if (currentBanner) {
@@ -16,7 +16,7 @@ define(["domain/specialty/specialtyImpl"], function bannerImplModule(specialtyIm
             version(currentBanner.version);
             title = currentBanner.title;
             web = currentBanner.web;
-            visible = currentBanner.visible;
+            visible(currentBanner.visible);
             specialtyId = currentBanner.specialtyId;
             imageId = currentBanner.imageId;
             image = currentBanner.image;

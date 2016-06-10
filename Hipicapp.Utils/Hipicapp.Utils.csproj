@@ -113,6 +113,8 @@
     <Compile Include="Text\StringUtils.cs" />
     <Compile Include="Util\ValidationUtils.cs" />
     <Compile Include="Validator\IInitializableValidator.cs" />
+    <Compile Include="Validator\URLAttribute.cs" />
+    <Compile Include="Validator\URLValidator.cs" />
     <Compile Include="Validator\SafeHtmlValidator.cs" />
     <Compile Include="Validator\SafeHtmlAttribute.cs" />
     <Compile Include="Validator\NifAttribute.cs" />

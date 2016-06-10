@@ -171,6 +171,9 @@
   <data name="validator.size" xml:space="preserve">
     <value>la longitud tiene que estar entre {Min} y {Max}</value>
   </data>
+  <data name="validator.URL" xml:space="preserve">
+    <value>debe ser una dirección URL válida</value>
+  </data>
   <data name="validator.within" xml:space="preserve">
     <value>debe estar dentro de {Min} y {Max}</value>
   </data>

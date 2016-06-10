@@ -43,15 +43,15 @@
 						            attr: { title: i18n.t('app:SPECIALTY') }"
                                 required="required" class="form-control" aria-required="true"></select>
                     </div>
-                    <div class="checkbox col-md-3 col-sm-3 col-xs-6">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
                         <label>
-                            <input type="checkbox"
+                            <input type="checkbox" class="flat" style="position: absolute; opacity: 0;"
                                    id="h-banner-visible"
-                                   data-bind="checked: currentEntity().visible,
-								attr: {
-									placeholder: i18n.t('app:VISIBLE'),
-									title: i18n.t('app:VISIBLE') }">
-                            <span data-bind="text: i18n.t('app:VISIBLE')"></span>
+                                   data-bind="iCheck: currentEntity().visible, attr: {
+									    placeholder: i18n.t('app:VISIBLE'),
+									    title: i18n.t('app:VISIBLE') }">
+                            <ins class="iCheck-helper"></ins>
+                            <!-- ko text: i18n.t('app:VISIBLE') --><!-- /ko -->
                         </label>
                     </div>
                 </div>                
