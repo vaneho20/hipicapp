@@ -43,9 +43,11 @@ namespace Hipicapp.Model.Account
         public virtual string OldPassword { get; set; }
 
         [SafeHtml(WhiteListType.NONE)]
+        [Pattern(Regex = ".{6,}", Message = "{hipicapp.validator.password.pattern}")]
         public virtual string NewPassword { get; set; }
 
         [SafeHtml(WhiteListType.NONE)]
+        [Pattern(Regex = ".{6,}", Message = "{hipicapp.validator.password.pattern}")]
         public virtual string ConfirmNewPassword { get; set; }
 
         [SafeHtml(WhiteListType.NONE)]

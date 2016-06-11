@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a debe tener 6 carácteres como mínimo.
+        /// </summary>
+        public static string hipicapp_validator_password_pattern {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.password.pattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a tiene que ser único.
         /// </summary>
         public static string hipicapp_validator_unique {
