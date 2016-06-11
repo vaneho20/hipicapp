@@ -11,6 +11,7 @@ using System.Collections.Generic;
 namespace Hipicapp.Model.Event
 {
     [JsonObject]
+    [ValidCompetition]
     public class Competition : Entity<long?>
     {
         [NotNull]

@@ -183,4 +183,16 @@
   <data name="hipicapp.validator.user.new.password.not.equal.confirm.new.password" xml:space="preserve">
     <value>debe ser igual que Confirmar nueva contraseña</value>
   </data>
+  <data name="hipicapp.validator.competition" xml:space="preserve">
+    <value>La competición no es válida</value>
+  </data>
+  <data name=".validator.competition.registratio.start.date.lt.registration.end.date" xml:space="preserve">
+    <value>debe ser menor que Fecha fin de inscripción</value>
+  </data>
+  <data name="hipicapp.validator.competition.start.date.lt.end.date" xml:space="preserve">
+    <value>debe ser menor que Fin de la competición</value>
+  </data>
+  <data name="hipicapp.validator.competition.registration.end.date.lt.start.date" xml:space="preserve">
+    <value>debe ser menor que Inicio de la competición</value>
+  </data>
 </root>
