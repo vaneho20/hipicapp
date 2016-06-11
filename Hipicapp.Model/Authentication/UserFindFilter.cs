@@ -4,6 +4,6 @@ namespace Hipicapp.Model.Authentication
     {
         public string UserName { get; set; }
 
-        public bool Enabled { get; set; }
+        public bool? Enabled { get; set; }
     }
 }

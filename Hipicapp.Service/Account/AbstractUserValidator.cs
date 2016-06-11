@@ -14,6 +14,8 @@ namespace Hipicapp.Service.Account
 
             isValid = isValid && this.CheckUniqueUserName(entity, context);
 
+            isValid = isValid && this.CheckMatchPassword(entity, context);
+
             if (!isValid)
             {
                 context.DisableDefaultError();
@@ -32,6 +34,18 @@ namespace Hipicapp.Service.Account
             {
                 isValid = false;
                 context.AddInvalid<User, string>("{hipicapp.validator.user.email.unique}", x => x.UserName);
+            }
+            return isValid;
+        }
+
+        private bool CheckMatchPassword(User user, IConstraintValidatorContext context)
+        {
+            bool isValid = user.NewPassword == null || user.ConfirmNewPassword == null;
+
+            if (user.NewPassword != user.ConfirmNewPassword)
+            {
+                isValid = false;
+                context.AddInvalid<User, string>("{hipicapp.validator.user.new.password.not.equal.confirm.new.password}", x => x.NewPassword);
             }
             return isValid;
         }

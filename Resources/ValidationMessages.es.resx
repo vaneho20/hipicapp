@@ -180,4 +180,7 @@
   <data name="validator.within" xml:space="preserve">
     <value>debe estar dentro de {Min} y {Max}</value>
   </data>
+  <data name="hipicapp.validator.user.new.password.not.equal.confirm.new.password" xml:space="preserve">
+    <value>debe ser igual que Confirmar nueva contraseña</value>
+  </data>
 </root>

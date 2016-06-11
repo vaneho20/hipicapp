@@ -55,7 +55,6 @@ namespace Hipicapp.Model.Event
         public virtual string PlaceId { get; set; }
 
         [NotNull]
-        //[Future]
         public virtual DateTime? StartDate { get; set; }
 
         [NotNull]
@@ -63,11 +62,9 @@ namespace Hipicapp.Model.Event
         public virtual DateTime? EndDate { get; set; }
 
         [NotNull]
-        //[Future]
         public virtual DateTime? RegistrationStartDate { get; set; }
 
         [NotNull]
-        //[Future]
         public virtual DateTime? RegistrationEndDate { get; set; }
 
         public virtual DateTime? CreationDate { get; set; }

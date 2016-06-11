@@ -23,7 +23,7 @@ namespace Hipicapp.Model.Participant
         public virtual string Name { get; set; }
 
         [NotNull]
-        [Min(0)]
+        [Min(120)]
         public virtual float? Height { get; set; }
 
         [NotNull]
@@ -34,7 +34,7 @@ namespace Hipicapp.Model.Participant
         public virtual Gender? Gender { get; set; }
 
         [NotNull]
-        [Min(0)]
+        [Min(350)]
         public virtual float? Weight { get; set; }
 
         public virtual FileInfo Photo { get; set; }

@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a debe ser igual que Confirmar nueva contraseña.
+        /// </summary>
+        public static string hipicapp_validator_user_new_password_not_equal_confirm_new_password {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.user.new.password.not.equal.confirm.new.password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a valor numérico fuera de los límites (se esperaba &lt;{integer} dígitos&gt;.&lt;{fraction} dígitos).
         /// </summary>
         public static string validator_digits {

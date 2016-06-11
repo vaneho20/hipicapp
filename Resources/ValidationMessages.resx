@@ -180,4 +180,7 @@
   <data name="hipicapp.validator.password.pattern" xml:space="preserve">
     <value>debe tener 6 carácteres como mínimo</value>
   </data>
+  <data name="hipicapp.validator.user.new.password.not.equal.confirm.new.password" xml:space="preserve">
+    <value>debe ser igual que Confirmar nueva contraseña</value>
+  </data>
 </root>
