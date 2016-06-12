@@ -28,21 +28,21 @@ namespace Hipicapp.Service.Event
 
         private bool CheckInscriptionDate(Competition competition, IConstraintValidatorContext context)
         {
-            bool isValid = competition.RegistrationStartDate == null || competition.RegistrationEndDate == null;
+            bool isValid = competition.RegistrationStartDate != null && competition.RegistrationEndDate != null;
 
-            if (DateTime.Compare(competition.RegistrationStartDate.Value, competition.RegistrationEndDate.Value) >= 0)
+            if (isValid && DateTime.Compare(competition.RegistrationStartDate.Value, competition.RegistrationEndDate.Value) >= 0)
             {
                 isValid = false;
-                context.AddInvalid<Competition, DateTime?>("{hipicapp.validator.competition.registratio.start.date.lt.registration.end.date}", x => x.RegistrationStartDate);
+                context.AddInvalid<Competition, DateTime?>("{hipicapp.validator.competition.registration.start.date.lt.registration.end.date}", x => x.RegistrationStartDate);
             }
             return isValid;
         }
 
         private bool CheckCompetitionDate(Competition competition, IConstraintValidatorContext context)
         {
-            bool isValid = competition.StartDate == null || competition.EndDate == null;
+            bool isValid = competition.StartDate != null && competition.EndDate != null;
 
-            if (DateTime.Compare(competition.StartDate.Value, competition.EndDate.Value) >= 0)
+            if (isValid && DateTime.Compare(competition.StartDate.Value, competition.EndDate.Value) >= 0)
             {
                 isValid = false;
                 context.AddInvalid<Competition, DateTime?>("{hipicapp.validator.competition.start.date.lt.end.date}", x => x.StartDate);
@@ -52,9 +52,9 @@ namespace Hipicapp.Service.Event
 
         private bool CheckCompetitionStartDate(Competition competition, IConstraintValidatorContext context)
         {
-            bool isValid = competition.RegistrationEndDate == null || competition.StartDate == null;
+            bool isValid = competition.RegistrationEndDate != null && competition.StartDate != null;
 
-            if (DateTime.Compare(competition.RegistrationEndDate.Value, competition.StartDate.Value) >= 0)
+            if (isValid && DateTime.Compare(competition.RegistrationEndDate.Value, competition.StartDate.Value) >= 0)
             {
                 isValid = false;
                 context.AddInvalid<Competition, DateTime?>("{hipicapp.validator.competition.registration.end.date.lt.start.date}", x => x.RegistrationEndDate);

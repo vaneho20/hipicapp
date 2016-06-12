@@ -10,8 +10,8 @@ using System.Collections.Generic;
 
 namespace Hipicapp.Model.Event
 {
-    [JsonObject]
     [ValidCompetition]
+    [JsonObject]
     public class Competition : Entity<long?>
     {
         [NotNull]

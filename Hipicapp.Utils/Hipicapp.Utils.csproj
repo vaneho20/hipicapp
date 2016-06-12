@@ -112,11 +112,8 @@
     <Compile Include="Security\PasswordGenerator.cs" />
     <Compile Include="Text\StringUtils.cs" />
     <Compile Include="Util\ValidationUtils.cs" />
-    <Compile Include="Validator\IInitializableStructValidator.cs" />
     <Compile Include="Validator\InitializableValidator.cs" />
-    <Compile Include="Validator\CompareDateAttribute.cs" />
     <Compile Include="Validator\URLAttribute.cs" />
-    <Compile Include="Validator\CompareDateValidator.cs" />
     <Compile Include="Validator\URLValidator.cs" />
     <Compile Include="Validator\SafeHtmlValidator.cs" />
     <Compile Include="Validator\SafeHtmlAttribute.cs" />

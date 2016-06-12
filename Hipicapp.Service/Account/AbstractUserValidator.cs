@@ -40,7 +40,7 @@ namespace Hipicapp.Service.Account
 
         private bool CheckMatchPassword(User user, IConstraintValidatorContext context)
         {
-            bool isValid = user.NewPassword == null || user.ConfirmNewPassword == null;
+            bool isValid = user.NewPassword != null && user.ConfirmNewPassword != null;
 
             if (user.NewPassword != user.ConfirmNewPassword)
             {

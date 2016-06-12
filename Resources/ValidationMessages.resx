@@ -186,7 +186,7 @@
   <data name="hipicapp.validator.competition" xml:space="preserve">
     <value>La competición no es válida</value>
   </data>
-  <data name=".validator.competition.registratio.start.date.lt.registration.end.date" xml:space="preserve">
+  <data name="hipicapp.validator.competition.registration.start.date.lt.registration.end.date" xml:space="preserve">
     <value>debe ser menor que Fecha fin de inscripción</value>
   </data>
   <data name="hipicapp.validator.competition.start.date.lt.end.date" xml:space="preserve">

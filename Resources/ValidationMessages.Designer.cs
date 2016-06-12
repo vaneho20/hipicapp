@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a debe ser menor que Fecha fin de inscripción.
-        /// </summary>
-        public static string _validator_competition_registratio_start_date_lt_registration_end_date {
-            get {
-                return ResourceManager.GetString(".validator.competition.registratio.start.date.lt.registration.end.date", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a La competición no es válida.
         /// </summary>
         public static string hipicapp_validator_competition {
@@ -84,6 +75,15 @@ namespace Resources {
         public static string hipicapp_validator_competition_registration_end_date_lt_start_date {
             get {
                 return ResourceManager.GetString("hipicapp.validator.competition.registration.end.date.lt.start.date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a debe ser menor que Fecha fin de inscripción.
+        /// </summary>
+        public static string hipicapp_validator_competition_registration_start_date_lt_registration_end_date {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.competition.registration.start.date.lt.registration.end.date", resourceCulture);
             }
         }
         

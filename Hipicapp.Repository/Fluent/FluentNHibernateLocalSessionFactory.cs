@@ -1,5 +1,4 @@
 ﻿using FluentNHibernate;
-using NHibernate.Caches.SysCache;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using Spring.Data.NHibernate;
@@ -43,12 +42,12 @@ namespace Hipicapp.Repository.Fluent
             config.SetListener(ListenerType.PreCollectionRecreate, new UnneAuditEventListener());
             config.SetListener(ListenerType.PreCollectionUpdate, new UnneAuditEventListener());
             config.SetListener(ListenerType.PreCollectionRemove, new UnneAuditEventListener());*/
-            config.Cache(c =>
+            /*config.Cache(c =>
             {
                 c.UseMinimalPuts = true;
                 c.UseQueryCache = true;
                 c.Provider<SysCacheProvider>();
-            });
+            });*/
             NHVConfiguration.Initialize(config);
         }
     }
