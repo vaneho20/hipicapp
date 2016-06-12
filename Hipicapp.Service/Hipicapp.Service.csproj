@@ -101,8 +101,10 @@
   <ItemGroup>
     <Compile Include="Account\DefaultUserValidator.cs" />
     <Compile Include="Account\UserPredicates.cs" />
+    <Compile Include="Event\AbstractCompetitionCategoryValidator.cs" />
     <Compile Include="Event\AbstractCompetitionValidator.cs" />
     <Compile Include="Event\AlreadyEnrolledPolicy.cs" />
+    <Compile Include="Event\DefaultCompetitionCategoryValidator.cs" />
     <Compile Include="Event\DefaultCompetitionValidator.cs" />
     <Compile Include="Event\EnrollmentExpiredPolicy.cs" />
     <Compile Include="Event\EnrollmentPredicates.cs" />

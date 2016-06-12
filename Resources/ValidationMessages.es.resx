@@ -195,4 +195,10 @@
   <data name="hipicapp.validator.competition.registration.end.date.lt.start.date" xml:space="preserve">
     <value>debe ser menor que Inicio de la competición</value>
   </data>
+  <data name="hipicapp.validator.competition.category" xml:space="preserve">
+    <value>La categoría no es válida</value>
+  </data>
+  <data name="hipicapphipicapp.validator.competition.category.range.of.years" xml:space="preserve">
+    <value>Ya existe una categoría que incluye este rango de años</value>
+  </data>
 </root>

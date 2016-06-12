@@ -264,7 +264,7 @@
     "Hipicapp_Service_Exceptions_AlreadyEnrolledException": "¡Oops! Este caballo ya esta inscrito al concurso",
     "Hipicapp_Service_Exceptions_BadCredentialsException": "¡Oops! Tu correo electrónico o tu contraseña no son válidos",
     "Hipicapp_Service_Exceptions_CompetitionExpiredException": "¡Vaya! El concurso ha expirado",
-    "Hipicapp_Service_Exceptions_EnrollmentExpiredException": "¡Vaya! La fecha de inscripción al concurso ha caducadoS",
+    "Hipicapp_Service_Exceptions_EnrollmentExpiredException": "¡Vaya! La fecha de inscripción al concurso ha caducado",
     "Hipicapp_Service_Exceptions_MaximumNumberOfJudgesExceededException": "¡Vaya! Ha superado el número de jueces máximo para la especialidad el concurso",
     "Hipicapp_Service_Exceptions_MinimumAgeOfHorseUnsurpassedException": "¡Vaya! El caballo no supera la edad permitida por la especialidad del concurso",
     "Hipicapp_Service_Exceptions_NoSameCompetitionCategoryException": "¡Vaya! No perteneces a la misma categoría que el concurso al que deseas inscribirte",

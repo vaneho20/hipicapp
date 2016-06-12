@@ -36,7 +36,14 @@ namespace Hipicapp.Filters
                     {
                         NHibernate.Validator.Cfg.Environment.SharedEngineProvider.GetEngine().Validate(currentBoundValue, new object[0]).ToList().ForEach(y =>
                         {
-                            actionContext.ModelState.AddModelError(y.PropertyName, y.Message);
+                            if (string.IsNullOrEmpty(y.PropertyName))
+                            {
+                                actionContext.ModelState.AddModelError("", y.Message);
+                            }
+                            else
+                            {
+                                actionContext.ModelState.AddModelError(y.PropertyName, y.Message);
+                            }
                         });
                     }
                 }

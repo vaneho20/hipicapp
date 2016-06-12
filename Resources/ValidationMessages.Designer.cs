@@ -70,6 +70,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La categoría no es válida.
+        /// </summary>
+        public static string hipicapp_validator_competition_category {
+            get {
+                return ResourceManager.GetString("hipicapp.validator.competition.category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a debe ser menor que Inicio de la competición.
         /// </summary>
         public static string hipicapp_validator_competition_registration_end_date_lt_start_date {
@@ -129,6 +138,15 @@ namespace Resources {
         public static string hipicapp_validator_user_new_password_not_equal_confirm_new_password {
             get {
                 return ResourceManager.GetString("hipicapp.validator.user.new.password.not.equal.confirm.new.password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ya existe una categoría que incluye este rango de años.
+        /// </summary>
+        public static string hipicapphipicapp_validator_competition_category_range_of_years {
+            get {
+                return ResourceManager.GetString("hipicapphipicapp.validator.competition.category.range.of.years", resourceCulture);
             }
         }
         

@@ -6,6 +6,7 @@ using NHibernate.Validator.Constraints;
 
 namespace Hipicapp.Model.Event
 {
+    [ValidCompetitionCategory]
     [JsonObject]
     public class CompetitionCategory : Entity<long?>
     {
