@@ -151,6 +151,20 @@ namespace Hipicapp.Service.Event
         }
 
         [Transaction(ReadOnly = true)]
+        public IList<Ranking> FullAdultRankingsBySpecialtyId(long? specialtyId)
+        {
+            return this.ScoreRepository.GetAllQueryable()
+                .Where(x => /*x.Competition.Name.StartsWith("Adulto") && */x.Competition.Specialty.Id == specialtyId)
+                .GroupBy(x => x.Horse.Athlete)
+                .OrderByDescending(x => x.Sum(y => y.Value))
+                .Select(x => new Ranking
+                {
+                    Athlete = x.Key,
+                    Value = x.Sum(y => y.Value)
+                }).ToList();
+        }
+
+        [Transaction(ReadOnly = true)]
         public IList<Competition> FindNextBySpecialtyId(long? specialtyId)
         {
             return this.CompetitionRepository.GetAllQueryable()

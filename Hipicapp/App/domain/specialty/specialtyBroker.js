@@ -40,6 +40,10 @@ define([
         return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, id);
     }
 
+    function getClassificationUrlById(id) {
+        return brokerUtils.HASH_CHAR + urlUtils.joinPath(brokerUtils.requestMappings.SPECIALTY, id, brokerUtils.requestMappings.CLASSIFICATION);
+    }
+
     function evictCache() {
         CACHE.evict();
     }
@@ -51,6 +55,7 @@ define([
     broker.findById = findById;
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;
+    broker.getClassificationUrlById = getClassificationUrlById;
 
     return broker;
 });

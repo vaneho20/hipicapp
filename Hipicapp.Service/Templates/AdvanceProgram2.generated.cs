@@ -174,11 +174,21 @@ WriteLiteral("                <tr>\r\n                    <td>");
             
             #line default
             #line hidden
+WriteLiteral("</td>\r\n                    <td>");
+
+
+            
+            #line 63 "..\..\Templates\AdvanceProgram.cshtml"
+                   Write(enrollment.Horse.Name);
+
+            
+            #line default
+            #line hidden
 WriteLiteral("</td>\r\n                </tr>\r\n");
 
 
             
-            #line 64 "..\..\Templates\AdvanceProgram.cshtml"
+            #line 65 "..\..\Templates\AdvanceProgram.cshtml"
             }
 
             

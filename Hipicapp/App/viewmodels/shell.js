@@ -30,6 +30,7 @@
                     { route: 'specialty/:id/competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true },
                     { route: 'specialty/:id/horses', title: 'Caballos', moduleId: 'viewmodels/horses', nav: true },
                     { route: 'specialty/:id/judges', title: 'Jueces', moduleId: 'viewmodels/judges', nav: true },
+                    { route: 'specialty/:id/classification', title: 'Clasificación', moduleId: 'viewmodels/classification', nav: false },
                     { route: 'athlete(/:id)', title: 'Ficha', moduleId: 'viewmodels/athlete', nav: false, hash: '#athlete' },
                     { route: 'athlete/:id/personal-information', title: 'Información personal', moduleId: 'viewmodels/athletePersonalInformation', nav: false },
                     { route: 'athlete/:id/images', title: 'Foto', moduleId: 'viewmodels/athleteImages', nav: false },

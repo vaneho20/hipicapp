@@ -77,6 +77,14 @@ namespace Hipicapp.Controllers.Event
 
         [AcceptVerbs("GET")]
         [HttpGet]
+        [Route("FullAdultRankingsBySpecialtyId/{specialtyId}")]
+        public IList<Ranking> FullAdultRankingsBySpecialtyId([FromUri]long? specialtyId)
+        {
+            return this.CompetitionProxy.FullAdultRankingsBySpecialtyId(specialtyId);
+        }
+
+        [AcceptVerbs("GET")]
+        [HttpGet]
         [Route("findNextBySpecialtyId/{specialtyId}")]
         public IList<Competition> FindNextBySpecialtyId([FromUri]long? specialtyId)
         {

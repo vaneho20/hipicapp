@@ -70,6 +70,12 @@ namespace Hipicapp.Proxy.Event
             return this.CompetitionService.AdultRankingsBySpecialtyId(specialtyId);
         }
 
+        [AllowAnonymous]
+        public IList<Ranking> FullAdultRankingsBySpecialtyId(long? specialtyId)
+        {
+            return this.CompetitionService.FullAdultRankingsBySpecialtyId(specialtyId);
+        }
+
         [AuthorizeEnum(Rol.ADMINISTRATOR)]
         public Competition Save(Competition competition)
         {

@@ -37,6 +37,11 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
                 brokerUtils.requestMappings.ADULT_RANKINGS_BY_SPECIALTY_ID, brokerUtils.requestMappings.SPECIALTY_ID), brokerUtils.verb.GET, CACHE_NAME));
 
+    amplify.request.define("competitions/fullAdultRankingsBySpecialtyId", brokerUtils.REQUEST_TYPE, brokerUtils
+        .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
+                brokerUtils.requestMappings.FULL_ADULT_RANKINGS_BY_SPECIALTY_ID, brokerUtils.requestMappings.SPECIALTY_ID), brokerUtils.verb.GET, CACHE_NAME));
+
     amplify.request.define("competitions/findNextBySpecialtyId", brokerUtils.REQUEST_TYPE, brokerUtils
         .getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.COMPETITIONS,
@@ -62,6 +67,12 @@ define([
 
     function adultRankingsBySpecialtyId(specialtyId) {
         return amplify.request("competitions/adultRankingsBySpecialtyId", {
+            specialtyId: specialtyId
+        });
+    }
+
+    function fullAdultRankingsBySpecialtyId(specialtyId) {
+        return amplify.request("competitions/fullAdultRankingsBySpecialtyId", {
             specialtyId: specialtyId
         });
     }
@@ -105,6 +116,7 @@ define([
     broker.findSeminaryBy = findSeminaryBy;
     broker.findNextBySpecialtyId = findNextBySpecialtyId;
     broker.adultRankingsBySpecialtyId = adultRankingsBySpecialtyId;
+    broker.fullAdultRankingsBySpecialtyId = fullAdultRankingsBySpecialtyId;
 
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;

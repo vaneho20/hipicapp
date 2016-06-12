@@ -26,6 +26,8 @@ namespace Hipicapp.Service.Event
 
         IList<Ranking> AdultRankingsBySpecialtyId(long? specialtyId);
 
+        IList<Ranking> FullAdultRankingsBySpecialtyId(long? specialtyId);
+
         IList<Competition> FindNextBySpecialtyId(long? specialtyId);
 
         IList<Competition> FindLast();

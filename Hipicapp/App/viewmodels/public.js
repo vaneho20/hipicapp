@@ -19,6 +19,7 @@
                     { route: 'register', title: 'Registro', moduleId: 'viewmodels/register', nav: false, hash: '#register' },
                     { route: 'reset-password', title: 'Reestablecer contraseña', moduleId: 'viewmodels/passwordreset', nav: false, hash: '#reset-password' },
                     { route: 'update-password/:key', title: 'Actualizar contraseña', moduleId: 'viewmodels/updatepassword', nav: false, hash: '#update-password' },
+                    { route: 'specialty/:id/classification', title: 'Clasificación', moduleId: 'viewmodels/classification', nav: false },
                     { route: 'specialty/:id', title: 'Disciplina', moduleId: 'viewmodels/specialty', nav: false, hash: '#specialty' },
                     { route: 'specialty/:id/athletes', title: 'Jinetes', moduleId: 'viewmodels/athletes', nav: true },
                     { route: 'specialty/:id/competitions', title: 'Concursos', moduleId: 'viewmodels/competitions', nav: true },
