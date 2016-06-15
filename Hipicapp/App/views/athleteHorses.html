@@ -7,40 +7,40 @@
     <!-- /ko -->
 </header>
 <article class="row">
-    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Foto
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Nombre
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Nacimiento
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Peso y Altura
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Sexo
     </div>
-    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Acciones
     </div>
 </article>
 <article data-bind="foreach: currentPage().content">
     <div class="row">
-        <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
+        <div class="foto-listados col-md-2 col-sm-2 col-xs-2">
             <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-2">
             <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id) }, text: name"></a>
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: weight + 'kg y ' + height + 'cm'">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: weight + 'kg y ' + height + 'cm'">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: $root.availableGenders[gender]">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: $root.availableGenders[gender]">
         </div>
-        <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-4">
+        <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-2">
             <!-- ko if: $root.securityContext.isAuthenticated() && athlete.userId === parseInt($root.securityContext.getPrincipal().id) -->
                 <a class="accion" data-bind="attr: {
 				    href: $root.horseBroker.getEditUrlById(id),

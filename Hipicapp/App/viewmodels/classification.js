@@ -52,6 +52,7 @@ define([
     viewModel.horseBroker = horseBroker;
     viewModel.judgeBroker = judgeBroker;
     viewModel.specialtyBroker = specialtyBroker;
+    viewModel.shell = shell;
 
     // state revelation
     viewModel.currentEntity = currentEntity;

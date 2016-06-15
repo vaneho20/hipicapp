@@ -348,6 +348,9 @@ body {
     body #contenido-interior h2 {
       font-family: 'Montserrat', sans-serif;
       letter-spacing: -1px; }
+    body #contenido-interior .fondo-trofeo {
+      height: 256px;
+      background: url("/Content/images/trophy.png") no-repeat 0 0; }
     body #contenido-interior .avatar {
       position: relative;
       margin-top: 15px;
@@ -589,10 +592,61 @@ body {
             margin: 0 0 0.4em;
             padding: 0.2em 0;
             font-size: 1.6em; }
+        body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul {
+          list-style: none; }
+          body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul li {
+            float: left;
+            margin: 0;
+            padding: 1.2em 0;
+            width: 100%;
+            clear: both;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 1px solid #f8f8f8; }
+            body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul li h3 {
+              float: left;
+              margin: 0;
+              font-size: 1.3em; }
+              body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul li h3 a {
+                color: #333; }
+              body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul li h3 span {
+                font-size: 1.6em;
+                color: #f74b4b; }
+            body #contenido-interior .block-center .block-center-der .box-element .listado-clasificacion ul li .puntos {
+              display: inline-block;
+              text-transform: uppercase;
+              font-size: 0.8em;
+              margin-top: 0.7em;
+              padding: 0.3em 0.4em 0.1em;
+              color: #fff;
+              background: #4d4c4c; }
         body #contenido-interior .block-center .block-center-der .box-element .content {
           float: left;
           width: 100%;
           clear: both; }
+          body #contenido-interior .block-center .block-center-der .box-element .content ul li {
+            float: left;
+            margin: 0;
+            padding: 1.2em 0;
+            width: 100%;
+            clear: both;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 1px solid #f8f8f8; }
+            body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(1), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2), body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(3) {
+              float: left;
+              margin: 0;
+              padding: 1.2em 0;
+              width: 100%;
+              clear: both;
+              font-family: 'Montserrat', sans-serif;
+              border-bottom: 1px solid #f8f8f8; }
+              body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(1) span, body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(2) span, body #contenido-interior .block-center .block-center-der .box-element .content ul li:nth-child(3) span {
+                display: inline-block;
+                text-transform: uppercase;
+                font-size: 0.8em;
+                margin-top: 0.4em;
+                padding: 0.3em 0.4em 0.1em;
+                color: #fff;
+                background: #4d4c4c; }
           body #contenido-interior .block-center .block-center-der .box-element .content .ver-todo {
             margin: 1em 0;
             font-size: 0.8em;
@@ -1006,6 +1060,9 @@ body {
 
   html body #contenido-interior .block-center .block-center-der .banners img {
     height: auto; }
+
+  html body #section-content-login #contenido-interior .loginmodal-container {
+    width: 100%; }
  }
 
 @media (width: 640px) and (height: 360px) {
@@ -1014,14 +1071,39 @@ body {
  }
 
 @media (max-width: 767px) {
-  html body #contenido-interior .block-center .block-center-der .banners img {
+  html body #contenido-interior .block-center .block-center-der .banners {
+    text-align: center; }
+    html body #contenido-interior .block-center .block-center-der .banners img {
+      width: auto; }
+
+  html body #contenido-interior .block-destacados .un-destacado {
+    margin: 1.5% 0;
+    text-align: center; }
+    html body #contenido-interior .block-destacados .un-destacado img {
+      width: auto;
+      height: auto; }
+    html body #contenido-interior .block-destacados .un-destacado h3 {
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      /* IE 9 */
+      -webkit-transform: translate(-50%, -50%);
+      /* Safari */
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+
+  html body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto img {
     width: auto; }
 
   html body .block-ficha {
     display: table;
     margin: 7em 0 0 0; }
+    html body .block-ficha.clasificacion {
+      margin: 0;
+      background-position: 50% 0; }
 
   html body .block-ficha .ficha-col-izq {
+    margin-top: 2em;
     padding-right: 15px; }
 
   html body .block-ficha .ficha-col-izq header {
@@ -1030,6 +1112,10 @@ body {
   html body .block-ficha .ficha-col-der {
     display: table-header-group;
     float: none; }
+
+  html body #contenido-interior .fondo-trofeo, html body .block-ficha .ficha-col-izq .fondo-horse {
+    display: none;
+    background: none; }
  }
 
 @media (max-width: 640px) {
@@ -1051,6 +1137,10 @@ body {
 @media (max-width: 360px) {
   body .header-block {
     margin: 4.5em 0 0 0; }
+
+  html body .block-ficha .ficha-col-izq .encabezado-listados, html body .block-ficha .ficha-col-izq article .foto-listados, html body .block-ficha .ficha-col-izq article .datos-listados {
+    width: 100%;
+    text-align: center; }
  }
 
 /*# sourceMappingURL=public.css.map */

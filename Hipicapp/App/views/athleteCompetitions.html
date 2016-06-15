@@ -3,35 +3,35 @@
     <a class="pull-right" data-bind="attr: { href: competitionBroker.getListUrl(specialty()) }"><i class="fa fa-calendar" aria-hidden="true"></i> Pr&oacute;ximos Concursos</a>
 </header>
 <article class="row">
-    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Foto
     </div>
-    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-3">
         Nombre
     </div>
-    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-6">
+    <div class="encabezado-listados col-md-3 col-sm-3 col-xs-3">
         Recinto
     </div>
-    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Fechas
     </div>
-    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
+    <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Caballo
     </div>
 </article>
 <article data-bind="foreach: currentPage().content">
     <div class="row">
-        <div class="acenter foto-listados col-md-2 col-sm-2 col-xs-4">
+        <div class="acenter foto-listados col-md-2 col-sm-2 col-xs-2">
             <img alt="Foto caballo" data-bind="attr: { src: competition.photoId ? $root.fileBroker.getUrlByUuid(competition.photo.fileUuid) : '/Content/images/hipicapp-defecto-' + competition.specialty.id + '.png' }" />
         </div>
-        <div class="datos-listados col-md-3 col-sm-3 col-xs-6">
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-3">
             <a data-bind="attr: { href: $root.competitionBroker.getDetailUrlById(competition.id) }, text: competition.name"></a>
         </div>
-        <div class="datos-listados col-md-3 col-sm-3 col-xs-6" data-bind="text: competition.address">
+        <div class="datos-listados col-md-3 col-sm-3 col-xs-3" data-bind="text: competition.address">
         </div>
-        <div class="datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
+        <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: moment(competition.startDate).format($root.i18n.t('app:DATE_PATTERN')) + ' - ' + moment(competition.endDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
-        <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-4" data-bind="text: horse.name">
+        <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: horse.name">
         </div>
     </div>
 </article>

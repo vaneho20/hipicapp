@@ -482,6 +482,11 @@ body {
             letter-spacing: -1px;
         }
 
+        .fondo-trofeo {
+            height: 256px;
+            background: url("/Content/images/trophy.png") no-repeat 0 0;
+        }
+
         .avatar {
             position: relative;
             margin-top: 15px;
@@ -838,11 +843,79 @@ body {
                             font-size: 1.6em;
                         }
                     }
+                    .listado-clasificacion{
+                        ul {
+                            list-style:none;
+                            li {
+                                float: left;
+                                margin: 0;
+                                padding: 1.2em 0;
+                                width: 100%;
+                                clear: both;
+                                font-family: 'Montserrat', sans-serif;
+                                border-bottom: 1px solid #f8f8f8;
+                                h3 {
+                                    float: left;
+                                    margin: 0;
+                                    font-size: 1.3em;
+                                    a{
+                                        color: #333;
+                                        }
+                                    span {
+                                        font-size: 1.6em;
+                                        color: #f74b4b;
+                                    }
+                                }
 
+                                .puntos {
+                                    display: inline-block;
+                                    text-transform: uppercase;
+                                    font-size: 0.8em;
+                                    margin-top: 0.7em;
+                                    padding: 0.3em 0.4em 0.1em;
+                                    color: #fff;
+                                    background: #4d4c4c;
+                                }
+                                }
+                            }
+                        }
                     .content {
                         float: left;
                         width: 100%;
                         clear: both;
+                        ul {
+                            li {
+                                float: left;
+                                margin: 0;
+                                padding: 1.2em 0;
+                                width: 100%;
+                                clear: both;
+                                font-family: 'Montserrat', sans-serif;
+                                border-bottom: 1px solid #f8f8f8;
+
+                                &:nth-child(1),
+                                &:nth-child(2),
+                                &:nth-child(3) {
+                                    float: left;
+                                    margin: 0;
+                                    padding: 1.2em 0;
+                                    width: 100%;
+                                    clear: both;
+                                    font-family: 'Montserrat', sans-serif;
+                                    border-bottom: 1px solid #f8f8f8;
+
+                                    span {
+                                        display: inline-block;
+                                        text-transform: uppercase;
+                                        font-size: 0.8em;
+                                        margin-top: 0.4em;
+                                        padding: 0.3em 0.4em 0.1em;
+                                        color: #fff;
+                                        background: #4d4c4c;
+                                    }
+                                }
+                            }
+                        }
 
                         .ver-todo {
                             margin: 1em 0;
@@ -1483,6 +1556,9 @@ body {
     html body #contenido-interior .block-center .block-center-der .banners img {
         height: auto;
     }
+    html body #section-content-login #contenido-interior .loginmodal-container {
+        width:100%;
+        }
 }
 
 @media (width: 640px) and (height: 360px) {
@@ -1492,16 +1568,42 @@ body {
 }
 
 @media (max-width: 767px) {
-    html body #contenido-interior .block-center .block-center-der .banners img {
-        width: auto;
+    html body #contenido-interior .block-center .block-center-der .banners{
+        text-align:center;
+        img {
+            width: auto;
+            }
     }
-
+    html body #contenido-interior .block-destacados .un-destacado{
+        margin:1.5% 0;
+        text-align:center;
+        img{
+            width:auto;
+            height:auto;
+            }
+        h3{
+            left:50%;
+            -ms-transform: translate(-50%,-50%); /* IE 9 */
+            -webkit-transform: translate(-50%,-50%); /* Safari */
+            -moz-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            }
+        }
+    html body #contenido-interior .block-center .modulo-3-noticias .inner-modulo .noticia .inner .foto img {
+        width: auto;
+        }
     html body .block-ficha {
         display: table;
         margin: 7em 0 0 0;
+        &.clasificacion{
+            margin:0;
+            background-position:50% 0;
+        }
     }
 
     html body .block-ficha .ficha-col-izq {
+        margin-top: 2em;
         padding-right: 15px;
     }
 
@@ -1513,6 +1615,11 @@ body {
         display: table-header-group;
         float: none;
     }
+    html body #contenido-interior .fondo-trofeo,
+    html body .block-ficha .ficha-col-izq .fondo-horse{
+        display:none;
+        background:none;
+        }
 }
 
 @media (max-width: 640px) {
@@ -1539,4 +1646,10 @@ body {
     body .header-block {
         margin: 4.5em 0 0 0;
     }
+    html body .block-ficha .ficha-col-izq .encabezado-listados,
+    html body .block-ficha .ficha-col-izq article .foto-listados,
+    html body .block-ficha .ficha-col-izq article .datos-listados{
+        width:100%;
+        text-align:center
+        }
 }

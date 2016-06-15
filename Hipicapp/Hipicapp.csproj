@@ -675,6 +675,7 @@
     <Content Include="Content\images\Sicab2012.jpg" />
     <Content Include="Content\images\subrayado_blanco.png" />
     <Content Include="Content\images\todoparamicaballo.jpg" />
+    <Content Include="Content\images\trophy.png" />
     <Content Include="Content\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jquery.fileupload-ui.css" />
     <Content Include="Content\public.css">

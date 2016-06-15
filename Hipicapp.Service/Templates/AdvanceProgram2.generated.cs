@@ -53,48 +53,74 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("\r\n");
 
 
-WriteLiteral("\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>Contenido del concurso</title>\r\n<" +
-"/head>\r\n<body>\r\n    <h2>Datos generales del concurso</h2>\r\n    <table border=\"0\"" +
-">\r\n        <tbody>\r\n            <tr>\r\n                <td>Nombre:</td>\r\n        " +
-"        <td>");
+WriteLiteral(@"
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contenido del concurso</title>
+</head>
+<body>
+    <h2>Datos generales del concurso</h2>
+    <hr style=""margin:0 0 15px; height: 3px; color:#f74b4b; background:#f74b4b;"" />
+    <table border=""0"">
+        <tbody>
+            <tr>
+                <td>                    
+                    <h3> ");
 
 
             
-            #line 23 "..\..\Templates\AdvanceProgram.cshtml"
-               Write(competition.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Categoría:</td>\r\n" +
-"                <td>");
-
-
-            
-            #line 27 "..\..\Templates\AdvanceProgram.cshtml"
-               Write(competition.Category.Name);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Disciplina:</td>\r" +
-"\n                <td>");
-
-
-            
-            #line 31 "..\..\Templates\AdvanceProgram.cshtml"
-               Write(competition.Specialty.Name);
+            #line 24 "..\..\Templates\AdvanceProgram.cshtml"
+                    Write(competition.Name);
 
             
             #line default
             #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Fechas:</td>\r\n   " +
-"             <td>");
+WriteLiteral("</h3>\r\n                </td>\r\n            </tr>\r\n            <tr>                " +
+"\r\n                <td>\r\n                    <p style=\"margin-bottom:10px;\"><stro" +
+"ng>Categoría:</strong> ");
 
 
             
-            #line 35 "..\..\Templates\AdvanceProgram.cshtml"
-               Write(competition.StartDate.Value.ToShortDateString());
+            #line 29 "..\..\Templates\AdvanceProgram.cshtml"
+                                                                          Write(competition.Category.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                </td>\r\n            </tr>\r\n            <tr>\r\n               " +
+" <td>\r\n                    <p style=\"margin-bottom:10px;\"><strong>Recinto:</stro" +
+"ng> ");
+
+
+            
+            #line 34 "..\..\Templates\AdvanceProgram.cshtml"
+                                                                        Write(competition.Address);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                </td>\r\n            </tr>\r\n            <tr>             \r\n  " +
+"              <td>\r\n                    <p style=\"margin-bottom:10px;\"><strong>D" +
+"isciplina:</strong> ");
+
+
+            
+            #line 39 "..\..\Templates\AdvanceProgram.cshtml"
+                                                                           Write(competition.Specialty.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>\r\n                </td>\r\n            </tr>\r\n            <tr>                \r" +
+"\n                <td>\r\n                    <p style=\"margin-bottom:10px;\"><stron" +
+"g>Fechas:</strong> ");
+
+
+            
+            #line 44 "..\..\Templates\AdvanceProgram.cshtml"
+                                                                       Write(competition.StartDate.Value.ToShortDateString());
 
             
             #line default
@@ -103,88 +129,50 @@ WriteLiteral(" - ");
 
 
             
-            #line 35 "..\..\Templates\AdvanceProgram.cshtml"
-                                                                  Write(competition.EndDate.Value.ToShortDateString());
+            #line 44 "..\..\Templates\AdvanceProgram.cshtml"
+                                                                                                                          Write(competition.EndDate.Value.ToShortDateString());
 
             
             #line default
             #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Recinto:</td>\r\n  " +
-"              <td>");
+WriteLiteral("</p>\r\n                </td>\r\n            </tr>            \r\n        </tbody>\r\n   " +
+" </table>\r\n\r\n    <h2>Participantes</h2>\r\n    <hr style=\"margin:0 0 15px; height:" +
+" 3px; color:#f74b4b; background:#f74b4b;\" />\r\n    <table border=\"0\">\r\n        <t" +
+"body>\r\n");
 
 
             
-            #line 39 "..\..\Templates\AdvanceProgram.cshtml"
-               Write(competition.Address);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n\r\n    <h2>Miembros del " +
-"jurado</h2>\r\n    <table border=\"0\">\r\n        <tbody>\r\n");
-
-
-            
-            #line 47 "..\..\Templates\AdvanceProgram.cshtml"
-             foreach (Seminary judge in seminary)
-            {
-
-            
-            #line default
-            #line hidden
-WriteLiteral("                <tr>\r\n                    <td>");
-
-
-            
-            #line 50 "..\..\Templates\AdvanceProgram.cshtml"
-                   Write(judge.Judge.FullName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n                </tr>\r\n");
-
-
-            
-            #line 52 "..\..\Templates\AdvanceProgram.cshtml"
-            }
-
-            
-            #line default
-            #line hidden
-WriteLiteral("        </tbody>\r\n    </table>\r\n\r\n    <h2>Participantes</h2>\r\n    <table border=\"" +
-"0\">\r\n        <tbody>\r\n");
-
-
-            
-            #line 59 "..\..\Templates\AdvanceProgram.cshtml"
+            #line 54 "..\..\Templates\AdvanceProgram.cshtml"
              foreach (Enrollment enrollment in inscriptions)
             {
 
             
             #line default
             #line hidden
-WriteLiteral("                <tr>\r\n                    <td>");
+WriteLiteral("                <tr>\r\n                    <td>\r\n                        <p style=" +
+"\"margin-bottom:10px;\">\r\n                            <strong>Jinete:</strong> ");
 
 
             
-            #line 62 "..\..\Templates\AdvanceProgram.cshtml"
-                   Write(enrollment.Horse.Athlete.FullName);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</td>\r\n                    <td>");
-
-
-            
-            #line 63 "..\..\Templates\AdvanceProgram.cshtml"
-                   Write(enrollment.Horse.Name);
+            #line 59 "..\..\Templates\AdvanceProgram.cshtml"
+                                                Write(enrollment.Horse.Athlete.FullName);
 
             
             #line default
             #line hidden
-WriteLiteral("</td>\r\n                </tr>\r\n");
+WriteLiteral("\r\n                            - <strong>Caballo:</strong>\r\n                      " +
+"      ");
+
+
+            
+            #line 61 "..\..\Templates\AdvanceProgram.cshtml"
+                       Write(enrollment.Horse.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n                        </p>\r\n                    </td>\r\n                </tr>\r" +
+"\n");
 
 
             
@@ -194,7 +182,40 @@ WriteLiteral("</td>\r\n                </tr>\r\n");
             
             #line default
             #line hidden
-WriteLiteral("        </tbody>\r\n    </table>\r\n</body>\r\n</html>");
+WriteLiteral("        </tbody>\r\n    </table>\r\n\r\n    <h2>Miembros del jurado</h2>\r\n    <hr style" +
+"=\"margin:0 0 15px; height: 3px; color:#f74b4b; background:#f74b4b;\" />\r\n    <tab" +
+"le border=\"0\">\r\n        <tbody>\r\n");
+
+
+            
+            #line 73 "..\..\Templates\AdvanceProgram.cshtml"
+             foreach (Seminary judge in seminary)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <tr>\r\n                    <td><p style=\"margin-bottom:10px;\">");
+
+
+            
+            #line 76 "..\..\Templates\AdvanceProgram.cshtml"
+                                                  Write(judge.Judge.FullName);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p></td>\r\n                </tr>\r\n");
+
+
+            
+            #line 78 "..\..\Templates\AdvanceProgram.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        </tbody>\r\n    </table>  \r\n</body>\r\n</html>");
 
 
         }

@@ -122,32 +122,32 @@
                                 </div>
                             </li>
                             <li>
-                                <span><!-- ko text: ranking().length > 0 ? ranking()[0].value : '' --><!-- /ko --> puntos</span>
+                                <span><!-- ko text: ranking().length > 1 ? ranking()[0].value : '' --><!-- /ko --> puntos</span>
                                 <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[0].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
                                 <div class="puesto">
-                                    <h3><!-- ko text: ranking().length > 0 ? ranking()[0].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[0].athlete.surnames : '' --><!-- /ko --></h3>
+                                    <h3><!-- ko text: ranking().length > 1 ? ranking()[0].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 1 ? ranking()[0].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>1</span>
                                 </div>
                             </li>
                             <li>
-                                <span><!-- ko text: ranking().length > 0 ? ranking()[2].value : '' --><!-- /ko --> puntos</span>
+                                <span><!-- ko text: ranking().length > 2 ? ranking()[2].value : '' --><!-- /ko --> puntos</span>
                                 <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[2].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
                                 <div class="puesto">
-                                    <h3><!-- ko text: ranking().length > 0 ? ranking()[2].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[2].athlete.surnames : '' --><!-- /ko --></h3>
+                                    <h3><!-- ko text: ranking().length > 2 ? ranking()[2].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 2 ? ranking()[2].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>3</span>
                                 </div>
                             </li>
                             <li>
-                                <h3><span>4.</span>Nombre del primer jinete</h3>
-                                <span class="puntos pull-right">36 puntos</span>
+                                <h3><span>4.</span><!-- ko text: ranking().length > 3 ? ranking()[3].athlete.fullName : '-' --><!-- /ko --></h3>
+                                <span class="puntos pull-right"><!-- ko text: ranking().length > 3 ? ranking()[3].value : '-' --><!-- /ko --> puntos</span>
                             </li>
                             <li>
-                                <h3><span>5.</span>Nombre del primer jinete</h3>
-                                <span class="puntos pull-right">32 puntos</span>
+                                <h3><span>5.</span><!-- ko text: ranking().length > 4 ? ranking()[4].athlete.fullName : '-' --><!-- /ko --></h3>
+                                <span class="puntos pull-right"><!-- ko text: ranking().length > 4 ? ranking()[4].value : '-' --><!-- /ko --> puntos</span>
                             </li>
                             <li>
-                                <h3><span>6.</span>Nombre del primer jinete</h3>
-                                <span class="puntos pull-right">31 puntos</span>
+                                <h3><span>6.</span><!-- ko text: ranking().length > 5 ? ranking()[5].athlete.fullName : '-' --><!-- /ko --></h3>
+                                <span class="puntos pull-right"><!-- ko text: ranking().length > 5 ? ranking()[5].value : '-' --><!-- /ko --> puntos</span>
                             </li>
                         </ul>
                         <div class="pull-right"><a data-bind="attr: { href: specialtyBroker.getClassificationUrlById(currentEntity().id) }" class="ver-todo">Ver clasificaci&oacute;n completa &raquo;</a></div>

@@ -11,53 +11,47 @@
 <nav class="nav navbar menu-principal">
     <div class="container">
         <ul class="nav nav-pills">
-            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().specialtyId) }">Inicio</a></li>
-            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().specialtyId) }">Jinetes</a></li>
-            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().specialtyId) }">Caballos</a></li>
-            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().specialtyId) }">Concursos</a></li>
-            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().specialtyId) }">Jueces</a></li>
+            <li role="presentation"><a data-bind="attr: { href: specialtyBroker.getDetailUrlById(currentEntity().id) }">Inicio</a></li>
+            <li role="presentation" class="active"><a data-bind="attr: { href: athleteBroker.getListUrl(currentEntity().id) }">Jinetes</a></li>
+            <li role="presentation"><a data-bind="attr: { href: horseBroker.getListUrl(currentEntity().id) }">Caballos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: competitionBroker.getListUrl(currentEntity().id) }">Concursos</a></li>
+            <li role="presentation"><a data-bind="attr: { href: judgeBroker.getListUrl(currentEntity().id) }">Jueces</a></li>
         </ul>
     </div>
 </nav>
 <section id="contenido-interior">
     <div class="container">
         <div class="row">
-            <div class="block-ficha col-md-12 col-sm-12 col-xs-12">
-                <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-12">
+            <div class="block-ficha clasificacion col-md-12 col-sm-12 col-xs-12">
+                <div class="listado-elements col-md-12 col-sm-12 col-xs-12">
                     <header class="col-md-12 col-sm-12 col-xs-12">
-                        <h2 class="pull-left">Clasificaci&oacute;n</h2>
+                        <h2>Clasificaci&oacute;n</h2>
                     </header>
-                    <article class="row">
-                        <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-4">
-                            Foto
-                        </div>
-                        <div class="encabezado-listados col-md-6 col-sm-6 col-xs-12">
-                            Nombre
-                        </div>
-                        <div class="encabezado-listados col-md-4 col-sm-4 col-xs-8">
-                            Puntuaci&oacute;n
-                        </div>
-                    </article>
-                    <article data-bind="foreach: ranking">
-                        <div class="row">
-                            <div class="foto-listados col-md-2 col-sm-2 col-xs-4">
-                                <img alt="Lorem ipsum" data-bind="attr: { src: $data.athlete.photoId ? $root.fileBroker.getUrlByUuid($data.athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }">
+                    <div class="block-center">
+                        <div class="block-center-der">
+                            <div class="box-element">
+                                <div class=" fondo-trofeo col-md-4 col-sm-4 col-xs-12">&nbsp;</div>
+                                <div class="listado-clasificacion col-md-8 col-sm-8 col-xs-12">
+                                    <ul data-bind="foreach: ranking">
+                                        <li>
+                                            <h3>
+                                                <span data-bind="text: ($index() + 1) + '.'"></span>
+                                                <a data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(athlete.id) }, text: athlete.fullName"></a>
+                                            </h3>
+                                            <span class="puntos pull-right">
+                                                <!-- ko text: value --><!-- /ko --> puntos
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <div data-bind="visible: ranking().length === 0 && !(shell.isLoading())" class="alert alert-info alert-block">
+                                        <div>
+                                            <strong data-bind="text: i18n.t('CLASSIFICATION_LIST_EMPTY_SUMMARY')"></strong>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="datos-listados col-md-6 col-sm-6 col-xs-12">
-                                <a data-bind="attr: { href: $root.athleteBroker.getDetailUrlById(athlete.id) }, text: athlete.fullName"></a>
-                            </div>
-                            <div class="datos-listados col-md-4 col-sm-4 col-xs-8">
-                                <!-- ko text: value --><!-- /ko --> puntos
-                            </div>
-                        </div>
-                    </article>
-                    <div data-bind="visible: ranking().length === 0 && !(shell.isLoading())" class="alert alert-info alert-block">
-                        <div>
-                            <strong data-bind="text: i18n.t('ATHLETE_HORSE_LIST_EMPTY_SUMMARY')"></strong>
                         </div>
                     </div>
-                </div>
-                <div class="ficha-col-der col-md-4 col-sm-4 col-xs-12">
                 </div>
             </div>
         </div>

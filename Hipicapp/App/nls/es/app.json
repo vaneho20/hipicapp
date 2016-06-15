@@ -190,6 +190,7 @@
     "ATHLETE_HORSE_LIST_EMPTY_DETAIL": "Crea ahora un primer caballo en <strong>Hipicapp</strong>.",
     "ATHLETE_COMPETITION_LIST_EMPTY_SUMMARY": "¡Aún no te has inscripto en ningún concurso!",
     "ATHLETE_COMPETITION_LIST_EMPTY_DETAIL": "Inscribe ahora en algún concurso.",
+    "CLASSIFICATION_LIST_EMPTY_SUMMARY": "¡Aún no ha comenzado el campeonato!",
     "categoryId": "Categoría",
     "dni": "DNI",
     "name": "Nombre",
