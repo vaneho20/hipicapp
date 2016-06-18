@@ -94,7 +94,7 @@ define([
         });
 
         $('#world-map-gdp').vectorMap({
-            map: 'world_mill',
+            map: 'es_mill',
             backgroundColor: 'transparent',
             series: {
                 regions: [{
@@ -104,7 +104,7 @@ define([
                 }]
             },
             onRegionTipShow: function (e, el, code) {
-                el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                //el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
             }
         });
     }

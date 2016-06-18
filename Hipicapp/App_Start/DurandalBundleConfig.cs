@@ -67,7 +67,7 @@ namespace Hipicapp
                 // jVectorMap
                 .Include("~/Scripts/Administrator/maps/jquery-jvectormap-2.0.3.min.js")
                 .Include("~/Scripts/Administrator/maps/gdp-data.js")
-                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill.js")
+                .Include("~/Scripts/Administrator/maps/jquery-jvectormap-es-mill.js")
                 //.Include("~/Scripts/Administrator/maps/jquery-jvectormap-world-mill-en.js")
                 //.Include("~/Scripts/Administrator/maps/jquery-jvectormap-us-aea-en.js")
                 // Custom Theme Scripts
