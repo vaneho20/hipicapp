@@ -150,7 +150,7 @@ namespace Hipicapp.Service.Participant
         {
             this.AlreadyEnrolledPolicy.CheckSatisfiedBy(id);
 
-            var enroll = this.EnrollmentRepository.GetAllQueryable().FirstOrDefault(x => x.Id.CompetitionId == id.CompetitionId);
+            var enroll = this.EnrollmentRepository.GetAllQueryable().FirstOrDefault(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId);
             if (enroll != null)
             {
                 this.EnrollmentRepository.Delete(enroll);

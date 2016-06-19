@@ -115,7 +115,7 @@
                         <ul>
                             <li>
                                 <span><!-- ko text: ranking().length > 0 ? ranking()[1].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[1].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
+                                <img data-bind="attr: { src: ranking().length > 0 && ranking()[1].athlete.photo ? fileBroker.getUrlByUuid(ranking()[1].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 0 ? ranking()[1].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 0 ? ranking()[1].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>2</span>
@@ -123,7 +123,7 @@
                             </li>
                             <li>
                                 <span><!-- ko text: ranking().length > 1 ? ranking()[0].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[0].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
+                                <img data-bind="attr: { src: ranking().length > 0 && ranking()[0].athlete.photo ? fileBroker.getUrlByUuid(ranking()[0].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 1 ? ranking()[0].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 1 ? ranking()[0].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>1</span>
@@ -131,7 +131,7 @@
                             </li>
                             <li>
                                 <span><!-- ko text: ranking().length > 2 ? ranking()[2].value : '' --><!-- /ko --> puntos</span>
-                                <img data-bind="attr: { src: ranking().length > 0 ? fileBroker.getUrlByUuid(ranking()[2].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
+                                <img data-bind="attr: { src: ranking().length > 0 && ranking()[2].athlete.photo ? fileBroker.getUrlByUuid(ranking()[2].athlete.photo.fileUuid) : '/Content/images/hipicapp-defecto-usuario.png' }" alt="Foto jinete" />
                                 <div class="puesto">
                                     <h3><!-- ko text: ranking().length > 2 ? ranking()[2].athlete.name : '' --><!-- /ko --><br /> <!-- ko text: ranking().length > 2 ? ranking()[2].athlete.surnames : '' --><!-- /ko --></h3>
                                     <span>3</span>
