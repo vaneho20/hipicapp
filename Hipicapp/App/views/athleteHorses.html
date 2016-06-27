@@ -10,9 +10,16 @@
     <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Foto
     </div>
+    <!-- ko if: $root.securityContext.isAuthenticated() && usuario() === parseInt($root.securityContext.getPrincipal().id) -->
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Nombre
     </div>
+    <!-- /ko -->
+    <!-- ko if: !$root.securityContext.isAuthenticated() || usuario() !== parseInt($root.securityContext.getPrincipal().id) -->
+    <div class="encabezado-listados col-md-4 col-sm-4 col-xs-4">
+        Nombre
+    </div>
+    <!-- /ko -->
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Nacimiento
     </div>
@@ -22,37 +29,46 @@
     <div class="encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Sexo
     </div>
+    <!-- ko if: $root.securityContext.isAuthenticated() && usuario() === parseInt($root.securityContext.getPrincipal().id) -->
     <div class="acenter encabezado-listados col-md-2 col-sm-2 col-xs-2">
         Acciones
     </div>
+    <!-- /ko -->
 </article>
 <article data-bind="foreach: currentPage().content">
     <div class="row">
         <div class="foto-listados col-md-2 col-sm-2 col-xs-2">
             <img alt="Lorem ipsum" data-bind="attr: { src: $data.photoId ? $root.fileBroker.getUrlByUuid($data.photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
         </div>
+        <!-- ko if: $root.securityContext.isAuthenticated() && athlete.userId === parseInt($root.securityContext.getPrincipal().id) -->
         <div class="datos-listados col-md-2 col-sm-2 col-xs-2">
             <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id) }, text: name"></a>
         </div>
+        <!-- /ko -->
+        <!-- ko if: !$root.securityContext.isAuthenticated() || athlete.userId !== parseInt($root.securityContext.getPrincipal().id) -->
+        <div class="datos-listados col-md-4 col-sm-4 col-xs-4">
+            <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id) }, text: name"></a>
+        </div>
+        <!-- /ko -->
         <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: moment(birthDate).format($root.i18n.t('app:DATE_PATTERN'))">
         </div>
         <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: weight + 'kg y ' + height + 'cm'">
         </div>
         <div class="datos-listados col-md-2 col-sm-2 col-xs-2" data-bind="text: $root.availableGenders[gender]">
         </div>
+        <!-- ko if: $root.securityContext.isAuthenticated() && athlete.userId === parseInt($root.securityContext.getPrincipal().id) -->
         <div class="acenter datos-listados col-md-2 col-sm-2 col-xs-2">
-            <!-- ko if: $root.securityContext.isAuthenticated() && athlete.userId === parseInt($root.securityContext.getPrincipal().id) -->
-                <a class="accion" data-bind="attr: {
-				    href: $root.horseBroker.getEditUrlById(id),
-				    title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
-                    <i class="fa fa-pencil"></i>
-                </a>
+            <a class="accion" data-bind="attr: {
+				href: $root.horseBroker.getEditUrlById(id),
+				title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                <i class="fa fa-pencil"></i>
+            </a>
             <a class="accion" href="#" data-bind="click: $root.deleteRow,
 				    attr: { title: $root.i18n.t('app:DELETE_BUTTON_TITLE') }">
                 <i class="fa fa-trash"></i>
             </a>
-            <!-- /ko -->
         </div>
+        <!-- /ko -->
     </div>
 </article>
 <div data-bind="visible: currentPage().isEmpty() && !(shell.isLoading())" class="alert alert-info alert-block">
