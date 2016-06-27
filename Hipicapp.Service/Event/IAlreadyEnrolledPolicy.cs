@@ -1,11 +1,12 @@
+using Hipicapp.Model.Event;
 using Hipicapp.Model.Participant;
 
 namespace Hipicapp.Service.Event
 {
     public interface IAlreadyEnrolledPolicy
     {
-        bool IsSatisfiedBy(EnrollmentId id);
+        bool IsSatisfiedBy(Competition competition, Horse horse);
 
-        void CheckSatisfiedBy(EnrollmentId id);
+        void CheckSatisfiedBy(Competition competition, Horse horse);
     }
 }

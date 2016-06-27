@@ -12,7 +12,7 @@ namespace Hipicapp.Service.Mail.Impl
             var template = new _Mail_Templates_CreatedAccount_cshtml();
             template.message = this.Model;
 
-            this.Model.Url = "http://localhost:61819/#/update-password/";
+            this.Model.Url = "https://localhost/";
             this.Body = template.TransformText();
             this.From = new MailAddress("desarrollohipicapp@gmail.com");
             this.To = new MailAddress(to);

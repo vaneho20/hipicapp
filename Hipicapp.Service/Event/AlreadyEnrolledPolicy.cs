@@ -1,3 +1,4 @@
+using Hipicapp.Model.Event;
 using Hipicapp.Model.Participant;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Service.Exceptions;
@@ -13,14 +14,14 @@ namespace Hipicapp.Service.Event
         [Autowired]
         private IEnrollmentRepository EnrollmentRepository { get; set; }
 
-        public bool IsSatisfiedBy(EnrollmentId id)
+        public bool IsSatisfiedBy(Competition competition, Horse horse)
         {
-            return !this.EnrollmentRepository.GetAllQueryable().Any(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId);
+            return !this.EnrollmentRepository.GetAllQueryable().Any(x => x.Id.CompetitionId == competition.Id && x.Id.HorseId == horse.Id && x.Horse.AthleteId == horse.AthleteId);
         }
 
-        public void CheckSatisfiedBy(EnrollmentId id)
+        public void CheckSatisfiedBy(Competition competition, Horse horse)
         {
-            if (!this.IsSatisfiedBy(id))
+            if (!this.IsSatisfiedBy(competition, horse))
             {
                 throw new AlreadyEnrolledException();
             }

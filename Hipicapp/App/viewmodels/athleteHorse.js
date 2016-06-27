@@ -60,7 +60,7 @@ define([
         } else {
             promise = horseBroker.save(currentHorseEntity());
         }
-        return promise.done(refreshCurrentEntity).done(function success() {
+        return promise.done(function success() {
             router.navigateToProfile();
         });
     }

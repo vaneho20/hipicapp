@@ -5,8 +5,12 @@ using Hipicapp.Repository.Event;
 using Hipicapp.Repository.Participant;
 using Hipicapp.Service.Account;
 using Hipicapp.Service.Event;
+using Hipicapp.Service.Mail.Impl;
+using Hipicapp.Service.Mail.Models;
+using Hipicapp.Service.Util;
 using Hipicapp.Services.File;
 using Hipicapp.Utils.Pager;
+using Resources;
 using Spring.Objects.Factory.Attributes;
 using Spring.Stereotype;
 using Spring.Transaction.Interceptor;
@@ -106,7 +110,7 @@ namespace Hipicapp.Service.Participant
             athlete.Specialty = this.SpecialtyRepository.Get(athlete.SpecialtyId);
             athlete.SpecialtyId = athlete.Specialty.Id;
             athlete.Id = this.AthleteRepository.Save(athlete);
-            //MailUtil.SendMessage<CreatedAccountEmailModel>(new CreatedAccountMailMessage(MailMessages.CreatedAccountSubject, athlete.User.UserName));
+            MailUtil.SendMessage<CreatedAccountEmailModel>(new CreatedAccountMailMessage(MailMessages.CreatedAccountSubject, athlete.User.UserName));
             return athlete;
         }
 
@@ -148,15 +152,15 @@ namespace Hipicapp.Service.Participant
         [Transaction]
         public EnrollmentId Inscription(EnrollmentId id)
         {
-            this.AlreadyEnrolledPolicy.CheckSatisfiedBy(id);
+            var horse = this.HorseRepository.Get(id.HorseId);
+            var competition = this.CompetitionRepository.Get(id.CompetitionId);
+            this.AlreadyEnrolledPolicy.CheckSatisfiedBy(competition, horse);
 
-            var enroll = this.EnrollmentRepository.GetAllQueryable().FirstOrDefault(x => x.Id.CompetitionId == id.CompetitionId && x.Id.HorseId == id.HorseId);
+            var enroll = this.EnrollmentRepository.GetAllQueryable().FirstOrDefault(x => x.Id.CompetitionId == competition.Id && x.Horse.AthleteId == horse.AthleteId);
             if (enroll != null)
             {
                 this.EnrollmentRepository.Delete(enroll);
             }
-            var horse = this.HorseRepository.Get(id.HorseId);
-            var competition = this.CompetitionRepository.Get(id.CompetitionId);
             this.EnrollmentExpiredPolicy.CheckSatisfiedBy(competition);
             this.CompetitionExpiredPolicy.CheckSatisfiedBy(competition);
             this.SameCompetitionCategoryPolicy.CheckSatisfiedBy(horse.Athlete.Category, competition.Category);
