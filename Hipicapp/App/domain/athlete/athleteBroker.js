@@ -39,6 +39,12 @@ define([
         .getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
+    amplify.request.define("athletes/hasEnrolled", brokerUtils.REQUEST_TYPE,
+        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+            urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
+                brokerUtils.requestMappings.HAS_ENROLLED,
+                brokerUtils.requestMappings.COMPETITION_ID), brokerUtils.verb.POST));
+
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);
     }
@@ -66,6 +72,13 @@ define([
 
     function update(entity) {
         return amplify.request("athletes/update", entity).always(CACHE.evict);
+    }
+
+    function hasEnrolled(competitionId) {
+
+        return amplify.request("athletes/hasEnrolled", {
+            competitionId: competitionId
+        }).always(competitionBroker.evictCache).always(CACHE.evict);
     }
 
     function getListUrl(specialtyId) {
@@ -107,6 +120,7 @@ define([
     broker.register = register;
     broker.inscription = inscription;
     broker.update = update;
+    broker.hasEnrolled = hasEnrolled;
 
     broker.getListUrl = getListUrl;
     broker.getDetailUrlById = getDetailUrlById;

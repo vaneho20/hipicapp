@@ -22,6 +22,8 @@ namespace Hipicapp.Service.Participant
 
         EnrollmentId Inscription(EnrollmentId id);
 
+        bool? HasEnrolled(long? competitionId, long? userId);
+
         FileInfo Upload(Athlete athlete, string name, string mimeType, byte[] bytes);
     }
 }

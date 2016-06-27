@@ -16,14 +16,14 @@ define([
         currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
         currentPageSize = ko.observable(PAGE_SIZE), currentEntity = viewModel.currentEntity, availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
-        };
+        }, hasEnrolled = ko.observable(false);
 
     // lifecycle definition
     function activate(competitionId) {
         currentFilter.competitionId(competitionId);
         nextFilter().competitionId(competitionId);
 
-        return $.when(superActivate(competitionId).done(function onSuccess() {
+        return $.when(hasEnrolled(competitionId), superActivate(competitionId).done(function onSuccess() {
             return loadCurrentPage();
         }));
     }
@@ -74,6 +74,12 @@ define([
         return loadCurrentPage();
     }
 
+    function hasEnrolled(competitionId) {
+        return athleteBroker.hasEnrolled(competitionId).done(function success(data) {
+            hasEnrolled(data);
+        });
+    }
+
     function enroll(horse) {
         return athleteBroker.inscription(nextFilter().competitionId(), horse.id).done(function success() {
             router.navigateToAthlete();
@@ -105,6 +111,7 @@ define([
     viewModel.currentEntity = currentEntity;
     viewModel.availablePageSizes = PAGE_SIZES;
     viewModel.availableGenders = availableGenders;
+    viewModel.hasEnrolled = hasEnrolled;
 
     // lifecycle revelation
     viewModel.activate = activate;

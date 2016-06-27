@@ -26,6 +26,8 @@ namespace Hipicapp.Proxy.Participant
 
         EnrollmentId Inscription(EnrollmentId id);
 
+        bool? HasEnrolled(long? competitionId);
+
         FileInfo Upload(long? id, FileInfo file);
     }
 }

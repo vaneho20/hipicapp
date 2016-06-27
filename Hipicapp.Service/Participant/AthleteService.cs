@@ -173,6 +173,12 @@ namespace Hipicapp.Service.Participant
             return id;
         }
 
+        [Transaction(ReadOnly = true)]
+        public bool? HasEnrolled(long? competitionId, long? userId)
+        {
+            return this.EnrollmentRepository.GetAllQueryable().Any(x => x.Id.CompetitionId == competitionId && x.Horse.Athlete.UserId == userId);
+        }
+
         [Transaction]
         public FileInfo Upload(Athlete athlete, string name, string mimeType, byte[] bytes)
         {

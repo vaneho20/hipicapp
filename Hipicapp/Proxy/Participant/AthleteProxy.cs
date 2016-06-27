@@ -93,6 +93,12 @@ namespace Hipicapp.Proxy.Participant
             return this.AthleteService.Upload(athlete, file.FileName, file.ContentType, file.Contents);
         }
 
+        [AuthorizeEnum(Rol.ATHLETE)]
+        public bool? HasEnrolled(long? competitionId)
+        {
+            return this.AthleteService.HasEnrolled(competitionId, Convert.ToInt64(HttpContext.Current.GetOwinContext().Authentication.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value));
+        }
+
         private async Task<HttpResponseMessage> AutoLoginAfterRegistration(string userName, string password)
         {
             var testServer = TestServer.Create<Startup>();

@@ -89,6 +89,14 @@ namespace Hipicapp.Controllers.Participant
             return this.AthleteProxy.Inscription(id);
         }
 
+        [AcceptVerbs("GET")]
+        [HttpGet]
+        [Route("hasEnrolled/{competitionId}")]
+        public bool? HasEnrolled([FromUri]long? competitionId)
+        {
+            return this.AthleteProxy.HasEnrolled(competitionId);
+        }
+
         [AcceptVerbs("POST")]
         [HttpPost]
         [Route("upload/{id}")]
