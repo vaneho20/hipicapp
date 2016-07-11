@@ -110,7 +110,7 @@ namespace Hipicapp.Service.Participant
             athlete.Specialty = this.SpecialtyRepository.Get(athlete.SpecialtyId);
             athlete.SpecialtyId = athlete.Specialty.Id;
             athlete.Id = this.AthleteRepository.Save(athlete);
-            MailUtil.SendMessage<CreatedAccountEmailModel>(new CreatedAccountMailMessage(MailMessages.CreatedAccountSubject, athlete.User.UserName));
+            MailUtil.SendMessage<CreatedAccountEmailModel>(new CreatedAccountMailMessage(MailMessages.CreatedAccountSubject, athlete));
             return athlete;
         }
 

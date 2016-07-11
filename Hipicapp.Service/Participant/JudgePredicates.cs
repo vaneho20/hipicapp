@@ -16,6 +16,10 @@ namespace Hipicapp.Service.Participant
             {
                 query = query.Where(x => x.Name.StartsWith(filter.Name));
             }
+            if (filter.Gender != null)
+            {
+                query = query.Where(x => x.Gender == filter.Gender);
+            }
             if (filter.SpecialtyId != null)
             {
                 query = query.Where(x => x.SpecialtyId == filter.SpecialtyId);

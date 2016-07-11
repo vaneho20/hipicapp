@@ -17,7 +17,15 @@ define([
         currentSort = ko.observable(horseSortImpl()), currentPage = ko.observable(pageImpl()),
         currentPager = ko.observable(pagerImpl()), currentPageSize = ko.observable(PAGE_SIZE), availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
-        };
+        }, availableGendersFilter = [
+            {
+                value: "male",
+                text: i18n.t("app:GENDER_MALE")
+            }, {
+                value: "female",
+                text: i18n.t("app:GENDER_FEMALE")
+            }
+        ];
 
     // lifecycle definition
     function activate(specialtyId) {
@@ -93,6 +101,7 @@ define([
     viewModel.currentPageSize = currentPageSize;
     viewModel.availablePageSizes = PAGE_SIZES;
     viewModel.availableGenders = availableGenders;
+    viewModel.availableGendersFilter = availableGendersFilter;
 
     // lifecycle revelation
     viewModel.activate = activate;

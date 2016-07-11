@@ -44,29 +44,19 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("\r\n");
 
 
-WriteLiteral(@"
-
-<html>
-<head>
-    <title>Restablecer contraseña | Hipicapp</title>
-</head>
-<body>
-    <p>Estimado/a Atleta,</p>
-    <p>Ha solicitado que se restablezca su contraseña. Haga clic</p>
-    <p>en el siguiente vínculo. Le llevará a una página web de</p>
-    <p>Hipicapp en la que podrá cambiar la contraseña.</p>
-    <p><a href=""");
+WriteLiteral("\r\n\r\n<html>\r\n<head>\r\n    <title>Nuevo registro | Hipicapp</title>\r\n</head>\r\n<body>" +
+"\r\n    <p>Bienvenido a Hipicapp! Puede acceder a su cuenta en ");
 
 
             
-            #line 18 "..\..\Mail\Templates\CreatedAccount.cshtml"
-           Write(message.Url);
+            #line 14 "..\..\Mail\Templates\CreatedAccount.cshtml"
+                                                      Write(message.Url);
 
             
             #line default
             #line hidden
-WriteLiteral("\">Restablecer contraseña</a></p>\r\n    <p>Gracias,</p>\r\n    <p>El equipo de cuenta" +
-"s de Hipicapp</p>\r\n</body>\r\n</html>");
+WriteLiteral(".</p>\r\n    <p>Gracias,</p>\r\n    <p>El equipo de cuentas de Hipicapp</p>\r\n</body>\r" +
+"\n</html>");
 
 
         }
