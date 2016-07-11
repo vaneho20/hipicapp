@@ -56,3 +56,7 @@
 /Hipicapp.Utils/obj/Release
 /Resources/bin/Release
 /Resources/obj/Release
+/Hipicapp/obj/Pre
+/Hipicapp.Model
+/Hipicapp.Repository/bin/Pre
+/Hipicapp.Repository/obj/Pre

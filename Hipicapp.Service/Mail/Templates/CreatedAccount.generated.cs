@@ -45,18 +45,29 @@ WriteLiteral("\r\n");
 
 
 WriteLiteral("\r\n\r\n<html>\r\n<head>\r\n    <title>Nuevo registro | Hipicapp</title>\r\n</head>\r\n<body>" +
-"\r\n    <p>Bienvenido a Hipicapp! Puede acceder a su cuenta en ");
+"\r\n    <p>Bienvenido a Hipicapp! Puede acceder a su cuenta en <a target=\"_blank\" " +
+"href=\"");
 
 
             
             #line 14 "..\..\Mail\Templates\CreatedAccount.cshtml"
-                                                      Write(message.Url);
+                                                                               Write(message.Url);
 
             
             #line default
             #line hidden
-WriteLiteral(".</p>\r\n    <p>Gracias,</p>\r\n    <p>El equipo de cuentas de Hipicapp</p>\r\n</body>\r" +
-"\n</html>");
+WriteLiteral("\">");
+
+
+            
+            #line 14 "..\..\Mail\Templates\CreatedAccount.cshtml"
+                                                                                             Write(message.Url);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a>.</p>\r\n    <p>Gracias,</p>\r\n    <p>El equipo de cuentas de Hipicapp</p>\r\n</bo" +
+"dy>\r\n</html>");
 
 
         }

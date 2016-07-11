@@ -55,12 +55,12 @@ WriteLiteral(@"
     <p>Ha solicitado que se restablezca su contraseña. Haga clic</p>
     <p>en el siguiente vínculo. Le llevará a una página web de</p>
     <p>Hipicapp en la que podrá cambiar la contraseña.</p>
-    <p><a href=""");
+    <p><a target=""_blank"" href=""");
 
 
             
             #line 18 "..\..\Mail\Templates\PasswordReset.cshtml"
-           Write(message.Url);
+                           Write(message.Url);
 
             
             #line default
