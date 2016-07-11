@@ -125,11 +125,12 @@ namespace Hipicapp.Service.Participant
             {
                 model.BirthDate = athlete.BirthDate;
                 var year = athlete.BirthDate.Value.Year;
-                athlete.Category = this.CompetitionCategoryRepository.GetAllQueryable()
+                model.Category = this.CompetitionCategoryRepository.GetAllQueryable()
                     .FirstOrDefault(x => (x.Later == true && year >= x.InitialYear)
                         || (year >= x.InitialYear && year <= x.FinalYear)
                         || (x.Previous == true && year <= x.FinalYear));
-                this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(athlete.Category);
+                this.AvailableCompetitionCategoryPolicy.CheckSatisfiedBy(model.Category);
+                model.CategoryId = model.Category.Id;
             }
             model.Gender = athlete.Gender;
             model.Weight = athlete.Weight;
