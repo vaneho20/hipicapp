@@ -55,7 +55,7 @@
             <section class="listado-elements col-xs-12 col-sm-6 col-md-12" data-bind="visible: !(currentPage().isEmpty())">
                 <h2>Listado Caballos</h2>
                 <div data-bind="foreach: currentPage().content">
-                    <article class="one-element col-md-4 col-sm-4 col-xs-8">
+                    <article class="one-element col-md-4 col-sm-4 col-xs-12">
                         <div class="foto-listados col-md-3 col-sm-3 col-xs-6">
                             <a data-bind="attr: { href: $root.horseBroker.getDetailUrlById(id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
                                 <img alt="Lorem ipsum" data-bind="attr: { src: photoId ? $root.fileBroker.getUrlByUuid(photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
