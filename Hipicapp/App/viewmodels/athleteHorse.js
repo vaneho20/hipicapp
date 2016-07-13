@@ -27,9 +27,7 @@ define([
     function activate(horseId) {
         if (horseId) {
             // allways return a promise
-            return $.when(superActivate().done(function onSuccess() {
-                return loadEntityByHorseId(horseId);
-            })).done(refreshNav);
+            return $.when(superActivate(), loadEntityByHorseId(horseId)).done(refreshNav);
         } else {
             return $.when(superActivate().done(function onSuccess() {
                 refreshCurrentEntity();
