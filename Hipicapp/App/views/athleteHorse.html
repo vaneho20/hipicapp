@@ -52,10 +52,10 @@
                                             <div class="form-group">
                                                 <label class="required" for="h-horse-birthdate" data-bind="text: i18n.t('app:BIRTHDATE')"></label>
                                                 <div id="h-horse-birthdate-picker" class="date input-group"
-                                                     data-bind="datetimepickerValue: $root.currentHorseEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
+                                                     data-bind="datetimepickerValue: currentHorseEntity().birthDate, dateTimePickerOptions: { format: i18n.t('app:DATE_PATTERN'), locale: i18n.t('app:CURRENT_LANGUAGE') }">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                     <input type="text" class="form-control" id="h-horse-birthdate"
-                                                           data-bind="epochValue: $root.currentHorseEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
+                                                           data-bind="epochValue: currentHorseEntity().birthDate, epochValuePattern: i18n.t('app:DATE_PATTERN'),
 	 				                                        attr: { placeholder: i18n.t('app:BIRTHDATE'),
 	 				                                        title: i18n.t('app:BIRTHDATE') }" required autocomplete="off" />
                                                 </div>

@@ -27,10 +27,10 @@
                 <div class="ficha-col-izq col-md-8 col-sm-8 col-xs-16">
                     <header class="col-md-12 col-sm-12 col-xs-24">
                         <h2 class="pull-left">
-                            <!--ko text: currentEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
+                            <!--ko text: currentHorseEntity().name--><!--/ko--> <small data-bind="text: i18n.t('app:HORSE')"></small>
                             |
                         </h2>
-                        <a class="pull-left" data-bind="attr: { href: horseBroker.getEditUrlById(currentEntity().id) }"> Volver</a>
+                        <a class="pull-left" data-bind="attr: { href: horseBroker.getEditUrlById(currentHorseEntity().id) }"> Volver</a>
                         <div class="clearfix"></div>
                     </header>
                     <section>
@@ -41,7 +41,7 @@
                                         <div id="h-horse-photo-dropzone" class="control-group public-photo-upload">
                                             <div id="h-horse-photo-thumbnail" class="thumbnail">
                                                 <img data-bind="attr: {
-									            src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '',
+									            src: currentHorseEntity().photoId ? fileBroker.getUrlByUuid(currentHorseEntity().photo.fileUuid) : '',
 									            alt: i18n.t('app:PHOTO'),
 									            title: i18n.t('app:PHOTO')
 								            }, imageHolder: '115x150'">
@@ -57,7 +57,7 @@
                                                     <input type="file" id="h-horse-photo"
                                                            data-bind="fileupload: {
 										            broker: horseBroker,
-										            entityId: currentEntity().id,
+										            entityId: currentHorseEntity().id,
 										            dropZone: '#h-horse-photo-dropzone',
 										            thumbnail: '#h-horse-photo-thumbnail',
 										            progress: '#h-horse-photo-progress'
@@ -85,32 +85,32 @@
                 <div class="ficha-col-der col-md-4 col-sm-4 col-xs-8">
                     <article>
                         <div class="foto-listados col-md12 col-sm-12 col-xs-24">
-                            <img alt="Lorem ipsum" data-bind="attr: { src: currentEntity().photoId ? fileBroker.getUrlByUuid(currentEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
+                            <img alt="Lorem ipsum" data-bind="attr: { src: currentHorseEntity().photoId ? fileBroker.getUrlByUuid(currentHorseEntity().photo.fileUuid) : '/Content/images/hipicapp-defecto-caballo.png' }">
                         </div>
                         <div class="info-listados col-md-12 col-sm-12 col-xs-24">
-                            <h3 data-bind="text: currentEntity().name"></h3>
+                            <h3 data-bind="text: currentHorseEntity().name"></h3>
                             <p>
                                 <strong>Jinete:</strong>
-                                <span data-bind="text: currentEntity().athlete.fullName"></span>
+                                <span data-bind="text: currentHorseEntity().athlete.fullName"></span>
                             </p>
                             <p>
                                 <strong>Sexo:</strong>
-                                <span data-bind="text: $root.availableGenders[currentEntity().gender()]"></span>
+                                <span data-bind="text: $root.superAvailableGenders[currentHorseEntity().gender()]"></span>
                             </p>
                             <p>
                                 <strong>Peso:</strong>
-                                <span data-bind="text: currentEntity().weight + 'kg'"></span>
+                                <span data-bind="text: currentHorseEntity().weight + 'kg'"></span>
                             </p>
                             <p>
                                 <strong>Altura:</strong>
-                                <span data-bind="text: currentEntity().height + 'cm'"></span>
+                                <span data-bind="text: currentHorseEntity().height + 'cm'"></span>
                             </p>
                             <p>
                                 <strong>Fecha Nacimiento:</strong>
-                                <span data-bind="text: moment(currentEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
+                                <span data-bind="text: moment(currentHorseEntity().birthDate()).format($root.i18n.t('app:DATE_PATTERN'))"></span>
                             </p>
-                            <!-- ko if: securityContext.isAuthenticated() && currentEntity().athlete.userId === parseInt(securityContext.getPrincipal().id) -->
-                            <a class="ver-todo" data-bind="attr: { href: $root.horseBroker.getEditUrlById(currentEntity().id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
+                            <!-- ko if: securityContext.isAuthenticated() && currentHorseEntity().athlete.userId === parseInt(securityContext.getPrincipal().id) -->
+                            <a class="ver-todo" data-bind="attr: { href: $root.horseBroker.getEditUrlById(currentHorseEntity().id), title: $root.i18n.t('app:UPDATE_BUTTON_TITLE') }">
                                 <i class="fa fa-edit" aria-hidden="true"></i> Editar
                             </a>
                             <!-- /ko -->
