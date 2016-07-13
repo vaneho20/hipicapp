@@ -32,7 +32,7 @@
                         </a>
                         <!-- /ko -->
                     </header>
-                    <!-- ko if: $root.hasEnrolled() === '1' -->
+                    <!-- ko if: $root.isEnrolled() === true -->
                     <article class="alert alert-warning alert-block col-md-12 col-sm-12 col-xs-12">
                         <p data-bind="text: i18n.t('COMPETITION_HORSE_ENROLLED')"></p>
                     </article>

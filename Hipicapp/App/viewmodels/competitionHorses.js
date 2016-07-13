@@ -16,7 +16,7 @@ define([
         currentPage = ko.observable(pageImpl()), currentPager = ko.observable(pagerImpl()),
         currentPageSize = ko.observable(PAGE_SIZE), currentEntity = viewModel.currentEntity, availableGenders = {
             "male": i18n.t("app:GENDER_MALE"), "female": i18n.t("app:GENDER_FEMALE")
-        }, hasEnrolled = ko.observable(false);
+        }, isEnrolled = ko.observable(false);
 
     // lifecycle definition
     function activate(competitionId) {
@@ -76,7 +76,7 @@ define([
 
     function hasEnrolled(competitionId) {
         return athleteBroker.hasEnrolled(competitionId).done(function success(data) {
-            hasEnrolled(data);
+            isEnrolled(data);
         });
     }
 
@@ -111,7 +111,7 @@ define([
     viewModel.currentEntity = currentEntity;
     viewModel.availablePageSizes = PAGE_SIZES;
     viewModel.availableGenders = availableGenders;
-    viewModel.hasEnrolled = hasEnrolled;
+    viewModel.isEnrolled = isEnrolled;
 
     // lifecycle revelation
     viewModel.activate = activate;

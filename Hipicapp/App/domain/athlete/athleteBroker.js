@@ -40,10 +40,10 @@ define([
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES, brokerUtils.requestMappings.UPDATE), brokerUtils.verb.PUT));
 
     amplify.request.define("athletes/hasEnrolled", brokerUtils.REQUEST_TYPE,
-        brokerUtils.getWriteRequestSettings(brokerUtils.requestMappings.BACKEND +
+        brokerUtils.getReadOnlyRequestSettings(brokerUtils.requestMappings.BACKEND +
             urlUtils.joinPath(brokerUtils.requestMappings.ATHLETES,
                 brokerUtils.requestMappings.HAS_ENROLLED,
-                brokerUtils.requestMappings.COMPETITION_ID), brokerUtils.verb.POST));
+                brokerUtils.requestMappings.COMPETITION_ID), brokerUtils.verb.GET));
 
     function findBy(findRequest) {
         return amplify.request("athletes/findBy", findRequest);
