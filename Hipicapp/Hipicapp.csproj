@@ -655,6 +655,9 @@
     <Content Include="Content\images\hipicapp-defecto-juez.png" />
     <Content Include="Content\images\hipicapp-defecto-usuario.png" />
     <Content Include="Content\images\hipicapp-logoh.png" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\ios-startup-image-landscape.png" />
+    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\images\jump.png" />
     <Content Include="Content\images\bootstrap-formhelpers-countries.flags.png" />
     <Content Include="Content\images\clear.png" />
@@ -662,9 +665,6 @@
     <Content Include="Content\images\foto_salto.jpg" />
     <Content Include="Content\images\hipicapp-logo-blanco.png" />
     <Content Include="Content\images\hipicapp-logo.png" />
-    <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\ios-startup-image-landscape.png" />
-    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\dressage.png" />
     <Content Include="Content\images\administrator-black.png" />
