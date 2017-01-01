@@ -73,7 +73,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RazorGenerator.Templating, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\RazorGenerator.Templating.2.3.11\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
+      <HintPath>..\packages\RazorGenerator.Templating.2.4.7\lib\portable-Profile328\RazorGenerator.Templating.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Spring.Aop, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
@@ -255,14 +255,14 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="SampleTemplate.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
-    </None>
     <Content Include="Templates\AdvanceProgram.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>AdvanceProgram2.generated.cs</LastGenOutput>
     </Content>
+    <None Include="SampleTemplate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SampleTemplate.generated.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Filters\" />

@@ -20,23 +20,18 @@ namespace ASP
     public partial class _SampleTemplate_cshtml : RazorGenerator.Templating.RazorTemplateBase
     {
 #line hidden
-
         #line 3 "..\..\SampleTemplate.cshtml"
-
+            
     public string Message { get; set; }
 
         #line default
         #line hidden
-
+        
         public override void Execute()
         {
-
-
 WriteLiteral("\r\n\r\n");
 
-
-WriteLiteral("\r\n\r\nHello ");
-
+WriteLiteral("\r\nHello ");
 
             
             #line 7 "..\..\SampleTemplate.cshtml"
@@ -46,7 +41,6 @@ WriteLiteral("\r\n\r\nHello ");
             #line default
             #line hidden
 WriteLiteral("!\r\n");
-
 
         }
     }
