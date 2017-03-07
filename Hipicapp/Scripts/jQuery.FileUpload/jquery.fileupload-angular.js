@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload AngularJS Plugin 2.2.0
+ * jQuery File Upload AngularJS Plugin
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2013, Sebastian Tschan
@@ -12,7 +12,7 @@
 /* jshint nomen:false */
 /* global define, angular */
 
-(function (factory) {
+;(function (factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
         // Register as an anonymous AMD module:
